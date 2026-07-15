@@ -275,7 +275,7 @@ body{
 }
 .hero:after{z-index:2;border-color:rgba(255,255,255,.1);box-shadow:0 0 0 85px rgba(255,255,255,.025),0 0 0 170px rgba(255,255,255,.018)}
 .hero-video{position:absolute;z-index:0;inset:0;overflow:hidden;background:#003d27 url("https://i.ytimg.com/vi/Qeqxu1A8f-Y/maxresdefault.jpg") center 45%/cover no-repeat}
-.hero-video iframe{position:absolute;z-index:0;inset:0;width:100%;height:100%;border:0;pointer-events:none}
+.hero-video video{position:absolute;z-index:0;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;pointer-events:none}
 .hero-grid{z-index:4;grid-template-columns:minmax(0,720px) 1fr;padding:105px 0 125px}
 .hero-copy{position:relative;padding:36px 0 30px;text-shadow:0 2px 22px rgba(0,30,18,.32)}
 .hero-copy:before{content:"";position:absolute;left:-31px;top:0;bottom:0;width:3px;border-radius:5px;background:linear-gradient(var(--leaf),#f2d36d);box-shadow:0 0 26px rgba(152,199,93,.7)}
@@ -293,7 +293,7 @@ body{
 .hero-botanical{position:absolute;z-index:2;right:-30px;bottom:-70px;width:330px;height:330px;border:1px solid rgba(218,240,173,.24);border-radius:76% 24% 69% 31%/61% 58% 42% 39%;transform:rotate(18deg);pointer-events:none}.hero-botanical:after{content:"";position:absolute;inset:34px;border:1px solid rgba(218,240,173,.17);border-radius:inherit}
 .hero .floating-shape{z-index:2;opacity:.5}.hero .shape-a,.hero .shape-b{display:none}.hero .shape-c{background:#9bd879;right:5%;bottom:23%}.hero .shape-d{background:#f4d76d}
 @media(max-width:760px){.hero{min-height:690px}.hero-grid{display:block;padding:74px 0 105px}.hero-copy{padding-left:20px}.hero-copy:before{left:0}.hero-copy h1{font-size:clamp(3.45rem,16vw,5rem)}.hero-copy p{font-size:.98rem}.hero-notes{gap:12px;margin-top:28px}.hero-watch{right:20px;bottom:48px}.hero-watch b{display:none}}
-@media(prefers-reduced-motion:reduce){.hero-video iframe{display:none}.hero{background:linear-gradient(115deg,#003d27,#0a7044)}}
+@media(prefers-reduced-motion:reduce){.hero-video video{display:none}.hero{background:linear-gradient(115deg,#003d27,#0a7044)}}
 .floating-shape{
   position:absolute;
   z-index:1;
@@ -804,7 +804,9 @@ footer{
 <main>
 <section class="hero">
  <div class="hero-video" aria-hidden="true">
-  <iframe id="hero-video-frame" src="https://www.youtube.com/embed/Qeqxu1A8f-Y?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;playlist=Qeqxu1A8f-Y&amp;start=12&amp;playsinline=1&amp;rel=0&amp;modestbranding=1&amp;enablejsapi=1" title="Rebekah's private-label story background video" allow="autoplay; encrypted-media" tabindex="-1"></iframe>
+  <video id="hero-video-frame" autoplay muted loop playsinline preload="auto" poster="https://i.ytimg.com/vi/Qeqxu1A8f-Y/maxresdefault.jpg" aria-label="Rebekah's private-label story background video">
+   <source src="output/rebekahs-hero-video.mp4" type="video/mp4">
+  </video>
  </div>
  <span class="floating-shape shape-a"></span>
  <span class="floating-shape shape-b"></span>
@@ -826,7 +828,7 @@ footer{
    </div>
   </div>
  </div>
- <button class="hero-watch" id="hero-video-toggle" type="button" aria-pressed="false" aria-label="Play the hero video with sound"><span aria-hidden="true">▶</span><b>Play Hero Video</b></button>
+ <button class="hero-watch" id="hero-video-toggle" type="button" aria-pressed="false" aria-label="Play the hero video"><span aria-hidden="true">▶</span><b>Play Hero Video</b></button>
  <span class="hero-botanical"></span>
 </section>
 
@@ -1065,23 +1067,33 @@ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entr
 document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=Math.min((i%4)*65,195)+"ms";observer.observe(el)});
 const heroVideoFrame=document.getElementById("hero-video-frame");
 const heroVideoToggle=document.getElementById("hero-video-toggle");
-const sendHeroVideoCommand=func=>heroVideoFrame.contentWindow.postMessage(JSON.stringify({event:"command",func,args:[]}),"*");
-heroVideoToggle.addEventListener("click",()=>{
+heroVideoFrame.addEventListener("loadedmetadata",()=>{
+ if(heroVideoFrame.currentTime<12)heroVideoFrame.currentTime=12;
+ heroVideoFrame.muted=true;
+ heroVideoFrame.play().catch(()=>{});
+});
+heroVideoToggle.addEventListener("click",async()=>{
  const isPlaying=heroVideoToggle.getAttribute("aria-pressed")==="true";
  if(isPlaying){
-  sendHeroVideoCommand("pauseVideo");
+  heroVideoFrame.pause();
   heroVideoToggle.setAttribute("aria-pressed","false");
-  heroVideoToggle.setAttribute("aria-label","Play the hero video with sound");
+  heroVideoToggle.setAttribute("aria-label","Play the hero video");
   heroVideoToggle.querySelector("span").textContent="▶";
   heroVideoToggle.querySelector("b").textContent="Play Hero Video";
  }else{
-  heroVideoFrame.contentWindow.postMessage(JSON.stringify({event:"command",func:"seekTo",args:[12,true]}),"*");
-  sendHeroVideoCommand("playVideo");
-  sendHeroVideoCommand("unMute");
-  heroVideoToggle.setAttribute("aria-pressed","true");
-  heroVideoToggle.setAttribute("aria-label","Pause the hero video");
-  heroVideoToggle.querySelector("span").textContent="Ⅱ";
-  heroVideoToggle.querySelector("b").textContent="Pause Video";
+  if(heroVideoFrame.currentTime<12)heroVideoFrame.currentTime=12;
+  heroVideoFrame.muted=true;
+  try{
+   await heroVideoFrame.play();
+   heroVideoToggle.setAttribute("aria-pressed","true");
+   heroVideoToggle.setAttribute("aria-label","Pause the hero video");
+   heroVideoToggle.querySelector("span").textContent="Ⅱ";
+   heroVideoToggle.querySelector("b").textContent="Pause Video";
+  }catch(error){
+   heroVideoToggle.setAttribute("aria-pressed","false");
+   heroVideoToggle.querySelector("span").textContent="▶";
+   heroVideoToggle.querySelector("b").textContent="Play Hero Video";
+  }
  }
 });
 </script>
