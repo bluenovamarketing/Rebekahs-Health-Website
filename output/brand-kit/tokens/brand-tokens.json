@@ -1,0 +1,22 @@
+{
+  "color": {
+    "Pine": "#174C3C",
+    "Leaf": "#3F7D50",
+    "Sage": "#A9C3A0",
+    "Honey": "#D6A33A",
+    "Berry": "#8E4B61",
+    "Cream": "#F7F3E8",
+    "Mist": "#E8EFEA",
+    "Ink": "#26342E",
+    "White": "#FFFFFF"
+  },
+  "font": {
+    "display": "Georgia",
+    "body": "Segoe UI"
+  },
+  "radius": {
+    "sm": "8px",
+    "md": "16px",
+    "pill": "999px"
+  }
+}
