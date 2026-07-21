@@ -1,5 +1,22 @@
 # Client Notes
 
+## 2026-07-20 - Pre-redesign WordPress and Cloudways audit
+
+- Audited the Rebekah's Health and Nutrition staging site's active theme, plugin inventory, public URL/sitemap structure, blog and events content, WordPress reading/permalink settings, cache headers, Site Health status, and basic cached-versus-uncached response times.
+- Confirmed Bricks is the active theme, pretty permalinks use `/%postname%/`, staging is correctly blocked from indexing, and Site Health reports no critical or recommended issues. Cloudways/Varnish is producing cache hits, but the deeper plugin-state audit confirmed Breeze and Object Cache Pro are currently inactive; Redis/Object Cache Pro must be verified in Cloudways rather than assumed active.
+- Found a large Phase One performance opportunity: WooCommerce and its payment, tax, coupon, advertising, invoice, gateway, and updater add-ons are all active even though e-commerce is deferred to Phase Two. Recommended backing up first, hiding commerce routes, then deactivating the commerce stack without deleting product/order data.
+- Measured cached homepage TTFB at roughly 0.46–0.53 seconds and an uncached request at roughly 3.59 seconds, indicating server-side/plugin/database work needs optimization even though page caching is functioning.
+- Confirmed the content inventory includes 13 published pages, 21 blog posts, an events archive with individual event URLs, product and custom-post-type sitemaps, and the `/blog/` page. Preserve retained slugs and build a one-to-one URL disposition map before redesigning or redirecting pages.
+- Recommended Cloudways follow-ups: verify Varnish, Redis/Object Cache Pro, Breeze auto-purge, Cron Optimizer, PHP 8.3 compatibility, Cloudflare integration, backups, and monitoring; investigate PHP/database/plugin load before scaling the server.
+- Client-facing next step: approve the Phase One plugin deactivation list and the URL/content map before any plugins are turned off or page URLs are changed.
+- Completed a read-only pre-design inventory in `PRE-DESIGN-INVENTORY.md`, covering 13 pages, 21 blog posts, 28 practitioners, 4 testimonials, 36 products, 10 current REST-visible events, 220 media records, two Forminator forms, one ACF field group, six Bricks templates, both menus, plugin status, taxonomy counts, and Cloudways items requiring account-level verification. No sitemap, redirect, image, plugin, content, theme, or hosting changes were made.
+
+## 2026-07-20 - Staging WordPress access recorded
+
+- Verified that the Cody account can access the Rebekah's Health and Nutrition staging WordPress dashboard at `https://wordpress-1651482-6565113.cloudwaysapps.com/wp-admin` with administrator-level menus available.
+- Added the staging site, login URL, Cody username, supplied password, Admin role, saved date, and verification date to the `WP Logins` tab in the shared `Cody WP Logins` Google Sheet.
+- No WordPress application password was created because the current task only required recording and verifying interactive dashboard access; create one later if REST API or automated publishing access is needed.
+
 ## 2026-07-15 - Brand kit development
 
 - Created a complete client-facing brand system for Rebekah's Health & Nutrition based on the current public website and the Blue Nova kit's level of structure and practicality.
