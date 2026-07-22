@@ -1,2 +1,5 @@
 # Separate generated/hosted application repository
 /published-site/
+
+# Local tooling dependencies (recreated by the package manager)
+/.tools/node_modules/
