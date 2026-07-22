@@ -823,6 +823,26 @@ footer{
 }
 
 </style>
+<script>
+window.__rebekahsEmbedSection=new URLSearchParams(location.search).get("embed");
+if(window.__rebekahsEmbedSection){document.documentElement.classList.add("embedded-section","embed-"+window.__rebekahsEmbedSection)}
+</script>
+<style>
+html.embedded-section,html.embedded-section body{min-height:0;background:transparent;overflow:hidden}
+html.embedded-section body>*{display:none!important}
+html.embedded-section body>main{display:block!important}
+html.embedded-section main>*{display:none!important}
+html.embed-pathway main>.pathway{display:block!important;margin:0 auto!important;padding:0!important}
+html.embed-shipping main>.shipping{display:block!important}
+html.embed-events main>.events{display:block!important}
+html.embed-events .signup-combo{display:none!important}
+html.embed-journal main>.journal{display:block!important}
+html.embed-newsletter main>.events{display:block!important;padding:34px 0!important}
+html.embed-newsletter .events-head,html.embed-newsletter .event-grid{display:none!important}
+html.embed-newsletter .signup-combo{margin:0!important}
+html.embed-newsletter .combo-form select{width:100%;height:50px;border:1px solid #d7e4d0;border-radius:14px;padding:0 15px;background:#fff;color:var(--ink);font:inherit}
+html.embed-practitioner main>.practitioner{display:block!important;background:#8e4b61!important}
+</style>
 </head>
 <body>
 <div class="notice">Four Michigan wellness stores · Can’t find something? <strong>Call Clarkston and we can ship it to you.</strong></div>
@@ -850,7 +870,7 @@ footer{
 <main>
 <section class="hero">
  <div class="hero-video" aria-hidden="true">
-  <video class="hero-motion" autoplay muted loop playsinline preload="auto">
+  <video class="hero-motion" autoplay muted loop playsinline preload="none">
    <source src="output/rebekahs-hero-video-hd.mp4" type="video/mp4">
   </video>
  </div>
@@ -1108,6 +1128,36 @@ footer{
 </footer>
 
 <script>
+if(!window.__rebekahsEmbedSection){
+ const heroVideo=document.querySelector(".hero-motion");
+ if(heroVideo){heroVideo.preload="auto";heroVideo.load();heroVideo.play().catch(()=>{});}
+}
+if(window.__rebekahsEmbedSection){
+ const section=window.__rebekahsEmbedSection;
+ const selectors={pathway:".pathway",shipping:".shipping",events:".events",journal:".journal",newsletter:".signup-combo",practitioner:".practitioner"};
+ const target=document.querySelector(selectors[section]);
+ if(section==="newsletter"&&target){
+  const fields=target.querySelector(".fields");
+  const button=fields&&fields.querySelector("button");
+  if(fields&&button&&!fields.querySelector("select")){
+   const select=document.createElement("select");
+   select.setAttribute("aria-label","Preferred store");
+   select.required=true;
+   select.innerHTML='<option value="">Choose your preferred store</option><option>Lapeer</option><option>Grand Blanc</option><option>Clarkston</option><option>Lake Orion</option>';
+   fields.insertBefore(select,button);
+  }
+ }
+ if(section==="practitioner"&&target){
+  const box=target.querySelector(".partner-box");
+  if(box&&!box.querySelector("[data-injections]")){
+   const link=document.createElement("a");link.className="partner";link.href="#";link.dataset.injections="true";link.innerHTML="<span>Shop Injections</span><span>→</span>";box.appendChild(link);
+  }
+ }
+ document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+ const report=()=>{if(target){parent.postMessage({type:"rebekahs-section-height",section,height:Math.ceil(target.getBoundingClientRect().height)},"*")}};
+ addEventListener("load",report);setTimeout(report,250);setTimeout(report,1200);
+ if(target&&window.ResizeObserver){new ResizeObserver(report).observe(target)}
+}
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target)}}),{threshold:.12});
 document.querySelectorAll(".reveal").forEach((el,i)=>{el.style.transitionDelay=Math.min((i%4)*65,195)+"ms";observer.observe(el)});
 </script>
