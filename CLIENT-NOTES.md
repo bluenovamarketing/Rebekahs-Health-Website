@@ -526,6 +526,13 @@
 - Client subsequently approved the Individual Blog Post template and branded 404 design internally. Both are now awaiting end-client approval, and the canonical Templates & Global notes reflect that status.
 - With Search Results deferred to Phase Two, no additional Phase One page or template designs remain unless end-client feedback requires revisions.
 
+## 2026-07-24 - Page approval statuses normalized
+
+- Confirmed the approval-stage distinction across the complete 20-page inventory.
+- Home is now marked `Client approved v1.21`, and Our Story / Meet Rebekah is marked `Client approved v1.1.6`.
+- Every other Page Inventory entry is now marked `Internally approved — awaiting client approval`.
+- All WordPress Build Status values remain `Not started`; this update records design approval stage only.
+
 ## 2026-07-23 - Shop Designs for Health page mockup v1.0.0
 
 - Created `shop-designs-for-health-mockup-v1.0.0.html` for the proposed `/shop-designs-for-health/` affiliate/external-partner landing page, following the canonical Sheet prompt and approved homepage/Our Story visual system.
@@ -610,3 +617,17 @@
 - Second client review revision: added a third muted-berry leaf behind the `404` for a light additional color accent. Moved the circular “Let’s get you back on a helpful path” message completely below the floral artwork and reserved responsive spacing beneath the illustration so the circle does not overlap the artwork or recovery cards.
 - Third client review revision: removed all three decorative leaf shapes from the `404` artwork at the client’s request. Retained the clean oversized numerals and the circular recovery message below them.
 - Client approved `404-page-mockup-v1.0.0.html` on 2026-07-23 as the accepted headerless/footerless 404 page-body design. The canonical Sheet lists Search and 404 as a global component rather than an inventory page, so it has no dedicated Design Status cell to update. WordPress implementation remains pending; production must use the real global header/footer around this approved page body, return a true HTTP 404 response, retain `noindex,follow`, connect site search, and verify broken-link recovery behavior.
+
+## 2026-07-24 — Location-page Google Business Profile links
+
+- Audited the four approved location mockups. Each already has prominent `Get Directions` links, an embedded Google map, and a `hasMap` schema property, but these currently use address-based Google Maps URLs rather than verified permalinks to the exact Google Business Profile listings.
+- Decision: keep the existing placement and design. During WordPress implementation, replace each address-based `Get Directions` destination with that store's verified Google Maps/Business Profile permalink. A separate “View our GBP” link is unnecessary.
+- Pending follow-up: obtain and verify the exact GBP/Google Maps listing URL for Lapeer, Grand Blanc, Clarkston, and Lake Orion, and ensure each GBP's website field links back to its matching website location page.
+
+## 2026-07-24 — Single GitHub Pages client review hub
+
+- Confirmed GitHub Pages is already connected once to the repository's `main` branch at the root, with HTTPS enabled and a successful deployment from the current remote commit.
+- Replaced the repository landing page with a no-index client review dashboard linking to the current mock-up for all 20 canonical page concepts, the event-detail, practitioner-profile, and individual-blog-post templates, and the approved 404 design.
+- Kept the canonical approved versions for Home (`third-mockup.html`, v1.21) and Our Story (`story-mockup-v1.1.6.html`) in the review hub; older version files remain in the repository but are not presented to the client.
+- Added `.nojekyll` so GitHub Pages serves the static mock-up assets directly without Jekyll processing.
+- Client-facing next step: share the single GitHub Pages review URL after the updated deployment is verified. Future mock-ups can use the same connection and be added to the dashboard.
