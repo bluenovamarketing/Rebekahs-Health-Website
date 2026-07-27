@@ -390,6 +390,8 @@
 - Added more dark-green breathing room below the hero buttons before the quick-information bar.
 - Client approved `clarkston-location-mockup-v1.0.html` on 2026-07-23 as the accepted Clarkston location-page design direction.
 - Next step when authorized: assemble the approved design in WordPress, connect the live Clarkston event feed and preferred-store signup routing, then complete production responsive/SEO QA.
+- On 2026-07-27, corrected a reduced-motion rule that was canceling the visible card enlargement in the client's browser. The standard hover now lifts 10px and scales to 105% with a deeper shadow; reduced-motion mode applies an immediate 103.5% enlargement without animated movement.
+- Applied the approved Clarkston community-card pop-out interaction consistently to the Lapeer, Grand Blanc and Lake Orion location mockups: 10px lift, 105% scale, deeper shadow, stacking protection, extra grid room and an immediate 103.5% reduced-motion state.
 
 ## 2026-07-23 - Lake Orion location page design v1.0
 
@@ -412,6 +414,9 @@
 - Ongoing rule for this project: do not repeat the same image within a page when location-specific client photography is available.
 - Client approved `lake-orion-location-mockup-v1.0.html` on July 23, 2026 after the shared-folder photography correction. Treat v1.0 as the accepted Lake Orion design direction for later WordPress implementation.
 - Updated the canonical Page Inventory Design Status to `Approved v1.0`; WordPress Build Status remains `Not started`.
+- Post-approval interaction adjustment: strengthened the three Lake Orion event/community cards so each card lifts and scales to 104.5% on hover or keyboard focus, matching the more noticeable pop-out treatment used on other approved pages. Preserved reduced-motion behavior.
+- Follow-up correction: the initial enlargement was still too subtle in review. Increased the card interaction to a 7.5% scale with a 14px lift, stronger foreground shadow and a slight 3.5% image zoom, while retaining keyboard-focus parity and reduced-motion handling.
+- Second follow-up correction: increased the Lake Orion event-card hover to a clearly visible 14% scale and 22px lift, added a honey-colored border, deeper shadow and 6% image zoom after the client found the prior treatment still too subtle.
 
 ## 2026-07-23 - Privacy Policy page design v1.0.0
 
@@ -479,6 +484,11 @@
 - Follow-up image audit confirmed the approved shared folder contains only three Grand Blanc-labelled photos and all three are already used once. Rebekah's current WordPress media search returns only the official Mighty Greens Grand Blanc artwork, which is also already used. Keep the Classes & Conversations and Community Connections cards image-free until additional verified Grand Blanc assets are supplied.
 - Removed the redundant `We are in Suite 4.` sentence from the visit section after browser review; Suite 4 remains correctly included in the structured address details and map destination.
 - Client approved `grand-blanc-location-mockup-v1.0.html` on 2026-07-23 as the accepted Grand Blanc location-page design direction. Updated the canonical Page Inventory Design Status to `Approved v1.0`; WordPress Build Status remains `Not started`.
+
+## 2026-07-27 - Grand Blanc approved-page interaction adjustment
+
+- Added the established location-card hover behavior to all three Grand Blanc event/community cards. After two client reviews found the initial effects too subtle, increased the final interaction to an unmistakable 18px upward lift, 12% scale increase and heavy floating shadow.
+- Added matching keyboard `focus-within` behavior and a visible link focus outline. Reduced-motion preferences disable the movement while retaining the static card presentation.
 
 ## 2026-07-23 - Disclaimer page design v1.0.0
 
