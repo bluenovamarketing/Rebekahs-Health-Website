@@ -325,6 +325,7 @@
 - Reused the homepage’s exact working Signature Line composition, copy treatment, orbit animation and responsive behavior instead of maintaining a similar-but-separate version.
 - Rebuilt the four-store close using the homepage’s destination-card visual system, including staggered cards, numbered badges, color variation, Michigan background typography and richer store details.
 - Client approved the revised In-Store Products mockup v1.0.0 on July 23, 2026. Treat this version as the approved visual/content direction for later WordPress implementation.
+- Phase One CTA correction: changed the Signature Line button from an ecommerce/product-category destination to `Find the Signature Line Near You`, which moves visitors to the four-store section and its location/phone options. This avoids implying a Signature Line catalog or ecommerce experience that is not included in this phase.
 
 ## 2026-07-23 - Contact Us mockup v1.0.0
 
