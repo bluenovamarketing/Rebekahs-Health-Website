@@ -305,6 +305,7 @@
 - Matched the Lapeer signup to the approved homepage fields and language: name, email, preferred store, submission label and consent note.
 - Location-event implementation decision: every location page will reuse one event component that queries future events by the event's assigned venue/location taxonomy. The Lapeer page uses `lapeer`; Grand Blanc, Clarkston and Lake Orion will use their matching values, preventing cross-location events from appearing.
 - Corrected a wide-desktop-only Lapeer hero transition: restored the quick-information panel's green-background overlap and added 56px of internal hero clearance so the CTA buttons remain unobstructed at both standard and wide desktop widths.
+- Lake Orion location refinement: enhanced the three community/event cards so hover and keyboard focus lift 8px, enlarge 2.5%, strengthen the shadow and rise above neighboring cards; reduced-motion users retain the static treatment.
 
 ## 2026-07-23 - In-Store Products mockup v1.0.0
 
