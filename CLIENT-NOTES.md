@@ -304,6 +304,7 @@
 - Removed the negative overlap beneath the Lapeer hero so the directions and phone buttons are no longer covered by the quick-information panel.
 - Matched the Lapeer signup to the approved homepage fields and language: name, email, preferred store, submission label and consent note.
 - Location-event implementation decision: every location page will reuse one event component that queries future events by the event's assigned venue/location taxonomy. The Lapeer page uses `lapeer`; Grand Blanc, Clarkston and Lake Orion will use their matching values, preventing cross-location events from appearing.
+- Corrected a wide-desktop-only Lapeer hero transition: restored the quick-information panel's green-background overlap and added 56px of internal hero clearance so the CTA buttons remain unobstructed at both standard and wide desktop widths.
 
 ## 2026-07-23 - In-Store Products mockup v1.0.0
 
