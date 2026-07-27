@@ -644,3 +644,9 @@
 - Kept the canonical approved versions for Home (`third-mockup.html`, v1.21) and Our Story (`story-mockup-v1.1.6.html`) in the review hub; older version files remain in the repository but are not presented to the client.
 - Added `.nojekyll` so GitHub Pages serves the static mock-up assets directly without Jekyll processing.
 - Client-facing next step: share the single GitHub Pages review URL after the updated deployment is verified. Future mock-ups can use the same connection and be added to the dashboard.
+
+## 2026-07-27 — Practitioner profile removed from review hub
+
+- Removed the reusable Practitioner Profile option from the GitHub Pages client review dashboard at the client's direction.
+- Decision: individual practitioner pages will be built separately, so the client will not be asked to review or choose a generic reusable practitioner-profile option from the hub.
+- Updated the review-hub summary to show two reusable templates plus the approved 404 design. The existing practitioner profile mock-up file remains in the project record but is no longer linked from the client dashboard.
