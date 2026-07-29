@@ -1,0 +1,37 @@
+/*
+ * Rebekah's location system v2.0.0
+ * Consistency pass based on the approved homepage visual language.
+ * Page-specific content and structure remain intentionally unchanged.
+ */
+:root{--system-pine:#174c3c;--system-deep:#0f352a;--system-leaf:#3f7d50;--system-honey:#d6a33a;--system-berry:#8e4b61;--system-cream:#f7f3e8;--system-mist:#e8efea;--system-ink:#26342e;--system-muted:#61756b;--system-serif:"Fraunces",Georgia,serif;--system-sans:"DM Sans",Arial,sans-serif;--system-card-radius:24px;--system-control-radius:999px;--system-card-shadow:0 14px 34px rgba(23,76,60,.08);--system-card-shadow-hover:0 22px 46px rgba(23,76,60,.14)}
+html{color-scheme:light}
+body{color:var(--system-ink);background:var(--system-cream);font-family:var(--system-sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}
+h1,h2,h3,.quick strong,.details strong{font-family:var(--system-serif)}
+p{line-height:1.7}
+.eyebrow,.eye{color:var(--system-leaf);font-size:12px;font-weight:700;letter-spacing:.18em}
+.button,.btn{min-height:50px;align-items:center;padding:0 23px;border-radius:var(--system-control-radius);font-weight:700;line-height:1.2;transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease}
+.button:hover,.btn:hover{transform:translateY(-2px)}
+.button:focus-visible,.btn:focus-visible,.filter:focus-visible,.event a:focus-visible{outline:3px solid var(--system-honey);outline-offset:4px}
+.hero,.visit{background:var(--system-deep)}
+.hero-copy>p,.hero-copy p{line-height:1.7}
+.quick{border-radius:18px;box-shadow:0 18px 48px rgba(23,76,60,.12)}
+.finder,.events{background:#f3f8ea}
+.location-card,.expect-card{border:1px solid rgba(23,76,60,.08);border-radius:var(--system-card-radius);box-shadow:var(--system-card-shadow)}
+.location-card:hover{transform:translateY(-5px);box-shadow:var(--system-card-shadow-hover)}
+.card-actions .button{min-height:44px;padding:0 18px;font-size:14px}
+.event-grid{gap:18px;margin-top:42px;padding:0}
+.event{display:flex;flex-direction:column;min-height:100%;border:1px solid rgba(23,76,60,.06);border-radius:var(--system-card-radius);background:#fff;box-shadow:var(--system-card-shadow);overflow:hidden;text-decoration:none;transform:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.event:hover,.event:focus-within,.event:focus-visible{z-index:1;border-color:rgba(214,163,58,.55);transform:translateY(-5px);box-shadow:var(--system-card-shadow-hover)}
+.event>img,.event-photo,.event-photo img{width:100%;height:225px;aspect-ratio:auto;object-fit:cover}
+.event>div,.event-copy{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:24px}
+.event small{color:var(--system-leaf);font-size:11px;font-weight:800;letter-spacing:.08em;line-height:1.4;text-transform:uppercase}
+.event h3{margin:9px 0 8px;color:var(--system-pine);font:700 25px/1.1 var(--system-serif)}
+.event p{margin:0;color:var(--system-muted);font-size:13px;line-height:1.6}
+.event-copy>a{color:inherit;text-decoration:none}
+.event-copy>p:last-child{margin-top:auto}
+.signup form{border-radius:20px;box-shadow:var(--system-card-shadow)}
+.signup input,.signup select{min-height:50px;border-radius:8px}
+@media(max-width:900px){.event-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.event-grid{grid-template-columns:1fr;margin-top:30px}.button,.btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.button,.btn,.event,.location-card{transition:none}.button:hover,.btn:hover,.event:hover,.event:focus-within,.event:focus-visible,.location-card:hover{transform:none}}

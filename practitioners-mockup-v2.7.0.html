@@ -1,0 +1,101 @@
+<!doctype html>
+<!-- Version 2.7.0: Page 11 former-practitioner removals. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Holistic & Wellness Practitioners in Michigan | Rebekah's</title>
+  <meta name="description" content="Browse Rebekah's directory of independent holistic, wellness and healthcare practitioners serving Lapeer, Clarkston, Grand Blanc and nearby Michigan communities.">
+  <link rel="canonical" href="https://rebekahspureliving.com/practitioners/">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="practitioners-v1.0.0.css">
+</head>
+<body>
+<main>
+  <section class="directory-hero"><div class="wrap hero-grid"><div class="hero-copy"><span class="eyebrow">Local practitioner directory</span><h1>Find a practitioner for your next step.</h1><p class="lead">Explore independent practitioners and healthcare offices serving communities across mid-Michigan. Compare specialties, locations and available contact information at a glance.</p></div><div class="hero-note"><strong>A community resource</strong>This directory helps you discover local providers. Rebekah's does not diagnose, prescribe or guarantee services listed here.</div></div></section>
+  <section class="controls" aria-label="Directory filters"><div class="wrap control-row"><div class="field"><label for="search">Search by name, practice or city</label><input id="search" type="search" placeholder="Try “Lapeer” or “chiropractic”"></div><div class="field"><label for="category">Area of practice</label><select id="category"><option value="">All areas of practice</option></select></div></div></section>
+  <section class="directory"><div class="wrap"><div class="directory-top"><div><span class="eyebrow">Browse the directory</span><h2>Practitioners & practices</h2></div><p id="count" aria-live="polite"></p></div><div class="grid" id="grid"></div><div class="empty" id="empty"><h3>No exact matches</h3><p>Try a broader name, city or area of practice.</p></div></div></section>
+  <section class="trust"><div class="wrap trust-grid"><div><span class="eyebrow">Before you contact a provider</span><h2>Choose with confidence.</h2><p>Credentials, services, availability and insurance participation can change. Confirm details directly with the practitioner before making care decisions.</p></div><div class="trust-list"><div><strong>Verify credentials</strong><span>Ask about current licensing, certifications and scope of practice.</span></div><div><strong>Confirm logistics</strong><span>Check current address, hours, cost and insurance details directly.</span></div><div><strong>Ask good questions</strong><span>Discuss the provider's approach and whether it fits your needs.</span></div><div><strong>Use appropriate care</strong><span>Seek qualified medical help for urgent symptoms or emergencies.</span></div></div></div></section>
+  <div class="wrap disclaimer">Directory information is provided for general informational purposes and is not medical advice or an endorsement. Contact each provider directly to verify services and current information.</div>
+</main>
+<script>
+const people=[
+["Acupuncture|Chiropractic","Dr. Khadra Kahin (Dr. K)","Holistic Health Center","Burton","Board-certified doctor of chiropractic and certified integrative functional medicine practitioner.","practitioner-profile-mockup-v1.0.0.html"],
+["Acupuncture","Ramie Yelle","Holistic Health Center","Lapeer","Practitioner listing with Lapeer address and phone information."],
+["Chiropractic","Dr. Mark Morningstar","ScoliSMART Clinics","Grand Blanc","Non-surgical, exercise-based scoliosis care information."],
+["Chiropractic","Rick Schelter, D.C.","Davidson Chiropractic","Davison","Chiropractic office with information about NAET."],
+["Chiropractic","Dr. Kyle Rahn","Downtown Chiropractic","Lapeer","Local chiropractic practice serving the Lapeer community."],
+["Chiropractic","Dr. Hanna & Alex Wolfe","Wolfe Family Chiropractic","Metamora","Family-oriented chiropractic office."],
+["Chiropractic","Dr. Robert Skouson","Affordable Chiropractic","Lapeer","Chiropractic practice listing with local contact information."],
+["Chiropractic","Dr. Angela Cherniawski","Grand Blanc Chiropractic","Grand Blanc","Grand Blanc chiropractic practice."],
+["Counseling & Wellness","Rachelle Campbell, MA, LPC","Beyond Mindful Counseling and Wellness","Lake Orion","Licensed psychotherapy and complementary wellness services."],
+["Health Coach","Tammy Guerin","Live Better Health","Michigan","Certified Primal Health Coach serving women 50+."],
+["Holistic Dentistry","David W. Regaini, DDS, PC","Regiani Holistic Dental Center","Clarkston","Mercury-safe and mercury-free dental office."],
+["Homeopathy","Jean Wagner, ND","Independent practice","Rochester & Metamora","Classical homeopathy, nutrition and herbal medicine."],
+["Hypnosis","Sue Novotney","Trinity Hypnosis and Holistic Solutions","Michigan","Professional hypnosis, coaching, EFT, Reiki and meditation training."],
+["Hypnosis","Shawn O’Regan","Independent practice","Fort Gratiot","Certified hypnotherapist and QHHT and EFT practitioner."],
+["Integrative & Functional Medicine","Megan Strauchman, DO","Natural Wellness & Pain Relief Center","Grand Blanc","Functional medicine practice information."],
+["Integrative & Functional Medicine","Dr. Gerald D. Natzke Jr., D.O.","Independent practice","Grand Blanc","Allergy, immunology and general-practice listing."],
+["Integrative & Functional Medicine","Michael Zielinski, DO","Integrative Family Medicine and Urgent Care","Grand Blanc","Integrative family medicine and urgent care."],
+["Integrative & Functional Medicine","Stephanie Montrose, D.O.","CMG Adult & Pediatric Medicine","Clarkston","Family medicine practitioner."],
+["Integrative & Functional Medicine","Dr. Paul Lepor and Team","Total Family Health","Lapeer","Whole-family wellness and functional medicine practice."],
+["Internal Medicine","Dr. Mohamad Arja, MD","Dr. Arja MD PC","Grand Blanc","Internal medicine and wound and burn care listing."],
+["Intuitive Healing","Jessica Guibord","Peace of Love Healing","Michigan","Certified EnergyTouch® practitioner."],
+["Health Consultation","Rebekah Niman, HHP","Rebekah's Health & Nutrition","Lapeer / Online","NES-ProVision scans and health consultations; existing listing supports appointments."],
+["Nutrition Practitioner","Laura Young, FDN-P","Total Wellness Solutions","Online","Functional diagnostic nutrition practitioner focused on women’s health."],
+["Pain & Wellness Technology","Vanessa Howe","CRANIOSACRAL Institute of Michigan","Michigan","Resonance-based wellness technology information."],
+["Physical Therapy","Ralph McFarland, PT, Certified MDT","Global Physical Therapy & Spine Specialists","Grand Blanc","Physical therapy, dry needling and medical laser therapy."]
+];
+const contacts={
+"Dr. Khadra Kahin (Dr. K)":["2065 S. Center Rd, Suite H, Burton, MI 48519","<a href='tel:18103379594'>(810) 337-9594</a>","<a href='https://holistichealthmi.com/'>HolisticHealthMi.com ↗</a>"],
+"Ramie Yelle":["101 W. Nepessing, Lapeer, MI 48446","<a href='tel:18108355616'>810-835-5616</a>"],
+"Dr. Mark Morningstar":["8293 Office Park Dr, Grand Blanc, MI 48439","<a href='tel:18106943576'>(810) 694-3576</a>","<a href='https://treatingscoliosis.com/'>TreatingScoliosis.com ↗</a>"],
+"Rick Schelter, D.C.":["3058 N. State Rd, Unit D, Davison, MI 48423","<a href='tel:18106583383'>810-658-3383</a>"],
+"Dr. Kyle Rahn":["793 S. Main St, Suite A, Lapeer, MI 48446","<a href='tel:18106643333'>(810) 664-3333</a>","<a href='https://dclapeer.com/'>dclapeer.com ↗</a>"],
+"Dr. Hanna & Alex Wolfe":["3414 S. Lapeer Rd, Metamora, MI 48455","<a href='tel:18102121200'>810-212-1200</a>","<a href='https://wolfefamilychiro.com/'>WolfeFamilyChiro.com ↗</a>"],
+"Dr. Robert Skouson":["1811 W. Genesee St, Lapeer, MI 48446","<a href='tel:18106641111'>(810) 664-1111</a>"],
+"Dr. Angela Cherniawski":["8445 S. Saginaw St, Suite 201, Grand Blanc, MI 48439","<a href='tel:18102402389'>810-240-2389</a>","<a href='https://grandblancchiropractic.com/'>GrandBlancChiropractic.com ↗</a>"],
+"Rachelle Campbell, MA, LPC":["169 W. Clarkston Rd, Lake Orion, MI 48362","<a href='tel:12489785625'>248-978-5625</a>","<a href='https://beyondmindfulcounselingandwellness.com/'>Practice website ↗</a>"],
+"Tammy Guerin":["<a href='tel:18106270101'>810-627-0101</a>","Instagram: @Live_better_health.Tam <small>(profile URL needs confirmation)</small>","Facebook: @Live better health <small>(profile URL needs confirmation)</small>"],
+"David W. Regaini, DDS, PC":["10435 Ortonville Rd, Suite B, Clarkston, MI 48348","<a href='tel:12486255222'>(248) 625-5222</a>","<a href='https://regianidental.com/'>regianidental.com ↗</a>"],
+"Jean Wagner, ND":["Rochester: 115 S. Main St, Rochester, MI 48307","Metamora: 830 W. Dryden Rd, Metamora, MI 48455","<a href='tel:12488816220'>248-881-6220</a>","<a href='https://www.jeanwagnernd.com/'>jeanwagnernd.com ↗</a>"],
+"Sue Novotney":["<a href='tel:18103380453'>810-338-0453</a>","<a href='https://www.trinityhypnosissolutions.com/'>TrinityHypnosisSolutions.com ↗</a>"],
+"Shawn O’Regan":["4190 24th Ave, Suite 106, Fort Gratiot, MI 48059","<a href='tel:18107983884'>(810) 798-3884</a>","<a href='https://www.hypnosisbyshawn.com/'>hypnosisbyshawn.com ↗</a>"],
+"Megan Strauchman, DO":["8293 Office Park Dr, Grand Blanc, MI 48439","<a href='tel:18106943576'>810-694-3576</a>","<a href='https://nwprc.com/'>nwprc.com ↗</a>"],
+"Dr. Gerald D. Natzke Jr., D.O.":["9475 N. Holly Rd, Suite 205, Grand Blanc, MI 48439","<a href='tel:18103444567'>(810) 344-4567</a>"],
+"Michael Zielinski, DO":["1537 E. Hill Rd, Suite 400, Grand Blanc, MI 48439","<a href='tel:18103337309'>810-333-7309</a>","<a href='https://integrativefamilyuc.com/'>IntegrativeFamilyUC.com ↗</a>"],
+"Stephanie Montrose, D.O.":["5701 Bow Pointe Dr, Suite 100, Clarkston, MI 48346","<a href='tel:12486252621'>248-625-2621</a>","<a href='https://www.clarkstonmedicalgroup.com/'>clarkstonmedicalgroup.com ↗</a>"],
+"Dr. Paul Lepor and Team":["1101 S. Lapeer Rd, Lapeer, MI 48446","<a href='tel:18106643660'>(810) 664-3660</a>"],
+"Dr. Mohamad Arja, MD":["1739 N. Saginaw St, Grand Blanc, MI 48439","<a href='tel:18103050061'>(810) 305-0061</a>"],
+"Jessica Guibord":["<a href='tel:12485140032'>248-514-0032</a>","<a href='https://www.peaceoflovehealing.com/'>peaceoflovehealing.com ↗</a>"],
+"Rebekah Niman, HHP":["588 S. Main St, Lapeer, MI 48446","<a href='tel:18103383969'>810-338-3969</a>","Appointments: online or Tuesday and Friday in Lapeer","Current listed rate: $75 per hour"],
+"Laura Young, FDN-P":["<a href='https://www.totalwellnessolutions.com/'>totalwellnessolutions.com ↗</a>"],
+"Vanessa Howe":["<a href='tel:18446984693'>844-698-4693</a>","<a href='https://howert.com/'>howert.com ↗</a>","<a href='https://csiofmi.com/'>csiofmi.com ↗</a>"],
+"Ralph McFarland, PT, Certified MDT":["12235 S. Saginaw St, Grand Blanc, MI 48439","<a href='tel:18106950750'>810-695-0750</a>","<a href='https://globalptandspinespecialists.com/'>Practice website ↗</a>"]
+};
+const fullDescriptions={
+"Dr. Khadra Kahin (Dr. K)":"Dr. Kahin is a board-certified doctor of chiropractic and certified Integrative Functional Medicine practitioner. She is also certified in functional nutrition, dry needling, IASTM and physiotherapy and has served the Genesee County area since 2006.",
+"Dr. Mark Morningstar":"A founding member of the Society on Scoliosis Orthopedic and Rehabilitation Treatment (SOSORT), Dr. Morningstar’s current listing describes a non-surgical, exercise-based approach to scoliosis care rooted in the Pettibon System and ARC3D concepts.",
+"Dr. Kyle Rahn":"After serving in the U.S. Army from 2006 to 2012, including two tours in Iraq, Dr. Rahn and his family settled in Lapeer. He purchased Downtown Chiropractic and has focused his practice on helping people in the local community pursue healthier, more comfortable lives.",
+"Dr. Hanna & Alex Wolfe":"Wolfe Family Chiropractic is described as a family-oriented office built around the belief that it is never too early or too late to begin living a healthier lifestyle.",
+"Rachelle Campbell, MA, LPC":"Beyond Mindful Counseling and Wellness is a licensed provider of psychotherapy and a certified provider of bioenergetics. Its current description emphasizes consideration of the whole person—mind, body and spirit—in supporting clients as they heal and grow.",
+"Tammy Guerin":"Tammy’s current listing identifies her as a Certified Primal Health Coach specializing in support for women age 50 and older, including weight, hormone-balance and blood-sugar goals.",
+"David W. Regaini, DDS, PC":"The current directory describes Regiani Holistic Dental Center as a mercury-safe and mercury-free dental office providing comprehensive dentistry with attention to patients, staff and environmental considerations.",
+"Jean Wagner, ND":"Dr. Wagner’s current listing describes the use of classical homeopathy, nutrition and herbal medicine, including botanical medicine, clinical nutrition, homeopathic medicine and natural supplementation.",
+"Sue Novotney":"Sue is a certified hypnosis professional, life coach, EFT practitioner and Reiki Master. Her current listing describes hypnosis for self-improvement, coaching, EFT/tapping, Reiki and meditation training.",
+"Shawn O’Regan":"Shawn is listed as a Certified Hypnotherapist, Dedicated QHHT Practitioner and EFT practitioner, as well as a member of the International Medical & Dental Hypnotherapy Association.",
+"Dr. Gerald D. Natzke Jr., D.O.":"The current directory identifies Dr. Natzke as an allergist and immunologist with additional general-practice experience.",
+"Dr. Paul Lepor and Team":"Total Family Health describes a whole-family approach serving people of all ages. Its current listing says the practice considers nutrition, digestion, metabolism, hormones, structural health and immune-system function as part of functional-medicine care.",
+"Dr. Mohamad Arja, MD":"The current directory identifies Dr. Arja as an internal-medicine specialist with experience in internal medicine and wound and burn care.",
+"Jessica Guibord":"Jessica Guibord is listed as a certified EnergyTouch® practitioner and owner of Peace of Love Healing. Her current description says she has practiced EnergyTouch techniques since 2014.",
+"Rebekah Niman, HHP":"Rebekah’s existing listing describes NES-ProVision scans, health consultations and weight-loss coaching. Appointments are listed as available online or at the Lapeer location on Tuesday and Friday. These services are informational and are not a substitute for medical diagnosis or treatment.",
+"Laura Young, FDN-P":"Laura Young is listed as a Board-Certified Functional Diagnostic Nutrition Practitioner with a focus on women’s health, particularly the perimenopause transition. Her current description emphasizes practical, sustainable diet and lifestyle habits.",
+"Vanessa Howe":"The current listing describes HoweRT™ pre-programmed resonance-based devices and support for practitioners integrating the technology into their clinics."
+};
+const grid=document.querySelector("#grid"),select=document.querySelector("#category"),search=document.querySelector("#search"),count=document.querySelector("#count"),empty=document.querySelector("#empty");
+[...new Set(people.flatMap(p=>p[0].split("|")))].sort().forEach(c=>select.add(new Option(c,c)));
+function render(){const q=search.value.toLowerCase().trim(),cat=select.value;const shown=people.filter(p=>(!cat||p[0].split("|").includes(cat))&&(!q||p.join(" ").toLowerCase().includes(q)));grid.innerHTML=shown.map((p,i)=>`<article class="card"><span class="category">${p[0].replaceAll("|"," · ")}</span><h3>${p[1]}</h3><p class="practice">${p[2]}</p><p class="summary">${p[4]}</p><div class="details"><span>⌖ ${p[3]}</span></div><button class="expand" type="button" aria-expanded="false" aria-controls="details-${i}">View full listing <span aria-hidden="true">+</span></button><div class="expanded" id="details-${i}" hidden>${fullDescriptions[p[1]]?`<div class="expanded-about"><strong>About</strong><p>${fullDescriptions[p[1]]}</p></div>`:""}<div class="expanded-contact"><strong>Contact details</strong>${(contacts[p[1]]||[]).map(x=>`<div>${x}</div>`).join("")}</div></div></article>`).join("");count.textContent=`Showing ${shown.length} of ${people.length} practitioners & practices`;empty.style.display=shown.length?"none":"block"}
+grid.addEventListener("click",e=>{const button=e.target.closest(".expand");if(!button)return;const panel=document.getElementById(button.getAttribute("aria-controls")),open=button.getAttribute("aria-expanded")==="true";button.setAttribute("aria-expanded",String(!open));button.firstChild.textContent=open?"View full listing ":"Hide full listing ";button.querySelector("span").textContent=open?"+":"−";panel.hidden=open});
+search.addEventListener("input",render);select.addEventListener("change",render);render();
+</script>
+</body></html>

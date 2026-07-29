@@ -1,0 +1,23 @@
+/*
+ * Homepage v2.3.0 portrait correction.
+ * Uses the approved AI-restored source without cropping Rebekah.
+ */
+.story .collage{
+  display:grid;
+  place-items:center;
+  height:auto;
+  min-height:650px;
+}
+.story .collage .big{
+  width:100%;
+  height:auto;
+  max-height:650px;
+  object-fit:contain;
+  object-position:center;
+  border-radius:45% 45% 22px 22px;
+  background:#fff;
+}
+@media(max-width:720px){
+  .story .collage{min-height:0}
+  .story .collage .big{max-height:none}
+}

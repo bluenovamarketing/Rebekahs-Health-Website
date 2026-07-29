@@ -1,0 +1,16 @@
+/*
+ * Lake Orion v2.5.0
+ * Keeps the shared location-card dimensions unchanged and adjusts only each
+ * image's focal position so faces remain visible within the standard crop.
+ */
+.events .event:nth-child(1) .event-photo img {
+  object-position: center 12%;
+}
+
+.events .event:nth-child(2) .event-photo img {
+  object-position: center 18%;
+}
+
+.events .event:nth-child(3) .event-photo img {
+  object-position: center 52%;
+}

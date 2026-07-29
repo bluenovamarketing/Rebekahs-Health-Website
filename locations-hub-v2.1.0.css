@@ -1,0 +1,70 @@
+/*
+ * Locations hub v2.1.0
+ * Client-feedback revision: replace the abstract map with a useful four-store
+ * photo panel. The rest of the v2.0.0 shared location system remains intact.
+ */
+.store-photo-panel{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  min-height:520px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;
+  background:rgba(255,255,255,.06);
+  box-shadow:0 24px 60px rgba(0,0,0,.16);
+}
+.store-photo{
+  position:relative;
+  min-height:245px;
+  overflow:hidden;
+  border-radius:20px;
+  color:#fff;
+  text-decoration:none;
+}
+.store-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .3s ease;
+}
+.store-photo:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(15,53,42,.9) 0%,rgba(15,53,42,.12) 60%);
+}
+.store-photo span{
+  position:absolute;
+  z-index:1;
+  right:18px;
+  bottom:16px;
+  left:18px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:10px;
+  font-weight:700;
+}
+.store-photo strong{
+  font:700 24px/1.1 var(--system-serif);
+}
+.store-photo small{
+  color:#f2d88b;
+  font-size:10px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.store-photo:hover img,.store-photo:focus-visible img{transform:scale(1.035)}
+.store-photo:focus-visible{outline:3px solid var(--system-honey);outline-offset:4px}
+@media(max-width:900px){
+  .store-photo-panel{max-width:700px;min-height:500px;margin:0 auto 60px}
+}
+@media(max-width:680px){
+  .store-photo-panel{grid-template-columns:1fr;min-height:0;margin-bottom:44px}
+  .store-photo{min-height:210px}
+}
+@media(prefers-reduced-motion:reduce){
+  .store-photo img{transition:none}
+  .store-photo:hover img,.store-photo:focus-visible img{transform:none}
+}

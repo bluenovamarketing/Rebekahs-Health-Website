@@ -650,3 +650,106 @@
 - Removed the reusable Practitioner Profile option from the GitHub Pages client review dashboard at the client's direction.
 - Decision: individual practitioner pages will be built separately, so the client will not be asked to review or choose a generic reusable practitioner-profile option from the hub.
 - Updated the review-hub summary to show two reusable templates plus the approved 404 design. The existing practitioner profile mock-up file remains in the project record but is no longer linked from the client dashboard.
+
+## 2026-07-29 — Location-system consistency pass v2.0.0
+
+- Reviewed client feedback that body typography and repeated modules appeared inconsistent between the approved homepage, Locations hub, and individual location pages.
+- Confirmed the files already specify the same core typefaces—DM Sans for body copy and Fraunces for headings—but differences in sizing, line height, spacing, card treatments, and interactions made the pages feel less unified.
+- Preserved all existing v1.0 location mockups unchanged and created separate v2.0.0 files for the Locations hub, Lapeer, Grand Blanc, Clarkston, and Lake Orion.
+- Added `location-system-v2.0.0.css` as a narrowly scoped consistency layer derived from the approved homepage. It standardizes body typography, labels, buttons, card radius/shadows, event-card proportions and typography, form controls, focus states, responsive behavior, and reduced-motion behavior.
+- Kept page-specific structure, store content, maps, hours, imagery, and CTAs unchanged. This pass intentionally addresses the stated consistency concern without introducing a broader redesign.
+- Versioning decision: substantial client-feedback rounds advance the minor version (`v2.0.0`, `v2.1.0`, `v2.2.0`); small corrections within a round advance the patch version (`v2.0.1`, `v2.0.2`).
+- Pending: visually review the v2.0.0 pages in the normal client-preview environment before presenting them, then address the client's remaining feedback items individually.
+- Client-facing next step: compare the v2.0.0 Locations and individual-location pages against the approved homepage and confirm the shared typography and repeated-module system now feels consistent.
+
+## 2026-07-29 — Locations hub client-feedback revision v2.1.0
+
+- Created `locations-mockup-v2.1.0.html` from v2.0.0 so the earlier consistency pass remains available for comparison and rollback.
+- Removed the complete “At a glance / Which store works for your day?” hours-comparison section at the client's request. Store hours remain available within each location card, so essential information was not removed from the page.
+- Replaced the confusing abstract map-pin illustration in the hero with a clear, labeled four-store photo panel using existing Lapeer, Grand Blanc, Clarkston, and Lake Orion imagery.
+- Each hero photo links directly to its matching store card, improving usefulness without changing the page's navigation model or adding new functionality.
+- Added `locations-hub-v2.1.0.css` only for the new hero photo panel. The shared v2.0.0 typography and component-consistency layer remains unchanged.
+- No other page sections, copy, store details, CTAs, individual location pages, or prior versions were changed in this feedback round.
+- Pending: visually confirm image cropping and label readability in the normal client-preview environment at desktop and mobile widths before client presentation.
+- Client-facing next step: review the simplified page flow and confirm that the four-store photo panel is clearer and more useful than the former abstract map.
+
+## 2026-07-29 — Our Story condensation pass v2.2.0
+
+- Created `story-mockup-v2.2.0.html` as a separate client-feedback revision; approved `story-mockup-v1.1.6.html` remains unchanged for comparison and rollback.
+- Reduced the page from 12 content sections to 7 while retaining the approved visual direction and the parts that contribute distinct information.
+- Removed five sections that repeated themes or diverted from the core story: the second “Rebekah’s difference” explanation, separate values-card section, blog-promotion section, second historical photo timeline, and standalone quote.
+- Retained the hero, Rebekah’s personal background, concise business journey, private-label chapter, community role, personal/family context, and final store/event action.
+- Added `story-condensed-v2.2.0.css` to tighten vertical spacing and improve the retained private-label section’s information density without redesigning the page.
+- No biographical facts, credentials, store-opening dates, product claims, links, imagery in retained sections, or prior versions were altered during this pass.
+- The revised HTML has seven sections versus twelve in v1.1.6, a five-section reduction. Static structure checks confirmed the retained hero navigation targets remain present.
+- Pending: visually verify pacing, image crops, and mobile spacing in the normal client-preview environment before presenting the revision.
+- Client-facing next step: compare v2.2.0 with v1.1.6 and confirm the shorter page still communicates Rebekah’s story, business growth, product-development chapter, community role, and personal grounding without feeling repetitive.
+
+## 2026-07-29 — Homepage portrait and mobile-shipping fixes v2.3.0
+
+- Created `third-mockup-v2.3.0.html` as a separate feedback revision; the approved `third-mockup.html` and its existing shared styles remain unchanged for comparison and rollback.
+- Replaced the low-resolution remote Meet Rebekah image with the previously created AI-enhanced 1254×1254 portrait at `output/homepage/rebekah-story-ai-enhanced-v1.png`.
+- Changed only the homepage story-image presentation from a forced `object-fit: cover` crop to a full-image, square presentation so Rebekah is not cut off at desktop widths.
+- Added `homepage-feedback-v2.3.0.css` with narrowly scoped responsive fixes for the dynamically mounted “We Ship Nationwide” section.
+- The shipping fix constrains the mount, container, panel, content columns, buttons, and three-image collage to the viewport; reduces padding and headline size on narrow phones; and adds a 360px safeguard without changing the banner copy, phone number, action, or desktop layout.
+- Confirmed the enhanced portrait exists at 1254×1254, the v2.3.0 page links the new stylesheet and image, the shipping mount remains present once, and the original homepage/CSS files are untouched.
+- Pending: visually verify the portrait framing at representative desktop widths and the full shipping panel at approximately 360px and 320px in the normal client-preview environment.
+- Client-facing next step: confirm that Rebekah’s portrait now appears clear and complete on desktop and that the nationwide-shipping banner no longer clips or creates horizontal scrolling on the client’s phone.
+
+## 2026-07-29 — Grand Blanc inventory accuracy corrections v2.4.0
+
+- Created `grand-blanc-location-mockup-v2.4.0.html` as a separate client-feedback revision; the existing v2.0.0 Grand Blanc mockup remains available for comparison and rollback.
+- Removed the inaccurate statement that Grand Blanc carries refrigerated or frozen selections.
+- Revised the Specialty Foods card to describe better-for-you snacks and pantry finds and to clarify that fresh items may appear only during special vendor pop-ups.
+- Changed the events heading from “Fresh food, useful learning and local connection” to “Useful learning and local connection” so the page no longer presents fresh food as a regular store offering.
+- Retained the Mighty Greens microgreens event card because it is explicitly presented as a dated vendor pop-up with a schedule-confirmation instruction, consistent with the client's clarification.
+- No other Grand Blanc content, store information, events, imagery, layout, shared location styling, or prior versions were changed.
+- Static text verification confirmed the revised file contains no remaining refrigerator, freezer, or regular-fresh-food claim.
+- Client-facing next step: confirm the revised Specialty Foods wording accurately reflects Grand Blanc's normal inventory and that the vendor-pop-up exception is stated clearly.
+
+## 2026-07-29 — AI-restored Rebekah portrait preview
+
+- Confirmed the WordPress media-library “full size” source for `story.jpg` is only 405×400 pixels; no larger original of that exact photograph exists in the current media library.
+- Created a conservative AI-restored and upscaled preview that reduces JPEG artifacts and grain while preserving the existing portrait composition and recognizable likeness.
+- Saved the project asset as `output/homepage/rebekah-story-ai-enhanced-v1.png`; the original WordPress image remains unchanged.
+- Created `third-mockup-v2.3.0.html` so the approved homepage file remains available for rollback. The restored portrait is used in the large Meet Rebekah placement and matching social-preview placements.
+- Added `homepage-image-v2.3.0.css` to show the large restored portrait without the previous aggressive crop. No other homepage feedback, including the mobile shipping-banner issue, was addressed in this narrowly scoped revision.
+- Updated the current condensed `story-mockup-v2.2.0.html` to use the same restored portrait in its hero for consistency.
+- Pending client approval: show the original and restored portraits side by side and disclose that the larger image is an AI-restored version of the existing low-resolution source. Obtain approval of the restored likeness before live WordPress use.
+
+## 2026-07-29 — Lake Orion community-photo crop correction v2.5.0
+
+- Created `lake-orion-location-mockup-v2.5.0.html` as a separate Page 7 feedback revision; the existing v2.0.0 Lake Orion mockup remains available for comparison and rollback.
+- Kept all three existing photos, cards, copy, links, and the rest of the Lake Orion page unchanged.
+- Added the narrowly scoped `lake-orion-photo-crops-v2.5.0.css` override for the “Local Learning and Real Community Connection” section only.
+- Corrected the initial crop approach after review: removed all custom photo-frame heights so Lake Orion retains the exact shared event-card dimensions used by the other location pages.
+- Kept only individual `object-position` adjustments so people and faces remain visible within the standard shared crop.
+- Pending: visually verify all three focal positions at representative desktop, tablet, and phone widths in the normal client-preview environment.
+- Client-facing next step: confirm that the same community photos now show people’s heads comfortably on the client’s desktop.
+
+## 2026-07-29 — In-Store Products featured-brand correction v2.6.0
+
+- Confirmed in the canonical planning sheet that client “Page 10” refers to the In-Store Products page.
+- Created `in-store-products-mockup-v2.6.0.html` as a separate revision; the existing v1.0.0 mockup remains unchanged for comparison and rollback.
+- Under “Featured Brands You May Find,” replaced the Metagenics tile and its “Professional nutrition” descriptor with “Spencer’s Raw Honey” and the neutral descriptor “Raw honey.”
+- No other featured brands, product categories, copy, links, layout, styling, or page content were changed.
+- Client-facing next step: confirm the Spencer’s Raw Honey spelling and presentation in the featured-brand strip.
+
+## 2026-07-29 — Practitioner roster correction v2.7.0
+
+- Confirmed in the canonical planning sheet that client “Page 11” refers to the Practitioners directory.
+- Created `practitioners-mockup-v2.7.0.html` as a separate revision; the existing v1.0.0 mockup remains unchanged for comparison and rollback.
+- Removed the complete directory records for IV Lounge and Troy Farwell, including their cards, contact details, and expanded descriptions.
+- Interpreted the client’s “Kim McCabe” request as the existing “Kimberly Cabe, FNP-BC” listing and removed that complete record as well. This name mismatch should be acknowledged in the client response if confirmation is needed.
+- Preserved the approved layout, filters, interactions, disclaimer, styling, and all remaining practitioner records without redesigning the page.
+- The directory now contains 25 practitioner/practice records instead of 28.
+- Client-facing next step: confirm that “Kim McCabe” referred to the “Kimberly Cabe, FNP-BC” listing shown in the prior mockup.
+
+## 2026-07-29 — Proposed Meet Our Team approach
+
+- The client expressed interest in featuring or linking to individual team members.
+- Agreed recommendation: create one concise, dedicated “Meet Our Team” page and link to it from Our Story and potentially the main navigation, rather than lengthening every location page.
+- Keep employee/team profiles separate from the independent Practitioners directory.
+- No page or design changes have been made for this request.
+- Add a clarification request to the consolidated client email asking for the current roster, preferred names and titles, store assignments, approved individual photos, short bios or permission to draft them, public-feature consent, and any approved profile/contact links.
+- Pending client decision: confirm the dedicated-page approach and provide the required team information and assets before design work begins.
