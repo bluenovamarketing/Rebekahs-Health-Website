@@ -765,3 +765,10 @@
 - Updated `Page Inventory!E5:E24` so every tracked page is marked `Awaiting client approval`.
 - Visually verified the new Sheet tab at normal zoom; headers, links, version history, filters, frozen rows, widths, and statuses are readable and consistent with the workbook.
 - Client-facing next step: use the updated review hub as the single starting point and approve or comment on each current page while referring to the timeline when comparison is helpful.
+
+## 2026-07-29 — Review timeline visibility correction
+
+- Clarified that the version history is an internal project-management reference, not client-facing content at this stage.
+- Removed the complete “Version Journey” section and the Google Sheet link from the public GitHub Pages review hub.
+- Kept the current page list and “Awaiting approval” badges on the client-facing hub.
+- Preserved the `Client Review Timeline` tab and all baseline/current links in the private canonical Google Sheet for internal reference.
