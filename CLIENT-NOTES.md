@@ -772,3 +772,12 @@
 - Removed the complete “Version Journey” section and the Google Sheet link from the public GitHub Pages review hub.
 - Kept the current page list and “Awaiting approval” badges on the client-facing hub.
 - Preserved the `Client Review Timeline` tab and all baseline/current links in the private canonical Google Sheet for internal reference.
+
+## 2026-07-29 — Location quick-info bar consistency v2.8.0
+
+- Created new v2.8.0 revisions for Grand Blanc, Clarkston, and Lake Orion while preserving every prior mockup for comparison and rollback.
+- Moved only the quick-info bar upward so it straddles the dark-green hero and cream content boundary in the same way as the approved Lapeer page.
+- Preserved each bar's dimensions, four-column layout, wording, responsive behavior, and all other page content and styling.
+- Kept Lapeer v2.0.0 unchanged because it is the positioning reference.
+- Updated the client review hub to open the three new v2.8.0 revisions; all remain marked awaiting client approval.
+- Pending client-facing next step: review the four location pages together and confirm the quick-info bar placement is consistent.

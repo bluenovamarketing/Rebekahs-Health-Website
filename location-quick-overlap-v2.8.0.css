@@ -1,0 +1,8 @@
+/*
+ * Location feedback revision v2.8.0
+ * Match the Lapeer quick-info bar overlap without changing the bar itself.
+ */
+.quick {
+  margin-top: -38px;
+  z-index: 2;
+}
