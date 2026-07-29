@@ -781,3 +781,12 @@
 - Kept Lapeer v2.0.0 unchanged because it is the positioning reference.
 - Updated the client review hub to open the three new v2.8.0 revisions; all remain marked awaiting client approval.
 - Pending client-facing next step: review the four location pages together and confirm the quick-info bar placement is consistent.
+
+## 2026-07-29 — Locations shortcut removal v2.9.0 and Rebekah image audit
+
+- Created `locations-mockup-v2.9.0.html` while preserving v2.1.0 for comparison and rollback.
+- Removed only the “All locations / Lapeer / Grand Blanc / Clarkston / Lake Orion” shortcut-button row; the four store cards and all surrounding content remain unchanged.
+- Confirmed the prominent Rebekah portrait on Home v2.3.0 is the AI-enhanced asset `output/homepage/rebekah-story-ai-enhanced-v1.png`.
+- Confirmed the current Our Story v2.2.0 hero also uses that same enhanced asset.
+- Older archived mockups intentionally retain the original remote image, and the small social-feed placeholder on the current Home mockup still references the original website image.
+- Updated the client review hub to open Locations v2.9.0, still marked awaiting client approval.
