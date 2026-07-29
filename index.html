@@ -95,15 +95,52 @@
       text-align: center;
     }
     .status.approved { background: #f2e7c9; color: #6b501c; }
+    .status.waiting { background: #f2e7c9; color: #6b501c; }
     h3 { margin: 1rem 0 .45rem; font-size: 1.16rem; line-height: 1.25; }
     .card p { margin: 0; color: #67746d; font-size: .9rem; line-height: 1.45; }
     .open { margin-top: auto; padding-top: 1rem; color: var(--berry); font-weight: 700; font-size: .88rem; }
+    .timeline {
+      display: grid;
+      gap: .85rem;
+    }
+    .timeline-row {
+      display: grid;
+      grid-template-columns: minmax(170px, .8fr) minmax(0, 1.7fr) minmax(190px, 1fr);
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 1.15rem;
+      background: rgba(255, 253, 248, .92);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+    .timeline-page strong { display: block; font-family: "Fraunces", serif; font-size: 1.06rem; }
+    .timeline-page span, .journey-note { color: #67746d; font-size: .8rem; }
+    .version-steps { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; }
+    .version-link {
+      display: inline-flex;
+      padding: .5rem .7rem;
+      border-radius: 999px;
+      background: var(--sage);
+      color: var(--forest);
+      font-size: .76rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .version-link.current { background: var(--berry); color: white; }
+    .arrow { color: var(--gold); font-weight: 700; }
+    .sheet-link {
+      display: inline-flex;
+      margin-top: .8rem;
+      color: var(--berry);
+      font-weight: 700;
+    }
     footer { padding: 1rem 0 3rem; border-top: 1px solid var(--line); color: #69766f; font-size: .86rem; }
     @media (max-width: 850px) { .grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) {
       .grid { grid-template-columns: 1fr; }
       .section-heading { align-items: start; flex-direction: column; }
       .card { min-height: 160px; }
+      .timeline-row { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -112,43 +149,59 @@
   <header>
     <span class="eyebrow">Private client review</span>
     <h1>Website mock-up review</h1>
-    <p class="intro">Use this page as the single starting point for reviewing the Rebekah's Health & Nutrition redesign. Each card opens a full-page mock-up in a new tab.</p>
-    <div class="notice"><span aria-hidden="true">●</span><div><b>Review note:</b> These are design mock-ups, not the live WordPress website. Forms, search, store directions, and partner-shopping actions may be represented for review but are not yet production-connected.</div></div>
+    <p class="intro">Use this page as the single starting point for reviewing the current Rebekah's Health & Nutrition redesign. Each card opens the latest mock-up; the version journey below preserves earlier designs for comparison.</p>
+    <div class="notice"><span aria-hidden="true">●</span><div><b>Review status:</b> Every page below is awaiting client approval for this feedback round. These are design mock-ups, not the live WordPress website.</div></div>
   </header>
 
   <main id="review-pages">
     <section aria-labelledby="pages-title">
-      <div class="section-heading"><h2 id="pages-title">Page designs</h2><span class="count">20 pages</span></div>
+      <div class="section-heading"><h2 id="pages-title">Current review pages</h2><span class="count">20 pages · awaiting approval</span></div>
       <div class="grid">
-        <a class="card" href="third-mockup.html" target="_blank"><span class="card-top"><span class="number">01</span><span class="status approved">Client approved</span></span><h3>Home</h3><p>Approved homepage design, version 1.21.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="story-mockup-v1.1.6.html" target="_blank"><span class="card-top"><span class="number">02</span><span class="status approved">Client approved</span></span><h3>Our Story / Meet Rebekah</h3><p>Approved story design, version 1.1.6.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="locations-mockup-v1.0.html" target="_blank"><span class="card-top"><span class="number">03</span><span class="status">Ready for review</span></span><h3>Locations</h3><p>Directory for all four Michigan stores.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="lapeer-location-mockup-v1.0.html" target="_blank"><span class="card-top"><span class="number">04</span><span class="status">Ready for review</span></span><h3>Lapeer Location</h3><p>Location detail page.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="grand-blanc-location-mockup-v1.0.html" target="_blank"><span class="card-top"><span class="number">05</span><span class="status">Ready for review</span></span><h3>Grand Blanc Location</h3><p>Location detail page.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="clarkston-location-mockup-v1.0.html" target="_blank"><span class="card-top"><span class="number">06</span><span class="status">Ready for review</span></span><h3>Clarkston Location</h3><p>Location detail page.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="lake-orion-location-mockup-v1.0.html" target="_blank"><span class="card-top"><span class="number">07</span><span class="status">Ready for review</span></span><h3>Lake Orion Location</h3><p>Location detail page.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="classes-events-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">08</span><span class="status">Ready for review</span></span><h3>Classes &amp; Events</h3><p>Events archive and discovery page.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="wellness-source-blog/" target="_blank"><span class="card-top"><span class="number">09</span><span class="status">Ready for review</span></span><h3>Wellness Source Blog</h3><p>Lightweight article archive.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="in-store-products-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">10</span><span class="status">Ready for review</span></span><h3>In-Store Products</h3><p>Non-ecommerce product discovery page.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="practitioners-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">11</span><span class="status">Ready for review</span></span><h3>Practitioners</h3><p>Practitioner directory.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="contact-us-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">12</span><span class="status">Ready for review</span></span><h3>Contact Us</h3><p>Contact routes and form design.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="privacy-policy-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">13</span><span class="status">Ready for review</span></span><h3>Privacy Policy</h3><p>Shared legal-page design.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="refund-returns-policy-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">14</span><span class="status">Ready for review</span></span><h3>Refund &amp; Returns Policy</h3><p>Policy presentation using the shared legal design.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="terms-conditions-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">15</span><span class="status">Ready for review</span></span><h3>Terms &amp; Conditions</h3><p>Starter legal-page presentation.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="disclaimer-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">16</span><span class="status">Ready for review</span></span><h3>Disclaimer</h3><p>Wellness, educational, and affiliate disclaimer.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="shop-fullscript-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">17</span><span class="status">Ready for review</span></span><h3>Shop Fullscript</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="shop-designs-for-health-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">18</span><span class="status">Ready for review</span></span><h3>Shop Designs for Health</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="shop-lifewave-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">19</span><span class="status">Ready for review</span></span><h3>Shop LifeWave</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="peptides-injectables-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">20</span><span class="status">Ready for review</span></span><h3>Peptides &amp; Injectables</h3><p>External referral landing page.</p><span class="open">Open mock-up ↗</span></a>
+        <a class="card" href="third-mockup-v2.3.0.html" target="_blank"><span class="card-top"><span class="number">01</span><span class="status waiting">Awaiting approval</span></span><h3>Home</h3><p>Current feedback revision, version 2.3.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="story-mockup-v2.2.0.html" target="_blank"><span class="card-top"><span class="number">02</span><span class="status waiting">Awaiting approval</span></span><h3>Our Story / Meet Rebekah</h3><p>Condensed feedback revision, version 2.2.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="locations-mockup-v2.1.0.html" target="_blank"><span class="card-top"><span class="number">03</span><span class="status waiting">Awaiting approval</span></span><h3>Locations</h3><p>Simplified current hub, version 2.1.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="lapeer-location-mockup-v2.0.0.html" target="_blank"><span class="card-top"><span class="number">04</span><span class="status waiting">Awaiting approval</span></span><h3>Lapeer Location</h3><p>Unified location-system revision, version 2.0.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="grand-blanc-location-mockup-v2.4.0.html" target="_blank"><span class="card-top"><span class="number">05</span><span class="status waiting">Awaiting approval</span></span><h3>Grand Blanc Location</h3><p>Inventory-accuracy revision, version 2.4.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="clarkston-location-mockup-v2.0.0.html" target="_blank"><span class="card-top"><span class="number">06</span><span class="status waiting">Awaiting approval</span></span><h3>Clarkston Location</h3><p>Unified location-system revision, version 2.0.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="lake-orion-location-mockup-v2.5.0.html" target="_blank"><span class="card-top"><span class="number">07</span><span class="status waiting">Awaiting approval</span></span><h3>Lake Orion Location</h3><p>Photo-position correction, version 2.5.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="classes-events-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">08</span><span class="status waiting">Awaiting approval</span></span><h3>Classes &amp; Events</h3><p>Events archive and discovery page.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="wellness-source-blog/" target="_blank"><span class="card-top"><span class="number">09</span><span class="status waiting">Awaiting approval</span></span><h3>Wellness Source Blog</h3><p>Lightweight article archive.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="in-store-products-mockup-v2.6.0.html" target="_blank"><span class="card-top"><span class="number">10</span><span class="status waiting">Awaiting approval</span></span><h3>In-Store Products</h3><p>Featured-brand revision, version 2.6.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="practitioners-mockup-v2.7.0.html" target="_blank"><span class="card-top"><span class="number">11</span><span class="status waiting">Awaiting approval</span></span><h3>Practitioners</h3><p>Current practitioner roster, version 2.7.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="contact-us-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">12</span><span class="status waiting">Awaiting approval</span></span><h3>Contact Us</h3><p>Contact routes and form design.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="privacy-policy-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">13</span><span class="status waiting">Awaiting approval</span></span><h3>Privacy Policy</h3><p>Shared legal-page design.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="refund-returns-policy-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">14</span><span class="status waiting">Awaiting approval</span></span><h3>Refund &amp; Returns Policy</h3><p>Policy presentation using the shared legal design.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="terms-conditions-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">15</span><span class="status waiting">Awaiting approval</span></span><h3>Terms &amp; Conditions</h3><p>Starter legal-page presentation.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="disclaimer-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">16</span><span class="status waiting">Awaiting approval</span></span><h3>Disclaimer</h3><p>Wellness, educational, and affiliate disclaimer.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="shop-fullscript-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">17</span><span class="status waiting">Awaiting approval</span></span><h3>Shop Fullscript</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="shop-designs-for-health-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">18</span><span class="status waiting">Awaiting approval</span></span><h3>Shop Designs for Health</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="shop-lifewave-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">19</span><span class="status waiting">Awaiting approval</span></span><h3>Shop LifeWave</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="peptides-injectables-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">20</span><span class="status waiting">Awaiting approval</span></span><h3>Peptides &amp; Injectables</h3><p>External referral landing page.</p><span class="open">Open current mock-up ↗</span></a>
       </div>
+    </section>
+
+    <section aria-labelledby="journey-title">
+      <div class="section-heading"><div><h2 id="journey-title">Version journey</h2><p class="journey-note">Compare the original or approved baseline with each current feedback revision.</p></div><span class="count">9 revised pages</span></div>
+      <div class="timeline">
+        <div class="timeline-row"><div class="timeline-page"><strong>01 · Home</strong><span>Portrait quality and mobile shipping banner</span></div><div class="version-steps"><a class="version-link" href="third-mockup.html" target="_blank">Baseline v1.21</a><span class="arrow">→</span><a class="version-link current" href="third-mockup-v2.3.0.html" target="_blank">Current v2.3.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>02 · Our Story</strong><span>Condensed to remove repetitive sections</span></div><div class="version-steps"><a class="version-link" href="story-mockup-v1.1.6.html" target="_blank">Baseline v1.1.6</a><span class="arrow">→</span><a class="version-link current" href="story-mockup-v2.2.0.html" target="_blank">Current v2.2.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>03 · Locations</strong><span>Unified design, removed redundancy, clearer hero graphic</span></div><div class="version-steps"><a class="version-link" href="locations-mockup-v1.0.html" target="_blank">Original v1.0</a><span class="arrow">→</span><a class="version-link" href="locations-mockup-v2.0.0.html" target="_blank">System v2.0.0</a><span class="arrow">→</span><a class="version-link current" href="locations-mockup-v2.1.0.html" target="_blank">Current v2.1.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>04 · Lapeer</strong><span>Aligned with the shared location-page system</span></div><div class="version-steps"><a class="version-link" href="lapeer-location-mockup-v1.0.html" target="_blank">Original v1.0</a><span class="arrow">→</span><a class="version-link current" href="lapeer-location-mockup-v2.0.0.html" target="_blank">Current v2.0.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>05 · Grand Blanc</strong><span>Unified layout and corrected inventory wording</span></div><div class="version-steps"><a class="version-link" href="grand-blanc-location-mockup-v1.0.html" target="_blank">Original v1.0</a><span class="arrow">→</span><a class="version-link" href="grand-blanc-location-mockup-v2.0.0.html" target="_blank">System v2.0.0</a><span class="arrow">→</span><a class="version-link current" href="grand-blanc-location-mockup-v2.4.0.html" target="_blank">Current v2.4.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>06 · Clarkston</strong><span>Aligned with the shared location-page system</span></div><div class="version-steps"><a class="version-link" href="clarkston-location-mockup-v1.0.html" target="_blank">Original v1.0</a><span class="arrow">→</span><a class="version-link current" href="clarkston-location-mockup-v2.0.0.html" target="_blank">Current v2.0.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>07 · Lake Orion</strong><span>Unified layout and corrected photo focal positions</span></div><div class="version-steps"><a class="version-link" href="lake-orion-location-mockup-v1.0.html" target="_blank">Original v1.0</a><span class="arrow">→</span><a class="version-link" href="lake-orion-location-mockup-v2.0.0.html" target="_blank">System v2.0.0</a><span class="arrow">→</span><a class="version-link current" href="lake-orion-location-mockup-v2.5.0.html" target="_blank">Current v2.5.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>10 · In-Store Products</strong><span>Updated featured-brand listing</span></div><div class="version-steps"><a class="version-link" href="in-store-products-mockup-v1.0.0.html" target="_blank">Original v1.0.0</a><span class="arrow">→</span><a class="version-link current" href="in-store-products-mockup-v2.6.0.html" target="_blank">Current v2.6.0</a></div><span class="status waiting">Awaiting approval</span></div>
+        <div class="timeline-row"><div class="timeline-page"><strong>11 · Practitioners</strong><span>Removed former practitioners while preserving layout</span></div><div class="version-steps"><a class="version-link" href="practitioners-mockup-v1.0.0.html" target="_blank">Original v1.0.0</a><span class="arrow">→</span><a class="version-link current" href="practitioners-mockup-v2.7.0.html" target="_blank">Current v2.7.0</a></div><span class="status waiting">Awaiting approval</span></div>
+      </div>
+      <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/13zutb5DxPIvqX4yv30QSBmSVyc7UoiTCIeCoqAKF7hU/edit" target="_blank">Open the complete website inventory and decision timeline ↗</a>
     </section>
 
     <section aria-labelledby="templates-title">
       <div class="section-heading"><h2 id="templates-title">Reusable templates</h2><span class="count">2 templates + 404</span></div>
       <div class="grid">
-        <a class="card" href="event-detail-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">T1</span><span class="status">Ready for review</span></span><h3>Event Detail</h3><p>Reusable detail layout for individual classes and events.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="blog-post-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">T2</span><span class="status">Ready for review</span></span><h3>Individual Blog Post</h3><p>Reusable article layout.</p><span class="open">Open mock-up ↗</span></a>
-        <a class="card" href="404-page-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">404</span><span class="status approved">Approved</span></span><h3>Page Not Found</h3><p>Branded recovery page body.</p><span class="open">Open mock-up ↗</span></a>
+        <a class="card" href="event-detail-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">T1</span><span class="status waiting">Awaiting approval</span></span><h3>Event Detail</h3><p>Reusable detail layout for individual classes and events.</p><span class="open">Open mock-up ↗</span></a>
+        <a class="card" href="blog-post-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">T2</span><span class="status waiting">Awaiting approval</span></span><h3>Individual Blog Post</h3><p>Reusable article layout.</p><span class="open">Open mock-up ↗</span></a>
+        <a class="card" href="404-page-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">404</span><span class="status waiting">Awaiting approval</span></span><h3>Page Not Found</h3><p>Branded recovery page body.</p><span class="open">Open mock-up ↗</span></a>
       </div>
     </section>
   </main>

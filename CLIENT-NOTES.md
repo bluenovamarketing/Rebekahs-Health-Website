@@ -753,3 +753,15 @@
 - No page or design changes have been made for this request.
 - Add a clarification request to the consolidated client email asking for the current roster, preferred names and titles, store assignments, approved individual photos, short bios or permission to draft them, public-feature consent, and any approved profile/contact links.
 - Pending client decision: confirm the dedicated-page approach and provide the required team information and assets before design work begins.
+
+## 2026-07-29 — Client review hub and version timeline
+
+- Updated the GitHub Pages review hub so all 20 page cards open the current client-feedback version where a revision exists.
+- Standardized every page and reusable-template badge on the review hub to “Awaiting approval” for the current feedback round.
+- Added a “Version Journey” section showing nine revised pages from their original or approved baseline through intermediate versions to the current revision.
+- Preserved direct access to prior mockups so the client can compare decisions and understand how each page evolved.
+- Added a direct link from the review hub to the canonical website inventory spreadsheet.
+- Added a new `Client Review Timeline` tab to the canonical Google Sheet with all 20 pages, baseline/current versions, clickable old/new mockups, version journeys, and approval statuses.
+- Updated `Page Inventory!E5:E24` so every tracked page is marked `Awaiting client approval`.
+- Visually verified the new Sheet tab at normal zoom; headers, links, version history, filters, frozen rows, widths, and statuses are readable and consistent with the workbook.
+- Client-facing next step: use the updated review hub as the single starting point and approve or comment on each current page while referring to the timeline when comparison is helpful.
