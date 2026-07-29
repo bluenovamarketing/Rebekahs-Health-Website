@@ -809,3 +809,11 @@
 - Changed those adjoining edges from 8rem per side to 4rem per side on desktop and 3rem per side on phones.
 - Preserved normal spacing inside the sections, card layouts, typography, photos, quick-info bar positioning, wording, and all other page styling.
 - Updated the client review hub to open the four v2.11.0 location revisions; all remain awaiting client approval.
+
+## 2026-07-29 — Client feedback response prepared
+
+- Prepared a plain-language client email summarizing the completed feedback revisions, WordPress-stage items, and the remaining asset or clarification requests.
+- The response directs the client to the current mockup hub and explains that the shared header/footer and directly hosted homepage video will be finalized during WordPress assembly.
+- The response asks the client to identify the exact Page 2 replacement images, provide the approved Clarkston team photo, confirm the Kim McCabe/Kimberly Cabe name match, and supply the roster and assets needed for a future Meet Our Team page.
+- The response explains that the attached AI-enhanced Rebekah portrait is the strongest practical improvement available from the current source image and that a sharper result would require a new high-resolution photograph.
+- Emailed the completed client-response draft to Todd's authenticated Gmail account with the AI-enhanced Rebekah portrait attached, ready for his review and forwarding.
