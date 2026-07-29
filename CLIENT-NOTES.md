@@ -800,3 +800,12 @@
 - At 1400px and below, arranged the same three photos into a clean, equal three-column row so they cannot collide or overlap.
 - Preserved all section wording, buttons, colors, images, mobile containment fixes, and unrelated homepage content.
 - Updated the client review hub to open Home v2.10.0, still marked awaiting client approval.
+
+## 2026-07-29 — Location section-spacing correction v2.11.0
+
+- Confirmed the large blank areas identified on Lapeer, Grand Blanc, Clarkston, and Lake Orion came from adjacent sections each contributing the full 8rem vertical padding.
+- Created new v2.11.0 revisions for all four location pages while preserving every earlier version for comparison and rollback.
+- Reduced only the two repeated transitions identified by the client: the intro-to-products transition and the events-to-community transition.
+- Changed those adjoining edges from 8rem per side to 4rem per side on desktop and 3rem per side on phones.
+- Preserved normal spacing inside the sections, card layouts, typography, photos, quick-info bar positioning, wording, and all other page styling.
+- Updated the client review hub to open the four v2.11.0 location revisions; all remain awaiting client approval.
