@@ -790,3 +790,13 @@
 - Confirmed the current Our Story v2.2.0 hero also uses that same enhanced asset.
 - Older archived mockups intentionally retain the original remote image, and the small social-feed placeholder on the current Home mockup still references the original website image.
 - Updated the client review hub to open Locations v2.9.0, still marked awaiting client approval.
+
+## 2026-07-29 — Homepage shipping collage correction v2.10.0
+
+- Acknowledged that the v2.3.0 “We Ship Nationwide” photo collage looked crowded and visually broken on common desktop and laptop widths.
+- Identified the cause as three fixed-size, absolutely positioned circular photos competing for a narrowing right-hand column.
+- Created `third-mockup-v2.10.0.html` and `homepage-feedback-v2.10.0.css`, preserving Home v2.3.0 for comparison and rollback.
+- Kept the original spacious editorial collage on displays wider than 1400px.
+- At 1400px and below, arranged the same three photos into a clean, equal three-column row so they cannot collide or overlap.
+- Preserved all section wording, buttons, colors, images, mobile containment fixes, and unrelated homepage content.
+- Updated the client review hub to open Home v2.10.0, still marked awaiting client approval.

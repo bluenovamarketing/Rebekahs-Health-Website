@@ -1,0 +1,150 @@
+/*
+ * Homepage v2.10.0
+ * Narrow client-feedback fixes only:
+ * 1. Preserve the full enhanced Rebekah portrait on desktop.
+ * 2. Keep the nationwide-shipping panel inside narrow phone viewports.
+ * 3. Prevent the three shipping photos from colliding on laptops and
+ *    standard desktop displays.
+ */
+
+.story .collage{
+  height:auto;
+  min-height:0;
+}
+.story .collage .big{
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  object-position:center;
+  border-radius:34px;
+  background:#eef4e7;
+  box-shadow:0 28px 70px rgba(23,76,60,.2);
+}
+.story .badge{
+  right:-4%;
+  top:7%;
+}
+
+#shipping,
+#shipping.source-b,
+#shipping .shipping,
+#shipping .container,
+#shipping .shipping-live{
+  width:100%;
+  max-width:100%;
+  min-width:0;
+}
+#shipping{
+  overflow:hidden;
+}
+#shipping .shipping-live>*,
+#shipping .shipping-copy,
+#shipping .shipping-actions,
+#shipping .shipping-collage,
+#shipping .shipping-photo{
+  min-width:0;
+}
+
+/*
+ * The original absolute collage needs a very wide image column. At common
+ * laptop and desktop widths, use an orderly row while preserving the larger
+ * editorial collage on wide displays.
+ */
+@media(max-width:1400px){
+  #shipping .shipping-collage{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    align-items:center;
+    gap:12px;
+    min-height:0;
+  }
+  #shipping .shipping-photo,
+  #shipping .shipping-photo-store,
+  #shipping .shipping-photo-rebekah,
+  #shipping .shipping-photo-capsules{
+    position:relative;
+    inset:auto;
+    width:100%;
+    height:auto;
+    max-width:none;
+    aspect-ratio:1/1;
+  }
+}
+
+@media(max-width:820px){
+  #shipping .container{
+    padding-right:14px;
+    padding-left:14px;
+  }
+  #shipping .shipping-live{
+    padding:40px 24px;
+  }
+  #shipping .shipping-collage{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  #shipping .shipping-photo,
+  #shipping .shipping-photo-store,
+  #shipping .shipping-photo-rebekah,
+  #shipping .shipping-photo-capsules{
+    max-width:100%;
+    min-width:0;
+  }
+}
+
+@media(max-width:560px){
+  #shipping .container{
+    padding-right:10px;
+    padding-left:10px;
+  }
+  #shipping .shipping{
+    padding-bottom:70px;
+  }
+  #shipping .shipping-live{
+    padding:30px 16px;
+    border-radius:22px;
+  }
+  #shipping .shipping-copy h2{
+    max-width:100%;
+    margin:12px 0 16px;
+    font-size:clamp(2rem,11.5vw,2.7rem);
+    line-height:.98;
+    letter-spacing:-.045em;
+    overflow-wrap:normal;
+  }
+  #shipping .shipping-copy p{
+    max-width:100%;
+    font-size:.94rem;
+  }
+  #shipping .shipping-actions{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    width:100%;
+  }
+  #shipping .shipping-phone,
+  #shipping .shipping-actions .btn{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  #shipping .shipping-phone{
+    padding:14px 12px;
+  }
+  #shipping .shipping-phone strong{
+    font-size:clamp(1.35rem,7vw,1.7rem);
+  }
+  #shipping .shipping-collage{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:6px;
+  }
+}
+
+@media(max-width:360px){
+  #shipping .shipping-live{
+    padding-right:13px;
+    padding-left:13px;
+  }
+  #shipping .shipping-copy h2{
+    font-size:2rem;
+  }
+}
