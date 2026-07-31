@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exploratory header and footer component mockup for Rebekah's Health & Nutrition.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Header + Footer Mockup v1.0 | Rebekah's Health & Nutrition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pine: #174c3c;
+      --leaf: #3f7d50;
+      --cream: #f7f3e8;
+      --berry: #8e4b61;
+      --ink: #26342e;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-width: 320px; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      overflow-x: clip;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    button { font: inherit; }
+
+    .skip {
+      position: fixed;
+      left: 12px;
+      top: -60px;
+      z-index: 100;
+      padding: 12px;
+      background: #fff;
+      color: var(--pine);
+    }
+    .skip:focus { top: 12px; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 88px;
+      padding: 0 3.5vw;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      background: #fffdf8;
+      border-bottom: 1px solid rgba(0, 75, 45, .12);
+      backdrop-filter: blur(16px);
+    }
+    .brand {
+      width: 245px;
+      margin-right: auto;
+      flex: 0 0 auto;
+    }
+    .site-header nav {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .site-header nav a { white-space: nowrap; }
+    .site-header nav a:hover,
+    .site-header nav a:focus-visible { color: var(--leaf); }
+    .menu {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--pine);
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .menu span { margin-left: 5px; }
+    .pill {
+      min-height: 44px;
+      padding: 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--pine);
+      border-radius: 999px;
+      background: var(--pine);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .site-header nav .call-order {
+      background: #078a42;
+      border-color: #078a42;
+      color: #fff;
+    }
+    .site-header .header-cta {
+      flex: 0 0 auto;
+      margin-left: -16px;
+      padding-left: 13px;
+      padding-right: 13px;
+      white-space: nowrap;
+    }
+    .site-header nav .mobile-stay-cta { display: none; }
+
+    .review-canvas {
+      position: relative;
+      min-height: clamp(360px, 55vh, 680px);
+      flex: 1 0 auto;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(214, 163, 58, .09), transparent 24%),
+        radial-gradient(circle at 88% 80%, rgba(169, 195, 160, .14), transparent 28%),
+        var(--cream);
+    }
+    .version-chip {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 1;
+      padding: 9px 12px;
+      border: 1px solid rgba(23, 76, 60, .14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .92);
+      color: #63766d;
+      box-shadow: 0 8px 24px rgba(23, 76, 60, .1);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    footer {
+      min-height: 0;
+      padding: 30px 7vw 24px;
+      display: grid;
+      grid-template-columns: 220px 1fr auto;
+      grid-template-areas:
+        "logo message main"
+        "logo legal legal"
+        "copy copy copy";
+      align-items: center;
+      gap: 10px 34px;
+      background: #fff;
+      color: var(--pine);
+      border-top: 1px solid rgba(23, 76, 60, .1);
+      text-align: left;
+    }
+    footer .footer-logo {
+      grid-area: logo;
+      width: 210px;
+      display: block;
+    }
+    footer .footer-logo img { width: 100%; height: auto; }
+    footer > p {
+      grid-area: message;
+      margin: 0;
+      color: #536c61;
+      font-size: 14px;
+    }
+    footer div {
+      display: flex;
+      justify-content: center;
+    }
+    footer .footer-main {
+      grid-area: main;
+      justify-content: flex-end;
+      gap: 22px;
+      margin: 0;
+      color: var(--pine);
+      font-size: 14px;
+      font-weight: 600;
+    }
+    footer .footer-legal {
+      grid-area: legal;
+      justify-content: flex-end;
+      gap: 20px;
+      margin: 0;
+      color: #697e74;
+      font-size: 13px;
+    }
+    footer .footer-legal a:hover,
+    footer .footer-legal a:focus-visible,
+    footer > small a:hover,
+    footer > small a:focus-visible { color: var(--berry); }
+    footer > small {
+      grid-area: copy;
+      margin-top: 14px;
+      padding-top: 14px;
+      color: #74877e;
+      border-top: 1px solid rgba(23, 76, 60, .13);
+      text-align: center;
+    }
+    footer > small a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 1180px) {
+      .site-header { gap: 24px; }
+      .site-header nav { gap: 16px; font-size: 13px; }
+      .brand { width: 220px; }
+    }
+
+    @media (max-width: 1050px) {
+      .site-header nav {
+        position: absolute;
+        top: 88px;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 25px 5vw;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--cream);
+        border-bottom: 1px solid rgba(23, 76, 60, .12);
+        box-shadow: 0 18px 34px rgba(23, 76, 60, .1);
+      }
+      .site-header nav.open { display: flex; }
+      .site-header nav a { text-align: center; }
+      .site-header nav .mobile-stay-cta { display: inline-flex; align-self: center; }
+      .menu { display: block; }
+      .header-cta { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      footer {
+        grid-template-columns: 190px 1fr;
+        grid-template-areas:
+          "logo message"
+          "main main"
+          "legal legal"
+          "copy copy";
+      }
+      footer .footer-main,
+      footer .footer-legal { justify-content: center; }
+    }
+
+    @media (max-width: 720px) {
+      .site-header { height: 74px; padding: 0 20px; }
+      .brand { width: 205px; }
+      .site-header nav { top: 74px; }
+      .review-canvas { min-height: 55vh; }
+      .version-chip { top: 12px; right: 12px; }
+      footer {
+        padding: 28px 22px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+      footer .footer-logo { width: 205px; }
+      footer > p,
+      footer .footer-main,
+      footer .footer-legal { margin: 0; }
+      footer .footer-main,
+      footer .footer-legal { flex-wrap: wrap; }
+      footer > small { width: 100%; margin-top: 4px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Rebekah's home">
+      <img src="tmp/source/current-site-logo-live.png" alt="Rebekah's Health & Nutrition">
+    </a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav">
+      Menu <span aria-hidden="true">&#9776;</span>
+    </button>
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#">Visit Our Stores</a>
+      <a href="#">Classes & Events</a>
+      <a href="#">Wellness Source Blog</a>
+      <a href="#">Meet Rebekah</a>
+      <a class="pill call-order" href="tel:2488432011">Call To Order</a>
+      <a class="pill mobile-stay-cta" href="#">Stay Connected</a>
+    </nav>
+    <a class="pill header-cta" href="#">Stay Connected</a>
+  </header>
+
+  <main class="review-canvas" id="main" aria-label="Blank component review canvas">
+    <div class="version-chip" aria-label="Exploratory mockup version 1.0">Header + Footer Study &middot; v1.0 &middot; Exploratory</div>
+  </main>
+
+  <footer>
+    <a class="footer-logo" href="#" aria-label="Rebekah's home">
+      <img src="tmp/source/current-site-logo-live.png" alt="Rebekah's Health & Nutrition Source">
+    </a>
+    <p>Trusted products. Practical education. Guidance that feels personal.</p>
+    <div class="footer-main" aria-label="Footer navigation">
+      <a href="#">Stores</a>
+      <a href="#">Events</a>
+      <a href="#">Blog</a>
+      <a href="#">Our Story</a>
+    </div>
+    <div class="footer-legal" aria-label="Legal navigation">
+      <a href="https://rebekahspureliving.com/privacy-policy/">Privacy Policy</a>
+      <a href="https://rebekahspureliving.com/refund_returns/">Terms &amp; Conditions</a>
+      <a href="https://rebekahspureliving.com/sitemap_index.xml">Sitemap</a>
+    </div>
+    <small>&copy; 2026 Rebekah's Health &amp; Nutrition &middot; Website Design by <a href="https://bluenovamarketing.com/">Blue Nova Marketing</a></small>
+  </footer>
+
+  <script>
+    const menu = document.querySelector('.menu');
+    const nav = document.querySelector('#nav');
+
+    function closeMenu() {
+      nav.classList.remove('open');
+      menu.setAttribute('aria-expanded', 'false');
+    }
+
+    menu.addEventListener('click', () => {
+      const isOpen = menu.getAttribute('aria-expanded') === 'true';
+      menu.setAttribute('aria-expanded', String(!isOpen));
+      nav.classList.toggle('open', !isOpen);
+    });
+
+    nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 1050) closeMenu();
+    });
+  </script>
+</body>
+</html>
