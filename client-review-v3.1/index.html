@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rebekah's Health & Nutrition — Client Review Round 3.1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #28362f;
+      --forest: #405b4c;
+      --sage: #dfe8dc;
+      --cream: #f7f3e9;
+      --paper: #fffdf8;
+      --berry: #8f5568;
+      --gold: #d5a649;
+      --line: rgba(40, 54, 47, .14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(213, 166, 73, .17), transparent 25rem),
+        linear-gradient(180deg, var(--cream), #eef3eb);
+      font-family: "DM Sans", sans-serif;
+      min-height: 100vh;
+    }
+    a { color: inherit; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 2; padding: .7rem 1rem; background: white; }
+    header, main, footer { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    header { padding: clamp(3rem, 7vw, 6.5rem) 0 2.5rem; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      color: var(--berry);
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .76rem;
+    }
+    .eyebrow::before { content: ""; width: 2.2rem; height: 2px; background: var(--gold); }
+    h1, h2 { font-family: "Fraunces", serif; }
+    h1 { max-width: 800px; margin: .8rem 0 1rem; font-size: clamp(2.6rem, 6vw, 5rem); line-height: .98; }
+    .intro { max-width: 720px; margin: 0; font-size: 1.1rem; line-height: 1.7; color: #506059; }
+    .notice {
+      display: flex;
+      gap: .8rem;
+      align-items: flex-start;
+      margin: 2rem 0 0;
+      padding: 1rem 1.2rem;
+      max-width: 760px;
+      background: rgba(255, 253, 248, .82);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+    }
+    .notice b { color: var(--forest); }
+    .previous-link { display: inline-block; margin-top: 1rem; color: var(--berry); font-weight: 700; }
+    section { margin: 2.5rem 0 3.5rem; }
+    .section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 1rem; }
+    h2 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.5rem); }
+    .count { color: #66746d; font-size: .9rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 180px;
+      padding: 1.25rem;
+      text-decoration: none;
+      background: rgba(255, 253, 248, .92);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 28px rgba(40, 54, 47, .05);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .card:hover, .card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(143, 85, 104, .5);
+      box-shadow: 0 14px 32px rgba(40, 54, 47, .1);
+      outline: none;
+    }
+    .card-top { display: flex; justify-content: space-between; gap: .75rem; align-items: start; }
+    .number { color: var(--berry); font-weight: 700; font-size: .8rem; letter-spacing: .08em; }
+    .status {
+      padding: .3rem .55rem;
+      border-radius: 999px;
+      background: var(--sage);
+      color: var(--forest);
+      font-size: .69rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .status.approved { background: #f2e7c9; color: #6b501c; }
+    .status.waiting { background: #f2e7c9; color: #6b501c; }
+    h3 { margin: 1rem 0 .45rem; font-size: 1.16rem; line-height: 1.25; }
+    .card p { margin: 0; color: #67746d; font-size: .9rem; line-height: 1.45; }
+    .open { margin-top: auto; padding-top: 1rem; color: var(--berry); font-weight: 700; font-size: .88rem; }
+    footer { padding: 1rem 0 3rem; border-top: 1px solid var(--line); color: #69766f; font-size: .86rem; }
+    @media (max-width: 850px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-heading { align-items: start; flex-direction: column; }
+      .card { min-height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#review-pages">Skip to review pages</a>
+  <header>
+    <span class="eyebrow">Private client review · Round 3.1</span>
+    <h1>Updated website mock-up review</h1>
+    <p class="intro">Use this page as the starting point for reviewing the latest Rebekah's Health & Nutrition redesign updates. Each card opens the current mock-up in a new tab.</p>
+    <div class="notice"><span aria-hidden="true">●</span><div><b>Review status:</b> Every page below is awaiting client approval for this feedback round. These are design mock-ups, not the live WordPress website.</div></div>
+    <a class="previous-link" href="../">Open the previous review hub →</a>
+  </header>
+
+  <main id="review-pages">
+    <section aria-labelledby="pages-title">
+      <div class="section-heading"><h2 id="pages-title">Current review pages</h2><span class="count">21 pages · awaiting approval</span></div>
+      <div class="grid">
+        <a class="card" href="../third-mockup-v3.1.1.html" target="_blank"><span class="card-top"><span class="number">01</span><span class="status waiting">Awaiting approval</span></span><h3>Home</h3><p>Original shipping-collage restoration, version 3.1.1.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../story-mockup-v2.2.0.html" target="_blank"><span class="card-top"><span class="number">02</span><span class="status waiting">Awaiting approval</span></span><h3>Our Story / Meet Rebekah</h3><p>Condensed feedback revision, version 2.2.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../locations-mockup-v2.9.0.html" target="_blank"><span class="card-top"><span class="number">03</span><span class="status waiting">Awaiting approval</span></span><h3>Locations</h3><p>Shortcut-removal revision, version 2.9.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../lapeer-location-mockup-v3.1.9.html" target="_blank"><span class="card-top"><span class="number">04</span><span class="status waiting">Awaiting approval</span></span><h3>Lapeer Location</h3><p>Major-holiday hours notice, version 3.1.9.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../grand-blanc-location-mockup-v3.1.10.html" target="_blank"><span class="card-top"><span class="number">05</span><span class="status waiting">Awaiting approval</span></span><h3>Grand Blanc Location</h3><p>Major-holiday hours notice, version 3.1.10.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../clarkston-location-mockup-v3.1.11.html" target="_blank"><span class="card-top"><span class="number">06</span><span class="status waiting">Awaiting approval</span></span><h3>Clarkston Location</h3><p>Major-holiday hours notice, version 3.1.11.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../lake-orion-location-mockup-v3.1.12.html" target="_blank"><span class="card-top"><span class="number">07</span><span class="status waiting">Awaiting approval</span></span><h3>Lake Orion Location</h3><p>Major-holiday hours notice, version 3.1.12.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../classes-events-mockup-v3.1.7.html" target="_blank"><span class="card-top"><span class="number">08</span><span class="status waiting">Awaiting approval</span></span><h3>Classes &amp; Events</h3><p>CTA section-spacing correction, version 3.1.7.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../wellness-source-blog/" target="_blank"><span class="card-top"><span class="number">09</span><span class="status waiting">Awaiting approval</span></span><h3>Wellness Source Blog</h3><p>Lightweight article archive.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../in-store-products-mockup-v3.1.8.html" target="_blank"><span class="card-top"><span class="number">10</span><span class="status waiting">Awaiting approval</span></span><h3>In-Store Products</h3><p>Authentic category photography revision, version 3.1.8.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../practitioners-mockup-v2.7.0.html" target="_blank"><span class="card-top"><span class="number">11</span><span class="status waiting">Awaiting approval</span></span><h3>Practitioners</h3><p>Current practitioner roster, version 2.7.0.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../contact-us-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">12</span><span class="status waiting">Awaiting approval</span></span><h3>Contact Us</h3><p>Contact routes and form design.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../privacy-policy-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">13</span><span class="status waiting">Awaiting approval</span></span><h3>Privacy Policy</h3><p>Shared legal-page design.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../refund-returns-policy-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">14</span><span class="status waiting">Awaiting approval</span></span><h3>Refund &amp; Returns Policy</h3><p>Policy presentation using the shared legal design.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../terms-conditions-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">15</span><span class="status waiting">Awaiting approval</span></span><h3>Terms &amp; Conditions</h3><p>Starter legal-page presentation.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../disclaimer-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">16</span><span class="status waiting">Awaiting approval</span></span><h3>Disclaimer</h3><p>Wellness, educational, and affiliate disclaimer.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../shop-fullscript-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">17</span><span class="status waiting">Awaiting approval</span></span><h3>Shop Fullscript</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../shop-designs-for-health-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">18</span><span class="status waiting">Awaiting approval</span></span><h3>Shop Designs for Health</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../shop-lifewave-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">19</span><span class="status waiting">Awaiting approval</span></span><h3>Shop LifeWave</h3><p>External partner landing page; no onsite checkout.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../peptides-injectables-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">20</span><span class="status waiting">Awaiting approval</span></span><h3>Peptides &amp; Injectables</h3><p>External referral landing page.</p><span class="open">Open current mock-up ↗</span></a>
+        <a class="card" href="../our-team-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">21</span><span class="status waiting">Awaiting approval</span></span><h3>Our Team</h3><p>Four-store team introduction with staff photos and submitted bios, version 1.0.0.</p><span class="open">Open current mock-up ↗</span></a>
+      </div>
+    </section>
+
+    <section aria-labelledby="templates-title">
+      <div class="section-heading"><h2 id="templates-title">Reusable templates</h2><span class="count">2 templates + 404</span></div>
+      <div class="grid">
+        <a class="card" href="../event-detail-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">T1</span><span class="status waiting">Awaiting approval</span></span><h3>Event Detail</h3><p>Reusable detail layout for individual classes and events.</p><span class="open">Open mock-up ↗</span></a>
+        <a class="card" href="../blog-post-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">T2</span><span class="status waiting">Awaiting approval</span></span><h3>Individual Blog Post</h3><p>Reusable article layout.</p><span class="open">Open mock-up ↗</span></a>
+        <a class="card" href="../404-page-mockup-v1.0.0.html" target="_blank"><span class="card-top"><span class="number">404</span><span class="status waiting">Awaiting approval</span></span><h3>Page Not Found</h3><p>Branded recovery page body.</p><span class="open">Open mock-up ↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Prepared for Rebekah's Health &amp; Nutrition client review · Blue Nova Marketing</footer>
+</body>
+</html>

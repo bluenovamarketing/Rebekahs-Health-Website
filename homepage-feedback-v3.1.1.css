@@ -1,0 +1,148 @@
+/*
+ * Homepage v3.1.1
+ * Client-feedback corrections:
+ * 1. Restore the approved three original shipping-circle PNGs without
+ *    zooming, cropping, masking, or reconstructing any of their pixels.
+ * 2. Keep the circles in the original overlapping composition at every
+ *    viewport width so the exported edge pieces remain perfectly aligned.
+ * 3. Render at or below each PNG's natural size, including the hover scale,
+ *    to prevent soft upscaling.
+ * 4. Keep the approved full-image Rebekah portrait and mobile badge position.
+ */
+
+.story .collage{
+  height:auto;
+  min-height:0;
+}
+.story .collage .big{
+  width:100%;
+  height:auto;
+  aspect-ratio:1/1;
+  object-fit:contain;
+  object-position:center;
+  border-radius:34px;
+  background:#eef4e7;
+  box-shadow:0 28px 70px rgba(23,76,60,.2);
+}
+.story .badge{
+  right:-4%;
+  top:7%;
+}
+
+/*
+ * The original collage was authored on a 430 x 430 coordinate plane:
+ * store 270/430, Rebekah 290/430, capsules 220/430. A 388px maximum keeps
+ * even the 2.5% hover enlargement below the source PNGs' native dimensions.
+ */
+#shipping .shipping-collage{
+  position:relative;
+  display:block;
+  width:min(100%,388px);
+  height:auto;
+  min-height:0;
+  aspect-ratio:1/1;
+  margin-inline:auto;
+  z-index:2;
+}
+#shipping .shipping-photo,
+#shipping .shipping-photo-store,
+#shipping .shipping-photo-rebekah,
+#shipping .shipping-photo-capsules{
+  position:absolute;
+  margin:0;
+  aspect-ratio:1/1;
+  transform-origin:center;
+  transition:transform .35s ease,filter .35s ease;
+}
+#shipping .shipping-photo:hover{
+  transform:translateY(-7px) scale(1.025);
+  z-index:6;
+}
+#shipping .shipping-photo-store{
+  width:62.7907%;
+  height:62.7907%;
+  left:0;
+  top:0;
+  right:auto;
+  bottom:auto;
+}
+#shipping .shipping-photo-rebekah{
+  width:67.4419%;
+  height:67.4419%;
+  right:0;
+  top:26.7442%;
+  left:auto;
+  bottom:auto;
+}
+#shipping .shipping-photo-capsules{
+  width:51.1628%;
+  height:51.1628%;
+  left:2.3256%;
+  bottom:0;
+  right:auto;
+  top:auto;
+}
+#shipping .shipping-photo img{
+  position:static;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:100%;
+  object-fit:cover;
+  image-rendering:auto;
+  backface-visibility:hidden;
+}
+#shipping .shipping-photo-rebekah img{
+  border:6px solid var(--green);
+  border-radius:50%;
+}
+
+@media(max-width:840px){
+  #shipping .shipping-live{
+    grid-template-columns:1fr;
+    min-height:auto;
+    padding:42px 28px;
+  }
+  #shipping .shipping-copy{
+    text-align:center;
+  }
+  #shipping .shipping-copy p{
+    margin-left:auto;
+    margin-right:auto;
+  }
+  #shipping .shipping-actions{
+    justify-content:center;
+  }
+  #shipping .shipping-collage{
+    order:2;
+    display:block;
+    grid-template-columns:none;
+    gap:0;
+    width:min(100%,388px);
+    margin:18px auto 0;
+  }
+  #shipping .shipping-photo:hover{
+    transform:translateY(-4px) scale(1.015);
+  }
+}
+
+@media(max-width:560px){
+  #shipping .shipping-live{
+    padding:32px 18px;
+    border-radius:24px;
+  }
+}
+
+@media(max-width:850px){
+  .story .badge{
+    top:auto;
+    right:12px;
+    bottom:16px;
+    left:auto;
+    width:108px;
+    height:108px;
+  }
+  .story .badge b{
+    font-size:22px;
+  }
+}

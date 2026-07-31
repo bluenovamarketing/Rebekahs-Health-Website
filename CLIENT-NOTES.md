@@ -817,3 +817,209 @@
 - The response asks the client to identify the exact Page 2 replacement images, provide the approved Clarkston team photo, confirm the Kim McCabe/Kimberly Cabe name match, and supply the roster and assets needed for a future Meet Our Team page.
 - The response explains that the attached AI-enhanced Rebekah portrait is the strongest practical improvement available from the current source image and that a sharper result would require a new high-resolution photograph.
 - Emailed the completed client-response draft to Todd's authenticated Gmail account with the AI-enhanced Rebekah portrait attached, ready for his review and forwarding.
+
+## 2026-07-31 — Homepage client-requested revision v3.1.0
+
+- Created `third-mockup-v3.1.0.html` as the Page 1 client-feedback revision while preserving v2.10.0 and all earlier homepage versions for comparison and rollback.
+- Resolved the nonfunctional “Explore Departments” pathway: the review mockup now opens the approved In-Store Products page, and the planned WordPress destination is `/in-store-products/`.
+- After direct review, removed the rejected grid/mosaic treatment and restored the approved `third-mockup.html` shipping composition: a centered 1180px panel with the original three intentionally overlapping circular photos and the original image sizes and positions.
+- Repositioned and slightly reduced the “Rooted in Care” badge at phone and tablet widths so it sits over Rebekah's lower shoulder rather than her face.
+- Verified the corrected desktop section against the approved live baseline at 1280px; the panel and all three photo rectangles match the approved mockup. Rechecked phone behavior at 390px with no horizontal overflow, the shoulder-level badge placement retained, and the departments link still resolving to the current In-Store Products mockup.
+- Updated the private client review hub to open v3.1.0 and updated `Client Review Timeline!E5:G5` in the canonical Google Sheet with the new version journey, current version, and mockup link.
+- Pending: client review and approval of homepage v3.1.0. The `/in-store-products/` production URL will be applied during WordPress assembly.
+- Client-facing next step: confirm that the desktop shipping section now matches the approved overlapping-circle design, along with the mobile badge placement and In-Store Products destination for “Explore Departments.”
+- Local-browser parity correction: identified that normal browsers block the homepage's `fetch("second-mockup.html")` call when v3.1.0 is opened directly with `file://`, causing six dynamically mounted sections to disappear while the in-app preview still displayed them.
+- Replaced that runtime fetch in v3.1.0 with the generated local bundle `combined-original-sections-source-v3.1.0.js`; added `.tools/build-homepage-source-bundle.mjs` so the bundle can be regenerated from `second-mockup.html` when needed.
+- Verified all six mounts populate from the bundle with no console warnings or errors: pathway, nationwide shipping, classes/events, Wellness Source Blog, newsletter, and practitioner brands. The approved shipping composition, In-Store Products link, and responsive badge correction remain intact.
+- After deeper asset inspection, confirmed the three shipping PNGs were exported from a single overlapping composition: the store photo contains a precisely aligned slice of the Rebekah image, the Rebekah photo contains a precisely aligned slice of the capsule image, and the capsule photo contains a precisely aligned slice of the product display. The attempted independent-circle crop exposed those baked edge pieces and was rejected.
+
+## 2026-07-31 — Homepage shipping collage correction v3.1.1
+
+- Created `third-mockup-v3.1.1.html` as the next Page 1 revision and preserved `third-mockup-v3.1.0.html` unchanged for version history.
+- Restored the approved three original shipping PNGs and their original overlap geometry without inner frames, zoom crops, masking, pixel reconstruction, or replacement imagery.
+- Kept the original hover lift-and-enlarge interaction. The entire collage now scales responsively as one 1:1 composition so the three exported edge pieces remain aligned on desktop, iPad Air, and iPhone layouts.
+- Capped the desktop collage at 388px so the 2.5% hover enlargement still renders every source below its native resolution: store 249.7px maximum from a 250px source, Rebekah 268.2px from 288px, and capsules 203.5px from 224px.
+- Verified at 1280px, 820px, and 390px: no exposed rectangular fragments, no image upscaling, no horizontal overflow, and no `.shipping-photo-frame` crop wrappers.
+- Updated the private review hub and `Client Review Timeline!E5:G5` to identify v3.1.1 as the current Page 1 version.
+- Pending: client visual approval of Page 1 v3.1.1; publish to GitHub Pages only when requested.
+
+## 2026-07-31 — Grand Blanc mobile caption correction v3.1.2
+
+- Created `grand-blanc-location-mockup-v3.1.2.html` as the next numbered client-feedback revision while preserving v2.11.0.
+- Corrected the phone layout where the long location caption rose into the rounded top of Jackelyn's photo and was clipped by the arched mask.
+- At widths up to 600px, Jackelyn's uncropped portrait now sits above a separate dark caption panel inside the same card; desktop retains the approved photo-overlay presentation.
+- Verified at 1280px, 390px, and 320px: the complete headline and supporting sentence remain inside the card, there is no horizontal overflow, and the existing desktop structure is unchanged.
+- Updated the private review hub and `Client Review Timeline!E9:G9` to identify v3.1.2 as the current Grand Blanc version.
+- Pending: client visual approval of the Grand Blanc v3.1.2 mobile correction; publish to GitHub Pages only when requested.
+
+## 2026-07-31 — Grand Blanc portrait-height correction v3.1.3
+
+- Created `grand-blanc-location-mockup-v3.1.3.html` as the next revision and preserved v3.1.2.
+- Increased the desktop story-photo frame from the previous near-square crop to a 4:5 portrait frame and anchored the source image to the top, revealing Jackelyn's complete head and the original space above it.
+- Preserved the approved desktop caption as a bottom overlay and retained the separate mobile caption panel introduced in v3.1.2.
+- Verified at 1920px and 390px: the complete head is visible, caption text remains contained, and there is no horizontal overflow or text-encoding damage.
+- Updated the private review hub and `Client Review Timeline!E9:G9` to identify v3.1.3 as the current Grand Blanc version.
+- Pending: client visual approval of the Grand Blanc v3.1.3 portrait framing; publish to GitHub Pages only when requested.
+
+## 2026-07-31 — Grand Blanc v3.1.3 full-page mobile audit
+
+- Confirmed all local stylesheets and images referenced by v3.1.3 exist and the viewport meta tag is present.
+- Confirmed the page's responsive rules stack all split layouts below 900px and switch the quick-info bar, product cards, events, facts, visit details and signup form to one column below 600px; no fixed minimum page width was found.
+- The currently open Chrome tab is a normal desktop-width `file://` page, so the phone layout will not activate unless Chrome's CSS viewport is 600px or narrower. Automated inspection of the local `file://` tab is blocked by Chrome's browser-control security policy.
+- No design change or version bump was made from this audit. Pending: obtain a screenshot and device/viewport details if the full page still fails at a true phone-width viewport, then reproduce and correct the specific failure.
+
+## 2026-07-31 — Grand Blanc v3.1.3 mobile approval
+
+- Displayed the Grand Blanc page in the in-app browser at a 393 × 852 iPhone viewport and positioned it at Jackelyn's portrait section for direct review.
+- Confirmed the mobile treatment keeps Jackelyn's portrait unobstructed with the complete caption in the separate dark panel beneath the image.
+- The user approved the iPhone presentation. Grand Blanc v3.1.3 is the accepted current revision; no further mobile changes are pending.
+
+## 2026-07-31 — Grand Blanc unobstructed portrait correction v3.1.4
+
+- The user confirmed the iPhone treatment looked good but clarified that the desktop caption still covered too much of Jackelyn's portrait.
+- Created `grand-blanc-location-mockup-v3.1.4.html` and `grand-blanc-feedback-v3.1.4.css`, preserving v3.1.3 for version history.
+- Removed the desktop photo overlay and placed the complete location caption in a dedicated dark panel beneath the portrait, matching the already approved mobile treatment.
+- Verified at 1440px and a 393 × 852 iPhone viewport: Jackelyn's face and portrait remain unobstructed, the complete caption is readable below the image, and there is no horizontal overflow.
+- Updated the private review hub and `Client Review Timeline!E9:G9` to identify v3.1.4 as the current Grand Blanc revision.
+- Pending: client visual approval of the corrected desktop treatment; the iPhone layout remains approved.
+
+## 2026-07-31 — Grand Blanc v3.1.4 solution accepted
+
+- The user reviewed the unobstructed desktop portrait treatment and confirmed it is a good solution.
+- Grand Blanc v3.1.4 is the accepted internal revision for this client-requested correction; both desktop and iPhone treatments are complete.
+- Client-facing next step: include v3.1.4 in the next client review round. The page remains marked as awaiting the client's final approval and has not been published to GitHub Pages or WordPress.
+
+## 2026-07-31 — Clarkston team-photo replacement v3.1.5
+
+- Addressed the Page 6 client request to remove the blurry storefront image from the middle of the Clarkston page.
+- Located the client-supplied `Clarkston team photo for Clarkston pagepg.jpg` in the shared drive, copied the original 2048 × 1553 source into `output/clarkston-location/clarkston-team-client.jpg`, and used it without enlarging or degrading it.
+- Created `clarkston-location-mockup-v3.1.5.html`, preserving v2.11.0 for version history, and replaced only the middle Personal Guidance section image and its alt text.
+- Verified at 1440px, 820px and a 393 × 852 iPhone viewport: all three team members remain visible, the 4:3 crop fits the existing approved layout, and there is no horizontal overflow or image upscaling.
+- Updated the private review hub and `Client Review Timeline!E10:G10` to identify v3.1.5 as the current Clarkston revision.
+- Pending: client visual approval of the Clarkston team-photo replacement; publish to GitHub Pages or WordPress only when requested.
+
+## 2026-07-31 — Clarkston v3.1.5 solution accepted
+
+- The user reviewed the client-supplied team photo in the middle Personal Guidance section and confirmed the replacement looks good.
+- Clarkston v3.1.5 is the accepted internal revision for this client-requested correction.
+- Client-facing next step: include v3.1.5 in the next client review round; the page remains awaiting the client's final approval and has not been published to GitHub Pages or WordPress.
+
+## 2026-07-31 — Classes & Events community invitation v3.1.6
+
+- Addressed the Page 8 client request for an invitation to educators, practitioners, and local makers, growers, and bakers who may want to host something in a Rebekah's store.
+- Created `classes-events-mockup-v3.1.6.html` and `classes-events-v3.1.6.css`, preserving the v1.0.0 archive and shared event-detail styling for version history.
+- Added a distinct community-host panel after the existing editorial section inviting ideas for classes, discussions, pop-ups, and small events.
+- Kept the wording appropriately noncommittal: opportunities are considered according to store space, schedule, and community fit. The button routes to the existing Contact Us mockup instead of inventing registration, ticketing, or a new submission workflow.
+- Verified the panel at 1440px, 820px, and a 393 × 852 iPhone viewport with no horizontal overflow; the responsive layout and contact link work as intended.
+- Updated the private review hub and `Client Review Timeline!E12:G12` to identify v3.1.6 as the current Classes & Events revision.
+- Pending: client visual and wording approval; confirm the final WordPress Contact Us URL during assembly.
+
+## 2026-07-31 — Classes & Events CTA spacing correction v3.1.7
+
+- The user approved the new community-host invitation but identified that the purple Stay in the Loop card began flush against the top edge of its white section.
+- Created `classes-events-mockup-v3.1.7.html` and `classes-events-v3.1.7.css`, preserving v3.1.6 for version history.
+- Added responsive top breathing room before the purple CTA: approximately 58px at 1440px and 40px at the iPhone viewport, while leaving the green invitation panel and its wording unchanged.
+- Verified at 1440px and a 393 × 852 iPhone viewport: the purple card now sits clearly inside its section, the rounded top corners read correctly, and there is no horizontal overflow.
+- Updated the private review hub and `Client Review Timeline!E12:G12` to identify v3.1.7 as the current Classes & Events revision.
+- Pending: client visual and wording approval of Page 8; confirm the final WordPress Contact Us URL during assembly.
+
+## 2026-07-31 — In-Store Products authentic category photography v3.1.8
+
+- Addressed the client request to replace the generic “What Are You Looking For?” category images with photography that feels like Rebekah's.
+- Created `in-store-products-mockup-v3.1.8.html`, preserving v2.6.0 for version history and leaving the already approved page layout and copy unchanged.
+- Replaced all eight stock category images with original Rebekah's store, private-label, product-education, local-maker and Michigan-grown product photos stored locally in `output/in-store-products-v3.1.8/`.
+- Kept every source at or above its rendered size to avoid blurry enlargement; verified all eight files load at their natural dimensions.
+- Verified the category grid at 1440px, 820px and a 393 × 852 iPhone viewport: four, two and one columns respectively, with no page-level horizontal overflow.
+- Updated the private review hub and `Client Review Timeline!E14:G14` to identify v3.1.8 as the current In-Store Products revision.
+- Pending: user/client visual approval of the new authentic image selections; publish to GitHub Pages or WordPress only when requested.
+
+## 2026-07-31 — In-Store Products v3.1.8 solution accepted
+
+- The user compared v3.1.8 directly with the previous v2.6.0 category-photo treatment and approved the new authentic Rebekah's imagery.
+- In-Store Products v3.1.8 is the accepted internal revision for this client-requested correction.
+- Client-facing next step: include v3.1.8 in the next client review round; the page remains awaiting the client's final approval and has not been published to GitHub Pages or WordPress.
+
+## 2026-07-31 — Lapeer major-holiday hours notice v3.1.9
+
+- Began the client-requested store-hours update with the Lapeer location page, keeping the sitewide change separated into page-specific review versions.
+- Created `lapeer-location-mockup-v3.1.9.html`, preserving v2.11.0 for version history.
+- Added the exact client-requested wording, “Closed on all major holidays.”, directly beneath the hours grid in the Plan Your Visit section.
+- Styled the notice as a compact gold-accented pill that is easy to spot without changing the approved hours, location content, map or page structure.
+- Verified at 1440px, 820px and a 393 × 852 iPhone viewport: the complete sentence is visible, the hours remain readable, and there is no horizontal overflow or browser-console error.
+- Updated the private review hub and `Client Review Timeline!E8:G8` to identify v3.1.9 as the current Lapeer revision.
+- Pending: user/client visual approval of the Lapeer notice; after approval, repeat the same treatment on Grand Blanc, Clarkston and Lake Orion with the next sequential version numbers.
+
+## 2026-07-31 — Lapeer v3.1.9 solution accepted
+
+- The user reviewed and approved the major-holiday closure notice in the Lapeer Plan Your Visit section.
+- Lapeer v3.1.9 is the accepted internal treatment and will serve as the styling pattern for the remaining Grand Blanc, Clarkston and Lake Orion store-hours revisions.
+- Client-facing next step: include v3.1.9 in the next client review round; the page remains awaiting the client's final approval and has not been published to GitHub Pages or WordPress.
+
+## 2026-07-31 — Grand Blanc major-holiday hours notice v3.1.10
+
+- Applied the user-approved Lapeer holiday-hours treatment to the current accepted Grand Blanc v3.1.4 page.
+- Created `grand-blanc-location-mockup-v3.1.10.html` and `grand-blanc-feedback-v3.1.10.css`, preserving v3.1.4 and its unobstructed portrait solution for version history.
+- Added the exact wording, “Closed on all major holidays.”, beneath the hours grid in the Plan Your Visit section without changing the approved hours, map, portrait treatment or location content.
+- Verified at 1440px, 820px and a 393 × 852 iPhone viewport: the notice remains complete and readable, the hours layout responds correctly, and there is no horizontal overflow or browser-console error.
+- Updated the private review hub and `Client Review Timeline!E9:G9` to identify v3.1.10 as the current Grand Blanc revision.
+- Pending: user/client visual approval of the Grand Blanc notice; after approval, continue with Clarkston v3.1.11 and Lake Orion v3.1.12.
+
+## 2026-07-31 — New Our Team page mockup v1.0.0
+
+- Designed the new `Our Team` page as `our-team-mockup-v1.0.0.html`, following the approved Homepage v1.21 / Our Story v1.1.6 palette, Fraunces and DM Sans typography, photo shapes, spacing, buttons, header, and footer system.
+- Confirmed that the canonical planning sheet does not yet contain an Our Team row; treated the client's new request as a user-authorized addition rather than changing the existing 20-page inventory.
+- Located the correct current shared-drive source folder and included all 10 submitted team profiles and embedded portraits: Angela Basner, Pamela Stuewer, Ashlyn, Todd Cochell, Jackelyn, Debbie, Brian, Margaret, Catie, and Mikayla.
+- Organized the page into four clearly labeled store chapters (Lapeer, Grand Blanc, Clarkston, and Lake Orion). Every person remains visible on the page; no filter hides staff members.
+- Used accessible native `details` disclosures for the complete bios so visitors first see a concise, photo-forward team directory and can expand any story without navigating away.
+- Lightly edited submitted text for web clarity, punctuation, consistency, and cautious wellness language while preserving each person's stated role, background, goals, and voice. Added a clear education-not-medical-advice boundary near the end of the page.
+- Preserved Catie's smaller submitted portrait at its native 295 × 580 dimensions inside an intentional branded frame rather than enlarging it and introducing visible blur.
+- Added page-specific title/meta copy, descriptive image alt text, internal links, accessible heading structure, mobile navigation, and AboutPage/ItemList/Person structured data for all 10 profiles.
+- Verified at 1440px desktop, 820px tablet, and 393 × 852 mobile: all 10 images load, all 10 cards render, the bio disclosures and mobile menu work, there is no horizontal overflow, and the browser console reports no errors or warnings.
+- Pending before production: client confirmation of final staff name spelling, current role, tenure, education/certification wording, and whether any additional submitted team members should be added; then add this page to the canonical inventory/navigation and assemble it in WordPress when explicitly approved.
+
+## 2026-07-31 — Our Team hero portrait correction
+
+- Addressed the user's first review comments that the overlapping hero collage cropped or covered most of the featured faces and that the `Meet the team` button was unnecessary.
+- Replaced the overlapping collage with a non-overlapping 2 × 2 editorial portrait grid. Jackelyn, Margaret, Brian, and Ashlyn now each have a dedicated unobstructed image frame and visible name label.
+- Moved the `10 team stories · one shared purpose` message into its own full-width strip beneath the four portraits so it no longer covers any person.
+- Removed the `Meet the team` hero button and retained one clear primary `Find your store` action.
+- Verified the revised hero at the exact 928 × 720 commented viewport, 1440 × 900 desktop, and 393 × 852 mobile: all four faces remain visible, all labels fit, no page-level overflow appears, and the browser console reports no errors or warnings.
+
+## 2026-07-31 — Our Team mockup chrome removal
+
+- Removed the global site header and footer from `our-team-mockup-v1.0.0.html` at the client's direction.
+- The mockup now opens directly on the team hero and ends with the source/accuracy note; page-specific calls to action remain in place.
+
+## 2026-07-31 — Our Team hero switched to store teams
+
+- Replaced the four individual portraits in the hero with authentic team photos representing Lapeer, Grand Blanc, Clarkston, and Lake Orion.
+- Relabeled the four hero panels by store so the introduction now communicates “four stores, one team,” while individual staff portraits appear only with their bios below.
+- Preserved the approved non-overlapping 2 × 2 composition and used crop-safe image treatment for the wider team photos so edge faces remain visible.
+
+## 2026-07-31 — Clarkston and Lake Orion major-holiday notices v3.1.11–v3.1.12
+
+- Completed the remaining client-requested store-hours revisions using the Lapeer treatment the user approved.
+- Created `clarkston-location-mockup-v3.1.11.html` and `clarkston-feedback-v3.1.11.css`, preserving the accepted v3.1.5 Clarkston team-photo replacement.
+- Created `lake-orion-location-mockup-v3.1.12.html` and `lake-orion-feedback-v3.1.12.css`, preserving the current Lake Orion layout and imagery.
+- Added the exact wording, “Closed on all major holidays.”, beneath each Plan Your Visit hours grid without changing the listed hours, maps, directions, phone numbers or structured data.
+- Verified both pages at 1440px, 820px and a 393 × 852 iPhone viewport: the full notice remains visible, the controls fit, there is no horizontal overflow, and the browser console reports no errors.
+- Updated the private review hub and `Client Review Timeline!E10:G11` to identify Clarkston v3.1.11 and Lake Orion v3.1.12 as current.
+- All four store pages now include the holiday notice. Pending: client approval and publication only when explicitly requested.
+
+## 2026-07-31 — New client review hub for revision round 3.1
+
+- Created a separate versioned review hub at `client-review-v3.1/index.html` so the previously published root review hub remains available as a rollback/reference point.
+- The new hub contains the latest versions from the current client-feedback round, including Homepage v3.1.1, the four store-hours revisions through Lake Orion v3.1.12, Classes & Events v3.1.7 and In-Store Products v3.1.8.
+- Added `Our Team` as page 21 and linked it to the current `our-team-mockup-v1.0.0.html` design with all four store-team sections and 10 submitted staff profiles.
+- Added a clear `Open the previous review hub` link from the new hub back to the original root URL.
+- Verified the new hub at 1440px, 820px and 393px: it renders as three, two and one card columns with no horizontal overflow. Verified the Team page at 393px with all 15 images and all 10 team cards loaded.
+- Client-facing next step: use the new versioned hub for the next review round while retaining the original root hub for comparison.
+
+## 2026-07-31 — Header and footer component study v1.0
+
+- Separated the header/navigation and footer from the current homepage mockup into `header-footer-mockup-v1.0.html` for focused review.
+- Kept the Homepage v1.21 visual treatment and existing menu/footer content as the starting point; this is explicitly an exploratory component study, not a final or production implementation.
+- Added a visible `v1.0 · Exploratory` marker and established the requested future version sequence (`v1.1`, `v1.2`, and so on) without changing the homepage mockup itself.
+- Kept the mockup self-contained and used the existing verified local Rebekah's logo for dependable previewing.
+- Verified the standalone component at 1440px desktop, 820px tablet, and 390px mobile. The desktop navigation, responsive menu, footer reflow, logo assets, and mobile menu interaction work without horizontal overflow or console warnings/errors.
+- Pending review: decide what visual/content changes should become v1.1. Before production, verify every navigation destination and expand/adjust the footer to the canonical global scope as approved, including accurate location, contact, social, policy, and legal links.

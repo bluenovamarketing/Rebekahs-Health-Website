@@ -1,0 +1,26 @@
+.visit .details {
+  margin-bottom: 1rem;
+}
+
+.visit .holiday-hours {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 0 0 .35rem;
+  padding: .7rem 1rem;
+  border: 1px solid #f0c66a66;
+  border-radius: 999px;
+  background: #f0c66a12;
+  color: #f6dda3;
+  font-weight: 700;
+}
+
+.visit .holiday-hours::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: var(--h);
+  box-shadow: 0 0 0 5px #d6a33a22;
+}
