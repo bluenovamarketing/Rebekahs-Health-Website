@@ -1023,3 +1023,103 @@
 - Kept the mockup self-contained and used the existing verified local Rebekah's logo for dependable previewing.
 - Verified the standalone component at 1440px desktop, 820px tablet, and 390px mobile. The desktop navigation, responsive menu, footer reflow, logo assets, and mobile menu interaction work without horizontal overflow or console warnings/errors.
 - Pending review: decide what visual/content changes should become v1.1. Before production, verify every navigation destination and expand/adjust the footer to the canonical global scope as approved, including accurate location, contact, social, policy, and legal links.
+
+## 2026-07-31 — Header and footer component study v1.1
+
+- Created `header-footer-mockup-v1.1.html` as an exploratory comparison while preserving v1.0 unchanged.
+- Preserved both client-liked desktop buttons at the top right: `Call To Order` and `Stay Connected`.
+- Kept the approved header styling and added a `Visit Our Stores` dropdown for the locations hub plus all four stores, a direct `In-Store Products` route, and an `About` dropdown for Our Story, Our Team, Practitioners and Contact Us.
+- Expanded the footer into four concise groups—Explore, Locations, About and Policies—while retaining the white background, verified logo, tagline and restrained visual treatment from v1.0.
+- Corrected the footer information architecture so Refund & Returns and Terms & Conditions are separate destinations; added Disclaimer, contact, Instagram, TikTok and Sitemap positions for complete future global navigation.
+- On mobile, both header actions remain inside the opened menu and the footer groups collapse into native accordions.
+- Verified at 1440px desktop, 820px tablet and 390px mobile: both desktop buttons are visible, dropdowns and accordions work, all assets load, and there is no page-level horizontal overflow or browser-console warning/error.
+- Pending review: choose between v1.0 and v1.1 organization and confirm the final Instagram/TikTok URLs plus all production navigation destinations before WordPress implementation.
+
+## 2026-07-31 — Header and footer component study v1.2
+
+- Created `header-footer-mockup-v1.2.html`, preserving v1.0 and v1.1 for comparison.
+- Applied the user's browser feedback by moving `About` to the first position in the desktop and mobile navigation; its dropdown continues to contain Our Story, Our Team, Practitioners and Contact Us.
+- Preserved both client-liked top-right desktop buttons—`Call To Order` and `Stay Connected`—and their corresponding mobile-menu actions.
+- Replaced the footer's plain Instagram and TikTok text links with two compact, accessible circular SVG icon buttons. Kept `Call To Order` as a readable text link beside them.
+- Limited the social treatment to Instagram and TikTok because those are the two networks currently identified in the canonical global-component scope; final account URLs remain pending.
+- Verified at the commented desktop layout and a narrow mobile layout: About is first, both top-right/mobile action buttons remain visible, both dropdowns work, both social icons render at 38 × 38 pixels with accessible names, footer accordions remain responsive, and there are no console warnings/errors or page-level horizontal overflow.
+- Pending review: approve the v1.2 order/icon treatment and provide or verify the final Instagram and TikTok profile URLs before production implementation.
+
+## 2026-07-31 — Header and footer component study v1.3
+
+- Created `header-footer-mockup-v1.3.html`, preserving v1.0–v1.2 for comparison.
+- Addressed the user's compact-computer feedback by delaying the hamburger transition from 1240px to 1040px, allowing the full navigation and both top-right action buttons to remain visible across common small-laptop layouts.
+- Added compact-desktop spacing tiers that reduce only header padding, navigation gaps and button padding. Preserved the existing liked logo sizing from v1.2; the logo was not reduced for this revision.
+- Addressed the mobile-menu feedback by moving each submenu chevron directly beside its label instead of aligning it at the far-right edge of the menu row.
+- Preserved About as the first navigation item, both Call To Order and Stay Connected actions, and the Instagram/TikTok footer icons introduced in v1.2.
+- Verified a 1156px rendered compact-laptop viewport: the full navigation, 190px logo and both action buttons remain visible with no overflow. Verified a 929px rendered hamburger layout: submenu arrows sit 10px from their labels, both mobile actions remain visible, and the About submenu opens correctly.
+- Browser console reports no warnings/errors. Pending: user review of the later breakpoint and compact mobile submenu treatment.
+
+## 2026-07-31 - Header and footer component study v1.4
+
+- Created `header-footer-mockup-v1.4.html`, preserving v1.0-v1.3 as separate comparison versions.
+- Addressed all six comments on v1.3 together: restored a 230px desktop/laptop logo, increased header navigation to a readable 13-14px range, and removed the large empty area between the logo and navigation.
+- Changed the header's flexible spacing so the navigation begins 18-20px after the logo while any remaining room sits between the navigation and the two action buttons.
+- Preserved the client-liked `Call To Order` and `Stay Connected` buttons, About-first menu order, store and About dropdowns, and Instagram/TikTok footer icons.
+- Moved the hamburger breakpoint to 1120px so the complete header remains visible at the tested 1156px rendered small-laptop width while retaining a comfortable fallback below that width.
+- Retained v1.3's close mobile submenu arrows. Verified the open hamburger at a 945px rendered width: arrows use flex-start alignment with an 8px gap and 2px margin, both mobile actions remain present, and there is no horizontal overflow.
+- Verified phone behavior at a 534px rendered width: the larger mobile logo, hamburger, collapsed footer accordions and page width all behave correctly.
+- Pending review: client preference on the v1.4 logo/navigation proportions and final Instagram/TikTok profile URLs before production implementation.
+
+## 2026-07-31 - Header and footer component study v1.5
+
+- Created `header-footer-mockup-v1.5.html`, preserving v1.0-v1.4 as separate comparison versions.
+- Removed the footer `Call To Order` link because the sticky header already keeps that action continuously available.
+- Kept the Instagram and TikTok icon buttons visible in the footer and preserved every Explore, Locations, About, Policies, contact, social and legal destination required by the canonical global scope.
+- Converted all four footer link groups to native accordions at 1000px and below, covering both tablet and phone layouts. Desktop continues to display all four groups openly in the established five-column footer.
+- Reworked the tablet footer intro into a compact logo/tagline/social row followed by four 50px collapsed accordion rows. This reduced the tested tablet footer to approximately 391px high from the much taller v1.4 presentation.
+- On phones, the logo, tagline and social icons center above the same four collapsed accordions; opening an accordion reveals only its relevant links.
+- Verified at rendered 902px tablet, 534px phone and 1423px desktop widths: accordion state changes correctly, there is no horizontal overflow, both logo assets load, the v1.4 header proportions remain intact, and the browser console reports no warnings or errors.
+- Pending review: client approval of the v1.5 compact footer and final Instagram/TikTok profile URLs before production implementation.
+
+## 2026-07-31 - Header and footer component study v1.6
+
+- Created `header-footer-mockup-v1.6.html`, preserving v1.0-v1.5 for comparison.
+- Corrected the phone-menu alignment reported by the user: In-Store Products, Classes & Events and Wellness Source Blog were plain links with a 48px minimum height but no vertical alignment rule, while About and Visit Our Stores were flex buttons.
+- Applied the same `display: flex` and `align-items: center` treatment to all five mobile navigation rows, without changing their labels, routes, order, heights or submenu behavior.
+- Created `header-footer-mockup-v1.6-phone-preview.html` so the corrected menu can be reviewed interactively inside the same 393px phone frame.
+- Verified at true phone width with the menu open: all five navigation rows render at 47.99px high and report flex/center alignment; the header actions, footer social icons and footer accordions remain unchanged.
+- Pending review: client approval of the v1.6 mobile-row alignment and final Instagram/TikTok profile URLs before production implementation.
+
+## 2026-07-31 - Header and footer component study v1.7
+
+- Created `header-footer-mockup-v1.7.html` and a matching `header-footer-mockup-v1.7-tablet-preview.html`, preserving all earlier comparison versions.
+- Changed only the 721-1000px tablet footer: Explore, Locations, About and Policies now appear as four equal buttons in one horizontal row.
+- All four tablet sections start collapsed. Selecting one opens a shared full-width two-column link panel beneath the row; selecting another automatically closes the previous section, and selecting the active section closes it again.
+- Reduced the tested tablet footer from approximately 391px in v1.6 to 229px in its default collapsed state, a reduction of about 162px. An open section measures approximately 321px and remains shorter than the former always-expanded footer.
+- Preserved the phone footer exactly as stacked native accordions with all four groups closed initially; the tablet button row is hidden at phone widths.
+- Preserved the desktop footer exactly as the established open five-column grid; the tablet button row is hidden at desktop widths.
+- Verified the four tablet buttons share one row, only one shared panel opens at a time, all intended links remain available, both regression layouts retain their prior structures, there is no horizontal overflow, and the browser console reports no warnings or errors.
+- Pending review: client approval of the v1.7 tablet-only footer treatment and final Instagram/TikTok profile URLs before production implementation.
+
+## 2026-07-31 - Header and footer component study v1.8
+
+- Created `header-footer-mockup-v1.8.html` and `header-footer-mockup-v1.8-tablet-preview.html`, preserving v1.7 and all earlier comparison versions.
+- Addressed the user's objection to the tablet footer's rounded button appearance while preserving the requested click-to-expand interaction.
+- Restyled the four tablet-only controls as a clean horizontal footer menu with transparent backgrounds, square edges, subtle vertical separators and small dropdown chevrons.
+- The selected section now uses a thin green underline and rotated chevron instead of a filled button state. Its links continue to open in the shared full-width panel beneath the row, with only one section open at a time.
+- The collapsed tablet footer now measures approximately 216px at the tested 902px rendered width.
+- Confirmed that phone retains the stacked native accordions and centered intro, while desktop retains the open five-column grid. The tablet menu is hidden in both layouts.
+- Verified dropdown interaction, visible link sets, chevron rotation, active underline, zero-radius transparent controls, page width and browser console health with no warnings or errors.
+- Pending review: client approval of the v1.8 tablet dropdown-menu appearance and final Instagram/TikTok profile URLs before production implementation.
+
+## 2026-07-31 - Header and footer component study v1.9
+
+- Created `header-footer-mockup-v1.9.html` and `header-footer-mockup-v1.9-tablet-preview.html`, preserving all earlier comparison versions.
+- Removed every line surrounding the tablet footer dropdown labels: the outer top/bottom rules, row divider, vertical separators, shared-panel divider and active underline.
+- Kept Explore, Locations, About and Policies as four clean, evenly spaced, clickable text labels with dropdown chevrons.
+- The active tablet section is now indicated only by leaf-green text and the upward-facing chevron; its links still open in the shared panel below, with only one section open at a time.
+- Verified all relevant computed borders are 0px, the active control has no shadow, dropdown content remains correct and the chevron rotates as expected.
+- Confirmed phone retains the stacked native accordions and desktop retains the open five-column grid; the tablet menu remains hidden in both layouts. Browser console reports no warnings or errors.
+- Pending review: client approval of the borderless v1.9 tablet menu and final Instagram/TikTok profile URLs before production implementation.
+
+## 2026-07-31 - Header and footer v1.9 client preference
+
+- The client confirmed that they like the borderless v1.9 tablet footer treatment.
+- Treat v1.9 as the preferred current header/footer direction: full desktop footer, borderless four-item tablet dropdown menu, and stacked phone accordions.
+- Remaining production follow-up is confirmation of the final Instagram and TikTok profile URLs and implementation approval.

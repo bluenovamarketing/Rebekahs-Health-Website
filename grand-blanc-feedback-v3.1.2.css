@@ -1,0 +1,49 @@
+/*
+ * Grand Blanc v3.1.2
+ * On narrow phones, keep Jackelyn's portrait uncropped and move the long
+ * location caption below the image so the arched mask cannot clip the words.
+ */
+
+@media (max-width: 600px) {
+  .story-photo {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 48% 48% 18px 18px / 16% 16% 18px 18px;
+    background: var(--deep);
+  }
+
+  .story-photo img {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    flex: 0 0 auto;
+    object-fit: cover;
+    object-position: center 28%;
+  }
+
+  .story-photo::after {
+    display: none;
+  }
+
+  .story-caption {
+    position: relative;
+    inset: auto;
+    padding: 1.5rem;
+    background: var(--deep);
+  }
+
+  .story-caption h3 {
+    font-size: clamp(1.55rem, 7vw, 1.9rem);
+    line-height: 1.12;
+  }
+
+  .story-caption p {
+    margin-top: 0.75rem;
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+}
