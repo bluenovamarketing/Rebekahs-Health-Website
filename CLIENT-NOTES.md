@@ -1123,3 +1123,13 @@
 - The client confirmed that they like the borderless v1.9 tablet footer treatment.
 - Treat v1.9 as the preferred current header/footer direction: full desktop footer, borderless four-item tablet dropdown menu, and stacked phone accordions.
 - Remaining production follow-up is confirmation of the final Instagram and TikTok profile URLs and implementation approval.
+
+## 2026-08-01 - Homepage v3.1.13 global header/footer integration
+
+- Created `third-mockup-v3.1.13.html` from the approved Homepage v3.1.1 body and preserved `third-mockup-v3.1.1.html` as the rollback/reference version.
+- Replaced only the homepage header and footer with the preferred Header + Footer v1.9 direction: desktop dropdown navigation and five-column footer, tablet menu plus borderless four-item footer dropdown, and phone menu plus stacked footer accordions.
+- Kept interior page mock-ups body-only so the client can review the global component once without repeating it on every page.
+- Updated the Round 3.1 review hub so Home opens v3.1.13 and added the standalone `header-footer-mockup-v1.9.html` as a reusable global component; the previous root review hub remains unchanged for rollback access.
+- Updated the canonical Client Review Timeline sheet so the Home version journey and current link now point to v3.1.13.
+- Verified desktop, tablet and iPhone layouts with no horizontal overflow, no broken images and no browser-console warnings/errors. Confirmed the tablet footer opens only one panel at a time and the phone footer retains native accordion behavior.
+- Client-facing next step: review Homepage v3.1.13 together with the standalone Header & Footer v1.9 component. Production routes and final social profile destinations can be reconfirmed when the pages are assembled in WordPress.
