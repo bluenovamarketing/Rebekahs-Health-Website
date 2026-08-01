@@ -1,0 +1,126 @@
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Exploratory v1.11 header and footer component mockup for Rebekah's Health & Nutrition.">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Header + Footer Mockup v1.11 | Rebekah's Health & Nutrition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--pine:#174c3c;--leaf:#3f7d50;--cream:#f7f3e8;--berry:#8e4b61;--ink:#26342e;--sans:"DM Sans",Arial,sans-serif}
+    *{box-sizing:border-box}html{min-width:320px}body{min-height:100vh;margin:0;display:flex;flex-direction:column;overflow-x:clip;color:var(--ink);background:var(--cream);font-family:var(--sans)}a{color:inherit;text-decoration:none}img{display:block;width:100%}button,summary{font:inherit}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .skip{position:fixed;left:12px;top:-60px;z-index:100;padding:12px;background:#fff;color:var(--pine)}.skip:focus{top:12px}
+
+    .site-header{position:sticky;top:0;z-index:20;height:88px;padding:0 clamp(24px,2.6vw,44px);display:flex;align-items:center;gap:clamp(14px,1.5vw,24px);background:#fffdf8;border-bottom:1px solid rgba(0,75,45,.12);backdrop-filter:blur(16px)}
+    .brand{width:clamp(190px,15vw,220px);margin-right:auto;flex:0 0 auto}.site-header nav{display:flex;align-items:center;gap:clamp(12px,1.2vw,19px);font-size:13.5px;font-weight:600}.site-header nav>a,.nav-trigger{white-space:nowrap;transition:color .2s ease}.site-header nav>a:hover,.site-header nav>a:focus-visible,.nav-trigger:hover,.nav-trigger:focus-visible{color:var(--leaf)}
+    .nav-dropdown{position:relative}.nav-trigger{min-height:44px;padding:0;display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;color:var(--ink);font-weight:600;cursor:pointer}.nav-trigger .chevron{color:var(--leaf);font-size:11px;transition:transform .2s ease}.nav-dropdown.is-open .chevron{transform:rotate(180deg)}
+    .dropdown-panel{position:absolute;top:calc(100% + 9px);left:-18px;width:242px;padding:10px;display:none;border:1px solid rgba(23,76,60,.13);border-radius:15px;background:#fff;box-shadow:0 20px 50px rgba(23,76,60,.15)}.nav-dropdown.is-open .dropdown-panel{display:grid}.dropdown-panel a{padding:10px 11px;border-radius:9px;color:#536c61;line-height:1.25}.dropdown-panel a:hover,.dropdown-panel a:focus-visible{background:var(--cream);color:var(--pine)}.dropdown-panel a:first-child{color:var(--pine);font-weight:700}
+    .menu{display:none;border:0;background:none;color:var(--pine);font-weight:700;cursor:pointer}.menu span{margin-left:5px}.header-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}.pill{min-height:44px;padding:0 15px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--pine);border-radius:999px;background:var(--pine);color:#fff;font-size:13px;font-weight:700;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease}.pill:hover,.pill:focus-visible{transform:translateY(-1px);box-shadow:0 8px 18px rgba(23,76,60,.17)}.call-order{background:#078a42;border-color:#078a42}.mobile-actions{display:none}
+
+    .review-canvas{position:relative;min-height:clamp(330px,46vh,610px);flex:1 0 auto;background:radial-gradient(circle at 12% 20%,rgba(214,163,58,.09),transparent 24%),radial-gradient(circle at 88% 80%,rgba(169,195,160,.14),transparent 28%),var(--cream)}.version-chip{position:absolute;top:18px;right:18px;z-index:1;padding:9px 12px;border:1px solid rgba(23,76,60,.14);border-radius:999px;background:rgba(255,255,255,.92);color:#63766d;box-shadow:0 8px 24px rgba(23,76,60,.1);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;backdrop-filter:blur(10px)}
+
+    footer{padding:38px clamp(28px,6vw,92px) 22px;background:#fff;color:var(--pine);border-top:1px solid rgba(23,76,60,.1)}.footer-grid{display:grid;grid-template-columns:minmax(230px,1.25fr) repeat(4,minmax(125px,.72fr));gap:clamp(28px,4vw,62px);align-items:start}.footer-intro{max-width:285px}.footer-logo{width:210px;display:block}.footer-logo img{height:auto}.footer-intro p{margin:14px 0 16px;color:#536c61;font-size:14px;line-height:1.55}
+    .footer-connect{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:var(--leaf);font-size:13px;font-weight:700}.social-icons{display:flex;gap:8px}.social-icon{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(23,76,60,.16);border-radius:50%;background:#f2f6f0;color:var(--pine);transition:transform .2s ease,background .2s ease,color .2s ease,box-shadow .2s ease}.social-icon svg{width:19px;height:19px}.social-icon:hover,.social-icon:focus-visible{transform:translateY(-2px);background:var(--pine);color:#fff;box-shadow:0 9px 20px rgba(23,76,60,.18)}
+    .tablet-footer-nav{display:none}.tablet-panel[hidden]{display:none}
+    .footer-group{margin:0;border:0}.footer-group summary{position:relative;margin-bottom:13px;list-style:none;color:var(--pine);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.footer-group summary::-webkit-details-marker{display:none}.footer-group summary::after{display:none}.footer-links{display:grid;gap:9px}.footer-links a{color:#667a70;font-size:13px;line-height:1.35}.footer-links a:hover,.footer-links a:focus-visible{color:var(--berry)}
+    .footer-bottom{margin-top:30px;padding-top:17px;display:flex;justify-content:space-between;gap:22px;border-top:1px solid rgba(23,76,60,.13);color:#74877e;font-size:12px}.footer-bottom p{margin:0}.footer-bottom nav{display:flex;gap:18px}.footer-bottom a{text-decoration:underline;text-underline-offset:3px}.footer-bottom a:hover,.footer-bottom a:focus-visible{color:var(--berry)}
+
+    /* Original compact desktop header behavior from v1.3. */
+    @media(max-width:1380px){.site-header{padding:0 20px;gap:10px}.brand{width:190px}.site-header nav{gap:8px;font-size:12px}.header-actions{gap:8px}.pill{padding:0 10px;font-size:12px}}
+    @media(max-width:1160px){.site-header{padding:0 18px;gap:8px}.site-header nav{gap:6px;font-size:11.5px}.header-actions{gap:6px}.pill{padding:0 9px;font-size:11.5px}}
+
+    /* Original v1.3 tablet/mobile header transition. */
+    @media(max-width:1040px){.site-header nav{position:absolute;top:88px;left:0;right:0;max-height:calc(100vh - 88px);display:none;padding:16px 5vw 24px;flex-direction:column;align-items:stretch;gap:0;overflow-y:auto;background:var(--cream);border-bottom:1px solid rgba(23,76,60,.12);box-shadow:0 18px 34px rgba(23,76,60,.1);font-size:14px}.site-header nav.open{display:flex}.site-header nav>a,.nav-trigger{width:100%;min-height:48px;padding:0 10px;border-bottom:1px solid rgba(23,76,60,.1);text-align:left}.nav-trigger{justify-content:flex-start;gap:8px}.nav-trigger .chevron{margin-left:2px}.nav-dropdown{width:100%}.dropdown-panel{position:static;width:100%;margin:6px 0 9px;padding:6px;border-radius:11px;box-shadow:none}.dropdown-panel a{padding:10px 12px}.menu{display:block}.header-actions{display:none}.mobile-actions{padding-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}.mobile-actions .pill{min-height:48px;font-size:14px}}
+
+    /* The footer becomes a compact accordion at tablet and phone widths. */
+    @media(max-width:1000px){footer{padding:28px clamp(28px,6vw,56px) 20px}.footer-grid{display:block}.footer-intro{max-width:none;margin-bottom:22px;display:grid;grid-template-columns:210px minmax(0,1fr) auto;gap:16px 28px;align-items:center}.footer-intro p{margin:0}.footer-connect{justify-content:flex-end}.footer-group{border-top:1px solid rgba(23,76,60,.12)}.footer-group:last-of-type{border-bottom:1px solid rgba(23,76,60,.12)}.footer-group summary{min-height:50px;margin:0;padding:0 2px;display:flex;align-items:center;justify-content:space-between;cursor:pointer}.footer-group summary::after{content:"+";display:block;color:var(--leaf);font-size:20px;font-weight:500;letter-spacing:0}.footer-group[open] summary::after{content:"ÃƒÆ’Ã‚Â¢Ãƒâ€¹Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢"}.footer-links{padding:0 2px 16px;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px}.footer-links a{padding:2px 0}.footer-bottom{margin-top:20px}}
+    @media(min-width:721px) and (max-width:1000px){footer{padding:24px clamp(28px,6vw,56px) 18px}.footer-intro{margin-bottom:14px}.footer-group{display:none}.tablet-footer-nav{display:block}.tablet-tab-row{padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}.tablet-tab{min-height:50px;padding:0 12px;display:flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:0;background:transparent;color:var(--pine);font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:background .2s ease,color .2s ease,box-shadow .2s ease}.tablet-tab:hover,.tablet-tab:focus-visible{background:rgba(63,125,80,.07);color:var(--leaf)}.tablet-tab[aria-expanded="true"]{background:transparent;color:var(--leaf)}.tablet-tab-symbol{font-size:12px;font-weight:700;line-height:1;transition:transform .2s ease}.tablet-tab[aria-expanded="true"] .tablet-tab-symbol{transform:rotate(180deg)}.tablet-panel{padding:14px 12px 16px;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 28px}.tablet-panel:not([hidden]){display:grid}.tablet-panel a{padding:4px 6px;color:#667a70;font-size:13px;line-height:1.35}.tablet-panel a:hover,.tablet-panel a:focus-visible{color:var(--berry)}.footer-bottom{margin-top:14px;padding-top:14px}}
+    @media(max-width:720px){.site-header{height:74px;padding:0 20px}.brand{width:205px}.site-header nav{top:74px;max-height:calc(100vh - 74px)}.review-canvas{min-height:52vh}.version-chip{top:12px;right:12px}.mobile-actions{grid-template-columns:1fr}footer{padding:26px 22px 20px}.footer-intro{margin-bottom:18px;display:flex;flex-direction:column;align-items:center;gap:0;text-align:center}.footer-logo{width:205px}.footer-intro p{margin:12px auto 14px;max-width:330px}.footer-connect{justify-content:center}.footer-links{grid-template-columns:1fr}.footer-bottom{margin-top:18px;flex-direction:column;align-items:center;gap:10px;text-align:center}.footer-bottom nav{gap:14px}}
+    @media(min-width:1001px){.footer-group summary{pointer-events:none}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Rebekah's home"><img src="tmp/source/current-site-logo-live.png" alt="Rebekah's Health & Nutrition"></a>
+    <button class="menu" type="button" aria-expanded="false" aria-controls="nav">Menu <span aria-hidden="true">&#9776;</span></button>
+
+    <nav id="nav" aria-label="Main navigation">
+      <div class="nav-dropdown">
+        <button class="nav-trigger" type="button" aria-expanded="false">About <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown-panel"><a href="/our-story/">Our Story</a><a href="/our-team/">Our Team</a><a href="/practitioners/">Practitioners</a><a href="/contact-us/">Contact Us</a></div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-trigger" type="button" aria-expanded="false">Visit Our Stores <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="dropdown-panel"><a href="/locations/">View All Locations</a><a href="/locations/lapeer/">Lapeer</a><a href="/locations/grand-blanc/">Grand Blanc</a><a href="/locations/clarkston/">Clarkston</a><a href="/locations/lake-orion/">Lake Orion</a></div>
+      </div>
+      <a href="/in-store-products/">In-Store Products</a><a href="/events/">Classes &amp; Events</a><a href="/blog/">Wellness Source Blog</a>
+      <div class="mobile-actions" aria-label="Header actions"><a class="pill call-order" href="tel:2488432011">Call To Order</a><a class="pill" href="#footer-connect">Stay Connected</a></div>
+    </nav>
+
+    <div class="header-actions" aria-label="Header actions"><a class="pill call-order" href="tel:2488432011">Call To Order</a><a class="pill" href="#footer-connect">Stay Connected</a></div>
+  </header>
+
+  <main class="review-canvas" id="main" aria-label="Blank component review canvas"><div class="version-chip" aria-label="Exploratory mockup version 1.11">Header + Footer Study &middot; v1.11 &middot; Exploratory</div></main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-intro">
+        <a class="footer-logo" href="#" aria-label="Rebekah's home"><img src="tmp/source/current-site-logo-live.png" alt="Rebekah's Health & Nutrition Source"></a>
+        <p>Trusted products. Practical education. Guidance that feels personal.</p>
+        <div class="footer-connect" id="footer-connect" aria-label="Social media links">
+          <div class="social-icons">
+            <a class="social-icon" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4.1"></circle><circle cx="17.4" cy="6.7" r="1" fill="currentColor" stroke="none"></circle></svg><span class="visually-hidden">Instagram</span></a>
+            <a class="social-icon" href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.2 4v10.2a4.2 4.2 0 1 1-3.6-4.16"></path><path d="M14.2 4c.75 2.5 2.3 3.9 4.8 4.2"></path></svg><span class="visually-hidden">TikTok</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="tablet-footer-nav" aria-label="Tablet footer navigation">
+        <div class="tablet-tab-row" role="group" aria-label="Footer sections">
+          <button class="tablet-tab" type="button" aria-expanded="false" aria-controls="tablet-explore"><span>Explore</span><span class="tablet-tab-symbol" aria-hidden="true">&#9662;</span></button>
+          <button class="tablet-tab" type="button" aria-expanded="false" aria-controls="tablet-locations"><span>Locations</span><span class="tablet-tab-symbol" aria-hidden="true">&#9662;</span></button>
+          <button class="tablet-tab" type="button" aria-expanded="false" aria-controls="tablet-about"><span>About</span><span class="tablet-tab-symbol" aria-hidden="true">&#9662;</span></button>
+          <button class="tablet-tab" type="button" aria-expanded="false" aria-controls="tablet-policies"><span>Policies</span><span class="tablet-tab-symbol" aria-hidden="true">&#9662;</span></button>
+        </div>
+        <div class="tablet-panels">
+          <div class="tablet-panel" id="tablet-explore" hidden><a href="/in-store-products/">In-Store Products</a><a href="/events/">Classes &amp; Events</a><a href="/blog/">Wellness Source Blog</a><a href="/practitioners/">Practitioners</a></div>
+          <div class="tablet-panel" id="tablet-locations" hidden><a href="/locations/">All Locations</a><a href="/locations/lapeer/">Lapeer</a><a href="/locations/grand-blanc/">Grand Blanc</a><a href="/locations/clarkston/">Clarkston</a><a href="/locations/lake-orion/">Lake Orion</a></div>
+          <div class="tablet-panel" id="tablet-about" hidden><a href="/our-story/">Our Story</a><a href="/our-team/">Our Team</a><a href="/contact-us/">Contact Us</a></div>
+          <div class="tablet-panel" id="tablet-policies" hidden><a href="/privacy-policy/">Privacy Policy</a><a href="/refund_returns/">Refund &amp; Returns</a><a href="/terms-conditions/">Terms &amp; Conditions</a><a href="/disclaimer/">Disclaimer</a></div>
+        </div>
+      </div>
+      <details class="footer-group" open><summary>Explore</summary><div class="footer-links"><a href="/in-store-products/">In-Store Products</a><a href="/events/">Classes &amp; Events</a><a href="/blog/">Wellness Source Blog</a><a href="/practitioners/">Practitioners</a></div></details>
+      <details class="footer-group" open><summary>Locations</summary><div class="footer-links"><a href="/locations/">All Locations</a><a href="/locations/lapeer/">Lapeer</a><a href="/locations/grand-blanc/">Grand Blanc</a><a href="/locations/clarkston/">Clarkston</a><a href="/locations/lake-orion/">Lake Orion</a></div></details>
+      <details class="footer-group" open><summary>About</summary><div class="footer-links"><a href="/our-story/">Our Story</a><a href="/our-team/">Our Team</a><a href="/contact-us/">Contact Us</a></div></details>
+      <details class="footer-group" open><summary>Policies</summary><div class="footer-links"><a href="/privacy-policy/">Privacy Policy</a><a href="/refund_returns/">Refund &amp; Returns</a><a href="/terms-conditions/">Terms &amp; Conditions</a><a href="/disclaimer/">Disclaimer</a></div></details>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 Rebekah's Health &amp; Nutrition &middot; Website Design by <a href="https://bluenovamarketing.com/">Blue Nova Marketing</a></p><nav aria-label="Footer utility navigation"><a href="/sitemap_index.xml">Sitemap</a></nav></div>
+  </footer>
+
+  <script>
+    const menu=document.querySelector('.menu'),nav=document.querySelector('#nav'),dropdownTriggers=[...document.querySelectorAll('.nav-trigger')],footerGroups=[...document.querySelectorAll('.footer-group')],tabletFooterButtons=[...document.querySelectorAll('.tablet-tab')],tabletFooterPanels=[...document.querySelectorAll('.tablet-panel')];let footerIsCompact;
+    function closeDropdowns(except){dropdownTriggers.forEach(trigger=>{if(trigger===except)return;trigger.setAttribute('aria-expanded','false');trigger.closest('.nav-dropdown').classList.remove('is-open')})}
+    function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');closeDropdowns()}
+    dropdownTriggers.forEach(trigger=>trigger.addEventListener('click',()=>{const willOpen=trigger.getAttribute('aria-expanded')!=='true';closeDropdowns(trigger);trigger.setAttribute('aria-expanded',String(willOpen));trigger.closest('.nav-dropdown').classList.toggle('is-open',willOpen)}));
+    menu.addEventListener('click',()=>{const willOpen=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(willOpen));nav.classList.toggle('open',willOpen);if(!willOpen)closeDropdowns()});
+    nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));document.addEventListener('click',event=>{if(!event.target.closest('.site-header'))closeDropdowns()});document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();menu.focus()}});
+    function closeTabletFooter(except){tabletFooterButtons.forEach(button=>{if(button===except)return;button.setAttribute('aria-expanded','false')});tabletFooterPanels.forEach(panel=>{if(except&&panel.id===except.getAttribute('aria-controls'))return;panel.hidden=true})}
+    tabletFooterButtons.forEach(button=>button.addEventListener('click',()=>{const panel=document.querySelector('#'+button.getAttribute('aria-controls')),willOpen=button.getAttribute('aria-expanded')!=='true';closeTabletFooter(button);button.setAttribute('aria-expanded',String(willOpen));panel.hidden=!willOpen}));
+    function syncResponsiveState(){if(window.innerWidth>1120)closeMenu();if(window.innerWidth<=720||window.innerWidth>1000)closeTabletFooter();const isCompactFooter=window.innerWidth<=1000;if(isCompactFooter!==footerIsCompact){footerGroups.forEach(group=>{group.open=!isCompactFooter});footerIsCompact=isCompactFooter}}
+    syncResponsiveState();window.addEventListener('resize',syncResponsiveState);
+  </script>
+</body>
+</html>
+
+
+
+

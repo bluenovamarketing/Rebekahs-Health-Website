@@ -1161,3 +1161,12 @@
 - Updated the Round 3.1 hub and canonical Client Review Timeline to make v3.1.16 the current homepage while retaining Header & Footer v1.9 as the separate global-component review item.
 - Checked the rendered body-only page at desktop, tablet and iPhone widths: no header, no footer, no broken images and no horizontal overflow.
 - Client-facing next step: review the homepage body and the approved global header/footer as two separate mockups, exactly as previously requested.
+
+## 2026-08-01 - Header and footer v1.11 restores the original header
+
+- The user identified the remaining wide-screen header problem in v1.9: later revisions had placed all flexible space between `Wellness Source Blog` and the two action buttons, creating a large blank gap.
+- The user directed that the original header be reused rather than recreated. Created `header-footer-mockup-v1.11.html` using the exact header layout and responsive rules from `header-footer-mockup-v1.3.html`; no new header spacing system was invented.
+- Kept the preferred v1.9 footer markup, desktop columns, borderless tablet menu and phone accordions unchanged. Desktop footer geometry matches v1.9 exactly.
+- Verified the v1.11 wide-screen header geometry matches v1.3 exactly. The navigation and action buttons are again one adjacent group, with the original flexible space between the logo and navigation.
+- Verified desktop, tablet and phone layouts with no horizontal overflow. Updated the Round 3.1 review hub to point its separate Header & Footer card to v1.11; the Homepage remains body-only at v3.1.16.
+- Client-facing next step: review the separate v1.11 component and confirm the restored original header with the preferred v1.9 footer.
