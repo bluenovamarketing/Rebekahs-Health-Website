@@ -1175,3 +1175,11 @@
 
 - Removed the `Open the previous review hub` link and its unused styling from the current Round 3.1 review hub at the user's request.
 - The hub now keeps reviewers focused on the current page cards and separate global-component mockup only.
+
+## 2026-08-01 - Client revision-summary email drafted
+
+- Prepared an initial detailed revision-summary draft, but the user correctly noted that it read like a project checklist rather than the prior mockup-review email.
+- Reviewed the exact text of the previously sent mockup-review email supplied by the user and matched its numbered `Your feedback` / `What we did` response structure, warm tone and plain-language level.
+- The final draft answers the client's feedback in the same order, identifies the approved pages that remain unchanged, summarizes every completed revision, explains why the global header/footer is reviewed separately, and introduces the new Our Team page.
+- The closing asks only for approval of the revised mockups, the new Our Team page and the separate global header/footer; it does not add a new client task checklist.
+- Included the current Round 3.1 review-hub link and separate Header & Footer v1.11 link. No email was sent or added to Gmail; the revised draft is awaiting the user's approval.
