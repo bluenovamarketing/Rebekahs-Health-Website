@@ -1170,3 +1170,8 @@
 - Verified the v1.11 wide-screen header geometry matches v1.3 exactly. The navigation and action buttons are again one adjacent group, with the original flexible space between the logo and navigation.
 - Verified desktop, tablet and phone layouts with no horizontal overflow. Updated the Round 3.1 review hub to point its separate Header & Footer card to v1.11; the Homepage remains body-only at v3.1.16.
 - Client-facing next step: review the separate v1.11 component and confirm the restored original header with the preferred v1.9 footer.
+
+## 2026-08-01 - Round 3.1 review hub cleanup
+
+- Removed the `Open the previous review hub` link and its unused styling from the current Round 3.1 review hub at the user's request.
+- The hub now keeps reviewers focused on the current page cards and separate global-component mockup only.
