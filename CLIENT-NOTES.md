@@ -1133,3 +1133,13 @@
 - Updated the canonical Client Review Timeline sheet so the Home version journey and current link now point to v3.1.13.
 - Verified desktop, tablet and iPhone layouts with no horizontal overflow, no broken images and no browser-console warnings/errors. Confirmed the tablet footer opens only one panel at a time and the phone footer retains native accordion behavior.
 - Client-facing next step: review Homepage v3.1.13 together with the standalone Header & Footer v1.9 component. Production routes and final social profile destinations can be reconfirmed when the pages are assembled in WordPress.
+
+## 2026-08-01 - Homepage v3.1.14 shared header/footer correction
+
+- The user reported that Homepage v3.1.13 showed a large empty desktop-header gap at wide external-browser widths and that the desktop footer columns did not appear evenly aligned.
+- Direct comparison confirmed the v3.1.13 integration and standalone v1.9 component had matching measurements at 1280px; the remaining spacing problems were therefore present in the v1.9 component itself, while the prior integration approach also made future visual drift possible.
+- Created Header + Footer v1.10 and Homepage v3.1.14. Both now load the exact same `global-header-footer-v1.10.css` and `global-header-footer-v1.10.js` files rather than separate rewritten copies.
+- The desktop header content is centered in one shared inner container and the action buttons follow the navigation with a fixed responsive gap, removing the large blank middle area at wide widths.
+- The desktop footer now uses a 230px identity column plus four equal navigation columns; the visible logo and navigation headings were optically aligned. Tablet and phone footer behavior remains unchanged.
+- Preserved Homepage v3.1.13 and Header + Footer v1.9 for rollback. Updated the Round 3.1 hub and canonical Client Review Timeline to point to Homepage v3.1.14 and Header + Footer v1.10.
+- Verified desktop, tablet and iPhone behavior, shared-asset loading, menu/dropdown/accordion interactions, no broken images, no horizontal overflow and no browser-console warnings or errors.
