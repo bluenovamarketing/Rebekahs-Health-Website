@@ -1,0 +1,15 @@
+/* Compatibility only: neutralize obsolete homepage footer layout rules.
+   All visible header/footer design still comes directly from header-footer-mockup-v1.9.html. */
+.site-header[data-approved-source="v1.9"]{gap:0}
+footer[data-approved-source="v1.9"]{min-height:0;display:block;grid-template-columns:none;grid-template-areas:none;align-items:normal;gap:normal;text-align:left}
+footer[data-approved-source="v1.9"] .footer-grid{display:grid;margin:0;justify-content:normal}
+footer[data-approved-source="v1.9"] .footer-intro{display:block;margin:0}
+footer[data-approved-source="v1.9"] .footer-logo{grid-area:auto;background:transparent;padding:0;border-radius:0}
+footer[data-approved-source="v1.9"] .footer-logo img{width:100%;max-width:none;height:auto;margin:0;filter:none;opacity:1}
+footer[data-approved-source="v1.9"] .footer-connect,footer[data-approved-source="v1.9"] .social-icons,footer[data-approved-source="v1.9"] .footer-links,footer[data-approved-source="v1.9"] .tablet-footer-nav,footer[data-approved-source="v1.9"] .tablet-tab-row,footer[data-approved-source="v1.9"] .tablet-panels,footer[data-approved-source="v1.9"] .tablet-panel,footer[data-approved-source="v1.9"] .footer-bottom,footer[data-approved-source="v1.9"] .footer-bottom nav{margin:0}
+footer[data-approved-source="v1.9"] .tablet-panels{display:block}
+footer[data-approved-source="v1.9"] .footer-bottom{margin-top:30px}
+
+@media(max-width:1000px){footer[data-approved-source="v1.9"] .footer-grid{display:block}footer[data-approved-source="v1.9"] .footer-intro{display:grid;margin-bottom:22px}footer[data-approved-source="v1.9"] .footer-bottom{margin-top:20px}}
+@media(min-width:721px) and (max-width:1000px){footer[data-approved-source="v1.9"] .footer-intro{margin-bottom:14px}footer[data-approved-source="v1.9"] .footer-group{display:none}footer[data-approved-source="v1.9"] .footer-bottom{margin-top:14px}}
+@media(max-width:720px){footer[data-approved-source="v1.9"]{display:block;gap:normal;text-align:left}footer[data-approved-source="v1.9"] .footer-intro{display:flex;margin-bottom:18px}footer[data-approved-source="v1.9"] .footer-bottom{margin-top:18px}}

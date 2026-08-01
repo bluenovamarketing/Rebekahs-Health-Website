@@ -1143,3 +1143,12 @@
 - The desktop footer now uses a 230px identity column plus four equal navigation columns; the visible logo and navigation headings were optically aligned. Tablet and phone footer behavior remains unchanged.
 - Preserved Homepage v3.1.13 and Header + Footer v1.9 for rollback. Updated the Round 3.1 hub and canonical Client Review Timeline to point to Homepage v3.1.14 and Header + Footer v1.10.
 - Verified desktop, tablet and iPhone behavior, shared-asset loading, menu/dropdown/accordion interactions, no broken images, no horizontal overflow and no browser-console warnings or errors.
+
+## 2026-08-01 - Homepage v3.1.15 restored approved header/footer v1.9
+
+- The user rejected the rewritten v1.10 header/footer and reiterated that approved components must be reused without visual reinterpretation.
+- Created `third-mockup-v3.1.15.html` with the Homepage v3.1.14 body unchanged and the actual Header + Footer v1.9 source loaded directly from `header-footer-mockup-v1.9.html`.
+- Added a narrowly scoped homepage compatibility reset only to neutralize obsolete global footer rules in `styles.css`; it does not redefine the approved component's visual design.
+- Returned the Round 3.1 hub's Header & Footer card to approved v1.9 and advanced the Home card and canonical Client Review Timeline to v3.1.15. Versions v3.1.14 and v1.10 remain available for rollback history but are no longer current.
+- Verified exact matching footer geometry and spacing against v1.9 at desktop, tablet and iPhone widths, with working mobile menu and footer accordions and no horizontal overflow. Confirmed the homepage main body is byte-for-byte unchanged between v3.1.14 and v3.1.15.
+- Standing decision: once a component is approved, future page integrations must use that approved source as-is. Do not rewrite or restyle it unless the user explicitly requests a new component version.
