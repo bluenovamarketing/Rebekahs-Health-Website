@@ -1152,3 +1152,12 @@
 - Returned the Round 3.1 hub's Header & Footer card to approved v1.9 and advanced the Home card and canonical Client Review Timeline to v3.1.15. Versions v3.1.14 and v1.10 remain available for rollback history but are no longer current.
 - Verified exact matching footer geometry and spacing against v1.9 at desktop, tablet and iPhone widths, with working mobile menu and footer accordions and no horizontal overflow. Confirmed the homepage main body is byte-for-byte unchanged between v3.1.14 and v3.1.15.
 - Standing decision: once a component is approved, future page integrations must use that approved source as-is. Do not rewrite or restyle it unless the user explicitly requests a new component version.
+
+## 2026-08-01 - Homepage v3.1.16 body-only review correction
+
+- The user reported that Homepage v3.1.15 still showed the same unacceptable header/footer result and correctly noted that the live page should have been visually checked before it was called fixed.
+- Revisited the earlier explicit decision: the homepage review should not contain a header or footer. The approved global header/footer is to remain a separate mockup so it cannot be altered by homepage styles.
+- Created `third-mockup-v3.1.16.html` as a body-only version. Its `<main>` content is unchanged from v3.1.15; the header/footer mounts, integration loader and compatibility stylesheet were removed.
+- Updated the Round 3.1 hub and canonical Client Review Timeline to make v3.1.16 the current homepage while retaining Header & Footer v1.9 as the separate global-component review item.
+- Checked the rendered body-only page at desktop, tablet and iPhone widths: no header, no footer, no broken images and no horizontal overflow.
+- Client-facing next step: review the homepage body and the approved global header/footer as two separate mockups, exactly as previously requested.
