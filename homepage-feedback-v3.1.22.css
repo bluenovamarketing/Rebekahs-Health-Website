@@ -1,0 +1,6 @@
+/* Homepage v3.1.22: use the geometrically leveled photo with no page-level rotation. */
+
+.intro-media .intro-photo-frame img{
+  object-position:center center;
+  transform:scale(1.03);
+}
