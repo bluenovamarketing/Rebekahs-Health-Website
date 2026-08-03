@@ -17,6 +17,6 @@
   object-position:center center;
   border-radius:0;
   box-shadow:none;
-  transform:translateY(clamp(14px,3.8vw,19px)) rotate(.65deg) scale(1.075);
+  transform:translateY(clamp(23px,5.5vw,28px)) rotate(.65deg) scale(1.11);
   transform-origin:50% 50%;
 }
