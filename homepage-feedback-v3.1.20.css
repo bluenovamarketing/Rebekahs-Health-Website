@@ -1,0 +1,5 @@
+/* Homepage v3.1.20: fully level the authentic product photo to its measured shelf angle. */
+
+.intro-media .intro-photo-frame img{
+  transform:translateY(clamp(23px,5.5vw,28px)) rotate(2.1deg) scale(1.11);
+}
