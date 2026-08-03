@@ -1190,7 +1190,7 @@
 - Corrected the client-reported photo mix-up: the shared-drive Clarkston Team Photo now replaces the unwanted lower-resolution store image in the earlier “Wellness help close to home” section.
 - Restored the original clear Clarkston in-store photo to the later “Personal guidance, practical next steps” section where the team photo had been placed by mistake.
 - Updated both image alt descriptions to match their restored content and advanced the current Round 3.1 review-hub card to v3.1.17.
-- Follow-up completed: the second issue was addressed in Homepage v3.1.18; publishing and same-device review remain pending.
+- Follow-up completed: the second issue was addressed in Homepage v3.1.18 and both corrected mockups were published to GitHub Pages; same-device client review remains pending.
 
 ## 2026-08-03 - Homepage mobile shipping and product-photo correction v3.1.18
 
@@ -1201,4 +1201,5 @@
 - Replaced every homepage use of the soft 600×600 Liver Detox image with the existing sharp 2000×1500 photo of Rebekah’s private-label amber-bottle supplements and updated its alt text. No AI reconstruction or invented product label was used.
 - Advanced the current Round 3.1 review-hub Home card to v3.1.18. The homepage remains body-only; the global header/footer is still reviewed separately.
 - Updated the canonical Client Review Timeline so Home points to v3.1.18 and Clarkston points to v3.1.17; the existing wrapped-cell and hyperlink formatting was preserved.
+- Published commit `c43beb7` to the GitHub Pages `main` branch and confirmed the Pages build completed successfully. Added a public QA harness for exact 360px, 390px and 360px/125%-text homepage checks.
 - Client-facing next step: recheck the updated shipping section on the same Samsung phone/browser and at its current text-size setting, then confirm the sharper private-label product image.

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Homepage v3.1.18 Mobile QA</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;padding:24px;background:#e9ece8;color:#18382b;font-family:Arial,sans-serif}
+    h1{margin:0 0 8px;font-size:24px}
+    .note{margin:0 0 22px;color:#456054}
+    .phones{display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start}
+    .case{margin:0}
+    .case figcaption{margin:0 0 9px;font-size:14px;font-weight:700;text-align:center}
+    .phone{padding:12px 8px 16px;background:#1d211f;border-radius:30px;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+    .speaker{width:56px;height:5px;margin:0 auto 9px;border-radius:99px;background:#555d59}
+    iframe{display:block;height:780px;border:0;border-radius:18px;background:#fff}
+    .w360 iframe{width:360px}
+    .w390 iframe{width:390px}
+    @media(max-width:500px){body{padding:12px}.phone{max-width:100%;overflow:auto}}
+  </style>
+</head>
+<body>
+  <h1>Homepage v3.1.18 — live phone checks</h1>
+  <p class="note">Each frame loads the published homepage and scrolls to “We Ship Nationwide.”</p>
+  <div class="phones">
+    <figure class="case w360">
+      <figcaption>360px phone</figcaption>
+      <div class="phone"><div class="speaker"></div><iframe title="Homepage at 360 pixels" data-width="360"></iframe></div>
+    </figure>
+    <figure class="case w390">
+      <figcaption>390px phone</figcaption>
+      <div class="phone"><div class="speaker"></div><iframe title="Homepage at 390 pixels" data-width="390"></iframe></div>
+    </figure>
+    <figure class="case w360">
+      <figcaption>360px phone · 125% root text</figcaption>
+      <div class="phone"><div class="speaker"></div><iframe title="Homepage at 360 pixels with enlarged text" data-width="360" data-text-scale="1.25"></iframe></div>
+    </figure>
+  </div>
+  <script>
+    const homepageUrl = 'third-mockup-v3.1.18.html?qa-frame=1';
+
+    document.querySelectorAll('iframe').forEach((frame) => {
+      frame.addEventListener('load', () => {
+        const waitForShipping = window.setInterval(() => {
+          const doc = frame.contentDocument;
+          const shipping = doc && doc.querySelector('#shipping');
+          if (!shipping) return;
+
+          window.clearInterval(waitForShipping);
+          const scale = Number(frame.dataset.textScale || 1);
+          if (scale !== 1) doc.documentElement.style.fontSize = `${16 * scale}px`;
+          shipping.scrollIntoView({block: 'start'});
+        }, 100);
+      });
+      frame.src = homepageUrl;
+    });
+  </script>
+</body>
+</html>
