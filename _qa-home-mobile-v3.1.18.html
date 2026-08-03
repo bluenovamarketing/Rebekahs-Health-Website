@@ -28,13 +28,13 @@
       <figcaption>360px phone</figcaption>
       <div class="phone"><div class="speaker"></div><iframe title="Homepage at 360 pixels" data-width="360"></iframe></div>
     </figure>
-    <figure class="case w390">
-      <figcaption>390px phone</figcaption>
-      <div class="phone"><div class="speaker"></div><iframe title="Homepage at 390 pixels" data-width="390"></iframe></div>
-    </figure>
     <figure class="case w360">
       <figcaption>360px phone · 125% root text</figcaption>
       <div class="phone"><div class="speaker"></div><iframe title="Homepage at 360 pixels with enlarged text" data-width="360" data-text-scale="1.25"></iframe></div>
+    </figure>
+    <figure class="case w390">
+      <figcaption>390px phone</figcaption>
+      <div class="phone"><div class="speaker"></div><iframe title="Homepage at 390 pixels" data-width="390"></iframe></div>
     </figure>
   </div>
   <script>
@@ -50,7 +50,9 @@
           window.clearInterval(waitForShipping);
           const scale = Number(frame.dataset.textScale || 1);
           if (scale !== 1) doc.documentElement.style.fontSize = `${16 * scale}px`;
-          shipping.scrollIntoView({block: 'start'});
+          doc.body.replaceChildren(shipping);
+          doc.body.style.margin = '0';
+          doc.documentElement.scrollTop = 0;
         }, 100);
       });
       frame.src = homepageUrl;
