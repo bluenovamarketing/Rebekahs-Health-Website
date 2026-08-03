@@ -1183,3 +1183,22 @@
 - The final draft answers the client's feedback in the same order, identifies the approved pages that remain unchanged, summarizes every completed revision, explains why the global header/footer is reviewed separately, and introduces the new Our Team page.
 - The closing asks only for approval of the revised mockups, the new Our Team page and the separate global header/footer; it does not add a new client task checklist.
 - Included the current Round 3.1 review-hub link and separate Header & Footer v1.11 link. No email was sent or added to Gmail; the revised draft is awaiting the user's approval.
+
+## 2026-08-03 - Clarkston photo-placement correction v3.1.17
+
+- Created `clarkston-location-mockup-v3.1.17.html` from v3.1.11, preserving the prior version for rollback.
+- Corrected the client-reported photo mix-up: the shared-drive Clarkston Team Photo now replaces the unwanted lower-resolution store image in the earlier “Wellness help close to home” section.
+- Restored the original clear Clarkston in-store photo to the later “Personal guidance, practical next steps” section where the team photo had been placed by mistake.
+- Updated both image alt descriptions to match their restored content and advanced the current Round 3.1 review-hub card to v3.1.17.
+- Follow-up completed: the second issue was addressed in Homepage v3.1.18; publishing and same-device review remain pending.
+
+## 2026-08-03 - Homepage mobile shipping and product-photo correction v3.1.18
+
+- Reviewed the client’s Samsung-browser screenshot showing the “We Ship Nationwide” section clipped on the right even though it did not reproduce on the project owner’s phone.
+- The evidence points to a narrow effective viewport and/or enlarged browser/system text exposing intrinsic-width behavior in the shipping heading and actions; this is a real responsive edge case rather than something that should be dismissed as cache alone.
+- Created `third-mockup-v3.1.18.html` from the approved body-only v3.1.16 homepage and preserved the previous version for rollback.
+- Added the narrowly scoped `homepage-feedback-v3.1.18.css`: shipping grid/flex children may now shrink, the phone heading and phone number scale within safe limits, and long content has a controlled wrapping fallback. Desktop and tablet styling remain unchanged.
+- Replaced every homepage use of the soft 600×600 Liver Detox image with the existing sharp 2000×1500 photo of Rebekah’s private-label amber-bottle supplements and updated its alt text. No AI reconstruction or invented product label was used.
+- Advanced the current Round 3.1 review-hub Home card to v3.1.18. The homepage remains body-only; the global header/footer is still reviewed separately.
+- Updated the canonical Client Review Timeline so Home points to v3.1.18 and Clarkston points to v3.1.17; the existing wrapped-cell and hyperlink formatting was preserved.
+- Client-facing next step: recheck the updated shipping section on the same Samsung phone/browser and at its current text-size setting, then confirm the sharper private-label product image.

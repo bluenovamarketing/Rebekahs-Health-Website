@@ -1,0 +1,48 @@
+/*
+ * Homepage v3.1.18
+ * Narrowly scoped client-feedback corrections:
+ * 1. Keep the shipping copy inside the card on narrow phones and when the
+ *    browser or operating system enlarges text.
+ * 2. Preserve the approved shipping design and normal desktop/tablet layout.
+ */
+
+#shipping .shipping-live,
+#shipping .shipping-copy,
+#shipping .shipping-actions,
+#shipping .shipping-phone,
+#shipping .shipping-actions .btn{
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box;
+}
+
+@media(max-width:560px){
+  #shipping .shipping-copy h2{
+    max-width:100%;
+    font-size:clamp(2.25rem,10.5vw,2.8rem);
+    line-height:.94;
+    letter-spacing:-.045em;
+    overflow-wrap:anywhere;
+  }
+
+  #shipping .shipping-copy p{
+    max-width:100%;
+    overflow-wrap:break-word;
+  }
+
+  #shipping .shipping-phone{
+    padding-inline:clamp(12px,5vw,24px);
+  }
+
+  #shipping .shipping-phone strong{
+    max-width:100%;
+    font-size:clamp(1.45rem,7.6vw,1.8rem);
+    letter-spacing:-.025em;
+    font-variant-numeric:tabular-nums;
+  }
+
+  #shipping .shipping-actions .btn{
+    padding-inline:14px;
+    white-space:normal;
+  }
+}
