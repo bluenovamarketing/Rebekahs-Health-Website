@@ -1267,4 +1267,6 @@
 - Created `third-mockup-v3.1.19.html` from v3.1.18 so the prior approved responsive revision remains available for rollback.
 - Kept the authentic 2000×1500 Rebekah’s private-label supplement photo and its original labels intact; no generative image editing was used.
 - Added a dedicated clipped photo frame and applied a subtle 0.65-degree clockwise correction, modest enlargement and downward shift. This visually levels the display, removes most of the carpet at the bottom and keeps the bottle tops visible.
-- Advanced the Round 3.1 review-hub Home card to v3.1.19. Pending follow-up: visually verify desktop and mobile, publish the version, advance the canonical review timeline and update the unsent Gmail approval draft to the new direct link.
+- Advanced the Round 3.1 review-hub Home card and canonical Client Review Timeline to v3.1.19, published the version to GitHub Pages, and verified the final crop at 1440px desktop and 390px mobile with no horizontal overflow or browser errors.
+- The first rendered pass was level but retained more carpet than requested. Tightened the final crop to an 11% enlargement with a 23–28px downward shift, leaving only a narrow lower edge while preserving the bottle tops.
+- Pending follow-up: once Todd approves the v3.1.19 crop, replace the existing attached Gmail approval draft with a new draft that links directly to v3.1.19. Gmail does not allow in-place body updates on drafts that already contain attachments, so the current unsent draft still references v3.1.18 and should not be sent.
