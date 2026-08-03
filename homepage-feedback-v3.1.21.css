@@ -1,0 +1,5 @@
+/* Homepage v3.1.21: final bottle-row leveling against the client's horizontal guides. */
+
+.intro-media .intro-photo-frame img{
+  transform:translateY(clamp(23px,5.5vw,28px)) rotate(2.4deg) scale(1.11);
+}
