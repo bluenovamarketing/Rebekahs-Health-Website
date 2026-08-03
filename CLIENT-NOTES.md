@@ -1202,4 +1202,5 @@
 - Advanced the current Round 3.1 review-hub Home card to v3.1.18. The homepage remains body-only; the global header/footer is still reviewed separately.
 - Updated the canonical Client Review Timeline so Home points to v3.1.18 and Clarkston points to v3.1.17; the existing wrapped-cell and hyperlink formatting was preserved.
 - Published commit `c43beb7` to the GitHub Pages `main` branch and confirmed the Pages build completed successfully. Added a public QA harness for exact 360px, 390px and 360px/125%-text homepage checks.
+- The first live enlarged-text screenshot revealed an orphaned heading period caused by the emergency anywhere-wrap fallback. Replaced that fallback with a viewport-based 32–42px heading scale and normal word breaking, then reran the live mobile cases before client handoff.
 - Client-facing next step: recheck the updated shipping section on the same Samsung phone/browser and at its current text-size setting, then confirm the sharper private-label product image.

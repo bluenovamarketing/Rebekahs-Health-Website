@@ -19,10 +19,11 @@
 @media(max-width:560px){
   #shipping .shipping-copy h2{
     max-width:100%;
-    font-size:clamp(2.25rem,10.5vw,2.8rem);
+    font-size:clamp(32px,10vw,42px);
     line-height:.94;
     letter-spacing:-.045em;
-    overflow-wrap:anywhere;
+    overflow-wrap:normal;
+    word-break:normal;
   }
 
   #shipping .shipping-copy p{
