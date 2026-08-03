@@ -1,0 +1,22 @@
+/* Homepage v3.1.19: straighten and refine the authentic product-photo crop. */
+
+.intro-media .intro-photo-frame{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  border-radius:44% 44% 24px 24px;
+  background:#f4f0e5;
+  box-shadow:0 30px 65px rgba(23,76,60,.18);
+}
+
+.intro-media .intro-photo-frame img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  border-radius:0;
+  box-shadow:none;
+  transform:translateY(clamp(14px,3.8vw,19px)) rotate(.65deg) scale(1.075);
+  transform-origin:50% 50%;
+}

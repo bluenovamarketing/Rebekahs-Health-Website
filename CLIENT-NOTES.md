@@ -1204,3 +1204,67 @@
 - Published commit `c43beb7` to the GitHub Pages `main` branch and confirmed the Pages build completed successfully. Added a public QA harness for exact 360px, 390px and 360px/125%-text homepage checks.
 - The first live enlarged-text screenshot revealed an orphaned heading period caused by the emergency anywhere-wrap fallback. Replaced that fallback with a viewport-based 32–42px heading scale and normal word breaking, then reran the live mobile cases before client handoff.
 - Client-facing next step: recheck the updated shipping section on the same Samsung phone/browser and at its current text-size setting, then confirm the sharper private-label product image.
+
+## 2026-08-03 - WordPress build-environment and Phase Two architecture recommendation
+
+- Recommended a hybrid, cloud-first implementation workflow after final approval of Home and Clarkston: keep custom theme/plugin code in a GitHub repository so Codex cloud tasks can continue without Todd's computer, and use the existing Cloudways staging clone as the canonical WordPress integration, content, URL-preservation and client-approval environment.
+- Do not treat a laptop checkout or direct edits inside the Cloudways filesystem as the sole source of truth. Use local Codex/Desktop work for interactive WordPress admin, SSH/WP-CLI operations, browser-based visual QA and carefully supervised destructive changes; deploy reviewed repository changes to staging in checkpoints.
+- Before removing Bricks or other components, take a restorable Cloudways backup and complete a one-to-one disposition map for existing URLs, content types, SEO metadata, redirects, forms, media, practitioners, events and commerce data. Phase One commerce plugins may be deactivated where safe, but product/order/customer data should not be deleted.
+- Build Phase One with a WooCommerce-ready separation of concerns: the theme owns visual presentation and reusable page/template styles; site-specific behavior and data structures belong in a small companion plugin; WooCommerce remains a Phase Two functional layer. Avoid hard-coding catalog, cart or checkout assumptions into Phase One page layouts.
+- Client-facing next step: after the last two page approvals, establish the GitHub-to-Cloudways staging deployment workflow, snapshot staging, inventory retained URLs/data, then remove or deactivate legacy builder/commerce components in verified batches rather than performing one large deletion.
+
+## 2026-08-03 - Staging-first WordPress implementation clarification
+
+- Clarified that the actual WordPress site should be assembled directly on the existing Cloudways staging clone because its database already contains the retained URLs, posts, media, ACF-backed practitioner records, events, forms and Phase Two commerce data. A separate local WordPress installation would be optional and disposable, not the authoritative build.
+- Keep the custom theme and any small project-specific plugin in Git even while deploying and testing them on staging. Use Codex cloud for isolated code work that benefits from running without Todd's computer; use staging for plugin configuration, WordPress content, database-backed layouts, social OAuth connections and final browser QA.
+- Current social destinations are documented as Instagram `@rebekahs_health_and_nutrition` and TikTok `@rebekahspureliving`. Recommended starting with Smash Balloon's free Social Photo Feed and Feeds for TikTok plugins, subject to live compatibility/performance testing; the account owner must complete each platform's OAuth authorization without sharing social passwords.
+- Instagram must be a Professional Business or Creator account for the current API connection. Confirm the desired feed behavior, privacy/consent treatment and whether free layouts are sufficient. Expect to verify or reconnect social sources after the production-domain cutover.
+- Access still needed for implementation: Cloudways project/team access with backup and deployment capability, application SSH/SFTP or an approved equivalent, a private Git deployment target for theme/plugin code, and account-owner availability for Instagram/TikTok authorization. Existing Cody WordPress administrator access is already recorded.
+
+## 2026-08-03 - Confirmed production stack and independent pre-build backup
+
+- Corrected the production stack: use Elementor Free with a customized theme and supporting custom CSS/JavaScript; do not purchase Elementor Pro. This supersedes the later suggestion to avoid a visual builder.
+- Use SEOPress Free + SEOPress PRO instead of Yoast. Before removing Yoast, back up the site, import its titles, descriptions, social metadata, robots directives, canonicals and global settings into SEOPress, verify representative pages, then deactivate Yoast so two SEO plugins are not active together.
+- Use free plugins wherever practical. SEOPress PRO is the explicit approved paid exception; Instagram and TikTok should start with the free Smash Balloon plugins unless a later client-approved requirement cannot be met without a paid feature.
+- Todd will handle Cloudways access, staging SSH/SFTP or deployment access, the private GitHub repository and verification of the existing Cody WordPress administrator account. These are not client action items.
+- Leave the complete WooCommerce stack and all product, order, customer, coupon and payment data untouched for now because Phase Two is expected roughly one month after Phase One. Reassess deactivation only if performance requires it and a verified backup exists.
+- Before rebuild changes, create both a Cloudways on-demand restore point and an independent full WordPress backup. The independent archive should include the database, plugins, themes, uploads and other WordPress files, plus a plugin/version manifest, and be stored in a restricted project Google Drive backup folder because it may contain WooCommerce customer/order information.
+- Preferred free WordPress-level backup method is a one-time UpdraftPlus backup, downloaded and then uploaded into the project Google Drive folder; direct Google Drive authorization is optional and does not need to remain connected after the archival snapshot. Verify that all backup components completed and can be read before removing Bricks or migrating SEO data.
+- Prepare a short client social-connection email at the integration stage, not as an immediate pre-approval task. It should ask the account owner to confirm Instagram is a Professional Business/Creator account, be available to authorize Instagram and TikTok through OAuth, and approve the final feed behavior. Never request social passwords by email.
+
+## 2026-08-03 - WordPress access and backup-plugin verification
+
+- Confirmed the Cloudways staging dashboard at `https://wordpress-1651482-6565113.cloudwaysapps.com/` is accessible with full administrator menus. The `Cody` account still exists with the Administrator role; Todd Bailey, Rebekah Spencer, Chelsea Stein and Winning Team are also listed as administrators.
+- The shared `Cody WP Logins` Sheet currently contains the staging login record only; it does not contain a separate row for the live `rebekahspureliving.com` dashboard.
+- Read-only review of the current staging plugin inventory confirmed that no backup/migration plugin is installed. UpdraftPlus is explicitly rejected and should not be recommended or installed for this client.
+- Todd will sign into the live WordPress dashboard so its current plugin/backup setup can be inspected. No content, settings, plugins or files will be changed on the live site; all redesign implementation remains restricted to staging.
+- SEOPress PRO licensing is already owned and available, so no new SEO-plugin purchase is required.
+
+## 2026-08-03 - Live WordPress access and backup-state audit
+
+- Confirmed authenticated administrator access to the live WordPress dashboard at `https://rebekahspureliving.com/wp-admin/` using Todd Bailey's administrator account. No live settings, content, plugins or files were changed.
+- Corrected the account assumption: the live user list does not contain the `Cody` account. Cody exists as an Administrator on the Cloudways staging clone only. Todd Bailey is an Administrator on both live and staging, which is sufficient for authorized inspection and backup coordination.
+- The live site has Cloudways WordPress Migrator active, explaining the existing Cloudways staging clone, but it does not have a true backup/restore plugin installed. The staging clone also has no backup/migration plugin installed.
+- Preserve the rule that redesign changes occur only on staging. Do not install a backup plugin on live merely to create an archive. Treat the existing staging clone as the full pre-build copy, take a Cloudways on-demand restore point before construction, and use a non-Updraft backup tool on staging if a portable Google Drive archive is required.
+- UpdraftPlus remains explicitly excluded. A suitable free staging-only alternative is WPvivid Backup & Migration, which supports full backups and Google Drive in its free version; installation and Google Drive authorization require Todd's explicit go-ahead at action time.
+
+## 2026-08-03 - ManageWP staging-backup setup initiated
+
+- Todd approved using the existing Blue Nova ManageWP account for the independent pre-build backup instead of installing WPvivid or UpdraftPlus. Neither WPvivid nor another true backup plugin is currently installed on live or staging.
+- Began adding only the Cloudways staging application (`wordpress-1651482-6565113.cloudwaysapps.com`) to ManageWP. ManageWP accepted the staging URL and displayed the authenticated WordPress connection step, but the browser-control connection stopped responding before the final Add Website action could be verified.
+- No purchase or paid ManageWP backup add-on was authorized, no backup was claimed as complete, and no changes were made to the live WordPress site. The staging connection screen was left open for continuation.
+- Next step: restore browser control, finish the staging-only ManageWP connection, confirm whether the account provides a no-cost backup slot or would incur a charge, and create and verify the backup only if no new charge is introduced. A paid add-on requires Todd's approval first.
+
+## 2026-08-03 - Final Pages 1 and 6 approval email drafted
+
+- Created an unsent Gmail reply draft in Rebekah’s existing “Updated Website Mock-Ups Ready for Approval” thread, addressed to `rebekahspureliving@gmail.com`.
+- The draft states that every other review-hub page is already approved and asks Rebekah to review only the revised Home and Clarkston Store pages.
+- Included direct links to Homepage v3.1.18 and Clarkston Store v3.1.17, summarized the responsive shipping, sharper private-label product photo and corrected Clarkston photo placement, and attached `Homepage Mobile Shipping Comparison.png` showing the verified 360px, 390px and enlarged-text layouts.
+- The draft explains that approval of Pages 1 and 6 completes page-design review and allows the project to move into WordPress assembly and final technical QA before launch. The email was not sent; draft ID `r-3455697600427916120` is awaiting Todd’s review.
+
+## 2026-08-03 - Homepage private-label photo crop refinement v3.1.19
+
+- Created `third-mockup-v3.1.19.html` from v3.1.18 so the prior approved responsive revision remains available for rollback.
+- Kept the authentic 2000×1500 Rebekah’s private-label supplement photo and its original labels intact; no generative image editing was used.
+- Added a dedicated clipped photo frame and applied a subtle 0.65-degree clockwise correction, modest enlargement and downward shift. This visually levels the display, removes most of the carpet at the bottom and keeps the bottle tops visible.
+- Advanced the Round 3.1 review-hub Home card to v3.1.19. Pending follow-up: visually verify desktop and mobile, publish the version, advance the canonical review timeline and update the unsent Gmail approval draft to the new direct link.
