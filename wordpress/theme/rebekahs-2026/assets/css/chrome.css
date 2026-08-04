@@ -1,7 +1,8 @@
 
     :root{--pine:#174c3c;--leaf:#3f7d50;--cream:#f7f3e8;--berry:#8e4b61;--ink:#26342e;--sans:"DM Sans",Arial,sans-serif}
-    *{box-sizing:border-box}html{min-width:320px}body{min-height:100vh;margin:0;display:flex;flex-direction:column;overflow-x:clip;color:var(--ink);background:var(--cream);font-family:var(--sans)}a{color:inherit;text-decoration:none}img{display:block;width:100%}button,summary{font:inherit}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    *{box-sizing:border-box}html{min-width:320px}body{min-height:100vh;margin:0;display:flex;flex-direction:column;overflow-x:clip;color:var(--ink);background:var(--cream);font-family:var(--sans)}a{color:inherit;text-decoration:none}img{display:block;width:100%}button,summary{font:inherit}[hidden]{display:none!important}.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
     .skip{position:fixed;left:12px;top:-60px;z-index:100;padding:12px;background:#fff;color:var(--pine)}.skip:focus{top:12px}
+    :where(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #d6a33a;outline-offset:3px}
 
     .site-header{position:sticky;top:0;z-index:20;height:88px;padding:0 clamp(24px,2.6vw,44px);display:flex;align-items:center;gap:clamp(14px,1.5vw,24px);background:#fffdf8;border-bottom:1px solid rgba(0,75,45,.12);backdrop-filter:blur(16px)}
     .brand{width:clamp(190px,15vw,220px);margin-right:auto;flex:0 0 auto}.site-header nav{display:flex;align-items:center;gap:clamp(12px,1.2vw,19px);font-size:13.5px;font-weight:600}.site-header nav>a,.nav-trigger{white-space:nowrap;transition:color .2s ease}.site-header nav>a:hover,.site-header nav>a:focus-visible,.nav-trigger:hover,.nav-trigger:focus-visible{color:var(--leaf)}
@@ -31,7 +32,21 @@
     @media(min-width:1001px){.footer-group summary{pointer-events:none}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
+    /* Shared live newsletter form used by each store page. */
+    .signup .rhn-location-newsletter{padding:1.4rem;display:grid;gap:.8rem;border-radius:20px;background:#fff;box-shadow:var(--system-card-shadow,0 12px 32px rgba(23,76,60,.12));color:var(--ink)}
+    .signup .rhn-location-newsletter>.form-title{color:var(--pine);font-weight:800}
+    .signup .rhn-location-newsletter>small{color:#61756b}
+    .signup .rhn-location-newsletter form.forminator-custom-form{padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;border-radius:0;background:transparent;box-shadow:none}
+    .signup .rhn-location-newsletter .forminator-row{margin:0!important}
+    .signup .rhn-location-newsletter .forminator-row:nth-of-type(n+3){grid-column:1/-1}
+    .signup .rhn-location-newsletter .forminator-col,.signup .rhn-location-newsletter .forminator-field{margin:0!important;padding:0!important}
+    .signup .rhn-location-newsletter input,.signup .rhn-location-newsletter select{width:100%;min-height:50px;padding:.8rem;border:1px solid #ccd9d1;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+    .signup .rhn-location-newsletter .forminator-button-submit{width:100%;min-height:50px;border:0;border-radius:999px;background:#d6a33a;color:#174c3c;font-weight:800;cursor:pointer}
+    .signup .rhn-location-newsletter .forminator-response-message:empty{display:none}
+    @media(max-width:600px){.signup .rhn-location-newsletter form.forminator-custom-form{grid-template-columns:1fr}.signup .rhn-location-newsletter .forminator-row{grid-column:1}}
+
     /* Global chrome always owns the responsive header/footer state. */
     .footer-group[open] summary::after{content:"−"}
     @media(max-width:1040px){.site-header>.header-actions{display:none!important}}
+    .footer-group[open] summary::after{content:"\2212"}
   

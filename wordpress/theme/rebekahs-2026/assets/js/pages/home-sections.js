@@ -66,6 +66,10 @@
 			node.classList.add( 'visible' );
 		}
 		node.querySelectorAll( '.reveal' ).forEach( ( element ) => element.classList.add( 'visible' ) );
+		node.querySelectorAll( 'img' ).forEach( ( image ) => {
+			image.loading = 'lazy';
+			image.decoding = 'async';
+		} );
 		return node;
 	}
 

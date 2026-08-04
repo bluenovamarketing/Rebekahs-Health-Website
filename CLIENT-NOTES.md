@@ -1434,3 +1434,69 @@
 - Rechecked the Fullscript, Designs for Health, LifeWave and EllieMD destinations on August 4, 2026; all four returned HTTP 200 at the URLs used on staging. Replaced internal pre-publication notes with visitor-facing external-site/referral disclosures, added `rel="sponsored"` where needed and removed the unverified Fullscript `355+ brands` claim.
 - Re-ran the 21-route structural audit after these changes. All routes return HTTP 200, contain exactly one H1, use the expected theme template, contain no dead `#` or mockup `.html` links, show no staging chat widget and retain `noindex`. Live WordPress was not changed.
 - Remaining integration-dependent work: Instagram/TikTok account-owner OAuth, production-domain reCAPTCHA/mail delivery, final production-domain canonical/sitemap checks and removal of staging-only protections at launch.
+
+## 2026-08-04 - Complete staging site ready for Todd's consolidated review
+
+- Finished the Phase One staging build and changed all 20 canonical `Page Inventory` build statuses from `In progress` to the validated `Ready for review` dropdown value. Live WordPress and retained WooCommerce data were not changed.
+- Completed a final crawl of 21 primary routes, 45 retained dynamic blog/event/practitioner pages, 66 internal links and 76 images with zero failures. Repeated the full 390 px phone, 768 px tablet and 1440 px desktop sweep across all 21 routes (63 combinations) with zero overflow, H1 or critical-error failures.
+- Replaced the four store pages' non-submitting mockup signup forms with the real Forminator newsletter form, preselecting the correct preferred store on each page. Verified the mobile navigation/dropdowns, blog and product filters, practitioner search and representative browser consoles without failures.
+- Added dynamic event/practitioner SEO output, hardened new-tab links, corrected obsolete Signature Line product links, removed remaining public implementation placeholders and clearly labeled the legal pages as drafts requiring qualified legal review.
+- Activated Breeze on staging and purged Cloudways/Varnish so the bare review URL serves the current theme. Deferred the large Homepage hero video behind an optimized poster, lazy-loaded noncritical Homepage images and added font/resource hints. A fresh PageSpeed lab run was unavailable because the API quota was exhausted; current production CrUX still shows slow server/paint performance, so production performance must be rechecked after cutover.
+- Remaining launch-only work: Instagram and TikTok account-owner OAuth for live updating feeds, legal approval, production-domain reCAPTCHA and mail-delivery testing, final production SEOPress canonicals/sitemap/indexing checks, analytics/Search Console verification and removal of staging guards. WooCommerce remains deferred to Phase Two.
+
+## 2026-08-04 - Approved global header and footer enforced on staging
+
+- Todd correctly reported that the header and footer looked different between pages. The site already used one shared WordPress `header.php` and `footer.php`; the inconsistency came from legacy page-mockup CSS overriding those shared components on pages including Our Team, Events, Refund & Returns, Lapeer and In-Store Products.
+- Added a final, ID-scoped global component stylesheet so page-specific styles can no longer restyle the sitewide header or footer, while retaining the responsive desktop, tablet and mobile accordion behavior.
+- Corrected an initial reference-selection mistake: the separate Header/Footer v1.3 study was exploratory and included a footer Call To Order link, while the approved final Homepage footer did not. Removed that link from the global footer; the approved header Call To Order button remains.
+- Deployed only to Cloudways staging and purged Breeze. Verified all 21 primary routes contain the same shared header/footer markup and current global stylesheet. Computed desktop header/footer geometry and colors match across representative formerly conflicting pages, with no browser console warnings or errors.
+- Live WordPress was not changed. Todd can review the corrected global header and footer anywhere on staging; use a hard refresh if an older tab was already open.
+
+## 2026-08-04 - Full approved-mockup visual audit completed
+
+- Re-read the canonical Page Inventory, page prompts and Templates & Global scope, then compared all 21 primary staging pages directly with their current approved mockups at 390 px phone, 768 px tablet and 1440 px desktop widths. The audit checked direct section structure, H1s, section colors, display modes, responsive padding, section geometry and horizontal overflow rather than relying only on HTTP or DOM-presence checks.
+- Every primary page retained the approved section order, typography/color system and responsive treatment with zero horizontal overflow. Static page bodies matched their source mockups exactly or within normal one-pixel browser rendering variance. Larger height differences were confined to intentional WordPress substitutions: real Forminator forms, current posts, upcoming event records, current practitioner records and finalized visitor-facing partner/legal disclosure text.
+- Confirmed that the correct approved global source is Header/Footer v1.11. Updated staging from the earlier tablet treatment to the exact v1.11 behavior: original desktop header, borderless four-tab tablet footer, phone accordions and no footer Call To Order link. Verified the component at 390, 768 and 1440 px, including a working tablet Explore panel, and confirmed the header Call To Order button remains.
+- Audited the reusable Blog Post, Event Detail, Practitioner Profile and 404 treatments at the same three widths. Restored the approved practitioner-profile informational disclaimer that the dynamic WordPress template had omitted; no practitioner data was changed. The blog/event/profile templates continue to use the retained WordPress record content inside the approved visual systems.
+- Deployed the corrections only to Cloudways staging. Verified all 21 primary routes now serve theme version 1.0.9 with the shared global header/footer markup, tablet footer controls, exactly one H1, no footer Call To Order link and no critical-error output. Representative browser consoles were clean. Live WordPress remains untouched.
+
+## 2026-08-04 - Homepage private-label hero video edited and connected on staging
+
+- Reviewed Rebekah's supplied `Front page vidio-1.m4v` source. The finished private-label bottles did not appear until approximately 46 seconds, despite Rebekah's request that the private-label products be featured closer to the beginning.
+- Created a 35.96-second silent hero loop that opens with the finished Rebekah's bottles, then continues through the farm, ingredient, label-printing and bottling sequence. The ending labeling footage flows naturally back into the opening finished-product reveal when the HTML video loops.
+- Removed the audio track, resized the web delivery copy to 960×540, enabled MP4 fast-start metadata and compressed it from the 69.6 MB source to 1.77 MB so it fits staging's 2 MB WordPress Media Library limit and is materially lighter for homepage delivery.
+- Uploaded the optimized MP4 and its 92.8 KB matching poster image to the staging WordPress Media Library. Verified both public files return HTTP 200 with year-long cache headers and the video supports byte-range requests.
+- Updated the staging Homepage template to use the WordPress uploads URLs for the new video and poster while retaining muted inline looping, deferred loading and the approved hero design. Purged Breeze and verified the normal cached Homepage response references both Media Library files without PHP errors.
+- Live WordPress was not changed. Client-facing next step: review the new hero opening and loop on staging; after approval, retain these Media Library assets when staging is migrated to production.
+
+## 2026-08-04 - Homepage hero changed to full circular source sequence
+
+- At Todd's direction, replaced the 35.96-second highlight montage with a 58.64-second circular edit that preserves the complete supplied video: source 46 seconds through the original ending, followed by source 0 through 46 seconds.
+- The circular edit keeps the requested opening at approximately 46 seconds and creates a continuous source-order loop from the final pre-46-second frame back into the opening 46-second frame.
+- Kept the hero silent, 960x540, H.264 and fast-start enabled. Two-pass compression produced a 1,936,102-byte file that remains below staging's 2 MB Media Library limit.
+- Uploaded `rebekahs-homepage-hero-loop-full-v2-media.mp4` to staging Media Library (attachment 1478922), updated the Homepage template, purged Breeze and verified the normal cached Homepage references only the new video. The public MP4 returns HTTP 200, year-long cache headers and byte-range support.
+- The previous shorter MP4 remains in the staging Media Library as a recoverable fallback but is no longer referenced by the Homepage. Live WordPress was not changed. Client-facing next step: review the full circular loop on staging.
+
+## 2026-08-04 - Gritty hero encode replaced with HD delivery copy
+
+- Todd reported that the 1.85 MiB full-loop encode looked gritty. The issue was the extreme 260 kb/s bitrate required to fit the staging WordPress 2 MB Media Library upload ceiling, not the supplied source footage.
+- Re-encoded the same 58.64-second circular sequence from the original 1080p source at 1280x720, H.264 High Profile Level 3.1, 23.98 fps, CRF 26, approximately 1.52 Mb/s, silent and fast-start enabled. The resulting 11,174,106-byte file is substantially sharper while remaining reasonable for deferred hero-video delivery.
+- Uploaded `rebekahs-homepage-hero-loop-full-v3-hd.mp4` directly to the staging uploads directory through the existing authorized SFTP access, bypassing the Media Library's 2 MB form limit without using YouTube or an external host.
+- Updated the staging Homepage to reference the HD file, purged Breeze and Cloudways Varnish, and verified the normal cached Homepage contains the v3 URL only. The public MP4 returns HTTP 200 with year-long cache headers and byte-range support.
+- Removed the temporary one-time cache-purge helper immediately after use and verified it returns HTTP 404. Live WordPress was not changed; the lower-quality versions remain available only as staging fallbacks.
+
+## 2026-08-04 - Correct longer hero source, loop timing and immediate playback
+
+- Todd reported that the HD hero still looked gritty, remained on the poster after page load/refresh, and wrapped to the beginning after only about 10 seconds.
+- Confirmed the earlier source `Front page vidio-1.m4v` is actually 58.68 seconds, not 1:15. Starting it at 46 seconds necessarily left only 12.68 seconds before the first wrap. Located the intended longer `Front Page video-2.m4v`, which is 2:08.46 and contains additional manufacturing and finished-product footage.
+- Rebuilt the circular sequence from the longer source as 46 seconds through 2:08.46, then 0 through 46 seconds. The resulting video is 2:08.46 total and now plays approximately 82.46 seconds before its first wrap to the source beginning.
+- Encoded the replacement at the source's full 1920x1080 resolution, H.264 High Profile Level 4.1, 23.98 fps, CRF 22 and approximately 6.14 Mb/s, with silent audio, two-second keyframe spacing and MP4 fast-start metadata. The file is 98,679,874 bytes and preserves substantially more source detail than the earlier 720p encodes.
+- Removed the Homepage's intentional four-second deferred-video timer and interaction requirement. The video now has a direct `src`, `autoplay`, `muted`, `loop`, `playsinline` and `preload="auto"`, so the browser begins fetching and playing it immediately on load or refresh.
+- Uploaded `rebekahs-homepage-hero-loop-long-v4-hd.mp4` directly to staging, updated the Homepage, purged Breeze and Cloudways Varnish, and verified the normal cached HTML contains the v4 source only with no `data-video-src`. The MP4 returns HTTP 200, supports byte ranges, and delivered the first 1 MiB range with HTTP 206 in approximately 1.05 seconds during verification.
+- Removed the temporary cache-purge helper immediately after use and verified it returns HTTP 404. Live WordPress was not changed; earlier staging encodes remain recoverable fallbacks but are not referenced.
+
+## 2026-08-04 - Practitioner directory reconciled to approved 25 listings
+
+- Todd confirmed that the public practitioner directory should match the approved 25-listing mockup. The three listings omitted during mockup approval are IV Lounge, Kimberly Cabe, FNP-BC, and Troy Farwell, D.N.M. MS, MH, RAP, RAH, HHP.
+- Added a reversible theme-level display filter for those three names. Their published WordPress records and direct profile data remain intact for rollback or a future decision; no database content was deleted or changed.
+- Deployed only to Cloudways staging and cleared the site/Varnish cache. The normal review URL reports and renders exactly 25 cards; none of the three omitted names appears as a card, and the now-unused IV Lounge area-of-practice filter was removed. All three retained direct profile URLs still return HTTP 200. The canonical planning sheet still contains the older 28-profile scope note and should be reconciled if the team wants the tracker updated.

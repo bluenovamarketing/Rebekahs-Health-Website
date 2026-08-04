@@ -61,7 +61,9 @@ const navigationTimeout = Number(process.env.QA_TIMEOUT || 15000);
   for (const route of routes) {
     const results = await Promise.all(pages.map(async ({ viewport, page }) => {
       try {
-        const url = `${base}${route}${route.includes('?') ? '&' : '?'}responsive_qa=${Date.now()}`;
+        const url = process.env.QA_BUST_CACHE === '1'
+          ? `${base}${route}${route.includes('?') ? '&' : '?'}responsive_qa=${Date.now()}`
+          : `${base}${route}`;
         const response = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: navigationTimeout });
         await page.waitForTimeout(500);
         const metrics = await page.evaluate(() => ({

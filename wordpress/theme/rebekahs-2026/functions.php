@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RHN_THEME_VERSION', '1.0.1' );
+define( 'RHN_THEME_VERSION', '1.0.12' );
 
 function rhn_theme_setup() {
 	add_theme_support( 'title-tag' );
@@ -69,6 +69,11 @@ function rhn_enqueue_assets() {
 		wp_enqueue_style( 'rhn-page-' . $key, rhn_theme_asset( 'css/pages/' . $key . '.css' ), array( 'rhn-chrome' ), filemtime( $page_css ) );
 	}
 
+	// Load the approved global component contract last so legacy page-mockup
+	// styles can never restyle the sitewide header or footer.
+	$global_dependencies = file_exists( $page_css ) ? array( 'rhn-page-' . $key ) : array( 'rhn-chrome' );
+	wp_enqueue_style( 'rhn-global-chrome', rhn_theme_asset( 'css/global-chrome.css' ), $global_dependencies, RHN_THEME_VERSION );
+
 	wp_enqueue_script( 'rhn-chrome', rhn_theme_asset( 'js/chrome.js' ), array(), RHN_THEME_VERSION, true );
 	$page_js = get_template_directory() . '/assets/js/pages/' . $key . '.js';
 	if ( file_exists( $page_js ) && filesize( $page_js ) > 3 ) {
@@ -91,6 +96,45 @@ function rhn_enqueue_assets() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rhn_enqueue_assets', 20 );
+
+function rhn_resource_hints( $urls, $relation_type ) {
+	if ( 'preconnect' === $relation_type ) {
+		$urls[] = array( 'href' => 'https://fonts.googleapis.com' );
+		$urls[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' => 'anonymous' );
+	}
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'rhn_resource_hints', 10, 2 );
+
+function rhn_home_critical_hints() {
+	if ( is_front_page() ) {
+		echo '<link rel="preload" as="image" href="' . esc_url( rhn_theme_asset( 'output/rebekahs-hero-background.webp' ) ) . '" fetchpriority="high">' . "\n";
+	}
+}
+add_action( 'wp_head', 'rhn_home_critical_hints', 2 );
+
+/** Keep the logo eager, while deferring below-the-fold homepage images. */
+function rhn_lazy_home_images( $html ) {
+	$seen = 0;
+	return preg_replace_callback(
+		'/<img\b(?![^>]*\bloading\s*=)[^>]*>/i',
+		function( $matches ) use ( &$seen ) {
+			$seen++;
+			if ( 1 === $seen ) {
+				return $matches[0];
+			}
+			return preg_replace( '/<img\b/i', '<img loading="lazy" decoding="async"', $matches[0], 1 );
+		},
+		$html
+	);
+}
+
+function rhn_start_home_image_buffer() {
+	if ( is_front_page() ) {
+		ob_start( 'rhn_lazy_home_images' );
+	}
+}
+add_action( 'template_redirect', 'rhn_start_home_image_buffer', 20 );
 
 // Keep The Events Calendar data and URL while rendering the approved theme archive.
 add_filter( 'tribe_events_views_v2_use_wp_template_hierarchy', '__return_true' );
@@ -158,6 +202,73 @@ function rhn_page_seo_description( $description ) {
 add_filter( 'seopress_titles_desc', 'rhn_page_seo_description', 98 );
 add_filter( 'seopress_social_fb_desc', 'rhn_page_seo_description', 98 );
 add_filter( 'seopress_social_twitter_desc', 'rhn_page_seo_description', 98 );
+
+/** Keep dynamic practitioner profiles concise and useful in search previews. */
+function rhn_practitioner_seo_title( $title ) {
+	if ( ! is_singular( 'medical-practicioner' ) ) {
+		return $title;
+	}
+	$name = get_post_meta( get_queried_object_id(), 'medical_practitioner_full_name', true );
+	$name = $name ? $name : get_the_title( get_queried_object_id() );
+	$name = wp_html_excerpt( wp_strip_all_tags( $name ), 45, '…' );
+	return sprintf( "%s | Rebekah's", $name );
+}
+add_filter( 'seopress_titles_title', 'rhn_practitioner_seo_title', 100 );
+add_filter( 'seopress_social_fb_title', 'rhn_practitioner_seo_title', 100 );
+add_filter( 'seopress_social_twitter_title', 'rhn_practitioner_seo_title', 100 );
+
+function rhn_practitioner_seo_description( $description ) {
+	if ( ! is_singular( 'medical-practicioner' ) ) {
+		return $description;
+	}
+	$name = get_post_meta( get_queried_object_id(), 'medical_practitioner_full_name', true );
+	$name = $name ? $name : get_the_title( get_queried_object_id() );
+	$copy = sprintf( "View the current profile and contact information for %s, an independent practitioner listed in Rebekah's Michigan wellness directory.", wp_strip_all_tags( $name ) );
+	return wp_html_excerpt( $copy, 160, '…' );
+}
+add_filter( 'seopress_titles_desc', 'rhn_practitioner_seo_description', 100 );
+add_filter( 'seopress_social_fb_desc', 'rhn_practitioner_seo_description', 100 );
+add_filter( 'seopress_social_twitter_desc', 'rhn_practitioner_seo_description', 100 );
+
+/** Give every individual event a compact, consistent search preview. */
+function rhn_event_detail_seo_title( $title ) {
+	if ( ! is_singular( 'tribe_events' ) ) {
+		return $title;
+	}
+	$event_title = wp_html_excerpt( wp_strip_all_tags( get_the_title( get_queried_object_id() ) ), 40, '…' );
+	return sprintf( "%s | Rebekah's Events", $event_title );
+}
+add_filter( 'seopress_titles_title', 'rhn_event_detail_seo_title', 101 );
+add_filter( 'seopress_social_fb_title', 'rhn_event_detail_seo_title', 101 );
+add_filter( 'seopress_social_twitter_title', 'rhn_event_detail_seo_title', 101 );
+
+function rhn_event_detail_seo_description( $description ) {
+	if ( ! is_singular( 'tribe_events' ) ) {
+		return $description;
+	}
+	$copy = sprintf( "View the current date, time, location and attendance details for %s from Rebekah's Health & Nutrition.", wp_strip_all_tags( get_the_title( get_queried_object_id() ) ) );
+	return wp_html_excerpt( $copy, 160, '…' );
+}
+add_filter( 'seopress_titles_desc', 'rhn_event_detail_seo_description', 101 );
+add_filter( 'seopress_social_fb_desc', 'rhn_event_detail_seo_description', 101 );
+add_filter( 'seopress_social_twitter_desc', 'rhn_event_detail_seo_description', 101 );
+
+/** Add the expected security and privacy relationship tokens to new-window links. */
+function rhn_secure_target_blank_markup( $html ) {
+	return preg_replace_callback(
+		'/<a\b(?=[^>]*\btarget\s*=\s*(["\'])_blank\1)[^>]*>/i',
+		function( $matches ) {
+			$tag = $matches[0];
+			if ( preg_match( '/\srel\s*=\s*(["\'])([^"\']*)\1/i', $tag, $rel_match ) ) {
+				$tokens = preg_split( '/\s+/', strtolower( trim( $rel_match[2] ) ) );
+				$tokens = array_values( array_unique( array_filter( array_merge( $tokens, array( 'noopener', 'noreferrer' ) ) ) ) );
+				return str_replace( $rel_match[0], ' rel="' . esc_attr( implode( ' ', $tokens ) ) . '"', $tag );
+			}
+			return preg_replace( '/>$/', ' rel="noopener noreferrer">', $tag );
+		},
+		(string) $html
+	);
+}
 
 /** Add truthful Organization and store-location structured data. */
 function rhn_output_business_schema() {
@@ -236,15 +347,17 @@ function rhn_redirect_meet_the_owner() {
 add_action( 'template_redirect', 'rhn_redirect_meet_the_owner', 5 );
 
 function rhn_post_topic_key( $post_id = 0 ) {
-	$names = strtolower( implode( ' ', wp_get_post_categories( $post_id ?: get_the_ID(), array( 'fields' => 'names' ) ) ) );
+	$post_id = $post_id ?: get_the_ID();
+	$names   = strtolower( implode( ' ', wp_get_post_categories( $post_id, array( 'fields' => 'names' ) ) ) );
+	$text    = strtolower( $names . ' ' . get_the_title( $post_id ) . ' ' . get_the_excerpt( $post_id ) );
 	$keys = array();
-	if ( false !== strpos( $names, 'product' ) ) {
+	if ( preg_match( '/product|supplement|essential oil|private label|shop|brand|patch|strip|honey|bee/', $text ) ) {
 		$keys[] = 'products';
 	}
-	if ( false !== strpos( $names, 'expert' ) || false !== strpos( $names, 'q&a' ) ) {
+	if ( preg_match( '/expert|practitioner|q&a|cleanse|detox|interview|apiar|provider|doctor/', $text ) ) {
 		$keys[] = 'experts';
 	}
-	if ( false !== strpos( $names, 'health' ) || empty( $keys ) ) {
+	if ( ! preg_match( '/private label|why shop/', $text ) || empty( $keys ) ) {
 		$keys[] = 'healthy';
 	}
 	return implode( ' ', array_unique( $keys ) );

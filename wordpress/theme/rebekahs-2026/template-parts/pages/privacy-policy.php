@@ -7,7 +7,7 @@
         <span class="eyebrow">Privacy at Rebekah’s</span>
         <h1>Clear information. <em>Respectful choices.</em></h1>
         <p class="lead">This policy explains what information may be collected through rebekahspureliving.com, why it is used and the choices available to you.</p>
-        <div class="hero-meta"><span>Last updated: [Month Day, Year]</span><span>Applies to rebekahspureliving.com</span></div>
+        <div class="hero-meta"><span>Draft updated: August 4, 2026</span><span>Qualified legal review required</span></div>
         <div class="hero-actions"><a class="button primary" href="#policy">Read the policy</a><a class="button outline" href="#contact">Privacy questions</a></div>
       </div>
     </header>

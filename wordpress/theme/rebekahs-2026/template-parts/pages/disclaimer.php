@@ -7,7 +7,7 @@
         <span class="eyebrow">Website &amp; wellness disclaimer</span>
         <h1>Information for <em>thoughtful choices.</em></h1>
         <p class="lead">Understand the limits of the wellness education, product information and external resources shared by Rebekah's Health &amp; Nutrition.</p>
-        <div class="hero-meta"><span>Effective date: [Month Day, Year]</span><span>Starter draft — qualified legal review required</span></div>
+        <div class="hero-meta"><span>Draft updated: August 4, 2026</span><span>Qualified legal review required</span></div>
         <div class="hero-actions"><a class="button primary" href="#disclaimer">Read the disclaimer</a><a class="button outline" href="#contact">Contact us</a></div>
       </div>
     </header>

@@ -1,9 +1,13 @@
 <?php
 /** Generated from approved mockup: third-mockup-v3.1.23.html. */
+$rhn_uploads         = wp_upload_dir();
+$rhn_upload_base_url = trailingslashit( $rhn_uploads['baseurl'] );
+$rhn_hero_video_url  = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-loop-long-v4-hd.mp4';
+$rhn_hero_poster_url = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-poster-v1.jpg';
 ?>
 <main id="main">
     <section class="hero" data-mock-section="2">
-      <div class="hero-video" aria-hidden="true"><video autoplay muted loop playsinline preload="auto"><source src="<?php echo esc_url( rhn_theme_asset( 'output/rebekahs-hero-video.mp4' ) ); ?>" type="video/mp4"></video></div>
+      <div class="hero-video" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" poster="<?php echo esc_url( $rhn_hero_poster_url ); ?>" src="<?php echo esc_url( $rhn_hero_video_url ); ?>"></video></div>
       <div class="hero-shade"></div>
       <div class="hero-copy"><span class="kicker light">Your neighborhood wellness source</span><h1>Wellness begins with knowing <em>where to start.</em></h1><p>For nearly 20 years, Rebekah's has helped Michigan families find trusted supplements, natural products, practical education and personalized guidance—all under one roof.</p><div class="buttons"><a class="pill honey" href="#locations">Find Your Store</a><a class="pill glass" href="#events">Explore Classes & Events</a></div></div>
       <div class="hero-proof"><b>4</b><span>Michigan<br>locations</span><b>20</b><span>Years of<br>local care</span></div>
@@ -20,7 +24,7 @@
 
     <section class="signature" data-mock-section="6">
       <div class="signature-numbers" aria-hidden="true"><i class="signature-orbit-dot orbit-honey"></i><i class="signature-orbit-dot orbit-sage"></i><span>Rebekah's</span><strong>200+</strong><p>private-label<br>wellness formulas<em>PURITY · POTENCY · PRICE</em></p></div>
-      <div class="signature-copy"><span class="kicker light">Rebekah's Private Label Signature Line</span><h2>Premium formulas. Personal standards.</h2><p>Rebekah developed a collection of more than 200 herbal, vitamin and nutraceutical formulas made with whole-food ingredients and bottled in protective amber glass.</p><div class="chips"><span>200+ formulas</span><span>Whole-food ingredients</span><span>Amber glass bottles</span></div><a class="pill cream" href="<?php echo esc_url( home_url( '/product-category/rebekahs-private-label/' ) ); ?>">Explore the Signature Line</a></div>
+      <div class="signature-copy"><span class="kicker light">Rebekah's Private Label Signature Line</span><h2>Premium formulas. Personal standards.</h2><p>Rebekah developed a collection of more than 200 herbal, vitamin and nutraceutical formulas made with whole-food ingredients and bottled in protective amber glass.</p><div class="chips"><span>200+ formulas</span><span>Whole-food ingredients</span><span>Amber glass bottles</span></div><a class="pill cream" href="<?php echo esc_url( home_url( '/in-store-products/' ) ); ?>">Explore the Signature Line</a></div>
     </section>
 
     <section class="section story" id="story" data-mock-section="7">

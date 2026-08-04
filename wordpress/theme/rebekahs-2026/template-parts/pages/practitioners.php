@@ -13,9 +13,31 @@ $practitioners = get_posts( array(
 	'order'          => 'ASC',
 ) );
 
+// Keep the source records intact while matching the approved 25-listing directory.
+$hidden_practitioner_name_prefixes = array(
+	'ivlounge',
+	'kimberlycabe',
+	'troyfarwell',
+);
+
+$practitioners = array_values( array_filter( $practitioners, static function( $practitioner ) use ( $hidden_practitioner_name_prefixes ) {
+	$full_name       = get_post_meta( $practitioner->ID, 'medical_practitioner_full_name', true );
+	$display_name    = $full_name ? $full_name : get_the_title( $practitioner->ID );
+	$normalized_name = preg_replace( '/[^a-z0-9]+/', '', strtolower( remove_accents( wp_strip_all_tags( $display_name ) ) ) );
+
+	foreach ( $hidden_practitioner_name_prefixes as $hidden_name_prefix ) {
+		if ( 0 === strpos( $normalized_name, $hidden_name_prefix ) ) {
+			return false;
+		}
+	}
+
+	return true;
+} ) );
+
 $service_terms = get_terms( array(
 	'taxonomy'   => 'medical-service',
 	'hide_empty' => true,
+	'object_ids' => wp_list_pluck( $practitioners, 'ID' ),
 ) );
 
 $find_locations = static function( $practitioner ) {

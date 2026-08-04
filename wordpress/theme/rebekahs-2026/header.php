@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <a class="skip" href="#main"><?php esc_html_e( 'Skip to content', 'rebekahs-2026' ); ?></a>
-<header class="site-header">
+<header id="site-header" class="site-header">
 	<a class="brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Rebekah's home">
 		<img src="<?php echo esc_url( rhn_theme_asset( 'tmp/source/current-site-logo-live.png' ) ); ?>" alt="Rebekah's Health & Nutrition">
 	</a>

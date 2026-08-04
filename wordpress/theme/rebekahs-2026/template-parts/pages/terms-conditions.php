@@ -7,7 +7,7 @@
         <span class="eyebrow">Website terms</span>
         <h1>Use this website with <em>clarity.</em></h1>
         <p class="lead">These terms explain the rules for using rebekahspureliving.com, its wellness education, store information, external shopping links and referral resources.</p>
-        <div class="hero-meta"><span>Effective date: [Month Day, Year]</span><span>Applies to rebekahspureliving.com</span></div>
+        <div class="hero-meta"><span>Draft updated: August 4, 2026</span><span>Qualified legal review required</span></div>
         <div class="hero-actions"><a class="button primary" href="#terms">Read the terms</a><a class="button outline" href="#contact">Questions about these terms</a></div>
       </div>
     </header>
@@ -99,7 +99,6 @@
             <h2>9. Messages, reviews and other submissions</h2>
             <p>If the Website allows you to send a message, review, comment, photo or other material, you are responsible for what you submit and must have the rights and permissions needed to share it. Do not submit unlawful, infringing, deceptive, abusive or malicious material.</p>
             <p>Do not send sensitive health, financial or other confidential information through a general contact form or public feature. Personal information is handled as described in the <a href="<?php echo esc_url( home_url( '/privacy-policy/' ) ); ?>">Privacy Policy</a>.</p>
-            <p>[Counsel to confirm the appropriate content license, moderation rights and removal process if public comments, reviews or user uploads will remain enabled.]</p>
           </section>
 
           <section id="disclaimers">
@@ -110,8 +109,8 @@
           </section>
 
           <section id="law">
-            <h2>11. Governing law and disputes</h2>
-            <p>These terms are governed by the laws of [insert verified jurisdiction], without regard to conflict-of-law principles. Any dispute-resolution process, venue, informal notice period, arbitration provision or class-action waiver must be supplied or approved by qualified counsel before publication.</p>
+            <h2>11. Questions and applicable law</h2>
+            <p>Questions about these terms may be sent using the contact information below. Applicable law governs these terms and any rights that cannot legally be waived.</p>
           </section>
 
           <section id="changes">
