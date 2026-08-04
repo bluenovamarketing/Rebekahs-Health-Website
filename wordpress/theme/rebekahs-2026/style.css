@@ -1,0 +1,24 @@
+/*
+Theme Name: Rebekah's Health & Nutrition 2026
+Theme URI: https://rebekahspureliving.com/
+Author: Blue Nova Marketing
+Author URI: https://bluenovamarketing.com/
+Description: Custom Elementor-compatible theme matching the approved Rebekah's Health & Nutrition mockups.
+Version: 1.0.0
+Text Domain: rebekahs-2026
+*/
+
+:root {
+  --rhn-green: #173f35;
+  --rhn-cream: #f8f4e9;
+  --rhn-gold: #d9a441;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+img { max-width: 100%; height: auto; }
+.screen-reader-text {
+  border: 0; clip: rect(1px, 1px, 1px, 1px); clip-path: inset(50%);
+  height: 1px; margin: -1px; overflow: hidden; padding: 0;
+  position: absolute !important; width: 1px; word-wrap: normal !important;
+}

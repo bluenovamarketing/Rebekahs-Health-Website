@@ -1,0 +1,9 @@
+put wordpress/theme/rebekahs-2026/template-parts/pages/shop-fullscript.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/shop-fullscript.php
+put wordpress/theme/rebekahs-2026/template-parts/pages/shop-designs-for-health.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/shop-designs-for-health.php
+put wordpress/theme/rebekahs-2026/template-parts/pages/shop-lifewave.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/shop-lifewave.php
+put wordpress/theme/rebekahs-2026/template-parts/pages/peptides-injectables.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/peptides-injectables.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/shop-fullscript.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/shop-designs-for-health.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/shop-lifewave.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/peptides-injectables.php
+quit

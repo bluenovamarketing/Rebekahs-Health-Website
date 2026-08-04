@@ -1,0 +1,9 @@
+put wordpress/theme/rebekahs-2026/template-parts/pages/practitioners.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/practitioners.php
+put wordpress/theme/rebekahs-2026/single-medical-practicioner.php /public_html/wp-content/themes/rebekahs-2026/single-medical-practicioner.php
+put wordpress/theme/rebekahs-2026/assets/js/pages/practitioners.js /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/practitioners.js
+put wordpress/theme/rebekahs-2026/assets/css/pages/practitioners.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/practitioners.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/practitioners.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/single-medical-practicioner.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/practitioners.js
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/practitioners.css
+quit

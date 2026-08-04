@@ -1,0 +1,27 @@
+chmod 755 /public_html/wp-content/themes/rebekahs-2026
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/css
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/js
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/js/pages
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/clarkston-location
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/grand-blanc-location
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/homepage
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/instagram-preview
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/in-store-products-v3.1.8
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/lake-orion-location
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/lapeer-location
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/our-team
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/our-team/assets
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/peptides-injectables
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/shop-designs-for-health
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/shop-fullscript
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/output/tiktok-preview
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/tmp
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/assets/tmp/source
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/template-parts
+chmod 755 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages
+chmod 755 /public_html/wp-content/plugins/blue-nova-staging-guard
+chmod 644 /public_html/wp-content/themes/rebekahs-2026/assets/css/chrome.css
+quit

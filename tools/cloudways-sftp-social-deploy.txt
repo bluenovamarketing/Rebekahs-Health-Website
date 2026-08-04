@@ -1,0 +1,5 @@
+put wordpress/dist/instagram-feed.6.11.3.zip /private_html/instagram-feed.6.11.3.zip
+put wordpress/dist/feeds-for-tiktok.1.6.1.zip /private_html/feeds-for-tiktok.1.6.1.zip
+put wordpress/deploy/blue-nova-social-installer.php /public_html/wp-content/mu-plugins/blue-nova-social-installer.php
+chmod 644 /public_html/wp-content/mu-plugins/blue-nova-social-installer.php
+quit

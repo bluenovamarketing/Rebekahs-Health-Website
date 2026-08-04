@@ -1,0 +1,3 @@
+put wordpress/theme/rebekahs-2026/assets/css/pages/our-story.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/our-story.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/our-story.css
+quit

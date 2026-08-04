@@ -1,0 +1,3 @@
+put wordpress/theme/rebekahs-2026/functions.php /public_html/wp-content/themes/rebekahs-2026/functions.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/functions.php
+quit

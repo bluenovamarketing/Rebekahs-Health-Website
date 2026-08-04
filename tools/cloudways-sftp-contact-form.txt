@@ -1,0 +1,7 @@
+put wordpress/theme/rebekahs-2026/template-parts/pages/contact-us.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/contact-us.php
+put wordpress/theme/rebekahs-2026/assets/css/pages/contact-us.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/contact-us.css
+put wordpress/theme/rebekahs-2026/assets/js/pages/contact-us.js /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/contact-us.js
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/contact-us.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/contact-us.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/contact-us.js
+quit

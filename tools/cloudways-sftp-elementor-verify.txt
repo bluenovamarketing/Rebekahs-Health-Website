@@ -1,0 +1,4 @@
+get /private_html/elementor-deploy-status.json tools/elementor-deploy-status.json
+ls -l /public_html/wp-content/plugins/elementor/elementor.php
+ls -l /public_html/wp-content/mu-plugins
+quit

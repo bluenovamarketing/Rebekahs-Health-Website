@@ -1,0 +1,3 @@
+put wordpress/deploy/bn-memory-check-7a3f9c.php /public_html/bn-memory-check-7a3f9c.php
+chmod 664 /public_html/bn-memory-check-7a3f9c.php
+quit

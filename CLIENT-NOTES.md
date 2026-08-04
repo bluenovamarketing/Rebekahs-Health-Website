@@ -1255,6 +1255,21 @@
 - No purchase or paid ManageWP backup add-on was authorized, no backup was claimed as complete, and no changes were made to the live WordPress site. The staging connection screen was left open for continuation.
 - Next step: restore browser control, finish the staging-only ManageWP connection, confirm whether the account provides a no-cost backup slot or would incur a charge, and create and verify the backup only if no new charge is introduced. A paid add-on requires Todd's approval first.
 
+## 2026-08-03 - WPvivid staging backup installed and initiated
+
+- Todd superseded the ManageWP-first plan: use WPvivid Free on the Cloudways staging clone for the independent pre-build backup, then add the production site to ManageWP after launch.
+- Installed and activated WPvivid Backup Plugin Free v0.9.132 on staging only. No plugin or configuration changes were made on the live WordPress site.
+- Started a manually protected full backup containing the database plus all WordPress files and marked it for manual deletion only. The task reached 13% and spent an extended period dumping the large `hzj_frmt_form_views` Forminator analytics table; no completed backup has yet been claimed or verified.
+- Started Google Drive authorization. Google is waiting at the account chooser between Todd Bailey and the Blue Nova Marketing account. Recommended the agency-owned Blue Nova Marketing account so the archive is not tied to an individual account; Todd must confirm/select the intended Drive account before storage configuration can finish.
+- Next steps: complete the Google account/permission screen, confirm the backup job completes without error, verify the archive is listed and restorable, then place or send a verified copy to the restricted client project folder in Google Drive before any rebuild changes.
+
+## 2026-08-03 - Cloudways pre-build restore point completed
+
+- Stopped the WPvivid backup route after its background requests repeatedly failed on the staging server: the first full backup stalled/failed during the database dump, and later attempts could not persist WPvivid's timeout-reduction settings or complete the optional size calculation.
+- Temporarily deactivated Wordfence on staging to test whether it was blocking WPvivid, preserved all Wordfence data, confirmed the same failure continued, and reactivated Wordfence immediately. Live Wordfence and the live site were never changed.
+- Switched to Cloudways' native application-level on-demand backup for the staging application. Cloudways completed a files-and-database restore point dated `3rd August, 2026, 17:12:05 UTC`, which is listed as the latest backup and is available in the application's Restore selector.
+- The WordPress build can proceed against staging without waiting for WPvivid or Google Drive authorization. WPvivid did not produce a verified portable archive, so no Google Drive copy should be claimed as complete. A separate portable archive can be revisited later without blocking Phase One assembly.
+
 ## 2026-08-03 - Final Pages 1 and 6 approval email drafted
 
 - Created an unsent Gmail reply draft in Rebekah’s existing “Updated Website Mock-Ups Ready for Approval” thread, addressed to `rebekahspureliving@gmail.com`.
@@ -1270,3 +1285,152 @@
 - Advanced the Round 3.1 review-hub Home card and canonical Client Review Timeline to v3.1.19, published the version to GitHub Pages, and verified the final crop at 1440px desktop and 390px mobile with no horizontal overflow or browser errors.
 - The first rendered pass was level but retained more carpet than requested. Tightened the final crop to an 11% enlargement with a 23–28px downward shift, leaving only a narrow lower edge while preserving the bottle tops.
 - Pending follow-up: once Todd approves the v3.1.19 crop, replace the existing attached Gmail approval draft with a new draft that links directly to v3.1.19. Gmail does not allow in-place body updates on drafts that already contain attachments, so the current unsent draft still references v3.1.18 and should not be sent.
+
+## 2026-08-03 - Homepage product photo measured leveling v3.1.20
+
+- Todd's wider-browser review showed that the 0.65-degree correction in v3.1.19 was still visibly tilted. Image analysis measured the photo's lower shelf/carpet reference line at approximately 2.1 degrees high on the right.
+- Created `third-mockup-v3.1.20.html` and applied the full 2.1-degree clockwise correction while preserving the authentic product labels, the tighter crop, the visible bottle tops and all previously approved homepage behavior.
+- Advanced the Round 3.1 review-hub Home card and canonical Client Review Timeline to v3.1.20, published commit `81ef324`, and verified the live page at 1440px desktop and 390px mobile with no horizontal overflow or browser errors.
+- Pending follow-up: replace the existing unsent Gmail approval draft with a new v3.1.20 link only after Todd approves this corrected crop.
+
+## 2026-08-03 - Homepage bottle-row guide correction v3.1.21
+
+- Todd supplied a desktop screenshot with horizontal guides through the top and bottom bottle rows, revealing a small remaining rise toward the right after v3.1.20.
+- Created `third-mockup-v3.1.21.html` and increased the clockwise correction from 2.1 to 2.4 degrees. The authentic photo, product labels, crop, bottle-top visibility and approved homepage behavior remain unchanged.
+- Advanced the Round 3.1 review-hub Home card and canonical Client Review Timeline to v3.1.21, published commit `589ddfa`, and verified the live page at desktop and 390px mobile sizes with no horizontal overflow or browser errors.
+- Pending follow-up: replace the existing unsent Gmail approval draft with a new v3.1.21 link only after Todd approves this final alignment.
+
+## 2026-08-03 - Final Homepage v3.1.21 approval email drafted
+
+- Re-read Rebekah's latest reply in the existing website-approval thread. She has approved Clarkston and every other page; Homepage Page 1 is the only remaining approval.
+- Created a new unsent Gmail reply draft addressed to `rebekahspureliving@gmail.com` with the direct Homepage v3.1.21 review link and the final desktop alignment proof attached.
+- The draft explains that the existing clear private-label photo was straightened and recropped, confirms desktop and phone checks, and asks Rebekah to approve Page 1 so the project can move into WordPress assembly and final technical QA. Draft ID: `r7214542929347960024`.
+
+## 2026-08-03 - Homepage product photograph geometry correction v3.1.22
+
+- Todd correctly identified that v3.1.21 remained visibly crooked. The prior approach rotated the entire photograph and could not make bottle tops and bottoms share horizontal planes because the individual bottle rows had inconsistent perspective and placement.
+- Used the image-editing workflow to rectify the bottle geometry itself: lower bottle bases, lower cap tops, upper bottle bases and upper cap tops were aligned to independent horizontal guides while retaining the amber bottles, Rebekah's branding, product names and store setting.
+- Saved the new project asset as `output/homepage/private-label-bottles-leveled-v1.png`, created Homepage v3.1.22, removed page-level rotation, and advanced the Round 3.1 review-hub Home card and canonical Client Review Timeline.
+- Published commit `653edb9`. Verified the exact 439×500 desktop webpage crop against three visible horizontal guides through the upper cap tops, shared middle plane and lower bottle bases. Verified the 390px phone layout has no horizontal overflow or browser errors.
+- The existing Gmail approval draft still links to v3.1.21 and remains unsent. Do not send or replace it until Todd has reviewed v3.1.22; replacing the attached draft requires deleting the old draft and creating a new one.
+
+## 2026-08-03 - Homepage fuller corrected-photo presentation v3.1.23
+
+- Todd approved the geometrically leveled private-label product image and requested that the mockup show as much of the photograph as possible.
+- Created Homepage v3.1.23 with a responsive 4:3 photo frame matching the source image, no image zoom and no rotation. Widened the desktop image column, reduced the arch corner crop, and retained a proportional 4:3 frame on phones so the bottle group and surrounding store context remain visible.
+- Published commit `17991b1`, advanced the Round 3.1 review-hub Home card and canonical Client Review Timeline to v3.1.23, and verified the live page at 1440px desktop and 390px phone widths. The rendered image frame stays 4:3, uses the corrected asset with no rotation or scaling transform, has no horizontal overflow and produced no browser errors.
+- The existing Gmail approval draft still links to v3.1.21 and remains unsent. Replacing its attached version requires deleting the old draft and creating a new one, so wait for Todd's explicit approval before replacing it with the v3.1.23 link.
+
+## 2026-08-03 - Page 6 client approval confirmed
+
+- Todd confirmed that Page 6, the Clarkston Location page, is client approved.
+- Updated `Page Inventory!E10` in the canonical Google Sheet from `Awaiting client approval` to `Approved`; the WordPress Build Status remains `Not started` until staging assembly begins.
+- Page 1, the Homepage, is the only remaining page-design approval before WordPress staging assembly begins.
+
+## 2026-08-03 - Final Homepage and Phase One design approval confirmed
+
+- Todd confirmed client approval of the current Homepage, completing the outstanding Page 1 approval.
+- All 20 review pages are now client approved. Updated `Page Inventory!E5:E24` and `Client Review Timeline!H5:H24` to `Approved`, and updated the review-timeline summary to show that WordPress staging assembly may begin.
+- WordPress Build Status remains `Not started`; the next project milestone is assembling the approved designs on the backed-up Cloudways staging application while leaving live unchanged.
+- The unsent Homepage approval-request Gmail draft is now obsolete and must not be sent; approval has already been received.
+
+## 2026-08-03 - Staging privacy check
+
+- Confirmed that the Cloudways staging site can be reviewed from any computer or mobile device using its web URL; WordPress editing still requires the staging administrator login.
+- An anonymous request to the staging URL returned `HTTP 200`, so the application is currently publicly reachable by anyone who has or discovers the URL. It is not yet password-private.
+- The response includes `X-Robots-Tag: noindex, nofollow`, so search-engine indexing is blocked, but `noindex` is not an access-control mechanism.
+- Before WordPress assembly, enable Cloudways application password protection/HTTP Basic Auth and share the separate review username and password only with authorized reviewers. Also keep staging email, payment and webhook activity isolated from live services.
+
+## 2026-08-03 - Homepage v3.1.23 client approval email prepared
+
+- Prepared a concise client-facing reply for Rebekah with the live Homepage v3.1.23 link. The email explains that the existing private-label photo was geometrically leveled, reframed to show as much of the image as possible, and checked on desktop and phone layouts.
+- The draft notes that a replacement photo is no longer required unless Rebekah still prefers a different image, and asks her to approve Page 1 so page-design review can close and WordPress assembly can begin.
+- The existing Gmail draft remains unsent and still links to v3.1.21. It was not changed or deleted; replacing that attached draft requires Todd's explicit approval.
+
+## 2026-08-03 - WordPress staging build authorized and local deployment package started
+
+- Todd authorized Codex to assemble the complete approved website on the Cloudways staging application, with Todd reviewing the result after the build. Live remains out of scope for changes.
+- Confirmed that the 21 existing published blog posts will be retained. A dynamic WordPress archive and single-post template now form part of the custom theme foundation, so the approved design will apply automatically to existing and future posts.
+- Began an Elementor-compatible custom theme package based directly on the 20 approved mockups, plus the approved global header/footer, Our Team, blog-post and 404 designs. Elementor Free remains available for page editing; the custom theme supplies the global and dynamic template functions that otherwise require Elementor Pro.
+- Added a staging-only guard plugin package that blocks outgoing WordPress email, Forminator delivery, WooCommerce payments, WooCommerce webhook delivery and indexing when the host is a Cloudways staging domain.
+- Social sections will use Rebekah's real Instagram and TikTok feeds. The visual placeholders remain available during assembly; the account owner will authorize each feed through OAuth near the end, without sharing social passwords.
+- Pending: deploy and activate the theme and staging guard on staging, enable Cloudways application password protection after Todd's explicit confirmation, install/configure the free social-feed plugins, connect SEOPress Free + Todd's SEOPress PRO license, and complete responsive/content/link/form safety QA.
+
+## 2026-08-03 - Staging deployment access decision pending
+
+- WordPress removed the original nested staging-guard plugin file but retained its empty top-level directory, preventing a corrected package with the same slug from uploading. Repackaged the unchanged guard code under the clean `blue-nova-staging-guard` slug; it is ready for deployment.
+- Browser-driven WordPress admin navigation proved slow and unreliable for repeated package uploads. Todd proposed using a WordPress Application Password.
+- A WordPress Application Password is appropriate for REST-managed pages, posts, media and build verification, but core REST access does not replace theme/plugin file deployment or WP-CLI activation. The preferred full-build access is a dedicated staging-only Cloudways Application Credential with SSH/SFTP enabled, ideally using a project-specific SSH key; REST credentials can be added afterward for content operations.
+- Live remains untouched. WooPayments remains in Safe Mode on staging and its production connection was not transferred or replaced.
+
+## 2026-08-03 - WordPress staging foundation deployed and verified
+
+- Deployed and activated the custom `Rebekah's Health & Nutrition 2026` theme and the Blue Nova staging guard on the Cloudways staging application only. Live and the existing WooCommerce product, order, customer, coupon and payment data were not changed.
+- The staging guard is actively blocking outgoing WordPress email, Forminator delivery, WooCommerce payments, webhook delivery and search indexing while the site is being built.
+- Installed and activated official Elementor Free 4.2.0. Increased effective staging PHP memory from 128 MB to 512 MB after the original limit caused a recoverable activation failure; independently verified the new limit from inside WordPress.
+- Installed and activated the current official free Smash Balloon social-feed foundations: Instagram Feed 6.11.3 and TikTok Feed 1.6.1. Rebekah or the account owner still needs to authorize each owned account through OAuth before the approved homepage placeholders are replaced with live feeds; no social passwords are needed.
+- Cleaned the approved homepage's social-feed handoff without changing its appearance: removed the hidden duplicate TikTok markup, replaced twelve temporary dead `#` card links with the correct Instagram or TikTok profile destination, and normalized the social separators/play symbols to safe HTML entities. The cards will receive individual live-post destinations after OAuth and feed configuration.
+- Assembled all 20 approved page designs on staging, retained the 21 existing published blog posts under the new dynamic archive/single templates, retained seven existing event records and added the approved Events archive presentation. Resolved the legacy Lapeer media/page slug collision without changing the media file URL.
+- Verified the approved routes return HTTP 200 without WordPress critical errors, confirmed the first existing blog post uses the new single-post template, and corrected the mobile header so the 390 px layout has no horizontal overflow.
+- Updated `Page Inventory!F5:F24` in the canonical Google Sheet from `Not started` to the validated dropdown value `In progress`. Keep the pages in progress until social authorization, SEOPress Free + Todd's SEOPress PRO license, form/link/content proofing and final responsive review are complete.
+- Pending client-facing steps: Todd may review the staging URL from any computer now; arrange a short authorization session with the Instagram/TikTok account owner later. Staging remains noindex but is not yet protected by an HTTP review password.
+
+## 2026-08-03 - SEOPress PRO staging activation and Yoast migration completed
+
+- Installed and activated SEOPress Free + SEOPress PRO 10.1 on the Cloudways staging application and verified that Todd's existing PRO license is active. The license key was not written to the project notes or retained in deployment files.
+- Deactivated Yoast SEO 28.1 on staging to prevent duplicate SEO output, but kept the inactive plugin and all original Yoast database fields in place as a temporary rollback source. Live WordPress was not changed.
+- Ran SEOPress's bundled Yoast migration after the staging build was assembled. Verified parity for all populated source fields: 98/98 meta descriptions, 31/31 focus-keyword records, 1/1 custom title and 46/46 primary-category assignments. Yoast settings and taxonomy metadata were also passed through the official importer.
+- Verified a real product page outputs the migrated description, canonical URL, Open Graph tags and Twitter tags from SEOPress, with no Yoast-generated markup. The staging guard continues to return `noindex, nofollow`, so the Cloudways application remains excluded from indexing.
+- Removed the one-time migration helper after verification. Keep domain-sensitive SEO work for the launch window: replace staging-domain canonicals where needed, finish approved page-level titles/descriptions, validate redirects and sitemap URLs, connect analytics/Search Console, submit the production sitemap and only then remove staging noindex. Yoast may be deleted after the production-domain SEO verification and rollback window.
+
+## 2026-08-03 - Approved Homepage embedded sections restored on staging
+
+- Found and corrected a theme-compiler defect that treated a JavaScript asset's version query string as part of its local filename. That omission prevented six approved Homepage sections from loading on staging: guidance pathways, nationwide shipping, events, journal, newsletter signup and practitioner brands.
+- Added a dedicated WordPress hydration asset for those six sections, retained their approved mockup styling and replaced mockup-only links with real WordPress routes for products, practitioners, events, locations, blog and practitioner-brand shopping pages. Patched the compiler so a later theme rebuild will not repeat the omission.
+- Disabled the existing third-party live-chat script on the Cloudways staging domain through the staging guard. This prevents real chat activity and keeps the chat window from covering the approved hero during proofing; it does not disable live-domain chat.
+- Verified staging at desktop size: all six section mounts contain their expected content, no temporary `#` links remain, the page has no chat iframe and the homepage asset loads successfully. Also verified the actual 390 px mobile layout in an isolated frame: the responsive header/menu, hero copy, calls to action, proof card and first approved pathway section fit without clipping.
+- Live WordPress was not changed. Homepage remains `In progress` until live Instagram/TikTok authorization and the remaining sitewide page-by-page QA are complete.
+
+## 2026-08-03 - Events and practitioner templates connected to retained WordPress data
+
+- Replaced the Classes & Events archive's four hard-coded mockup cards with the actual upcoming records from The Events Calendar while preserving the approved archive design. Four events are currently upcoming as of August 3, 2026; existing historical records remain accessible through a real Past view.
+- Made the archive search, store and event-type controls filter the server-rendered events. Removed both dead `#` actions, linked the signup action to the real footer connection area and corrected the archive's SEOPress title/description and social metadata.
+- Rebuilt the event-detail template around each retained event's title, image, description, date, time, venue, address, organizer, cost and venue phone. Existing event content remains authoritative; registration/ticketing was not invented or enabled. Related cards now link to other real upcoming events.
+- Replaced the practitioner archive's frozen 25-entry JavaScript directory with all 28 currently published `medical-practicioner` records. The design now reads the existing service taxonomy and the established practitioner metadata fields for full name, practice/center, description and contact information, and every card opens its real WordPress profile.
+- Rebuilt practitioner profiles to present those existing metadata fields in the approved profile design. Current phone, email, address and external website details are shown only when present in that record; no appointment or service capability was invented. A temporary read-only staging schema audit used to identify the existing fields was removed immediately after verification.
+- Re-ran the structural staging check across Home, Our Story, Our Team, Locations and all four stores, Events, Blog, In-Store Products, Practitioners, Contact, legal pages and all four external-shopping/referral pages. All 21 routes return HTTP 200, contain exactly one H1, use the expected theme template, have no critical error, no dead `#` links, no mockup `.html` links, no staging chat widget and retain staging `noindex`.
+- Live WordPress was not changed. Events and Practitioners remain `In progress` pending final responsive visual proof and launch-domain SEO/integration QA.
+
+## 2026-08-03 - Existing contact form connected to the approved Contact page
+
+- Removed the inert mockup form and its public “mockup only” notice from the staging Contact page.
+- Embedded the existing published Forminator `contact-us` form (ID 1064) in the approved form-card design and added theme-scoped styling for its inputs, textarea, validation messages and submit button.
+- Verified the page now renders one real Forminator form with name, email, phone, subject, message, spam protection and submission controls; the old dead `action="#"` form is gone. The staging guard still blocks delivery, so no real inquiry or email can be sent during proofing.
+- Pending launch QA: update the existing message placeholder from its older business-inquiry wording if desired, confirm notification recipients/routing, complete consent/spam review and run a controlled end-to-end delivery test only after the production domain and mail service are ready.
+
+## 2026-08-03 - Contact and newsletter mockup blockers removed
+
+- Removed the mockup-only JavaScript that intercepted Contact and Homepage newsletter submissions. Both approved layouts now retain Forminator's real submission behavior instead of showing a prototype response or silently stopping the form.
+- Updated the existing Contact form's visible message prompt to `How can we help?` and its button to `Send my message`, matching the approved design language without changing its saved field structure.
+- Connected the existing published newsletter form (Forminator ID 313) to the approved Homepage newsletter section. It currently retains its established Email and Phone Number fields; the approved preferred-store choice remains a build follow-up because that field does not yet exist in the saved form.
+- Re-ran structural verification across all 21 approved routes after deployment. Every route returns HTTP 200, has exactly one H1, uses the expected template, contains no dead `#` or mockup `.html` links, shows no staging chat widget and retains `noindex`.
+- Staging's safety guard continues to block outbound email and other live integrations, so form delivery will be tested only after notification routing and the production mail/domain configuration are ready. Live WordPress was not changed.
+
+## 2026-08-03 - Three-width responsive overflow sweep completed
+
+- Added a repeatable staging-only responsive verifier and checked all 21 approved routes at 390 px phone, 768 px tablet and 1440 px desktop widths (63 route/viewport combinations total).
+- Found one 10 px desktop overflow on Our Story. An old page-mockup `.footer-links` selector was overriding the shared WordPress footer and pushing the Disclaimer link beyond the viewport.
+- Scoped that legacy rule to the mockup footer, deployed the correction to staging and reverified Our Story at all three widths with zero overflow. The remaining route/viewport checks also completed without overflow, critical errors or H1-count regressions.
+- Live WordPress was not changed. This is structural responsive QA; page-by-page visual comparison and client proofing remain part of the in-progress build.
+
+## 2026-08-04 - Forms, navigation, SEO and referral disclosures advanced on staging
+
+- Added the approved `Preferred store` choice as a real saved Forminator field on newsletter form 313, with Lapeer, Grand Blanc, Clarkston and Lake Orion options. Backed up the original Forminator form metadata in WordPress before the one-time update and removed the temporary update/audit helpers immediately afterward.
+- Corrected Forminator's generated style overrides so Homepage newsletter and Contact inputs are visible and aligned at desktop and mobile sizes. Verified the newsletter button remains inside its form at desktop, and both forms have zero mobile horizontal overflow at 390 px.
+- Replaced the Contact form's legacy `Tell us about your business` and `Submit` wording with `How can we help?` and `Send my message`, using delayed-render-safe JavaScript without intercepting submission. Removed the public implementation-status note and replaced it with a concise privacy notice.
+- The existing reCAPTCHA key does not recognize the Cloudways staging domain. Hid the invalid-domain badge on the two form pages and added Google's required Privacy Policy/Terms disclosure. Staging delivery remains blocked; production reCAPTCHA keys and end-to-end mail routing still require launch-domain verification.
+- Completed the approved Our Story consolidation: `/meet-the-owner/` now returns a 301 redirect to `/our-story/`, the Homepage links directly to Our Story, and all four Homepage location-card actions are real links to their store pages.
+- Added intentional SEOPress titles, meta descriptions and social descriptions for the Phase One page set. Added Organization schema on Home and verified `HealthAndBeautyBusiness` address, phone and opening-hours schema on all four location pages. Staging remains `noindex` until launch.
+- Rechecked the Fullscript, Designs for Health, LifeWave and EllieMD destinations on August 4, 2026; all four returned HTTP 200 at the URLs used on staging. Replaced internal pre-publication notes with visitor-facing external-site/referral disclosures, added `rel="sponsored"` where needed and removed the unverified Fullscript `355+ brands` claim.
+- Re-ran the 21-route structural audit after these changes. All routes return HTTP 200, contain exactly one H1, use the expected theme template, contain no dead `#` or mockup `.html` links, show no staging chat widget and retain `noindex`. Live WordPress was not changed.
+- Remaining integration-dependent work: Instagram/TikTok account-owner OAuth, production-domain reCAPTCHA/mail delivery, final production-domain canonical/sitemap checks and removal of staging-only protections at launch.

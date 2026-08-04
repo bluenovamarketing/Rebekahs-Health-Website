@@ -1,0 +1,2 @@
+get /logs/backend_wordpress-1651482-6565113.cloudwaysapps.com.error.log tools/staging-backend-error.log
+quit

@@ -1,0 +1,3 @@
+get /private_html/elementor-active-status.json tools/elementor-active-status.json
+ls -l /public_html/wp-content/mu-plugins
+quit

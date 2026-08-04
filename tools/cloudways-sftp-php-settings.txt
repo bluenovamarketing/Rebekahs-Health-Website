@@ -1,0 +1,3 @@
+ls -la /public_html
+get /public_html/.user.ini tools/server-user.ini
+quit

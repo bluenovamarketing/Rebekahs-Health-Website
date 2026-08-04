@@ -1,0 +1,8 @@
+mkdir /public_html/wp-content/mu-plugins
+chmod 755 /public_html/wp-content/mu-plugins
+put "wordpress/dist/elementor.4.2.0.zip" "/private_html/elementor.4.2.0.zip"
+put "wordpress/deploy/blue-nova-elementor-installer.php" "/public_html/wp-content/mu-plugins/blue-nova-elementor-installer.php"
+chmod 644 /public_html/wp-content/mu-plugins/blue-nova-elementor-installer.php
+ls -l /private_html/elementor.4.2.0.zip
+ls -l /public_html/wp-content/mu-plugins/blue-nova-elementor-installer.php
+quit

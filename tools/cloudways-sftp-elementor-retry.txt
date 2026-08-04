@@ -1,0 +1,3 @@
+put "wordpress/deploy/blue-nova-elementor-installer.php" "/public_html/wp-content/mu-plugins/blue-nova-elementor-installer.php"
+chmod 644 /public_html/wp-content/mu-plugins/blue-nova-elementor-installer.php
+quit

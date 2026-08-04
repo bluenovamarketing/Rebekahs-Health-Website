@@ -1,0 +1,13 @@
+put wordpress/theme/rebekahs-2026/functions.php /public_html/wp-content/themes/rebekahs-2026/functions.php
+put wordpress/theme/rebekahs-2026/template-parts/pages/events.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/events.php
+put wordpress/theme/rebekahs-2026/single-tribe_events.php /public_html/wp-content/themes/rebekahs-2026/single-tribe_events.php
+put wordpress/theme/rebekahs-2026/assets/css/pages/events.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/events.css
+put wordpress/theme/rebekahs-2026/assets/css/pages/event-detail.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/event-detail.css
+put wordpress/theme/rebekahs-2026/assets/js/pages/events.js /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/events.js
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/functions.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/events.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/single-tribe_events.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/events.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/event-detail.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/events.js
+quit

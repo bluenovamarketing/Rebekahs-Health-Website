@@ -1,0 +1,2 @@
+ls -l /public_html/wp-content/mu-plugins
+quit

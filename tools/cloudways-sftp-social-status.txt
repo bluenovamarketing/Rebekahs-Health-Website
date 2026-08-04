@@ -1,0 +1,5 @@
+get /private_html/social-feed-deploy-status.json tools/social-feed-deploy-status.json
+ls -l /public_html/wp-content/plugins/instagram-feed
+ls -l /public_html/wp-content/plugins/feeds-for-tiktok
+ls -l /public_html/wp-content/mu-plugins
+quit

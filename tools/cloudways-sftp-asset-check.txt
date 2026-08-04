@@ -1,0 +1,5 @@
+ls -l /public_html/wp-content/themes/rebekahs-2026/assets
+ls -l /public_html/wp-content/themes/rebekahs-2026/assets/css
+ls -l /public_html/wp-content/themes/rebekahs-2026/assets/css/pages
+ls -l /public_html/wp-content/themes/rebekahs-2026/assets/js
+quit

@@ -1,0 +1,5 @@
+put "wordpress/theme/rebekahs-2026/functions.php" "/public_html/wp-content/themes/rebekahs-2026/functions.php"
+put "wordpress/theme/rebekahs-2026/archive-tribe_events.php" "/public_html/wp-content/themes/rebekahs-2026/archive-tribe_events.php"
+ls -l /public_html/wp-content/themes/rebekahs-2026/functions.php
+ls -l /public_html/wp-content/themes/rebekahs-2026/archive-tribe_events.php
+quit

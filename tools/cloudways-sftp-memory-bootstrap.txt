@@ -1,0 +1,5 @@
+put wordpress/plugins/blue-nova-staging-guard/blue-nova-staging-bootstrap.php /public_html/wp-content/mu-plugins/blue-nova-staging-bootstrap.php
+put wordpress/deploy/blue-nova-wp-memory-verifier.php /public_html/wp-content/mu-plugins/blue-nova-wp-memory-verifier.php
+chmod 644 /public_html/wp-content/mu-plugins/blue-nova-staging-bootstrap.php
+chmod 644 /public_html/wp-content/mu-plugins/blue-nova-wp-memory-verifier.php
+quit

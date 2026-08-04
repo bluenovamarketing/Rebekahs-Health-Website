@@ -1,0 +1,3 @@
+ls /public_html/wp-content/themes
+ls /public_html/wp-content/plugins
+quit

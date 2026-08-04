@@ -1,0 +1,9 @@
+put wordpress/theme/rebekahs-2026/template-parts/pages/home.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/home.php
+put wordpress/theme/rebekahs-2026/assets/js/pages/home-sections.js /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/home-sections.js
+put wordpress/theme/rebekahs-2026/assets/js/pages/home.js /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/home.js
+put wordpress/theme/rebekahs-2026/assets/css/pages/home.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/home.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/home.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/home-sections.js
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/js/pages/home.js
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/home.css
+quit

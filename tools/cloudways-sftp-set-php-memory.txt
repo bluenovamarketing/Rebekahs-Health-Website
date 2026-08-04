@@ -1,0 +1,3 @@
+put tools/server-user.ini /public_html/.user.ini
+chmod 664 /public_html/.user.ini
+quit

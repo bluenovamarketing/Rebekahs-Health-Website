@@ -1,0 +1,11 @@
+mkdir /public_html/wp-content/plugins/blue-nova-staging-guard
+cd /public_html/wp-content/plugins/blue-nova-staging-guard
+lcd "C:/Users/todda/Blue Nova Projects/Rebekahs Health Website/wordpress/plugins/blue-nova-staging-guard"
+put -r *
+mkdir /public_html/wp-content/themes/rebekahs-2026
+cd /public_html/wp-content/themes/rebekahs-2026
+lcd "C:/Users/todda/Blue Nova Projects/Rebekahs Health Website/wordpress/theme/rebekahs-2026"
+put -r *
+ls /public_html/wp-content/plugins/blue-nova-staging-guard
+ls /public_html/wp-content/themes/rebekahs-2026
+quit
