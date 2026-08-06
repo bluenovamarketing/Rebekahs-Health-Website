@@ -65,13 +65,29 @@ $find_locations = static function( $practitioner ) {
 			$description = get_post_meta( $practitioner->ID, 'medical_practitioner_description', true );
 			$contact     = get_post_meta( $practitioner->ID, 'medical_practitioner_contact_info', true );
 			$display_name = $full_name ? $full_name : get_the_title( $practitioner->ID );
-			$summary     = $description ? wp_trim_words( wp_strip_all_tags( $description ), 25 ) : wp_trim_words( wp_strip_all_tags( $practitioner->post_content ), 25 );
+			$about       = $description ? $description : $practitioner->post_content;
+			$summary     = wp_trim_words( wp_strip_all_tags( $about ), 25 );
 			$location_source = clone $practitioner;
 			$location_source->post_content = $description . ' ' . $contact . ' ' . $practitioner->post_content;
 			$location   = $find_locations( $location_source );
 			$searchable = strtolower( $display_name . ' ' . $center . ' ' . $summary . ' ' . wp_strip_all_tags( $contact ) . ' ' . $location . ' ' . implode( ' ', $term_names ) );
 		?>
-			<article class="card" data-search="<?php echo esc_attr( $searchable ); ?>" data-categories="<?php echo esc_attr( implode( '|', $term_slugs ) ); ?>"><span class="category"><?php echo esc_html( $term_names ? implode( ' · ', $term_names ) : __( 'Practitioner listing', 'rebekahs-2026' ) ); ?></span><h3><?php echo esc_html( $display_name ); ?></h3><?php if ( $center ) : ?><p class="practice"><?php echo esc_html( $center ); ?></p><?php endif; ?><p class="summary"><?php echo esc_html( $summary ? $summary : __( 'Open this profile for the information currently published by the practitioner.', 'rebekahs-2026' ) ); ?></p><?php if ( $location ) : ?><div class="details"><span aria-label="Location">⌖ <?php echo esc_html( $location ); ?></span></div><?php endif; ?><a class="profile-link" href="<?php echo esc_url( get_permalink( $practitioner->ID ) ); ?>">View full profile <span aria-hidden="true">→</span></a></article>
+			<article class="card" data-search="<?php echo esc_attr( $searchable ); ?>" data-categories="<?php echo esc_attr( implode( '|', $term_slugs ) ); ?>">
+				<span class="category"><?php echo esc_html( $term_names ? implode( ' · ', $term_names ) : __( 'Practitioner listing', 'rebekahs-2026' ) ); ?></span>
+				<h3><?php echo esc_html( $display_name ); ?></h3>
+				<?php if ( $center ) : ?><p class="practice"><?php echo esc_html( $center ); ?></p><?php endif; ?>
+				<p class="summary"><?php echo esc_html( $summary ? $summary : __( 'Full listing details are available below.', 'rebekahs-2026' ) ); ?></p>
+				<?php if ( $location ) : ?><div class="details"><span aria-label="Location">⌖ <?php echo esc_html( $location ); ?></span></div><?php endif; ?>
+				<button class="expand" type="button" aria-expanded="false" aria-controls="practitioner-details-<?php echo esc_attr( $practitioner->ID ); ?>">View full listing <span aria-hidden="true">+</span></button>
+				<div class="expanded" id="practitioner-details-<?php echo esc_attr( $practitioner->ID ); ?>" hidden>
+					<?php if ( trim( wp_strip_all_tags( $about ) ) ) : ?>
+						<div class="expanded-about"><strong>About</strong><?php echo wp_kses_post( wpautop( $about ) ); ?></div>
+					<?php endif; ?>
+					<?php if ( trim( wp_strip_all_tags( $contact ) ) ) : ?>
+						<div class="expanded-contact"><strong>Contact details</strong><?php echo wp_kses_post( wpautop( $contact ) ); ?></div>
+					<?php endif; ?>
+				</div>
+			</article>
 		<?php endforeach; ?>
 	</div><div class="empty" id="empty" hidden><h3>No exact matches</h3><p>Try a broader name, city or area of practice.</p></div></div></section>
 	<section class="trust"><div class="wrap trust-grid"><div><span class="eyebrow">Before you contact a provider</span><h2>Choose with confidence.</h2><p>Credentials, services, availability and insurance participation can change. Confirm details directly with the practitioner before making care decisions.</p></div><div class="trust-list"><div><strong>Verify credentials</strong><span>Ask about current licensing, certifications and scope of practice.</span></div><div><strong>Confirm logistics</strong><span>Check current address, hours, cost and insurance details directly.</span></div><div><strong>Ask good questions</strong><span>Discuss the provider's approach and whether it fits your needs.</span></div><div><strong>Use appropriate care</strong><span>Seek qualified medical help for urgent symptoms or emergencies.</span></div></div></div></section>

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RHN_THEME_VERSION', '1.0.12' );
+define( 'RHN_THEME_VERSION', '1.0.21' );
 
 function rhn_theme_setup() {
 	add_theme_support( 'title-tag' );
@@ -25,6 +25,22 @@ add_action( 'after_setup_theme', 'rhn_theme_setup' );
 function rhn_theme_asset( $path ) {
 	return trailingslashit( get_template_directory_uri() ) . 'assets/' . ltrim( $path, '/' );
 }
+
+/** Provide branded favicon assets until a WordPress Site Icon is configured. */
+function rhn_site_icons() {
+	if ( has_site_icon() ) {
+		return;
+	}
+
+	$favicon_url = add_query_arg( 'ver', RHN_THEME_VERSION, rhn_theme_asset( 'img/favicon-32.png' ) );
+	$touch_url   = add_query_arg( 'ver', RHN_THEME_VERSION, rhn_theme_asset( 'img/apple-touch-icon-180.png' ) );
+	$site_url    = add_query_arg( 'ver', RHN_THEME_VERSION, rhn_theme_asset( 'img/rebekahs-site-icon-512.png' ) );
+
+	echo '<link rel="icon" href="' . esc_url( $favicon_url ) . '" sizes="32x32" type="image/png">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $site_url ) . '" sizes="512x512" type="image/png">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $touch_url ) . '" sizes="180x180">' . "\n";
+}
+add_action( 'wp_head', 'rhn_site_icons', 1 );
 
 function rhn_template_key() {
 	if ( is_front_page() ) {

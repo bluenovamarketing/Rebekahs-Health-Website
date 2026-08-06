@@ -1,0 +1,7 @@
+put wordpress/theme/rebekahs-2026/functions.php /public_html/wp-content/themes/rebekahs-2026/functions.php
+put wordpress/theme/rebekahs-2026/assets/css/chrome.css /public_html/wp-content/themes/rebekahs-2026/assets/css/chrome.css
+put wordpress/theme/rebekahs-2026/assets/js/chrome.js /public_html/wp-content/themes/rebekahs-2026/assets/js/chrome.js
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/functions.php
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/css/chrome.css
+chmod 664 /public_html/wp-content/themes/rebekahs-2026/assets/js/chrome.js
+quit

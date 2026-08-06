@@ -2,7 +2,7 @@
 /** Generated from approved mockup: third-mockup-v3.1.23.html. */
 $rhn_uploads         = wp_upload_dir();
 $rhn_upload_base_url = trailingslashit( $rhn_uploads['baseurl'] );
-$rhn_hero_video_url  = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-loop-long-v4-hd.mp4';
+$rhn_hero_video_url  = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-loop-full-v3-hd.mp4';
 $rhn_hero_poster_url = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-poster-v1.jpg';
 ?>
 <main id="main">

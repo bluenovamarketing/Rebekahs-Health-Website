@@ -80,8 +80,40 @@
 
   document.querySelectorAll('.rhn-location-newsletter[data-default-store]').forEach(function (container) {
     const select = container.querySelector('select[name="select-1"]');
-    if (!select || select.value) return;
-    select.value = container.dataset.defaultStore;
-    select.dispatchEvent(new Event('change', { bubbles: true }));
+    if (select && !select.value) {
+      select.value = container.dataset.defaultStore;
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+
+    container.querySelectorAll('.forminator-row').forEach(function (row) {
+      row.classList.toggle('rhn-location-half', Boolean(row.querySelector('input[name="email-1"],input[name="phone-1"]')));
+    });
+
+    if (!container.querySelector('.rhn-recaptcha-note')) {
+      const note = document.createElement('small');
+      note.className = 'rhn-recaptcha-note';
+      note.innerHTML = 'This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.';
+      container.appendChild(note);
+    }
+
+    if (window.location.hostname.endsWith('.cloudwaysapps.com')) {
+      const form = container.querySelector('form.forminator-custom-form');
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          event.stopImmediatePropagation();
+          const response = form.querySelector('.forminator-response-message');
+          if (response) {
+            response.textContent = 'This is the staging preview. Newsletter delivery will be enabled on the live domain.';
+            response.classList.add('forminator-show', 'forminator-success');
+          }
+        }, true);
+      }
+    }
+  });
+
+  document.querySelectorAll('a[href*="google.com/maps"]').forEach(function (link) {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
   });
 })();

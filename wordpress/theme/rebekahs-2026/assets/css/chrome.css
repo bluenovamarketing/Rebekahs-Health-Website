@@ -37,12 +37,22 @@
     .signup .rhn-location-newsletter>.form-title{color:var(--pine);font-weight:800}
     .signup .rhn-location-newsletter>small{color:#61756b}
     .signup .rhn-location-newsletter form.forminator-custom-form{padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;border-radius:0;background:transparent;box-shadow:none}
-    .signup .rhn-location-newsletter .forminator-row{margin:0!important}
-    .signup .rhn-location-newsletter .forminator-row:nth-of-type(n+3){grid-column:1/-1}
+    .signup .rhn-location-newsletter .forminator-row{grid-column:1/-1;margin:0!important}
+    .signup .rhn-location-newsletter .forminator-row.rhn-location-half{grid-column:auto}
     .signup .rhn-location-newsletter .forminator-col,.signup .rhn-location-newsletter .forminator-field{margin:0!important;padding:0!important}
-    .signup .rhn-location-newsletter input,.signup .rhn-location-newsletter select{width:100%;min-height:50px;padding:.8rem;border:1px solid #ccd9d1;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
-    .signup .rhn-location-newsletter .forminator-button-submit{width:100%;min-height:50px;border:0;border-radius:999px;background:#d6a33a;color:#174c3c;font-weight:800;cursor:pointer}
+    .signup .rhn-location-newsletter .forminator-iti-input,.signup .rhn-location-newsletter .forminator-phone,.signup .rhn-location-newsletter .select2-container{width:100%!important}
+    .signup .rhn-location-newsletter #forminator-module-313.forminator-ui.forminator-custom-form-313.forminator-design--flat .forminator-input{width:100%!important;min-height:50px!important;padding:.8rem!important;border:1px solid #ccd9d1!important;border-radius:8px!important;background:#fff!important;color:var(--ink)!important;font:inherit!important;text-align:left!important;box-shadow:none!important}
+    .signup .rhn-location-newsletter #forminator-module-313 .forminator-field--phone{padding-right:44px!important}
+    .signup .rhn-location-newsletter #forminator-module-313 .forminator-input::placeholder{color:#687970!important;opacity:1!important}
+    .signup .rhn-location-newsletter .select2-selection{width:100%!important;min-height:50px!important;border:1px solid #ccd9d1!important;border-radius:8px!important;background:#fff!important;color:var(--ink)!important;box-shadow:none!important}
+    .signup .rhn-location-newsletter .select2-selection__rendered{min-height:48px!important;padding:0 44px 0 14px!important;display:flex!important;align-items:center!important;color:var(--ink)!important}
+    .signup .rhn-location-newsletter .select2-selection__arrow{height:48px!important;right:9px!important}
+    .signup .rhn-location-newsletter #forminator-module-313.forminator-ui.forminator-custom-form-313.forminator-design--flat .forminator-button-submit{width:100%!important;min-height:50px!important;margin:0!important;border:0!important;border-radius:999px!important;background:#d6a33a!important;color:#174c3c!important;font-weight:800!important;cursor:pointer;box-shadow:none!important}
+    .signup .rhn-location-newsletter #forminator-module-313.forminator-ui.forminator-custom-form-313.forminator-design--flat .forminator-button-submit:hover{background:#e4b34f!important;color:#0f352a!important}
     .signup .rhn-location-newsletter .forminator-response-message:empty{display:none}
+    .signup .rhn-location-newsletter .rhn-recaptcha-note{margin:0;color:#61756b;font-size:.72rem;line-height:1.45}
+    .signup .rhn-location-newsletter .rhn-recaptcha-note a{text-decoration:underline;text-underline-offset:2px}
+    .signup .rhn-location-newsletter .grecaptcha-badge{visibility:hidden!important}
     @media(max-width:600px){.signup .rhn-location-newsletter form.forminator-custom-form{grid-template-columns:1fr}.signup .rhn-location-newsletter .forminator-row{grid-column:1}}
 
     /* Global chrome always owns the responsive header/footer state. */

@@ -1500,3 +1500,145 @@
 - Todd confirmed that the public practitioner directory should match the approved 25-listing mockup. The three listings omitted during mockup approval are IV Lounge, Kimberly Cabe, FNP-BC, and Troy Farwell, D.N.M. MS, MH, RAP, RAH, HHP.
 - Added a reversible theme-level display filter for those three names. Their published WordPress records and direct profile data remain intact for rollback or a future decision; no database content was deleted or changed.
 - Deployed only to Cloudways staging and cleared the site/Varnish cache. The normal review URL reports and renders exactly 25 cards; none of the three omitted names appears as a card, and the now-unused IV Lounge area-of-practice filter was removed. All three retained direct profile URLs still return HTTP 200. The canonical planning sheet still contains the older 28-profile scope note and should be reconciled if the team wants the tracker updated.
+
+## 2026-08-05 - Header switches to menu before desktop navigation compresses
+
+- Todd approved changing the global responsive header so it switches to the menu at 1380px and below instead of shrinking the desktop navigation and action text to 11.5-12px.
+- Retained the approved full desktop header above 1380px, the existing navigation labels and destinations, and the approved footer. Practitioners remains inside the About dropdown, and no separate Home navigation item was added.
+- Increased the compact-header logo to 220px and kept the opened menu and mobile action text at 14px for readability. Deployed only to Cloudways staging. Verified at a compact desktop viewport that the menu replaces the squeezed navigation, opens correctly at 14px, and causes no horizontal overflow; verified at 1440px that the full desktop navigation and actions return with no overflow. Live was not changed.
+
+## 2026-08-05 - Stay Connected buttons routed to the newsletter form
+
+- Corrected the desktop and compact/mobile global-header Stay Connected buttons so they point to the actual Homepage newsletter signup section (`/#connect`) instead of the footer social-links anchor.
+- Corrected the Classes & Events closing Stay Connected CTA to use the same Homepage signup destination.
+- Deployed only to Cloudways staging, purged Breeze, and click-tested the header action from the Homepage and an interior page plus the Events CTA. All three land at `/#connect` with the live Forminator signup form visible. Live was not changed.
+
+## 2026-08-05 - Global header restored to approved mockup values
+
+- Todd identified that the desktop WordPress header still used the compressed v1.11 study values instead of the approved Header/Footer Mockup v1.5 code.
+- Restored the exact approved desktop measurements and spacing: 92px header, 230px logo, 14px navigation and action labels, the original logo-to-navigation margin, and right-aligned action group.
+- Retained Todd's later approval to switch to the menu at 1380px and below rather than compress the desktop navigation. Restored the approved 78px/215px phone header values as well.
+- Deployed only to Cloudways staging and purged Breeze. Verified the public page loads `global-chrome.css?ver=1.0.15` and computes the approved desktop values: 92px header, 230px logo, 14px navigation and buttons, 44px minimum button height, approved responsive spacing, and no header overlap or horizontal overflow. Live was not changed.
+
+## 2026-08-05 - Branded favicon added
+
+- The staging clone had no WordPress Site Icon output, and the only unrelated local favicon was a blue placeholder that did not belong to Rebekah's.
+- Derived a square favicon from the leaf-and-Source emblem in the established Rebekah's logo, using the site's green palette and warm-white background. Generated 32px browser, 180px Apple touch, and 512px site-icon assets.
+- Added a theme-level fallback that outputs the branded icons sitewide only when WordPress does not already have a Site Icon configured, preventing duplicate icon tags if one is configured later.
+- Deployed only to Cloudways staging, purged Breeze, and verified the public Homepage emits the 32px, 180px, and 512px icon tags with theme version 1.0.16. Confirmed the browser loaded the 32x32 PNG at its correct natural dimensions. Live was not changed.
+
+## 2026-08-05 - Removed oversized desktop header spacer
+
+- Todd identified the large flexible gap between Wellness Source Blog and the header CTA buttons.
+- Replaced the action group's `margin-left: auto` spacer with a fixed 28px gap so the navigation and actions remain visually grouped.
+- Deployed only to Cloudways staging, purged Breeze, and verified the public page loads theme version 1.0.17 with a measured 28px nav-to-action gap. Live was not changed.
+
+## 2026-08-05 - Desktop navigation centered with actions right-aligned
+
+- Todd requested that the primary desktop navigation be centered in the full header while the Call To Order and Stay Connected buttons return to the right edge as in the prior approved headers.
+- Positioned the desktop navigation independently at the header's horizontal center and restored automatic right alignment for the action group. Added an explicit transform reset inside the existing 1380px compact-menu breakpoint.
+- Deployed only to Cloudways staging, purged Breeze, and verified theme version 1.0.18 at the annotated 1514px review width: navigation center delta is 0px, buttons align to the right header padding, clearance is approximately 122px, and there is no horizontal overflow. Verified the desktop layout still has positive clearance immediately above the breakpoint and switches to the compact menu below 1380px. Live was not changed.
+
+## 2026-08-05 - Global header and footer architecture reconfirmed
+
+- Todd confirmed that no alternate site headers or footers should exist; the newly approved components must remain global.
+- Audited all WordPress PHP templates. The theme contains exactly one site header in `header.php` and one site footer in `footer.php`, and every page, post, archive, event, practitioner, and 404 entry template uses them through `get_header()` and `get_footer()`.
+- Page-level `<header>` elements that remain are semantic content wrappers for heroes or section headings, not alternate site navigation. No staging or live deployment was required.
+
+## 2026-08-05 - Homepage hero moved to the 24-second opening at original quality
+
+- Todd approved the improved clarity and requested that the complete 2:08.46 source video begin at the 24-second mark, then continue through the original ending and from the original beginning back to 24 seconds before repeating.
+- Created the circular sequence from the original 1920x1080 H.264 video at the nearest clean source keyframe, 24.315958 seconds. The first source wrap now occurs roughly 1 minute 44 seconds after page load; the complete loop remains approximately 2:08.5.
+- Preserved the original encoded video stream without recompression and removed audio, avoiding the added grit seen in the earlier highly compressed delivery copies. Added a matching poster from the new starting frame.
+- Retained direct `src`, `autoplay`, `muted`, `loop`, `playsinline` and `preload="auto"` behavior for immediate playback. Uploaded the video and matching poster directly to staging, purged Cloudways Varnish and verified the public browser was actively playing the 1920x1080 video with no media error. Live WordPress remains unchanged.
+
+## 2026-08-05 - Homepage hero version reconfirmed
+
+- Corrected the handoff description, which had mistakenly summarized the superseded 35.96-second v1 edit. Reconfirmed that staging and the local Homepage template reference the final `rebekahs-homepage-hero-loop-24s-v5-original.mp4` edit and its v5 poster—not v1 or v4.
+- The active v5 is the complete approximately 2:08 source reordered to open at the clean 24.315958-second keyframe, retain original 1920x1080 video quality without recompression, continue through the end, then play the beginning through 24 seconds before looping. Both active public assets return HTTP 200. Live WordPress remains unchanged.
+
+## 2026-08-05 - Homepage restored to the supplied one-minute video
+
+- Todd clarified that the intended Homepage source is `Front page vidio-1.m4v`, not the later two-minute `Front Page video-2.m4v`. Replaced the two-minute v5 reference on staging with the existing 58.64-second circular edit `rebekahs-homepage-hero-loop-full-v3-hd.mp4` and its matching product-opening poster.
+- The active one-minute edit is silent, 1280x720 H.264, approximately 1.52 Mb/s, begins with the finished private-label product footage at about source second 46, continues through the source ending, then plays source 0 through 46 before looping.
+- Purged Breeze and verified the normal cached Homepage references the one-minute file and matching poster, contains no reference to the two-minute v5 file, and renders without PHP errors. Live WordPress remains unchanged.
+
+## 2026-08-05 - Practitioner cards restored to approved expandable behavior
+
+- Todd identified that the WordPress practitioner directory had replaced the approved v2.7.0 in-card expansion with arrows linking to separate profile pages. Restored the approved `View full listing +` interaction on all 25 current directory cards.
+- Each card now expands in place to show the existing About and Contact details available in the practitioner records, changes to `Hide full listing −` while open, and collapses again without leaving the directory. Existing profile records and URLs were retained, but the directory cards no longer send visitors to them.
+- Added one sitewide rule for all current Google Maps directions links so every `Get Directions` action on Contact, Locations, Lapeer, Grand Blanc, Clarkston and Lake Orion opens in a new tab with `noopener noreferrer`.
+- Deployed theme version 1.0.19 to Cloudways staging and purged Breeze. Verified all 25 practitioner controls and panels are present, no former profile-arrow links remain, expansion/collapse works with correct ARIA state, existing About/Contact content renders, and all 16 current directions links have the required new-tab attributes. Live WordPress was not changed.
+- Follow-up sitewide audit checked the complete theme plus published WordPress pages, posts, products, practitioner records, events, testimonials and venue/organizer content. No additional currently rendered `Get Directions` or Google Maps direction links exist outside those 16 links. The new-tab treatment is global, so any future Google Maps direction link added through the theme will receive the same behavior automatically.
+
+## 2026-08-05 - Location newsletter forms repaired on staging
+
+- Todd reported that the newsletter form was visually broken on the four individual location pages and that a red error appeared at the bottom-right of the viewport.
+- Traced the form issue to Forminator's saved flat-design CSS overriding the approved location styling with transparent white-on-white inputs, a narrow button and an incorrect row-grid selector. Added stronger shared form styling so Email and Phone appear side by side on desktop, the selected store and button span the card, controls have readable colors and borders, and the layout collapses to one column on phones.
+- Confirmed the red message was Google reCAPTCHA rejecting the temporary Cloudways hostname. The location forms now include the required reCAPTCHA disclosure and hide the badge; staging submissions are intercepted locally so they cannot send email or trigger the invalid-domain challenge. This staging-only block automatically stops applying on the permanent domain, where the reCAPTCHA key/domain authorization must be confirmed before launch.
+- Deployed theme version 1.0.21 only to Cloudways staging, purged Breeze, and verified all four location pages show the correct selected store, visible fields, full-width gold button, disclosure and no visible reCAPTCHA error. Live WordPress was not changed.
+
+## 2026-08-05 - Newsletter delivery and integration audit
+
+- Audited the cloned staging newsletter configuration and compared it with the publicly rendered live form without changing either site. The live Homepage uses the same Forminator Newsletter Form ID 313; its current public fields are Email and Phone, while staging adds the approved required preferred-store field for Lapeer, Grand Blanc, Clarkston and Lake Orion.
+- The staging clone contains approximately 600 tracked Forminator newsletter submissions. Form 313 stores submissions in WordPress and has one unconditional admin notification routed to `rebekahspureliving@gmail.com`; it has no store-based email routing and no subscriber confirmation/autoresponder notification.
+- Forminator reports no connected third-party application globally or on form 313. There is therefore no active Mailchimp, Constant Contact, MailerLite, HubSpot, ActiveCampaign or webhook list integration in the cloned WordPress configuration.
+- WP Mail SMTP is configured to use SendGrid for transactional WordPress email delivery. This is delivery infrastructure, not a newsletter contact-list/autoresponder connection, so it does not automatically add Forminator submissions to a marketing audience or segment them by store.
+- Pending launch decision: either retain the current workflow (WordPress submissions plus Gmail notification) or obtain the client's authorization for their actual email-marketing account and map Email, Phone and Preferred Store to an audience/custom field or store tags. Reconfirm the live-domain reCAPTCHA authorization and run one controlled end-to-end submission after cutover.
+
+## 2026-08-05 - Contact form configuration audit
+
+- Audited published Forminator Contact Us form ID 1064 on Cloudways staging without submitting or changing it. The public form renders Name, Email, Phone, Subject and How can we help fields plus reCAPTCHA; Name, Email and Phone are required, while Subject and Message are currently optional.
+- The form has one unconditional admin notification to `rebekahspureliving@gmail.com`. Its subject identifies the submission ID and form name, and its body includes all submitted fields. Delivery uses the existing SendGrid-backed WP Mail SMTP configuration.
+- The notification's Reply-To field is blank, so replying to the notification will not automatically address the visitor's submitted email. There is also no visitor acknowledgement/autoresponder email and no connected third-party integration.
+- Successful submissions display the inline message, `Thank you for contacting us, we will be in touch shortly.` AJAX submission and inline validation are enabled; the form includes reCAPTCHA, but Forminator honeypot protection is not enabled.
+- Pending before launch: decide whether Message should be required, map Reply-To to the submitted email, optionally add a visitor acknowledgement, confirm the permanent-domain reCAPTCHA authorization, and run a controlled end-to-end delivery test after staging protections are removed during cutover.
+
+## 2026-08-05 - Contact form launch improvements in progress
+
+- Todd approved all recommended Contact Us form improvements on staging. Updated Forminator form 1064 so the admin notification Reply-To uses `{email-1}`, enabled Forminator honeypot protection, and added a `Visitor Confirmation` notification addressed to `{email-1}` with a branded acknowledgement message. Published the form changes; staging delivery remains intentionally blocked, so no email was sent.
+- Rechecked the uncached public form markup after publishing. The Message field still rendered without Forminator's required marker even though the editor displayed the Required state, so that item is not being treated as complete yet.
+- Browser automation was then blocked by an open Chrome extension panel before the Message setting could be toggled and republished for a clean persistence check. Pending: dismiss the open Chrome extension UI, explicitly toggle Message Optional then Required, publish, verify uncached markup, and confirm the saved notification details. Permanent-domain reCAPTCHA and end-to-end delivery testing remain launch tasks.
+
+## 2026-08-05 - Contact form launch improvements completed on staging
+
+- After Todd dismissed the browser extension panel, explicitly toggled the Message field from Optional back to Required, applied it, republished Forminator form 1064 and purged the staging Breeze cache.
+- Verified the freshly loaded Forminator editor's serialized saved configuration rather than relying only on visual controls. It confirms `textarea-1` has `required: 1`, honeypot protection is enabled, and the form has exactly two notifications.
+- Confirmed the Admin Email notification still goes to `rebekahspureliving@gmail.com` and now uses `{email-1}` as Reply-To. Confirmed the new Visitor Confirmation notification is addressed to `{email-1}` with the approved acknowledgement subject/body.
+- No staging submission or email was sent because the staging guard remains active. The remaining launch-only work is to authorize/verify reCAPTCHA on the permanent domain and perform one controlled end-to-end submission that confirms both the admin and visitor emails arrive.
+
+## 2026-08-05 - Staging WordPress page inventory cleaned
+
+- Reconciled the WordPress Pages inventory against the approved 21-page site scope, including the later-approved Our Team page.
+- Moved 11 obsolete build records to the recoverable Trash: the empty `Bricks #1476362` draft, the superseded Meet the Owner page, and nine duplicate Clarkston, Grand Blanc and Lake Orion location pages. No live-site content was changed.
+- The staging inventory now contains 25 published pages, zero drafts and one private system page. The published set consists of the 21 approved site pages plus the four WooCommerce-assigned Shop, Cart, Checkout and My Account pages retained for Phase Two.
+- Preserved the private Smart Coupons Terms page because WooCommerce Smart Coupons uses it during coupon printing. It is not publicly published.
+- Trash now contains 13 recoverable records in total, including the 11 moved during this cleanup and two records that were already in Trash. Nothing was permanently deleted.
+
+## 2026-08-05 - Events freshness and blog pagination audit
+
+- Compared the current live and staging Events Calendar feeds. Live has one nearer upcoming event missing from staging: Shockwave Therapy Pop-Up Clinic on August 19, 2026 from 10:00 AM to 2:30 PM at the Lapeer store. The live record was modified August 5 after the staging clone. Staging currently begins with the November 7 Lapeer health fair and contains three upcoming records versus four on live.
+- Diagnosed the blog archive count mismatch Todd identified. The approved static mockup contained one featured article plus eight grid cards, and the dynamic template copied that into a nine-post query by skipping the first queried post only on page one.
+- The current dynamic logic leaves an incomplete 3-column row on page one and shows the first queried post both as the feature and again in the grid on later pagination pages. Recommended correction: show the featured article only on page one, query it separately, and paginate nine non-featured grid cards on every archive page.
+- No staging content or template changes were made during this diagnostic audit.
+
+## 2026-08-05 - Store review placeholder warnings removed
+
+- Todd authorized treating the four displayed location-page reviews as genuine customer feedback.
+- Retained each approved review quote and replaced the visitor-facing internal placeholder/permission warning with the neutral attribution `Rebekah's customer`; no customer names or review platforms were invented.
+- Updated the Lapeer, Grand Blanc, Clarkston and Lake Orion templates locally and on Cloudways staging only, then purged the Breeze cache.
+- Verified the normal public URL for all four staging store pages contains the new attribution and none contains the former design-placeholder, source-verification or permission warning. Live WordPress was not changed.
+
+## 2026-08-05 - Client staging-review email prepared
+
+- Prepared a client-facing email inviting Rebekah's team to review the Cloudways staging site on desktop, tablet and phone.
+- The draft identifies the current review scope as design, copy, store information, practitioners, events, blog content and navigation; it asks for one consolidated list of revisions.
+- The draft accurately states that staging is blocked from search indexing but should not be publicly shared. It also explains that final form delivery, social-feed authorization and permanent-domain checks are launch tasks, while onsite WooCommerce remains Phase Two.
+- Pending internal items before or during client review: copy the August 19 Shockwave Therapy event added to live after the clone, and correct the blog archive so the featured article appears only on page one with a consistent nine-card grid and no later-page duplication.
+
+## 2026-08-05 - Client staging-review email drafted in Gmail
+
+- Created an unsent Gmail draft to Rebekah at `rebekahspureliving@gmail.com` with the Cloudways staging review link and a concise desktop, tablet and phone review checklist.
+- Removed all mention of Phase Two and online ordering at Todd's direction.
+- The message explains that the staging URL is blocked from search indexing but should not be shared publicly, and that final launch integrations will be checked after approval.
+- Next step: Todd reviews and sends the Gmail draft when ready.

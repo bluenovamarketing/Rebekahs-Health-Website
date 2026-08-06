@@ -3,3 +3,7 @@
 
 # Local tooling dependencies (recreated by the package manager)
 /.tools/node_modules/
+
+# Keep large local/generated video files out of GitHub
+*.mp4
+*.m4v
