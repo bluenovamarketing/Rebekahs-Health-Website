@@ -1642,3 +1642,11 @@
 - Removed all mention of Phase Two and online ordering at Todd's direction.
 - The message explains that the staging URL is blocked from search indexing but should not be shared publicly, and that final launch integrations will be checked after approval.
 - Next step: Todd reviews and sends the Gmail draft when ready.
+
+## 2026-08-06 - Domain registration and social authorization clarified
+
+- Verified `rebekahspureliving.com` is registered through GoDaddy and uses GoDaddy's Domains By Proxy privacy service, so the actual individual or company registrant is not publicly disclosed. The domain currently uses Cloudflare nameservers and is registered through December 2029.
+- Confirmed the planned Instagram and TikTok live-feed connection is account-owner OAuth through the already-installed Smash Balloon plugins. Rebekah or the social-account owner should authorize each account in a supervised browser session without emailing or sharing either social password.
+- Recommended completing authorization on the permanent production domain near launch, because social connection tokens can require reconnection after a staging-to-production domain change. Blue Nova can handle feed configuration and placement after the account owner completes the authorization prompts.
+- Todd confirmed Rebekah is technically comfortable and will receive self-service instructions for the Instagram and TikTok authorizations. For GoDaddy, invite `BlueNovaMarketing@gmail.com` with the least-privilege `Domains Only` level, Management Access enabled and Transfer Access disabled; restrict access to `rebekahspureliving.com` if the account contains other domains. Blue Nova may initiate the GoDaddy delegate request instead if the exact name and email address on Rebekah's GoDaddy account are confirmed.
+- The domain's current authoritative nameservers are Cloudflare, so GoDaddy access covers registrar settings, ownership/contact review, renewal and nameserver control, but the active DNS records are managed in Cloudflare. Separate Cloudflare access will be needed for a production DNS cutover unless the nameservers are intentionally changed.
