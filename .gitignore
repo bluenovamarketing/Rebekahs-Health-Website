@@ -7,3 +7,15 @@
 # Keep large local/generated video files out of GitHub
 *.mp4
 *.m4v
+*.mov
+*.avi
+*.webm
+*.mbtree
+
+# Recreated local media/tooling dependencies
+/tools/pydeps/
+/tools/yt-dlp.exe
+/tmp/ffmpeg-extract/
+
+# Generated WordPress release archives
+/wordpress/dist/

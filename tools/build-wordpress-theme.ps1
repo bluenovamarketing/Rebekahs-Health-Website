@@ -110,8 +110,7 @@ $assetPaths = New-Object 'System.Collections.Generic.HashSet[string]' ([System.S
 foreach ($page in $pages) {
     $sourcePath = Join-Path $ProjectRoot $page.Source
     $html = Get-Content -Raw -Encoding UTF8 $sourcePath
-    # Use the visually equivalent web-optimized hero video for WordPress delivery.
-    $html = $html.Replace('output/rebekahs-hero-video-hd.mp4', 'output/rebekahs-hero-video.mp4')
+    # Hero video files are hosted in WordPress uploads; do not copy local video binaries into the theme.
     foreach ($assetMatch in [regex]::Matches($html, '(?:src|poster)="(?<path>(?:output|tmp)/[^"?]+)', 'IgnoreCase')) {
         [void]$assetPaths.Add($assetMatch.Groups['path'].Value.Replace('/', '\'))
     }
