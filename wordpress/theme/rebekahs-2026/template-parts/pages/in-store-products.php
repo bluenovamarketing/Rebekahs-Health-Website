@@ -12,7 +12,7 @@
           <div class="hero-note"><b>i</b><span>This is an in-store discovery guide, not a live inventory. Selection varies by location; call your preferred store before making a special trip.</span></div>
         </div>
         <div class="hero-art">
-          <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=86" alt="Natural body care and wellness products arranged on a shelf">
+          <img src="<?php echo esc_url( rhn_theme_asset( 'output/lake-orion-location/lake-orion-store.jpg' ) ); ?>" alt="A wide view of wellness products and supplement shelves inside Rebekah's Lake Orion store" style="object-position:52% 55%">
           <div class="hero-badge"><strong>20k+</strong> products<br>across our stores</div>
         </div>
       </div>
@@ -28,8 +28,8 @@
           <button class="filter" type="button" data-filter="lifestyle">Natural living</button>
         </div>
         <div class="category-grid">
-          <article class="category" data-kind="daily targeted"><img src="<?php echo esc_url( rhn_theme_asset( 'output/in-store-products-v3.1.8/vitamins-private-label.jpg' ) ); ?>" alt="Rebekah's private-label vitamin and mushroom supplement bottles displayed in store"><div><small>Foundational wellness</small><h3>Vitamins & Minerals</h3><p>Multivitamins, magnesium, vitamin D, trace minerals and more.</p></div></article>
-          <article class="category" data-kind="targeted"><img src="<?php echo esc_url( rhn_theme_asset( 'output/in-store-products-v3.1.8/herbs-education.jpg' ) ); ?>" alt="A Rebekah's team member sharing herbal product education in the Lapeer store" style="object-position:62% 38%"><div><small>Plant-based options</small><h3>Herbs & Natural Remedies</h3><p>Capsules, tinctures, teas, mushrooms and homeopathic options.</p></div></article>
+          <article class="category" data-kind="daily targeted"><img src="<?php echo esc_url( rhn_theme_asset( 'output/homepage/private-label-bottles-leveled-v1.png' ) ); ?>" alt="Rebekah's private-label vitamin and mushroom supplement bottles displayed in store"><div><small>Foundational wellness</small><h3>Vitamins & Minerals</h3><p>Multivitamins, magnesium, vitamin D, trace minerals and more.</p></div></article>
+          <article class="category" data-kind="targeted"><img src="<?php echo esc_url( rhn_theme_asset( 'output/lake-orion-location/lake-orion-store-photo-2.jpg' ) ); ?>" alt="Natural wellness products stocked on shelves inside Rebekah's Lake Orion store" style="object-position:70% 52%"><div><small>Plant-based options</small><h3>Herbs & Natural Remedies</h3><p>Capsules, tinctures, teas, mushrooms and homeopathic options.</p></div></article>
           <article class="category" data-kind="daily targeted"><img src="<?php echo esc_url( rhn_theme_asset( 'output/in-store-products-v3.1.8/sports-nutrition-store.jpg' ) ); ?>" alt="A customer holding a wellness product inside Rebekah's Grand Blanc store" style="object-position:50% 42%"><div><small>Move & recover</small><h3>Sports Nutrition</h3><p>Protein, hydration, performance and recovery support.</p></div></article>
           <article class="category" data-kind="daily targeted"><img src="<?php echo esc_url( rhn_theme_asset( 'output/in-store-products-v3.1.8/natural-foods-microgreens.png' ) ); ?>" alt="Michigan-grown microgreens featured at Rebekah's" style="object-position:50% 18%"><div><small>Everyday nourishment</small><h3>Natural Foods & Snacks</h3><p>Better-for-you pantry finds, beverages, honey and grab-and-go options.</p></div></article>
           <article class="category" data-kind="lifestyle"><img src="<?php echo esc_url( rhn_theme_asset( 'output/in-store-products-v3.1.8/clean-body-care-product.jpg' ) ); ?>" alt="Close-up of an all-natural body-care product featured by Rebekah's"><div><small>Inside & out</small><h3>Clean Beauty & Body Care</h3><p>Skincare, cosmetics, bath, body and personal-care alternatives.</p></div></article>

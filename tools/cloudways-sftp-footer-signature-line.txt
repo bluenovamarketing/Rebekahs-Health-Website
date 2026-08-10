@@ -1,0 +1,4 @@
+put wordpress/theme/rebekahs-2026/footer.php /public_html/wp-content/themes/rebekahs-2026/footer.php
+chmod 644 /public_html/wp-content/themes/rebekahs-2026/footer.php
+ls -l /public_html/wp-content/themes/rebekahs-2026/footer.php
+quit

@@ -82,7 +82,7 @@
 
 	function preparePathway( section ) {
 		setLink( section, 'a[href="#departments"]', '/in-store-products/' );
-		setLink( section, 'a[href="#practitioners"]', '/practitioners/' );
+		setLink( section, 'a[href="#practitioners"]', '#practitioners' );
 		setLink( section, 'a[href="#events"]', '/events/' );
 		setLink( section, 'a[href="#locations"]', '/locations/' );
 	}

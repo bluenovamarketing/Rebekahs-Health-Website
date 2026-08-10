@@ -1,0 +1,8 @@
+put wordpress/theme/rebekahs-2026/assets/output/signature-line/client-lab-microscope.jpg /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line/client-lab-microscope.jpg
+put wordpress/theme/rebekahs-2026/assets/output/signature-line/client-photo-01.jpg /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line/client-photo-01.jpg
+put wordpress/theme/rebekahs-2026/assets/output/signature-line/client-photo-02.jpg /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line/client-photo-02.jpg
+put wordpress/theme/rebekahs-2026/assets/output/signature-line/client-photo-03.jpg /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line/client-photo-03.jpg
+put wordpress/theme/rebekahs-2026/assets/output/signature-line/client-photo-04.jpg /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line/client-photo-04.jpg
+put wordpress/theme/rebekahs-2026/assets/output/signature-line/farm-field-option-1.png /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line/farm-field-option-1.png
+ls -l /public_html/wp-content/themes/rebekahs-2026/assets/output/signature-line
+quit

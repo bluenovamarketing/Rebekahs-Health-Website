@@ -4,6 +4,23 @@ $rhn_uploads         = wp_upload_dir();
 $rhn_upload_base_url = trailingslashit( $rhn_uploads['baseurl'] );
 $rhn_hero_video_url  = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-loop-full-v3-hd.mp4';
 $rhn_hero_poster_url = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-poster-v1.jpg';
+$rhn_home_events     = function_exists( 'tribe_get_events' ) ? tribe_get_events(
+	array(
+		'posts_per_page' => 3,
+		'order'          => 'ASC',
+		'orderby'        => 'event_date',
+		'post_status'    => 'publish',
+		'start_date'     => current_time( 'Y-m-d H:i:s' ),
+	)
+) : array();
+$rhn_home_posts      = get_posts(
+	array(
+		'post_type'           => 'post',
+		'post_status'         => 'publish',
+		'posts_per_page'      => 3,
+		'ignore_sticky_posts' => true,
+	)
+);
 ?>
 <main id="main">
     <section class="hero" data-mock-section="2">
@@ -24,17 +41,56 @@ $rhn_hero_poster_url = $rhn_upload_base_url . '2026/08/rebekahs-homepage-hero-po
 
     <section class="signature" data-mock-section="6">
       <div class="signature-numbers" aria-hidden="true"><i class="signature-orbit-dot orbit-honey"></i><i class="signature-orbit-dot orbit-sage"></i><span>Rebekah's</span><strong>200+</strong><p>private-label<br>wellness formulas<em>PURITY · POTENCY · PRICE</em></p></div>
-      <div class="signature-copy"><span class="kicker light">Rebekah's Private Label Signature Line</span><h2>Premium formulas. Personal standards.</h2><p>Rebekah developed a collection of more than 200 herbal, vitamin and nutraceutical formulas made with whole-food ingredients and bottled in protective amber glass.</p><div class="chips"><span>200+ formulas</span><span>Whole-food ingredients</span><span>Amber glass bottles</span></div><a class="pill cream" href="<?php echo esc_url( home_url( '/in-store-products/' ) ); ?>">Explore the Signature Line</a></div>
+      <div class="signature-copy"><span class="kicker light">Rebekah's Private Label Signature Line</span><h2>Premium formulas. Personal standards.</h2><p>Rebekah developed a collection of more than 200 herbal, vitamin and nutraceutical formulas made with whole-food ingredients and bottled in protective amber glass.</p><div class="chips"><span>200+ formulas</span><span>Whole-food ingredients</span><span>Amber glass bottles</span></div><a class="pill cream" href="<?php echo esc_url( home_url( '/rebekahs-signature-line/' ) ); ?>">Explore the Signature Line</a></div>
     </section>
 
     <section class="section story" id="story" data-mock-section="7">
       <div class="collage"><img class="big" src="<?php echo esc_url( rhn_theme_asset( 'output/homepage/rebekah-story-ai-enhanced-v1.png' ) ); ?>" alt="Rebekah Spencer, founder of Rebekah's Health & Nutrition"><span class="badge">Rooted in<br><b>care</b></span></div>
-      <div class="story-copy"><span class="kicker">Meet Rebekah Spencer</span><h2>It has always been personal.</h2><p class="lead">After navigating her own health challenges, Rebekah built the kind of wellness store she wished every family had: trusted products, useful education and people who genuinely listen.</p><p>Since opening the first location in 2010, she has grown Rebekah's into four Michigan stores while remaining a hands-on Holistic Health Practitioner, educator and health coach.</p><blockquote>“Take control of your health, and you take control of your life.”</blockquote><a class="text-link" href="<?php echo esc_url( home_url( '/our-story/' ) ); ?>">Read Rebekah's story →</a></div>
+      <div class="story-copy"><span class="kicker">Meet Rebekah Spencer</span><h2>It has always been personal.</h2><p class="lead">After navigating her own health challenges, Rebekah built the kind of wellness store she wished every family had: trusted products, useful education and people who genuinely listen.</p><p>Since opening the first location in 2010, she has grown Rebekah's into four Michigan stores while remaining a hands-on Holistic Health Practitioner, Wellness Educator and Business Owner.</p><blockquote>“Take control of your health, and you take control of your life.”</blockquote><a class="text-link" href="<?php echo esc_url( home_url( '/our-story/' ) ); ?>">Read Rebekah's story →</a></div>
     </section>
 
-    <div class="original-section-mount" id="events" data-source-section="events" data-mock-section="8" aria-label="Classes and events"></div>
+    <div class="source-b" id="events" data-mock-section="8">
+      <section class="section events" aria-label="Classes and events">
+        <div class="container">
+          <div class="events-head reveal visible"><div><span class="eyebrow">Community &amp; education</span><h2>Learn, connect and support your wellness locally.</h2></div><div><p>Rebekah’s hosts free educational classes, health screenings, brand representatives, wellness fairs and local pop-ups throughout the year. Browse upcoming events and find something happening at the store nearest you.</p><a class="btn btn-secondary btn-arrow" href="<?php echo esc_url( home_url( '/events/' ) ); ?>">View All Events</a></div></div>
+          <div class="event-grid">
+            <?php if ( $rhn_home_events ) : ?>
+              <?php foreach ( $rhn_home_events as $rhn_event ) : ?>
+                <?php
+				$rhn_event_id      = $rhn_event->ID;
+				$rhn_event_date    = function_exists( 'tribe_get_start_date' ) ? tribe_get_start_date( $rhn_event_id, false, 'F j' ) : get_the_date( 'F j', $rhn_event_id );
+				$rhn_event_venue   = function_exists( 'tribe_get_venue' ) ? tribe_get_venue( $rhn_event_id ) : '';
+				$rhn_event_meta    = trim( $rhn_event_date . ( $rhn_event_venue ? ' · ' . $rhn_event_venue : '' ) );
+				$rhn_event_excerpt = get_the_excerpt( $rhn_event_id );
+				if ( ! $rhn_event_excerpt ) {
+					$rhn_event_excerpt = wp_strip_all_tags( get_post_field( 'post_content', $rhn_event_id ) );
+				}
+				?>
+                <a class="event-card reveal visible" href="<?php echo esc_url( get_permalink( $rhn_event_id ) ); ?>">
+                  <?php if ( has_post_thumbnail( $rhn_event_id ) ) : ?><?php echo get_the_post_thumbnail( $rhn_event_id, 'medium_large', array( 'loading' => 'lazy' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?><?php else : ?><span class="rhn-home-card-placeholder" aria-hidden="true">Rebekah's</span><?php endif; ?>
+                  <div class="event-body"><span class="date"><?php echo esc_html( $rhn_event_meta ); ?></span><h3><?php echo esc_html( get_the_title( $rhn_event_id ) ); ?></h3><p><?php echo esc_html( wp_trim_words( $rhn_event_excerpt, 24 ) ); ?></p></div>
+                </a>
+              <?php endforeach; ?>
+            <?php else : ?>
+              <div class="event-card rhn-home-empty"><div class="event-body"><span class="date">More dates coming soon</span><h3>Upcoming classes &amp; events</h3><p>Visit the full calendar for the latest community events at Rebekah's locations.</p><a class="btn btn-secondary btn-arrow" href="<?php echo esc_url( home_url( '/events/' ) ); ?>">Open the event calendar</a></div></div>
+            <?php endif; ?>
+          </div>
+        </div>
+      </section>
+    </div>
 
-    <div class="original-section-mount" id="journal" data-source-section="journal" data-mock-section="9" aria-label="Wellness education"></div>
+    <div class="source-b" id="journal" data-mock-section="9">
+      <section class="section journal" aria-label="Wellness education">
+        <div class="container journal-grid">
+          <div class="journal-intro reveal visible"><span class="eyebrow">Wellness, explained</span><h2>Natural wellness education you can use.</h2><p>Read practical guidance from Rebekah Spencer and the Rebekah’s team on supplements, immune support, digestion, stress, sleep, detoxification and healthy daily routines.</p><a class="btn btn-primary btn-arrow" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Visit the Wellness Blog</a></div>
+          <div class="posts">
+            <?php foreach ( $rhn_home_posts as $rhn_home_post ) : ?>
+              <a class="post reveal visible" href="<?php echo esc_url( get_permalink( $rhn_home_post ) ); ?>"><?php echo wp_kses_post( rhn_post_image( $rhn_home_post->ID, 'medium' ) ); ?><div><time datetime="<?php echo esc_attr( get_the_date( 'c', $rhn_home_post ) ); ?>"><?php echo esc_html( get_the_date( 'F j, Y', $rhn_home_post ) ); ?></time><h3><?php echo esc_html( get_the_title( $rhn_home_post ) ); ?></h3><p><?php echo esc_html( wp_trim_words( get_the_excerpt( $rhn_home_post ), 18 ) ); ?></p></div></a>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <section class="social-section" id="instagram" data-mock-section="10">
       <div class="social-heading"><div><span class="kicker">Fresh from Instagram</span><h2>See what's happening at Rebekah's.</h2></div><div class="social-profile"><strong>@rebekahs_health_and_nutrition</strong><span>Store news &middot; wellness education &middot; new products &middot; events</span><a class="pill outline" href="https://www.instagram.com/rebekahs_health_and_nutrition/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a></div></div>

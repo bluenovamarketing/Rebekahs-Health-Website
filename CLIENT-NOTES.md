@@ -1657,3 +1657,343 @@
 - Removed all tracked local MP4 copies, generated WordPress release ZIPs, FFmpeg/Python dependency folders, temporary FFmpeg archives and the downloaded `yt-dlp` executable. The active WordPress theme continues to load its hero video from the verified staging uploads directory.
 - Updated the archived HTML mockups to use the verified staging-hosted hero video rather than a local repository video, and expanded `.gitignore` so future video formats, local media tooling and generated release archives are not accidentally committed.
 - Permanently removed the obsolete local `codex/publish-three-pages` branch and the GitHub Desktop auto-stash containing 7,707 dependency files and five unneeded local videos. The consolidation sequence keeps the merged update branch only until the validated `main` push is confirmed, then removes that redundant branch.
+## 2026-08-10 - Homepage client feedback reviewed before implementation
+
+- Reviewed the client’s four Homepage requests without changing staging or the theme. Confirmed the approved Homepage scope permits only specifically requested revisions and no redesign.
+- Verified the requested Rebekah title phrase is hard-coded in the Homepage story section. The Community & Education cards, Instagram/TikTok previews, and Wellness Source previews are also currently static rather than automatically populated.
+- Confirmed the three event cards and three Wellness Source cards do not link individually. All six Instagram previews lead to the Instagram profile, and all six TikTok previews lead to the TikTok profile.
+- Recommended preserving the approved layouts while making events pull the next three upcoming event records, Wellness Source pull the latest three published posts, and each generated card link to its corresponding detail page. For social content, prefer authorized dynamic feeds with per-post links; use four network-level boxes only if account authorization or reliable per-post feeds are not practical.
+- Pending: walk through and approve the exact Homepage change set with Todd before implementing anything.
+
+## 2026-08-10 - Approved Homepage client revisions implemented on staging
+
+- Todd approved the four Homepage requests and authorized staging implementation with no broader redesign. Updated Rebekah’s title to “Holistic Health Practitioner, Wellness Educator and Business Owner.”
+- Replaced the static Community & Education cards with the next three upcoming Events Calendar records. Each card now uses the event image, date, venue, title and excerpt and links to its corresponding event page, so the section updates automatically as events change.
+- Replaced the static Wellness Source previews with the latest three published posts. Each article row now updates automatically and the full row links to its corresponding article.
+- Because the installed Instagram and TikTok feed plugins are not yet connected to the account-owner OAuth sources, implemented the client-approved four-box fallback linking to the verified TikTok, YouTube, Instagram and Facebook profiles. This removes the misleading repeated video previews.
+- Deployed only the Homepage template, its scoped Homepage CSS, and the theme cache version to the Cloudways staging site through the signed-in in-app browser. Verified all three event cards, all three article links, all four social destinations, loaded images, visible responsive layouts and linked destination pages; no PHP errors or 404s were found.
+- Pending client-facing next step: review the revised staging Homepage. Account-owner OAuth can still be completed later if the client wants live per-post Instagram and TikTok feeds instead of the four social boxes.
+
+## 2026-08-10 - Homepage social decision corrected to the client’s first choice
+
+- Todd clarified that the client’s first preference should be used whenever it is technically possible. The intended launch solution is therefore real Instagram and TikTok feeds whose displayed items link to their individual posts or videos.
+- Restored the original Instagram and TikTok preview-section design on staging and removed the temporary four-network social boxes and their CSS. The title update, automatic upcoming-event cards and automatic latest-article links remain in place.
+- Verified staging now shows six Instagram previews and six TikTok previews in the original layouts, with no four-box fallback, while the three dynamic event cards and three dynamic article cards still render correctly.
+- Client-facing launch explanation: the individual-post feeds will be connected on the permanent domain after the social-account owner authorizes Instagram and TikTok through the installed WordPress feed plugins. Waiting until the permanent domain avoids an unnecessary staging-to-production reconnection.
+
+### 2026-08-10 — Rebekah's Signature Line page mockup v1.1.0
+
+- Created `signature-line-mockup-v1.1.0.html` as a new, isolated page mockup so concurrent homepage and WordPress work remains untouched.
+- Used the approved homepage/Our Story design system and reshaped the supplied long-form copy into a premium editorial journey: origin, collection, sourcing, testing, manufacturing standards, amber-glass packaging, promise and four-store guidance.
+- Kept the page non-ecommerce and educational: no prices, cart or checkout; careful product/testing qualifiers and a medical-information disclaimer are included.
+- Located and reviewed the client-provided Signature Line photos already in the shared project folder. Integrated the four relevant product images across the collection gallery and amber-glass packaging section, retained the shared hero product image, and intentionally excluded an unrelated family portrait from the product page.
+- Working SEO direction: `/rebekahs-signature-line/`, title `Rebekah's Signature Line | Herbal Supplements in Michigan`, and a CollectionPage schema draft. The canonical planning sheet does not yet contain a dedicated Signature Line row, so final URL/navigation placement should be confirmed before WordPress assembly.
+- Client-facing next step: review the story flow and final client-photo crops before implementation approval.
+
+### 2026-08-10 — Signature Line editorial and client-verbatim versions
+
+- Preserved `signature-line-mockup-v1.1.0.html` as the editorial adaptation with condensed/reorganized copy, added headings, captions, guidance and SEO elements.
+- Created `signature-line-client-verbatim-mockup-v1.0.0.html` as a separate premium-layout option using the client's supplied page content verbatim and in the original sequence. No added visible marketing headings, captions, CTAs, pull quotes, guidance or disclaimers were introduced.
+- Verified the normalized visible page text against the client's source attachment with an exact match. Functional accessibility text, image alt text and document metadata remain outside the client-visible marketing copy.
+- Both versions use the approved Signature Line product images and exclude `1 (2).jpg` and `victoria photo.jpg`.
+- Client-facing next step: compare the editorial and verbatim versions and select which copy treatment should move forward.
+
+## 2026-08-10 - Our Story client copy revisions implemented on staging
+
+- Updated only the three client-requested copy areas on the staging Our Story page: the opening Our Story paragraph, the three-paragraph Meet Rebekah Spencer section and the two-paragraph Rooted Beyond the Stores section.
+- Preserved all existing headings, images, buttons, layout and unrelated content; no redesign or broader website changes were made.
+- Verified the exact approved copy in both the saved theme source and the rendered staging page. Confirmed the expected paragraph structure, existing page elements and absence of PHP errors.
+- At Todd's direction, normalized both paragraphs in the Rooted Beyond the Stores text block to the same 16px size and 26.4px line height; no other page typography or layout was changed.
+- Client-facing next step: review the revised Our Story page on staging and continue through the remaining page-by-page revision list.
+
+## 2026-08-10 - Mark and Victoria added to Our Team on staging
+
+- Added Mark as Head Buyer and Victoria as Wellness Coach to the Lapeer section of the Our Team page, using the client-supplied biographies verbatim inside the existing expandable-card pattern.
+- Retrieved and reviewed the two authorized shared-folder photos, uploaded them to the staging Media Library and applied focused crops that keep Mark and Victoria visible while preserving their family-photo context.
+- Updated the page's existing team-story counts from 10 to 12 and the Lapeer jump-link count from 3 to 5; no other team members or sections were changed.
+- Centered the Mark and Victoria second row within the desktop Lapeer grid so the remaining horizontal space is balanced equally on both sides; the first row and tablet/mobile layouts remain unchanged.
+- Verified 12 total cards, five Lapeer cards, exact full biography copy, loaded images, working expand/collapse controls and responsive desktop, tablet and mobile layouts with no horizontal overflow or PHP errors.
+- The canonical planning sheet currently has no dedicated Our Team row, so this implementation follows Todd's newer explicit client-revision instructions while preserving the approved page design.
+- Client-facing next step: review Mark and Victoria's photo crops and card placement on the staging Our Team page.
+
+### 2026-08-10 — Signature Line verbatim visual revision v1.1.0
+
+- Created `signature-line-client-verbatim-mockup-v1.1.0.html` while preserving the prior v1.0.0 review version.
+- Kept all client-provided Signature Line body copy unchanged; a normalized comparison against v1.0.0 confirmed the same 8,036 characters. The newsletter is a visually separate sitewide module using the approved four-store signup wording, not an alteration to the page narrative.
+- Replaced the abstract leaf treatment with an on-scroll plant-growth animation followed by a gentle sway; visitors who prefer reduced motion see the finished plant without animation.
+- Added a darkened farm background to “From Farm to Finished Product” using a new 10-second, muted 1280×720 loop cut from the beginning of the client’s original one-minute farm video. Added a matching poster fallback and preserved strong text contrast.
+- Continued using only the approved product imagery. Confirmed that neither `1 (2).jpg` nor `victoria photo.jpg` is referenced.
+- Pending implementation detail: connect the newsletter form to the site’s live email platform/list during WordPress assembly; the mockup currently demonstrates the approved layout without submitting data.
+- Client-facing next step: review the plant motion, farm-video intensity and newsletter placement before the verbatim design is assembled in WordPress.
+
+### 2026-08-10 — Signature Line plant and field correction v1.2.0
+
+- Superseded the v1.1.0 plant and farm treatments after Todd’s review; retained v1.1.0 only as revision history and created `signature-line-client-verbatim-mockup-v1.2.0.html` for the corrected direction.
+- Rebuilt the plant as an animated two-sided SVG: the stem grows from a soil mound, six branches draw outward, eight alternating leaves unfurl, and the full plant continues a gentle sway. The animation remains active in the in-app preview so its movement is visible during review.
+- Removed every video element, MP4 reference and video-derived poster from v1.2.0. Deleted the temporary optimized farm loop and poster assets; they can be recreated from the original source if ever needed, but they are no longer part of this direction.
+- Generated and saved three original, text-free, logo-free green crop-field background options under `output/signature-line/`. Option 1 is applied temporarily in v1.2.0 while Todd chooses among Options 1–3.
+- Reverified that Rebekah’s 8,036-character body copy is unchanged from the verbatim baseline and that neither excluded photo is referenced.
+- Client-facing next step: Todd selects Field Option 1, 2 or 3; apply the selected field image and prepare that asset for final web delivery.
+
+### 2026-08-10 — Signature Line field background selected
+
+- Todd selected Field Option 1, the straight green crop rows, as the final background for “From Farm to Finished Product.”
+- Confirmed `signature-line-client-verbatim-mockup-v1.2.0.html` references the project-local `output/signature-line/farm-field-option-1.png`; it contains no video or MP4 reference.
+- Client-facing next step: retain this field selection when assembling the approved verbatim page in WordPress.
+
+### 2026-08-10 — Signature Line SOURCE plant direction v1.3.0
+
+- Created `signature-line-client-verbatim-mockup-v1.3.0.html` from the approved verbatim v1.2.0 direction.
+- Replaced the generic soil mound with a logo-inspired green seed-pod base outlined in gold and labeled `SOURCE` in white, based on Todd’s selected detail from Rebekah’s logo.
+- Sequenced the animation so the SOURCE base appears first, the plant grows directly from its center, six branches extend, eight two-sided leaves unfurl and the finished plant continues a gentle living sway.
+- Retained selected Field Option 1 and confirmed the page still contains Rebekah’s unchanged 8,036-character body copy, no video and no excluded-photo references.
+- Client-facing next step: review the SOURCE base styling and plant-growth sequence as the likely final animation direction.
+
+### 2026-08-10 — Signature Line direct logo treatment v1.4.0
+
+- Created `signature-line-client-verbatim-mockup-v1.4.0.html` following Todd’s clarified direction to use the logo idea directly rather than expanding it.
+- Retained the green SOURCE base, shifted `SOURCE` to the left as in Rebekah’s logo and replaced the full branching plant with one slowly growing stem and exactly two leaves: dark green on the left and light green on the right.
+- Browser verification confirmed two logo leaves, the completed slow growth sequence, no console errors, no video and no excluded-photo references.
+- Rebekah’s 8,036-character verbatim body copy and selected Field Option 1 remain unchanged.
+- Client-facing next step: review v1.4.0 as the simplified final SOURCE animation direction.
+
+### 2026-08-10 — Signature Line logo-proportion correction v1.5.0
+
+- Corrected the v1.4.0 animation after acknowledging that its tall stalk and separated leaves did not visually match the compact sprout in Rebekah’s logo.
+- Created `signature-line-client-verbatim-mockup-v1.5.0.html` with a short stem, two smaller leaves clustered at the top, the dark leaf angled upper-left, the light leaf angled upper-right and the stem emerging just to the right of the left-shifted `SOURCE` word.
+- Kept the slow growth sequence and verified the finished two-leaf sprout visually in the browser with no console errors.
+- Rebekah’s verbatim body copy, Field Option 1, newsletter and image exclusions remain unchanged.
+- Client-facing next step: review v1.5.0 for direct visual fidelity to the logo sprout.
+
+### 2026-08-10 — Signature Line reference-directed sequence v1.6.0
+
+- Reviewed the client-provided `rebekahs_source_growth_animation.mp4` only as a timing and motion reference; it was not embedded or reused as a page asset.
+- Created `signature-line-client-verbatim-mockup-v1.6.0.html` with a clean inline SVG sequence: the green partial-circle crescent appears, `SOURCE` reveals from left to right, the curved stem then grows from the crescent’s right side and two leaves expand at the top.
+- Preserved the useful direction of the reference while removing its black video block, ghosted frames and playback dependency.
+- Browser verification confirmed the completed word reveal, stem path and two leaves with no console errors, video elements or MP4 references.
+- Rebekah’s verbatim body copy, selected Field Option 1, newsletter and excluded-image decisions remain unchanged.
+- Client-facing next step: review v1.6.0 for animation timing and the crescent/stem proportions.
+
+## 2026-08-10 - Practitioner guidance section replaced on staging
+
+- Replaced the entire "Before You Contact a Provider" guidance section with the client-approved "Finding the Right Practitioner" heading and five supplied paragraphs.
+- Removed the separate prior disclaimer because the new approved copy already includes the verification and non-endorsement language; it now appears once in the intended section.
+- Left all practitioner records, profile details, search/filter controls and other page content unchanged. Verified the 25 currently rendered practitioner cards remain present.
+- Verified the exact approved wording on staging, no old guidance text, no horizontal overflow and no PHP errors.
+- Client-facing next step: review the revised Practitioners section on staging and continue with the next page revision.
+
+## 2026-08-10 - Location-page event links corrected on staging
+
+- Audited the Events sections on the Grand Blanc, Clarkston and Lake Orion location pages against the approved main Classes & Events archive at `/events/`.
+- Corrected two Grand Blanc links that pointed to an old individual event and the Locations hub; adjusted the misleading third-link label to "See classes & events."
+- Corrected all three Lake Orion event links that pointed to the location-category URL so they now open the main Classes & Events page.
+- Confirmed Clarkston's three event links already targeted the correct archive and left its working source unchanged.
+- Verified all nine rendered links now resolve to `/events/`, the Classes & Events archive loads correctly, and the three location pages have no PHP errors or horizontal overflow.
+- Follow-up audit: checked the fourth location page, Lapeer. Its three full-card event links already pointed to `/events/`; a direct click-through loaded the correct Classes & Events archive, so no Lapeer source change was needed.
+- Client-facing next step: review the corrected event links on the three staging location pages and continue with the next page revision.
+
+## 2026-08-10 - In-Store Products client fixes implemented on staging
+
+- Replaced the actual hero stock image containing a visible Curology bottle with a verified photo from inside the Lake Orion store showing stocked supplement and wellness shelves.
+- Corrected an initial misidentification by restoring the unchanged Clean Beauty & Body Care category image; the client’s Curology comment applied to the hero, not this category tile.
+- Replaced the crooked Private Label category photo with the existing leveled version of the same Rebekah's bottle display; no additional image reconstruction was performed.
+- Corrected the Featured Brands grid collision with the site-header `.brand` style and made its tracks shrink safely, so all six brands fit without being clipped.
+- Verified the hero contains no Curology image or reference, the replacement images load, all six brand names and descriptors are fully visible at desktop and phone widths, and the page has no horizontal overflow or PHP errors.
+- Client-facing next step: review the corrected hero, leveled Private Label image and Featured Brands section on staging.
+
+## 2026-08-10 - In-Store Products duplicate-image correction
+
+- Client identified that the Herbs & Natural Remedies card reused the exact same Victoria education photo shown again in the lower guidance section. Kept the Victoria photo in the guidance section and replaced the Herbs card with a different verified Lake Orion store/product-shelf image.
+- Also found that the corrected hero reused the Practitioner Brands card image. Replaced the hero with a separate wide Lake Orion store interior so every photographic placement on the page now uses a unique source image.
+- Preserved the approved page structure, copy, product fixes and responsive Featured Brands correction; no unrelated page changes were made.
+- Client-facing next step: review the unique hero and Herbs & Natural Remedies images on staging.
+
+## 2026-08-10 - Signature Line SOURCE animation v1.7.0
+
+- Created `signature-line-client-verbatim-mockup-v1.7.0.html` from the client-verbatim direction and implemented Todd's precise SOURCE animation corrections.
+- Removed the internal white highlight, flattened the top edge of the green SOURCE base so it reads as ground, and separated the plant paths so no stem is visible before the growth sequence begins.
+- The animation now reveals `SOURCE` from left to right, grows the stem and two branches, opens exactly three leaves, makes the top leaf approximately twice the size of the bottom leaf, holds the completed plant for one second and then loops.
+- Browser QA verified the clean opening state, completed three-leaf state, loop reset and absence of console errors. Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; Field Option 1 remains selected and no video, MP4 or excluded-photo reference is present.
+- Client-facing next step: review v1.7.0 as the corrected SOURCE animation direction before WordPress assembly.
+
+## 2026-08-10 - Footer social links expanded on staging
+
+- Added YouTube and Rebekah's Lapeer Facebook page to the global footer beside the existing Instagram and TikTok icons.
+- Used the official destinations already linked from the current live site: `https://www.youtube.com/user/happygirl732/videos` and `https://www.facebook.com/RebekahsLapeer`.
+- Kept the existing footer layout and icon treatment; no other footer content or site sections were changed.
+- Client-facing next step: review the four footer social icons on desktop and phone.
+
+## 2026-08-10 - Contact Us delivery reverified for launch
+
+- Rechecked published Forminator Contact Us form ID 1064. Its unconditional Admin Email notification is addressed exactly to `rebekahspureliving@gmail.com`, includes all submitted fields, and uses the visitor's email field as Reply-To.
+- Confirmed WP Mail SMTP is configured with SendGrid and has an API key saved; no form layout, fields, notification recipients or unrelated site settings were changed during this check.
+- Confirmed the apparent staging failure is intentional: the Rebekah's Staging Guard blocks Forminator delivery and short-circuits all `wp_mail` calls on the Cloudways staging hostname. The guard automatically stops applying when the site is on the permanent domain.
+- Client-facing launch step: after the permanent-domain switch, submit one real Contact Us test, verify it arrives at `rebekahspureliving@gmail.com`, verify the visitor confirmation arrives, and check spam/email logs if either message is delayed. Keep the staging guard enabled until launch.
+
+## 2026-08-10 - Homepage Practitioner Brands quick link corrected
+
+- Changed only the `preparePathway()` override in `assets/js/pages/home-sections.js` so the homepage Practitioner Brands quick-link retains `#practitioners` instead of opening the separate `/practitioners/` directory.
+- Applied the same one-line correction to the Cloudways staging theme. JavaScript syntax validation passed.
+- Browser verification confirmed the quick-link keeps the visitor on `/`, changes the hash to `#practitioners`, and scrolls the Practitioner Brands section to the viewport. The intentional header and footer Practitioners navigation links remain routed to `/practitioners/`.
+- Client-facing next step: no further action is required for this link; continue with the next requested revision.
+
+## 2026-08-10 - Signature Line navigation and homepage-link decision
+
+- Confirmed the approved Signature Line direction exists in the project as the v1.9.0 client-verbatim mockup, with the planned URL `/rebekahs-signature-line/`.
+- Checked Cloudways staging and WordPress Pages: that URL currently returns the custom 404, and no published, draft or private WordPress page matching "Signature" exists yet. The homepage CTA was therefore not changed to a broken destination.
+- Recommended publishing the new page at `/rebekahs-signature-line/`, then changing the homepage "Explore the Signature Line" CTA to that URL.
+- Recommended against adding another crowded top-level header item. Preferred navigation treatment: convert `In-Store Products` into a dropdown containing `Browse In-Store Products` and `Rebekah's Signature Line`, and add the Signature Line page beneath Explore in the footer. Leave the separate Practitioners and other navigation routes unchanged.
+- Client-facing next step: Todd approves the dropdown/footer recommendation and authorizes WordPress assembly of the approved Signature Line page; then publish it before activating the new homepage link.
+
+## 2026-08-10 - Signature Line simplified safeguards animation v1.8.0
+
+- Preserved `signature-line-client-verbatim-mockup-v1.7.0.html` unchanged as the approved SOURCE-growth backup and created the separate experimental `signature-line-client-verbatim-mockup-v1.8.0.html`.
+- Replaced the SOURCE plant treatment in the Heavy-Metal and Pesticide Testing section with a simpler botanical safeguards emblem: a green shield arrives, one leaf appears, a check mark draws and a subtle gold testing sweep repeats through the shield while the two background rings breathe gently.
+- Removed the initial decorative `QUALITY CHECKED` wording so the visual adds no new client-facing claim or body copy.
+- Browser QA verified the entrance, completed emblem, moving scan and absence of console errors. Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; the page still contains no video, MP4 or excluded-photo reference.
+- Client-facing next step: compare the calm v1.8.0 safeguards emblem against the preserved v1.7.0 SOURCE-growth backup and choose the preferred direction.
+
+## 2026-08-10 - Signature Line safeguards emblem refinement v1.9.0
+
+- Preserved v1.8.0 as a backup and created `signature-line-client-verbatim-mockup-v1.9.0.html` with Todd's three requested emblem refinements.
+- Removed the vein line from the leaf, removed the animated horizontal testing sweep entirely, and replaced the lower downward-chevron treatment with one clearly proportioned check mark drawn directly across the centered leaf.
+- Browser QA confirmed zero leaf-vein and scan-line elements, one centered animated check, and no console errors.
+- Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; no video, MP4 or excluded-photo reference was introduced.
+- Client-facing next step: review v1.9.0 as the cleaned final safeguards-emblem direction.
+
+## 2026-08-10 - Signature Line enlarged looping emblem v1.10.0
+
+- Preserved v1.9.0 and created `signature-line-client-verbatim-mockup-v1.10.0.html` with Todd's requested sizing and loop refinements.
+- Enlarged the complete shield emblem by exactly 25%, redrew the leaf as a more natural asymmetric pointed shape, and increased the centered check to an 11px bold stroke while scaling it with the emblem.
+- The shield, leaf and check entrance now loops after the 1.74-second draw sequence completes and holds the completed emblem for exactly 1.5 seconds before restarting.
+- Browser QA verified the 1.25 scale transform, revised leaf path, bold centered check, loop reset and absence of console errors.
+- Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; no video, MP4 or excluded-photo reference was introduced.
+- Client-facing next step: review v1.10.0 as the near-final safeguards-emblem animation.
+
+## 2026-08-10 - Signature Line reference-shaped leaf and check v1.11.0
+
+- Preserved v1.10.0 and created `signature-line-client-verbatim-mockup-v1.11.0.html` from Todd's supplied leaf and check references.
+- Enlarged the leaf another exact 25%, mirrored its pointed blade toward the shield's upper-left corner and kept the leaf completely vein-free.
+- Replaced the rounded stroked check with a larger solid angular cream check shaped like the supplied reference while retaining the approved page colors.
+- Retimed the entrance to complete in 1.67 seconds and retained the exact 1.5-second completed-state pause before the animation loops.
+- Browser QA verified the leaf scale and direction, solid fill-only check, zero vein elements, loop reset and absence of console errors.
+- Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; no video, MP4 or excluded-photo reference was introduced.
+- Client-facing next step: review v1.11.0 as the refined reference-matched emblem direction.
+
+## 2026-08-10 - Signature Line handwritten check refinement v1.12.0
+
+- Preserved v1.11.0 and created `signature-line-client-verbatim-mockup-v1.12.0.html` for Todd's handwritten-check and leaf-shape refinement.
+- Redrew the leaf as a broad upper-left-pointing blade with a small lower-right stem to better match the supplied reference while retaining the prior 25% scale and keeping it completely vein-free.
+- Moved the check into the lower half of the shield so it no longer covers the leaf. The check remains solid cream with a pointed upper tip, but is now revealed through an animated mask that draws the short descending stroke and then the long rising stroke like a person writing it.
+- Retimed the entrance to finish at 1.9 seconds and retained the exact 1.5-second completed-state pause before looping.
+- Browser QA captured the check mid-draw, verified the final separated leaf/check placement and found no console errors.
+- Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; no video, MP4 or excluded-photo reference was introduced.
+- Client-facing next step: review v1.12.0 as the refined hand-drawn emblem direction.
+
+## 2026-08-10 - Signature Line exact reference-shape correction v1.13.0
+
+- Preserved v1.12.0 and created `signature-line-client-verbatim-mockup-v1.13.0.html` after Todd clarified that the supplied reference silhouettes should be followed directly and that the check's upper end should be blunt, not pointed.
+- Rebuilt the vein-free leaf as the reference's broad oval blade with a sharp upper-left tip and lower-right stem, then positioned it cleanly in the shield's upper portion.
+- Reproportioned the solid cream check to match the supplied heavy angular reference, used a blunt slanted upper cap, and separated it beneath the leaf while preserving the established handwritten mask reveal.
+- Kept the existing 1.9-second draw sequence and exact 1.5-second completed-state pause unchanged.
+- Browser QA captured the check mid-write and complete, verified the separated reference-shaped artwork and found no console errors.
+- Rebekah's 8,036-character verbatim body copy remains an exact match to v1.0.0; no video, MP4 or excluded-photo reference was introduced.
+- Client-facing next step: review v1.13.0 as the corrected reference-matched emblem.
+
+## 2026-08-10 - Signature Line supplied glossy artwork direction v1.14.0
+
+- Preserved v1.13.0 unchanged and created `signature-line-client-verbatim-mockup-v1.14.0.html` from Todd's exact ChatGPT-supplied glossy shield, leaf and checkmark reference.
+- Used the supplied artwork as the edit target rather than a loose style reference. Removed every water droplet, retained the glossy emerald shield, realistic curved leaf, layered warm-gold rim and oversized ivory check, and harmonized the colors with the approved Rebekah's website palette.
+- Replaced the prior flat SVG approximation with the finished rendered artwork in `output/signature-line/quality-shield-brand-v1.png`. Matched the visual container to the artwork's native 2:3 portrait ratio so no pasted-in rectangular canvas edge remains.
+- Added a restrained looping scale/fade entrance and gentle settling motion, followed by the established 1.5-second completed-state pause. No scan line, extra symbol, added text or new claim was introduced.
+- Browser QA confirmed the 1024x1536 artwork loads, the animation is active, and the page has no console errors. Rebekah's client-verbatim body copy remains an exact match to v1.0.0; no video, MP4 or excluded-photo reference was introduced.
+- Client-facing next step: review v1.14.0 as the exact supplied-artwork direction and confirm it as the safeguards-section visual for WordPress assembly.
+
+## 2026-08-10 - Signature Line client-photo safeguards replacement v1.15.0
+
+- Preserved v1.14.0 unchanged as the generated-shield backup and created `signature-line-client-verbatim-mockup-v1.15.0.html` in response to Todd's request to replace the Heavy-Metal and Pesticide Testing image.
+- Selected the unused client-provided `private-label-bottles-leveled-v1 (1).png` from the shared folder and copied it into the project as `output/signature-line/client-photo-05-private-label-bottles.png`; file-hash verification confirms the project copy is identical to the client's original.
+- Reworked the visual container from the shield's portrait format to the photo's native 4:3 ratio, retained the restrained scale/fade entrance and 1.5-second loop pause, and added descriptive alternative text.
+- Browser QA confirmed the 1448x1086 client photo loads cleanly, the animation remains active and there are no console errors. Rebekah's client-verbatim body copy remains an exact match to v1.0.0; no video, MP4, `1 (2).jpg` or Victoria photo was introduced.
+- Client-facing next step: review v1.15.0 as the authentic client-photo direction for the safeguards section.
+
+## 2026-08-10 - Signature Line duplicate-image correction v1.16.0
+
+- Corrected v1.15.0 after verifying that its safeguards photo was byte-for-byte identical to the hero image already used at the top of the same page.
+- Created `signature-line-client-verbatim-mockup-v1.16.0.html` and replaced the duplicate with a genuinely new 4:3 laboratory image showing gloved hands pipetting a botanical sample beside dried plant material and a fresh leaf.
+- The new image contains no supplement bottles, product packaging, shields, checkmarks, farms, faces, text, labels or logos, so it does not repeat any other page visual and directly supports the Heavy-Metal and Pesticide Testing content.
+- Automated file-hash verification confirms that all six images used in v1.16.0 are unique. Browser QA confirmed the 1448x1086 image loads, the restrained animation remains active and there are no console errors.
+- Rebekah's client-verbatim body copy remains an exact match to v1.0.0, and the excluded `1 (2).jpg` and Victoria photo remain unused.
+- Client-facing next step: review v1.16.0 as the corrected no-duplicate-image version.
+
+## 2026-08-10 - Signature Line client microscope photo v1.17.0
+
+- Preserved v1.16.0 and created `signature-line-client-verbatim-mockup-v1.17.0.html` using Todd's newly supplied `lab.jpg` exactly as provided, copied into the project as `output/signature-line/client-lab-microscope.jpg`.
+- Removed the prior fade, pop-out and scale animation completely. The image remains at a fixed size in a clean 3:2 frame and uses only a slow 12-second left-to-right crop pan for restrained movement.
+- Removed the earlier JavaScript animation loop because the new movement is handled directly on the image without changing its dimensions.
+- File-hash verification confirms the project asset matches the client's source, all six page images remain unique, and Rebekah's client-verbatim body copy remains unchanged.
+- Browser QA confirmed the 847x491 photo loads, the `lab-camera-pan` animation is active, the computed transform is `none`, and there are no console errors.
+- Client-facing next step: review v1.17.0 as the client-photo laboratory direction with fixed-size motion.
+
+## 2026-08-10 - Signature Line fully static microscope photo v1.18.0
+
+- Corrected v1.17.0 after Todd clarified that the supplied microscope photo should have no movement at all.
+- Created `signature-line-client-verbatim-mockup-v1.18.0.html` and removed the crop pan and its keyframes completely. The image now has no animation, fade, pop, zoom, scaling, translation or object-position movement.
+- Browser QA verified computed `animation-name: none`, `animation-duration: 0s`, `transform: none`, centered object position and no console errors.
+- The exact client-supplied `lab.jpg` remains in use, and the client-verbatim page copy remains unchanged.
+- Client-facing next step: review v1.18.0 as the fully static client-photo version.
+
+## 2026-08-10 - Signature Line v1.18.0 approved
+
+- Todd approved `signature-line-client-verbatim-mockup-v1.18.0.html` as the selected Signature Line direction.
+- Approved safeguards treatment: the exact client-supplied microscope `lab.jpg`, displayed as a completely static image with no animation, movement, pan, fade, pop, zoom or scaling.
+- Use v1.18.0 as the source version for future WordPress assembly; keep earlier mockups only as historical backups.
+
+## 2026-08-10 - Signature Line v1.18.0 assembled on staging
+
+- Assembled and published the approved v1.18.0 design at `https://wordpress-1651482-6565113.cloudwaysapps.com/rebekahs-signature-line/` using the approved client-verbatim copy and imagery.
+- Updated only the homepage `Explore the Signature Line` button so it now opens the new Signature Line page instead of the general In-Store Products page; browser testing confirmed the button reaches the correct page.
+- Retained the live Forminator newsletter form 313 in the page's newsletter section rather than the mockup-only placeholder form.
+- Front-end QA confirmed HTTP 200, the correct SEO title and H1, all page images loading, no horizontal desktop overflow, and the microscope image remaining completely static (`animation-name: none`, `animation-duration: 0s`, `transform: none`, centered object position).
+- Did not change the header or footer navigation. Recommended next-step navigation treatment remains approval-gated: make `In-Store Products` a dropdown containing `Browse In-Store Products` and `Rebekah's Signature Line`, and optionally add the Signature Line page under the footer's Explore links.
+
+## 2026-08-10 - In-Store Products navigation dropdown approved and added
+
+- Todd approved converting the existing `In-Store Products` header link into a dropdown.
+- Added exactly two dropdown destinations: `Browse In-Store Products` linking to `/in-store-products/` and `Rebekah's Signature Line` linking to `/rebekahs-signature-line/`.
+- Left every other header navigation item unchanged and did not add a separate top-level Signature Line item.
+- In-app browser QA confirmed the dropdown opens with the correct expanded state, both destinations load their intended pages, the desktop header retains ample spacing and the page has no horizontal overflow.
+
+## 2026-08-10 - Signature Line added to footer Explore links
+
+- Todd approved adding `Rebekah's Signature Line` under the footer's `Explore` section.
+- Added the link immediately after `In-Store Products` in both the standard footer Explore list and the tablet footer Explore panel, pointing to `/rebekahs-signature-line/`.
+- Left every other footer link and footer section unchanged.
+- In-app browser QA confirmed the visible desktop link renders cleanly, opens the correct Signature Line page, the tablet counterpart is present, and the page has no horizontal overflow.
+
+## 2026-08-10 - Client email revision audit and response preparation
+
+- Reviewed all four emails received from Rebekah since Sunday in the connected Gmail thread: the consolidated nine-part revision list, the Practitioner Brands link follow-up, the Monday inline Private Label product photo and her thank-you response.
+- Verified the Monday inline image is byte-for-byte identical to `output/signature-line/client-photo-01.jpg`, which is already published on the approved Signature Line page; it was not missed.
+- Reconciled every requested revision against the staging implementation and client notes, then ran a fresh HTTP/content spot-check across Home, Our Story, Our Team, Practitioners, all four location pages, In-Store Products, Signature Line and Contact Us. Every checked page returned HTTP 200 and contained its expected revised content; the In-Store Products page contained no Curology reference.
+- No omitted client revision was found. The only remaining launch-only work is authorizing the Instagram and TikTok accounts on the permanent domain so feed items can link to individual posts, plus performing the controlled live Contact Us delivery test after the staging email guard no longer applies.
+- Prepared a client-facing reply summarizing each completed item, explaining the two launch-only integrations and requesting final staging review/approval before cutover.
+## 2026-08-10 - Detailed client completion email redrafted
+
+- Reworked the client-facing completion reply to follow Rebekah's August 9 revision email line by line across all nine sections, plus the later Practitioner Brands quick-link correction.
+- The revised reply explains what was changed, how the dynamic homepage sections work, and which two items require final live-domain authorization/testing: individual Instagram/TikTok feed links and a real Contact Us delivery test.
+- Confirmed that no email has been sent or saved as a Gmail draft; Todd will review the detailed wording first.
+## 2026-08-10 - Detailed completion reply saved as Gmail draft
+
+- Saved the full line-by-line client response as an unsent reply draft in the existing Rebekah website review email thread.
+- The draft follows the established “Your feedback / What we did” format and includes all nine revision sections, the Practitioner Brands follow-up, and the two launch-only tasks.
+- Todd will review, edit if needed, and send the draft himself; Codex did not send it.
+
+## 2026-08-10 - Project time audit
+
+- Audited the available Rebekah project task history from July 15 through August 10, cross-checked phase boundaries against Git commit dates, and excluded guardian/subagent duplicate transcripts, overnight gaps, and other long idle periods.
+- Used a conservative active-session method: merged overlapping work and counted short review/direction gaps of up to 15 minutes so parallel tasks were not double-counted.
+- Best documented estimates aligned to the requested billing phases: pre-build planning 5.0 hours; all page design and mockups through approval 29.75 hours; WordPress build and technical assembly 6.5 hours; post-build revisions and QA 8.5 hours. Combined documented total: 49.75 hours.
+- The 29.75-hour mockup figure consists of about 19.0 hours of initial page design/mockup production plus 10.75 hours of pre-build mockup revision rounds. It includes the complete Rebekah's Signature Line design process through approved v1.18.0 and the related ChatGPT image/logo-animation chats. Planning plus all mockups totals 34.75 hours.
+- Audit limitation: the July 13 client meeting and any earlier ChatGPT Work planning completed before the initial HTML was brought into Codex are referenced in the history but do not have usable duration records in the accessible task logs, so they are not included in the 49.75-hour total.
+- Client-facing next step: use the four rounded line items for time reporting and add any separately documented July 13 meeting or off-app planning time if it needs to be billed.

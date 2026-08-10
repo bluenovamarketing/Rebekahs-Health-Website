@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RHN_THEME_VERSION', '1.0.21' );
+define( 'RHN_THEME_VERSION', '1.0.30' );
 
 function rhn_theme_setup() {
 	add_theme_support( 'title-tag' );
@@ -188,6 +188,7 @@ function rhn_page_seo_copy() {
 		'lake-orion'              => array( "Health & Nutrition Store in Lake Orion, MI | Rebekah's", "Visit Rebekah's in Lake Orion for trusted supplements, natural products, practical wellness guidance and local events on S. Lapeer Road." ),
 		'blog'                    => array( "Wellness Source Blog | Rebekah's Health & Nutrition", "Explore practical wellness education, product guidance, seasonal tips and community updates from Rebekah's Health & Nutrition." ),
 		'in-store-products'       => array( "Natural Products & Supplements in Michigan | Rebekah's", "Explore supplements, natural foods, skincare, household products and Rebekah's private-label formulas available at four Michigan stores." ),
+		'rebekahs-signature-line' => array( "Rebekah's Signature Line | Private-Label Supplements", "Learn about the sourcing, testing, manufacturing standards and amber-glass packaging behind Rebekah's Signature Line of herbal and specialty wellness products." ),
 		'practitioners'           => array( "Wellness Practitioners in Michigan | Rebekah's", "Browse the current directory of independent wellness practitioners connected with Rebekah's and view each practitioner's existing profile and contact details." ),
 		'contact-us'              => array( "Contact Rebekah's Health & Nutrition", "Call your nearest Rebekah's store for product availability and local questions, or send the team a general, non-urgent message." ),
 		'privacy-policy'          => array( "Privacy Policy | Rebekah's Health & Nutrition", "Read how Rebekah's Health & Nutrition handles website information, contact-form details, cookies and third-party services." ),
@@ -303,6 +304,27 @@ function rhn_output_business_schema() {
 			'sameAs'   => array(
 				'https://www.instagram.com/rebekahs_health_and_nutrition/',
 				'https://www.tiktok.com/@rebekahspureliving',
+			),
+		);
+	}
+
+	if ( 'rebekahs-signature-line' === $key ) {
+		$schema = array(
+			'@context' => 'https://schema.org',
+			'@type'    => 'CollectionPage',
+			'@id'      => home_url( '/rebekahs-signature-line/#page' ),
+			'name'     => "Rebekah's Signature Line",
+			'url'      => home_url( '/rebekahs-signature-line/' ),
+			'description' => "The sourcing, testing, manufacturing standards and packaging behind Rebekah's Signature Line of herbal and specialty wellness products.",
+			'isPartOf' => array(
+				'@type' => 'WebSite',
+				'name'  => "Rebekah's Health & Nutrition",
+				'url'   => home_url( '/' ),
+			),
+			'about'    => array(
+				array( '@type' => 'Thing', 'name' => 'Herbal supplements' ),
+				array( '@type' => 'Thing', 'name' => 'Botanical ingredient testing' ),
+				array( '@type' => 'Thing', 'name' => 'Dietary supplement manufacturing' ),
 			),
 		);
 	}

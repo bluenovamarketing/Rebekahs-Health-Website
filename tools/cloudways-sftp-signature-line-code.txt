@@ -1,0 +1,11 @@
+put wordpress/theme/rebekahs-2026/functions.php /public_html/wp-content/themes/rebekahs-2026/functions.php
+put wordpress/theme/rebekahs-2026/template-parts/pages/home.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/home.php
+put wordpress/theme/rebekahs-2026/template-parts/pages/rebekahs-signature-line.php /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/rebekahs-signature-line.php
+put wordpress/theme/rebekahs-2026/assets/css/pages/rebekahs-signature-line.css /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/rebekahs-signature-line.css
+chmod 644 /public_html/wp-content/themes/rebekahs-2026/functions.php
+chmod 644 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/home.php
+chmod 644 /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/rebekahs-signature-line.php
+chmod 644 /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/rebekahs-signature-line.css
+ls -l /public_html/wp-content/themes/rebekahs-2026/template-parts/pages/rebekahs-signature-line.php
+ls -l /public_html/wp-content/themes/rebekahs-2026/assets/css/pages/rebekahs-signature-line.css
+quit
