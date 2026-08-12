@@ -1997,3 +1997,87 @@
 - The 29.75-hour mockup figure consists of about 19.0 hours of initial page design/mockup production plus 10.75 hours of pre-build mockup revision rounds. It includes the complete Rebekah's Signature Line design process through approved v1.18.0 and the related ChatGPT image/logo-animation chats. Planning plus all mockups totals 34.75 hours.
 - Audit limitation: the July 13 client meeting and any earlier ChatGPT Work planning completed before the initial HTML was brought into Codex are referenced in the history but do not have usable duration records in the accessible task logs, so they are not included in the 49.75-hour total.
 - Client-facing next step: use the four rounded line items for time reporting and add any separately documented July 13 meeting or off-app planning time if it needs to be billed.
+
+## 2026-08-11 - Hosting ownership, migration and website-care plan
+
+- Prepared `HOSTING-AND-WEBSITE-CARE-PLAN.md` for the client hosting conversation, recommending migration from GoDaddy hosting to Cloudways and a client-owned, Blue Nova-managed arrangement.
+- Defined three transparent choices: client-owned Cloudways plus a Blue Nova care plan; a single bundled hosting/management invoice from Blue Nova with a future transfer promise; or client-managed hosting with hourly support.
+- Proposed discussion pricing of $275/month for the client-owned care plan, $349/month for the bundled plan, and $150/hour for on-demand or overage work. Cloudways/add-on estimates must be reconfirmed at selection because platform pricing and usage can change.
+- Defined the two-hour monthly scope to include tested WordPress/plugin/theme updates, backups and health checks, malware monitoring/support coordination, cache/performance checks, minor fixes and a short monthly report. New pages, ecommerce implementation, major features, paid licenses and substantial incident remediation remain separately quoted.
+- Clarified that the client should always own the domain. The safer launch path is to keep registration/DNS at GoDaddy temporarily, point only the web records to Cloudways, preserve all email-related DNS, keep the old host active for 7–14 days, and handle any registrar transfer after stabilization.
+- Described Cloudways protection accurately as malware protection rather than antivirus and avoided promising immunity from compromise. Blue Nova's positive hacked-site support experience may be presented as agency experience, not a universal guarantee.
+- Client-facing next step: review/approve the proposed pricing, then present the three choices and obtain decisions on hosting ownership/billing, monthly care, malware protection and the later domain-registrar preference.
+
+## 2026-08-11 - Website-care price revised to six-month billing
+
+- Todd set the website-management price at $117 per month, paid every six months. The authoritative management invoice is therefore $702 per six-month service period; this supersedes the earlier $275/month and $349/month discussion figures.
+- Updated the hosting plan so the recommended client-owned option bills Rebekah's $702 every six months for Blue Nova management while Rebekah's pays Cloudways directly.
+- For the single-invoice option, the $702 six-month management fee remains visible and Cloudways hosting/add-ons are passed through separately at actual cost rather than hidden inside an all-inclusive price.
+- Preserved the limit as six distinct monthly allowances of up to two hours each. Hours are not pooled or rolled over, and work beyond a month's two-hour allowance requires approval at the separately stated hourly rate.
+- Added proposed six-month billing terms covering advance invoicing, renewal notice, extra-work billing and the service agreement details that still need to be finalized.
+
+## 2026-08-11 - Monthly managed backup added to care plan
+
+- Todd confirmed that Blue Nova will provide one managed website backup each month as part of the $117/month care plan.
+- Updated the plan to include monthly backup completion/restoration verification and an additional restore point before material or higher-risk maintenance changes when appropriate.
+- Cloudways backup storage remains a hosting expense, and a separate long-term off-platform archive is not included unless expressly added.
+- Added an ecommerce safeguard: the monthly backup schedule is for the present informational site and must be increased before active ecommerce begins so orders, customers and inventory are protected more frequently.
+
+## 2026-08-11 - Blue Nova-hosted option repriced
+
+- Todd clarified that the $117/month rate applies only to management when the client pays Cloudways directly; it is too low when Blue Nova assumes the hosting and Malware Protection expense.
+- Repriced the fully managed Blue Nova-hosted option at $197/month, invoiced as $1,182 every six months.
+- The bundled price includes Cloudways hosting, Malware Protection, one managed backup each month, website management and up to two hours of work in each individual service month.
+- Included up to $70/month of normal Cloudways infrastructure, malware and backup-storage cost. Server scaling, abnormal usage or new paid services require client approval and a pricing adjustment.
+- The management-only client-owned option remains $117/month, invoiced as $702 every six months.
+
+## 2026-08-11 - Additional-page fee and hosting email drafted
+
+- Reconciled the original 14–17-page planning range with the expanded final build and the client's written acknowledgement that the later-requested Rebekah's Signature Line page would require additional compensation.
+- Todd set the client-facing charge for the later-requested Signature Line page at a reduced friend rate of **$450**. The email does not show a higher reference price or include an itemized defense of the page work.
+- Updated the existing unsent Gmail draft and retitled it `Website and Next Steps`. The draft notes the original 14–17-page planning range, explains that the site grew beyond it, and presents $450 as the additional Signature Line page charge.
+- The revised draft asks Rebekah to accept the newly resent Blue Nova GoDaddy access invitation and requests a Zoom call to discuss hosting, ongoing website management, SEO and ecommerce plans.
+- No email was sent. Pending: Todd reviews and sends the Gmail draft when ready.
+
+## 2026-08-11 - Website next-steps draft restored
+
+- Rechecked Gmail after Todd was unsure whether the approved client email had been sent. Confirmed there was no sent message with the subject `Website and Next Steps` and the earlier draft was no longer present.
+- Recreated `Website and Next Steps` as a new unsent Gmail draft to Rebekah using the approved wording: a $450 friend-rate charge for the additional Signature Line page, acceptance of the newly resent GoDaddy access invitation, and a Zoom call about hosting, ongoing website management, SEO and ecommerce plans.
+- No email was sent. Client-facing next step: Todd reviews the restored draft and sends it when ready.
+
+## 2026-08-11 - Pre-update backup check initiated
+
+- Treated the approved Cloudways staging build as the protected baseline and made no plugin, theme, content or live-site changes.
+- Verified the staging dashboard currently reports seven plugin updates: Breeze, CookieYes, Elementor, Feeds for TikTok, SEOPress PRO, Smash Balloon Instagram Feed and WooPayments.
+- Confirmed WPvivid remains active, but a new full backup reproduced the previously documented stall on the large `hzj_frmt_form_views` Forminator analytics table. Canceled the incomplete job cleanly after confirming it produced no completed backup record.
+- Opened the proven Cloudways application-level backup workflow for application `6565113`, but browser control is paused because another Chrome extension panel is open. No new Cloudways backup has been claimed as complete yet.
+- Pending: dismiss the Chrome extension panel, create a fresh Cloudways files-and-database on-demand restore point, verify it appears in the Restore selector with the current timestamp, and only then plan/test the seven plugin updates. The public live site remains untouched.
+
+## 2026-08-11 - Current Cloudways pre-update restore point completed
+
+- Created a fresh Cloudways application-level on-demand backup for Rebekah's application `6565113`; Cloudways states this backup includes both application files and the database.
+- Verified completion in the application's Restore selector. The new restore point is listed as `11th August, 2026, 16:18:26 UTC (Latest)` and is available to the restore workflow.
+- No WordPress plugins, themes, content, settings or public live-site data were changed. The seven staging plugin updates remain pending for a separately tested maintenance pass.
+- Client-facing next step: confirm whether to proceed with the seven staging plugin updates, using this Cloudways restore point as the rollback baseline and checking the approved site after each higher-risk update group.
+
+## 2026-08-11 - Staging plugin maintenance completed
+
+- Updated the Cloudways staging plugins against the verified `11th August, 2026, 16:18:26 UTC` restore point. Final versions: Breeze 2.5.13, CookieYes 3.5.4 (remains inactive), Elementor 4.2.2, Smash Balloon TikTok Feed 1.7.0, SEOPress PRO 10.1.1, Smash Balloon Instagram Feed 6.12.0 and WooPayments 11.0.0. Wordfence had already completed its queued update to 9.0.0.
+- Verified all eight inspected plugin rows show no remaining update state. WordPress core 7.0.3 and the installed themes were already current.
+- Ran the required WooCommerce Smart Coupons database update; WooCommerce reported the database update completed successfully.
+- Purged the Breeze staging cache after maintenance.
+- Rechecked the Homepage, Contact Us, Events, Lake Orion location and Rebekah's Signature Line pages. Each returned the expected page title and H1, forms remained present, and no website-origin browser console errors were found.
+- Opened the WooPayments admin overview after the 11.0.0 update. It loaded without website-origin errors and remains connected in staging Safe Mode; no production payment connection, live data or public site was altered.
+- Client-facing next step: continue using staging for final approval and launch preparation. Keep the verified Cloudways restore point until the updated build has completed the normal stabilization window.
+
+## 2026-08-11 - Cloudways capacity and ecommerce readiness review
+
+- Reviewed the live Cloudways server and application monitoring for server `1651482` and Rebekah's application `6565113`; no hosting settings, services or plan were changed.
+- Current plan is DigitalOcean Basic Premium at 2 GB RAM, 1 vCPU, 50 GB disk and 2 TB bandwidth for $28/month. The next 4 GB Premium step provides 2 vCPU, 50 GB disk and 4 TB bandwidth for $54/month, a $26/month increase.
+- Current server snapshot showed 1.07 GB used out of 1.92 GB RAM, 11.87-11.89 GB used out of 49.01 GB disk, and 5,037 MB of month-to-date bandwidth. The Rebekah application itself showed approximately 152-160 MB memory, 2.09 GB disk and 1.54 GB bandwidth.
+- The one-month free-memory chart stayed approximately in the 928-1,227 MB range, averaging about 1.08 GB free. RAM is therefore not currently near exhaustion and the present informational/staging workload has substantial memory headroom.
+- Cloudways' CPU surfaces were inconsistent: the summary briefly reported 87-92% server-wide CPU and flagged the server as problematic, while the application row remained about 1-6% CPU and the detailed historical chart showed much lighter usage. Treat this as a yellow flag requiring another normal-period trend check, not proof of sustained application saturation.
+- The one-month auto-healing chart was not completely clean: it showed one earlier four-restart interval and two isolated one-restart intervals. These should be correlated with backups, deployments or maintenance before attributing them to ordinary visitor traffic.
+- Recommendation: keep the 2 GB plan during remaining Phase One work and Phase Two development/testing, but budget the 4 GB / 2-vCPU plan for public ecommerce launch. A very small, low-traffic WooCommerce launch may technically fit on 2 GB, but uncached cart/checkout requests, scheduled actions, payments, inventory/catalog work and promotions reduce the present safety margin; the 4 GB plan is the safer production baseline.
+- Upgrade trigger if launch remains on 2 GB temporarily: sustained free memory below roughly 300-500 MB, repeated auto-healing restarts outside maintenance windows, CPU repeatedly above 80%, checkout/admin slowness, or an ecommerce load test that drives PHP/MySQL queues or response times materially upward.
+- Ecommerce planning follow-up: define product count, variation count, expected traffic/order peaks, search/filtering, inventory/POS integrations and payment/shipping plugins, then run a realistic uncached checkout/load test before launch. Increase backup frequency beyond the current monthly managed-backup schedule before accepting live orders.
