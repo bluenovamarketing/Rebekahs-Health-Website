@@ -115,6 +115,14 @@ foreach ($page in $pages) {
         [void]$assetPaths.Add($assetMatch.Groups['path'].Value.Replace('/', '\'))
     }
     $main = Convert-LocalMarkupPaths (Get-HtmlRegion -Html $html -Tag 'main')
+    if ($page.Key -eq 'home') {
+        $socialPattern = '<section class="social-section" id="instagram"[\s\S]*?</section>\s*<section class="social-section" id="tiktok"[\s\S]*?</section>'
+        $socialRegex = [regex]::new($socialPattern, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+        if (-not $socialRegex.IsMatch($main)) {
+            throw 'Homepage social sections were not found for live-feed component replacement.'
+        }
+        $main = $socialRegex.Replace($main, "<?php get_template_part( 'template-parts/components/home-social-feeds' ); ?>", 1)
+    }
     $main = "<?php`n/** Generated from approved mockup: $($page.Source). */`n?>`n" + $main + "`n"
     Write-Utf8NoBom -Path (Join-Path $pagePartRoot ($page.Key + '.php')) -Value $main
 

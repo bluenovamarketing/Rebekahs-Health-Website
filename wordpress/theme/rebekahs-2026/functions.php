@@ -9,7 +9,30 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'RHN_THEME_VERSION', '1.0.30' );
+define( 'RHN_THEME_VERSION', '1.0.32' );
+
+/** Google Tag Manager container used for production analytics and marketing tags. */
+define( 'RHN_GTM_CONTAINER_ID', 'GTM-MQHBBWCG' );
+
+/** Output the Google Tag Manager loader as high in the document head as possible. */
+function rhn_google_tag_manager_head() {
+	?>
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','<?php echo esc_js( RHN_GTM_CONTAINER_ID ); ?>');</script>
+	<!-- End Google Tag Manager -->
+	<?php
+}
+add_action( 'wp_head', 'rhn_google_tag_manager_head', 0 );
+
+/** Output the no-JavaScript Google Tag Manager fallback after the opening body tag. */
+function rhn_google_tag_manager_body() {
+	?>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo esc_attr( RHN_GTM_CONTAINER_ID ); ?>" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<?php
+}
+add_action( 'wp_body_open', 'rhn_google_tag_manager_body', 0 );
 
 function rhn_theme_setup() {
 	add_theme_support( 'title-tag' );
@@ -106,6 +129,27 @@ function rhn_enqueue_assets() {
 				rhn_theme_asset( 'js/pages/home-sections.js' ),
 				array( 'rhn-page-home' ),
 				filemtime( $home_sections_js ),
+				true
+			);
+		}
+
+		$social_css = get_template_directory() . '/assets/css/components/social-feeds.css';
+		if ( file_exists( $social_css ) ) {
+			wp_enqueue_style(
+				'rhn-social-feeds',
+				rhn_theme_asset( 'css/components/social-feeds.css' ),
+				array( 'rhn-page-home' ),
+				filemtime( $social_css )
+			);
+		}
+
+		$social_js = get_template_directory() . '/assets/js/components/social-feeds.js';
+		if ( file_exists( $social_js ) && filesize( $social_js ) > 3 ) {
+			wp_enqueue_script(
+				'rhn-social-feeds',
+				rhn_theme_asset( 'js/components/social-feeds.js' ),
+				array( 'rhn-page-home' ),
+				filemtime( $social_js ),
 				true
 			);
 		}
