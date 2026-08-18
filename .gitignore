@@ -19,3 +19,6 @@
 
 # Generated WordPress release archives
 /wordpress/dist/
+
+# Private client account references (local only; never commit)
+/PRIVATE-CLIENT-ACCESS.md

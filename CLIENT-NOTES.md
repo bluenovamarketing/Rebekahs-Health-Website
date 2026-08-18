@@ -1,5 +1,15 @@
 # Client Notes
 
+## 2026-08-17 - Phase Two email response saved
+
+- Reviewed Rebekah's reply to `Phase Two online store: what we need before the 25-product test` and saved the operational decisions locally without retaining the USPS account number or any credentials.
+- Rebekah confirmed Clarkston as the sole fulfillment location, 7093 Suite B, Dixie Highway, Clarkston, MI 48346 as the shipping origin, a two-day handling time, continental-U.S.-only shipping, USPS as the carrier, an existing USPS business account, and live address-based checkout rates.
+- Updated `PHASE-TWO-MASTER-CHECKLIST.md` and created `PHASE-TWO-CLIENT-RESPONSE-2026-08-17.md` for the 25-product pilot.
+- The reply did not address the remaining prerequisites: 25-product Revel preparation, Revel/Kosmos/PayPal/USPS access, USPS service and PO-box choices, operational email, tax settings, backorder and inventory-buffer rules, guest checkout, promotional-feature exclusions, or commercial approvals.
+- Client-facing next step: finalize the open decisions and professional fee at the meeting, then have Rebekah's team prepare the 25 products and account access before Blue Nova starts the Kosmos trial or technical pilot.
+- Clarification: the phrase transcribed as “S4” was a speech-to-text error, not a request for an SOW. No SOW is part of the active request unless Todd asks for one separately.
+- At Todd's direction, saved the USPS business account number in the local, git-ignored `PRIVATE-CLIENT-ACCESS.md`. The value remains excluded from general client notes and committed project documentation.
+
 ## 2026-07-23 - Canonical planning Sheet saved at project level
 
 - Confirmed the shared native Google Sheet as the canonical page inventory, prompt library, status tracker and workflow for the project: `https://docs.google.com/spreadsheets/d/13zutb5DxPIvqX4yv30QSBmSVyc7UoiTCIeCoqAKF7hU/edit?usp=sharing`.

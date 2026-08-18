@@ -7,13 +7,14 @@ This is the authoritative responsibility checklist for the client email, proposa
 
 ## 1. Rebekah's required decisions and approvals
 
-- [ ] Confirm the single Revel establishment/store that will supply inventory and ship every online order.
-- [ ] Confirm the fulfillment origin address and normal order-handling time.
+- [x] Confirm the single Revel establishment/store that will supply inventory and ship every online order: **Clarkston**.
+- [x] Confirm the fulfillment origin address and normal order-handling time: **7093 Suite B, Dixie Highway, Clarkston, MI 48346; two business days to pack and ship**.
 - [ ] Choose the 25 representative pilot products in Revel.
 - [ ] Choose one shipping approach:
-  - [ ] **Live address-dependent rates:** select USPS, UPS, or FedEx; approve the current $109/year carrier extension; provide accurate product weights and package dimensions when required.
+  - [x] **Live address-dependent rates:** **USPS selected**. Accurate product weights and applicable package dimensions are required. The current USPS extension cost is $109/year; purchase remains subject to the Phase Two approval.
   - [ ] **Flat-rate/free shipping:** approve the fixed charge and/or free-shipping threshold; no carrier extension or product weight is required for the pilot calculation.
-- [ ] Confirm the regions the store will serve, including decisions for the continental United States, Alaska/Hawaii, PO boxes, and international addresses.
+- [x] Confirm the principal shipping region: **continental United States only** (no Alaska, Hawaii, or international shipping).
+- [ ] Confirm whether USPS delivery to PO boxes will be allowed.
 - [ ] Confirm any known products that require special handling or that the store already knows cannot be mailed. Routine products are assumed shippable.
 - [ ] Confirm the tax settings Blue Nova should implement. Blue Nova communicates only with Rebekah and does not contact outside advisers.
 - [ ] Confirm whether backorders are prohibited or allowed. Recommended pilot default: prohibited.
@@ -40,7 +41,7 @@ This is the authoritative responsibility checklist for the client email, proposa
   - [ ] Manage disputes and chargebacks.
   - [ ] Contact PayPal Customer Service about the account.
 - [ ] Use PayPal's Manage Users page at <https://www.paypal.com/businessmanage/account/accountAccess>; instructions are at <https://www.paypal.com/us/cshelp/article/how-do-i-manage-users-on-my-business-account-help274>.
-- [ ] If live rates require an existing carrier account/API approval, provide the selected USPS/UPS/FedEx account access or complete the carrier's owner-only approval. Blue Nova performs the configuration.
+- [ ] An existing USPS business account has been confirmed. Provide Blue Nova the secure USPS account/API access or complete any unavoidable owner-only approval when the live-rate extension is configured. Blue Nova performs the configuration; the USPS account number is not stored in this project record.
 - [ ] If necessary product information exists only inside a manufacturer/supplier portal, provide authorized access or supply the missing material after Blue Nova's audit.
 
 Blue Nova already has WordPress and Cloudways staging access. Do not ask Rebekah for those again. Do not request her primary PayPal password.
