@@ -89,7 +89,17 @@ $classify_event = static function( $event ) {
 					$time_label    = $all_day ? __( 'All day', 'rebekahs-2026' ) : trim( $start_time . ( $end_time && $end_time !== $start_time ? '–' . $end_time : '' ) );
 					$venue         = function_exists( 'tribe_get_venue' ) ? tribe_get_venue( $event_id ) : '';
 					$city          = function_exists( 'tribe_get_city' ) ? tribe_get_city( $event_id ) : '';
-					$type          = $classify_event( $event );
+					$type_terms    = get_the_terms( $event_id, 'rhn_event_type' );
+					$type          = '';
+					if ( is_array( $type_terms ) ) {
+						foreach ( $type_terms as $type_term ) {
+							if ( isset( $type_labels[ $type_term->slug ] ) ) {
+								$type = $type_term->slug;
+								break;
+							}
+						}
+					}
+					$type          = $type ? $type : $classify_event( $event );
 					$terms         = get_the_terms( $event_id, 'tribe_events_cat' );
 					$location_slug = '';
 					if ( is_array( $terms ) ) {

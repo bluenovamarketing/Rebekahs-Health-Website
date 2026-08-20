@@ -199,6 +199,122 @@ add_action( 'template_redirect', 'rhn_start_home_image_buffer', 20 );
 // Keep The Events Calendar data and URL while rendering the approved theme archive.
 add_filter( 'tribe_events_views_v2_use_wp_template_hierarchy', '__return_true' );
 
+/**
+ * Register a dedicated, single-choice event type field for The Events Calendar.
+ * Store location remains in Event Categories; this taxonomy is only for type.
+ */
+function rhn_register_event_type_taxonomy() {
+	register_taxonomy(
+		'rhn_event_type',
+		array( 'tribe_events' ),
+		array(
+			'labels'            => array(
+				'name'          => __( 'Event Types', 'rebekahs-2026' ),
+				'singular_name' => __( 'Event Type', 'rebekahs-2026' ),
+				'menu_name'     => __( 'Event Types', 'rebekahs-2026' ),
+				'all_items'     => __( 'All Event Types', 'rebekahs-2026' ),
+				'edit_item'     => __( 'Edit Event Type', 'rebekahs-2026' ),
+				'add_new_item'  => __( 'Add New Event Type', 'rebekahs-2026' ),
+			),
+			'hierarchical'      => true,
+			'public'            => false,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'show_in_rest'      => true,
+			'show_in_quick_edit'=> false,
+			'query_var'         => false,
+			'rewrite'           => false,
+			'meta_box_cb'       => 'rhn_event_type_radio_metabox',
+		)
+	);
+
+	if ( ! get_option( 'rhn_event_type_terms_seeded_20260819' ) ) {
+		$types = array(
+			'class'       => 'Classes & education',
+			'community'   => 'Community & pop-ups',
+			'health-fair' => 'Health fairs',
+			'market'      => 'Markets & local makers',
+		);
+		foreach ( $types as $slug => $name ) {
+			if ( ! term_exists( $slug, 'rhn_event_type' ) ) {
+				wp_insert_term( $name, 'rhn_event_type', array( 'slug' => $slug ) );
+			}
+		}
+		update_option( 'rhn_event_type_terms_seeded_20260819', 1, false );
+	}
+}
+add_action( 'init', 'rhn_register_event_type_taxonomy', 20 );
+
+/** Render Event Type as radio buttons so each event can have only one type. */
+function rhn_event_type_radio_metabox( $post, $box ) {
+	$taxonomy = $box['args']['taxonomy'];
+	$terms    = get_terms( array( 'taxonomy' => $taxonomy, 'hide_empty' => false ) );
+	$current  = wp_get_object_terms( $post->ID, $taxonomy, array( 'fields' => 'ids' ) );
+	$current  = is_wp_error( $current ) || ! $current ? 0 : (int) reset( $current );
+
+	wp_nonce_field( 'rhn_save_event_type', 'rhn_event_type_nonce' );
+	echo '<div id="rhn-event-type-options">';
+	if ( ! is_wp_error( $terms ) ) {
+		foreach ( $terms as $term ) {
+			printf(
+				'<p><label><input type="radio" name="tax_input[%1$s][]" value="%2$d" %3$s> %4$s</label></p>',
+				esc_attr( $taxonomy ),
+				(int) $term->term_id,
+				checked( $current, (int) $term->term_id, false ),
+				esc_html( $term->name )
+			);
+		}
+	}
+	echo '<p class="description">Choose one type. Set the store separately under Event Categories.</p></div>';
+}
+
+/** Enforce a single saved type even if another editor submits multiple values. */
+function rhn_save_single_event_type( $post_id ) {
+	if ( ! isset( $_POST['rhn_event_type_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['rhn_event_type_nonce'] ) ), 'rhn_save_event_type' ) ) {
+		return;
+	}
+	if ( ! current_user_can( 'edit_post', $post_id ) || wp_is_post_revision( $post_id ) || ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) ) {
+		return;
+	}
+	$submitted = isset( $_POST['tax_input']['rhn_event_type'] ) ? (array) wp_unslash( $_POST['tax_input']['rhn_event_type'] ) : array();
+	$term_id   = $submitted ? absint( reset( $submitted ) ) : 0;
+	wp_set_object_terms( $post_id, $term_id ? array( $term_id ) : array(), 'rhn_event_type', false );
+}
+add_action( 'save_post_tribe_events', 'rhn_save_single_event_type', 20 );
+
+/** Assign existing events once so the new field preserves the current archive result. */
+function rhn_migrate_existing_event_types() {
+	if ( get_option( 'rhn_event_types_migrated_20260819' ) || ! taxonomy_exists( 'rhn_event_type' ) ) {
+		return;
+	}
+	$event_ids = get_posts(
+		array(
+			'post_type'      => 'tribe_events',
+			'post_status'    => array( 'publish', 'draft', 'pending', 'future', 'private' ),
+			'posts_per_page' => 200,
+			'fields'         => 'ids',
+		)
+	);
+	foreach ( $event_ids as $event_id ) {
+		if ( wp_get_object_terms( $event_id, 'rhn_event_type', array( 'fields' => 'ids' ) ) ) {
+			continue;
+		}
+		$text = strtolower( get_the_title( $event_id ) . ' ' . wp_strip_all_tags( get_post_field( 'post_content', $event_id ) ) );
+		if ( preg_match( '/health fair|wellness fair/', $text ) ) {
+			$type = 'health-fair';
+		} elseif ( preg_match( '/market|microgreen|maker|sale/', $text ) ) {
+			$type = 'market';
+		} elseif ( preg_match( '/class|workshop|education|seminar/', $text ) ) {
+			$type = 'class';
+		} else {
+			$type = 'community';
+		}
+		wp_set_object_terms( $event_id, $type, 'rhn_event_type', false );
+	}
+	update_option( 'rhn_event_types_migrated_20260819', 1, false );
+}
+add_action( 'init', 'rhn_migrate_existing_event_types', 30 );
+
 function rhn_events_archive_seo_title( $title ) {
 	if ( is_post_type_archive( 'tribe_events' ) ) {
 		return "Classes & Events | Rebekah's Health & Nutrition";
@@ -241,7 +357,7 @@ function rhn_page_seo_copy() {
 		'disclaimer'              => array( "Wellness & Website Disclaimer | Rebekah's", "Review important information about educational content, medical advice limitations, product claims, individual results and external resources." ),
 		'shop-fullscript'         => array( "Shop Fullscript Through Rebekah's", "Learn about Fullscript and continue to the external Fullscript platform to browse professional-grade supplements through Rebekah's referral relationship." ),
 		'shop-designs-for-health' => array( "Shop Designs for Health Through Rebekah's", "Learn about Designs for Health products and continue to the external partner website to browse and purchase outside Rebekah's website." ),
-		'shop-lifewave'           => array( "Explore LifeWave Through Rebekah's", "Learn what to consider before exploring LifeWave products, then continue to the clearly identified external partner website." ),
+		'shop-lifewave'           => array( "LifeWave X39 & Phototherapy Patches | Rebekah's Health & Nutrition", "Discover LifeWave X39 and non-transdermal phototherapy patches through Rebekah's Health & Nutrition. Learn how LifeWave technology works and explore wellness options." ),
 		'peptides-injectables'    => array( "Peptides & Injectables Referral Information | Rebekah's", "Read cautious eligibility and medical-review information before continuing to the independent external provider through Rebekah's referral link." ),
 	);
 }
@@ -430,19 +546,8 @@ add_action( 'template_redirect', 'rhn_redirect_meet_the_owner', 5 );
 
 function rhn_post_topic_key( $post_id = 0 ) {
 	$post_id = $post_id ?: get_the_ID();
-	$names   = strtolower( implode( ' ', wp_get_post_categories( $post_id, array( 'fields' => 'names' ) ) ) );
-	$text    = strtolower( $names . ' ' . get_the_title( $post_id ) . ' ' . get_the_excerpt( $post_id ) );
-	$keys = array();
-	if ( preg_match( '/product|supplement|essential oil|private label|shop|brand|patch|strip|honey|bee/', $text ) ) {
-		$keys[] = 'products';
-	}
-	if ( preg_match( '/expert|practitioner|q&a|cleanse|detox|interview|apiar|provider|doctor/', $text ) ) {
-		$keys[] = 'experts';
-	}
-	if ( ! preg_match( '/private label|why shop/', $text ) || empty( $keys ) ) {
-		$keys[] = 'healthy';
-	}
-	return implode( ' ', array_unique( $keys ) );
+	$slugs   = wp_get_post_categories( $post_id, array( 'fields' => 'slugs' ) );
+	return implode( ' ', array_map( 'sanitize_html_class', $slugs ) );
 }
 
 function rhn_reading_time( $post_id = 0 ) {
@@ -574,3 +679,230 @@ add_filter( 'wp_nav_menu_objects', 'rhn_disable_commerce_during_phase_one', 10, 
 add_action( 'elementor/theme/register_locations', function( $manager ) {
 	$manager->register_all_core_location();
 } );
+
+/** Correct the nested TikTok feed grid while preserving the plugin lightbox. */
+function rhn_tiktok_feed_display_fix() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	$tiktok_css = <<<'CSS'
+/* rhn-tiktok-grid-fix */
+body.home #tiktok .rhn-social-feed-switch.is-live > .rhn-social-feed-live .sb-feed-posts {
+	display: block !important;
+	width: 100% !important;
+}
+
+body.home #tiktok .rhn-social-feed-switch.is-live > .rhn-social-feed-live .sb-grid-wrapper {
+	display: grid !important;
+	grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+	gap: 12px !important;
+	align-items: end;
+	width: 100% !important;
+}
+
+@media (max-width: 1050px) {
+	body.home #tiktok .rhn-social-feed-switch.is-live > .rhn-social-feed-live .sb-grid-wrapper {
+		grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+	}
+}
+
+@media (max-width: 720px) {
+	body.home #tiktok .rhn-social-feed-switch.is-live > .rhn-social-feed-live .sb-grid-wrapper {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		gap: 10px !important;
+	}
+}
+CSS;
+
+	wp_add_inline_style( 'rhn-page-home', $tiktok_css );
+}
+add_action( 'wp_enqueue_scripts', 'rhn_tiktok_feed_display_fix', 30 );
+
+/** Keep homepage Instagram posts on-site in an accessible embedded lightbox. */
+function rhn_instagram_feed_lightbox() {
+	if ( ! is_front_page() ) {
+		return;
+	}
+
+	$instagram_css = <<<'CSS'
+/* rhn-instagram-lightbox */
+body.rhn-instagram-modal-open {
+	overflow: hidden;
+}
+
+.rhn-instagram-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 2147483000;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+
+.rhn-instagram-modal.is-open {
+	display: flex;
+}
+
+.rhn-instagram-modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(18, 19, 17, 0.82);
+	backdrop-filter: blur(5px);
+}
+
+.rhn-instagram-modal__dialog {
+	position: relative;
+	z-index: 1;
+	width: min(94vw, 620px);
+	height: min(90vh, 800px);
+	background: #fff;
+	border-radius: 18px;
+	overflow: hidden;
+	box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+}
+
+.rhn-instagram-modal__frame {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+	background: #fff;
+}
+
+.rhn-instagram-modal__close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+	display: grid;
+	place-items: center;
+	width: 42px;
+	height: 42px;
+	padding: 0;
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	border-radius: 999px;
+	background: rgba(18, 19, 17, 0.88);
+	color: #fff;
+	font: 700 28px/1 Arial, sans-serif;
+	cursor: pointer;
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+}
+
+.rhn-instagram-modal__close:hover,
+.rhn-instagram-modal__close:focus-visible {
+	background: #5f6f52;
+	outline: 3px solid #fff;
+	outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+	.rhn-instagram-modal {
+		padding: 10px;
+	}
+
+	.rhn-instagram-modal__dialog {
+		width: 100%;
+		height: min(92vh, 760px);
+		border-radius: 14px;
+	}
+}
+CSS;
+
+	$instagram_js = <<<'JS'
+(function () {
+	'use strict';
+
+	var modal;
+	var frame;
+	var closeButton;
+	var lastTrigger;
+
+	function instagramEmbedUrl(href) {
+		try {
+			var url = new URL(href, window.location.href);
+			if (!/(^|\.)instagram\.com$/i.test(url.hostname)) {
+				return '';
+			}
+
+			var match = url.pathname.match(/^\/(p|reel)\/([^/]+)/i);
+			return match ? 'https://www.instagram.com/' + match[1] + '/' + match[2] + '/embed/' : '';
+		} catch (error) {
+			return '';
+		}
+	}
+
+	function ensureModal() {
+		if (modal) {
+			return;
+		}
+
+		modal = document.createElement('div');
+		modal.className = 'rhn-instagram-modal';
+		modal.setAttribute('role', 'dialog');
+		modal.setAttribute('aria-modal', 'true');
+		modal.setAttribute('aria-label', 'Instagram post');
+		modal.setAttribute('aria-hidden', 'true');
+		modal.innerHTML = '<div class="rhn-instagram-modal__backdrop" data-rhn-instagram-close></div>' +
+			'<div class="rhn-instagram-modal__dialog">' +
+			'<button class="rhn-instagram-modal__close" type="button" aria-label="Close Instagram post" data-rhn-instagram-close>&times;</button>' +
+			'<iframe class="rhn-instagram-modal__frame" title="Instagram post" loading="eager" allowtransparency="true" allowfullscreen></iframe>' +
+			'</div>';
+		document.body.appendChild(modal);
+
+		frame = modal.querySelector('.rhn-instagram-modal__frame');
+		closeButton = modal.querySelector('.rhn-instagram-modal__close');
+		modal.querySelectorAll('[data-rhn-instagram-close]').forEach(function (control) {
+			control.addEventListener('click', closeModal);
+		});
+	}
+
+	function openModal(embedUrl, trigger) {
+		ensureModal();
+		lastTrigger = trigger;
+		frame.src = embedUrl;
+		modal.classList.add('is-open');
+		modal.setAttribute('aria-hidden', 'false');
+		document.body.classList.add('rhn-instagram-modal-open');
+		closeButton.focus();
+	}
+
+	function closeModal() {
+		if (!modal || !modal.classList.contains('is-open')) {
+			return;
+		}
+
+		modal.classList.remove('is-open');
+		modal.setAttribute('aria-hidden', 'true');
+		document.body.classList.remove('rhn-instagram-modal-open');
+		frame.src = 'about:blank';
+		if (lastTrigger) {
+			lastTrigger.focus();
+		}
+	}
+
+	document.addEventListener('click', function (event) {
+		var link = event.target.closest('#instagram .sbi_item a[href]');
+		var embedUrl = link ? instagramEmbedUrl(link.href) : '';
+		if (!embedUrl) {
+			return;
+		}
+
+		event.preventDefault();
+		event.stopImmediatePropagation();
+		openModal(embedUrl, link);
+	}, true);
+
+	document.addEventListener('keydown', function (event) {
+		if (event.key === 'Escape') {
+			closeModal();
+		}
+	});
+}());
+JS;
+
+	wp_add_inline_style( 'rhn-page-home', $instagram_css );
+	wp_add_inline_script( 'rhn-home-sections', $instagram_js );
+}
+add_action( 'wp_enqueue_scripts', 'rhn_instagram_feed_lightbox', 31 );

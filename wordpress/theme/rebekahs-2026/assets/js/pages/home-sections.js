@@ -150,6 +150,12 @@
 			if ( destinations[ index ] ) {
 				link.href = destinations[ index ];
 			}
+			if ( index === 2 ) {
+				const label = link.querySelector( 'span' );
+				if ( label ) {
+					label.textContent = 'Shop Wellness Patches';
+				}
+			}
 		} );
 		const box = section?.querySelector( '.partner-box' );
 		if ( box && ! box.querySelector( '[data-injections]' ) ) {

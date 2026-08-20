@@ -22,8 +22,8 @@
       <div class="wrap">
         <div class="archive-head"><div><span class="eyebrow">Explore the archive</span><h2 id="latest">Latest from Rebekah's</h2></div><p>Product know-how, expert perspectives and practical ideas for everyday wellness.</p></div>
         <div class="tools">
-          <div class="filters" role="group" aria-label="Filter articles by topic">
-            <button class="filter active" data-filter="all">All articles</button><button class="filter" data-filter="healthy">Healthy living</button><button class="filter" data-filter="products">Know your products</button><button class="filter" data-filter="experts">Access to experts</button>
+          <div class="filters" role="group" aria-label="Filter articles by content category">
+            <button class="filter active" data-filter="all">All articles</button><button class="filter" data-filter="qa">Q&amp;A</button><button class="filter" data-filter="blog">Blog</button><button class="filter" data-filter="recipe">Recipe</button>
           </div>
           <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search articles" aria-label="Search articles"></label>
         </div>

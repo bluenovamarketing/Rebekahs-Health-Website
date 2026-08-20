@@ -1,5 +1,15 @@
 # Client Notes
 
+## 2026-08-20 - Reusable traditional website workflow derived from project
+
+- Reviewed this project's phase-one intake, source assets, brand kit, page inventory, mockup and approval system, WordPress staging build, launch, revisions, post-launch QA, and recorded lessons as the evidence base for a reusable Blue Nova website-delivery skill.
+- Created and globally installed `traditional-website-builder` for future conventional brochure, service, local-business, lead-generation, and content websites; ecommerce remains a separate workflow.
+- Preserved the strongest Rebekah patterns: consolidated client questions, one canonical page tracker, production-ready brand tokens, current-version review links, explicit internal/client approval states, staging-first implementation, launch verification, and client handoff.
+- Added process corrections for future builds: classify client copy as verbatim, fact source, or rewrite-authorized; batch page families and revision rounds; prevent prototype/oversized media from reaching production; complete responsive, performance, form, redirect, and rollback QA on staging; and separate phase-two dependencies from the phase-one launch.
+- Follow-up workflow audit confirmed the full operating order from the actual project evidence: proposal/Phase One acceptance and payment condition, project/repository setup, staged access requests, initial mockups, GitHub Pages review hub, consolidated revisions and approval, WordPress staging acceptance, launch-access confirmation, DNS/cutover, production smoke tests, live-review email, owner guides, and post-launch completion updates. These were added to the reusable skill as explicit templates and gates.
+- Third-pass review added the missing operator layer and infrastructure lessons: a one-page current-step dashboard, a prefillable 60-question intake, a 41-step gate list, full milestone email drafts, Cloudways as the recommended but optional client-owned WordPress host, verified registrar and authoritative-DNS ownership, complete email/DNS preservation, website-record-only cutovers where possible, cold-cache and origin-capacity testing, CDN/WAF continuity, rollback, old-host retention, and separately approved cancellations or transfers.
+- No Rebekah website, account, email, or production setting was changed during this workflow audit.
+
 ## 2026-08-17 - Phase Two email response saved
 
 - Reviewed Rebekah's reply to `Phase Two online store: what we need before the 25-product test` and saved the operational decisions locally without retaining the USPS account number or any credentials.
@@ -2534,3 +2544,108 @@
 - Removed specific August 31–September 9 and September 21 start-window language from the unsent Phase Two client draft.
 - The replacement explains that Todd will personally manage the pilot and will not hand it off, will take planned time off during the next four weeks, and that a few weeks may be limited to about two working days while most remain normal.
 - The email now sets the expectation that Phase Two will not be a rushed full-speed build; careful, consistent setup and testing take priority over speed. No specific start date was promised, and the draft remains unsent.
+
+## 2026-08-19 - Post-meeting navigation fix published
+
+- Reconciled the August 18 meeting recap/transcript with Rebekah's follow-up email, `Updates- Thank you`, and the canonical planning sheet. The first requested issue is a sitewide navigation item labeled exactly `Shop Full Script` linking to the existing published `/shop-fullscript/` landing page.
+- Todd clarified that the header link belongs inside the `In-Store Products` dropdown rather than as a top-level item. Published that placement in the live active theme and added the same link under `Explore` in both responsive footer layouts.
+- Verified the uncached and normal public homepage: the header dropdown contains one correct Fullscript link, both footer variants contain the link, and all three resolve to `https://rebekahspureliving.com/shop-fullscript/`. Synced the checked-in theme copy to match production.
+- Production login and both navigation-file updates were completed successfully through the in-app browser.
+
+## 2026-08-19 - Post-meeting TikTok homepage display fix published
+
+- Confirmed Rebekah's exact follow-up request, `Fix the way tiktok photos appear on front page`, against the meeting transcript and diagnosed the live Smash Balloon structure: the theme's grid targeted the outer feed container while the real posts were inside a nested `.sb-grid-wrapper`, leaving the feed in one narrow vertical column.
+- Published a homepage-only override through the active theme so TikTok mirrors the approved Instagram mockup treatment: six cards on desktop, three on tablet, two on mobile, with matching 4:5 crops, 12px spacing, curved corners, shadows, and alternating 22px stagger.
+- Initially interpreted the meeting's separate-window concern as same-tab TikTok routing; Todd clarified that videos must never leave Rebekah's site. Removed that routing and preserved the feed's configured `In a lightbox` player experience.
+- Verified a live TikTok card now opens the Smash Balloon modal over the homepage: the Rebekah's URL remains unchanged, no browser tab is created, and the on-site lightbox is visible.
+- Compared the two live desktop sections element-for-element at 1280px: Instagram and TikTok now share the same six-column widths, card dimensions, radii, crop behavior, shadows, and stagger. Synced the implementation into the checked-in theme functions file.
+- Client-facing next step: review the live TikTok section visually, then proceed to the LifeWave label and page-copy revision as the next separate issue.
+
+## 2026-08-19 - Instagram on-site lightbox consistency fix published
+
+- Todd approved making homepage Instagram cards behave like the corrected TikTok feed so visitors can view social content without leaving Rebekah's website.
+- Confirmed the installed Smash Balloon Instagram Feed Lite plugin reserves its native lightbox for the paid Pro version; no plugin upgrade or purchase was made.
+- Added a homepage-only theme lightbox that intercepts Instagram post and reel cards, opens Instagram's official embedded view in an accessible on-site modal, and supports a visible close control, backdrop dismissal, Escape, scroll locking, and focus return.
+- Verified live with both a reel and a photo post: the embedded content loaded, the Rebekah's homepage URL remained unchanged, no new browser tab opened, the modal closed cleanly, and a second card reopened it correctly.
+- Client-facing next step: visually review the open Instagram popup, then continue to the LifeWave label and page-copy revision as the next separate meeting issue.
+
+## 2026-08-19 - LifeWave homepage label, exact landing-page copy, and SEO published
+
+- Reconciled the meeting transcript, Rebekah's `Updates- Thank you` email, and canonical Page Inventory row 23. The email is the newer client direction: rename the homepage link from `Shop LifeWave` to `Shop Wellness Patches` and replace the landing-page wording with her supplied LifeWave copy.
+- Verified the central product descriptions against LifeWave's current official X39 product page and compliance resources before publication. The supported claims include non-transdermal phototherapy, infrared-energy reflection, no drugs or stimulants entering the body, and the listed general-wellness, exercise-performance, strength, and stamina support language.
+- The first live revision reorganized and shortened parts of Rebekah's supplied wording. Todd correctly challenged whether the email had been followed exactly, so the page was immediately rebuilt with her wording verbatim and only the presentation/styling changed. The corrected live page preserves every supplied heading, paragraph, five-item X39 benefit list, five wellness-goal categories, `SHOP LIFEWAVE` CTA, external-site notice, important-information copy, and compensation disclosure in the original order.
+- Updated the homepage practitioner-brand link to read `Shop Wellness Patches` while preserving its `/shop-lifewave/` destination.
+- Published the requested SEO title, `LifeWave X39 & Phototherapy Patches | Rebekah's Health & Nutrition`, and meta description. The supplied search phrases are represented naturally in the page copy; no obsolete meta-keywords tag or post-tag taxonomy was added to this static page.
+- Removed copy that was not in Rebekah's email, including the additional question CTA, local-shopping link, extra section labels/summaries, paraphrased X39 cards, and expanded partner-control disclosure. The corrected page has one LifeWave referral CTA because that is what her supplied page copy specifies.
+- Verified the uncached corrected page: one exact H1; all supplied H2/H3 headings; all 31 supplied body paragraphs in order; the exact five X39 bullets; no remaining improvised copy; one correct LifeWave referral link; and the exact requested title and meta description. Verified the renamed homepage link and correct internal destination.
+- Client-facing next step: review the live LifeWave page, then proceed to the missing class/event-type element as the next separate meeting issue.
+
+## 2026-08-19 - Missing Events-page type control investigated
+
+- Rechecked the meeting transcript and the canonical Classes & Events page plan before reviewing production. The meeting concern referred to the public Events-page control used to choose the type of event/class.
+- The current live `/events/` page already displays the `Event type` selector with `All event types`, `Classes & education`, `Community & pop-ups`, `Health fairs`, and `Markets & local makers`; the earlier hidden-element symptom could not be reproduced.
+- Functional verification succeeded: the live archive contained four upcoming event cards, one classified as `Classes & education`, and selecting that option plus `Find events` correctly reduced the visible results to that one class. No code change was made because the requested control is currently visible and working.
+- Follow-up inspection found that event types were not assigned in WordPress. The theme guessed a type from words in each event's title/content, while the only existing Event Categories were the four store locations.
+- With Todd's approval, published a dedicated single-choice `Event Type` taxonomy and radio-button box on every Events Calendar edit screen. The four choices are `Classes & education`, `Community & pop-ups`, `Health fairs`, and `Markets & local makers`; store assignment remains separate under Event Categories.
+- Existing events were migrated once from their previous classifications so archive behavior stayed intact. The public filter now reads each event's saved Event Type, with the old classifier retained only as a safe fallback for an unassigned record.
+- Verified a production event editor contains all four radio choices with exactly one selected. Verified the live archive retained four upcoming events and that the saved `Markets & local makers` filter correctly returns its two assigned events.
+- Client-facing next step: when creating or editing an event, choose one Event Type, choose the store under Event Categories, then publish/update. Proceed to the next remaining meeting action item after review.
+
+## 2026-08-19 - Event Type instructions email drafted
+
+- Created an unsent Gmail draft to Rebekah with the subject `New Event Type field: how to set up an event`.
+- The draft explains how to find an existing or new event under `Events`, locate the `Event Type` box, choose exactly one of the four approved types, select the store separately under `Event Categories`, and publish/update the event.
+- It also explains that the public Classes & Events filter updates automatically, that the public archive does not need to be edited separately, and that existing events have already been assigned a type. The draft remains unsent for Todd's review.
+
+## 2026-08-19 - Remaining meeting and email work reconciled
+
+- Compared Rebekah's August 18 emails with the meeting recap/transcript and the production work completed today.
+- The only still-unfinished immediate website correction is Chelsea's Blog-page filter request: replace the current content-theme choices with the content categories `Q&A`, `Blog`, and `Recipe`.
+- The promised general instructions for updating page paragraphs/photos remain a client handoff item; the Event Type instructions have already been drafted separately.
+- TikTok synchronization/server-load monitoring remains a QA watch item, not an additional design change. No image-optimization plugin should be added solely because WordPress advertised one.
+- All WooCommerce, Revel, Kosmos, payment-gateway, staging, product-import, shipping, and product-image work belongs to the separate Phase Two ecommerce project and is not part of the immediate correction pass.
+- Chatbot work is explicitly deferred at Todd's direction.
+
+## 2026-08-19 - Blog content-category filter published
+
+- Rechecked Chelsea's request in Rebekah's `Todays meeting` email against the canonical Wellness Source Blog row and the live WordPress category setup.
+- Replaced the theme-generated topic choices `Healthy living`, `Know your products`, and `Access to experts` with the actual WordPress content categories `Q&A`, `Blog`, and `Recipe`, while retaining `All articles`.
+- Category selections now run through the real WordPress taxonomy query across the full archive and preserve the selected category through pagination instead of filtering only the cards visible on the current page.
+- Kept the existing keyword search as a page-level instant search and removed its dependency on the old invented topic classifier.
+- Verified production for All articles, Q&A, Blog, and Recipe: each selection has one active state, returns the assigned posts without a PHP/WordPress error, and the search empty state still works. Left the live Blog filter open for Todd's review.
+- Immediate correction work from Rebekah's August 18 website emails is now complete. The general editing guide is postponed, TikTok and LifeWave are complete, chatbot work is deferred, and Phase Two ecommerce remains separate.
+
+## 2026-08-19 - Event instructions screenshot added to draft
+
+- Captured a cropped production WordPress screenshot showing the `Event Categories` location checkboxes and the separate `Event Types` radio-button choices together.
+- Updated the existing unsent Gmail draft `New Event Type field: how to set up an event` with the screenshot attachment and a short explanation: use Event Categories for the store and Event Types for the kind of event. The draft was not sent.
+- During screenshot preparation, detected that a WordPress theme-editor save had omitted the Event Type, LifeWave SEO, and Instagram lightbox additions from the live functions file. Restored those exact production additions and verified persistence before continuing.
+- Reverified the production Event editor shows all four Event Types and the separate Event Categories box, the LifeWave SEO title is correct, and an Instagram card still opens in the on-site modal without leaving the website.
+
+## 2026-08-19 - Public Blog cache refreshed
+
+- Todd's screenshot confirmed that the normal public `/blog/` URL was still serving the previous filter labels from Breeze cache even though the production theme files had been updated.
+- Purged the full Breeze page cache and verified the anonymous public HTML at the plain `/blog/` URL now contains `All articles`, `Q&A`, `Blog`, and `Recipe`; the retired labels are no longer in the filter navigation.
+- Opened the plain live Blog URL in the in-app browser for review. If an already-open browser tab still shows the prior labels, a forced refresh is the only remaining local-browser step.
+
+## 2026-08-19 - Completed-revisions email drafted
+
+- Reviewed Todd's earlier detailed revision-response email for tone and structure, then reconciled Rebekah's `Todays meeting` and `Updates- Thank you` emails against the meeting recap and verified production work.
+- Created an unsent Gmail draft to Rebekah titled `Rebekah’s Website — Completed Revisions and Updates` using the established `Your request` / `What we did` format.
+- The draft covers the live Shop Full Script navigation and footer link, TikTok grid and on-site player, matching Instagram player, LifeWave copy/homepage label/SEO, Event Type workflow, Blog category filters, and the decision not to add an unnecessary image-optimization plugin.
+- Clearly separated the postponed general content-editing guide, deferred chatbot work, and separate Phase Two ecommerce scope so they are not represented as completed revisions. The draft remains unsent for Todd's review.
+
+## 2026-08-19 - GSC canonical, robots, and GA4 notices triaged
+
+- Reviewed both August 19 indexing notices for the domain and HTTPS properties. The domain report shows six event archive/date aliases under `Duplicate, Google chose different canonical than user`; a representative `/events/category/lapeer/today/` URL is fetched successfully and Google correctly selects the stable parent `/events/category/lapeer/` canonical.
+- The single `Indexed, though blocked by robots.txt` example is `https://rebekahspureliving.com/wp-admin/admin.php?page=sbtt`. URL Inspection confirms robots blocking is active. This is an admin/plugin URL, so blocking it is intentional and the GSC warning is non-critical.
+- Status: **Resolved / expected behavior** for the robots item and **QA watch** for event archives. Do not request indexing for the admin URL. Only change event canonicals if the date/today archives are later intended to rank as separate landing pages.
+- Reviewed the August 15 association notice and verified that `Rebekah's Health & Nutrition - GA4` is an accessible GA4 property matching the client. The GSC-to-GA4 association appears correct; no association change is needed.
+- Operational follow-up: Rebekah is accessible in the signed-in Search Console UI and through direct URL Inspection, but it is absent from the active scheduled GSC-report registry, so the targeted cloud refresh did not publish a client report. Add the exact hostname to the registry if recurring cloud monitoring is desired. No website, robots, canonical, indexing, or Analytics setting was changed.
+
+## 2026-08-20 - Completed revisions approved; Phase Two and SEO inputs received
+
+- Rebekah replied that the completed website changes look great and explicitly approved the completed revision pass.
+- She said she is looking forward to Phase Two. This closes the immediate correction review, but it does not by itself authorize implementation of every Phase Two ecommerce item; the separate Phase Two scope and action approval still apply.
+- Rebekah separately sent `Rebekah's Customer Survey Report 2026` as an input for upcoming SEO work.
+- Client-facing next step: acknowledge the approval, incorporate the customer-survey findings into Phase Two/SEO planning, and confirm the next specifically authorized Phase Two milestone before making ecommerce or payment-system changes.
