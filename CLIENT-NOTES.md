@@ -1,5 +1,47 @@
 # Client Notes
 
+## 2026-08-24 - Recurring Search Console monitoring enabled
+
+- Added `Rebekah's Health & Nutrition | https://rebekahspureliving.com/ | WordPress` to the canonical `Active` client registry, which enrolls the exact live hostname in the existing cloud-hosted biweekly GSC workflow (every 14 days at 6:15 AM Eastern).
+- Ran the existing one-client workflow for `rebekahspureliving.com`; GitHub Actions run `32751508042` completed successfully and published the private Markdown, JSON, and indexing-queue reports on the `gsc-data` branch.
+- Verified the report generated at `2026-08-24T16:33:33.599Z`, matched `sc-domain:rebekahspureliving.com` with owner-level access, and covered July 25-August 21 versus June 27-July 24. The current period recorded 712 clicks, 15,605 impressions, and 4.6% CTR.
+- Report-only follow-up: URL Inspection flagged the legacy `/meet-the-owner/` URL as a 404. This task did not change robots, canonicals, indexing, Analytics, URLs, or any live website/Google settings; investigate the URL separately before proposing any action.
+- Client-facing next step: no setup action is required. Review future biweekly reports for sustained search trends and separately approve any content or indexing work.
+
+## 2026-08-24 - Meet the Owner redirect diagnosis
+
+- Reproduced the live defect: `https://rebekahspureliving.com/meet-the-owner/` returns the branded 404 page with `follow, noindex` instead of redirecting.
+- Verified `https://rebekahspureliving.com/our-story/` is the intended replacement: it returns the approved Our Story/Meet Rebekah content with a self-referencing canonical and `index, follow`.
+- The project record already contains an approved information-architecture decision to permanently 301 redirect `/meet-the-owner/` to `/our-story/`; the redirect worked on staging but was not retained on production after launch.
+- Restored the approved production redirect through the existing SEOPress Redirections module as entry `1479025`: exact source `meet-the-owner/`, target `/our-story/`, enabled for all visitors, HTTP 301.
+- Verified externally without an authenticated session: the legacy URL returns 301 to `https://rebekahspureliving.com/our-story/`, the followed request returns 200, and the browser lands on the approved Our Story page with its self-referencing canonical and `index, follow` directive.
+- GSC may continue showing the historical 404 until Google recrawls the legacy URL; the next biweekly monitor should classify it as an intentional redirect once URL Inspection refreshes. No indexing request, sitemap submission, robots change, canonical change, Analytics change, or other live-site setting was made.
+
+## 2026-08-21 - USPS multi-item packing responsibility corrected
+
+- Confirmed from WooCommerce's USPS extension documentation that the client does not need to predict which box should be used for two-, three-, or larger multi-item carts; the extension supports automatic packing and a weight-based mode.
+- For the 25-product pilot, Mark/Rebekah's team supplies accurate product weights in Revel and flags unusual bulky/oversized items. Blue Nova configures the USPS packing method, tests representative one-, two-, and three-item carts, and requests product dimensions only for specific exceptions if the weight-based approach is not accurate enough.
+- Client-facing next step: explain the remaining operating defaults in one plain-language email and request one approval or a list of changes.
+- Created an unsent Gmail reply draft to Rebekah titled `Re: Phase Two online store: what we still need before setup` and saved the same draft locally as `PHASE-TWO-FOLLOW-UP-EMAIL-DRAFT-2026-08-21.md` for Todd's review. The draft was not sent.
+
+## 2026-08-21 - Phase Two processor and pre-gateway work clarified
+
+- Verified from Woo's official documentation that WooCommerce core does not process cards by itself, while the separate WooPayments service can accept cards and uses Stripe for underlying processing. WooPayments is not planned for this project.
+- Recorded Fiserv/Clover as the likely later merchant integration and PayPal as excluded. The store foundation, Revel/Kosmos synchronization, products, USPS, taxes, checkout settings, and content can be prepared before Clover is connected; only payment connection and end-to-end payment tests must wait.
+- Removed Blue Nova review of processing rates, monthly fees, contracts, funding, and chargeback pricing from the active requirements because those are between Rebekah and Fiserv.
+- Confirmed that neither Revel integration access nor a client-owned Kosmos account has been supplied in the reviewed email record. Mark is available to prepare the products and enter accurate weights in Revel; the client also supplies any necessary package measurements/packing rules.
+- Replaced the undefined “pilot fee” requirement with the accurate record: no separate Blue Nova pilot fee has been defined. Rebekah is responsible for creating/purchasing Kosmos and the USPS extension when Blue Nova confirms the test window is ready.
+- Pending client confirmation needed for configuration: operational email, tax settings, USPS services/PO-box rule, and the recommended defaults for backorders, one-unit buffer, guest checkout/accounts, and exclusion of coupon/gift/credit/loyalty features.
+
+## 2026-08-21 - Phase Two emails reconciled and payment assumption corrected
+
+- Reviewed the Phase Two shipping reply, Rebekah's introduction to Mark, Mark's Revel-responsibility reply, the Fiserv merchant-service introduction thread, and Rebekah's August 20 Phase One approval.
+- Confirmed Mark Cobleigh is the client-side Revel contact responsible for product groups, classes, categories, and backend changes needed for the website handshake.
+- Removed PayPal as the assumed pilot gateway. WooCommerce is the store/checkout platform, while the actual processor remains unconfirmed. Fiserv is under consideration, but the email record does not name a final product, completed merchant application, or approved gateway.
+- Verified that Clover would have an official WooCommerce integration if Andrew confirms Clover Ecommerce is the selected Fiserv product; do not assume or install it before written confirmation. The preserved inactive WooPayments and NMI plugins reflect the old site and do not establish the new processor.
+- Updated `PHASE-TWO-MASTER-CHECKLIST.md`, `PHASE-TWO-CLIENT-RESPONSE-2026-08-17.md`, and `PHASE-TWO-ECOMMERCE-READINESS.md`, and created `PHASE-TWO-EMAIL-UPDATE-2026-08-21.md` with confirmed information and outstanding requirements.
+- Client-facing next step: Rebekah/Fiserv must identify the exact gateway and merchant terms, while Mark prepares the 25 Revel products. Blue Nova then needs Revel/Kosmos/gateway access plus the remaining shipping, tax, checkout, and cost approvals before testing starts.
+
 ## 2026-08-20 - Reusable traditional website workflow derived from project
 
 - Reviewed this project's phase-one intake, source assets, brand kit, page inventory, mockup and approval system, WordPress staging build, launch, revisions, post-launch QA, and recorded lessons as the evidence base for a reusable Blue Nova website-delivery skill.
@@ -2649,3 +2691,80 @@
 - She said she is looking forward to Phase Two. This closes the immediate correction review, but it does not by itself authorize implementation of every Phase Two ecommerce item; the separate Phase Two scope and action approval still apply.
 - Rebekah separately sent `Rebekah's Customer Survey Report 2026` as an input for upcoming SEO work.
 - Client-facing next step: acknowledge the approval, incorporate the customer-survey findings into Phase Two/SEO planning, and confirm the next specifically authorized Phase Two milestone before making ecommerce or payment-system changes.
+
+## 2026-08-21 - Phase Two executable scope and staging boundary corrected
+
+- Rechecked the Phase Two plan against current access and infrastructure rather than treating the full build list as immediately executable.
+- Confirmed the former Cloudways staging application was promoted to the live domain and its old URL redirects to production. Phase Two therefore needs a fresh staging clone; the existing live application must not be treated as staging.
+- Blue Nova can now create/protect the clone, audit retained WooCommerce data, and build adaptable catalog, product, cart, checkout, account, navigation, search, and filter shells with controlled sample data.
+- Actual Revel category/field mapping and the 25-product synchronization remain blocked until Revel integration access, a client-owned Kosmos account/access, and one prepared online-enabled product are available. Product taxonomy, filters, and related-product logic can only be provisional until that data is visible.
+- Generic cart/order creation can be tested with an offline/test method, but USPS rates, inventory/order synchronization, and payment/refund acceptance testing remain blocked by USPS, Revel/Kosmos, and Fiserv/Clover respectively.
+- The current 2 GB/1-vCPU server can support clone creation, audit, and light scaffolding, but staging shares resources with production. Because this server previously saturated, the working recommendation is to scale CPU/RAM to 4 GB/2 vCPU before full commerce reactivation, synchronization/imports, or realistic load testing; keep it through launch and 30 days of stabilization, then reassess metrics. Avoid increasing storage if an easy CPU/RAM-only return to the original size may be wanted.
+- Launch content must be reconciled selectively: track production posts/events/media created after the clone, use a short editorial freeze and fresh backups, and never assume Cloudways can automatically merge two diverged WordPress databases.
+- Saved the detailed execution boundary and cutover approach in `PHASE-TWO-CURRENT-EXECUTION-BOUNDARIES-2026-08-21.md`.
+- Client-facing next step: the client can continue preparing the 25 Revel products, Kosmos signup/access, and pending operating decisions while Blue Nova prepares the fresh protected staging foundation.
+
+## 2026-08-21 - Minimum Phase Two ecommerce mockup set defined
+
+- Confirmed Phase One intentionally excluded WooCommerce shop, product, cart, checkout, and account screens, so the existing site does not contain an approved Phase Two storefront design.
+- The approved custom-theme header, footer, typography, colors, and spacing remain the global direction. Phase Two needs only focused header/footer modifications for the Online Shop, cart/count, account access, and required store/policy links—not another full global redesign.
+- Defined a compact approval set: responsive shop/category system with product cards and filters; responsive simple/variation product detail; purchase-path wireframes or staging prototypes; and a component/state sheet for stock, missing images, validation, empty results, and mobile filters.
+- Separate category, brand, and collection pages should reuse one archive design system. Cart, checkout, confirmation, and account screens do not each require independent polished static mockups when they follow the approved system.
+- The first design can use controlled representative sample data, but final card fields, taxonomy labels, filters, variations, and related-product logic must be reconciled after the first Revel/Kosmos product test.
+- Client-facing next step: approve the ecommerce system before Blue Nova styles the complete 25-product pilot.
+
+## 2026-08-21 - Phase Two staging and upgrade timing corrected
+
+- Todd correctly noted that Phase Two does not yet have Revel access and that the upcoming work week is fragmented. The earlier sequence incorrectly made staging creation and a first Revel-product test sound immediately actionable.
+- Confirmed from current Cloudways documentation that a staging application on the existing Flexible server has no separate application fee. It does share the production server's resources; only a separate server or increasing the existing server size creates additional hosting cost.
+- Decision: do not create staging or upgrade the 2 GB server now. There is no benefit in holding an idle staging environment, and running it on the current constrained server could unnecessarily compete with production.
+- Blue Nova may prepare ecommerce mockups and local code scaffolding in the project workspace at no hosting cost.
+- Trigger for infrastructure work: Revel integration access, client-owned Kosmos access, at least one prepared product enabled for online/third-party display, and a usable Blue Nova work window must be ready first.
+- When those prerequisites are ready, increase CPU/RAM to 4 GB/2 vCPU immediately before taking the production restore point and creating the same-server staging clone. This avoids unnecessary early expense and protects the live site during clone creation and active ecommerce work.
+- The first Revel-product synchronization is a later conditional test, not something Blue Nova can perform now.
+
+## 2026-08-21 - Detailed Revel-preparation follow-up drafted
+
+- Reviewed the existing Phase Two Gmail thread, the unsent follow-up draft, Mark Cobleigh's introduction/reply, current Kosmos Revel-to-WooCommerce requirements, and Revel's current product/third-party field documentation.
+- Replaced the vague product checklist with eighth-grade-level Revel Management Console instructions: select Clarkston, open Products, edit each representative pilot item, confirm Active/name/unique SKU or barcode/price/category/brand/Clarkston inventory, enable `Display on online and 3rd party applications` under Third Party Preferences, enter packaged shipping weight without incorrectly enabling Sold by Weight, verify variations, save, and Push Changes when available.
+- Told the client not to create a spreadsheet, collect full descriptions/images, or create a custom online menu yet. Blue Nova will test transfer behavior first and handle later web-order menu configuration.
+- Expanded the requested Revel grant to full Clarkston administrator/integration access for products, categories/classes/groups, pricing, inventory/weights, third-party preferences, variations, custom menus/online ordering, reports/order history, and integrations/API. The client should invite `tbailey@bluenovainc.com`, not email an existing password.
+- Corrected the timing: do not activate the Kosmos trial, purchase the USPS extension, create staging, or upgrade Cloudways yet. Trigger those steps only after Revel access, prepared products, operating approvals, and a usable testing window are ready.
+- Added Mark at `lapeerpurchaser@rebekahspureliving.com` as CC on the existing Phase Two reply draft and retained Rebekah as the primary recipient. No email was sent.
+
+## 2026-08-21 - Phase Two follow-up corrected for client purchases and unanswered questions
+
+- Todd removed internal hosting/staging timing from the client message; the client does not need Blue Nova's infrastructure scheduling details in this request.
+- Corrected Kosmos timing: Rebekah is now asked to create the client-owned Kosmos eSync account so Blue Nova can connect Revel and WooCommerce. Recommended the current $49/month Warmup plan for the pilot rather than committing to $468 annual billing before the integration is proven.
+- Corrected USPS timing: Rebekah is now asked to purchase the official client-owned USPS Shipping Method extension at the currently verified $109 one-year price and provide Blue Nova the WooCommerce.com/license access needed for installation and configuration.
+- Added a single approval list covering Ground Advantage/Priority Mail, PO boxes, no free-shipping threshold, no added handling fee, backorders off, one-unit inventory buffer, low-stock threshold of two, guest checkout, optional accounts, exclusion of coupon/gift/credit/loyalty programs, product reviews off, notification email, and identification of known tax-exempt/differently taxed pilot products.
+- Clarified that Blue Nova will audit transferred product content and dimensions and send one consolidated missing-information list; the client is not being asked to measure every possible shipping box.
+- Updated the existing Gmail draft only. No email was sent.
+
+## 2026-08-24 - Phase Two notification-email question corrected
+
+- Removed the assumption that ecommerce and inventory notifications should go to Rebekah's general Gmail address.
+- The unsent Phase Two draft now asks the client which email should receive new-order, failed-payment, refund, cancellation, and low-stock notices.
+- Updated the existing Gmail draft in place and left it unsent in Todd's Drafts folder.
+
+## 2026-08-24 - Phase Two contact-routing question drafted
+
+- Created a separate friendly, professional email draft to Rebekah only, asking whether she wants the forthcoming detailed Phase Two/Revel instructions sent solely through her or copied to Mark to save her forwarding work.
+- The message explicitly keeps Rebekah as Todd's single project contact and decision/approval authority; copying Mark would only give him the Revel product-preparation instructions directly.
+- The email opens by wishing Rebekah a successful Lapeer Days and explains that Todd is preparing the remaining-needs, store-question, and Revel-setup email.
+- The new Gmail message remains an unsent draft. The longer Phase Two requirements draft was not sent or changed in this step.
+
+## 2026-08-24 - Travel availability added to contact-routing draft
+
+- Added Todd's client-facing availability notice to the separate Rebekah contact-preference email: he will be traveling and unavailable for email Tuesday, August 25; Wednesday afternoon, August 26; and Friday, August 28.
+- The note sets an expectation of a possible short response delay without changing Rebekah's point-of-contact role or the Mark-CC question.
+- Updated the existing Gmail draft in place; it remains unsent.
+
+## 2026-08-24 - Textedly API support follow-up drafted
+
+- Verified that Textedly never provided a substantive answer to the August 15 Product Assistance request. The support conversation produced only a closure/rating email, while a separate Customer Success message was generic sales outreach.
+- Created an unsent Gmail reply draft to Textedly Customer Success explaining the intended Forminator 313 workflow: add or update the email contact in iContact and add only explicit SMS opt-ins to the Textedly list associated with keyword `HEALTHY123`, without Zapier or a separate Textedly webform.
+- Requested a clear yes-or-no answer on production API or official webhook availability, along with endpoint, authentication, payload, duplicate handling, preferred-store storage, response/rate-limit/testing details, welcome-message behavior, and opt-out safeguards.
+- Asked Textedly to identify the supported non-Zapier integration method if direct API access is unavailable. The draft remains unsent for Todd's review; no Textedly settings or subscriber records were changed.
+- Follow-up verification found that Gmail had preserved the reply thread but left the draft's `To` field blank. Corrected the recipient to Nicole G., Textedly Customer Success Manager, using the address from her original August 17 email and re-verified the saved draft. It remains unsent.
+- Re-routed the unsent follow-up after confirming Nicole's message was sales outreach rather than the technical-support channel. The draft now replies directly to the original Textedly/Intercom support conversation, copies Nicole for escalation, explicitly notes that the prior ticket closed without an answer, and remains unsent for Todd's review.
