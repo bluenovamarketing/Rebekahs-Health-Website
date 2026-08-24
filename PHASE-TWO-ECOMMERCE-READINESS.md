@@ -45,7 +45,7 @@ Do not begin the integration build until the following items are complete or exp
 - [ ] Rebekah can identify the selected fulfillment establishment inside Revel.
 - [ ] Blue Nova verifies whether a Kosmos eSync account already exists and presents the required plan/cost to Rebekah for approval. Kosmos is the middleware that transfers product, inventory, and order information between Revel and WooCommerce; Rebekah does not need to configure it herself.
 - [ ] A dedicated Revel/WooCommerce integration user can be created if Kosmos requires one.
-- [x] Use the client's current **PayPal** account for the pilot. Blue Nova first checks the preserved WooCommerce payment settings and runs a controlled test; Rebekah only needs to authorize or reconnect PayPal if the prior connection is absent or no longer valid. A second gateway is not required for the pilot.
+- [ ] Keep **Fiserv/Clover** as the likely later payment integration. WooCommerce core cannot process cards by itself; WooPayments could process cards through its Stripe partnership, but it is not planned because Rebekah will not use PayPal and will probably use Fiserv/Clover. Payment activation does not block the non-payment build or Revel/Kosmos test.
 - [ ] Rebekah confirms the shipping carrier/method, fulfillment origin address, package types, and handling expectations. The customer supplies the destination address at checkout. If checkout must calculate a live address-dependent rate, configure the chosen carrier integration; a carrier account is needed only if its rates or credentials will be used.
 - [ ] Rebekah confirms the tax settings Blue Nova should implement. Blue Nova communicates only with Rebekah and does not contact her accountant or other advisers.
 - [ ] An operational email address is approved for new-order, failed-payment, cancellation, refund, low-stock, and customer-service notifications.
@@ -59,8 +59,8 @@ Only the following access should be requested for the pilot:
 - [x] Blue Nova already has WordPress/Cloudways staging access. Do not ask Rebekah for it again.
 - One Revel administrator/integration access grant that includes the designated fulfillment establishment. This is not a separate location login unless Revel has intentionally limited that user's establishment permissions.
 - Rebekah has previously been told about Kosmos. Before signup, remind her that the pilot plan is currently $49 month-to-month and that Kosmos advertises a 14-day trial. She creates and owns the account with her business and billing information, then gives Blue Nova configuration access. Kosmos automatically moves approved products, prices, inventory, and orders between Revel and WooCommerce so staff do not have to maintain online inventory manually and the website is less likely to sell stock the store no longer has.
-- Request a dedicated Blue Nova secondary user on Rebekah's PayPal Business account with **full ecommerce/payment operational access** so additional permission requests do not delay the pilot. Enable PayPal's **API Activation & Authorization** permission plus profile/account settings used by checkout, balance and transaction viewing, refunds, disputes/chargebacks, and authorization to contact PayPal Customer Service about the account. Also enable any current PayPal permission explicitly labeled for online checkout, payment integrations, or API/developer access. A separate report-only user is not required for the pilot. Do not request or share the primary owner's password. Blue Nova then handles the audit, connection, configuration, testing, refunds, disputes, and troubleshooting.
-- A dedicated WooCommerce REST API user/key created by Blue Nova only when Kosmos setup requires it. This key belongs to WooCommerce/Kosmos and does not require PayPal access.
+- After the final merchant product is selected, request delegated merchant/developer access that allows Blue Nova to configure the official WooCommerce integration, use sandbox/test mode, view transactions, run void/refund tests, review disputes, and contact gateway support. Do not request or share the primary owner's password or place API secrets in project files.
+- A dedicated WooCommerce REST API user/key created by Blue Nova only when Kosmos setup requires it. This key belongs to WooCommerce/Kosmos and is separate from whichever payment gateway is selected.
 
 No carrier/label account, employee roster, accountant contact, multi-location access, or pickup configuration is required for the shipping-only pilot.
 
@@ -85,10 +85,10 @@ Blue Nova can configure the rules Rebekah approves but should not decide tax obl
 
 Rebekah must be shown both options and their consequences before choosing:
 
-1. **Live address-dependent carrier rates — recommended based on the current discussion.** Checkout calculates shipping using the one fulfillment origin, the customer's delivery address, shipment weight, package dimensions when required, and the selected USPS/UPS/FedEx service. This requires accurate weights for the 25 products and one official carrier extension currently priced at $109/year.
+1. **Live address-dependent USPS rates — confirmed.** Checkout calculates shipping using the fulfillment origin, customer's delivery address, cart weight, and the configured packing method. Mark/Rebekah's team enters accurate product weights and flags unusual bulky items. Blue Nova configures and tests weight-based/standard packing for ordinary products and requests dimensions only for specific exceptions. The client does not create quantity-to-box rules.
 2. **Flat-rate and/or free shipping.** Rebekah sets a fixed charge and/or free-shipping threshold. WooCommerce's built-in settings cost $0, and product weight is not required for the pilot shipping calculation.
 
-Do not ask for product weights without explaining this choice. If Rebekah selects live rates, weights become required data. If she selects flat/free shipping, remove weight from the client prerequisite list.
+Product weights are required because live USPS rates were selected. Do not ask the client to predict box selection for multi-item carts; WooCommerce's USPS extension can group items automatically. Blue Nova owns packing-method configuration and cart testing.
 
 ### 4. Policies and customer-facing approvals
 
@@ -117,7 +117,7 @@ For every pilot product, Rebekah or her Revel staff must:
 - [ ] Confirm the current inventory quantity at the designated fulfillment location; do not use a negative quantity.
 - [ ] Leave the product in the normal Revel category the store already uses and correct obvious duplicate or misspelled categories. Rebekah does not need to create website categories in Revel; Blue Nova reviews the imported category set and maps/organizes WooCommerce categories after the first test.
 - [ ] Enter the brand/manufacturer where Revel supports it.
-- [ ] Enter an accurate product weight only because the proposed live carrier rate is calculated from the fulfillment origin, customer's delivery address, and shipment weight. Provide package dimensions separately when the selected carrier/rate method requires them. If flat-rate or free shipping is chosen, weight is not a pilot prerequisite.
+- [ ] Enter an accurate product weight because the confirmed live USPS rate uses cart weight. Flag unusually large, long, or bulky products. Do not require the client to define multi-item box rules; Blue Nova configures and tests automatic packing and requests dimensions only for identified exceptions.
 - [ ] For variations or matrix items, confirm the parent name, option names, SKUs/barcodes, prices, and inventory for every variation. The matrix parent name must be consistent.
 - [ ] Only flag known shipping exceptions, such as an item the store already knows requires special handling or cannot be mailed. Routine products are assumed shippable; no product-by-product legal review is requested.
 - [ ] Mark exactly the intended pilot products with `Display on online and 3rd party`. Blue Nova will pull the marked products from Revel/Kosmos, create the final 25-product SKU/name list, and send it to Rebekah for confirmation. She does not need to prepare a separate spreadsheet or list.
@@ -222,7 +222,7 @@ The earlier 45–72-hour estimate combined the custom storefront build with the 
 | Scope | Estimated Blue Nova time | Expected elapsed time |
 |---|---:|---:|
 | 25-product data/synchronization proof: connect, map, sync, and review the sample | **8–14 hours** | **2–5 business days** |
-| Launch-ready shipping-only pilot: the above plus PayPal, shipping/tax rules, order flow, emails, fixes, and handoff | **18–30 hours** | **about 1–2 weeks** |
+| Launch-ready shipping-only pilot: the above plus the selected payment gateway, shipping/tax rules, order flow, emails, fixes, and handoff | **18–30 hours** | **about 1–2 weeks** |
 
 Custom shop/product/cart/checkout design and full-site visual refinement are separate Phase Two build work, not part of the 25-product synchronization test. Vendor support delays, incomplete product data, or unexpected mapping/variation problems can extend the calendar. Multi-location fulfillment and local pickup are excluded.
 
@@ -244,7 +244,7 @@ The 25-product pilot should be time-tracked by workstream. After completion, use
 ## Costs that require separate client approval
 
 - Kosmos eSync subscription and any extra action or mapping fees.
-- PayPal transaction fees.
+- Merchant-processing rates and contract costs are handled directly between Rebekah and Fiserv and are not a Blue Nova project requirement.
 - Postage, labels, and packaging used to fulfill actual orders.
 - Hosting increase if approved for launch.
 - Premium WooCommerce extensions only if a requirement later proves they are necessary; none is currently required for the lean pilot.
@@ -259,13 +259,13 @@ Verified on 2026-08-17:
 | Item | Pilot cost | Notes |
 |---|---:|---|
 | WooCommerce core | **$0** | Already retained in the project; reactivate on staging only when ready. |
-| Official PayPal Payments for WooCommerce extension | **$0** | Existing PayPal transaction fees still apply. |
+| Likely Clover Payments for WooCommerce gateway | **$0 plugin** | Connect only after Rebekah's Fiserv/Clover merchant account is active. Merchant rates and contract terms are outside Blue Nova's scope. |
 | Built-in WooCommerce shipping and manual tax settings | **$0** | Adequate for a defined shipping-only pilot; no paid label plugin is required. |
 | Kosmos eSync Warmup | **$49 month-to-month** or **$39/month billed annually** | Includes 7 actions, up to 450 monthly orders, unlimited SKUs, one location, and one online store. This appears sufficient for the lean pilot, pending confirmation of the final action count. A 14-day trial is advertised. |
 | Official live-rate carrier extension, only if checkout rates must depend on the customer's address | **Currently $109/year per carrier** | USPS, UPS, and FedEx official WooCommerce extensions are each currently listed at this price. Select one carrier before purchase. This is not needed for flat-rate or free shipping. |
 | Custom data mapping | **Not expected or budgeted** | Standard Revel fields should work without it. Mention only as an unlikely exception; if testing proves it is necessary, Kosmos says setup starts at $150 and Blue Nova will bring the exact quote to Rebekah for approval. |
 
-For the test, prefer the free trial if the entire working window is ready, or one $49 monthly period rather than an annual commitment. Do not purchase an extra tax, product-import, or checkout plugin unless testing identifies a specific need. Budget one $109/year carrier extension only if Rebekah wants live address-dependent checkout rates. PayPal's current published US domestic rate is 3.49% plus $0.49 for PayPal Checkout and 2.99% plus $0.49 for standard credit/debit card payments; the actual rate depends on the enabled PayPal method and her account terms.
+For the test, prefer the Kosmos free trial if the entire working window is ready, or one $49 monthly period rather than an annual commitment. Rebekah creates and purchases the Kosmos account and the $109/year USPS extension when Blue Nova confirms the test window is ready. Do not purchase an extra tax, product-import, payment, or checkout plugin unless testing identifies a specific need. Clover's official gateway can be connected later when the merchant account is active.
 
 ## Sources reconciled
 
@@ -273,7 +273,6 @@ For the test, prefer the free trial if the entire working window is ready, or on
 - Local project records: `CLIENT-NOTES.md`, `PRE-DESIGN-INVENTORY.md`, `HOSTING-AND-WEBSITE-CARE-PLAN.md`, the current WordPress theme, and `online-store-homepage/index.html`.
 - Recovered Rebekah Health ChatGPT project discussions: `Revel POS API Integration`, `Website Evaluation Feedback`, `Website Proposal Phases`, `product page`, `Phase Two Ecommerce Mockup`, and `Rebekah Project Timetable Adjustments`.
 - Kosmos eSync: [Revel-to-WooCommerce product requirements](https://help.kosmosesync.com/index.php/knowledge-base/integrating-revel-systems-pos-products-with-woocommerce/), [Revel/WooCommerce integration](https://kosmoscentral.com/integrations/connect-revel-systems-woocommerce), and [current public pricing](https://kosmoscentral.com/esync-cloud-pricing).
-- WooCommerce and PayPal: [official PayPal Payments extension](https://woocommerce.com/products/woocommerce-paypal-payments/) and [PayPal US merchant fees](https://www.paypal.com/us/business/paypal-business-fees).
-- PayPal Business access: [official secondary-user management instructions](https://www.paypal.com/us/cshelp/article/how-do-i-manage-users-on-my-business-account-help274).
+- Fiserv/Clover compatibility reference, without assuming Clover is the final choice: [Clover Payments for WooCommerce](https://docs.clover.com/dev/docs/woocommerce) and [Clover Ecommerce integration types](https://docs.clover.com/dev/docs/ecommerce-integration-types).
 - Official WooCommerce live-rate carrier extensions: [USPS](https://woocommerce.com/products/usps-shipping-method/), [UPS](https://woocommerce.com/products/ups-shipping-method/), and [FedEx](https://woocommerce.com/products/fedex-shipping-module/).
 - WooCommerce: [tax setup](https://woocommerce.com/document/setting-up-taxes-in-woocommerce/), [WooCommerce Tax](https://woocommerce.com/document/woocommerce-shipping-and-tax/woocommerce-tax/), and [WooCommerce Shipping](https://woocommerce.com/document/woocommerce-shipping/).
