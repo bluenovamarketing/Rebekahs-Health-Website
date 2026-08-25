@@ -124,10 +124,11 @@ Blue Nova can complete the adaptable store foundation and generic non-payment ch
 
 Using the current custom Rebekah theme—not Bricks—Blue Nova must build/refine:
 
-- [ ] Prepare and approve a compact responsive ecommerce design set before full implementation: global commerce-navigation changes; one shop/category system; simple and variation product-detail examples; purchase-path wireframes/prototypes; and important product/error states.
+- [ ] Prepare and approve the complete seven-system responsive ecommerce design set before full implementation: global commerce-navigation changes; a separate Online Store homepage; one reusable shop/category/archive template; simple and variation product-page examples; purchase-path wireframes/prototypes; the account system; and important product/error states with responsive/accessibility review.
 - [ ] Preserve the approved Phase One header, footer, typography, color, and spacing system. Only add the Online Shop, cart/count, account access, and required store/policy links; do not redesign the full global chrome.
 
 - [ ] Shop/catalog page.
+- [ ] Online Store homepage.
 - [ ] Product-category and brand browsing.
 - [ ] Search and no-results behavior.
 - [ ] Product cards.

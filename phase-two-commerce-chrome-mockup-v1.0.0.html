@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rebekah's Phase Two Commerce Chrome Mockup v1.0.0</title>
+  <meta name="description" content="Local-only Phase Two ecommerce header, navigation, and footer mockup for Rebekah's Health & Nutrition.">
+  <style>
+    :root{
+      --pine:#174c3c;--leaf:#3f7d50;--sage:#a9c3a0;--honey:#d6a33a;
+      --berry:#8e4b61;--cream:#f7f3e8;--mist:#e8efea;--ink:#26342e;
+      --white:#fff;--line:rgba(23,76,60,.14);--soft-shadow:0 18px 48px rgba(23,76,60,.13);
+      --display:Georgia,"Times New Roman",serif;--sans:"Segoe UI",Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans)}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    img{display:block;max-width:100%}
+    button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--honey);outline-offset:3px}
+    .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+    .skip-link{position:fixed;left:14px;top:-60px;z-index:200;padding:12px 16px;border-radius:8px;background:#fff;color:var(--pine);font-weight:800}
+    .skip-link:focus{top:14px}
+
+    .announcement{min-height:39px;padding:8px 24px;display:flex;align-items:center;justify-content:center;gap:16px;background:var(--pine);color:#fff;text-align:center;font-size:13px;line-height:1.35}
+    .announcement strong{color:#dbeab8}
+    .announcement a{text-decoration:underline;text-underline-offset:3px;font-weight:700}
+
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);box-shadow:0 8px 28px rgba(23,76,60,.07);backdrop-filter:blur(16px)}
+    .header-row{min-height:92px;padding:0 clamp(22px,3vw,48px);display:flex;align-items:center;gap:clamp(18px,2.4vw,38px)}
+    .brand{width:225px;flex:0 0 auto}
+    .brand img{width:100%;height:auto}
+    .primary-nav{display:flex;align-items:center;gap:clamp(11px,1.3vw,21px);font-size:14px;font-weight:700}
+    .primary-nav>a,.nav-trigger{min-height:46px;padding:0;display:inline-flex;align-items:center;border:0;background:transparent;color:var(--ink);white-space:nowrap;cursor:pointer}
+    .primary-nav>a:hover,.nav-trigger:hover{color:var(--leaf)}
+    .nav-trigger{gap:6px;font-weight:700}
+    .chevron{color:var(--leaf);font-size:11px;transition:transform .2s ease}
+    .nav-dropdown{position:relative}
+    .nav-dropdown.is-open .chevron{transform:rotate(180deg)}
+    .dropdown-panel{position:absolute;top:calc(100% + 8px);left:-18px;width:270px;padding:10px;display:none;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--soft-shadow)}
+    .nav-dropdown.is-open .dropdown-panel{display:grid}
+    .dropdown-panel a{padding:11px 12px;border-radius:10px;color:#536c61;font-size:14px;line-height:1.25}
+    .dropdown-panel a:hover,.dropdown-panel a:focus-visible{background:var(--cream);color:var(--pine)}
+    .dropdown-panel .featured-link{background:var(--mist);color:var(--pine);font-weight:800}
+    .dropdown-label{padding:9px 12px 5px;color:#7a8b83;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+    .header-tools{margin-left:auto;display:flex;align-items:center;gap:8px;flex:0 0 auto}
+    .tool-link,.menu-button{position:relative;min-width:45px;height:45px;padding:0 11px;display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--pine);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+    .tool-link:hover,.menu-button:hover{transform:translateY(-1px);background:var(--mist);box-shadow:0 9px 20px rgba(23,76,60,.11)}
+    .tool-link svg,.menu-button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .tool-text{font-size:13px;font-weight:800}
+    .cart-link{padding-right:14px;background:var(--pine);border-color:var(--pine);color:#fff}
+    .cart-link:hover{background:var(--leaf);color:#fff}
+    .cart-count{min-width:22px;height:22px;padding:0 6px;display:grid;place-items:center;border-radius:999px;background:var(--honey);color:#18271f;font-size:11px;font-weight:900}
+    .menu-button{display:none}
+
+    .search-panel{display:none;padding:18px clamp(22px,3vw,48px);background:var(--mist);border-top:1px solid var(--line)}
+    .search-panel.is-open{display:block}
+    .search-wrap{width:min(760px,100%);margin:auto;display:flex;gap:10px}
+    .search-wrap input{min-width:0;flex:1;height:50px;padding:0 17px;border:1px solid rgba(23,76,60,.23);border-radius:999px;background:#fff;color:var(--ink)}
+    .search-wrap button{height:50px;padding:0 22px;border:0;border-radius:999px;background:var(--pine);color:#fff;font-weight:800;cursor:pointer}
+
+    .review-canvas{position:relative;min-height:640px;padding:clamp(70px,9vw,128px) 24px;display:grid;place-items:center;overflow:hidden;background:
+      radial-gradient(circle at 12% 18%,rgba(214,163,58,.13),transparent 26%),
+      radial-gradient(circle at 88% 78%,rgba(169,195,160,.26),transparent 30%),var(--cream)}
+    .review-canvas:before,.review-canvas:after{content:"";position:absolute;border:1px solid rgba(23,76,60,.09);border-radius:50%}
+    .review-canvas:before{width:460px;height:460px;right:-210px;top:-190px;box-shadow:0 0 0 70px rgba(255,255,255,.2)}
+    .review-canvas:after{width:320px;height:320px;left:-180px;bottom:-150px;box-shadow:0 0 0 55px rgba(255,255,255,.23)}
+    .version-chip{position:absolute;top:18px;right:20px;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.92);color:#63766d;box-shadow:0 8px 24px rgba(23,76,60,.08);font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+    .review-card{position:relative;z-index:2;width:min(990px,100%);padding:clamp(35px,5vw,68px);display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(35px,6vw,70px);align-items:center;border:1px solid rgba(23,76,60,.11);border-radius:30px;background:rgba(255,255,255,.84);box-shadow:var(--soft-shadow);backdrop-filter:blur(14px)}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--leaf);font-size:12px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:28px;height:2px;background:var(--honey)}
+    .review-card h1{margin:16px 0 20px;color:var(--pine);font-family:var(--display);font-size:clamp(2.7rem,5.2vw,5.35rem);line-height:.98;letter-spacing:-.045em}
+    .review-card h1 em{color:var(--leaf);font-weight:400}
+    .lead{margin:0;color:#536c61;font-size:17px;line-height:1.7}
+    .guardrail{margin-top:24px;padding:15px 17px;border-left:4px solid var(--honey);border-radius:0 12px 12px 0;background:#fbf6e8;color:#465d52;font-size:14px;line-height:1.55}
+    .change-list{display:grid;gap:12px}
+    .change{padding:16px 17px;display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .change-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:var(--mist);color:var(--pine);font-weight:900}
+    .change strong{display:block;margin:1px 0 4px;color:var(--pine);font-size:14px}
+    .change span{color:#667a70;font-size:12px;line-height:1.45}
+    .status-row{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+    .status{padding:7px 10px;border-radius:999px;background:var(--mist);color:var(--pine);font-size:11px;font-weight:800}
+
+    footer{padding:52px clamp(28px,6vw,92px) 22px;background:#fff;color:var(--pine);border-top:1px solid var(--line)}
+    .footer-grid{display:grid;grid-template-columns:minmax(245px,1.2fr) repeat(4,minmax(125px,.72fr));gap:clamp(28px,4vw,60px);align-items:start}
+    .footer-intro{max-width:305px}
+    .footer-logo{width:212px}
+    .footer-intro p{margin:15px 0 17px;color:#536c61;font-size:14px;line-height:1.58}
+    .fulfillment-note{padding:12px 13px;border-radius:12px;background:var(--mist);color:#536c61;font-size:12px;line-height:1.45}
+    .fulfillment-note strong{color:var(--pine)}
+    .footer-group{margin:0;border:0}
+    .footer-group summary{margin:0 0 14px;list-style:none;color:var(--pine);font-size:12px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+    .footer-group summary::-webkit-details-marker{display:none}
+    .footer-group summary:after{display:none}
+    .footer-links{display:grid;gap:10px}
+    .footer-links a{color:#667a70;font-size:13px;line-height:1.35}
+    .footer-links a:hover,.footer-links a:focus-visible{color:var(--berry)}
+    .provisional{display:inline-flex;margin-left:5px;padding:2px 5px;border-radius:5px;background:#f5ecd1;color:#796020;font-size:8px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;vertical-align:middle}
+    .footer-bottom{margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--line);color:#74877e;font-size:12px;line-height:1.45}
+    .footer-bottom p{margin:0}
+    .footer-legal{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:16px}
+    .footer-legal a{text-decoration:underline;text-underline-offset:3px}
+    .footer-legal a:hover{color:var(--berry)}
+    .local-flag{display:inline-flex;align-items:center;gap:7px;font-weight:800;color:var(--leaf)}
+    .local-flag:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--leaf)}
+
+    @media(max-width:1330px){
+      .header-row{padding:0 20px;gap:18px}.brand{width:210px}.primary-nav{gap:10px;font-size:13px}.tool-text{display:none}.tool-link{padding:0;min-width:43px}.cart-link{padding:0 9px}
+    }
+    @media(max-width:1110px){
+      .header-row{min-height:82px}.brand{width:218px}.menu-button{display:inline-flex;order:-1}.primary-nav{position:absolute;top:82px;left:0;right:0;max-height:calc(100vh - 121px);padding:12px 5vw 26px;display:none;flex-direction:column;align-items:stretch;gap:0;overflow:auto;background:#fff;border-top:1px solid var(--line);box-shadow:0 20px 35px rgba(23,76,60,.12)}
+      .primary-nav.is-open{display:flex}.primary-nav>a,.nav-trigger{width:100%;min-height:51px;padding:0 10px;border-bottom:1px solid var(--line)}.nav-trigger{justify-content:space-between}.nav-dropdown{width:100%}.dropdown-panel{position:static;width:100%;margin:7px 0 10px;padding:7px;box-shadow:none}.review-card{grid-template-columns:1fr}.change-list{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr 1fr}.footer-intro{max-width:none;grid-column:1/-1;display:grid;grid-template-columns:215px 1fr 1fr;gap:20px;align-items:center}.footer-intro p{margin:0}.fulfillment-note{margin:0}
+    }
+    @media(max-width:760px){
+      .announcement{padding:8px 14px;font-size:11px}.announcement span:last-of-type{display:none}.header-row{min-height:76px;padding:0 14px;gap:8px}.brand{width:min(190px,44vw)}.primary-nav{top:76px;max-height:calc(100vh - 115px)}.account-link{display:none}.tool-link,.menu-button{min-width:40px;height:40px}.cart-link{padding:0 7px}.cart-count{min-width:20px;height:20px}.review-canvas{min-height:710px;padding:74px 15px}.version-chip{top:12px;right:12px;font-size:9px}.review-card{padding:30px 22px;border-radius:22px}.review-card h1{font-size:clamp(2.5rem,14vw,4rem)}.change-list{grid-template-columns:1fr}.status-row{display:grid;grid-template-columns:1fr 1fr}.status{text-align:center}.search-wrap{display:grid}.search-wrap button{width:100%}
+      footer{padding:34px 22px 20px}.footer-grid{display:block}.footer-intro{margin-bottom:20px;display:flex;flex-direction:column;align-items:center;gap:0;text-align:center}.footer-intro p{margin:13px auto}.fulfillment-note{max-width:340px}.footer-group{border-top:1px solid var(--line)}.footer-group:last-of-type{border-bottom:1px solid var(--line)}.footer-group summary{min-height:52px;margin:0;display:flex;align-items:center;justify-content:space-between;cursor:pointer}.footer-group summary:after{content:"+";display:block;color:var(--leaf);font-size:20px}.footer-group[open] summary:after{content:"−"}.footer-links{padding:0 0 17px;grid-template-columns:1fr 1fr}.footer-bottom{margin-top:20px;flex-direction:column;align-items:center;text-align:center}.footer-legal{justify-content:center}
+    }
+    @media(min-width:761px){.footer-group summary{pointer-events:none}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="announcement" aria-label="Online order information">
+    <span><strong>Online orders ship from Clarkston.</strong> Please allow two business days for packing before shipment.</span>
+    <span>Continental U.S. shipping only.</span>
+    <a href="tel:2488432011">Product help: 248-843-2011</a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-row">
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><span class="visually-hidden">Open menu</span>
+      </button>
+      <a class="brand" href="#" aria-label="Rebekah's home"><img src="tmp/source/current-site-logo-live.png" alt="Rebekah's Health & Nutrition"></a>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+        <div class="nav-dropdown">
+          <button class="nav-trigger" type="button" aria-expanded="false">Online Shop <span class="chevron" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown-panel">
+            <a class="featured-link" href="#">Shop All Products</a>
+            <span class="dropdown-label">Proposed browsing paths</span>
+            <a href="#">Vitamins &amp; Supplements</a><a href="#">Herbs &amp; Natural Remedies</a><a href="#">Body, Home &amp; Lifestyle</a><a href="#">Shop by Wellness Goal</a><a href="#">Shop by Brand</a>
+          </div>
+        </div>
+        <a href="#">In-Store Products</a>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" type="button" aria-expanded="false">Visit Our Stores <span class="chevron" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown-panel"><a class="featured-link" href="#">View All Locations</a><a href="#">Lapeer</a><a href="#">Grand Blanc</a><a href="#">Clarkston</a><a href="#">Lake Orion</a></div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" type="button" aria-expanded="false">About <span class="chevron" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown-panel"><a href="#">Our Story</a><a href="#">Our Team</a><a href="#">Practitioners</a><a href="#">Contact Us</a></div>
+        </div>
+        <a href="#">Classes &amp; Events</a><a href="#">Wellness Blog</a>
+      </nav>
+
+      <div class="header-tools" aria-label="Shop tools">
+        <button class="tool-link search-toggle" type="button" aria-expanded="false" aria-controls="store-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span class="visually-hidden">Search products</span></button>
+        <a class="tool-link account-link" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.7-4 3-6 6.5-6s5.8 2 6.5 6"></path></svg><span class="tool-text">Account</span></a>
+        <a class="tool-link cart-link" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 10.2a2 2 0 0 0 2 1.6h7.8a2 2 0 0 0 2-1.6L20.5 7H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="17" cy="20" r="1"></circle></svg><span class="tool-text">Cart</span><span class="cart-count" aria-label="0 items in cart">0</span></a>
+      </div>
+    </div>
+    <div class="search-panel" id="store-search">
+      <form class="search-wrap" action="#" role="search"><label class="visually-hidden" for="product-search">Search products</label><input id="product-search" type="search" placeholder="Search products, brands, or wellness goals"><button type="submit">Search Shop</button></form>
+    </div>
+  </header>
+
+  <main class="review-canvas" id="main">
+    <div class="version-chip">Phase Two commerce chrome &middot; v1.0.0 &middot; local</div>
+    <section class="review-card" aria-labelledby="review-title">
+      <div>
+        <span class="eyebrow">Foundation first</span>
+        <h1 id="review-title">A familiar site, now <em>ready to shop.</em></h1>
+        <p class="lead">This first Phase Two mockup extends the approved Phase One header and footer with the smallest useful ecommerce layer.</p>
+        <div class="guardrail"><strong>Local work only.</strong> This is a visual and interaction mockup. It does not connect to Cloudways, WordPress, Revel, Kosmos, USPS, payments, staging, or paid services.</div>
+      </div>
+      <div>
+        <div class="change-list">
+          <div class="change"><span class="change-icon">1</span><div><strong>Online Shop added</strong><span>A clear entry point and reusable category menu without replacing the existing site structure.</span></div></div>
+          <div class="change"><span class="change-icon">2</span><div><strong>Search, account, and cart</strong><span>Expected commerce tools are visible on desktop and phone, with a real cart-count state.</span></div></div>
+          <div class="change"><span class="change-icon">3</span><div><strong>Order expectations</strong><span>Clarkston fulfillment, two-business-day handling, and continental-U.S. scope use confirmed project decisions.</span></div></div>
+          <div class="change"><span class="change-icon">4</span><div><strong>Footer expanded</strong><span>Shopping help, account access, order policies, and store links have defined homes.</span></div></div>
+        </div>
+        <div class="status-row"><span class="status">Phase One style preserved</span><span class="status">Responsive menu</span><span class="status">Keyboard accessible</span><span class="status">Taxonomy provisional</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-intro">
+        <a class="footer-logo" href="#" aria-label="Rebekah's home"><img src="tmp/source/current-site-logo-live.png" alt="Rebekah's Health & Nutrition"></a>
+        <p>Trusted products. Practical education. Guidance that feels personal&mdash;in store and online.</p>
+        <div class="fulfillment-note"><strong>Online fulfillment:</strong> Clarkston, Michigan. Allow two business days for packing before shipment.</div>
+      </div>
+      <details class="footer-group" open><summary>Online Shop</summary><div class="footer-links"><a href="#">Shop All Products</a><a href="#">Vitamins &amp; Supplements <span class="provisional">Proposed</span></a><a href="#">Shop by Brand <span class="provisional">Proposed</span></a><a href="#">Shop by Wellness Goal <span class="provisional">Proposed</span></a></div></details>
+      <details class="footer-group" open><summary>Order Help</summary><div class="footer-links"><a href="#">My Account</a><a href="#">Cart</a><a href="#">Contact Us</a><a href="#">Shipping Information</a><a href="#">Refund &amp; Returns</a></div></details>
+      <details class="footer-group" open><summary>Visit</summary><div class="footer-links"><a href="#">All Locations</a><a href="#">Lapeer</a><a href="#">Grand Blanc</a><a href="#">Clarkston</a><a href="#">Lake Orion</a></div></details>
+      <details class="footer-group" open><summary>Explore</summary><div class="footer-links"><a href="#">In-Store Products</a><a href="#">Our Story</a><a href="#">Our Team</a><a href="#">Practitioners</a><a href="#">Classes &amp; Events</a><a href="#">Wellness Blog</a></div></details>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rebekah's Health &amp; Nutrition &middot; <span class="local-flag">Local Phase Two mockup</span></p>
+      <nav class="footer-legal" aria-label="Policy navigation"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Disclaimer</a><a href="#">Accessibility</a><a href="#">Sitemap</a></nav>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton=document.querySelector('.menu-button');
+    const primaryNav=document.querySelector('.primary-nav');
+    const dropdownTriggers=[...document.querySelectorAll('.nav-trigger')];
+    const searchToggle=document.querySelector('.search-toggle');
+    const searchPanel=document.querySelector('.search-panel');
+    const footerGroups=[...document.querySelectorAll('.footer-group')];
+    let footerCompact;
+
+    function closeDropdowns(except){dropdownTriggers.forEach(trigger=>{if(trigger===except)return;trigger.setAttribute('aria-expanded','false');trigger.closest('.nav-dropdown').classList.remove('is-open')})}
+    function closeMenu(){primaryNav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');closeDropdowns()}
+    dropdownTriggers.forEach(trigger=>trigger.addEventListener('click',()=>{const open=trigger.getAttribute('aria-expanded')!=='true';closeDropdowns(trigger);trigger.setAttribute('aria-expanded',String(open));trigger.closest('.nav-dropdown').classList.toggle('is-open',open)}));
+    menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));primaryNav.classList.toggle('is-open',open);if(!open)closeDropdowns()});
+    searchToggle.addEventListener('click',()=>{const open=searchToggle.getAttribute('aria-expanded')!=='true';searchToggle.setAttribute('aria-expanded',String(open));searchPanel.classList.toggle('is-open',open);if(open)document.querySelector('#product-search').focus()});
+    document.querySelector('.search-wrap').addEventListener('submit',event=>event.preventDefault());
+    document.addEventListener('click',event=>{if(!event.target.closest('.site-header'))closeDropdowns()});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();searchToggle.setAttribute('aria-expanded','false');searchPanel.classList.remove('is-open')}});
+    function syncResponsive(){if(window.innerWidth>1110)closeMenu();const compact=window.innerWidth<=760;if(compact!==footerCompact){footerGroups.forEach(group=>group.open=!compact);footerCompact=compact}}
+    syncResponsive();window.addEventListener('resize',syncResponsive);
+  </script>
+</body>
+</html>
+

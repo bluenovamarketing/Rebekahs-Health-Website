@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Rebekah’s Phase Two Ecommerce Mockups</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #28362f;
+      --forest: #155441;
+      --green: #0b8f45;
+      --sage: #dfe8dc;
+      --cream: #f7f3e9;
+      --paper: #fffdf8;
+      --berry: #8f5568;
+      --gold: #dfa424;
+      --line: rgba(40, 54, 47, .14);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 4%, rgba(223, 164, 36, .17), transparent 25rem),
+        linear-gradient(180deg, var(--cream), #eef3eb);
+      font-family: "DM Sans", sans-serif;
+    }
+    a { color: inherit; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 1rem; top: 1rem; z-index: 2; padding: .7rem 1rem; background: white; }
+    header, main, footer { width: min(1120px, calc(100% - 2rem)); margin-inline: auto; }
+    header { padding: clamp(3rem, 7vw, 6.5rem) 0 2.5rem; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      color: var(--berry);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 2.2rem; height: 2px; background: var(--gold); }
+    h1, h2 { font-family: "Fraunces", serif; }
+    h1 { max-width: 900px; margin: .8rem 0 1rem; font-size: clamp(2.6rem, 6vw, 5rem); line-height: .98; }
+    .intro { max-width: 780px; margin: 0; color: #506059; font-size: 1.1rem; line-height: 1.7; }
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+      max-width: 850px;
+      margin: 2rem 0 0;
+      padding: 1rem 1.2rem;
+      border: 1px solid rgba(143, 85, 104, .22);
+      border-radius: 14px;
+      background: rgba(255, 253, 248, .9);
+    }
+    .notice-mark { color: var(--berry); }
+    .notice b { color: var(--forest); }
+    .boundary {
+      display: block;
+      margin-top: .28rem;
+      color: #59675f;
+      font-size: .92rem;
+      line-height: 1.5;
+    }
+    .workbook-link {
+      display: inline-flex;
+      margin-top: .7rem;
+      color: var(--berry);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: .18em;
+    }
+    section { margin: 2.5rem 0 3.5rem; }
+    .section-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-bottom: 1rem; }
+    h2 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.5rem); }
+    .count { color: #66746d; font-size: .9rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .approval-grid { grid-template-columns: repeat(4, 1fr); }
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 255px;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 253, 248, .92);
+      box-shadow: 0 8px 28px rgba(40, 54, 47, .05);
+    }
+    a.card {
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    a.card:hover, a.card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(143, 85, 104, .5);
+      box-shadow: 0 14px 32px rgba(40, 54, 47, .1);
+      outline: none;
+    }
+    .card-top { display: flex; justify-content: space-between; gap: .75rem; align-items: start; }
+    .number { color: var(--berry); font-size: .8rem; font-weight: 700; letter-spacing: .08em; }
+    .status {
+      padding: .3rem .55rem;
+      border-radius: 999px;
+      background: #ecefeb;
+      color: #657168;
+      font-size: .69rem;
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .status.review { background: #f2e7c9; color: #6b501c; }
+    h3 { margin: 1rem 0 .45rem; font-size: 1.16rem; line-height: 1.25; }
+    .card p { margin: 0; color: #67746d; font-size: .9rem; line-height: 1.45; }
+    .includes { margin: .8rem 0 0; padding: 0; list-style: none; }
+    .includes li { position: relative; margin-top: .35rem; padding-left: .9rem; color: #536159; font-size: .82rem; line-height: 1.4; }
+    .includes li::before { content: ""; position: absolute; left: 0; top: .52rem; width: .3rem; height: .3rem; border-radius: 50%; background: var(--gold); }
+    .open { margin-top: auto; padding-top: 1rem; color: var(--berry); font-size: .88rem; font-weight: 700; }
+    .planned .open { color: #7b857f; }
+    .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .support {
+      padding: 1.2rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 253, 248, .72);
+    }
+    .support h3 { margin: 0 0 .4rem; font-size: 1rem; }
+    .support p { margin: 0; color: #657168; font-size: .86rem; line-height: 1.5; }
+    .scope-note {
+      margin-top: 1rem;
+      padding: 1rem 1.2rem;
+      border-left: 3px solid var(--gold);
+      background: rgba(255, 253, 248, .58);
+      color: #5a675f;
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+    footer { padding: 1rem 0 3rem; border-top: 1px solid var(--line); color: #69766f; font-size: .86rem; }
+    @media (max-width: 850px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .approval-grid { grid-template-columns: repeat(2, 1fr); }
+      .support-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .section-heading { align-items: start; flex-direction: column; }
+      .card { min-height: 230px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#review-set">Skip to mockups</a>
+  <header>
+    <span class="eyebrow">Private client review</span>
+    <h1>Rebekah’s Phase Two Ecommerce Mockups</h1>
+    <p class="intro">This is the single review sheet for adding the online store to the already-approved Rebekah’s website. The Phase One header, footer, typography, colors, spacing, and overall visual system remain the foundation.</p>
+    <div class="notice">
+      <span class="notice-mark" aria-hidden="true">●</span>
+      <div>
+        <b>Local work only.</b>
+        <span class="boundary">No Cloudways, no staging, no live website changes, no WordPress implementation, and no paid services. These are local design mockups for review and approval.</span>
+        <a class="workbook-link" href="outputs/01a034a3-641b-70f2-bc46-4a4f5cf27673/Rebekahs-Phase-Two-Ecommerce-Workbook.xlsx">Open the Phase Two planning workbook ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="review-set">
+    <section aria-labelledby="set-title">
+      <div class="section-heading">
+        <h2 id="set-title">Ecommerce approval set</h2>
+        <span class="count">7 reusable systems · built and approved in order</span>
+      </div>
+      <div class="grid approval-grid">
+        <a class="card" href="online-store-header-footer-add-on-v1.0.0.html" target="_blank">
+          <span class="card-top"><span class="number">01</span><span class="status review">In review</span></span>
+          <h3>Header + Footer Ecommerce Add-On</h3>
+          <p>The approved Phase One header and footer with only the required online-store additions.</p>
+          <ul class="includes">
+            <li>Online Store entry and responsive menu</li>
+            <li>Search, account, and cart/count access</li>
+            <li>Fifth expandable Online Store footer section</li>
+          </ul>
+          <span class="open">Open current mockup ↗</span>
+        </a>
+
+        <article class="card planned">
+          <span class="card-top"><span class="number">02</span><span class="status">Planned next</span></span>
+          <h3>Online Store Homepage</h3>
+          <p>The actual ecommerce landing page introduces the store and directs shoppers into the catalog without replacing the main website homepage.</p>
+          <ul class="includes">
+            <li>Store introduction and Shop All path</li>
+            <li>Category, brand, and wellness-goal discovery</li>
+            <li>Featured products and product-help guidance</li>
+          </ul>
+          <span class="open">Mockup not started</span>
+        </article>
+
+        <article class="card planned">
+          <span class="card-top"><span class="number">03</span><span class="status">Planned</span></span>
+          <h3>Shop + Catalog Template</h3>
+          <p>One reusable archive system handles Shop All, category, brand, collection, and product-search results.</p>
+          <ul class="includes">
+            <li>Product cards, search, sort, and pagination</li>
+            <li>Desktop filters and mobile filter drawer</li>
+            <li>Archive headings, breadcrumbs, and no-results state</li>
+          </ul>
+          <span class="open">Mockup not started</span>
+        </article>
+
+        <article class="card planned">
+          <span class="card-top"><span class="number">04</span><span class="status">Planned</span></span>
+          <h3>Product Page Templates</h3>
+          <p>Two examples approve the shared product layout and the additional controls needed for variations.</p>
+          <ul class="includes">
+            <li>Simple product example</li>
+            <li>Variation product example</li>
+            <li>Gallery, facts, cautions, shipping note, and related items</li>
+          </ul>
+          <span class="open">Mockup not started</span>
+        </article>
+
+        <article class="card planned">
+          <span class="card-top"><span class="number">05</span><span class="status">Planned</span></span>
+          <h3>Purchase Path</h3>
+          <p>One connected prototype keeps the cart-to-order experience visually consistent without overdesigning separate pages.</p>
+          <ul class="includes">
+            <li>Cart and empty-cart states</li>
+            <li>Checkout and field-validation states</li>
+            <li>Order confirmation</li>
+          </ul>
+          <span class="open">Mockup not started</span>
+        </article>
+
+        <article class="card planned">
+          <span class="card-top"><span class="number">06</span><span class="status">Planned</span></span>
+          <h3>Customer Account System</h3>
+          <p>A compact reusable account shell covers customer access and post-purchase information.</p>
+          <ul class="includes">
+            <li>Login, optional registration, and password reset</li>
+            <li>Account dashboard and addresses</li>
+            <li>Order history and order detail</li>
+          </ul>
+          <span class="open">Mockup not started</span>
+        </article>
+
+        <article class="card planned">
+          <span class="card-top"><span class="number">07</span><span class="status">Planned</span></span>
+          <h3>Store States + Components</h3>
+          <p>A final component sheet approves the conditions that are easy to miss when only ideal product screens are shown.</p>
+          <ul class="includes">
+            <li>No results, out of stock, and unavailable variation</li>
+            <li>Missing image, loading, validation, and error states</li>
+            <li>Keyboard, focus, contrast, and responsive behavior</li>
+          </ul>
+          <span class="open">Mockup not started</span>
+        </article>
+      </div>
+      <div class="scope-note"><strong>Template reuse rule:</strong> category, brand, collection, and search-result archives reuse item 03. Simple and variable products share item 04. Cart, checkout, and confirmation stay together in item 05. Account screens reuse item 06. This keeps the set complete without producing unnecessary one-off designs.</div>
+    </section>
+
+    <section aria-labelledby="plan-title">
+      <div class="section-heading">
+        <h2 id="plan-title">Complete Phase Two plan</h2>
+        <span class="count">Current local work + gated future phases</span>
+      </div>
+      <div class="support-grid">
+        <article class="support"><h3>1. Local design approval</h3><p>Create, revise, and approve all seven responsive systems using controlled sample products. No WordPress or hosting changes occur during this phase.</p></article>
+        <article class="support"><h3>2. Decisions, access, and pilot products</h3><p>Approve shipping, tax, accounts, inventory rules, policies, and operational email; prepare the 25 Revel products; provide Revel, Kosmos, USPS, and payment access when required.</p></article>
+        <article class="support"><h3>3. Safe staging preparation</h3><p>After every prerequisite and the work window are ready, create a restore point and protected staging clone, prevent indexing and email/payment side effects, reconcile legacy products, and reactivate only required commerce components.</p></article>
+        <article class="support"><h3>4. One-product integration proof</h3><p>Connect Revel → Kosmos → WooCommerce and test one prepared simple or variation product first. Confirm eligibility, mapping, overwrite behavior, inventory, weight, categories, logs, and field ownership.</p></article>
+        <article class="support"><h3>5. Twenty-five-product pilot and build</h3><p>Synchronize and reconcile the remaining pilot products, apply the approved storefront system, complete product content, and configure the approved shipping, tax, account, email, inventory, and payment rules.</p></article>
+        <article class="support"><h3>6. Acceptance, launch, and handoff</h3><p>Pass integration, checkout, responsive, accessibility, SEO, analytics, performance, backup, email, refund, and fulfillment tests; obtain client approval, train staff, launch in a controlled window, and monitor stabilization.</p></article>
+      </div>
+      <div class="scope-note"><strong>Gate rule:</strong> no later phase starts just because the prior mockup exists. Every phase requires its listed approvals, access, data, tests, budget, and safe working window. Failed tests return to the responsible phase before launch.</div>
+    </section>
+
+    <section aria-labelledby="support-title">
+      <div class="section-heading">
+        <h2 id="support-title">Supporting approvals</h2>
+        <span class="count">Required later · not new storefront templates</span>
+      </div>
+      <div class="support-grid">
+        <article class="support"><h3>Ecommerce policy content</h3><p>Shipping, Refund &amp; Returns, Terms, Privacy, and Disclaimer updates require content approval before launch.</p></article>
+        <article class="support"><h3>Order email content</h3><p>Customer and staff order-email styling, sender details, and business information require approval during implementation.</p></article>
+        <article class="support"><h3>Commerce rules</h3><p>Guest accounts, backorders, shipping, tax, payment, inventory, and product-data decisions are operational approvals—not extra page designs.</p></article>
+      </div>
+    </section>
+
+    <section aria-labelledby="coverage-title">
+      <div class="section-heading">
+        <h2 id="coverage-title">Nothing-missed coverage</h2>
+        <span class="count">Tracked in the Phase Two workbook</span>
+      </div>
+      <div class="support-grid">
+        <article class="support"><h3>Storefront and customer journey</h3><p>Navigation, store home, catalogs, product cards, product pages, cart, checkout, confirmation, accounts, search, filters, and every important empty/error state.</p></article>
+        <article class="support"><h3>Products and merchandising</h3><p>Pilot selection, identifiers, price, inventory, weights, variations, categories, brands, images, descriptions, ingredients, facts, directions, warnings, restrictions, and related products.</p></article>
+        <article class="support"><h3>Systems and operations</h3><p>Revel/Kosmos mapping, eligibility, overwrite ownership, synchronization, logs, orders, inventory reduction, shipping, tax, payments, refunds, emails, packaging, fulfillment, and customer service.</p></article>
+        <article class="support"><h3>Policies and compliance</h3><p>Shipping, returns, terms, privacy, disclaimer, consent, claims controls, business details, return address, cancellations, damaged/lost orders, and qualified review where needed.</p></article>
+        <article class="support"><h3>Technical quality</h3><p>Responsive behavior, accessibility, SEO, structured data, canonicals, sitemaps, indexation, analytics events, uncached checkout performance, realistic load, backups, restore, and security side-effect controls.</p></article>
+        <article class="support"><h3>Approval and change control</h3><p>Owners, decisions, prerequisites, costs, exclusions, approval gates, acceptance results, training, launch window, editorial-content protection, stabilization, and full-catalog follow-up.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>Prepared for Rebekah’s Health &amp; Nutrition · Phase Two ecommerce review · Blue Nova Marketing · Local mockups only</footer>
+</body>
+</html>

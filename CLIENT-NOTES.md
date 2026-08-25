@@ -2768,3 +2768,227 @@
 - Asked Textedly to identify the supported non-Zapier integration method if direct API access is unavailable. The draft remains unsent for Todd's review; no Textedly settings or subscriber records were changed.
 - Follow-up verification found that Gmail had preserved the reply thread but left the draft's `To` field blank. Corrected the recipient to Nicole G., Textedly Customer Success Manager, using the address from her original August 17 email and re-verified the saved draft. It remains unsent.
 - Re-routed the unsent follow-up after confirming Nicole's message was sales outreach rather than the technical-support channel. The draft now replies directly to the original Textedly/Intercom support conversation, copies Nicole for escalation, explicitly notes that the prior ticket closed without an answer, and remains unsent for Todd's review.
+
+## 2026-08-24 - iContact and Textedly login-email audit
+
+- Searched Todd's connected Gmail for welcome, invitation, activation, verification, password, passcode, and login messages for both services.
+- Located Textedly's August 13 `Textedly confirmation` email inviting Todd to join Rebekah's Textedly account and providing a registration-confirmation link.
+- Located Rebekah's August 13 reply in the `Access Needed for Website Integrations` thread containing the iContact access information and noting that Todd's Textedly invitation was pending at that time.
+- Found no separate iContact-originated invitation, welcome, activation, or password email in the connected mailbox. No credentials or access links were copied into these notes, and no account settings were changed.
+
+## 2026-08-24 - iContact setup preparation and formal Textedly ticket route
+
+- Confirmed from Textedly's current official Help Center that emailing `help@textedly.com` opens a formal support-request ticket; current published alternatives are phone support at `(855) 619-5441` and live chat.
+- Retargeted the existing unsent Gmail draft to `help@textedly.com`, kept Nicole G. copied for escalation, changed the subject to `Technical Support Ticket Request: Forminator to Textedly Integration`, and asked for a ticket number plus a definitive API/webhook or supported non-Zapier answer. The message remains unsent pending Todd's explicit send instruction.
+- Re-verified the live canonical Forminator form 313 on the Homepage. It currently contains required email, optional phone, and preferred-store selection fields; it does not currently expose a separate SMS-consent control. No test submission was made.
+- Located the approved Rebekah WordPress credential record in the shared `Cody WP Logins` sheet and reached the valid production WordPress login page. The Cloudways login URL stored in the sheet currently presents a certificate-name error, so production administration should use the live-domain login.
+- The in-app browser's site-safety policy blocked automated inspection of the signed-in iContact dashboard. No bypass was attempted. WordPress configuration can still be inspected after login to determine the installed iContact connector and available list/field mapping.
+- Pending: Todd's action-time approval to enter the stored WordPress username and password into `rebekahspureliving.com`; then inspect plugins/Forminator form 313, configure the verified iContact route, and run a controlled test if the necessary connector and destination list are available.
+- Todd explicitly approved sending the Textedly request through the published ticket channel. Removed Nicole and the Intercom routing address, verified the message was addressed only to `help@textedly.com`, and sent `Technical Support Ticket Request: Forminator to Textedly Integration`. Pending: Textedly's ticket number and technical answer.
+
+## 2026-08-24 - Dedicated Forminator-to-iContact connector prepared
+
+- Confirmed in the live WordPress admin that Forminator has no native iContact integration and that no iContact/Forminator connector is installed. The official iContact WordPress form route would introduce a separate signup form, conflicting with the approved sitewide use of canonical Forminator form 313.
+- Decision: use a small dedicated WordPress plugin, not theme code or Zapier. The connector is restricted to successful submissions from form 313 and maps `email-1`, optional `phone-1`, and `select-1` (preferred store) to a selected iContact list/custom field.
+- Built and packaged `wordpress/plugins/rebekahs-icontact-connector.zip`. It includes an administrator settings page, encrypted API-password storage, API connection testing, automatic account/folder/list/custom-field discovery, safe success/failure status, and no SMS enrollment behavior.
+- Verified the installed Forminator version exposes the submission hook used by the connector. The package remains local and has not been installed or activated on production.
+- Pending: install and activate the connector after Todd's action-time approval; then Todd must create or locate an iContact Custom API Integration and enter its Application ID, API username, and API password directly into WordPress (not into chat). After a successful connection test, select the correct newsletter list and preferred-store custom field, enable syncing, and run one controlled signup test.
+- Textedly remains a separate pending integration. Do not send phone numbers to Textedly until support confirms the supported API/webhook route and the form includes an explicit SMS-consent control.
+
+## 2026-08-24 - iContact connector installed and recent signups audited
+
+- With Todd's explicit approval, uploaded, installed, and activated Rebekah's iContact Connector v1.0.0 on production. Activation completed without an error, and the new `Settings > Rebekah's iContact` screen is available.
+- The connector remains safely disabled and has no API credentials or destination list configured, so activation alone cannot transmit existing or new subscriber data.
+- Audited canonical Forminator form 313 for the seven-day period beginning August 17. WordPress contains six stored submissions representing four unique email addresses; one address accounts for three submissions. No subscriber details were copied into project notes.
+- Verified that the preexisting form had one admin email notification enabled but no connected Forminator third-party applications. No prior iContact or Textedly plugin, webhook, or form-level integration was present, and the must-use plugins contain no hidden marketing connector.
+- Conclusion: the website stored the submissions in Forminator and sent its configured admin notification emails, but did not automatically send those records to iContact or Textedly. This does not rule out someone manually copying the records into either service after receiving the admin emails.
+- Pending: Todd should create or locate an iContact Custom API Integration in the signed-in iContact account and enter the Application ID, API username, and API password directly on the WordPress connector screen. Then test the connection, choose the correct iContact list and preferred-store field, enable syncing, and run one controlled signup test.
+- Historical submissions should not be bulk-synced until the intended iContact list is confirmed and duplicates are reviewed. Textedly synchronization remains blocked on support's API/webhook answer and explicit SMS-consent implementation.
+
+## 2026-08-24 - iContact API credentials stored and connection verified
+
+- With Todd's explicit approval, added a separate `Rebekah's Health and Nutrition — iContact API` record to row 14 of the shared `Cody WP Logins` sheet. The existing Rebekah WordPress-login row was not changed. The new record includes the integration URL, API username/password, role, dates, application name, and App ID; no secret values were copied into project notes.
+- Entered the same credentials into the production Rebekah's iContact Connector. The plugin encrypted the API password in WordPress, successfully authenticated, and discovered the accessible iContact account/client folder.
+- Syncing remains disabled. No contacts were created, updated, or subscribed during the connection test.
+- iContact returned two possible destination lists: `My First List` and `Test and Review`. The account returned no available custom field for preferred store, so form field `select-1` cannot yet be mapped without creating an iContact custom field.
+- Pending client decision: confirm the correct production newsletter list and whether to create a `Preferred Store` custom field before enabling future sync and importing the four unique recent contacts.
+- Security follow-up: rotate the iContact API password after configuration because it was pasted into the Codex conversation, then update both the encrypted WordPress connector setting and the controlled credential record.
+
+## 2026-08-24 - iContact integration scope simplified by client direction
+
+- Todd explicitly rejected creating any new iContact custom fields or making additional structural changes inside the client's iContact account.
+- Final scope: keep the existing Forminator form 313, use the Blue Nova connector, select an existing iContact list, and send only iContact's standard email and optional phone fields. Ignore preferred-store mapping in iContact.
+- No custom field was created, no list was changed, no sync was enabled, and no contacts were added before this correction.
+- Do not propose additional iContact account configuration for this workflow unless Todd specifically requests it.
+
+## 2026-08-24 - Existing Textedly audience structure verified
+
+- Confirmed the previous website workflow was entirely manual: Forminator stored the signup and emailed the administrator; a person then copied the email to iContact and the phone number to Textedly. No website integration selected a destination list or keyword.
+- Textedly currently has six historical keywords, but `HEALTHY123` is the operational audience with 23,278 contacts. `HEALTHY5`, `HEALTHY4`, `HEALTHY3`, `HEALTHY2`, and `HEALTHY88` display no contact count and appear to be unused legacy keywords.
+- Textedly store segmentation is handled through existing tags rather than separate keywords: `Grand Blanc`, `Lapeer`, `Clarkston`, `Lake Orion`, and `No Store Assigned`.
+- Decision for the simple future SMS route, pending Textedly's API/webhook answer and explicit SMS consent: add opted-in phones to the existing `HEALTHY123` audience and apply the matching existing store tag when available. Do not create new keywords, lists, or tags.
+- iContact exposes two existing email lists to the connector: `My First List` and `Test and Review`. Because the website had no prior connection, neither was selected by the old form. The production connector should use one existing list only; `My First List` is the practical production choice, while `Test and Review` should remain untouched as a test/internal list.
+
+## 2026-08-24 - Newsletter field-routing recommendation verified
+
+- Rechecked the live canonical Forminator newsletter form 313. It currently collects required email, optional phone, required store selection, and CAPTCHA; it does not collect first or last name.
+- Recommended keeping the WordPress connector simple: route email and phone through iContact's standard contact fields and retain store choice in Forminator rather than creating an iContact custom field.
+- For the future Textedly route, use the existing `HEALTHY123` audience and translate the form's store selection to the matching existing store tag. Do not create additional Textedly keywords or tags.
+- If first and last name are intentionally added to the canonical newsletter form later, map them to the services' standard name fields rather than creating custom fields. Other event, contact, or sensitive-information forms should not be enrolled automatically in either marketing service.
+- Before phone numbers are automated into Textedly, add a separate explicit SMS-marketing opt-in control; the current newsletter form does not contain one.
+
+## 2026-08-24 - Live iContact newsletter sync enabled
+
+- Completed the production iContact configuration for canonical Forminator newsletter form 313.
+- Enabled synchronization, selected the existing `My First List` destination, and left preferred-store mapping disabled as directed. No iContact fields, lists, tags, or other account structure were created or changed.
+- Ran the connector's authenticated connection test after saving the live settings; WordPress reported a successful iContact connection and retained the enabled state and selected production list.
+- New successful newsletter submissions will now send their standard email and optional phone values to iContact. Textedly remains completely outside this connector and was not changed.
+- No synthetic subscriber was injected into the production list. The first genuine post-activation signup should be checked in the connector's Last Sync Attempt panel to confirm the first end-to-end production transfer.
+- Historical Forminator submissions have not yet been imported; handle those separately without generating duplicate website submissions or sending phone numbers to Textedly.
+
+## 2026-08-24 - Historical iContact import requires manual handoff
+
+- Todd confirmed the one-time transfer of the four unique stored newsletter contacts to iContact `My First List`; Textedly remains excluded.
+- Direct contact management in the signed-in iContact dashboard is blocked by the browser safety layer in both available browser surfaces. No bypass, alternate automation route, or indirect production import was attempted after that restriction appeared.
+- Opened the live Forminator submissions screen for form 313 so the six recent submissions are visible together. The recent set represents four unique contacts; the repeated address should be imported only once.
+- The automatic connector remains enabled and successfully authenticated for all new submissions. The four historical contacts are still not imported and require a human iContact contact-import action.
+
+## 2026-08-24 - Textedly support confirms Zapier-only automation
+
+- Read Paige's substantive Textedly support reply in Gmail. The newest follow-up message is only an automated satisfaction survey.
+- Textedly explicitly stated that it does not provide a production REST API, direct webhook, or other custom server-to-server integration for this account; supported automated workflows run through Zapier.
+- Verified Textedly's current Zapier app actions. `Add New Subscriber` requires phone number and keyword and optionally accepts first name, last name, and email. The action does not expose a store-tag field.
+- Practical supported workflow: Forminator form 313 collects a separate explicit SMS opt-in; website logic sends only opted-in submissions to Zapier; Zapier runs Textedly `Add New Subscriber` using keyword `HEALTHY123`. iContact remains handled independently by the existing WordPress connector.
+- Zapier's current Free plan includes 100 tasks and two-step workflows, while webhooks, filters, and multi-step workflows are Professional features starting at $19.99/month. A direct Forminator/WordPress webhook route therefore likely requires a paid client-owned Zapier plan.
+- Textedly did not answer whether Zapier-created subscribers receive the normal keyword welcome message, how duplicate or previously opted-out numbers are handled, or whether existing store tags can be assigned through another supported Zapier action. A concise follow-up should resolve those items before production SMS enrollment is enabled.
+
+## 2026-08-24 - Phase Two ecommerce mockups started locally
+
+- Todd authorized the start of Phase Two ecommerce mockups and explicitly limited this work to the local project: no Cloudways, staging, live-site changes, server upgrade, trial, extension purchase, or paid service.
+- Reviewed the canonical Phase One planning sheet, the Phase Two execution/readiness records, relevant prior Codex tasks, the approved Phase One header/footer direction, and the existing `online-store-homepage` and `supplements-category` local concepts.
+- Reconstructed the same system-first workflow used in Phase One: approve commerce chrome first, then the reusable shop/category system, simple and variation product templates, purchase path, account screens, and search/edge states.
+- The existing ecommerce concepts contain strong reusable body-layout ideas but are not approval-ready because they use alternate global chrome and include unapproved assumptions such as free shipping over $75, reviews, wishlists, and provisional product/taxonomy details.
+- Created `PHASE-TWO-ECOMMERCE-MOCKUP-INVENTORY.md` to define the complete local mockup set, approval order, confirmed decisions, and provisional items.
+- Created `phase-two-commerce-chrome-mockup-v1.0.0.html`, extending the approved Phase One system with Online Shop navigation, product search, account access, cart/count, confirmed Clarkston fulfillment messaging, responsive menus, order-help links, and ecommerce policy locations.
+- Pending client-facing next step: Todd reviews the commerce chrome. After approval or revisions, Blue Nova should reconcile the online store homepage and category concepts into the reusable shop/catalog system.
+
+## 2026-08-24 - Phase Two commerce chrome corrected after first review
+
+- Todd rejected commerce chrome v1.0.0 because it unnecessarily reordered the newly approved Phase One navigation, moved About into the middle, removed the approved Call To Order and Stay Connected buttons, and produced a three-plus-one tablet footer grid with wasted space.
+- Created `phase-two-commerce-chrome-mockup-v1.1.0.html` as the corrected current review version; v1.0.0 remains preserved as superseded history.
+- Restored the exact approved primary-header order: About, Visit Our Stores, In-Store Products, Classes & Events, and Wellness Source Blog.
+- Restored both approved primary-header buttons in their original desktop position and kept them together inside the responsive menu on smaller screens.
+- Moved all new ecommerce navigation and tools into a separate secondary shop bar containing Online Shop, Shop All, provisional category/brand browsing, search, account, and cart/count.
+- Rebuilt the tablet footer so Online Shop, Order Help, Visit, and Explore occupy four equal adjacent columns on the same row; phone widths still use compact accordions.
+- Verified desktop, tablet, and phone behavior locally. The desktop header retains the approved order/buttons, the phone menu retains the same order/buttons, all four tablet footer groups share one row, no horizontal overflow or duplicate IDs were found, and no browser console warnings/errors occurred.
+- Pending client-facing next step: Todd reviews v1.1.0 before the shop/catalog system proceeds.
+
+## 2026-08-24 - Online Store Header + Footer rebuilt after tablet review
+
+- Todd rejected v1.1.0 after reviewing it at the in-app browser's tablet-width layout. The approved Call To Order and Stay Connected buttons were hidden behind the menu, submenu arrows were pushed away from their labels, the primary navigation was not truly centered, the shopping row felt arbitrarily offset, and the term `commerce chrome` was inappropriate internal jargon for client review.
+- Created the plainly named current review file `online-store-header-footer-mockup-v1.2.0.html`; the rejected v1.0.0 and v1.1.0 files remain only as version history.
+- Centered the full-width primary navigation exactly between equal left/right header tracks; browser geometry confirmed the menu center matches the viewport center with a zero-pixel difference.
+- Kept Call To Order and Stay Connected visible in both desktop and tablet headers. At phone width they move together into the responsive menu.
+- Converted In-Store Products into a dropdown containing Browse In-Store Products, Shop Online, and Rebekah's Signature Line so the existing product area bridges naturally to ecommerce.
+- Retained a compact second shopping-utility row, but centered its Shop All/Categories/Brands navigation while keeping Online Shop left and search/account/cart right.
+- Kept tablet submenu arrows directly beside their labels and positioned the expanded responsive menu below the shopping row rather than underneath or through it.
+- Retained the four equal tablet footer columns on one row and the compact phone accordions.
+- Verified the current in-app width, the approved 928px tablet-preview width, full desktop, and phone locally. Buttons are visible on tablet, dropdown labels/arrows align, Shop Online is visible in the In-Store Products submenu, desktop navigation is centered, phone buttons remain available, tablet footer columns share one row, and no overflow, duplicate IDs, unnamed buttons, or browser console warnings/errors were found.
+- Pending client-facing next step: Todd reviews Online Store Header + Footer v1.2.0 before the shop/catalog system proceeds.
+
+## 2026-08-24 - Approved header/footer structure restored in ecommerce v1.3.0
+
+- Todd rejected v1.2.0 because Shop All, Categories, and Brands disappeared at tablet and phone widths, the footer appeared to lose an approved section, and the established tablet/footer expanders had been replaced with a taller static layout.
+- Created `online-store-header-footer-mockup-v1.3.0.html` locally. No Cloudways, staging, live-site, WordPress, or paid-service work occurred.
+- Preserved the approved primary navigation order and Call To Order / Stay Connected buttons. The only header extension is the compact ecommerce utility row and the Shop Online entry inside In-Store Products.
+- Kept Shop All, Categories, and Brands visible at desktop, tablet, and phone widths. They are presented as one compact grouped control; the phone layout gives that control its own short row instead of hiding it.
+- Restored the approved four footer sections exactly as Explore, Locations, About, and Policies. Online Shop was added to Explore, while account, shipping, and return links were folded into Policies instead of creating replacement columns.
+- Restored compact responsive footer behavior: four adjacent expandable tabs on tablet and collapsed accordions on phones.
+- Verified locally at desktop, approximately 922px tablet, and 389px phone widths. The store links remain visible, tablet header buttons remain visible, phone buttons remain inside the menu, footer tabs and accordions expand correctly, category dropdowns stay within the viewport, no horizontal overflow occurred, and browser logs were clean.
+- Pending client-facing next step: Todd reviews v1.3.0. Do not proceed to the shop/catalog mockup until this shared header/footer direction is approved.
+
+## 2026-08-24 - Ecommerce chrome restarted as a literal add-on
+
+- Todd rejected v1.3.0 and clarified the intended structure: the already approved header and footer must remain the base, ecommerce should be added as a second menu row, and the footer should gain one fifth expandable Online Store section. This is an addition, not a rebuild.
+- Created `online-store-header-footer-add-on-v1.0.0.html` directly from approved `header-footer-mockup-v1.9.html`, rather than modifying any rejected ecommerce version.
+- Left the approved main navigation, logo, Call To Order / Stay Connected actions, original four footer sections, typography, colors, and responsive menu behavior intact.
+- Added one compact second-row store navigation with Online Store, My Account, Cart/count, and Checkout. Removed the invented Shop All, Categories, and Brands navigation from the current direction.
+- Added Online Store as the fifth footer section, containing Online Store, My Account, Cart, Checkout, and Shipping & Returns. On tablet it is the fifth expandable tab; on phones it is the fifth collapsed accordion.
+- Verified locally at desktop, approximately 922px tablet, and 389px phone widths. All four store-row links remain visible, all five footer sections fit, the fifth section expands correctly on tablet and phone, the responsive main menu begins below the added row, no horizontal overflow or duplicate IDs occurred, and browser logs were clean.
+- No Cloudways, staging, live website, WordPress, or paid-service work occurred. Pending client-facing next step: Todd reviews the literal add-on before any catalog mockup proceeds.
+
+## 2026-08-24 - Tablet footer breakpoint and store utility row corrected
+
+- Todd's screenshot showed the main header in tablet mode while the footer still displayed desktop columns. The footer had been switching at 1000px while the approved header switches at 1120px, so the responsive systems were visibly out of sync.
+- Updated the current `online-store-header-footer-add-on-v1.0.0.html` file so the footer changes to its five expandable tablet tabs at the same 1120px breakpoint as the header. Phone widths continue to use five stacked accordions.
+- Simplified the second-row store navigation to the useful sitewide essentials: Online Store, product search, My Account, and Cart with item count. Removed Checkout from permanent header navigation; checkout remains available through the cart flow and in the Online Store footer section.
+- Kept the utility row outside the hamburger because search, account access, and cart state should remain immediately available while shopping. Tablet retains labeled controls; phones retain the row with compact icons and accessible labels.
+- Confirmed that Shop All, Categories, and Brands are catalog-level navigation and should be handled inside the future store/archive system rather than occupying the global website header.
+- Verified locally at the screenshot-equivalent 1106px viewport: the main menu is compact, all store utilities are visible, the desktop footer columns are hidden, all five expandable footer tabs appear, and the Online Store tab opens correctly. Verified the phone row and all five phone accordions at 389px with no horizontal overflow.
+- No Cloudways, staging, live website, WordPress, or paid-service work occurred. Pending client-facing next step: Todd reviews this corrected header/footer add-on before catalog work begins.
+
+## 2026-08-24 - Tablet footer expansion tightened
+
+- Todd confirmed the five-section tablet footer expanded correctly but showed that its two-column link grid spread short link lists across nearly the entire footer width.
+- Updated the current local add-on so an open tablet footer section uses one centered panel capped at 740px. Links sit in a compact, centered flex row and wrap only when the available width requires it.
+- Added a subtle active-tab background and a restrained divider above the open links so the selected section and its content read as one compact component.
+- Verified the four-link Explore section and five-link Locations section at the screenshot-equivalent 1106px viewport. Locations now fits in one centered row, Explore remains compact, no horizontal overflow occurs, and the existing expand/collapse behavior is unchanged.
+- No Cloudways, staging, live website, WordPress, or paid-service work occurred.
+
+## 2026-08-24 - Live desktop centering contract restored
+
+- Todd required a direct live-versus-local desktop comparison and correctly identified that the local primary menu was not centered like the live header.
+- Found that the live site loads `assets/css/global-chrome.css` after `chrome.css`. The earlier comparison omitted this final approved override layer, which owns the 92px header, 230px logo, absolutely centered desktop navigation, 14px labels/buttons, right-aligned actions, and 1380px menu transition.
+- Updated the current local ecommerce add-on to follow the actual live global-header contract. The store row remains a separate addition beneath it.
+- Measured both rendered headers. The live primary navigation center was approximately 9px from the viewport center; the corrected local navigation was approximately 1px from center. Both use a 92px header, 230px logo, 44px actions, identical primary-menu order, and the same Call To Order / Stay Connected actions.
+- Rechecked the 1017px review layout after the desktop correction: the approved hamburger menu appears, all five primary items occupy sequential 48px rows, the two plain links remain vertically centered, five footer tabs appear, and no horizontal overflow occurs.
+- Remaining intentional differences from live are limited to Phase Two/review requirements: the new store utility row; the fifth Online Store footer section; tighter desktop footer gaps needed to fit that fifth section; the user-requested compact tablet expansion panel; and extending the expandable footer state to 1040px so it remains synchronized with the reviewed tablet layout. The blank center canvas is only a component-review surface.
+- The signed-in WordPress admin bar visible on the live comparison is an account/session overlay and is intentionally absent from the local mockup.
+- No Cloudways, staging, live website, WordPress, or paid-service work occurred.
+
+## 2026-08-24 - Ecommerce add-on rebased to the actual approved live chrome
+
+- Todd identified that the local ecommerce footer still did not visually or structurally match the approved live footer. The cause was using `header-footer-mockup-v1.9.html`, an older exploratory study, as the base instead of the current theme implementation.
+- Compared the current local theme source (`header.php`, `footer.php`, `assets/css/chrome.css`, and `assets/js/chrome.js`) directly with the live homepage footer. Confirmed the live footer has four social icons, six Explore links including Rebekah's Signature Line and Shop Full Script, current v1.11-era header sizing, and the approved responsive behavior.
+- Rebased `online-store-header-footer-add-on-v1.0.0.html` on the actual current theme header/footer content and styling. Restored the current In-Store Products dropdown, four social destinations, full Explore links, live logo/text treatment, header sizing, footer spacing, and live desktop/tablet/phone breakpoints.
+- Retained only the requested Phase Two additions: the Online Store/Search/My Account/Cart utility row and the fifth expandable Online Store footer section. Retained the recently requested compact open-panel treatment as a deliberate review change.
+- The fifth desktop section requires slightly tighter horizontal footer gaps than the four-section live footer, but the original four sections, content, social links, and styling remain intact.
+- Verified locally at approximately 1106px desktop/laptop and 995px tablet. The 1106px layout shows the approved desktop header/footer plus the additions without overflow; the 995px layout closely matches the live tablet footer while adding the fifth Online Store tab. Browser logs were clean.
+- No Cloudways, staging, live website, WordPress, or paid-service work occurred. Pending client-facing next step: Todd reviews the correctly rebased add-on before catalog work begins.
+
+## 2026-08-24 - Header-menu rows and footer tablet state synchronized
+
+- Todd reported that Classes & Events and Wellness Source Blog did not sit correctly in the opened tablet menu and that the expandable footer had disappeared again.
+- Found a 40px responsive mismatch inherited from the approved live chrome: the header changed to tablet mode at 1040px while the footer waited until 1000px. Between 1001px and 1040px the page mixed a tablet header with a desktop footer.
+- Updated the local mockup so both components enter tablet mode at 1040px. The five footer tabs now remain available throughout the complete tablet-header range; phone widths retain five stacked accordions.
+- Explicitly made the two plain header links flex rows with vertical centering, matching the dropdown-trigger rows, so Classes & Events and Wellness Source Blog cannot ride against the top edge of their menu rows.
+- Left My Account unchanged after Todd reconsidered that item during review.
+- Performed three verification passes: 1032px at the former breakpoint gap, 1032px with an expanded About submenu and visual screenshot, and 389px with the In-Store Products submenu expanded. All primary items remained in sequential 48px rows, tablet footer tabs stayed available, phone accordions remained available, no horizontal overflow occurred, and browser logs were clean.
+- No Cloudways, staging, live website, WordPress, or paid-service work occurred.
+## 2026-08-24 — Phase Two ecommerce mockup review sheet
+
+- Created `phase-two-ecommerce-mockup-sheet.html` as the single local review hub for Rebekah’s Phase Two ecommerce mockups, following the same card-based review approach used for the original website.
+- Defined six reusable approval systems in build order: header/footer ecommerce add-on, shop/catalog, product detail, purchase path, customer account, and store states/components.
+- Kept category, brand, collection, and search-result archives inside one shared catalog system; kept cart/checkout/confirmation and account screens as cohesive systems instead of unnecessary one-off templates.
+- Listed ecommerce policy updates, order-email content, and commerce rules as supporting approvals rather than additional storefront templates.
+- Current review item remains `online-store-header-footer-add-on-v1.0.0.html`; next mockup is the Shop + Catalog System.
+- Local work only: no Cloudways, staging, live website, WordPress, or paid-service changes.
+
+## 2026-08-24 — Phase Two ecommerce planning workbook
+
+- Created `Rebekahs-Phase-Two-Ecommerce-Workbook.xlsx` by using the Phase One page-inventory workbook as the structural and visual reference.
+- Added four tabs: Mockup Inventory, Templates & Global, Client Decisions, and Recommended Workflow.
+- Included formula-driven status summaries, editable dropdowns, status highlighting, the six-system approval order, reusable ecommerce components, confirmed/provisional commerce rules, dependencies, and the future implementation gate.
+- Added the workbook link to the local Phase Two mockup review sheet so the mockups and tracker remain connected.
+- Verified all four rendered sheets for readability and scanned the workbook for formula errors; none were found.
+- Local work only: no Cloudways, staging, live website, WordPress, Google Sheet, or paid-service changes.
+
+## 2026-08-24 — Complete Phase Two ecommerce plan and approval set
+
+- Expanded the local Phase Two review hub from six to seven approval systems so the actual Online Store homepage is approved separately instead of being buried inside the catalog template. The locked order is: header/footer add-on; Online Store homepage; shop/catalog template; simple and variation product-page examples; purchase path; customer account; store states/components and final design QA.
+- Added the complete gated workflow after design approval: decisions/access/pilot-product readiness; protected staging preparation; one-product Revel/Kosmos/WooCommerce proof; 25-product pilot and storefront build; operational configuration; acceptance, training, controlled launch, and stabilization.
+- Rebuilt the Phase Two workbook as a seven-tab master tracker covering the approval set, reusable templates/global work, product/content requirements, decisions/access, the 13-phase implementation sequence, 28 QA and launch gates, and scope/cost assumptions/exclusions.
+- Explicitly tracked storefront behavior, product data and claims, Revel/Kosmos field ownership, shipping/tax/payments, emails and policies, responsive/accessibility/SEO/analytics/performance/backups, responsibilities, approval gates, training, and postlaunch follow-up so these items are not discovered after implementation begins.
+- Verified the local review sheet in the in-app browser: seven approval cards, six implementation-phase cards, three supporting approvals, six coverage groups, and no horizontal overflow. Verified all seven workbook sheets visually, corrected the pending-requirements summary, and confirmed zero formula errors.
+- Current client-facing next step remains approval of the header/footer ecommerce add-on. After that, create the separate Online Store homepage mockup before the catalog template.
+- Local work only: no Cloudways, staging, live website, WordPress implementation, integration activity, purchases, Google Sheet changes, or paid services.
