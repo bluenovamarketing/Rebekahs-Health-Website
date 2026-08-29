@@ -1,5 +1,20 @@
 # Client Notes
 
+## 2026-08-27 - Latest Phase Two replies reconciled and USPS alternative selected for testing
+
+- Reviewed Rebekah's latest Phase Two replies and consolidated the confirmed settings and remaining work in `PHASE-TWO-CLIENT-UPDATE-2026-08-27.md` and the master checklist.
+- Recorded that Rebekah created the client-owned Kosmos account and started its 14-day trial. She supplied sign-in information by email; no password, API secret, or other credential was copied into project files.
+- Recorded that Blue Nova received and accepted a Revel Management Console invitation and created its password. The direct Clarkston console URL is known, but successful console access and the required product/integration permissions still need verification.
+- Confirmed the pilot settings: USPS Ground Advantage and Priority Mail; no PO boxes, free-shipping threshold, or handling fee; backorders off; one-unit buffer; low-stock notice at two; guest checkout and optional accounts; coupons/gift certificates/store credit/loyalty excluded; reviews off; and applicable store/order notices sent to both approved client addresses.
+- Recorded Rebekah's instruction to treat the pilot supplements as Michigan tax-exempt food. This remains a client-supplied configuration instruction rather than Blue Nova tax advice and must be verified through test order totals.
+- Rebekah approved copying Mark on operational/Revel instructions while remaining the primary project contact and approval point.
+- Researched current USPS REST-compatible WooCommerce options after Rebekah objected to the official $109/year extension's 2.7 rating. Recommended testing Octolize's actively maintained free USPS live-rate plugin first; it supports service selection, Ground Advantage, Priority Mail, current USPS REST, commercial rates, and a default-package/cart-weight calculation. If representative multi-item carts require automatic custom-box packing, Octolize PRO is currently listed at £58/year.
+- Kept PluginHive's $99/year rates/labels/tracking option as a secondary alternative. It supports current USPS REST and multi-package rules but is newer and its USPS product page currently has no customer reviews.
+- Confirmed WooCommerce Shipping can be used later for USPS label purchase/printing and tracking without serving as the checkout-rate calculator; it does not provide live checkout rates.
+- PO-box rejection will be handled as Blue Nova checkout validation rather than assumed to be part of the carrier plugin; no separate paid plugin is presently expected.
+- Confirmed from Octolize's current REST setup documentation that the existing USPS account number alone is not enough. The live-rate plugin requires an authorized USPS Developer Portal app plus its Consumer Key and Consumer Secret. Blue Nova should create and configure these if it receives usable USPS account access, involving Rebekah only for unavoidable owner approval or MFA and never asking her to email the secret.
+- Client-facing next step: do not ask Rebekah to purchase the official WooCommerce USPS extension. Blue Nova first verifies Revel access, creates the WooCommerce connection credentials requested by Kosmos, tests one prepared Revel product, and tests the free Octolize USPS plugin on protected staging before recommending any paid shipping license.
+
 ## 2026-08-24 - Recurring Search Console monitoring enabled
 
 - Added `Rebekah's Health & Nutrition | https://rebekahspureliving.com/ | WordPress` to the canonical `Active` client registry, which enrolls the exact live hostname in the existing cloud-hosted biweekly GSC workflow (every 14 days at 6:15 AM Eastern).

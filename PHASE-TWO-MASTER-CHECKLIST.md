@@ -11,26 +11,26 @@ This is the authoritative responsibility checklist for the client email, proposa
 - [x] Confirm the fulfillment origin address and normal order-handling time: **7093 Suite B, Dixie Highway, Clarkston, MI 48346; two business days to pack and ship**.
 - [ ] Choose the 25 representative pilot products in Revel.
 - [ ] Choose one shipping approach:
-  - [x] **Live address-dependent rates:** **USPS selected**. Accurate product weights are required. Blue Nova will choose and test the packing method; Mark/Rebekah's team only needs to flag unusually large or bulky items. The current USPS extension cost is $109/year.
+  - [x] **Live address-dependent rates:** **USPS selected**. Accurate product weights are required. Blue Nova will choose and test the packing method; Mark/Rebekah's team only needs to flag unusually large or bulky items. Test the free Octolize USPS live-rate plugin first and approve a paid packing upgrade only if representative carts prove it is needed.
   - [ ] **Flat-rate/free shipping:** approve the fixed charge and/or free-shipping threshold; no carrier extension or product weight is required for the pilot calculation.
 - [x] Confirm the principal shipping region: **continental United States only** (no Alaska, Hawaii, or international shipping).
-- [ ] Confirm whether USPS delivery to PO boxes will be allowed.
+- [x] Do not allow shipping to PO boxes. Blue Nova will enforce this with checkout address validation rather than expecting the carrier-rate plugin to block it.
 - [ ] Confirm any known products that require special handling or that the store already knows cannot be mailed. Routine products are assumed shippable.
-- [ ] Confirm the tax settings Blue Nova should implement. Blue Nova communicates only with Rebekah and does not contact outside advisers.
-- [ ] Approve the pilot operating defaults needed for configuration: **backorders off; one-unit inventory safety buffer unless the tested sync is immediate; guest checkout allowed with optional accounts; coupons, gift certificates, store credit, and loyalty excluded unless specifically requested**.
-- [ ] Confirm the operational email address for orders, failed payments, refunds, cancellations, low-stock notices, and customer-service messages.
+- [x] Rebekah instructed Blue Nova to treat the pilot supplements as food/tax-exempt in Michigan. This is a client-supplied configuration instruction, not Blue Nova tax/legal advice; verify test-order totals before launch.
+- [x] Approve the pilot operating defaults: **backorders off; one-unit inventory safety buffer unless the tested sync supports removing it; low-stock notice at two units; guest checkout allowed with optional accounts; coupons, gift certificates, store credit, and loyalty excluded; product reviews off**.
+- [x] Send applicable store/order notices to both **rebekahspureliving@gmail.com** and **clarkstonpurchaser@rebekahspureliving.com**.
 - [ ] When the merchant account is ready, confirm that the Fiserv product is **Clover Ecommerce/Clover Payments for WooCommerce** or identify the actual gateway. This does not block product preparation, Kosmos/Revel synchronization work, store construction, shipping setup, or non-payment checkout configuration.
 
 ## 2. Accounts and access Rebekah must provide
 
-- [ ] Provide one Revel administrator/integration access grant that can see the selected fulfillment establishment. A separate location login is unnecessary unless Revel permissions are establishment-limited.
-- [ ] Create and own the Kosmos eSync account using Rebekah's business and billing information.
-- [ ] Before Kosmos signup, acknowledge the current cost reminder: $49 month-to-month, or $39 per month billed annually ($468/year); Kosmos also advertises a 14-day trial. Rebekah has previously been informed of this service.
+- [x] Rebekah sent a Revel Management Console invitation and Blue Nova completed the password-creation step. Verify that `https://rebekahs.revelup.com/` opens the Clarkston console and that the user has the required administrator/integration permissions before marking access operational.
+- [x] Rebekah created and owns the Kosmos eSync account; its 14-day trial is active.
+- [x] Kosmos pricing was disclosed before signup: $49 month-to-month, or $39 per month billed annually ($468/year).
 - [ ] Use the official Kosmos plans/signup page: <https://kosmoscentral.com/esync-cloud-pricing-monthly>.
-- [ ] Give Blue Nova the account access needed to configure Kosmos after signup.
+- [x] Rebekah supplied Kosmos sign-in information. Credentials remain only in the source email and are not copied into project files. Blue Nova should handle the configuration and involve Rebekah only if owner approval or MFA is unavoidable.
 - [ ] After the Fiserv/Clover merchant account is active, provide Blue Nova the integration access needed to connect and test it. For Clover Payments for WooCommerce, this normally means the merchant ID plus sandbox/production public and private tokens supplied through a secure method. Do not email the owner's primary password or API secrets.
 - [ ] Payment rates, monthly fees, merchant contracts, deposit terms, and chargeback pricing are decisions between Rebekah and Fiserv. Blue Nova only needs the final gateway name, an active account, the supported WooCommerce integration, and secure integration access.
-- [ ] An existing USPS business account has been confirmed. Provide Blue Nova the secure USPS account/API access or complete any unavoidable owner-only approval when the live-rate extension is configured. Blue Nova performs the configuration; the USPS account number is not stored in this project record.
+- [ ] An existing USPS business account and account number have been confirmed. Blue Nova still needs usable USPS Business/Developer Portal access, or unavoidable owner approval/MFA, to create and authorize the REST API app and obtain its Consumer Key and Consumer Secret. The account number alone is not sufficient. Blue Nova performs the setup and does not ask Rebekah to email the Consumer Secret.
 - [ ] If necessary product information exists only inside a manufacturer/supplier portal, provide authorized access or supply the missing material after Blue Nova's audit.
 
 Blue Nova already has WordPress and Cloudways staging access. Do not ask Rebekah for those again. Do not request the owner's primary merchant-account password.
@@ -76,7 +76,7 @@ New photography, extensive image editing, original copywriting, full-catalog cle
 
 ## 5. Blue Nova setup responsibilities
 
-- [ ] Confirm the working window and do not start the Kosmos 14-day trial until access, decisions, and product preparation are ready.
+- [x] The client started the Kosmos 14-day trial before technical testing began. Record the trial-expiration date after first login and prioritize connection/access verification so the remaining trial time is not wasted.
 - [ ] Use August 31–September 9, 2026 only if the prerequisites are ready; otherwise begin September 21 or later. Do not leave an active test/handoff across Todd's blackout dates or weekends.
 - [ ] Do not create an idle Phase Two staging application or upgrade the server before the prerequisites and a usable working window are ready. Local ecommerce mockups can be prepared without a hosting change.
 - [ ] Once Revel integration access, Kosmos access, and one prepared online-enabled product are ready, increase CPU/RAM to 4 GB/2 vCPU, take a fresh production restore point, and create a protected same-server Cloudways staging clone. The former staging application was promoted to production and is no longer independent.
@@ -111,7 +111,8 @@ Blue Nova can complete the adaptable store foundation and generic non-payment ch
 ## 7. Shipping, tax, payment, and order configuration
 
 - [ ] Configure the client-approved shipping regions and exclusions.
-- [ ] If live rates are selected, purchase/install one approved $109/year USPS/UPS/FedEx extension and configure origin, package data, services, and customer-facing labels.
+- [ ] For live USPS rates, first test the free Octolize **Shipping Live Rates for USPS for WooCommerce** plugin on protected staging. Limit it to Ground Advantage and Priority Mail and validate representative one-, two-, and three-product carts. Upgrade to Octolize PRO only if automatic multi-box/custom-box packing is required; do not purchase the official $109 WooCommerce USPS extension.
+- [ ] Add checkout validation that rejects PO-box delivery addresses; this is separate from carrier-rate calculation and should not require another paid plugin.
 - [ ] If flat/free shipping is selected, configure the approved rate and threshold using WooCommerce's built-in $0 settings.
 - [ ] Test shipping calculations with multiple representative customer addresses and cart weights.
 - [ ] Configure the tax rules supplied and approved by Rebekah.
@@ -180,10 +181,11 @@ Do not expose the full catalog until every applicable test passes:
 - WooCommerce core: **$0**.
 - WooPayments: a real optional WooCommerce payment service powered underneath by Stripe, but **not planned** if Rebekah uses Fiserv/Clover.
 - Likely Fiserv/Clover gateway: Clover's official WooCommerce plugin is currently **$0**. Rebekah handles her merchant-processing agreement directly with Fiserv.
-- Kosmos: **$49 month-to-month**, or **$39 per month billed annually ($468/year)**; the advertised 14-day trial may be used when the complete test window is ready.
-- Live-rate carrier extension: **$109/year for one USPS, UPS, or FedEx extension**, only if live address-dependent shipping is selected.
-- Known client-owned integration software: **approximately $158** for one $49 Kosmos month plus the $109 USPS extension. Rebekah signs up for and purchases both; these are not Blue Nova fees.
-- Flat/free shipping pilot software cost: **$49 for one Kosmos month**, potentially $0 during the trial.
+- Kosmos: **$49 month-to-month**, or **$39 per month billed annually ($468/year)**. The client has already started the advertised 14-day trial; verify its exact expiration date in the account.
+- USPS live-rate pilot plugin: **$0** for Octolize's free version. Its current PRO version is **£58/year** if realistic cart testing shows that automatic multi-product/custom-box packing is required.
+- Alternative all-in-one USPS option: PluginHive is **$99/year** and includes rates, labels, tracking, and multi-package rules, but it is not the recommended first pilot because the current USPS product is newer and its product page has no customer reviews.
+- Current client-owned integration software for the initial test: Kosmos is already in its advertised 14-day trial, and the recommended USPS pilot plugin is $0. Any paid shipping license will be selected only after representative cart testing.
+- If the pilot can be completed during Kosmos's active trial and the free Octolize plugin rates accurately, initial integration-software cost may be $0. Otherwise, Kosmos continues at the client-selected monthly or annual rate and any paid carrier upgrade requires approval.
 - Custom mapping: **not expected**. If the one-product test proves otherwise, Kosmos says setup starts at $150; obtain an exact quote before approval.
 - Postage, packaging, merchant-processing arrangements, optional hosting increases, and out-of-scope content work are separate.
 
