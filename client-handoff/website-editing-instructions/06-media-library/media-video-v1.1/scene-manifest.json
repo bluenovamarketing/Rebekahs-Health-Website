@@ -1,0 +1,106 @@
+﻿[
+    {
+        "scene":  1,
+        "title":  "Upload and use images in the Media Library",
+        "audio":  "scene-01.wav",
+        "narration":  "This lesson shows you how to prepare an approved image, upload it to the WordPress Media Library, write useful alt text, place it in the correct content item, save safely, and verify the public result without deleting media that another page may still use.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  2,
+        "title":  "Required WordPress access",
+        "audio":  "scene-02.wav",
+        "narration":  "You need an Editor or Administrator account. Editor is enough for routine image uploads and placement. Do not delete existing media, install image tools, change upload settings, or use an Administrator account merely because an upload or menu looks different.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  3,
+        "title":  "Prepare the image before opening WordPress",
+        "audio":  "scene-03.wav",
+        "narration":  "Gather the one approved final image. Confirm its subject, permission, crop, and web-ready size. Never upload private records, unlicensed images, screenshots containing personal information, or a file you cannot identify. Stop when the image source or intended use is uncertain.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  4,
+        "title":  "Open the Media Library and choose Add New",
+        "audio":  "scene-04.wav",
+        "narration":  "Open Media, then Library, and select Add New Media File. Upload only the approved final image. Do not upload several guesses for someone else to sort out. One clear asset is easier to find, use, and maintain.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  5,
+        "title":  "Use a clear filename before uploading",
+        "audio":  "scene-05.wav",
+        "narration":  "Rename the file on the computer before uploading it. Use short lowercase words separated by hyphens that describe the subject. Avoid names such as final-final, image-one, or a camera number. Keep the correct file extension, such as J P G, P N G, or Web P.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  6,
+        "title":  "Choose the file and wait for the upload",
+        "audio":  "scene-06.wav",
+        "narration":  "Select the exact approved file. Wait until the progress indicator finishes and the attachment appears. If WordPress reports an error, stop and read it. Do not click repeatedly or upload the same file with different names, because that creates duplicates.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  7,
+        "title":  "Write alt text for the image\u0027s purpose",
+        "audio":  "scene-07.wav",
+        "narration":  "Open the attachment details and write alt text that describes the important subject or purpose in one short phrase or sentence. Leave alt text empty only when the image is purely decorative. Do not copy the filename or stuff keywords, locations, and services.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  8,
+        "title":  "Use title, caption, and description carefully",
+        "audio":  "scene-08.wav",
+        "narration":  "Give the Media Library item a readable title so staff can identify it. Add a caption only when words should appear publicly under the image. Use Description only when the site process specifically needs it. A caption is public content, not a private staff note.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  9,
+        "title":  "Insert media from the content or image control",
+        "audio":  "scene-09.wav",
+        "narration":  "Open the exact page, post, event, or practitioner and its image control. Choose the uploaded image by its thumbnail and title. Use the intended size and preserve the natural proportions. Do not drag the image wider or taller in a way that stretches it.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  10,
+        "title":  "Replace an image without breaking old pages",
+        "audio":  "scene-10.wav",
+        "narration":  "Upload an approved replacement as a new file unless Blue Nova provides a verified replacement tool. Update the exact content item to use the new image. Do not delete the old Media Library file, because another page or an older link may still use its address.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  11,
+        "title":  "Save once and clear only the applicable cache",
+        "audio":  "scene-11.wav",
+        "narration":  "Review the crop, alt text, and placement. Select Save or Update one time and wait for confirmation. Clear only the applicable page or record cache. Do not purge unrelated content and do not change image, cache, plugin, or server settings.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  12,
+        "title":  "Verify the public image on desktop and phone",
+        "audio":  "scene-12.wav",
+        "narration":  "Open the exact public page. Confirm the correct image loads, remains sharp, and is not stretched, blurry, or cropped badly. Check it at phone size and test any linked image. A successful Media Library upload does not prove the public placement is correct.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  13,
+        "title":  "Always finish with the final verification",
+        "audio":  "scene-13.wav",
+        "narration":  "Always finish by uploading one approved file, adding useful alt text, placing it in the exact content item, saving once, clearing only the applicable cache, and verifying the public image on desktop and phone. Stop and contact Blue Nova before deleting or replacing uncertain media.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    }
+]

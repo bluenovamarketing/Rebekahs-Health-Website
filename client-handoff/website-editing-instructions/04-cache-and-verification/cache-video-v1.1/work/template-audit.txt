@@ -1,0 +1,7 @@
+Template audit - Cache Safety v1.1
+
+Source: Create-or-Update-an-Event-v1.1.pptx, the approved full-HD training format.
+Audience: a complete beginner with Editor or Administrator access, depending on the cache control.
+Job: save first, use the smallest approved cache clear, refresh locally, and verify the canonical public page on desktop and phone.
+The 13-slide source sequence is retained. Large written screen maps replace new live WordPress captures because the user explicitly instructed that no live site access is needed.
+

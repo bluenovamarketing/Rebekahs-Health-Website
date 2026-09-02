@@ -1,0 +1,449 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/y90nupkv",
+    "id": "y90nupkv",
+    "slide": 1,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F3E8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/utg3698n",
+      "id": "9",
+      "name": "header-band",
+      "bbox": [
+        0,
+        0,
+        1920,
+        100
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7F3E8",
+      "lineColor": "#F7F3E8",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/547294r6",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        48,
+        23,
+        1550,
+        58
+      ],
+      "geometry": "rect",
+      "text": "Update an existing practitioner listing",
+      "textPreview": "Update an existing practitioner listing",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Update an existing practitioner listing"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Update an existing practitioner listing",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Update an existing practitioner listing",
+              "fontSize": 40,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3yl0zql",
+      "id": "3",
+      "name": "step",
+      "bbox": [
+        1700,
+        20,
+        170,
+        58
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7qp4be9c",
+      "id": "4",
+      "name": "step-text",
+      "bbox": [
+        1712,
+        34,
+        146,
+        30
+      ],
+      "geometry": "rect",
+      "text": "START",
+      "textPreview": "START",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "START"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "START",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "START",
+              "fontSize": 20,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65g3298r",
+      "id": "5",
+      "name": "page",
+      "bbox": [
+        1545,
+        1048,
+        325,
+        18
+      ],
+      "geometry": "rect",
+      "text": "Practitioner editing v1.4  •  1/16",
+      "textPreview": "Practitioner editing v1.4  •  1/16",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Practitioner editing v1.4  •  1/16"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Practitioner editing v1.4  •  1/16",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#3F7D50"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Practitioner editing v1.4  •  1/16",
+              "fontSize": 13,
+              "color": "#3F7D50"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/jqxw72dk",
+      "id": "10",
+      "bbox": [
+        155,
+        323.23,
+        650,
+        193.54
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image.png",
+        "contentType": "image/png",
+        "byteLength": 41546
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image.png",
+        "contentType": "image/png",
+        "byteLength": 41546
+      }
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sryl4zqx",
+      "id": "7",
+      "name": "start-copy",
+      "bbox": [
+        930,
+        290,
+        770,
+        260
+      ],
+      "geometry": "rect",
+      "text": "Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.",
+      "textPreview": "Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Update approved practitioner information,"
+          },
+          {
+            "index": 2,
+            "text": "save it safely, clear the applicable cache,"
+          },
+          {
+            "index": 3,
+            "text": "and verify the live result."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.",
+          "resolvedTextStyle": {
+            "fontSize": 42,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.",
+              "fontSize": 42,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fu94fe98",
+      "id": "8",
+      "name": "start-note",
+      "bbox": [
+        935,
+        600,
+        750,
+        42
+      ],
+      "geometry": "rect",
+      "text": "Beginner lesson  •  Live website  •  Full-screen version",
+      "textPreview": "Beginner lesson  •  Live website  •  Full-screen version",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Beginner lesson  •  Live website  •  Full-screen version"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Beginner lesson  •  Live website  •  Full-screen version",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#8E4B61",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Beginner lesson  •  Live website  •  Full-screen version",
+              "fontSize": 25,
+              "color": "#8E4B61",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

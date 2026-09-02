@@ -1,0 +1,23 @@
+{
+  "sourceDeck": "Practitioner-Editing-Video-v1.2.pptx",
+  "outputDeck": "Practitioner-Editing-Video-v1.3.pptx",
+  "slideMap": [
+    { "outputSlide": 1, "sourceSlide": 1 },
+    { "outputSlide": 2, "sourceSlide": 2 },
+    { "outputSlide": 3, "sourceSlide": 3 },
+    { "outputSlide": 4, "sourceSlide": 4 },
+    { "outputSlide": 5, "sourceSlide": 5, "editTargets": ["page", "action cue: Edit"] },
+    { "outputSlide": 6, "sourceSlide": 6 },
+    { "outputSlide": 7, "sourceSlide": 7 },
+    { "outputSlide": 8, "sourceSlide": 8 },
+    { "outputSlide": 9, "sourceSlide": 9 },
+    { "outputSlide": 10, "sourceSlide": 10 },
+    { "outputSlide": 11, "sourceSlide": 11 },
+    { "outputSlide": 12, "sourceSlide": 12 },
+    { "outputSlide": 13, "sourceSlide": 13, "editTargets": ["page", "action cue: Clear Cache"] },
+    { "outputSlide": 14, "sourceSlide": 14, "editTargets": ["page", "public screenshot image"] },
+    { "outputSlide": 15, "sourceSlide": 15 },
+    { "outputSlide": 16, "sourceSlide": 16 }
+  ],
+  "globalEditTargets": ["page footer: change v1.2 to v1.3"]
+}

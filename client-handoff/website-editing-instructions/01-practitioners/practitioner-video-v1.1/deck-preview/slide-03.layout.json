@@ -1,0 +1,529 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/16noa0",
+    "id": "16noa0",
+    "slide": 3,
+    "layoutId": "f4b7429c-ce60-42a7-ade9-a5585dae8664",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "8f2d46cb-fe62-411e-bb47-b815982b3f25",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F3E8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "f4b7429c-ce60-42a7-ade9-a5585dae8664",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "8f2d46cb-fe62-411e-bb47-b815982b3f25",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "8f2d46cb-fe62-411e-bb47-b815982b3f25",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54761ofi",
+      "id": "1",
+      "name": "library-label",
+      "bbox": [
+        38,
+        28,
+        640,
+        22
+      ],
+      "geometry": "rect",
+      "text": "REBEKAH'S WEBSITE EDITING LIBRARY",
+      "textPreview": "REBEKAH'S WEBSITE EDITING LIBRARY",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#3F7D50",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "REBEKAH'S WEBSITE EDITING LIBRARY"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "REBEKAH'S WEBSITE EDITING LIBRARY",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#3F7D50",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "REBEKAH'S WEBSITE EDITING LIBRARY",
+              "fontSize": 13,
+              "color": "#3F7D50",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i1gnqtwr",
+      "id": "2",
+      "name": "scene-title",
+      "bbox": [
+        38,
+        61,
+        1150,
+        68
+      ],
+      "geometry": "rect",
+      "text": "Confirm the live login address",
+      "textPreview": "Confirm the live login address",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#174C3C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Confirm the live login address"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Confirm the live login address",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Confirm the live login address",
+              "fontSize": 34,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j2pozyxc",
+      "id": "3",
+      "name": "step-badge",
+      "bbox": [
+        1135,
+        22,
+        105,
+        46
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sri5w3et",
+      "id": "4",
+      "name": "step-label",
+      "bbox": [
+        1143,
+        33,
+        89,
+        24
+      ],
+      "geometry": "rect",
+      "text": "2",
+      "textPreview": "2",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#26342E",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2",
+              "fontSize": 18,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tsr658fe",
+      "id": "5",
+      "name": "footer",
+      "bbox": [
+        910,
+        684,
+        330,
+        18
+      ],
+      "geometry": "rect",
+      "text": "Practitioner pilot v1.1  •  3 of 16",
+      "textPreview": "Practitioner pilot v1.1  •  3 of 16",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#3F7D50",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Practitioner pilot v1.1  •  3 of 16"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Practitioner pilot v1.1  •  3 of 16",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#3F7D50"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Practitioner pilot v1.1  •  3 of 16",
+              "fontSize": 10,
+              "color": "#3F7D50"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65gnutw3",
+      "id": "6",
+      "name": "url-card",
+      "bbox": [
+        110,
+        205,
+        1060,
+        250
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C3A0",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/769o3yxo",
+      "id": "7",
+      "name": "live-label",
+      "bbox": [
+        160,
+        245,
+        960,
+        32
+      ],
+      "geometry": "rect",
+      "text": "LIVE WORDPRESS LOGIN",
+      "textPreview": "LIVE WORDPRESS LOGIN",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "fontSize": 17,
+        "typeface": "+mn-lt",
+        "color": "#3F7D50",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LIVE WORDPRESS LOGIN"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LIVE WORDPRESS LOGIN",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#3F7D50",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LIVE WORDPRESS LOGIN",
+              "fontSize": 17,
+              "color": "#3F7D50",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gvip0ne5",
+      "id": "8",
+      "name": "live-url",
+      "bbox": [
+        160,
+        302,
+        960,
+        56
+      ],
+      "geometry": "rect",
+      "text": "rebekahspureliving.com/wp-admin",
+      "textPreview": "rebekahspureliving.com/wp-admin",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#174C3C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "rebekahspureliving.com/wp-admin"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "rebekahspureliving.com/wp-admin",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "rebekahspureliving.com/wp-admin",
+              "fontSize": 34,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hwr698fq",
+      "id": "9",
+      "name": "live-note",
+      "bbox": [
+        160,
+        377,
+        960,
+        30
+      ],
+      "geometry": "rect",
+      "text": "Confirm this address before changing the live site.",
+      "textPreview": "Confirm this address before changing the live site.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#8E4B61",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Confirm this address before changing the live site."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Confirm this address before changing the live site.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#8E4B61"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Confirm this address before changing the live site.",
+              "fontSize": 18,
+              "color": "#8E4B61"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,34 @@
+PILOT VIDEO
+Title: How to Update an Existing Practitioner Listing in WordPress
+Audience: Rebekah and designated website-content staff with no assumed WordPress experience.
+Outcome: The viewer can locate one existing practitioner record, update only the intended structured fields, save safely, clear the applicable cache, and verify the visible public result.
+
+VISUAL SYSTEM
+- 16:9, 1280x720.
+- Rebekah brand palette: Pine #174C3C, Leaf #3F7D50, Sage #A9C3A0, Honey #D6A33A, Berry #8E4B61, Cream #F7F3E8, Ink #26342E.
+- Use the approved horizontal/stacked logo only on the opening and closing frames.
+- Real WordPress screenshots remain full-size and readable; use restrained zoom, one highlighted control at a time, and no decorative clutter.
+- Never display passwords, private email messages, customer data, browser autofill, or unrelated administrator screens.
+
+PLANNED SEQUENCE (exact menu/field names remain gated on live-interface inspection)
+1. Opening: what this lesson changes and what it does not change.
+2. Required access level and safe-account reminder.
+3. Sign in at the production WordPress address.
+4. Open the practitioner-record list from the exact live menu.
+5. Search for and open the intended existing practitioner.
+6. Identify each supported field: listing title/name, practice/center, description, contact information, and service category.
+7. Make only the requested change; do not alter layout, theme, SEO, plugins, or unrelated fields.
+8. Preview when available, then select Update once.
+9. Confirm WordPress saved successfully.
+10. Clear only the applicable site cache.
+11. Open the exact public Practitioners URL without a query string.
+12. Search for the practitioner, expand the listing, and confirm the visible result.
+13. Check phone-width presentation.
+14. Closing habit: Save -> clear applicable cache -> exact public URL -> desktop/mobile verification -> contact Blue Nova if still absent.
+
+FOUR-PASS QA
+1. Current production interface and terminology verified.
+2. Task completed with the minimum safe role/capabilities.
+3. Beginner/no-assumptions review: every click, field, save, and verification action shown.
+4. Final playback review: readable interface, accurate narration/captions, no secrets, correct public result, and working audio/video.
+

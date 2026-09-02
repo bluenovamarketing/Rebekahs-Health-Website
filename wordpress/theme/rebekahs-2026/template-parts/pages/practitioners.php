@@ -42,14 +42,17 @@ $service_terms = get_terms( array(
 
 $find_locations = static function( $practitioner ) {
 	$text   = strtolower( $practitioner->post_title . ' ' . wp_strip_all_tags( $practitioner->post_content ) );
-	$cities = array( 'Lapeer', 'Grand Blanc', 'Clarkston', 'Lake Orion', 'Burton', 'Davison', 'Metamora', 'Rochester', 'Fort Gratiot', 'Michigan', 'Online' );
+	$cities = array( 'Lapeer', 'Grand Blanc', 'Clarkston', 'Lake Orion', 'West Bloomfield', 'Burton', 'Davison', 'Metamora', 'Rochester', 'Fort Gratiot', 'Online' );
 	$found  = array();
 	foreach ( $cities as $city ) {
 		if ( false !== strpos( $text, strtolower( $city ) ) ) {
 			$found[] = $city;
 		}
 	}
-	return implode( ' · ', array_slice( array_unique( $found ), 0, 2 ) );
+	if ( $found ) {
+		return implode( ' · ', array_slice( array_unique( $found ), 0, 2 ) );
+	}
+	return false !== strpos( $text, 'michigan' ) ? 'Michigan' : '';
 };
 ?>
 <main id="main">

@@ -1,0 +1,2 @@
+Sources: CLIENT-NOTES.md beginner-video, live-verification, role, cache, and escalation requirements plus the established project workflow. No live WordPress or public-site change was performed.
+

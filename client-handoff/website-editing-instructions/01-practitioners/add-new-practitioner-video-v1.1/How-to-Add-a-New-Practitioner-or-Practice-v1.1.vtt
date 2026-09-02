@@ -1,0 +1,209 @@
+WEBVTT
+
+1
+00:00:00.150 --> 00:00:05.484
+This lesson shows you how to add one new practitioner or practice to the website directory.
+
+2
+00:00:05.484 --> 00:00:16.971
+We will work carefully, keep the new record unpublished until it is complete, save only once, clear the applicable cache, and confirm what visitors can actually see on the live Practitioners page.
+
+3
+00:00:17.321 --> 00:00:23.858
+You need a WordPress account with the Editor or Administrator role. Editor access is enough for this task.
+
+4
+00:00:23.858 --> 00:00:30.396
+If you do not see Medical Practicioners in the left menu, stop and ask the website administrator for help.
+
+5
+00:00:30.396 --> 00:00:33.603
+This lesson does not create or change user accounts.
+
+6
+00:00:33.953 --> 00:00:39.591
+Open a web browser and go to rebekahspureliving.com forward slash W P dash admin.
+
+7
+00:00:39.591 --> 00:00:47.597
+Enter your own username and password, then select Log In. Make sure the address begins with rebekahspureliving.com.
+
+8
+00:00:47.597 --> 00:00:49.964
+Do not use an old staging address.
+
+9
+00:00:50.314 --> 00:00:54.000
+In the black menu on the left, select Medical Practicioners.
+
+10
+00:00:54.000 --> 00:01:00.636
+The unusual spelling is the label used inside this WordPress website. Then select All Medical Practicioners.
+
+11
+00:01:00.636 --> 00:01:07.210
+You should now see the existing directory records and the Add New Medical Practitioner button near the top.
+
+12
+00:01:07.560 --> 00:01:13.056
+Select Add New Medical Practitioner one time. Create only one record for the approved listing.
+
+13
+00:01:13.056 --> 00:01:20.539
+If the listing represents a clinic or team, one practice record can contain the practice name and the approved team information.
+
+14
+00:01:20.539 --> 00:01:26.210
+Do not create a separate duplicate record for every person unless that is specifically requested.
+
+15
+00:01:26.560 --> 00:01:33.117
+The new record should remain a draft while you work. Do not publish an empty or incomplete listing.
+
+16
+00:01:33.117 --> 00:01:39.276
+Scroll to Meta Boxes and open Medical Practicioner fields. If those fields are missing, stop.
+
+17
+00:01:39.276 --> 00:01:43.117
+Do not place the information in unrelated WordPress boxes.
+
+18
+00:01:43.467 --> 00:01:48.518
+Find Medical Service. Check only the approved service category or categories.
+
+19
+00:01:48.518 --> 00:01:55.209
+Read the complete list before choosing. Do not guess, create a new category, or select every category.
+
+20
+00:01:55.209 --> 00:02:01.048
+The categories control how the listing appears when visitors filter the public directory.
+
+21
+00:02:01.398 --> 00:02:05.722
+In Medical Center, enter the approved practice or organization name.
+
+22
+00:02:05.722 --> 00:02:12.335
+In Medical Practitioner Full Name, enter the exact public name that should appear on the directory card.
+
+23
+00:02:12.335 --> 00:02:16.850
+For a practice listing, use the approved practice or team display name.
+
+24
+00:02:16.850 --> 00:02:21.238
+Match spelling, credentials, punctuation, and capitalization exactly.
+
+25
+00:02:21.588 --> 00:02:28.443
+Find Medical Practitioner Description and select the Visual tab. Enter or paste the approved public description.
+
+26
+00:02:28.443 --> 00:02:31.993
+Preserve the paragraph breaks so the text is easy to read.
+
+27
+00:02:31.993 --> 00:02:39.154
+Do not add private health information, internal notes, unapproved claims, or information copied from another listing.
+
+28
+00:02:39.504 --> 00:02:42.035
+Find Medical Practitioner Contact Info.
+
+29
+00:02:42.035 --> 00:02:50.279
+Add only information approved for public display, such as the website, public email address, public phone number, and location.
+
+30
+00:02:50.279 --> 00:02:53.394
+Make each link point to the correct destination.
+
+31
+00:02:53.394 --> 00:02:59.885
+Remove placeholders and do not publish a private email address or personal phone number by accident.
+
+32
+00:03:00.235 --> 00:03:03.883
+Before publishing, read every field from top to bottom.
+
+33
+00:03:03.883 --> 00:03:14.163
+Confirm the service category, practice name, public name, description, phone number, email address, website, and location against the approved information.
+
+34
+00:03:14.163 --> 00:03:21.061
+Correct every typo now. If anything is uncertain, leave the record as a draft and ask before publishing.
+
+35
+00:03:21.411 --> 00:03:26.808
+When every required field is complete and approved, select Publish or Save one time.
+
+36
+00:03:26.808 --> 00:03:32.013
+Wait for WordPress to confirm that the record was saved. Do not click repeatedly.
+
+37
+00:03:32.013 --> 00:03:35.741
+Repeated clicks can create confusion or duplicate actions.
+
+38
+00:03:35.741 --> 00:03:39.982
+If WordPress reports an error, read it before doing anything else.
+
+39
+00:03:40.332 --> 00:03:45.466
+Return to All Medical Practicioners. Find the new record and hover over its row.
+
+40
+00:03:45.466 --> 00:03:49.316
+If Clear Cache is available for that record, select it once.
+
+41
+00:03:49.316 --> 00:03:55.734
+If the site also shows an approved Breeze or Varnish purge control, clear only the applicable cache.
+
+42
+00:03:55.734 --> 00:03:59.328
+Do not change unrelated server or optimization settings.
+
+43
+00:03:59.678 --> 00:04:08.365
+Open the exact public address, rebekahspureliving.com forward slash practitioners forward slash, without adding anything to the address.
+
+44
+00:04:08.365 --> 00:04:11.112
+Search for the new name, practice, or city.
+
+45
+00:04:11.112 --> 00:04:19.288
+Confirm that the correct card appears, the category and city are correct, and the public details match the approved information.
+
+46
+00:04:19.638 --> 00:04:22.501
+Select View full listing on the directory card.
+
+47
+00:04:22.501 --> 00:04:28.834
+Confirm that the expanded details, phone number, website, email, and description are visible and usable.
+
+48
+00:04:28.834 --> 00:04:31.574
+Then repeat the check at a phone-size screen.
+
+49
+00:04:31.574 --> 00:04:39.064
+There is no separate public practitioner page to manage; visitors use the Practitioners directory and its expanded listing.
+
+50
+00:04:39.414 --> 00:04:45.390
+Every practitioner change ends with the same three checks. First, save the correct record.
+
+51
+00:04:45.390 --> 00:04:52.827
+Second, clear only the applicable cache. Third, verify the exact public Practitioners page on desktop and phone.
+
+52
+00:04:52.827 --> 00:04:59.135
+If the live result is wrong or missing, stop and ask for help instead of making random changes.

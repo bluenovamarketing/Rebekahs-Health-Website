@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Phase Two Ecommerce Scaffold QA v1.1</title>
+  <style>
+    :root{--sans:"DM Sans",Arial,sans-serif;--serif:Georgia,serif}body{margin:0;font-family:var(--sans)}
+    .qa-note{margin:0;padding:12px 24px;background:#fff4cf;color:#173f35;font-size:14px;text-align:center}
+    .qa-product{margin:48px auto 0;width:min(1100px,calc(100% - 48px));padding:28px;border-radius:24px;background:#fff}
+    .qa-product h2{margin-top:0;font:600 34px var(--serif);color:#173f35}
+    .qa-controls{width:min(1100px,calc(100% - 48px));margin:24px auto;display:flex;justify-content:flex-end}
+    html.rhn-filter-drawer-open{overflow:hidden}
+  </style>
+  <link rel="stylesheet" href="../wordpress/theme/rebekahs-2026/assets/css/components/phase-two-commerce.css">
+</head>
+<body class="rhn-commerce">
+  <p class="qa-note"><strong>Local technical QA only.</strong> Dormant scaffold preview; not a new approval mockup and not connected to WordPress, Revel, Kosmos, shipping, or payments.</p>
+  <nav class="rhn-store-utility" aria-label="Online store">
+    <div class="rhn-store-utility__inner">
+      <a class="rhn-store-utility__home" href="#shop">Online Store</a>
+      <div class="rhn-store-utility__actions">
+        <a href="#search" aria-label="Search the online store"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg><span>Search</span></a>
+        <a href="#account"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.6-4 2.9-6 6.5-6s5.9 2 6.5 6"></path></svg><span>My Account</span></a>
+        <a class="rhn-store-utility__cart" href="#cart"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 4h2l1.8 10.2h9.8l2-7.2H6"></path><circle cx="9" cy="19" r="1.3"></circle><circle cx="17" cy="19" r="1.3"></circle></svg><span>Cart</span><span class="rhn-store-cart-count" aria-label="0 items">0</span></a>
+      </div>
+    </div>
+  </nav>
+  <main id="shop">
+    <div class="qa-controls"><button class="rhn-filter-open" type="button" data-rhn-filter-open aria-expanded="false" aria-controls="qa-filter-drawer">Filter products</button></div>
+    <div class="woocommerce">
+      <header class="woocommerce-products-header"><h1 class="woocommerce-products-header__title">Local catalog component check</h1></header>
+      <ul class="products">
+        <li class="product"><a href="#product-one"><div class="rhn-product-image-fallback" role="img" aria-label="Product photo coming soon"><img src="../wordpress/theme/rebekahs-2026/assets/img/rebekahs-site-icon-512.png" alt=""><span>Product photo coming soon</span></div><h2 class="woocommerce-loop-product__title">Everyday Wellness Formula</h2><span class="price">$24.99</span></a><a class="button" href="#cart">Add to cart</a></li>
+        <li class="product"><a href="#product-two"><div class="rhn-product-image-fallback" role="img" aria-label="Product photo coming soon"><img src="../wordpress/theme/rebekahs-2026/assets/img/rebekahs-site-icon-512.png" alt=""><span>Product photo coming soon</span></div><h2 class="woocommerce-loop-product__title">Mineral Support</h2><span class="price">$18.50</span></a><a class="button" href="#options">Choose options</a></li>
+        <li class="product"><a href="#product-three"><div class="rhn-product-image-fallback" role="img" aria-label="Product photo coming soon"><img src="../wordpress/theme/rebekahs-2026/assets/img/rebekahs-site-icon-512.png" alt=""><span>Product photo coming soon</span></div><h2 class="woocommerce-loop-product__title">Daily Botanical Blend</h2><span class="price">$31.00</span></a><a class="button" href="#cart">Add to cart</a></li>
+      </ul>
+      <section class="qa-product" id="product-one"><h2>Product disclosure check</h2><p class="rhn-product-help">Need product help? Call <a href="tel:2488432011">248-843-2011</a>.</p><details class="rhn-product-disclosure"><summary>Directions &amp; Warnings</summary><div><p>This demonstration proves the disclosure interaction only. Real content appears only after a verified source is approved.</p></div></details></section>
+    </div>
+  </main>
+  <div id="qa-filter-drawer" class="rhn-filter-drawer" data-rhn-filter-drawer hidden>
+    <div class="rhn-filter-drawer__backdrop" data-rhn-filter-close></div>
+    <section class="rhn-filter-drawer__panel" role="dialog" aria-modal="true" aria-labelledby="qa-filter-title" tabindex="-1">
+      <button class="rhn-filter-drawer__close" type="button" data-rhn-filter-close aria-label="Close filters">×</button>
+      <h2 id="qa-filter-title">Filter products</h2>
+      <p>Local interaction check. Final filters follow the synchronized pilot catalog.</p>
+      <label><input type="checkbox"> Everyday wellness</label><br><br>
+      <label><input type="checkbox"> Immune support</label><br><br>
+      <button class="rhn-filter-open" type="button" data-rhn-filter-close>Apply filters</button>
+    </section>
+  </div>
+  <script src="../wordpress/theme/rebekahs-2026/assets/js/components/phase-two-commerce.js"></script>
+</body>
+</html>

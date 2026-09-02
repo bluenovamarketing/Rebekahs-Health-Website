@@ -1,0 +1,177 @@
+WEBVTT
+
+1
+00:00:00.150 --> 00:00:05.466
+This lesson shows you how to clear website cache safely after an approved content change.
+
+2
+00:00:05.466 --> 00:00:10.126
+Cache clearing does not save your work and does not correct wrong information.
+
+3
+00:00:10.126 --> 00:00:17.891
+We will save first, clear only the cache that applies, refresh the browser, and verify the exact public page on desktop and phone.
+
+4
+00:00:18.241 --> 00:00:22.267
+An Editor may use an available record or page Clear Cache action.
+
+5
+00:00:22.267 --> 00:00:27.099
+Sitewide Breeze or Varnish controls may require an Administrator or Blue Nova.
+
+6
+00:00:27.099 --> 00:00:34.222
+Never give someone Administrator access only to clear cache. Use only the control your role and instructions allow.
+
+7
+00:00:34.572 --> 00:00:41.482
+Clear cache when WordPress confirms a correct saved change but the public page still shows older information.
+
+8
+00:00:41.482 --> 00:00:48.518
+Do not clear cache before saving, and do not use cache clearing to fix incorrect text, images, dates, or links.
+
+9
+00:00:48.518 --> 00:00:51.243
+First correct the content and save it once.
+
+10
+00:00:51.593 --> 00:00:58.464
+Finish and review the approved change. Select Save, Update, or Publish one time and wait for confirmation.
+
+11
+00:00:58.464 --> 00:01:02.094
+Copy or keep the exact public address that visitors use.
+
+12
+00:01:02.094 --> 00:01:08.770
+You will use that same address for every verification step, without adding question marks or test text.
+
+13
+00:01:09.120 --> 00:01:12.447
+Return to the list containing the item you changed.
+
+14
+00:01:12.447 --> 00:01:17.665
+Find the exact row and use its Clear Cache action when that action is available.
+
+15
+00:01:17.665 --> 00:01:20.470
+This is the smallest and safest first step.
+
+16
+00:01:20.470 --> 00:01:25.167
+Do not clear unrelated pages, products, events, or practitioner records.
+
+17
+00:01:25.517 --> 00:01:31.618
+Open the exact public address. On Windows, press Control plus F five for one hard refresh.
+
+18
+00:01:31.618 --> 00:01:39.414
+On a Mac, press Command, Shift, and R. Read the visible page and confirm whether the saved information now appears.
+
+19
+00:01:39.414 --> 00:01:41.719
+Do not keep refreshing repeatedly.
+
+20
+00:01:42.069 --> 00:01:48.965
+If the regular browser still looks old, open a private or Incognito window and paste the same exact public address.
+
+21
+00:01:48.965 --> 00:01:56.881
+If the private window shows the correct result, the website is updated and the remaining issue is the regular browser's local cache.
+
+22
+00:01:56.881 --> 00:01:59.580
+Do not add cache-busting text to the address.
+
+23
+00:01:59.930 --> 00:02:09.275
+Use the approved Breeze Purge All Cache control only when a saved change affects a shared page or several pages and the smaller cache clear was not enough.
+
+24
+00:02:09.275 --> 00:02:11.385
+Select the purge one time and wait.
+
+25
+00:02:11.385 --> 00:02:16.631
+Do not change Breeze settings, preload options, minification, or optimization controls.
+
+26
+00:02:16.981 --> 00:02:24.819
+A Varnish purge may be needed when correct saved content remains stale after the applicable page and Breeze cache are cleared.
+
+27
+00:02:24.819 --> 00:02:29.361
+Use only an approved purge control when you were specifically authorized.
+
+28
+00:02:29.361 --> 00:02:34.213
+Do not open server settings, restart services, disable Varnish, or experiment.
+
+29
+00:02:34.213 --> 00:02:36.826
+Ask Blue Nova when the control is missing.
+
+30
+00:02:37.176 --> 00:02:40.178
+Do not repeatedly select Update or Publish.
+
+31
+00:02:40.178 --> 00:02:48.973
+Do not purge object cache, Redis, a C D N, the database, image cache, or unrelated plugin caches unless Blue Nova directs you.
+
+32
+00:02:48.973 --> 00:02:53.091
+Do not install, disable, or configure optimization plugins.
+
+33
+00:02:53.091 --> 00:02:58.327
+Random purges can create a larger problem without fixing the original page.
+
+34
+00:02:58.677 --> 00:03:02.308
+Open the exact public page with no extra address text.
+
+35
+00:03:02.308 --> 00:03:07.016
+At desktop size, read the changed text, image, date, link, or listing.
+
+36
+00:03:07.016 --> 00:03:10.177
+Click every public link affected by the change.
+
+37
+00:03:10.177 --> 00:03:15.153
+Confirm that the page still fits the screen and nothing runs off the side.
+
+38
+00:03:15.503 --> 00:03:17.651
+Repeat the same check at phone size.
+
+39
+00:03:17.651 --> 00:03:22.840
+Confirm the changed information, images, buttons, and links remain readable and usable.
+
+40
+00:03:22.840 --> 00:03:32.265
+If the saved result is still wrong or missing after the approved cache steps, stop and contact Blue Nova instead of purging again or changing server settings.
+
+41
+00:03:32.615 --> 00:03:37.898
+Every content change ends the same way. First, save the correct content once.
+
+42
+00:03:37.898 --> 00:03:40.642
+Second, clear only the applicable cache.
+
+43
+00:03:40.642 --> 00:03:46.680
+Third, open the exact public address and verify the visible result on desktop and phone.
+
+44
+00:03:46.680 --> 00:03:50.796
+If it is still wrong or missing, stop and contact Blue Nova.

@@ -1,0 +1,309 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:06.039
+In this video, I will show you how to update an existing practitioner listing on Rebekah's live website.
+
+2
+00:00:06.039 --> 00:00:16.490
+We will find the correct record, change only the information that needs to be changed, save it, clear the applicable cache, and confirm the result on the public Practitioners page.
+
+3
+00:00:16.490 --> 00:00:21.716
+This video does not cover adding a brand-new practitioner. That will be a separate lesson.
+
+4
+00:00:22.516 --> 00:00:26.342
+You need a WordPress account with the Editor or Administrator role.
+
+5
+00:00:26.342 --> 00:00:31.711
+An Editor is the recommended role for a staff member who only needs to update website content.
+
+6
+00:00:31.711 --> 00:00:36.566
+Do not give someone Administrator access just so they can edit practitioner listings.
+
+7
+00:00:36.566 --> 00:00:41.421
+Administrator access includes settings and controls that routine editors do not need.
+
+8
+00:00:41.421 --> 00:00:45.247
+Have the approved replacement information ready before you sign in.
+
+9
+00:00:45.247 --> 00:00:54.614
+For example, have the correct practitioner name, practice name, area of practice, description, and contact information in one document so you can copy it carefully.
+
+10
+00:00:55.414 --> 00:00:59.365
+Open your browser and go to rebekahspureliving.com slash wp-admin.
+
+11
+00:00:59.365 --> 00:01:03.614
+Enter your own WordPress username and password, and then select Log In.
+
+12
+00:01:03.614 --> 00:01:06.667
+Never share one person's login with another person.
+
+13
+00:01:06.667 --> 00:01:12.532
+If a staff member needs access, an Administrator should create a separate account for that person.
+
+14
+00:01:12.532 --> 00:01:15.405
+Account creation is covered in a separate video.
+
+15
+00:01:15.405 --> 00:01:22.168
+Before continuing, look at the web address and confirm that it begins with rebekahspureliving.com slash wp-admin.
+
+16
+00:01:22.168 --> 00:01:27.794
+This keeps you from accidentally editing a future staging website instead of the live website.
+
+17
+00:01:28.594 --> 00:01:32.194
+In the dark menu on the left, select Medical Practicioners.
+
+18
+00:01:32.194 --> 00:01:38.661
+On this website, the menu label is currently spelled Practicioners. Then select All Medical Practicioners.
+
+19
+00:01:38.661 --> 00:01:42.139
+You will see a list of the existing practitioner records.
+
+20
+00:01:42.139 --> 00:01:47.507
+If the list is long, use the Search Medical Practicioners box in the upper-right corner.
+
+21
+00:01:47.507 --> 00:01:52.571
+Type part of the practitioner's name, and then select Search Medical Practicioners.
+
+22
+00:01:53.371 --> 00:01:58.452
+Find the correct name in the list. Move your pointer over that row and select Edit.
+
+23
+00:01:58.452 --> 00:02:02.246
+Do not select Quick Edit, Trash, or Clear Cache at this point.
+
+24
+00:02:02.246 --> 00:02:07.204
+Also confirm that you are opening the correct person before you make any changes.
+
+25
+00:02:07.204 --> 00:02:12.835
+In this example, we are only using Laura Young's record to demonstrate where the fields are.
+
+26
+00:02:12.835 --> 00:02:15.345
+We are not changing her live information.
+
+27
+00:02:16.145 --> 00:02:18.692
+Wait for the editing screen to finish loading.
+
+28
+00:02:18.692 --> 00:02:23.619
+The blue button in the upper-right corner says Save when the record is already published.
+
+29
+00:02:23.619 --> 00:02:26.664
+Scroll down to the Medical Practicioner Fields section.
+
+30
+00:02:26.664 --> 00:02:31.093
+If you cannot see that section, select Meta Boxes near the bottom of the editor.
+
+31
+00:02:31.093 --> 00:02:38.899
+If the section is still too small, use the Drag to resize divider directly above it and move the divider upward until the fields are visible.
+
+32
+00:02:38.899 --> 00:02:41.280
+Do not change anything else on this screen.
+
+33
+00:02:42.080 --> 00:02:49.074
+The first field is Medical Service. Select the checkbox that matches the practitioner's approved area of practice.
+
+34
+00:02:49.074 --> 00:02:51.345
+Leave every unrelated checkbox alone.
+
+35
+00:02:51.345 --> 00:02:57.848
+If the practitioner belongs in more than one category, select only the categories that have been approved.
+
+36
+00:02:57.848 --> 00:03:02.634
+Do not guess. Ask before adding a new category or changing the category names.
+
+37
+00:03:03.434 --> 00:03:07.290
+The Medical Center field is the public practice or business name.
+
+38
+00:03:07.290 --> 00:03:12.510
+Click inside the box, select the old text, and type or paste the approved practice name.
+
+39
+00:03:12.510 --> 00:03:17.434
+The Medical Practitioner Full Name field is the name shown in the public directory.
+
+40
+00:03:17.434 --> 00:03:25.620
+Click inside that box, select the old text, and type or paste the full approved name, including credentials exactly as they should appear.
+
+41
+00:03:25.620 --> 00:03:30.841
+Check the spelling, punctuation, spaces, and credential letters one character at a time.
+
+42
+00:03:31.641 --> 00:03:36.305
+Find Medical Practitioner Description. Select the Visual tab before editing.
+
+43
+00:03:36.305 --> 00:03:41.276
+Do not use the Text tab unless Blue Nova specifically asks you to edit HTML code.
+
+44
+00:03:41.276 --> 00:03:47.720
+Click in the description, select only the text you intend to replace, and paste the approved description.
+
+45
+00:03:47.720 --> 00:03:51.402
+Read the first sentence and the last sentence after pasting.
+
+46
+00:03:51.402 --> 00:03:54.962
+This catches missing text and accidental extra paragraphs.
+
+47
+00:03:54.962 --> 00:03:59.565
+Do not paste a different font, color, or oversized heading into this field.
+
+48
+00:04:00.365 --> 00:04:04.430
+Find Medical Practitioner Contact Info and select the Visual tab.
+
+49
+00:04:04.430 --> 00:04:13.309
+Enter only the contact information that has been approved for public display, such as a website, email address, telephone number, or location.
+
+50
+00:04:13.309 --> 00:04:23.815
+To create a clickable link, select the words that should be linked, choose the link button, paste the complete web address beginning with H T T P S, and apply the link.
+
+51
+00:04:23.815 --> 00:04:29.631
+For an email link, use the approved email address. Never publish private contact information.
+
+52
+00:04:30.431 --> 00:04:33.859
+Before selecting Save, review every field you touched.
+
+53
+00:04:33.859 --> 00:04:42.875
+Confirm the area of practice, practice name, full name and credentials, first and last lines of the description, and each public contact link.
+
+54
+00:04:42.875 --> 00:04:50.811
+Do not change the page address, WordPress settings, SEO fields, code, or any field that was not part of the requested update.
+
+55
+00:04:50.811 --> 00:04:55.891
+If anything looks wrong or you are unsure, stop before saving and ask Blue Nova.
+
+56
+00:04:56.691 --> 00:05:03.638
+When everything is correct, scroll to the top and select the blue Save button once. Wait for WordPress to finish.
+
+57
+00:05:03.638 --> 00:05:08.617
+Do not click repeatedly. Look for the saved confirmation before leaving the page.
+
+58
+00:05:08.617 --> 00:05:14.458
+If WordPress shows an error, copy the error message or take a screenshot and contact Blue Nova.
+
+59
+00:05:14.458 --> 00:05:20.790
+Do not keep pressing Save, refresh the page, or re-enter the information until the error is understood.
+
+60
+00:05:21.590 --> 00:05:23.687
+Return to All Medical Practicioners.
+
+61
+00:05:23.687 --> 00:05:29.803
+Find the record you just updated, move your pointer over its row, and select Clear Cache for that record.
+
+62
+00:05:29.803 --> 00:05:38.308
+Do not use Purge All Cache, Purge Varnish Cache, or other server-wide cache controls unless the separate cache-clearing lesson tells you to do so.
+
+63
+00:05:38.308 --> 00:05:43.026
+Clearing the record's applicable cache helps the saved change appear to visitors.
+
+64
+00:05:43.026 --> 00:05:48.269
+Seeing the new information inside WordPress is not enough; you must check the public page.
+
+65
+00:05:49.069 --> 00:05:54.311
+Open a new browser tab and go to rebekahspureliving.com slash practitioners slash.
+
+66
+00:05:54.311 --> 00:05:58.531
+Do not add a question mark or a cache-busting code to the address.
+
+67
+00:05:58.531 --> 00:06:03.390
+Use the Search by name, practice or city box to find the person you updated.
+
+68
+00:06:03.390 --> 00:06:10.550
+Confirm the public name, credentials, practice, area of practice, description preview, and any visible location.
+
+69
+00:06:11.350 --> 00:06:16.351
+Select View full listing and confirm the full description and contact information.
+
+70
+00:06:16.351 --> 00:06:19.583
+Test each visible website, email, and telephone link.
+
+71
+00:06:19.583 --> 00:06:24.217
+Finally, check the same public page on a phone or at a narrow browser width.
+
+72
+00:06:24.217 --> 00:06:29.035
+Make sure the card fits the screen, the text is readable, and every link works.
+
+73
+00:06:29.035 --> 00:06:35.316
+If the old information still appears, stop and contact Blue Nova rather than changing the record again.
+
+74
+00:06:36.116 --> 00:06:41.943
+Every website editing video in this library ends with the same three checks: Save the change.
+
+75
+00:06:41.943 --> 00:06:48.147
+Clear the applicable cache. Open the exact public page and confirm the result on desktop and phone.
+
+76
+00:06:48.147 --> 00:06:52.032
+If all three checks pass, the practitioner update is complete.
+
+77
+00:06:52.032 --> 00:06:57.609
+If any check fails, take a screenshot and contact Blue Nova before making another change.

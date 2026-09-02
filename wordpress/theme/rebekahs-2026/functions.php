@@ -544,6 +544,20 @@ function rhn_redirect_meet_the_owner() {
 }
 add_action( 'template_redirect', 'rhn_redirect_meet_the_owner', 5 );
 
+/**
+ * Keep practitioner records as directory data without exposing standalone pages.
+ *
+ * The approved practitioner experience is the expandable listing on the main
+ * directory. Redirect both current and future single-record URLs there.
+ */
+function rhn_redirect_practitioner_profiles() {
+	if ( is_singular( 'medical-practicioner' ) ) {
+		wp_safe_redirect( home_url( '/practitioners/' ), 301, 'Rebekahs 2026 Theme' );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'rhn_redirect_practitioner_profiles', 5 );
+
 function rhn_post_topic_key( $post_id = 0 ) {
 	$post_id = $post_id ?: get_the_ID();
 	$slugs   = wp_get_post_categories( $post_id, array( 'fields' => 'slugs' ) );

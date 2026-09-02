@@ -1,0 +1,130 @@
+﻿[
+    {
+        "scene":  1,
+        "title":  "Add a new practitioner or practice listing",
+        "audio":  "scene-01.wav",
+        "narration":  "This lesson shows you how to add one new practitioner or practice to the website directory. We will work carefully, keep the new record unpublished until it is complete, save only once, clear the applicable cache, and confirm what visitors can actually see on the live Practitioners page.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  2,
+        "title":  "Required WordPress access",
+        "audio":  "scene-02.wav",
+        "narration":  "You need a WordPress account with the Editor or Administrator role. Editor access is enough for this task. If you do not see Medical Practicioners in the left menu, stop and ask the website administrator for help. This lesson does not create or change user accounts.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  3,
+        "title":  "Sign in to the live website",
+        "audio":  "scene-03.wav",
+        "narration":  "Open a web browser and go to rebekahspureliving.com forward slash W P dash admin. Enter your own username and password, then select Log In. Make sure the address begins with rebekahspureliving.com. Do not use an old staging address.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  4,
+        "title":  "Open the practitioner list",
+        "audio":  "scene-04.wav",
+        "narration":  "In the black menu on the left, select Medical Practicioners. The unusual spelling is the label used inside this WordPress website. Then select All Medical Practicioners. You should now see the existing directory records and the Add New Medical Practitioner button near the top.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  5,
+        "title":  "Start one new record",
+        "audio":  "scene-05.wav",
+        "narration":  "Select Add New Medical Practitioner one time. Create only one record for the approved listing. If the listing represents a clinic or team, one practice record can contain the practice name and the approved team information. Do not create a separate duplicate record for every person unless that is specifically requested.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  6,
+        "title":  "Keep it as a draft",
+        "audio":  "scene-06.wav",
+        "narration":  "The new record should remain a draft while you work. Do not publish an empty or incomplete listing. Scroll to Meta Boxes and open Medical Practicioner fields. If those fields are missing, stop. Do not place the information in unrelated WordPress boxes.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  7,
+        "title":  "Choose the medical service",
+        "audio":  "scene-07.wav",
+        "narration":  "Find Medical Service. Check only the approved service category or categories. Read the complete list before choosing. Do not guess, create a new category, or select every category. The categories control how the listing appears when visitors filter the public directory.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  8,
+        "title":  "Enter the practice and public name",
+        "audio":  "scene-08.wav",
+        "narration":  "In Medical Center, enter the approved practice or organization name. In Medical Practitioner Full Name, enter the exact public name that should appear on the directory card. For a practice listing, use the approved practice or team display name. Match spelling, credentials, punctuation, and capitalization exactly.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  9,
+        "title":  "Add the approved description",
+        "audio":  "scene-09.wav",
+        "narration":  "Find Medical Practitioner Description and select the Visual tab. Enter or paste the approved public description. Preserve the paragraph breaks so the text is easy to read. Do not add private health information, internal notes, unapproved claims, or information copied from another listing.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  10,
+        "title":  "Add public contact details",
+        "audio":  "scene-10.wav",
+        "narration":  "Find Medical Practitioner Contact Info. Add only information approved for public display, such as the website, public email address, public phone number, and location. Make each link point to the correct destination. Remove placeholders and do not publish a private email address or personal phone number by accident.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  11,
+        "title":  "Review every field",
+        "audio":  "scene-11.wav",
+        "narration":  "Before publishing, read every field from top to bottom. Confirm the service category, practice name, public name, description, phone number, email address, website, and location against the approved information. Correct every typo now. If anything is uncertain, leave the record as a draft and ask before publishing.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  12,
+        "title":  "Publish once and wait",
+        "audio":  "scene-12.wav",
+        "narration":  "When every required field is complete and approved, select Publish or Save one time. Wait for WordPress to confirm that the record was saved. Do not click repeatedly. Repeated clicks can create confusion or duplicate actions. If WordPress reports an error, read it before doing anything else.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  13,
+        "title":  "Clear the applicable cache",
+        "audio":  "scene-13.wav",
+        "narration":  "Return to All Medical Practicioners. Find the new record and hover over its row. If Clear Cache is available for that record, select it once. If the site also shows an approved Breeze or Varnish purge control, clear only the applicable cache. Do not change unrelated server or optimization settings.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  14,
+        "title":  "Verify the public directory",
+        "audio":  "scene-14.wav",
+        "narration":  "Open the exact public address, rebekahspureliving.com forward slash practitioners forward slash, without adding anything to the address. Search for the new name, practice, or city. Confirm that the correct card appears, the category and city are correct, and the public details match the approved information.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  15,
+        "title":  "Check the full listing and a phone",
+        "audio":  "scene-15.wav",
+        "narration":  "Select View full listing on the directory card. Confirm that the expanded details, phone number, website, email, and description are visible and usable. Then repeat the check at a phone-size screen. There is no separate public practitioner page to manage; visitors use the Practitioners directory and its expanded listing.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  16,
+        "title":  "Always finish the same way",
+        "audio":  "scene-16.wav",
+        "narration":  "Every practitioner change ends with the same three checks. First, save the correct record. Second, clear only the applicable cache. Third, verify the exact public Practitioners page on desktop and phone. If the live result is wrong or missing, stop and ask for help instead of making random changes.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    }
+]

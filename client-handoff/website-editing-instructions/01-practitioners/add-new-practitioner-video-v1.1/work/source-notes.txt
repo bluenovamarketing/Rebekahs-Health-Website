@@ -1,0 +1,8 @@
+Source notes — Add a New Practitioner or Practice Listing v1.1
+
+- Uses the approved practitioner video as the visual and instructional baseline.
+- Uses only existing first-party WordPress and public-site captures; no credentials appear.
+- Explains that Editor or Administrator access is required, without teaching user-account management.
+- One practice listing can represent a practice or team; do not create unnecessary duplicate listings.
+- Standalone practitioner URLs are not part of the public experience; verification is performed on /practitioners/.
+- The ending is always save, clear applicable cache, and verify the exact public page on desktop and mobile.

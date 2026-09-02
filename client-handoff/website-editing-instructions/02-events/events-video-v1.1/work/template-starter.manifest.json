@@ -1,0 +1,155 @@
+{
+  "sourcePptx": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\Practitioner-Editing-Video-v1.4.pptx",
+  "mapPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-frame-map.json",
+  "output": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter.pptx",
+  "outputBytes": 767016,
+  "sourceSlideCount": 16,
+  "slideCount": 13,
+  "previewDir": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview",
+  "layoutDir": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout",
+  "slides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 1,
+      "narrativeRole": "Introduce the events lesson.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-01.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-01.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-01.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-01.layout.json"
+    },
+    {
+      "outputSlide": 2,
+      "sourceSlide": 2,
+      "narrativeRole": "State the required role only.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-02.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-02.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-02.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-02.layout.json"
+    },
+    {
+      "outputSlide": 3,
+      "sourceSlide": 3,
+      "narrativeRole": "Use the live-domain login.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-03.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-03.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-03.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-03.layout.json"
+    },
+    {
+      "outputSlide": 4,
+      "sourceSlide": 4,
+      "narrativeRole": "Open Events and Add New Event.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-04.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-04.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-04.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-04.layout.json"
+    },
+    {
+      "outputSlide": 5,
+      "sourceSlide": 7,
+      "narrativeRole": "Enter a title and description while remaining in Draft.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-05.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-05.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-05.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-05.layout.json"
+    },
+    {
+      "outputSlide": 6,
+      "sourceSlide": 9,
+      "narrativeRole": "Choose the correct store category.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-06.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-06.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-06.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-06.layout.json"
+    },
+    {
+      "outputSlide": 7,
+      "sourceSlide": 10,
+      "narrativeRole": "Complete date, time, venue, organizer, cost, link, and image.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-07.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-07.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-07.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-07.layout.json"
+    },
+    {
+      "outputSlide": 8,
+      "sourceSlide": 11,
+      "narrativeRole": "Preview before publishing.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-08.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-08.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-08.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-08.layout.json"
+    },
+    {
+      "outputSlide": 9,
+      "sourceSlide": 12,
+      "narrativeRole": "Publish, update, or cancel safely.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-09.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-09.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-09.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-09.layout.json"
+    },
+    {
+      "outputSlide": 10,
+      "sourceSlide": 13,
+      "narrativeRole": "Clear the applicable cache.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-10.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-10.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-10.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-10.layout.json"
+    },
+    {
+      "outputSlide": 11,
+      "sourceSlide": 14,
+      "narrativeRole": "Verify the public Events page on desktop.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-11.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-11.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-11.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-11.layout.json"
+    },
+    {
+      "outputSlide": 12,
+      "sourceSlide": 15,
+      "narrativeRole": "Verify the public Events page on mobile.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-12.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-12.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-12.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-12.layout.json"
+    },
+    {
+      "outputSlide": 13,
+      "sourceSlide": 16,
+      "narrativeRole": "Repeat the standard safety sequence.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-preview\\starter-slide-13.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-13.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\02-events\\events-video-v1.1\\work\\template-starter-layout\\starter-slide-13.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-13.layout.json"
+    }
+  ]
+}

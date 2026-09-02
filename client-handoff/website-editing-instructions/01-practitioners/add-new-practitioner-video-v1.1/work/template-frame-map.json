@@ -1,0 +1,23 @@
+{
+  "sourceDeck": "Practitioner-Editing-Video-v1.4.pptx",
+  "outputDeck": "Add-New-Practitioner-or-Practice-v1.1.pptx",
+  "omittedSourceSlides": [],
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"reuseMode":"duplicate-slide","narrativeRole":"Introduce the add-new lesson.","editTargets":[{"action":"rewrite","shapeId":"sh/547294r6","reason":"New lesson title."}]},
+    {"outputSlide":2,"sourceSlide":2,"reuseMode":"duplicate-slide","narrativeRole":"State the required WordPress role only.","editTargets":[{"action":"rewrite","shapeId":"sh/w3i1sfa9","reason":"Clarify minimum role."}]},
+    {"outputSlide":3,"sourceSlide":3,"reuseMode":"duplicate-slide","narrativeRole":"Use the live-domain login.","editTargets":[{"action":"rewrite","shapeId":"sh/m5cra54z","reason":"Preserve current live URL."}]},
+    {"outputSlide":4,"sourceSlide":4,"reuseMode":"duplicate-slide","narrativeRole":"Open the practitioner list.","editTargets":[{"action":"rewrite","shapeId":"sh/x8vaxsfe","reason":"Navigation steps."}]},
+    {"outputSlide":5,"sourceSlide":5,"reuseMode":"duplicate-slide","narrativeRole":"Start one new listing.","editTargets":[{"action":"rewrite","shapeId":"sh/k7mxovud","reason":"Point to Add New Medical Practitioner."}]},
+    {"outputSlide":6,"sourceSlide":6,"reuseMode":"duplicate-slide","narrativeRole":"Keep the new listing as a draft.","editTargets":[{"action":"rewrite","shapeId":"sh/47mt0b6x","reason":"Draft-first safety."}]},
+    {"outputSlide":7,"sourceSlide":7,"reuseMode":"duplicate-slide","narrativeRole":"Choose the approved category.","editTargets":[{"action":"rewrite","shapeId":"sh/25ojml43","reason":"Category instructions."}]},
+    {"outputSlide":8,"sourceSlide":8,"reuseMode":"duplicate-slide","narrativeRole":"Enter the display names.","editTargets":[{"action":"rewrite","shapeId":"sh/1k7edwv2","reason":"Name-field instructions."}]},
+    {"outputSlide":9,"sourceSlide":9,"reuseMode":"duplicate-slide","narrativeRole":"Add the approved description.","editTargets":[{"action":"rewrite","shapeId":"sh/do3id4fy","reason":"Description instructions."}]},
+    {"outputSlide":10,"sourceSlide":10,"reuseMode":"duplicate-slide","narrativeRole":"Add public contact details.","editTargets":[{"action":"rewrite","shapeId":"sh/1cru1g3y","reason":"Contact-field instructions."}]},
+    {"outputSlide":11,"sourceSlide":11,"reuseMode":"duplicate-slide","narrativeRole":"Review every field before publishing.","editTargets":[{"action":"rewrite","shapeId":"sh/1cfa58zi","reason":"Review checklist."}]},
+    {"outputSlide":12,"sourceSlide":12,"reuseMode":"duplicate-slide","narrativeRole":"Publish once and wait.","editTargets":[{"action":"rewrite","shapeId":"sh/9sj65kn2","reason":"Publishing safety."}]},
+    {"outputSlide":13,"sourceSlide":13,"reuseMode":"duplicate-slide","narrativeRole":"Clear only the applicable cache.","editTargets":[{"action":"rewrite","shapeId":"sh/t8fy5k3i","reason":"Cache steps."}]},
+    {"outputSlide":14,"sourceSlide":14,"reuseMode":"duplicate-slide","narrativeRole":"Verify the public directory.","editTargets":[{"action":"rewrite","shapeId":"sh/ls7idofu","reason":"Public verification."}]},
+    {"outputSlide":15,"sourceSlide":15,"reuseMode":"duplicate-slide","narrativeRole":"Verify full details and mobile display.","editTargets":[{"action":"rewrite","shapeId":"sh/5wvax0f6","reason":"Final public checks."}]},
+    {"outputSlide":16,"sourceSlide":16,"reuseMode":"duplicate-slide","narrativeRole":"Repeat the standard safety sequence.","editTargets":[{"action":"rewrite","shapeId":"sh/lwbyxwra","reason":"Closing reminder."}]}
+  ]
+}

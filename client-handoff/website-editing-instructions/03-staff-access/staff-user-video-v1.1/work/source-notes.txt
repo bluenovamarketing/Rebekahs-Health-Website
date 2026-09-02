@@ -1,0 +1,7 @@
+Source notes - Staff User Management v1.1
+
+- CLIENT-NOTES.md, August 31, 2026 beginner-video standard and administrator-only staff-account decision.
+- Existing approved Rebekah training deck is the visual and instructional reference.
+- WordPress standard Users workflow: Add New User, All Users, role changes, password reset, deletion, and content reassignment.
+- No live site login, user account, role, password, content, cache, or website setting was changed.
+

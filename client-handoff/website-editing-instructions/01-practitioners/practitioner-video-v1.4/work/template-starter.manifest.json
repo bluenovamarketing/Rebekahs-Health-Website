@@ -1,0 +1,188 @@
+{
+  "sourcePptx": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.3\\Practitioner-Editing-Video-v1.3.pptx",
+  "mapPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-frame-map.json",
+  "output": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter.pptx",
+  "outputBytes": 1017253,
+  "sourceSlideCount": 16,
+  "slideCount": 16,
+  "previewDir": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview",
+  "layoutDir": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout",
+  "slides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 1,
+      "narrativeRole": "Preserve title and revision slide; update visible version only.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-01.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-01.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-01.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-01.layout.json"
+    },
+    {
+      "outputSlide": 2,
+      "sourceSlide": 2,
+      "narrativeRole": "Preserve permissions guidance; update visible version only.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-02.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-02.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-02.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-02.layout.json"
+    },
+    {
+      "outputSlide": 3,
+      "sourceSlide": 3,
+      "narrativeRole": "Preserve preparation checklist; update visible version only.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-03.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-03.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-03.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-03.layout.json"
+    },
+    {
+      "outputSlide": 4,
+      "sourceSlide": 4,
+      "narrativeRole": "Add a written three-step navigation card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-04.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-04.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-04.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-04.layout.json"
+    },
+    {
+      "outputSlide": 5,
+      "sourceSlide": 5,
+      "narrativeRole": "Rewrite the inherited hover cue as three complete numbered steps.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 3,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-05.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-05.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-05.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-05.layout.json"
+    },
+    {
+      "outputSlide": 6,
+      "sourceSlide": 6,
+      "narrativeRole": "Add a written three-step field-location card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-06.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-06.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-06.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-06.layout.json"
+    },
+    {
+      "outputSlide": 7,
+      "sourceSlide": 7,
+      "narrativeRole": "Add a written three-step category card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-07.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-07.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-07.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-07.layout.json"
+    },
+    {
+      "outputSlide": 8,
+      "sourceSlide": 8,
+      "narrativeRole": "Add a written three-step name-fields card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-08.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-08.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-08.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-08.layout.json"
+    },
+    {
+      "outputSlide": 9,
+      "sourceSlide": 9,
+      "narrativeRole": "Add a written three-step description-editing card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-09.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-09.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-09.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-09.layout.json"
+    },
+    {
+      "outputSlide": 10,
+      "sourceSlide": 10,
+      "narrativeRole": "Add a written three-step public-details card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-10.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-10.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-10.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-10.layout.json"
+    },
+    {
+      "outputSlide": 11,
+      "sourceSlide": 11,
+      "narrativeRole": "Add a written three-step review card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-11.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-11.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-11.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-11.layout.json"
+    },
+    {
+      "outputSlide": 12,
+      "sourceSlide": 12,
+      "narrativeRole": "Add a written three-step saving card beside the unchanged full-size screenshot.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-12.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-12.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-12.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-12.layout.json"
+    },
+    {
+      "outputSlide": 13,
+      "sourceSlide": 13,
+      "narrativeRole": "Rewrite the inherited cache cue as three complete numbered steps.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 3,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-13.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-13.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-13.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-13.layout.json"
+    },
+    {
+      "outputSlide": 14,
+      "sourceSlide": 14,
+      "narrativeRole": "Add a compact written public-verification cue without hiding the practitioner count.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-14.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-14.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-14.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-14.layout.json"
+    },
+    {
+      "outputSlide": 15,
+      "sourceSlide": 15,
+      "narrativeRole": "Add a written three-step full-listing and mobile-check card in the inherited blank right column.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 2,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-15.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-15.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-15.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-15.layout.json"
+    },
+    {
+      "outputSlide": 16,
+      "sourceSlide": 16,
+      "narrativeRole": "Preserve closing safety reminder; update visible version only.",
+      "reuseMode": "duplicate-slide",
+      "editTargetCount": 1,
+      "previewPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-preview\\starter-slide-16.png",
+      "previewRelativePath": "template-starter-preview/starter-slide-16.png",
+      "layoutPath": "C:\\Users\\todda\\Blue Nova Projects\\Rebekahs Health Website\\client-handoff\\website-editing-instructions\\01-practitioners\\practitioner-video-v1.4\\work\\template-starter-layout\\starter-slide-16.layout.json",
+      "layoutRelativePath": "template-starter-layout/starter-slide-16.layout.json"
+    }
+  ]
+}

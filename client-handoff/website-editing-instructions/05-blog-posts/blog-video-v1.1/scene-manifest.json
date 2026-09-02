@@ -1,0 +1,106 @@
+﻿[
+    {
+        "scene":  1,
+        "title":  "Create or update a blog post safely",
+        "audio":  "scene-01.wav",
+        "narration":  "This lesson shows you how to create an approved blog post or update an existing one. We will keep new work in Draft, complete the article, category, featured image, links, and search information, preview everything, save once, clear the applicable cache, and verify the public article. No test post is created for this lesson.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  2,
+        "title":  "Required WordPress access",
+        "audio":  "scene-02.wav",
+        "narration":  "You need an Editor or Administrator account. Editor access is enough for blog posts. Do not use Administrator for routine writing. If Posts is missing from the left menu, stop and ask the website administrator instead of changing your role or using another person\u0027s login.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  3,
+        "title":  "Prepare the approved article materials first",
+        "audio":  "scene-03.wav",
+        "narration":  "Before opening Posts, gather the final approved title and article copy, the approved existing category, the featured image with permission to use it, and every link. Do not invent health claims, prices, dates, author details, image rights, or search wording.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  4,
+        "title":  "Open Posts and choose the correct action",
+        "audio":  "scene-04.wav",
+        "narration":  "Open Posts. Use Add New Post only for an approved new article. For an update, open All Posts, match the exact title and author, then select Edit. Never overwrite another article because its title looks similar. Keep every new article in Draft while you work.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  5,
+        "title":  "Enter the title and article in the main editor",
+        "audio":  "scene-05.wav",
+        "narration":  "Enter the approved title exactly. Add the complete article in the main Visual editor. Use clear headings, short paragraphs, and lists when they make the article easier to read. Select Save Draft while working. Do not publish an article that is incomplete or waiting for approval.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  6,
+        "title":  "Choose the correct existing category",
+        "audio":  "scene-06.wav",
+        "narration":  "Open Categories and select the one approved category that best fits the article. Do not create a new category or guess. Use tags only when the approved website process specifically calls for them. Too many categories and tags make the Blog harder to organize.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  7,
+        "title":  "Add the featured image and accurate alt text",
+        "audio":  "scene-07.wav",
+        "narration":  "Choose an approved landscape image that belongs to the article. Confirm that it is clear and cropped correctly. Add useful alt text that describes the image\u0027s important subject or purpose. Do not use copyrighted, private, blurry, stretched, or unrelated imagery, and do not stuff keywords into alt text.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  8,
+        "title":  "Add links without breaking the reading flow",
+        "audio":  "scene-08.wav",
+        "narration":  "Select descriptive words in the article and use the Link control. Paste the exact destination address. Add relevant internal links to Rebekah\u0027s pages or related articles. Use a new tab for an external link only when appropriate. Preview and test every changed link.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  9,
+        "title":  "Complete the search title and description",
+        "audio":  "scene-09.wav",
+        "narration":  "In the S E O Press section, use the approved search title and a clear description that accurately summarizes the article. Keep the wording natural and inside the preview length. Do not repeat locations, services, or keywords simply to fill the fields.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  10,
+        "title":  "Preview the full article before publishing",
+        "audio":  "scene-10.wav",
+        "narration":  "Select Preview. Check the title, headings, paragraphs, category, image, alt text, author, and links. Repeat the preview at desktop and phone size. If anything is wrong or uncertain, return to the editor, correct it, and keep the post in Draft.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  11,
+        "title":  "Publish or update once, then wait",
+        "audio":  "scene-11.wav",
+        "narration":  "Use Publish only when a new article is complete and approved. Use Update for an approved change to an existing article. Select the correct button one time, then wait for WordPress confirmation. Do not click repeatedly and do not create a duplicate post to fix a saving delay.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  12,
+        "title":  "Clear the applicable cache and verify publicly",
+        "audio":  "scene-12.wav",
+        "narration":  "Clear only the applicable post or approved page cache. Open the exact public article address with no extra text. Verify the visible article, image, category, and links, then check the Blog archive. Repeat the public check at desktop and phone sizes.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  13,
+        "title":  "Always finish with the final verification",
+        "audio":  "scene-13.wav",
+        "narration":  "Every blog change ends with the same sequence. Keep new work in Draft, preview carefully, publish or update once, clear only the applicable cache, and verify the exact public article and Blog archive on desktop and phone. If anything is uncertain, stop and contact Blue Nova.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    }
+]

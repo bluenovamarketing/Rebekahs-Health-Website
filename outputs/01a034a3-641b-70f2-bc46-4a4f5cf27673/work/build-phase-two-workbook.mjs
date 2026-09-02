@@ -43,6 +43,7 @@ function statusRules(range) {
   range.conditionalFormats.add("containsText", { text: "Approved", format: { fill: c.approved, font: { bold: true, color: c.forest } } });
   range.conditionalFormats.add("containsText", { text: "Confirmed", format: { fill: c.approved, font: { bold: true, color: c.forest } } });
   range.conditionalFormats.add("containsText", { text: "In review", format: { fill: c.review, font: { bold: true, color: "#6B501C" } } });
+  range.conditionalFormats.add("containsText", { text: "Internally Approved", format: { fill: c.approved, font: { bold: true, color: c.forest } } });
   range.conditionalFormats.add("containsText", { text: "Needs approval", format: { fill: c.review, font: { bold: true, color: "#6B501C" } } });
   range.conditionalFormats.add("beginsWith", { text: "Pending", format: { fill: c.pending, font: { color: "#842029" } } });
 }
@@ -51,13 +52,13 @@ function statusRules(range) {
 title(approval, "A1:J1", "Rebekah's Health & Nutrition - Complete Phase Two Ecommerce Approval Set");
 note(approval, "A2:J2", "Current authorization: local planning and responsive mockups only. No Cloudways, staging, live website, WordPress implementation, integrations, purchases, or paid services. Every system below must be approved before implementation.");
 label(approval, "A3", "Systems"); metric(approval, "B3", "=COUNTA(B6:B12)");
-label(approval, "C3", "In review"); metric(approval, "D3", '=COUNTIF(E6:E12,"In review")');
+label(approval, "C3", "Internally approved"); metric(approval, "D3", '=COUNTIF(E6:E12,"Internally Approved")');
 label(approval, "E3", "Planned"); metric(approval, "F3", '=COUNTIF(E6:E12,"Planned")+COUNTIF(E6:E12,"Planned next")');
-label(approval, "G3", "Approved"); metric(approval, "H3", '=COUNTIF(E6:E12,"Approved")');
-label(approval, "I3", "Current gate"); metric(approval, "J3", "Local approval"); approval.getRange("A3:J3").format.rowHeight = 26;
+label(approval, "G3", "Client approved"); metric(approval, "H3", '=COUNTIF(E6:E12,"Client Approved")');
+label(approval, "I3", "Current gate"); metric(approval, "J3", "Client approval"); approval.getRange("A3:J3").format.rowHeight = 26;
 const approvalRows = [
   ["#", "Approval System", "Screens / States", "Route(s)", "Design Status", "Build Status", "Priority", "Approval Boundary", "SEO / Content Coverage", "Gate / Next Step"],
-  [1, "Header + Footer Ecommerce Add-On", "Approved header, responsive menu, ecommerce utility row, fifth expandable footer section", "Sitewide", "In review", "Local mockup", "High", "Literal addition to approved Phase One chrome: Online Store, search, account, cart/count, and one fifth footer section only.", "Store entry, internal links, policy links, responsive navigation, account/cart indexation.", "Approve before building the store homepage."],
+  [1, "Header + Footer Ecommerce Add-On", "Approved header, responsive menu, ecommerce utility row, fifth expandable footer section", "Sitewide", "Internally Approved", "Local mockup", "High", "Literal addition to approved Phase One chrome: Online Store, search, account, cart/count, and one fifth footer section only.", "Store entry, internal links, policy links, responsive navigation, account/cart indexation.", "Awaiting Rebekah’s client approval before starting the Online Store homepage."],
   [2, "Online Store Homepage", "Store introduction, Shop All path, category/brand/goal discovery, featured products, product-help guidance", "/online-store/ or approved store entry", "Planned next", "Not started", "High", "Separate from the main website homepage and the product archive. Rebuild the recovered early concept in the approved chrome.", "Unique store landing copy, discovery paths, internal links, trust/help messaging, representative products.", "Approve before finalizing the archive hierarchy."],
   [3, "Shop + Catalog Template", "Shop All, category, brand, collection, search results, product cards, filters, sorting, pagination, no results", "/shop/ and shared archives", "Planned", "Not started", "High", "One reusable archive template; no separate one-off designs for every category, brand, collection, or search result.", "Archive headings, breadcrumbs, canonicals, pagination, filter/indexation rules, card semantics.", "Approve before product-page work."],
   [4, "Product Page Templates", "Simple product and variation product examples", "/product/{slug}/", "Planned", "Not started", "High", "Two approval examples share one system. Final fields wait for the first Revel/Kosmos product. Reviews and unsupported claims are excluded.", "Product schema, unique copy, gallery, facts, cautions, stock, shipping note, variation errors, related items.", "Approve both examples before the purchase path."],
@@ -68,7 +69,7 @@ const approvalRows = [
 approval.getRange("A5:J12").values = approvalRows; headers(approval.getRange("A5:J5")); body(approval.getRange("A6:J12"), 80);
 approval.getRange("A6:A12").format.horizontalAlignment = "center"; base(approval, 5);
 approval.getRange("A:A").format.columnWidth = 8; approval.getRange("B:B").format.columnWidth = 25; approval.getRange("C:C").format.columnWidth = 32; approval.getRange("D:D").format.columnWidth = 23; approval.getRange("E:G").format.columnWidth = 14; approval.getRange("H:J").format.columnWidth = 37;
-approval.getRange("E6:E30").dataValidation = { rule: { type: "list", values: ["Planned", "Planned next", "In review", "Revision needed", "Approved"] } };
+approval.getRange("E6:E30").dataValidation = { rule: { type: "list", values: ["Planned", "Planned next", "In review", "Revision needed", "Internally Approved", "Client Approved"] } };
 approval.getRange("F6:F30").dataValidation = { rule: { type: "list", values: ["Not started", "Local mockup", "Local prototype", "Approved for build", "Implemented"] } };
 approval.getRange("G6:G30").dataValidation = { rule: { type: "list", values: ["High", "Medium", "Low"] } }; statusRules(approval.getRange("E6:E30"));
 approval.tables.add("A5:J12", true, "PhaseTwoApprovalSet").style = "TableStyleMedium2";
@@ -86,8 +87,8 @@ const templateRows = [
   ["Prototype", "Purchase path", "Cart, checkout, and order confirmation", "Approve connected flow", "One customer journey with empty cart, validation, policy/help links, and confirmation—not unrelated pages."],
   ["Template", "Customer account shell", "Login, registration, reset, dashboard, addresses, and orders", "Approve representative states", "One compact shell; optional accounts remain provisional until approved."],
   ["Component", "Store states", "Catalog, product, cart, checkout, and account", "Approve component sheet", "No results, stock/variation, missing image, loading, cart empty, validation, payment placeholder, and mobile filter states."],
-  ["Global", "Commerce navigation", "Sitewide", "Current review item", "Approved Phase One header plus Online Store, search, My Account, and cart/count. Do not redesign original navigation."],
-  ["Global", "Online Store footer section", "Sitewide footer", "Current review item", "Add one fifth expandable section while preserving original footer and accordion behavior."],
+  ["Global", "Commerce navigation", "Sitewide", "Internally approved; awaiting client", "Approved Phase One header plus Online Store, search, My Account, and cart/count. Do not redesign original navigation."],
+  ["Global", "Online Store footer section", "Sitewide footer", "Internally approved; awaiting client", "Add one fifth expandable section while preserving original footer and accordion behavior."],
   ["Content", "Transactional emails", "Customer and staff order notifications", "Approve during implementation", "Sender/business details, order content, help links, delivery, failed payment, refund, cancellation, and low-stock behavior."],
   ["Content", "Ecommerce policies", "Shipping, Returns, Terms, Privacy, Disclaimer", "Content approval required", "Accounts, checkout, payments, emails, processors, shipping, returns, cancellation, damage/loss, and customer-service details."],
   ["Global", "Commerce SEO", "Storefront and transaction screens", "Integrated QA", "Titles, metadata, canonicals, schema, breadcrumbs, sitemaps, archive/indexation rules, image SEO, and internal linking."],
@@ -170,7 +171,7 @@ title(implementation, "A1:F1", "Phase Two End-to-End Implementation Plan");
 note(implementation, "A2:F2", "The first seven rows are the current local approval workflow. Every later row is future gated work and is documented here so nothing is improvised after design approval.");
 const planRows = [
   ["Order", "Phase", "Current / Future", "Primary Owner", "Work", "Required Gate / Output"],
-  [1, "Approve global commerce add-on", "Current: local", "Blue Nova / Todd", "Review literal header/footer additions against approved Phase One chrome at desktop, tablet, and phone.", "Approved system 01"],
+  [1, "Approve global commerce add-on", "Awaiting client approval", "Blue Nova / Todd", "Review literal header/footer additions against approved Phase One chrome at desktop, tablet, and phone.", "Rebekah approves system 01"],
   [2, "Approve Online Store homepage", "Current: local", "Blue Nova / Todd", "Rebuild the recovered early store-home direction using approved chrome and controlled samples.", "Approved system 02"],
   [3, "Approve catalog template", "Current: local", "Blue Nova / Todd", "Create Shop All/archive, cards, search, filters, sorting, pagination, and no-results behavior.", "Approved system 03"],
   [4, "Approve product pages", "Current: local", "Blue Nova / Todd", "Create simple and variable product examples with all required content, stock, warning, and variation states.", "Approved system 04"],

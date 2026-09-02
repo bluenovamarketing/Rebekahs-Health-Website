@@ -1,0 +1,8 @@
+Local project sources:
+- Production WordPress interface and public Practitioners page, captured in the Codex in-app browser.
+- wordpress/theme/rebekahs-2026/template-parts/pages/practitioners.php for the supported data mapping.
+- wordpress/theme/rebekahs-2026/assets/css/chrome.css and output/brand-kit/tokens/brand-tokens.css for the approved brand palette.
+- output/brand-kit/assets/logos/rebekahs-primary-horizontal.svg and related approved logo assets.
+- CLIENT-NOTES.md for the approved practitioner scope, caching requirements, access constraints, and training-library decisions.
+
+No external stock imagery or externally sourced claims are planned.

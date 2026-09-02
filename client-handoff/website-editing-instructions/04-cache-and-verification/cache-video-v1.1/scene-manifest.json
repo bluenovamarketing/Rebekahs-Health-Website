@@ -1,0 +1,106 @@
+﻿[
+    {
+        "scene":  1,
+        "title":  "Clear the website cache safely",
+        "audio":  "scene-01.wav",
+        "narration":  "This lesson shows you how to clear website cache safely after an approved content change. Cache clearing does not save your work and does not correct wrong information. We will save first, clear only the cache that applies, refresh the browser, and verify the exact public page on desktop and phone.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  2,
+        "title":  "Required WordPress access",
+        "audio":  "scene-02.wav",
+        "narration":  "An Editor may use an available record or page Clear Cache action. Sitewide Breeze or Varnish controls may require an Administrator or Blue Nova. Never give someone Administrator access only to clear cache. Use only the control your role and instructions allow.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  3,
+        "title":  "Clear cache only when a saved change is stale",
+        "audio":  "scene-03.wav",
+        "narration":  "Clear cache when WordPress confirms a correct saved change but the public page still shows older information. Do not clear cache before saving, and do not use cache clearing to fix incorrect text, images, dates, or links. First correct the content and save it once.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  4,
+        "title":  "Save the correct item once before clearing cache",
+        "audio":  "scene-04.wav",
+        "narration":  "Finish and review the approved change. Select Save, Update, or Publish one time and wait for confirmation. Copy or keep the exact public address that visitors use. You will use that same address for every verification step, without adding question marks or test text.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  5,
+        "title":  "Start with the smallest applicable cache",
+        "audio":  "scene-05.wav",
+        "narration":  "Return to the list containing the item you changed. Find the exact row and use its Clear Cache action when that action is available. This is the smallest and safest first step. Do not clear unrelated pages, products, events, or practitioner records.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  6,
+        "title":  "Refresh the browser without changing the URL",
+        "audio":  "scene-06.wav",
+        "narration":  "Open the exact public address. On Windows, press Control plus F five for one hard refresh. On a Mac, press Command, Shift, and R. Read the visible page and confirm whether the saved information now appears. Do not keep refreshing repeatedly.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  7,
+        "title":  "Check in a private window when the browser stays stale",
+        "audio":  "scene-07.wav",
+        "narration":  "If the regular browser still looks old, open a private or Incognito window and paste the same exact public address. If the private window shows the correct result, the website is updated and the remaining issue is the regular browser\u0027s local cache. Do not add cache-busting text to the address.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  8,
+        "title":  "Use Breeze only when a broader purge is approved",
+        "audio":  "scene-08.wav",
+        "narration":  "Use the approved Breeze Purge All Cache control only when a saved change affects a shared page or several pages and the smaller cache clear was not enough. Select the purge one time and wait. Do not change Breeze settings, preload options, minification, or optimization controls.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  9,
+        "title":  "Leave Cloudways and Varnish controls to authorized users",
+        "audio":  "scene-09.wav",
+        "narration":  "A Varnish purge may be needed when correct saved content remains stale after the applicable page and Breeze cache are cleared. Use only an approved purge control when you were specifically authorized. Do not open server settings, restart services, disable Varnish, or experiment. Ask Blue Nova when the control is missing.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  10,
+        "title":  "Never solve cache trouble with random settings",
+        "audio":  "scene-10.wav",
+        "narration":  "Do not repeatedly select Update or Publish. Do not purge object cache, Redis, a C D N, the database, image cache, or unrelated plugin caches unless Blue Nova directs you. Do not install, disable, or configure optimization plugins. Random purges can create a larger problem without fixing the original page.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  11,
+        "title":  "Verify the visible public result on desktop",
+        "audio":  "scene-11.wav",
+        "narration":  "Open the exact public page with no extra address text. At desktop size, read the changed text, image, date, link, or listing. Click every public link affected by the change. Confirm that the page still fits the screen and nothing runs off the side.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  12,
+        "title":  "Repeat the check on a phone and know when to stop",
+        "audio":  "scene-12.wav",
+        "narration":  "Repeat the same check at phone size. Confirm the changed information, images, buttons, and links remain readable and usable. If the saved result is still wrong or missing after the approved cache steps, stop and contact Blue Nova instead of purging again or changing server settings.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  13,
+        "title":  "Always finish with the same three checks",
+        "audio":  "scene-13.wav",
+        "narration":  "Every content change ends the same way. First, save the correct content once. Second, clear only the applicable cache. Third, open the exact public address and verify the visible result on desktop and phone. If it is still wrong or missing, stop and contact Blue Nova.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    }
+]

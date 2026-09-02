@@ -1,0 +1,681 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/ys3xon",
+    "id": "ys3xon",
+    "slide": 4,
+    "layoutId": "f4b7429c-ce60-42a7-ade9-a5585dae8664",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "8f2d46cb-fe62-411e-bb47-b815982b3f25",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F3E8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "+mn-lt"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "f4b7429c-ce60-42a7-ade9-a5585dae8664",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "8f2d46cb-fe62-411e-bb47-b815982b3f25",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "8f2d46cb-fe62-411e-bb47-b815982b3f25",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ofep8b2t",
+      "id": "1",
+      "name": "library-label",
+      "bbox": [
+        38,
+        28,
+        640,
+        22
+      ],
+      "geometry": "rect",
+      "text": "REBEKAH'S WEBSITE EDITING LIBRARY",
+      "textPreview": "REBEKAH'S WEBSITE EDITING LIBRARY",
+      "resolvedFontSize": 13,
+      "resolvedTextStyle": {
+        "fontSize": 13,
+        "typeface": "+mn-lt",
+        "color": "#3F7D50",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "REBEKAH'S WEBSITE EDITING LIBRARY"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "REBEKAH'S WEBSITE EDITING LIBRARY",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#3F7D50",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "REBEKAH'S WEBSITE EDITING LIBRARY",
+              "fontSize": 13,
+              "color": "#3F7D50",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3e5of6l8",
+      "id": "2",
+      "name": "scene-title",
+      "bbox": [
+        38,
+        61,
+        1150,
+        68
+      ],
+      "geometry": "rect",
+      "text": "Open All Medical Practicioners",
+      "textPreview": "Open All Medical Practicioners",
+      "resolvedFontSize": 34,
+      "resolvedTextStyle": {
+        "fontSize": 34,
+        "typeface": "+mn-lt",
+        "color": "#174C3C",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Open All Medical Practicioners"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Open All Medical Practicioners",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Open All Medical Practicioners",
+              "fontSize": 34,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dw761kn",
+      "id": "3",
+      "name": "step-badge",
+      "bbox": [
+        1135,
+        22,
+        105,
+        46
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d47qlg3a",
+      "id": "4",
+      "name": "step-label",
+      "bbox": [
+        1143,
+        33,
+        89,
+        24
+      ],
+      "geometry": "rect",
+      "text": "3",
+      "textPreview": "3",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "+mn-lt",
+        "color": "#26342E",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "3",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3",
+              "fontSize": 18,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cjypcv25",
+      "id": "5",
+      "name": "footer",
+      "bbox": [
+        910,
+        684,
+        330,
+        18
+      ],
+      "geometry": "rect",
+      "text": "Practitioner pilot v1.1  •  4 of 16",
+      "textPreview": "Practitioner pilot v1.1  •  4 of 16",
+      "resolvedFontSize": 10,
+      "resolvedTextStyle": {
+        "fontSize": 10,
+        "typeface": "+mn-lt",
+        "color": "#3F7D50",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Practitioner pilot v1.1  •  4 of 16"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Practitioner pilot v1.1  •  4 of 16",
+          "resolvedTextStyle": {
+            "fontSize": 10,
+            "color": "#3F7D50"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Practitioner pilot v1.1  •  4 of 16",
+              "fontSize": 10,
+              "color": "#3F7D50"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bi58jqlk",
+      "id": "6",
+      "name": "screen-frame",
+      "bbox": [
+        38,
+        154,
+        820,
+        510
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C3A0",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/j2lcfixk",
+      "id": "7",
+      "bbox": [
+        51,
+        167,
+        794,
+        484
+      ],
+      "alt": "Live WordPress or public-site capture for 01-practitioner-list-1600x900.png",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "56201091-6e71-4561-96f7-c5562b3af934",
+        "contentType": "image/jpeg",
+        "byteLength": 135579
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8369w36",
+      "id": "8",
+      "name": "look-here-highlight",
+      "bbox": [
+        48,
+        300,
+        92,
+        94
+      ],
+      "geometry": "roundRect",
+      "lineColor": "#D6A33A",
+      "lineWidth": 5
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/snup0r2l",
+      "id": "9",
+      "name": "look-here-label",
+      "bbox": [
+        48,
+        272,
+        112,
+        30
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qdo7il8z",
+      "id": "10",
+      "name": "look-here-text",
+      "bbox": [
+        56,
+        278,
+        96,
+        18
+      ],
+      "geometry": "rect",
+      "text": "LOOK HERE",
+      "textPreview": "LOOK HERE",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "fontSize": 12,
+        "typeface": "+mn-lt",
+        "color": "#26342E",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LOOK HERE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LOOK HERE",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LOOK HERE",
+              "fontSize": 12,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bex8bq9k",
+      "id": "11",
+      "name": "instruction-card",
+      "bbox": [
+        892,
+        154,
+        348,
+        510
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C3A0",
+      "lineWidth": 1
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfq9kvq5",
+      "id": "12",
+      "name": "instruction-label",
+      "bbox": [
+        926,
+        190,
+        280,
+        28
+      ],
+      "geometry": "rect",
+      "text": "DO THIS",
+      "textPreview": "DO THIS",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "fontSize": 14,
+        "typeface": "+mn-lt",
+        "color": "#3F7D50",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DO THIS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DO THIS",
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "color": "#3F7D50",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DO THIS",
+              "fontSize": 14,
+              "color": "#3F7D50",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0zqd0ra",
+      "id": "13",
+      "name": "instruction-copy",
+      "bbox": [
+        926,
+        238,
+        280,
+        330
+      ],
+      "geometry": "rect",
+      "text": "In the left menu, select Medical Practicioners, then All Medical Practicioners. The current WordPress label is spelled “Practicioners.”",
+      "textPreview": "In the left menu, select Medical Practicioners, then All Medical Practicioners. The current WordPress label is spelled “Practicioners.”",
+      "resolvedFontSize": 21,
+      "resolvedTextStyle": {
+        "fontSize": 21,
+        "typeface": "+mn-lt",
+        "color": "#26342E",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 5,
+        "lines": [
+          {
+            "index": 1,
+            "text": "In the left menu, select"
+          },
+          {
+            "index": 2,
+            "text": "Medical Practicioners, then All"
+          },
+          {
+            "index": 3,
+            "text": "Medical Practicioners. The"
+          },
+          {
+            "index": 4,
+            "text": "current WordPress label is"
+          },
+          {
+            "index": 5,
+            "text": "spelled “Practicioners.”"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "In the left menu, select Medical Practicioners, then All Medical Practicioners. The current WordPress label is spelled “Practicioners.”",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "In the left menu, select Medical Practicioners, then All Medical Practicioners. The current WordPress label is spelled “Practicioners.”",
+              "fontSize": 21,
+              "color": "#26342E"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y18rm58v",
+      "id": "14",
+      "name": "safety",
+      "bbox": [
+        926,
+        601,
+        280,
+        28
+      ],
+      "geometry": "rect",
+      "text": "If unsure: stop before saving.",
+      "textPreview": "If unsure: stop before saving.",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "fontSize": 15,
+        "typeface": "+mn-lt",
+        "color": "#8E4B61",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "If unsure: stop before saving."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "If unsure: stop before saving.",
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "color": "#8E4B61",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "If unsure: stop before saving.",
+              "fontSize": 15,
+              "color": "#8E4B61",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

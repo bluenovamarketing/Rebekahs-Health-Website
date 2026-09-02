@@ -1,0 +1,2 @@
+The event lesson source deck was reused one-to-one. Large written screen maps replace new live captures because the saved login did not advance and credentials were not retried. The format remains consistent with the approved practitioner and event lessons.
+

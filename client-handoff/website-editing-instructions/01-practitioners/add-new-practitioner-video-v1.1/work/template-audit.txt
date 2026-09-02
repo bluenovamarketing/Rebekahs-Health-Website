@@ -1,0 +1,6 @@
+Template audit — Add a New Practitioner or Practice Listing v1.1
+
+Source: approved Practitioner Editing Video v1.4.
+Slides reviewed: all 16 source slides, source screenshots, and written-step panels.
+Decision: retain the approved 1920×1080 layout, typography, colors, large WordPress screens, written instructions, and safety ending. Rewrite the lesson for the add-new workflow.
+Reason: the user approved this format and requested the next lesson in the same visual system.

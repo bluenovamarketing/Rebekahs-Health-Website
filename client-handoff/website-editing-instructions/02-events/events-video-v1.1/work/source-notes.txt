@@ -1,0 +1,9 @@
+Source notes — Create or Update an Event v1.1
+
+- Admin screens come from the existing first-party Rebekah’s website content guide.
+- Public desktop and phone screens were captured anonymously from /events/.
+- Editor or Administrator access is required; user-account management is outside this lesson.
+- Event category must match the applicable store location.
+- Work in Draft until all required information is complete and previewed.
+- There is no ticket or RSVP workflow in this lesson.
+- The ending is always save, clear applicable cache, and verify the exact public event and Events page.

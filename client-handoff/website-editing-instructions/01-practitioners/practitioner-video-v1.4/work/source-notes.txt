@@ -1,0 +1,7 @@
+Source notes — Practitioner Editing Video v1.4
+
+- v1.3 is the approved visual and instructional baseline and remains preserved.
+- All screenshots are inherited from v1.3; no live credentials are shown.
+- The public practitioner directory count remains visible on slide 14.
+- Written cards supplement, rather than replace, the full narration.
+- The entire narration will be regenerated with Microsoft Mark.

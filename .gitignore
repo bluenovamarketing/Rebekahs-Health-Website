@@ -13,6 +13,13 @@ node_modules/
 *.webm
 *.mbtree
 
+# Training-video production media is uploaded to the client Drive library.
+# Keep only the editable source decks, scripts, written instructions, and QA records in Git.
+/client-handoff/website-editing-instructions/**/audio/
+/client-handoff/website-editing-instructions/**/voice-samples/
+/client-handoff/website-editing-instructions/**/*-narrated.pptx
+/client-handoff/website-editing-instructions/**/*-Narration-*.wav
+
 # Recreated local media/tooling dependencies
 /tools/pydeps/
 /tools/yt-dlp.exe

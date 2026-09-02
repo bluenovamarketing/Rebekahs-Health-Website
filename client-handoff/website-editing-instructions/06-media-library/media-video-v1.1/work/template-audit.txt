@@ -1,0 +1,4 @@
+Template audit - Media Library v1.1
+
+Uses the approved 1920x1080 Rebekah training format. The audience is a complete beginner with Editor access. Large written screen maps provide the exact navigation and safe action sequence without uploading or deleting live media.
+

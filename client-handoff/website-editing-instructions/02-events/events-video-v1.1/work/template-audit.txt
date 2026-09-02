@@ -1,0 +1,6 @@
+Template audit — Create or Update an Event v1.1
+
+Source: approved Practitioner Editing Video v1.4 visual system.
+Slides reviewed: all source frames plus the existing first-party event guide captures and fresh public Events-page captures.
+Decision: preserve the approved 1920×1080 layout, typography, colors, large screen treatment, written instructions, and safety ending. Replace only the lesson-specific images and copy.
+Reason: the user approved the format and requested consistent training videos.

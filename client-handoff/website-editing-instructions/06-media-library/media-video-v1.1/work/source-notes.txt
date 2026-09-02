@@ -1,0 +1,2 @@
+Sources: CLIENT-NOTES.md training standard and the established WordPress Media Library, alt-text, content-placement, save/cache, and public-verification workflow. No file was uploaded, inserted, replaced, or deleted.
+

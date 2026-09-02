@@ -1,0 +1,6 @@
+Template audit — Practitioner Editing Video v1.4
+
+Source: Practitioner-Editing-Video-v1.3.pptx
+Slides reviewed: all 16 rendered source slides and their layout inventory.
+Decision: retain the complete v1.3 sequence, dimensions, screenshots, typography, colors, and speaker notes. The only visual changes are the v1.4 footer marker and written step cards in verified blank screenshot areas. Slides 5 and 13 reuse their existing cue panels.
+Reason: the user approved the current screen size and requested written instructions beside it plus Mark narration.

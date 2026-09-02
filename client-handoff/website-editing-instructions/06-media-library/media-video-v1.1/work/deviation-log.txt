@@ -1,0 +1,2 @@
+The event lesson source deck was reused one-to-one. Live screenshot regions were replaced with bounded written screen maps because the saved login did not advance and repeated credential attempts are prohibited. No precision-critical action was omitted.
+

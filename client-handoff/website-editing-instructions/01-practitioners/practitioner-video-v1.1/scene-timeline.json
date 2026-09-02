@@ -1,0 +1,146 @@
+[
+  {
+    "scene": 1,
+    "title": "What this video covers",
+    "audio": "scene-01.wav",
+    "audio_seconds": 21.716,
+    "slide_seconds": 22.516,
+    "start_seconds": 0.0,
+    "end_seconds": 22.516
+  },
+  {
+    "scene": 2,
+    "title": "Before you begin",
+    "audio": "scene-02.wav",
+    "audio_seconds": 32.099,
+    "slide_seconds": 32.899,
+    "start_seconds": 22.516,
+    "end_seconds": 55.414
+  },
+  {
+    "scene": 3,
+    "title": "Sign in to the live website",
+    "audio": "scene-03.wav",
+    "audio_seconds": 32.38,
+    "slide_seconds": 33.18,
+    "start_seconds": 55.414,
+    "end_seconds": 88.594
+  },
+  {
+    "scene": 4,
+    "title": "Open the practitioner list",
+    "audio": "scene-04.wav",
+    "audio_seconds": 23.977,
+    "slide_seconds": 24.777,
+    "start_seconds": 88.594,
+    "end_seconds": 113.371
+  },
+  {
+    "scene": 5,
+    "title": "Open the correct record",
+    "audio": "scene-05.wav",
+    "audio_seconds": 21.974,
+    "slide_seconds": 22.774,
+    "start_seconds": 113.371,
+    "end_seconds": 136.145
+  },
+  {
+    "scene": 6,
+    "title": "Find the practitioner fields",
+    "audio": "scene-06.wav",
+    "audio_seconds": 25.135,
+    "slide_seconds": 25.935,
+    "start_seconds": 136.145,
+    "end_seconds": 162.08
+  },
+  {
+    "scene": 7,
+    "title": "Choose the area of practice",
+    "audio": "scene-07.wav",
+    "audio_seconds": 20.554,
+    "slide_seconds": 21.354,
+    "start_seconds": 162.08,
+    "end_seconds": 183.434
+  },
+  {
+    "scene": 8,
+    "title": "Update the practice and full name",
+    "audio": "scene-08.wav",
+    "audio_seconds": 27.407,
+    "slide_seconds": 28.207,
+    "start_seconds": 183.434,
+    "end_seconds": 211.641
+  },
+  {
+    "scene": 9,
+    "title": "Update the description",
+    "audio": "scene-09.wav",
+    "audio_seconds": 27.924,
+    "slide_seconds": 28.724,
+    "start_seconds": 211.641,
+    "end_seconds": 240.365
+  },
+  {
+    "scene": 10,
+    "title": "Update contact information",
+    "audio": "scene-10.wav",
+    "audio_seconds": 29.266,
+    "slide_seconds": 30.066,
+    "start_seconds": 240.365,
+    "end_seconds": 270.431
+  },
+  {
+    "scene": 11,
+    "title": "Review before saving",
+    "audio": "scene-11.wav",
+    "audio_seconds": 25.46,
+    "slide_seconds": 26.26,
+    "start_seconds": 270.431,
+    "end_seconds": 296.691
+  },
+  {
+    "scene": 12,
+    "title": "Save the record",
+    "audio": "scene-12.wav",
+    "audio_seconds": 24.099,
+    "slide_seconds": 24.899,
+    "start_seconds": 296.691,
+    "end_seconds": 321.59
+  },
+  {
+    "scene": 13,
+    "title": "Clear the applicable cache",
+    "audio": "scene-13.wav",
+    "audio_seconds": 26.679,
+    "slide_seconds": 27.479,
+    "start_seconds": 321.59,
+    "end_seconds": 349.069
+  },
+  {
+    "scene": 14,
+    "title": "Verify the exact public page",
+    "audio": "scene-14.wav",
+    "audio_seconds": 21.482,
+    "slide_seconds": 22.282,
+    "start_seconds": 349.069,
+    "end_seconds": 371.351
+  },
+  {
+    "scene": 15,
+    "title": "Open the full listing and check a phone",
+    "audio": "scene-15.wav",
+    "audio_seconds": 23.965,
+    "slide_seconds": 24.765,
+    "start_seconds": 371.351,
+    "end_seconds": 396.115
+  },
+  {
+    "scene": 16,
+    "title": "The closing routine",
+    "audio": "scene-16.wav",
+    "audio_seconds": 21.494,
+    "slide_seconds": 22.294,
+    "start_seconds": 396.115,
+    "end_seconds": 418.409
+  }
+]

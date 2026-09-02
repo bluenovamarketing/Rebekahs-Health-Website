@@ -1,0 +1,20 @@
+{
+  "sourceDeck": "Practitioner-Editing-Video-v1.4.pptx",
+  "outputDeck": "Create-or-Update-an-Event-v1.1.pptx",
+  "omittedSourceSlides": [5,6,8],
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"reuseMode":"duplicate-slide","narrativeRole":"Introduce the events lesson.","editTargets":[{"action":"rewrite","shapeId":"sh/547294r6","reason":"New lesson title."}]},
+    {"outputSlide":2,"sourceSlide":2,"reuseMode":"duplicate-slide","narrativeRole":"State the required role only.","editTargets":[{"action":"rewrite","shapeId":"sh/w3i1sfa9","reason":"Clarify minimum role."}]},
+    {"outputSlide":3,"sourceSlide":3,"reuseMode":"duplicate-slide","narrativeRole":"Use the live-domain login.","editTargets":[{"action":"rewrite","shapeId":"sh/m5cra54z","reason":"Preserve current live URL."}]},
+    {"outputSlide":4,"sourceSlide":4,"reuseMode":"duplicate-slide","narrativeRole":"Open Events and Add New Event.","editTargets":[{"action":"replace","shapeId":"im/1gfm90ze","reason":"Use the first-party Events list capture."}]},
+    {"outputSlide":5,"sourceSlide":7,"reuseMode":"duplicate-slide","narrativeRole":"Enter a title and description while remaining in Draft.","editTargets":[{"action":"replace","shapeId":"im/axovit03","reason":"Use the first-party event editor capture."}]},
+    {"outputSlide":6,"sourceSlide":9,"reuseMode":"duplicate-slide","narrativeRole":"Choose the correct store category.","editTargets":[{"action":"replace","shapeId":"im/hcz65kbq","reason":"Use the first-party event sidebar capture."}]},
+    {"outputSlide":7,"sourceSlide":10,"reuseMode":"duplicate-slide","narrativeRole":"Complete date, time, venue, organizer, cost, link, and image.","editTargets":[{"action":"replace","shapeId":"im/h47i1oj2","reason":"Use the first-party event-details capture."}]},
+    {"outputSlide":8,"sourceSlide":11,"reuseMode":"duplicate-slide","narrativeRole":"Preview before publishing.","editTargets":[{"action":"rewrite","shapeId":"sh/1cfa58zi","reason":"Preview checklist."}]},
+    {"outputSlide":9,"sourceSlide":12,"reuseMode":"duplicate-slide","narrativeRole":"Publish, update, or cancel safely.","editTargets":[{"action":"replace","shapeId":"im/dsv6903i","reason":"Use the first-party Events list capture."}]},
+    {"outputSlide":10,"sourceSlide":13,"reuseMode":"duplicate-slide","narrativeRole":"Clear the applicable cache.","editTargets":[{"action":"rewrite","shapeId":"sh/t8fy5k3i","reason":"Event cache steps."}]},
+    {"outputSlide":11,"sourceSlide":14,"reuseMode":"duplicate-slide","narrativeRole":"Verify the public Events page on desktop.","editTargets":[{"action":"replace","shapeId":"im/1w3u10jy","reason":"Use fresh anonymous desktop capture."}]},
+    {"outputSlide":12,"sourceSlide":15,"reuseMode":"duplicate-slide","narrativeRole":"Verify the public Events page on mobile.","editTargets":[{"action":"replace","shapeId":"im/hcjm98rm","reason":"Use fresh anonymous mobile capture."}]},
+    {"outputSlide":13,"sourceSlide":16,"reuseMode":"duplicate-slide","narrativeRole":"Repeat the standard safety sequence.","editTargets":[{"action":"rewrite","shapeId":"sh/lwbyxwra","reason":"Closing reminder."}]}
+  ]
+}

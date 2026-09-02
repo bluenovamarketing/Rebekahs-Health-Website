@@ -1,0 +1,1199 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/x8f69ofe",
+    "id": "x8f69ofe",
+    "slide": 6,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F3E8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w32twb6l",
+      "id": "11",
+      "name": "header-band",
+      "bbox": [
+        0,
+        0,
+        1920,
+        100
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7F3E8",
+      "lineColor": "#F7F3E8",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhg7epsj",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        48,
+        23,
+        1550,
+        58
+      ],
+      "geometry": "rect",
+      "text": "Complete the name and invitation settings",
+      "textPreview": "Complete the name and invitation settings",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Complete the name and invitation settings"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Complete the name and invitation settings",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Complete the name and invitation settings",
+              "fontSize": 40,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi98nu94",
+      "id": "3",
+      "name": "step",
+      "bbox": [
+        1700,
+        20,
+        170,
+        58
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/87ipkzal",
+      "id": "4",
+      "name": "step-text",
+      "bbox": [
+        1712,
+        34,
+        146,
+        30
+      ],
+      "geometry": "rect",
+      "text": "5",
+      "textPreview": "5",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5",
+              "fontSize": 25,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/98rqt4r6",
+      "id": "5",
+      "name": "page",
+      "bbox": [
+        1545,
+        1048,
+        325,
+        18
+      ],
+      "geometry": "rect",
+      "text": "Staff access v1.1  |  6/13",
+      "textPreview": "Staff access v1.1  |  6/13",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Staff access v1.1  |  6/13"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Staff access v1.1  |  6/13",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#3F7D50"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Staff access v1.1  |  6/13",
+              "fontSize": 13,
+              "color": "#3F7D50"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ml07i9sv",
+      "id": "6",
+      "name": "screen-frame",
+      "bbox": [
+        30,
+        100,
+        1860,
+        935
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C3A0",
+      "lineWidth": 2
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/0b69svap",
+      "id": "23",
+      "bbox": [
+        180.08,
+        104,
+        1559.83,
+        927
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image5.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 136448
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image5.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 136448
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oryp8fah",
+      "id": "8",
+      "name": "look-here-highlight",
+      "bbox": [
+        189.97,
+        470.68,
+        1248.36,
+        494.4
+      ],
+      "geometry": "roundRect",
+      "lineColor": "#D6A33A",
+      "lineWidth": 8
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pc76hkr2",
+      "id": "9",
+      "name": "look-here-label",
+      "bbox": [
+        189.97,
+        422.68,
+        170,
+        50
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4bupgn6",
+      "id": "10",
+      "name": "look-here-text",
+      "bbox": [
+        199.97,
+        435.68,
+        150,
+        24
+      ],
+      "geometry": "rect",
+      "text": "LOOK HERE",
+      "textPreview": "LOOK HERE",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LOOK HERE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LOOK HERE",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LOOK HERE",
+              "fontSize": 18,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1kbu1ov",
+      "id": "13",
+      "name": "written-steps-s09-box",
+      "bbox": [
+        1460,
+        260,
+        350,
+        345
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#D6A33A",
+      "lineWidth": 5
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5svutgni",
+      "id": "14",
+      "name": "written-steps-s09-heading",
+      "bbox": [
+        1482,
+        278,
+        306,
+        32
+      ],
+      "geometry": "rect",
+      "text": "WRITTEN STEPS",
+      "textPreview": "WRITTEN STEPS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WRITTEN STEPS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WRITTEN STEPS",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WRITTEN STEPS",
+              "fontSize": 22,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/47mt0b6x",
+      "id": "15",
+      "name": "written-steps-s09-body",
+      "bbox": [
+        1484,
+        326,
+        302,
+        259
+      ],
+      "geometry": "rect",
+      "text": "1. Select Visual.\n2. Replace the approved description.\n3. Keep the paragraph breaks.",
+      "textPreview": "1. Select Visual. | 2. Replace the approved description. | 3. Keep the paragraph breaks.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. Select Visual."
+          },
+          {
+            "index": 2,
+            "text": "2. Replace the approved description."
+          },
+          {
+            "index": 3,
+            "text": "3. Keep the paragraph breaks."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. Select Visual.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. Select Visual.",
+              "fontSize": 19,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. Replace the approved description.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. Replace the approved description.",
+              "fontSize": 19,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. Keep the paragraph breaks.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. Keep the paragraph breaks.",
+              "fontSize": 19,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i54bylor",
+      "id": "17",
+      "name": "body-cover",
+      "bbox": [
+        28,
+        95,
+        1864,
+        925
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#FFFDF6",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twfux0ne",
+      "id": "18",
+      "name": "event-screen-frame",
+      "bbox": [
+        45,
+        125,
+        1280,
+        810
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C6A0",
+      "lineWidth": 3
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/neh8na9g",
+      "id": "24",
+      "bbox": [
+        58,
+        176.88,
+        1254,
+        706.24
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image6.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 70264
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image6.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 70264
+      }
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cbe5g3ih",
+      "id": "20",
+      "name": "written-panel",
+      "bbox": [
+        1360,
+        235,
+        475,
+        500
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#D6A33A",
+      "lineWidth": 5
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dcnm98zm",
+      "id": "21",
+      "name": "written-heading",
+      "bbox": [
+        1392,
+        272,
+        411,
+        36
+      ],
+      "geometry": "rect",
+      "text": "DO THIS",
+      "textPreview": "DO THIS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DO THIS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DO THIS",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DO THIS",
+              "fontSize": 22,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qpwnet0b",
+      "id": "22",
+      "name": "written-body",
+      "bbox": [
+        1400,
+        340,
+        395,
+        330
+      ],
+      "geometry": "rect",
+      "text": "1. Use the real staff name.\n2. Do not create an easy password.\n3. Let WordPress send the invitation.",
+      "textPreview": "1. Use the real staff name. | 2. Do not create an easy password. | 3. Let WordPress send the invitation.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. Use the real staff name."
+          },
+          {
+            "index": 2,
+            "text": "2. Do not create an easy password."
+          },
+          {
+            "index": 3,
+            "text": "3. Let WordPress send the invitation."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. Use the real staff name.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. Use the real staff name.",
+              "fontSize": 20,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. Do not create an easy password.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. Do not create an easy password.",
+              "fontSize": 20,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. Let WordPress send the invitation.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. Let WordPress send the invitation.",
+              "fontSize": 20,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lg76d8zy",
+      "id": "25",
+      "name": "guide-cover-3",
+      "bbox": [
+        58,
+        138,
+        1254,
+        784
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C6A0",
+      "lineWidth": 2
+    },
+    {
+      "order": 21,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ydgnit07",
+      "id": "26",
+      "name": "guide-label-3",
+      "bbox": [
+        115,
+        190,
+        1140,
+        38
+      ],
+      "geometry": "rect",
+      "text": "WHERE TO GO",
+      "textPreview": "WHERE TO GO",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "fontSize": 22,
+        "typeface": "Calibri",
+        "color": "#8D4961",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WHERE TO GO"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WHERE TO GO",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#8D4961",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WHERE TO GO",
+              "fontSize": 22,
+              "color": "#8D4961",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zep4byhs",
+      "id": "27",
+      "name": "guide-route-box-3",
+      "bbox": [
+        115,
+        250,
+        1140,
+        115
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#D6A33A",
+      "lineWidth": 3
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gju58ji9",
+      "id": "28",
+      "name": "guide-route-3",
+      "bbox": [
+        150,
+        280,
+        1070,
+        58
+      ],
+      "geometry": "rect",
+      "text": "Add New User > Name and notification",
+      "textPreview": "Add New User > Name and notification",
+      "resolvedFontSize": 29,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 29,
+        "typeface": "Calibri",
+        "color": "#174C3C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Add New User > Name and notification"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Add New User > Name and notification",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Add New User > Name and notification",
+              "fontSize": 29,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1k3mhozu",
+      "id": "29",
+      "name": "guide-body-3",
+      "bbox": [
+        155,
+        425,
+        1050,
+        390
+      ],
+      "geometry": "rect",
+      "text": "1. Enter the person's first and last name.\n2. Leave the secure generated password in place.\n3. Keep the user-notification option selected so WordPress sends the setup email.",
+      "textPreview": "1. Enter the person's first and last name. | 2. Leave the secure generated password in place. | 3. Keep the user-notification option sele...",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "#26342E",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. Enter the person's first and last name."
+          },
+          {
+            "index": 2,
+            "text": "2. Leave the secure generated password in place."
+          },
+          {
+            "index": 3,
+            "text": "3. Keep the user-notification option selected so WordPress sends the setup email."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. Enter the person's first and last name.",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. Enter the person's first and last name.",
+              "fontSize": 24,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. Leave the secure generated password in place.",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. Leave the secure generated password in place.",
+              "fontSize": 24,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. Keep the user-notification option selected so WordPress sends the setup email.",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. Keep the user-notification option selected so WordPress sends the setup email.",
+              "fontSize": 24,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 25,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jet8nm1c",
+      "id": "30",
+      "name": "guide-warning-3",
+      "bbox": [
+        155,
+        835,
+        1050,
+        42
+      ],
+      "geometry": "rect",
+      "text": "Follow the steps in order. Stop when the screen does not match.",
+      "textPreview": "Follow the steps in order. Stop when the screen does not match.",
+      "resolvedFontSize": 18,
+      "resolvedTextStyle": {
+        "fontSize": 18,
+        "typeface": "Calibri",
+        "color": "#8D4961",
+        "bold": true,
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Follow the steps in order. Stop when the screen does not match."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Follow the steps in order. Stop when the screen does not match.",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#8D4961",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Follow the steps in order. Stop when the screen does not match.",
+              "fontSize": 18,
+              "color": "#8D4961",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

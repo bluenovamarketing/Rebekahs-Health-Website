@@ -1,0 +1,2 @@
+Sources: CLIENT-NOTES.md training standard, existing first-party blog editor/list/category/SEO captures in output/client-guide/assets, and the established WordPress save/cache/public-verification workflow. No post was created, edited, published, or deleted.
+

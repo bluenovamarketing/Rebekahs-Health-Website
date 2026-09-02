@@ -1,0 +1,1092 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/i107q5of",
+    "id": "i107q5of",
+    "slide": 5,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F3E8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4vedgvm",
+      "id": "11",
+      "name": "header-band",
+      "bbox": [
+        0,
+        0,
+        1920,
+        100
+      ],
+      "geometry": "rect",
+      "fillColor": "#F7F3E8",
+      "lineColor": "#F7F3E8",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dgbulwnm",
+      "id": "2",
+      "name": "title",
+      "bbox": [
+        48,
+        23,
+        1550,
+        58
+      ],
+      "geometry": "rect",
+      "text": "Enter the title and article in the main editor",
+      "textPreview": "Enter the title and article in the main editor",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Enter the title and article in the main editor"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Enter the title and article in the main editor",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Enter the title and article in the main editor",
+              "fontSize": 40,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cf2tcr61",
+      "id": "3",
+      "name": "step",
+      "bbox": [
+        1700,
+        20,
+        170,
+        58
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z2tcnm5s",
+      "id": "4",
+      "name": "step-text",
+      "bbox": [
+        1712,
+        34,
+        146,
+        30
+      ],
+      "geometry": "rect",
+      "text": "4",
+      "textPreview": "4",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "4"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "4",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "4",
+              "fontSize": 25,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/yhkbe1o7",
+      "id": "5",
+      "name": "page",
+      "bbox": [
+        1545,
+        1048,
+        325,
+        18
+      ],
+      "geometry": "rect",
+      "text": "Blog editing v1.1  |  5/13",
+      "textPreview": "Blog editing v1.1  |  5/13",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Blog editing v1.1  |  5/13"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Blog editing v1.1  |  5/13",
+          "resolvedTextStyle": {
+            "fontSize": 13,
+            "color": "#3F7D50"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Blog editing v1.1  |  5/13",
+              "fontSize": 13,
+              "color": "#3F7D50"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l4bupwny",
+      "id": "6",
+      "name": "screen-frame",
+      "bbox": [
+        30,
+        100,
+        1860,
+        935
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C3A0",
+      "lineWidth": 2
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/lgbydg7i",
+      "id": "23",
+      "bbox": [
+        180.08,
+        104,
+        1559.83,
+        927
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image3.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 75588
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image3.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 75588
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6dcr65o",
+      "id": "8",
+      "name": "look-here-highlight",
+      "bbox": [
+        189.97,
+        458.32,
+        972.32,
+        535.6
+      ],
+      "geometry": "roundRect",
+      "lineColor": "#D6A33A",
+      "lineWidth": 8
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m5kbi1oj",
+      "id": "9",
+      "name": "look-here-label",
+      "bbox": [
+        189.97,
+        410.32,
+        170,
+        50
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#D6A33A",
+      "lineColor": "#D6A33A",
+      "lineWidth": 1
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/w32dkbuh",
+      "id": "10",
+      "name": "look-here-text",
+      "bbox": [
+        199.97,
+        423.32,
+        150,
+        24
+      ],
+      "geometry": "rect",
+      "text": "LOOK HERE",
+      "textPreview": "LOOK HERE",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LOOK HERE"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LOOK HERE",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "color": "#26342E",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LOOK HERE",
+              "fontSize": 18,
+              "color": "#26342E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v2twb6dw",
+      "id": "13",
+      "name": "written-steps-s07-box",
+      "bbox": [
+        1460,
+        260,
+        350,
+        345
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#D6A33A",
+      "lineWidth": 5
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k7mxovud",
+      "id": "14",
+      "name": "written-steps-s07-heading",
+      "bbox": [
+        1482,
+        278,
+        306,
+        32
+      ],
+      "geometry": "rect",
+      "text": "WRITTEN STEPS",
+      "textPreview": "WRITTEN STEPS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WRITTEN STEPS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WRITTEN STEPS",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WRITTEN STEPS",
+              "fontSize": 22,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/58vehgvy",
+      "id": "15",
+      "name": "written-steps-s07-body",
+      "bbox": [
+        1484,
+        326,
+        302,
+        259
+      ],
+      "geometry": "rect",
+      "text": "1. Find Medical Service.\n2. Check the approved category.\n3. Uncheck incorrect categories.",
+      "textPreview": "1. Find Medical Service. | 2. Check the approved category. | 3. Uncheck incorrect categories.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. Find Medical Service."
+          },
+          {
+            "index": 2,
+            "text": "2. Check the approved category."
+          },
+          {
+            "index": 3,
+            "text": "3. Uncheck incorrect categories."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. Find Medical Service.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. Find Medical Service.",
+              "fontSize": 19,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. Check the approved category.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. Check the approved category.",
+              "fontSize": 19,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. Uncheck incorrect categories.",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. Uncheck incorrect categories.",
+              "fontSize": 19,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6dwfqds",
+      "id": "17",
+      "name": "body-cover",
+      "bbox": [
+        28,
+        95,
+        1864,
+        925
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#FFFDF6",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sb6xsvu9",
+      "id": "18",
+      "name": "event-screen-frame",
+      "bbox": [
+        45,
+        125,
+        1280,
+        810
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C6A0",
+      "lineWidth": 3
+    },
+    {
+      "order": 16,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/mhkf61o3",
+      "id": "24",
+      "bbox": [
+        58,
+        176.88,
+        1254,
+        706.24
+      ],
+      "contentType": "image/jpeg",
+      "asset": {
+        "assetId": "/ppt/media/image4.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 70264
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image4.jpeg",
+        "contentType": "image/jpeg",
+        "byteLength": 70264
+      }
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgrmpwj2",
+      "id": "20",
+      "name": "written-panel",
+      "bbox": [
+        1360,
+        235,
+        475,
+        500
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#D6A33A",
+      "lineWidth": 5
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gfi5grih",
+      "id": "21",
+      "name": "written-heading",
+      "bbox": [
+        1392,
+        272,
+        411,
+        36
+      ],
+      "geometry": "rect",
+      "text": "DO THIS",
+      "textPreview": "DO THIS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "DO THIS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "DO THIS",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "DO THIS",
+              "fontSize": 22,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 19,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fe94nm1w",
+      "id": "22",
+      "name": "written-body",
+      "bbox": [
+        1400,
+        340,
+        395,
+        330
+      ],
+      "geometry": "rect",
+      "text": "1. Use the approved title.\n2. Format for easy reading.\n3. Save Draft while working.",
+      "textPreview": "1. Use the approved title. | 2. Format for easy reading. | 3. Save Draft while working.",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. Use the approved title."
+          },
+          {
+            "index": 2,
+            "text": "2. Format for easy reading."
+          },
+          {
+            "index": 3,
+            "text": "3. Save Draft while working."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. Use the approved title.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. Use the approved title.",
+              "fontSize": 20,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. Format for easy reading.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. Format for easy reading.",
+              "fontSize": 20,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. Save Draft while working.",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. Save Draft while working.",
+              "fontSize": 20,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 20,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4ji5kbid",
+      "id": "25",
+      "name": "lesson-cover-1",
+      "bbox": [
+        58,
+        138,
+        1254,
+        784
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#A9C6A0",
+      "lineWidth": 2
+    },
+    {
+      "order": 21,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8j2x8b6t",
+      "id": "26",
+      "bbox": [
+        85,
+        175,
+        1200,
+        500
+      ],
+      "alt": "First-party WordPress capture for Enter the title and article in the main editor",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "421d84d2-a844-4b75-8fe5-4d3910d62ce7",
+        "contentType": "image/jpeg",
+        "byteLength": 31351
+      }
+    },
+    {
+      "order": 22,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2h0ni107",
+      "id": "27",
+      "name": "route-box-1",
+      "bbox": [
+        85,
+        705,
+        1200,
+        110
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFFDF6",
+      "lineColor": "#D6A33A",
+      "lineWidth": 3
+    },
+    {
+      "order": 23,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5o7mhcju",
+      "id": "28",
+      "name": "route-1",
+      "bbox": [
+        120,
+        735,
+        1130,
+        52
+      ],
+      "geometry": "rect",
+      "text": "Post editor > title and Visual content area",
+      "textPreview": "Post editor > title and Visual content area",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "Calibri",
+        "color": "#174C3C",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Post editor > title and Visual content area"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Post editor > title and Visual content area",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#174C3C",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Post editor > title and Visual content area",
+              "fontSize": 25,
+              "color": "#174C3C",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 24,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kny587i9",
+      "id": "29",
+      "name": "safe-1",
+      "bbox": [
+        115,
+        835,
+        1140,
+        100
+      ],
+      "geometry": "rect",
+      "text": "1. Paste the approved title exactly.\n2. Add the article in the main Visual editor using headings and short paragraphs.\n3. Select Save Draft while working; do not publish incomplete copy.",
+      "textPreview": "1. Paste the approved title exactly. | 2. Add the article in the main Visual editor using headings and short paragraphs. | 3. Select Save...",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "fontSize": 16,
+        "typeface": "Calibri",
+        "color": "#26342E",
+        "alignment": "left",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1. Paste the approved title exactly."
+          },
+          {
+            "index": 2,
+            "text": "2. Add the article in the main Visual editor using headings and short paragraphs."
+          },
+          {
+            "index": 3,
+            "text": "3. Select Save Draft while working; do not publish incomplete copy."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1. Paste the approved title exactly.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1. Paste the approved title exactly.",
+              "fontSize": 16,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "2. Add the article in the main Visual editor using headings and short paragraphs.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2. Add the article in the main Visual editor using headings and short paragraphs.",
+              "fontSize": 16,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "3. Select Save Draft while working; do not publish incomplete copy.",
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "color": "#26342E"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "3. Select Save Draft while working; do not publish incomplete copy.",
+              "fontSize": 16,
+              "color": "#26342E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

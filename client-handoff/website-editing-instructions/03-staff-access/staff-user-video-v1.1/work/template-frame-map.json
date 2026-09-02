@@ -1,0 +1,21 @@
+{
+  "sourceDeck": "Create-or-Update-an-Event-v1.1.pptx",
+  "outputDeck": "Add-Change-or-Remove-a-Staff-WordPress-User-v1.1.pptx",
+  "omittedSourceSlides": [],
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"reuseMode":"duplicate-slide","narrativeRole":"Introduce safe staff account management.","editTargets":[{"action":"rewrite","shapeId":"sh/547294r6","reason":"New lesson title."}]},
+    {"outputSlide":2,"sourceSlide":2,"reuseMode":"duplicate-slide","narrativeRole":"State Administrator requirement.","editTargets":[{"action":"rewrite","shapeId":"sh/9072xkry","reason":"Role guidance."}]},
+    {"outputSlide":3,"sourceSlide":3,"reuseMode":"duplicate-slide","narrativeRole":"Gather approved identity and role.","editTargets":[{"action":"rewrite","shapeId":"sh/cza94vmx","reason":"Preflight guidance."}]},
+    {"outputSlide":4,"sourceSlide":4,"reuseMode":"duplicate-slide","narrativeRole":"Open the correct Users action.","editTargets":[{"action":"rewrite","shapeId":"sh/1cj2d8b6","reason":"User navigation."}]},
+    {"outputSlide":5,"sourceSlide":5,"reuseMode":"duplicate-slide","narrativeRole":"Enter username and unique email.","editTargets":[{"action":"rewrite","shapeId":"sh/dgbulwnm","reason":"Account fields."}]},
+    {"outputSlide":6,"sourceSlide":6,"reuseMode":"duplicate-slide","narrativeRole":"Complete name and invitation.","editTargets":[{"action":"rewrite","shapeId":"sh/yhg7epsj","reason":"Invitation fields."}]},
+    {"outputSlide":7,"sourceSlide":7,"reuseMode":"duplicate-slide","narrativeRole":"Choose minimum role.","editTargets":[{"action":"rewrite","shapeId":"sh/cb2tkvap","reason":"Least-privilege role."}]},
+    {"outputSlide":8,"sourceSlide":8,"reuseMode":"duplicate-slide","narrativeRole":"Create the account once.","editTargets":[{"action":"rewrite","shapeId":"sh/18byd4zy","reason":"Submission safety."}]},
+    {"outputSlide":9,"sourceSlide":9,"reuseMode":"duplicate-slide","narrativeRole":"Complete first login.","editTargets":[{"action":"rewrite","shapeId":"sh/1cfmhgne","reason":"First-login verification."}]},
+    {"outputSlide":10,"sourceSlide":10,"reuseMode":"duplicate-slide","narrativeRole":"Change an existing role.","editTargets":[{"action":"rewrite","shapeId":"sh/xc3mho32","reason":"Role update."}]},
+    {"outputSlide":11,"sourceSlide":11,"reuseMode":"duplicate-slide","narrativeRole":"Reset password safely.","editTargets":[{"action":"rewrite","shapeId":"sh/xcryxg7y","reason":"Password reset."}]},
+    {"outputSlide":12,"sourceSlide":12,"reuseMode":"duplicate-slide","narrativeRole":"Remove access and reassign content.","editTargets":[{"action":"rewrite","shapeId":"sh/1gbm9s3a","reason":"Safe user removal."}]},
+    {"outputSlide":13,"sourceSlide":13,"reuseMode":"duplicate-slide","narrativeRole":"Close with access verification.","editTargets":[{"action":"rewrite","shapeId":"sh/q50nydsj","reason":"Closing reminder."}]}
+  ]
+}
+

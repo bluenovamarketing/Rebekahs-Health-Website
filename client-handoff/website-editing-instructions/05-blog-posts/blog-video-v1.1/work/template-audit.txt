@@ -1,0 +1,4 @@
+Template audit - Blog Editing v1.1
+
+Uses the approved 1920x1080 Rebekah training format. The audience is a complete beginner with Editor access. Existing first-party WordPress blog captures are placed inside the inherited large screen area, with written steps preserved beside them. No test article or live change is required.
+

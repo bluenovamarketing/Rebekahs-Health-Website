@@ -1,0 +1,5 @@
+First-party source captures used in v1.3:
+- Live WordPress practitioner-list interface captured for the v1.2 source deck on August 31, 2026.
+- Live public directory at https://rebekahspureliving.com/practitioners/ captured on September 1, 2026 after filtering for Laura Young.
+
+No third-party images, research, or externally quoted copy are used.

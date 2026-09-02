@@ -9,7 +9,7 @@ This is the authoritative responsibility checklist for the client email, proposa
 
 - [x] Confirm the single Revel establishment/store that will supply inventory and ship every online order: **Clarkston**.
 - [x] Confirm the fulfillment origin address and normal order-handling time: **7093 Suite B, Dixie Highway, Clarkston, MI 48346; two business days to pack and ship**.
-- [ ] Choose the 25 representative pilot products in Revel.
+- [x] Mark supplied an attached Revel export identified as the 25 selected pilot products. Blue Nova still needs to audit the spreadsheet rows and confirm the final SKU/name list after the first synchronization test.
 - [ ] Choose one shipping approach:
   - [x] **Live address-dependent rates:** **USPS selected**. Accurate product weights are required. Blue Nova will choose and test the packing method; Mark/Rebekah's team only needs to flag unusually large or bulky items. Test the free Octolize USPS live-rate plugin first and approve a paid packing upgrade only if representative carts prove it is needed.
   - [ ] **Flat-rate/free shipping:** approve the fixed charge and/or free-shipping threshold; no carrier extension or product weight is required for the pilot calculation.
@@ -17,17 +17,18 @@ This is the authoritative responsibility checklist for the client email, proposa
 - [x] Do not allow shipping to PO boxes. Blue Nova will enforce this with checkout address validation rather than expecting the carrier-rate plugin to block it.
 - [ ] Confirm any known products that require special handling or that the store already knows cannot be mailed. Routine products are assumed shippable.
 - [x] Rebekah instructed Blue Nova to treat the pilot supplements as food/tax-exempt in Michigan. This is a client-supplied configuration instruction, not Blue Nova tax/legal advice; verify test-order totals before launch.
-- [x] Approve the pilot operating defaults: **backorders off; one-unit inventory safety buffer unless the tested sync supports removing it; low-stock notice at two units; guest checkout allowed with optional accounts; coupons, gift certificates, store credit, and loyalty excluded; product reviews off**.
+- [x] Approve the pilot operating defaults: **backorders off; one-unit inventory safety buffer unless the tested sync supports removing it; low-stock notice at two units; guest checkout allowed; optional customer accounts created without staff approval; no customer 2FA; staff/admin backend accounts protected separately; coupons, gift certificates, store credit, and loyalty excluded; product reviews off**.
 - [x] Send applicable store/order notices to both **rebekahspureliving@gmail.com** and **clarkstonpurchaser@rebekahspureliving.com**.
 - [ ] When the merchant account is ready, confirm that the Fiserv product is **Clover Ecommerce/Clover Payments for WooCommerce** or identify the actual gateway. This does not block product preparation, Kosmos/Revel synchronization work, store construction, shipping setup, or non-payment checkout configuration.
 
 ## 2. Accounts and access Rebekah must provide
 
-- [x] Rebekah sent a Revel Management Console invitation and Blue Nova completed the password-creation step. Verify that `https://rebekahs.revelup.com/` opens the Clarkston console and that the user has the required administrator/integration permissions before marking access operational.
+- [x] Rebekah sent a Revel Management Console invitation for Blue Nova's separate `tbailey@bluenovainc.com` user. On 2026-09-02, Blue Nova verified that this user reaches the **Rebekah's - Clarkston** Management Console and can open Products, Inventory, and Settings without a permission error. The credential is stored only in the private `Cody WP Logins` Google Sheet. The specific Kosmos/API handshake will still be proven during the controlled one-product connection test.
 - [x] Rebekah created and owns the Kosmos eSync account; its 14-day trial is active.
 - [x] Kosmos pricing was disclosed before signup: $49 month-to-month, or $39 per month billed annually ($468/year).
 - [ ] Use the official Kosmos plans/signup page: <https://kosmoscentral.com/esync-cloud-pricing-monthly>.
-- [x] Rebekah supplied Kosmos sign-in information. Credentials remain only in the source email and are not copied into project files. Blue Nova should handle the configuration and involve Rebekah only if owner approval or MFA is unavoidable.
+- [x] Rebekah supplied Kosmos sign-in information. Blue Nova successfully signed in on 2026-09-02 and reached the Kosmos dashboard; no synchronization Actions have been created. This is Rebekah's client-owned account shared with Blue Nova, not a separate Blue Nova user. The credential is stored only in the private `Cody WP Logins` Google Sheet on its own Rebekah/Kosmos row and is not copied into project files.
+- [x] Added a separate, fully populated Rebekah/Revel row to the private `Cody WP Logins` Google Sheet for the Blue Nova invited username and Clarkston console URL; access was last verified on 2026-09-02.
 - [ ] After the Fiserv/Clover merchant account is active, provide Blue Nova the integration access needed to connect and test it. For Clover Payments for WooCommerce, this normally means the merchant ID plus sandbox/production public and private tokens supplied through a secure method. Do not email the owner's primary password or API secrets.
 - [ ] Payment rates, monthly fees, merchant contracts, deposit terms, and chargeback pricing are decisions between Rebekah and Fiserv. Blue Nova only needs the final gateway name, an active account, the supported WooCommerce integration, and secure integration access.
 - [ ] An existing USPS business account and account number have been confirmed. Blue Nova still needs usable USPS Business/Developer Portal access, or unavoidable owner approval/MFA, to create and authorize the REST API app and obtain its Consumer Key and Consumer Secret. The account number alone is not sufficient. Blue Nova performs the setup and does not ask Rebekah to email the Consumer Secret.
@@ -49,6 +50,7 @@ For every selected pilot product, Rebekah or her Revel staff must:
 - [ ] Keep the item in the normal Revel category the store already uses and correct obvious duplicate or misspelled categories. Blue Nova handles WooCommerce category mapping.
 - [ ] Enter the brand/manufacturer where Revel supports it.
 - [ ] **Mark/Rebekah's Revel team enters the accurate product weight in Revel** and flags unusually large, long, or bulky products. They do not create rules for one-, two-, or three-product boxes. Blue Nova will start with USPS weight-based/standard packing for ordinary pilot products, test multi-item carts, and request dimensions only for specific exceptions that cannot be rated accurately.
+- [ ] Mark reported that he could not find a standard product-weight field. Blue Nova must locate the correct Revel/Kosmos/WooCommerce field during the one-product test. A conservative baseline weight may be used for staging-only USPS comparisons, but not for public checkout until representative rates prove it accurate. Do not enable Revel `Sold by Weight` merely to create a shipping weight.
 - [ ] For matrix/variation products, confirm the parent name, option names, SKUs/barcodes, prices, and inventory for every variation.
 - [ ] Flag only known shipping/special-handling exceptions.
 
@@ -90,7 +92,8 @@ New photography, extensive image editing, original copywriting, full-catalog cle
 - [ ] Install and activate only the official/approved WooCommerce gateway for the merchant product Rebekah selects through Fiserv.
 - [ ] Create the dedicated WooCommerce REST API user/key when Kosmos requires it.
 - [ ] Draft the proposed WooCommerce category/field structure before access. Finalize and verify the Revel-to-WooCommerce mapping only after Revel access, Kosmos access, and one prepared test product are available.
-- [ ] Configure basic store settings: address, currency, units, inventory behavior, account/guest checkout, and order emails.
+- [ ] Configure basic store settings: address, currency, units, inventory behavior, guest checkout, optional customer accounts, and order emails.
+- [ ] Configure and test two-step verification for the limited WordPress staff/administrator accounts only. Keep it outside the customer My Account flow, document recovery and escalation, and confirm whether the approved backend security tool adds any cost.
 
 Blue Nova can complete the adaptable store foundation and generic non-payment checkout work before the merchant account is active. Product synchronization requires Revel and Kosmos access; live USPS testing requires the carrier extension/account connection; payment-specific end-to-end tests require Fiserv/Clover access.
 
@@ -125,7 +128,9 @@ Blue Nova can complete the adaptable store foundation and generic non-payment ch
 
 Using the current custom Rebekah theme—not Bricks—Blue Nova must build/refine:
 
-- [ ] Prepare and approve the complete seven-system responsive ecommerce design set before full implementation: global commerce-navigation changes; a separate Online Store homepage; one reusable shop/category/archive template; simple and variation product-page examples; purchase-path wireframes/prototypes; the account system; and important product/error states with responsive/accessibility review.
+- [x] Prepare and internally approve the complete seven-system responsive ecommerce design set before full implementation: global commerce-navigation changes; main-homepage ecommerce integration; one reusable shop/category/archive template; simple and variation product-page examples; purchase-path wireframes/prototypes; the account system; and important product/error states with responsive/accessibility review.
+- [ ] Obtain Rebekah's client approval for the exact seven current mockup versions before WordPress implementation. A later design change requires the next version and a new approval for that system.
+- [x] Internally approve the exact Customer Account System v1.6: guest checkout, automatic optional accounts, sign-in, password reset, dashboard, addresses, orders, no customer 2FA, and separately managed staff/admin backend security. Rebekah's client approval remains pending.
 - [ ] Preserve the approved Phase One header, footer, typography, color, and spacing system. Only add the Online Shop, cart/count, account access, and required store/policy links; do not redesign the full global chrome.
 
 - [ ] Shop/catalog page.
@@ -137,7 +142,7 @@ Using the current custom Rebekah theme—not Bricks—Blue Nova must build/refin
 - [ ] Variation selection where applicable.
 - [ ] Cart.
 - [ ] Checkout.
-- [ ] My Account, password reset, and order history.
+- [ ] My Account, optional account creation, sign-in, password reset, addresses, and order history.
 - [ ] Order-confirmation/thank-you experience.
 - [ ] Store navigation, filters, featured products, health-goal/seasonal collections, and related products as approved.
 - [ ] Responsive desktop, tablet, and mobile behavior.
@@ -160,7 +165,7 @@ Do not expose the full catalog until every applicable test passes:
 - [ ] WooCommerce order reaches Revel correctly.
 - [ ] Inventory decreases only at the one fulfillment location.
 - [ ] Customer/admin emails arrive with correct order and business information.
-- [ ] Guest/account checkout and password reset work.
+- [ ] Guest checkout works without creating an account; optional customer-account creation, sign-in, password reset, addresses, and order history all work. Staff/administrator backend 2FA is verified separately and never appears in the customer flow.
 - [ ] Shop, product, cart, and checkout pass desktop/tablet/mobile QA.
 - [ ] Privacy/consent, indexation, SEO markup, and analytics events work.
 - [ ] Uncached cart/checkout and realistic load testing pass.
@@ -196,3 +201,17 @@ Do not expose the full catalog until every applicable test passes:
 - Custom storefront design/build is a separate Phase Two scope and should not be described as part of the 25-product synchronization test.
 
 No separate Blue Nova “pilot fee” has been defined or approved in the current record. Blue Nova's Phase Two pricing is handled separately by Todd and is not a client access prerequisite. The final full-catalog cost and schedule will be calculated from the test's actual time, product exceptions, content gaps, and integration results rather than guessed in advance.
+
+## 13. Local readiness package completed September 2, 2026
+
+- [x] Freeze all seven exact internally approved ecommerce mockup versions pending Rebekah's review.
+- [x] Create `PHASE-TWO-PRE-STAGING-EXECUTION-RUNBOOK-v1.1.md` with staging safeguards, evidence gates, selective-deployment rule, and four rollback levels.
+- [x] Create `PHASE-TWO-ONE-PRODUCT-ACCEPTANCE-TEST-v1.1.md` with preflight, field-observation, overwrite, order, inventory, and pass/fail records. Actual mapping remains an observed output of the authorized first pull.
+- [x] Create `PHASE-TWO-LEGACY-CATALOG-CLEAN-START-PLAN-v1.1.md` to quarantine rather than delete the old WooCommerce catalog and prevent identifier collisions.
+- [x] Create `PHASE-TWO-ECOMMERCE-POLICY-DECISION-DRAFT-v1.1.md` separating confirmed operating rules from focused client decisions and legal-review items.
+- [x] Create a dormant local Phase Two WooCommerce scaffold with guarded PHP, scoped responsive CSS, an accessible filter drawer, store utility/footer renderers, the approved missing-photo treatment, and verified-content-only Directions & Warnings disclosure.
+- [x] Add a `Pre-Staging Packet` tab to the Phase Two planning workbook and update the Implementation Plan so all seven designs accurately show as internally approved and awaiting client approval.
+- [x] Verify the dormant local scaffold at desktop, tablet, and phone widths with no horizontal overflow; verify filter-drawer focus/close behavior and the product disclosure interaction.
+- [ ] Re-run PHP lint in the staging/runtime environment before activation; PHP CLI is not installed in the current local shell. JavaScript syntax passed locally.
+
+These completed items do not authorize implementation. No Cloudways, staging, live website, WordPress deployment, Revel/Kosmos connection, purchase, subscription, or paid-service action occurred.

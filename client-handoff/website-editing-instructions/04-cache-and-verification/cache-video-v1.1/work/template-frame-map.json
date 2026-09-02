@@ -1,0 +1,21 @@
+{
+  "sourceDeck": "Create-or-Update-an-Event-v1.1.pptx",
+  "outputDeck": "Clear-the-Website-Cache-Safely-v1.1.pptx",
+  "omittedSourceSlides": [],
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"reuseMode":"duplicate-slide","narrativeRole":"Introduce safe cache clearing.","editTargets":[{"action":"rewrite","shapeId":"sh/547294r6","reason":"New lesson title."}]},
+    {"outputSlide":2,"sourceSlide":2,"reuseMode":"duplicate-slide","narrativeRole":"State role boundaries.","editTargets":[{"action":"rewrite","shapeId":"sh/9072xkry","reason":"Cache role guidance."}]},
+    {"outputSlide":3,"sourceSlide":3,"reuseMode":"duplicate-slide","narrativeRole":"Explain when cache clearing applies.","editTargets":[{"action":"rewrite","shapeId":"sh/cza94vmx","reason":"Preflight guidance."}]},
+    {"outputSlide":4,"sourceSlide":4,"reuseMode":"duplicate-slide","narrativeRole":"Save first and retain the URL.","editTargets":[{"action":"rewrite","shapeId":"sh/1cj2d8b6","reason":"Save-first sequence."}]},
+    {"outputSlide":5,"sourceSlide":5,"reuseMode":"duplicate-slide","narrativeRole":"Use the smallest applicable cache.","editTargets":[{"action":"rewrite","shapeId":"sh/dgbulwnm","reason":"Record cache sequence."}]},
+    {"outputSlide":6,"sourceSlide":6,"reuseMode":"duplicate-slide","narrativeRole":"Hard refresh the browser.","editTargets":[{"action":"rewrite","shapeId":"sh/yhg7epsj","reason":"Browser refresh."}]},
+    {"outputSlide":7,"sourceSlide":7,"reuseMode":"duplicate-slide","narrativeRole":"Use a private window check.","editTargets":[{"action":"rewrite","shapeId":"sh/cb2tkvap","reason":"Anonymous verification."}]},
+    {"outputSlide":8,"sourceSlide":8,"reuseMode":"duplicate-slide","narrativeRole":"Use Breeze only when approved.","editTargets":[{"action":"rewrite","shapeId":"sh/18byd4zy","reason":"Breeze boundary."}]},
+    {"outputSlide":9,"sourceSlide":9,"reuseMode":"duplicate-slide","narrativeRole":"Escalate Varnish and server cache.","editTargets":[{"action":"rewrite","shapeId":"sh/1cfmhgne","reason":"Varnish boundary."}]},
+    {"outputSlide":10,"sourceSlide":10,"reuseMode":"duplicate-slide","narrativeRole":"Avoid random cache controls.","editTargets":[{"action":"rewrite","shapeId":"sh/xc3mho32","reason":"Safety boundary."}]},
+    {"outputSlide":11,"sourceSlide":11,"reuseMode":"duplicate-slide","narrativeRole":"Verify desktop result.","editTargets":[{"action":"rewrite","shapeId":"sh/xcryxg7y","reason":"Desktop verification."}]},
+    {"outputSlide":12,"sourceSlide":12,"reuseMode":"duplicate-slide","narrativeRole":"Verify mobile and stop when stale.","editTargets":[{"action":"rewrite","shapeId":"sh/1gbm9s3a","reason":"Mobile verification."}]},
+    {"outputSlide":13,"sourceSlide":13,"reuseMode":"duplicate-slide","narrativeRole":"Close with standard sequence.","editTargets":[{"action":"rewrite","shapeId":"sh/q50nydsj","reason":"Closing reminder."}]}
+  ]
+}
+

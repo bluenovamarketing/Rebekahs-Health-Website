@@ -1,0 +1,7 @@
+Deviation log — Practitioner Editing Video v1.4
+
+1. Added written step cards to screenshot slides where unused white space is available.
+2. Reused and rewrote the existing cue panels on slides 5 and 13 instead of adding competing callouts.
+3. Added a compact verification cue on slide 14 so the live “1 of 26” count stays visible.
+4. No screenshots were resized or repositioned.
+5. Narration voice changed from Microsoft David to Microsoft Mark for the full program.

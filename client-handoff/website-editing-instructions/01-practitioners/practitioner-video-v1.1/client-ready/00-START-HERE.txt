@@ -1,0 +1,26 @@
+REBEKAH'S WEBSITE EDITING LIBRARY
+Practitioner Editing Pilot v1.1
+
+FILES IN THIS FOLDER
+
+1. 01-Practitioner-Editing-Video-v1.1.mp4
+   Watch this first. It is a narrated beginner lesson using the live WordPress dashboard and live public website.
+
+2. 02-Practitioner-Editing-Checklist-v1.1.pdf
+   Keep this one-page checklist open while making an update, or print it for reference.
+
+3. 03-Practitioner-Editing-Captions-v1.1.vtt
+   This is the caption file for video players that support external captions.
+
+HOW TO KEEP AN OFFLINE COPY
+
+In Google Drive, open this folder, select the three numbered files, and choose Download. Google Drive will download them to your computer, normally inside the Downloads folder. Move the downloaded files into a folder you will remember, such as Documents > Rebekah's Website Instructions.
+
+The downloaded files will continue to work even if the business relationship with Blue Nova Marketing changes later. Keep the MP4 video and PDF checklist together so the instructions do not become separated.
+
+IMPORTANT CLOSING ROUTINE
+
+SAVE > CLEAR THE APPLICABLE CACHE > VERIFY THE EXACT PUBLIC PAGE ON DESKTOP AND PHONE
+
+If WordPress shows an error, the public page still displays old information, the layout breaks, or a link does not work, stop and contact Blue Nova before changing anything again.
+

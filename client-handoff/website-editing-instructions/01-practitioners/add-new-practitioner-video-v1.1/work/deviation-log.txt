@@ -1,0 +1,7 @@
+Deviation log — Add a New Practitioner or Practice Listing v1.1
+
+1. Rewrites the approved update-practitioner sequence into an add-new sequence.
+2. Keeps every inherited full-size screenshot and written-step placement.
+3. Uses the live domain and the existing custom post type label, Medical Practicioners.
+4. Does not include instructions for creating, editing, or deleting WordPress users.
+5. Narration uses Microsoft Mark throughout.

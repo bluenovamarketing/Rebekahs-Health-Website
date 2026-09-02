@@ -1,0 +1,241 @@
+{"kind":"deck","id":"pr/yug9q7","name":"Deck"}
+{"kind":"layout","layoutId":"8f2d46cb-fe62-411e-bb47-b815982b3f25","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"f4b7429c-ce60-42a7-ade9-a5585dae8664","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/e2shlx","slide":1,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":7}
+{"kind":"textbox","id":"sh/mlc7650r","slide":1,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/98n610ji","slide":1,"name":"scene-title","text":"Update an existing practitioner listing","textPreview":"Update an existing practitioner listing","textChars":39,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/87ep8vix","slide":1,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/va5o3a1o","slide":1,"name":"step-label","text":"START","textPreview":"START","textChars":5,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/u9w7a503","slide":1,"name":"footer","text":"Practitioner pilot v1.1  •  1 of 16","textPreview":"Practitioner pilot v1.1  •  1 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/wbepcfit","slide":1,"name":"outcome-card","bbox":[570,185,610,310]}
+{"kind":"textbox","id":"sh/jepo7a1k","slide":1,"name":"outcome-label","text":"WHAT YOU WILL BE ABLE TO DO","textPreview":"WHAT YOU WILL BE ABLE TO DO","textChars":27,"textLines":1,"bbox":[610,225,520,26]}
+{"kind":"textbox","id":"sh/idg7ep0z","slide":1,"name":"outcome-copy","text":"Find the correct record, edit only approved information, save once, clear the applicable cache, and verify the live page.","textPreview":"Find the correct record, edit only approved information, save once, clear the applicable cache, and verify the live page.","textChars":121,"textLines":1,"bbox":[610,276,500,165]}
+{"kind":"textbox","id":"sh/sva9w36l","slide":1,"name":"duration","text":"Beginner lesson  •  Live website  •  About 7 minutes","textPreview":"Beginner lesson  •  Live website  •  About 7 minutes","textChars":52,"textLines":1,"bbox":[570,525,610,32]}
+{"kind":"image","id":"im/w3axwfq9","slide":1,"name":"","alt":"Rebekah's Health and Nutrition logo","bbox":[78,175,420,220]}
+{"kind":"notes","id":"nt/e2shlx","slide":1,"text":""}
+{"kind":"slide","id":"sl/pmy6if","slide":2,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":7}
+{"kind":"textbox","id":"sh/7qtgzut8","slide":2,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/8r2h8zat","slide":2,"name":"scene-title","text":"Use an Editor account","textPreview":"Use an Editor account","textChars":21,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/tsby14be","slide":2,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/yl0z25sr","slide":2,"name":"step-label","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/jm9gvatw","slide":2,"name":"footer","text":"Practitioner pilot v1.1  •  2 of 16","textPreview":"Practitioner pilot v1.1  •  2 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/knih4fah","slide":2,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/ih4zy9sv","slide":2,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/3id07etg","slide":2,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/72503yxw","slide":2,"name":"instruction-copy","text":"Recommended staff role: Editor. Administrator access is not required for routine practitioner updates. Each staff member should use a separate login.","textPreview":"Recommended staff role: Editor. Administrator access is not required for routine practitioner updates. Each staff member should use a sep...","textChars":149,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/61wjutwb","slide":2,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/4rix0j2p","slide":2,"name":"","alt":"Live WordPress or public-site capture for 02-practitioner-editor-top.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/pmy6if","slide":2,"text":""}
+{"kind":"slide","id":"sl/16noa0","slide":3,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":7}
+{"kind":"textbox","id":"sh/54761ofi","slide":3,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/i1gnqtwr","slide":3,"name":"scene-title","text":"Confirm the live login address","textPreview":"Confirm the live login address","textChars":30,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/j2pozyxc","slide":3,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/sri5w3et","slide":3,"name":"step-label","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/tsr658fe","slide":3,"name":"footer","text":"Practitioner pilot v1.1  •  3 of 16","textPreview":"Practitioner pilot v1.1  •  3 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/65gnutw3","slide":3,"name":"url-card","bbox":[110,205,1060,250]}
+{"kind":"textbox","id":"sh/769o3yxo","slide":3,"name":"live-label","text":"LIVE WORDPRESS LOGIN","textPreview":"LIVE WORDPRESS LOGIN","textChars":20,"textLines":1,"bbox":[160,245,960,32]}
+{"kind":"textbox","id":"sh/gvip0ne5","slide":3,"name":"live-url","text":"rebekahspureliving.com/wp-admin","textPreview":"rebekahspureliving.com/wp-admin","textChars":31,"textLines":1,"bbox":[160,302,960,56]}
+{"kind":"textbox","id":"sh/hwr698fq","slide":3,"name":"live-note","text":"Confirm this address before changing the live site.","textPreview":"Confirm this address before changing the live site.","textChars":51,"textLines":1,"bbox":[160,377,960,30]}
+{"kind":"notes","id":"nt/16noa0","slide":3,"text":""}
+{"kind":"slide","id":"sl/ys3xon","slide":4,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/ofep8b2t","slide":4,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/3e5of6l8","slide":4,"name":"scene-title","text":"Open All Medical Practicioners","textPreview":"Open All Medical Practicioners","textChars":30,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/2dw761kn","slide":4,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/d47qlg3a","slide":4,"name":"step-label","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/cjypcv25","slide":4,"name":"footer","text":"Practitioner pilot v1.1  •  4 of 16","textPreview":"Practitioner pilot v1.1  •  4 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/bi58jqlk","slide":4,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/t8369w36","slide":4,"name":"look-here-highlight","bbox":[48,300,92,94]}
+{"kind":"shape","id":"sh/snup0r2l","slide":4,"name":"look-here-label","bbox":[48,272,112,30]}
+{"kind":"textbox","id":"sh/qdo7il8z","slide":4,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[56,278,96,18]}
+{"kind":"shape","id":"sh/bex8bq9k","slide":4,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/cfq9kvq5","slide":4,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/d0zqd0ra","slide":4,"name":"instruction-copy","text":"In the left menu, select Medical Practicioners, then All Medical Practicioners. The current WordPress label is spelled “Practicioners.”","textPreview":"In the left menu, select Medical Practicioners, then All Medical Practicioners. The current WordPress label is spelled “Practicioners.”","textChars":135,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/y18rm58v","slide":4,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/j2lcfixk","slide":4,"name":"","alt":"Live WordPress or public-site capture for 01-practitioner-list-1600x900.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/ys3xon","slide":4,"text":""}
+{"kind":"slide","id":"sl/a19e90","slide":5,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/p0v2t8be","slide":5,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/2xk3itc3","slide":5,"name":"scene-title","text":"Find the correct record and choose Edit","textPreview":"Find the correct record and choose Edit","textChars":39,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/3ytkryto","slide":5,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/gv2lgjux","slide":5,"name":"step-label","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/1wb2pobi","slide":5,"name":"footer","text":"Practitioner pilot v1.1  •  5 of 16","textPreview":"Practitioner pilot v1.1  •  5 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/etk3etcr","slide":5,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/0r6lsna1","slide":5,"name":"look-here-highlight","bbox":[145,252,250,55]}
+{"kind":"shape","id":"sh/lsfm1sbm","slide":5,"name":"look-here-label","bbox":[145,224,112,30]}
+{"kind":"textbox","id":"sh/18vq9kfe","slide":5,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[153,230,96,18]}
+{"kind":"shape","id":"sh/0nm90fet","slide":5,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/fmt87ux8","slide":5,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/elkrypwn","slide":5,"name":"instruction-copy","text":"Search by name when needed. Hover over the correct row and select Edit. Do not choose Quick Edit, Trash, or Clear Cache yet.","textPreview":"Search by name when needed. Hover over the correct row and select Edit. Do not choose Quick Edit, Trash, or Clear Cache yet.","textChars":124,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/dkbq5kfi","slide":5,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/6tgfeh4n","slide":5,"name":"","alt":"Live WordPress or public-site capture for 01-practitioner-list-1600x900.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/a19e90","slide":5,"text":""}
+{"kind":"slide","id":"sl/3frf6g","slide":6,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/wv2583yd","slide":6,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/butozix8","slide":6,"name":"scene-title","text":"Open Medical Practicioner Fields","textPreview":"Open Medical Practicioner Fields","textChars":32,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/at0n6dgn","slide":6,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/l0b65sfa","slide":6,"name":"step-label","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/kz2pcnyp","slide":6,"name":"footer","text":"Practitioner pilot v1.1  •  6 of 16","textPreview":"Practitioner pilot v1.1  •  6 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/jyto3ix4","slide":6,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/14r6tofq","slide":6,"name":"look-here-highlight","bbox":[56,440,785,202]}
+{"kind":"shape","id":"sh/03i50jyl","slide":6,"name":"look-here-label","bbox":[56,412,112,30]}
+{"kind":"textbox","id":"sh/m1432147","slide":6,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[64,418,96,18]}
+{"kind":"shape","id":"sh/n2dkv6ls","slide":6,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/8nml4bmd","slide":6,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/9ov2xg3i","slide":6,"name":"instruction-copy","text":"Wait for the editor to load, then scroll down. If the fields are hidden, select Meta Boxes and enlarge the panel with Drag to resize.","textPreview":"Wait for the editor to load, then scroll down. If the fields are hidden, select Meta Boxes and enlarge the panel with Drag to resize.","textChars":133,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/ap436lk3","slide":6,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/vyhc72t4","slide":6,"name":"","alt":"Live WordPress or public-site capture for 02-practitioner-editor-reloaded.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/3frf6g","slide":6,"text":""}
+{"kind":"slide","id":"sl/cj5qqa","slide":7,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/psvyhg3u","slide":7,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/25kf6143","slide":7,"name":"scene-title","text":"Choose only approved service categories","textPreview":"Choose only approved service categories","textChars":39,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/36tgf6lo","slide":7,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/g32x4bmx","slide":7,"name":"step-label","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/h4bydg3i","slide":7,"name":"footer","text":"Practitioner pilot v1.1  •  7 of 16","textPreview":"Practitioner pilot v1.1  •  7 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/u1kf2147","slide":7,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/sz2x0rm1","slide":7,"name":"look-here-highlight","bbox":[55,392,575,242]}
+{"kind":"shape","id":"sh/t0by9w3m","slide":7,"name":"look-here-label","bbox":[55,364,112,30]}
+{"kind":"textbox","id":"sh/tw7qh47q","slide":7,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[63,370,96,18]}
+{"kind":"shape","id":"sh/svyp8zq5","slide":7,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/7up8fupk","slide":7,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/6tg7698z","slide":7,"name":"instruction-copy","text":"Check the approved Medical Service category or categories. Leave unrelated boxes alone. Stop and ask if the needed category does not exist.","textPreview":"Check the approved Medical Service category or categories. Leave unrelated boxes alone. Stop and ask if the needed category does not exist.","textChars":139,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/5s76d47e","slide":7,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/uxonah47","slide":7,"name":"","alt":"Live WordPress or public-site capture for 04-practitioner-fields.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/cj5qqa","slide":7,"text":""}
+{"kind":"slide","id":"sl/vu4n41","slide":8,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/65gz6hgf","slide":8,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/t87i1cf6","slide":8,"name":"scene-title","text":"Update the practice and public name","textPreview":"Update the practice and public name","textChars":35,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/s7yh87yl","slide":8,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/fa903mxw","slide":8,"name":"step-label","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/u9gzuhgb","slide":8,"name":"footer","text":"Practitioner pilot v1.1  •  8 of 16","textPreview":"Practitioner pilot v1.1  •  8 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/hcri5wf2","slide":8,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/ve5grixs","slide":8,"name":"look-here-highlight","bbox":[55,454,785,102]}
+{"kind":"shape","id":"sh/adwzyxg7","slide":8,"name":"look-here-label","bbox":[55,426,112,30]}
+{"kind":"textbox","id":"sh/s7a1oby9","slide":8,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[63,432,96,18]}
+{"kind":"shape","id":"sh/d8j2xgfu","slide":8,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/q58jmlg3","slide":8,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/r6hkvqxo","slide":8,"name":"instruction-copy","text":"Medical Center is the public practice name. Medical Practitioner Full Name is the public name and credentials. Verify every character.","textPreview":"Medical Center is the public practice name. Medical Practitioner Full Name is the public name and credentials. Verify every character.","textChars":134,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/0ba1svyl","slide":8,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/tcv6d436","slide":8,"name":"","alt":"Live WordPress or public-site capture for 05-practitioner-name-practice.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/vu4n41","slide":8,"text":""}
+{"kind":"slide","id":"sl/f6gssy","slide":9,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/oz6t47mh","slide":9,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/nyxcb25w","slide":9,"name":"scene-title","text":"Edit the description in Visual mode","textPreview":"Edit the description in Visual mode","textChars":35,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/mxob2x4b","slide":9,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/1wfu9snq","slide":9,"name":"step-label","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/0v6t07m5","slide":9,"name":"footer","text":"Practitioner pilot v1.1  •  9 of 16","textPreview":"Practitioner pilot v1.1  •  9 of 16","textChars":35,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/zuxc725k","slide":9,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/lsjulwnu","slide":9,"name":"look-here-highlight","bbox":[55,423,785,215]}
+{"kind":"shape","id":"sh/kradcrmp","slide":9,"name":"look-here-label","bbox":[55,395,112,30]}
+{"kind":"textbox","id":"sh/mtcjadgv","slide":9,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[63,401,96,18]}
+{"kind":"shape","id":"sh/nulkjixg","slide":9,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/8vu1cny1","slide":9,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/9w32lsfm","slide":9,"name":"instruction-copy","text":"Select Visual before editing. Replace only the approved text. Re-read the first and last sentence after pasting. Do not use the Text or HTML tab.","textPreview":"Select Visual before editing. Replace only the approved text. Re-read the first and last sentence after pasting. Do not use the Text or H...","textChars":145,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/y5sj6dgz","slide":9,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/r2pwb6hw","slide":9,"name":"","alt":"Live WordPress or public-site capture for 06-practitioner-description.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/f6gssy","slide":9,"text":""}
+{"kind":"slide","id":"sl/c1l839","slide":10,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/md0vexcb","slide":10,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/9gbepcb2","slide":10,"name":"scene-title","text":"Add only approved public contact details","textPreview":"Add only approved public contact details","textChars":40,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/8f2dg7uh","slide":10,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/za9cjit0","slide":10,"name":"step-label","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/y90vaxcf","slide":10,"name":"footer","text":"Practitioner pilot v1.1  •  10 of 16","textPreview":"Practitioner pilot v1.1  •  10 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/lcrulsbq","slide":10,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/j6dwvmt4","slide":10,"name":"look-here-highlight","bbox":[55,427,785,211]}
+{"kind":"shape","id":"sh/i5kvmhcj","slide":10,"name":"look-here-label","bbox":[55,399,112,30]}
+{"kind":"textbox","id":"sh/83e9kvqx","slide":10,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[63,405,96,18]}
+{"kind":"shape","id":"sh/t4nqt07i","slide":10,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/61cryl8r","slide":10,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/7258rqpc","slide":10,"name":"instruction-copy","text":"Use Visual mode. Add approved website, email, phone, or location details. Test every link and never publish private information.","textPreview":"Use Visual mode. Add approved website, email, phone, or location details. Test every link and never publish private information.","textChars":128,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/kzupwbq1","slide":10,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/lcradsvi","slide":10,"name":"","alt":"Live WordPress or public-site capture for 07-practitioner-contact.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/c1l839","slide":10,"text":""}
+{"kind":"slide","id":"sl/yadwqk","slide":11,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/bu58feto","slide":11,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/cve9oju9","slide":11,"name":"scene-title","text":"Review only the fields you touched","textPreview":"Review only the fields you touched","textChars":34,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/dwnqhobe","slide":11,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/yxwrqtcz","slide":11,"name":"step-label","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/zy58jytk","slide":11,"name":"footer","text":"Practitioner pilot v1.1  •  11 of 16","textPreview":"Practitioner pilot v1.1  •  11 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/0ze9sju5","slide":11,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/m1gretcb","slide":11,"name":"look-here-highlight","bbox":[55,454,785,102]}
+{"kind":"shape","id":"sh/n2p8nytw","slide":11,"name":"look-here-label","bbox":[55,426,112,30]}
+{"kind":"textbox","id":"sh/n6xcvqxk","slide":11,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[63,432,96,18]}
+{"kind":"shape","id":"sh/25ovmlgz","slide":11,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/p8fuxgfq","slide":11,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/o76dovy5","slide":11,"name":"instruction-copy","text":"Check category, practice, name, credentials, description, and contact links. Do not change the page address, SEO settings, code, or unrelated controls.","textPreview":"Check category, practice, name, credentials, description, and contact links. Do not change the page address, SEO settings, code, or unrel...","textChars":151,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/fixcr6ho","slide":11,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/szi9wzut","slide":11,"name":"","alt":"Live WordPress or public-site capture for 05-practitioner-name-practice.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/yadwqk","slide":11,"text":""}
+{"kind":"slide","id":"sl/ux9ue5","slide":12,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/1sz2lg7y","slide":12,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/e58ja1on","slide":12,"name":"scene-title","text":"Select Save once—and wait","textPreview":"Select Save once—and wait","textChars":25,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/fqhkj6ps","slide":12,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/ovalgb6p","slide":12,"name":"step-label","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/pwj2pg7a","slide":12,"name":"footer","text":"Practitioner pilot v1.1  •  12 of 16","textPreview":"Practitioner pilot v1.1  •  12 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/2t8jeloj","slide":12,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/czalkv6l","slide":12,"name":"look-here-highlight","bbox":[640,190,47,30]}
+{"kind":"shape","id":"sh/d0j2t076","slide":12,"name":"look-here-label","bbox":[640,162,112,30]}
+{"kind":"textbox","id":"sh/5wneho7i","slide":12,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[648,168,96,18]}
+{"kind":"shape","id":"sh/kvex8jqx","slide":12,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/ju5wfypc","slide":12,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/itwf6t8r","slide":12,"name":"instruction-copy","text":"Use the blue Save button in the upper-right corner. Wait for the saved confirmation. If WordPress displays an error, stop and take a screenshot.","textPreview":"Use the blue Save button in the upper-right corner. Wait for the saved confirmation. If WordPress displays an error, stop and take a scre...","textChars":144,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/tk7el87e","slide":12,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/ihwj2pgf","slide":12,"name":"","alt":"Live WordPress or public-site capture for 02-practitioner-editor-top.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/ux9ue5","slide":12,"text":""}
+{"kind":"slide","id":"sl/g53x9q","slide":13,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/d87mpkza","slide":13,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/q5g3u5gz","slide":13,"name":"scene-title","text":"Clear only the record’s applicable cache","textPreview":"Clear only the record’s applicable cache","textChars":40,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/r6p4nahk","slide":13,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/0bil0fy1","slide":13,"name":"step-label","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/1crmtkzm","slide":13,"name":"footer","text":"Practitioner pilot v1.1  •  13 of 16","textPreview":"Practitioner pilot v1.1  •  13 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/e903ypgv","slide":13,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/gfelovyx","slide":13,"name":"look-here-highlight","bbox":[145,252,250,55]}
+{"kind":"shape","id":"sh/hgn2h0zi","slide":13,"name":"look-here-label","bbox":[145,224,112,30]}
+{"kind":"textbox","id":"sh/907edo7m","slide":13,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[153,230,96,18]}
+{"kind":"shape","id":"sh/8zyx4jq1","slide":13,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/nypwbypg","slide":13,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/mxgf2t8v","slide":13,"name":"instruction-copy","text":"Return to the practitioner list. Hover over the updated row and select its Clear Cache action. Server-wide purges are covered in the separate cache lesson.","textPreview":"Return to the practitioner list. Hover over the updated row and select its Clear Cache action. Server-wide purges are covered in the sepa...","textChars":155,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/xoryh87i","slide":13,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/q5wjmtor","slide":13,"name":"","alt":"Live WordPress or public-site capture for 01-practitioner-list-1600x900.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/g53x9q","slide":13,"text":""}
+{"kind":"slide","id":"sl/hj33r5","slide":14,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/58ru9cva","slide":14,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/i50behwz","slide":14,"name":"scene-title","text":"Verify the exact public directory","textPreview":"Verify the exact public directory","textChars":33,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/369c72xk","slide":14,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/sbitkre1","slide":14,"name":"step-label","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/dwbudwvm","slide":14,"name":"footer","text":"Practitioner pilot v1.1  •  14 of 16","textPreview":"Practitioner pilot v1.1  •  14 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/q90bihwv","slide":14,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/8fyt8nex","slide":14,"name":"look-here-highlight","bbox":[116,374,535,270]}
+{"kind":"shape","id":"sh/tg7a1sf2","slide":14,"name":"look-here-label","bbox":[116,346,112,30]}
+{"kind":"textbox","id":"sh/5g7ipsvq","slide":14,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[124,352,96,18]}
+{"kind":"shape","id":"sh/kfyhgnu5","slide":14,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/jep0nidk","slide":14,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/idgzexcz","slide":14,"name":"instruction-copy","text":"Open rebekahspureliving.com/practitioners/. Search for the person and confirm the name, practice, category, and description preview.","textPreview":"Open rebekahspureliving.com/practitioners/. Search for the person and confirm the name, practice, category, and description preview.","textChars":132,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/t4ritcvm","slide":14,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/6lwz2tgv","slide":14,"name":"","alt":"Live WordPress or public-site capture for 10-public-practitioner-filtered.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/hj33r5","slide":14,"text":""}
+{"kind":"slide","id":"sl/r1a5vu","slide":15,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":8}
+{"kind":"textbox","id":"sh/gzah0b6x","slide":15,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/fy10765c","slide":15,"name":"scene-title","text":"Open the full listing and check a phone","textPreview":"Open the full listing and check a phone","textChars":39,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/exszy1or","slide":15,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/po3idgne","slide":15,"name":"step-label","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/onah4b6t","slide":15,"name":"footer","text":"Practitioner pilot v1.1  •  15 of 16","textPreview":"Practitioner pilot v1.1  •  15 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/nm10b658","slide":15,"name":"screen-frame","bbox":[38,154,820,510]}
+{"kind":"shape","id":"sh/xs3ih0na","slide":15,"name":"look-here-highlight","bbox":[126,173,256,468]}
+{"kind":"shape","id":"sh/cru18v6p","slide":15,"name":"look-here-label","bbox":[126,145,112,30]}
+{"kind":"textbox","id":"sh/ydwn6lcj","slide":15,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[134,151,96,18]}
+{"kind":"shape","id":"sh/ze54zqd4","slide":15,"name":"instruction-card","bbox":[892,154,348,510]}
+{"kind":"textbox","id":"sh/kfy58vup","slide":15,"name":"instruction-label","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[926,190,280,28]}
+{"kind":"textbox","id":"sh/lg7m1gva","slide":15,"name":"instruction-copy","text":"Select View full listing. Confirm the complete description and contact information. Repeat the check on a phone and test every link.","textPreview":"Select View full listing. Confirm the complete description and contact information. Repeat the check on a phone and test every link.","textChars":132,"textLines":1,"bbox":[926,238,280,330]}
+{"kind":"textbox","id":"sh/mhgnalcf","slide":15,"name":"safety","text":"If unsure: stop before saving.","textPreview":"If unsure: stop before saving.","textChars":30,"textLines":1,"bbox":[926,601,280,28]}
+{"kind":"image","id":"im/f25szupk","slide":15,"name":"","alt":"Live WordPress or public-site capture for 11-public-practitioner-expanded.png","bbox":[51,167,794,484]}
+{"kind":"notes","id":"nt/r1a5vu","slide":15,"text":""}
+{"kind":"slide","id":"sl/rdowjr","slide":16,"title":"REBEKAH'S WEBSITE EDITING LIBRARY","textShapes":6}
+{"kind":"textbox","id":"sh/ehofepgj","slide":16,"name":"library-label","text":"REBEKAH'S WEBSITE EDITING LIBRARY","textPreview":"REBEKAH'S WEBSITE EDITING LIBRARY","textChars":33,"textLines":1,"bbox":[38,28,640,22]}
+{"kind":"textbox","id":"sh/1kfy94fu","slide":16,"name":"scene-title","text":"Finish every website edit the same way","textPreview":"Finish every website edit the same way","textChars":38,"textLines":1,"bbox":[38,61,1150,68]}
+{"kind":"shape","id":"sh/gj6xgzy9","slide":16,"name":"step-badge","bbox":[1135,22,105,46]}
+{"kind":"textbox","id":"sh/3mxgbex0","slide":16,"name":"step-label","text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[1143,33,89,24]}
+{"kind":"textbox","id":"sh/2lofi9gf","slide":16,"name":"footer","text":"Practitioner pilot v1.1  •  16 of 16","textPreview":"Practitioner pilot v1.1  •  16 of 16","textChars":36,"textLines":1,"bbox":[910,684,330,18]}
+{"kind":"shape","id":"sh/pozyd4f6","slide":16,"name":"closing-card","bbox":[95,190,1090,325]}
+{"kind":"textbox","id":"sh/onqxkjyl","slide":16,"name":"closing-copy","text":"SAVE  →  CLEAR THE APPLICABLE CACHE  →  VERIFY THE EXACT PUBLIC PAGE ON DESKTOP AND PHONE","textPreview":"SAVE  →  CLEAR THE APPLICABLE CACHE  →  VERIFY THE EXACT PUBLIC PAGE ON DESKTOP AND PHONE","textChars":89,"textLines":1,"bbox":[145,260,990,150]}
+{"kind":"textbox","id":"sh/jqdwzahg","slide":16,"name":"closing-help","text":"If any check fails, take a screenshot and contact Blue Nova before changing anything again.","textPreview":"If any check fails, take a screenshot and contact Blue Nova before changing anything again.","textChars":91,"textLines":1,"bbox":[210,545,860,46]}
+{"kind":"notes","id":"nt/rdowjr","slide":16,"text":""}

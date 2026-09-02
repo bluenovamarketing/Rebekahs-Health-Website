@@ -1,0 +1,7 @@
+Deviation log — Create or Update an Event v1.1
+
+1. Uses 13 scenes instead of 16 because the event workflow is shorter.
+2. Replaces practitioner-specific screens with first-party event admin and public screens.
+3. Preserves the approved full-HD composition and written-step panel system.
+4. Does not include WordPress user-account instructions or ticketing instructions.
+5. Narration uses Microsoft Mark throughout.

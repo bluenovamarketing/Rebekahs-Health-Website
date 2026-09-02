@@ -1,0 +1,191 @@
+{"kind":"deck","id":"pr/vynn9s","name":"Deck"}
+{"kind":"layout","layoutId":"7dcc5481-86b2-490d-9d4a-ff4850a21d0b","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"3f9a375e-4c6a-42eb-b45c-7acf067a0976","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/3lk3mp","slide":1,"title":"Update an existing practitioner listing","textShapes":5}
+{"kind":"shape","id":"sh/a9sj6l8r","slide":1,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/xcj2h0r2","slide":1,"name":"title","text":"Update an existing practitioner listing","textPreview":"Update an existing practitioner listing","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/wba18vqx","slide":1,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/je1kjap8","slide":1,"name":"step-text","text":"START","textPreview":"START","textChars":5,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/ydsja58n","slide":1,"name":"page","text":"Practitioner editing v1.2  •  1/16","textPreview":"Practitioner editing v1.2  •  1/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/kfa1cfqt","slide":1,"name":"start-copy","text":"Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.","textPreview":"Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.","textChars":113,"textLines":1,"bbox":[930,290,770,260]}
+{"kind":"textbox","id":"sh/fihk7694","slide":1,"name":"start-note","text":"Beginner lesson  •  Live website  •  Full-screen version","textPreview":"Beginner lesson  •  Live website  •  Full-screen version","textChars":56,"textLines":1,"bbox":[935,600,750,42]}
+{"kind":"image","id":"im/0nup4vip","slide":1,"name":"","alt":"Rebekah's Health and Nutrition logo","bbox":[155,245,650,350]}
+{"kind":"notes","id":"nt/3lk3mp","slide":1,"text":""}
+{"kind":"slide","id":"sl/8mw77x","slide":2,"title":"Required role: Editor or Administrator","textShapes":7}
+{"kind":"shape","id":"sh/k76tkn6h","slide":2,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/z6xcbi5w","slide":2,"name":"title","text":"Required role: Editor or Administrator","textPreview":"Required role: Editor or Administrator","textChars":38,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/y5obidob","slide":2,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/x4fu987q","slide":2,"name":"step-text","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/c36tg365","slide":2,"name":"page","text":"Practitioner editing v1.2  •  2/16","textPreview":"Practitioner editing v1.2  •  2/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/b2xc7ypk","slide":2,"name":"role-label","text":"WORDPRESS ROLE REQUIRED","textPreview":"WORDPRESS ROLE REQUIRED","textChars":23,"textLines":1,"bbox":[260,255,1400,46]}
+{"kind":"textbox","id":"sh/a1obetoz","slide":2,"name":"role-value","text":"EDITOR OR ADMINISTRATOR","textPreview":"EDITOR OR ADMINISTRATOR","textChars":23,"textLines":1,"bbox":[160,345,1600,95]}
+{"kind":"shape","id":"sh/p0fu587u","slide":2,"name":"enough-box","bbox":[520,515,880,130]}
+{"kind":"textbox","id":"sh/ozmtc369","slide":2,"name":"enough","text":"Editor is enough for this task.","textPreview":"Editor is enough for this task.","textChars":31,"textLines":1,"bbox":[570,550,780,60]}
+{"kind":"textbox","id":"sh/qd4zuxgj","slide":2,"name":"role-stop","text":"If you do not know your role, stop and ask Blue Nova before editing.","textPreview":"If you do not know your role, stop and ask Blue Nova before editing.","textChars":68,"textLines":1,"bbox":[365,730,1190,55]}
+{"kind":"notes","id":"nt/8mw77x","slide":2,"text":""}
+{"kind":"slide","id":"sl/92lhfr","slide":3,"title":"Confirm the live login address","textShapes":6}
+{"kind":"shape","id":"sh/vihwjaps","slide":3,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/gjqxsfqd","slide":3,"name":"title","text":"Confirm the live login address","textPreview":"Confirm the live login address","textChars":30,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/hkzelk7y","slide":3,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/6tovm58b","slide":3,"name":"step-text","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/7uxwfapw","slide":3,"name":"page","text":"Practitioner editing v1.2  •  3/16","textPreview":"Practitioner editing v1.2  •  3/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/8fqdofqh","slide":3,"name":"login-label","text":"LIVE WORDPRESS LOGIN","textPreview":"LIVE WORDPRESS LOGIN","textChars":20,"textLines":1,"bbox":[250,285,1420,44]}
+{"kind":"shape","id":"sh/tgzehk72","slide":3,"name":"url-box","bbox":[190,365,1540,180]}
+{"kind":"textbox","id":"sh/ypovi58f","slide":3,"name":"login-url","text":"rebekahspureliving.com/wp-admin","textPreview":"rebekahspureliving.com/wp-admin","textChars":31,"textLines":1,"bbox":[260,420,1400,72]}
+{"kind":"textbox","id":"sh/jqxwbq9k","slide":3,"name":"login-note","text":"Confirm this live address before making a change.","textPreview":"Confirm this live address before making a change.","textChars":49,"textLines":1,"bbox":[300,650,1320,55]}
+{"kind":"notes","id":"nt/92lhfr","slide":3,"text":""}
+{"kind":"slide","id":"sl/6nscrx","slide":4,"title":"Open All Medical Practicioners","textShapes":4}
+{"kind":"shape","id":"sh/idw3udwj","slide":4,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/5g72psva","slide":4,"name":"title","text":"Open All Medical Practicioners","textPreview":"Open All Medical Practicioners","textChars":30,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/4fylwnup","slide":4,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ripkr2dg","slide":4,"name":"step-text","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/qhg3yxcv","slide":4,"name":"page","text":"Practitioner editing v1.2  •  4/16","textPreview":"Practitioner editing v1.2  •  4/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/dk72tsv6","slide":4,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/f6p4v2dc","slide":4,"name":"look-here-highlight","bbox":[189.97,338.84,140.08,156.56]}
+{"kind":"shape","id":"sh/elg32xcr","slide":4,"name":"look-here-label","bbox":[189.97,290.84,170,50]}
+{"kind":"textbox","id":"sh/knmxczqp","slide":4,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,303.84,150,24]}
+{"kind":"image","id":"im/x4bu58ri","slide":4,"name":"","alt":"Live WordPress or public-site capture for Open All Medical Practicioners","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/6nscrx","slide":4,"text":""}
+{"kind":"slide","id":"sl/3yz6fz","slide":5,"title":"Find the correct record and choose Edit","textShapes":4}
+{"kind":"shape","id":"sh/yhgni503","slide":5,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/lk76dkje","slide":5,"name":"title","text":"Find the correct record and choose Edit","textPreview":"Find the correct record and choose Edit","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/0jy5kfit","slide":5,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/nm9ofu1k","slide":5,"name":"step-text","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/mlgnmp0z","slide":5,"name":"page","text":"Practitioner editing v1.2  •  5/16","textPreview":"Practitioner editing v1.2  •  5/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/98r6hkjq","slide":5,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/3q543q1g","slide":5,"name":"look-here-highlight","bbox":[334.17,244.08,642.72,127.72]}
+{"kind":"shape","id":"sh/2pwnal0v","slide":5,"name":"look-here-label","bbox":[334.17,196.08,170,50]}
+{"kind":"textbox","id":"sh/wvqh4ji9","slide":5,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[344.17,209.08,150,24]}
+{"kind":"image","id":"im/x8jahonu","slide":5,"name":"","alt":"Live WordPress or public-site capture for Find the correct record and choose Edit","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/3yz6fz","slide":5,"text":""}
+{"kind":"slide","id":"sl/msa0wu","slide":6,"title":"Open Medical Practicioner Fields","textShapes":4}
+{"kind":"shape","id":"sh/l4ja9k7m","slide":6,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/y1srypov","slide":6,"name":"title","text":"Open Medical Practicioner Fields","textPreview":"Open Medical Practicioner Fields","textChars":32,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/z21s7apg","slide":6,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/cfq9wf65","slide":6,"name":"step-text","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/x0ja5k7q","slide":6,"name":"page","text":"Practitioner editing v1.2  •  6/16","textPreview":"Practitioner editing v1.2  •  6/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/ad8ru5oz","slide":6,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/wbut8z69","slide":6,"name":"look-here-highlight","bbox":[189.97,503.64,1248.36,502.64]}
+{"kind":"shape","id":"sh/hw3ah4nu","slide":6,"name":"look-here-label","bbox":[189.97,455.64,170,50]}
+{"kind":"textbox","id":"sh/x0j2t476","slide":6,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,468.64,150,24]}
+{"kind":"image","id":"im/ulsbalwr","slide":6,"name":"","alt":"Live WordPress or public-site capture for Open Medical Practicioner Fields","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/msa0wu","slide":6,"text":""}
+{"kind":"slide","id":"sl/xo0014","slide":7,"title":"Choose only approved service categories","textShapes":4}
+{"kind":"shape","id":"sh/ip0futc3","slide":7,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/5sbypobu","slide":7,"name":"title","text":"Choose only approved service categories","textPreview":"Choose only approved service categories","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/4r2xwju9","slide":7,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/rutgrytk","slide":7,"name":"step-text","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/qtkfytcf","slide":7,"name":"page","text":"Practitioner editing v1.2  •  7/16","textPreview":"Practitioner editing v1.2  •  7/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/dwbyt8bq","slide":7,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/7ypgfetg","slide":7,"name":"look-here-highlight","bbox":[189.97,458.32,972.32,535.6]}
+{"kind":"shape","id":"sh/mxgfm9cv","slide":7,"name":"look-here-label","bbox":[189.97,410.32,170,50]}
+{"kind":"textbox","id":"sh/s3ux4jet","slide":7,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,423.32,150,24]}
+{"kind":"image","id":"im/l8r618fu","slide":7,"name":"","alt":"Live WordPress or public-site capture for Choose only approved service categories","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/xo0014","slide":7,"text":""}
+{"kind":"slide","id":"sl/fghvwq","slide":8,"title":"Update the practice and public name","textShapes":4}
+{"kind":"shape","id":"sh/hcfqtgf6","slide":8,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/u947ilgf","slide":8,"name":"title","text":"Update the practice and public name","textPreview":"Update the practice and public name","textChars":35,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/vax8rqx0","slide":8,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/87mpgby9","slide":8,"name":"step-text","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/t8vqpgfu","slide":8,"name":"page","text":"Practitioner editing v1.2  •  8/16","textPreview":"Practitioner editing v1.2  •  8/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/6547e1gj","slide":8,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/s3qpsfet","slide":8,"name":"look-here-highlight","bbox":[189.97,536.6,1248.36,247.2]}
+{"kind":"shape","id":"sh/d4zq10fy","slide":8,"name":"look-here-label","bbox":[189.97,488.6,170,50]}
+{"kind":"textbox","id":"sh/xsvutonu","slide":8,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,501.6,150,24]}
+{"kind":"image","id":"im/qxgzulon","slide":8,"name":"","alt":"Live WordPress or public-site capture for Update the practice and public name","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/fghvwq","slide":8,"text":""}
+{"kind":"slide","id":"sl/2pcg25","slide":9,"title":"Edit the description in Visual mode","textShapes":4}
+{"kind":"shape","id":"sh/18nihcru","slide":9,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/e5cz6x8j","slide":9,"name":"title","text":"Edit the description in Visual mode","textPreview":"Edit the description in Visual mode","textChars":35,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/z6lgf294","slide":9,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/obehcrql","slide":9,"name":"step-text","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/9wnilcr6","slide":9,"name":"page","text":"Practitioner editing v1.2  •  9/16","textPreview":"Practitioner editing v1.2  •  9/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/m9wzah8f","slide":9,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/4fah0nah","slide":9,"name":"look-here-highlight","bbox":[189.97,470.68,1248.36,494.4]}
+{"kind":"shape","id":"sh/5g3y9sr2","slide":9,"name":"look-here-label","bbox":[189.97,422.68,170,50]}
+{"kind":"textbox","id":"sh/twr214nm","slide":9,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,435.68,150,24]}
+{"kind":"image","id":"im/y9cvipsj","slide":9,"name":"","alt":"Live WordPress or public-site capture for Edit the description in Visual mode","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/2pcg25","slide":9,"text":""}
+{"kind":"slide","id":"sl/klro3i","slide":10,"title":"Add only approved public contact details","textShapes":4}
+{"kind":"shape","id":"sh/2tg3u1k7","slide":10,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/pw72pgjy","slide":10,"name":"title","text":"Add only approved public contact details","textPreview":"Add only approved public contact details","textChars":40,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/4vylwb2d","slide":10,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ri9krq14","slide":10,"name":"step-text","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/qxg3ylkj","slide":10,"name":"page","text":"Practitioner editing v1.2  •  10/16","textPreview":"Practitioner editing v1.2  •  10/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/dkr2t0ju","slide":10,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/725kfm1k","slide":10,"name":"look-here-highlight","bbox":[189.97,450.08,1248.36,543.84]}
+{"kind":"shape","id":"sh/61wjmhkf","slide":10,"name":"look-here-label","bbox":[189.97,402.08,170,50]}
+{"kind":"textbox","id":"sh/0vil8j6l","slide":10,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,415.08,150,24]}
+{"kind":"image","id":"im/t0vyho3y","slide":10,"name":"","alt":"Live WordPress or public-site capture for Add only approved public contact details","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/klro3i","slide":10,"text":""}
+{"kind":"slide","id":"sl/8e5y0u","slide":11,"title":"Review every field you changed","textShapes":4}
+{"kind":"shape","id":"sh/sfqtovyt","slide":11,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/7ehcvqx8","slide":11,"name":"title","text":"Review every field you changed","textPreview":"Review every field you changed","textChars":30,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/6d8bmlgn","slide":11,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/h4ju10fa","slide":11,"name":"step-text","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/g3atsvep","slide":11,"name":"page","text":"Practitioner editing v1.2  •  11/16","textPreview":"Practitioner editing v1.2  •  11/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/f21czqx4","slide":11,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/p83u5kf6","slide":11,"name":"look-here-highlight","bbox":[189.97,536.6,1248.36,247.2]}
+{"kind":"shape","id":"sh/47adwfel","slide":11,"name":"look-here-label","bbox":[189.97,488.6,170,50]}
+{"kind":"textbox","id":"sh/2ps72hk3","slide":11,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,501.6,150,24]}
+{"kind":"image","id":"im/7ixwzm14","slide":11,"name":"","alt":"Live WordPress or public-site capture for Review every field you changed","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/8e5y0u","slide":11,"text":""}
+{"kind":"slide","id":"sl/38ymgk","slide":12,"title":"Select Save once—and wait","textShapes":4}
+{"kind":"shape","id":"sh/ne9sb25g","slide":12,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/of2tk761","slide":12,"name":"title","text":"Select Save once—and wait","textPreview":"Select Save once—and wait","textChars":25,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/pgbadsnm","slide":12,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ep0redoz","slide":12,"name":"step-text","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/fq9s7i5k","slide":12,"name":"page","text":"Practitioner editing v1.2  •  12/16","textPreview":"Practitioner editing v1.2  •  12/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/0ritgn65","slide":12,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/6lgradon","slide":12,"name":"look-here-highlight","bbox":[1244.69,104,201.88,103]}
+{"kind":"shape","id":"sh/rmps3i58","slide":12,"name":"look-here-label","bbox":[1244.69,106,170,50]}
+{"kind":"textbox","id":"sh/729w3uxk","slide":12,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[1254.69,119,150,24]}
+{"kind":"image","id":"im/szi9kbq1","slide":12,"name":"","alt":"Live WordPress or public-site capture for Select Save once—and wait","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/38ymgk","slide":12,"text":""}
+{"kind":"slide","id":"sl/i30ucc","slide":13,"title":"Clear only the record’s applicable cache","textShapes":4}
+{"kind":"shape","id":"sh/loby58fu","slide":13,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/yl0zudgj","slide":13,"name":"title","text":"Clear only the record’s applicable cache","textPreview":"Clear only the record’s applicable cache","textChars":40,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/jm9g3ix4","slide":13,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/8r2h0nel","slide":13,"name":"step-text","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/tsbi9sf6","slide":13,"name":"page","text":"Practitioner editing v1.2  •  13/16","textPreview":"Practitioner editing v1.2  •  13/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/6pkzydwf","slide":13,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/gv2h47eh","slide":13,"name":"look-here-highlight","bbox":[334.17,244.08,642.72,127.72]}
+{"kind":"shape","id":"sh/hgvidsf2","slide":13,"name":"look-here-label","bbox":[334.17,196.08,170,50]}
+{"kind":"textbox","id":"sh/pgvat4ja","slide":13,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[344.17,209.08,150,24]}
+{"kind":"image","id":"im/6xcrqlsv","slide":13,"name":"","alt":"Live WordPress or public-site capture for Clear only the record’s applicable cache","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/i30ucc","slide":13,"text":""}
+{"kind":"slide","id":"sl/zynuvd","slide":14,"title":"Verify the exact public directory","textShapes":4}
+{"kind":"shape","id":"sh/c7ql0bux","slide":14,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/b6hk76dc","slide":14,"name":"title","text":"Verify the exact public directory","textPreview":"Verify the exact public directory","textChars":33,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/q583ylcr","slide":14,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/lwj2d0vu","slide":14,"name":"step-text","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/kbal4vu9","slide":14,"name":"page","text":"Practitioner editing v1.2  •  14/16","textPreview":"Practitioner editing v1.2  •  14/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/zahkbqdo","slide":14,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/90j2h0bq","slide":14,"name":"look-here-highlight","bbox":[268.25,375.92,1186.56,535.6]}
+{"kind":"shape","id":"sh/8zal8vu5","slide":14,"name":"look-here-label","bbox":[268.25,327.92,170,50]}
+{"kind":"textbox","id":"sh/m9w3i9wf","slide":14,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[278.25,340.92,150,24]}
+{"kind":"image","id":"im/fm5sva90","slide":14,"name":"","alt":"Live WordPress or public-site capture for Verify the exact public directory","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/zynuvd","slide":14,"text":""}
+{"kind":"slide","id":"sl/5ajsd7","slide":15,"title":"Open the full listing and check a phone","textShapes":4}
+{"kind":"shape","id":"sh/y9kru9sb","slide":15,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/lwbq5obm","slide":15,"name":"title","text":"Open the full listing and check a phone","textPreview":"Open the full listing and check a phone","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/0v29wja1","slide":15,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/nyt87yts","slide":15,"name":"step-text","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/mxkryts7","slide":15,"name":"page","text":"Practitioner editing v1.2  •  15/16","textPreview":"Practitioner editing v1.2  •  15/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/90bq9oby","slide":15,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/v2d8byto","slide":15,"name":"look-here-highlight","bbox":[276.49,104,469.68,758.08]}
+{"kind":"shape","id":"sh/a14r2ts3","slide":15,"name":"look-here-label","bbox":[276.49,106,170,50]}
+{"kind":"textbox","id":"sh/072xk3yt","slide":15,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[286.49,119,150,24]}
+{"kind":"image","id":"im/psz6lsv2","slide":15,"name":"","alt":"Live WordPress or public-site capture for Open the full listing and check a phone","bbox":[34,104,1852,927]}
+{"kind":"notes","id":"nt/5ajsd7","slide":15,"text":""}
+{"kind":"slide","id":"sl/cgaxan","slide":16,"title":"Finish every edit with the same three checks","textShapes":6}
+{"kind":"shape","id":"sh/idkjqdcr","slide":16,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/5gvilsb2","slide":16,"name":"title","text":"Finish every edit with the same three checks","textPreview":"Finish every edit with the same three checks","textChars":44,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/kf21snah","slide":16,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/7id0nit8","slide":16,"name":"step-text","text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/6h4judsn","slide":16,"name":"page","text":"Practitioner editing v1.2  •  16/16","textPreview":"Practitioner editing v1.2  •  16/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/tkvipsbe","slide":16,"name":"closing","bbox":[150,265,1620,390]}
+{"kind":"textbox","id":"sh/sjm1wnat","slide":16,"name":"closing-main","text":"SAVE  →  CLEAR THE APPLICABLE CACHE  →  VERIFY THE EXACT PUBLIC PAGE","textPreview":"SAVE  →  CLEAR THE APPLICABLE CACHE  →  VERIFY THE EXACT PUBLIC PAGE","textChars":68,"textLines":1,"bbox":[255,370,1410,120]}
+{"kind":"textbox","id":"sh/nm90byt4","slide":16,"name":"closing-sub","text":"Check the result on desktop and phone.","textPreview":"Check the result on desktop and phone.","textChars":38,"textLines":1,"bbox":[390,545,1140,52]}
+{"kind":"textbox","id":"sh/ml0zitcj","slide":16,"name":"closing-help","text":"If any check fails, take a screenshot and contact Blue Nova before changing anything again.","textPreview":"If any check fails, take a screenshot and contact Blue Nova before changing anything again.","textChars":91,"textLines":1,"bbox":[320,750,1280,60]}
+{"kind":"notes","id":"nt/cgaxan","slide":16,"text":""}

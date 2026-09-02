@@ -1,0 +1,4 @@
+Template audit - Website Editing Safety v1.1
+
+Uses the approved 1920x1080 Rebekah training format. The audience is any beginner-level website editor. The lesson emphasizes domain checks, minimum roles, one controlled change, safe saves, cache boundaries, public verification, and escalation.
+

@@ -1,0 +1,7 @@
+Template audit - Staff User Management v1.1
+
+Source: Create-or-Update-an-Event-v1.1.pptx, the approved full-HD training format.
+Audience: a complete beginner who is already an authorized WordPress Administrator.
+Job: add, change, reset, or remove one staff login while preserving least privilege and website content.
+The 13-slide source sequence is retained. Existing large-screen lesson frames are repurposed as written screen maps because the user explicitly instructed that no live WordPress or website access is needed for production.
+

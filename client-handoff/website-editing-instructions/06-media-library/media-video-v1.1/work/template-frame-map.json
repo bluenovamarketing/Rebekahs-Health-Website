@@ -1,0 +1,176 @@
+{
+  "sourceDeck": "Create-or-Update-an-Event-v1.1.pptx",
+  "outputDeck": "Upload-and-Use-Images-in-the-Media-Library-v1.1.pptx",
+  "omittedSourceSlides": [],
+  "outputSlides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 1,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Introduce media lesson.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/547294r6",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 2,
+      "sourceSlide": 2,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 1.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/9072xkry",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 3,
+      "sourceSlide": 3,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 2.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/cza94vmx",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 4,
+      "sourceSlide": 4,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 3.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/1cj2d8b6",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 5,
+      "sourceSlide": 5,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 4.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/dgbulwnm",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 6,
+      "sourceSlide": 6,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 5.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/yhg7epsj",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 7,
+      "sourceSlide": 7,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 6.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/cb2tkvap",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 8,
+      "sourceSlide": 8,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 7.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/18byd4zy",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 9,
+      "sourceSlide": 9,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 8.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/1cfmhgne",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 10,
+      "sourceSlide": 10,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 9.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/xc3mho32",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 11,
+      "sourceSlide": 11,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 10.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/xcryxg7y",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 12,
+      "sourceSlide": 12,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Teach media step 11.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/1gbm9s3a",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    },
+    {
+      "outputSlide": 13,
+      "sourceSlide": 13,
+      "reuseMode": "duplicate-slide",
+      "narrativeRole": "Close with verification and escalation.",
+      "editTargets": [
+        {
+          "action": "rewrite",
+          "shapeId": "sh/q50nydsj",
+          "reason": "Lesson-specific title and content."
+        }
+      ]
+    }
+  ]
+}

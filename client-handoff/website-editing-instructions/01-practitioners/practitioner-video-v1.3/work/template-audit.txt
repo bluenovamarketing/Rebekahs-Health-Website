@@ -1,0 +1,17 @@
+Source deck: Practitioner-Editing-Video-v1.2.pptx
+Slides reviewed: 1-16
+Canvas: 1920 x 1080 (16:9)
+
+Approved visual system preserved:
+- Cream header band and background
+- Pine green Georgia slide titles
+- Honey step badges and LOOK HERE callouts
+- Full-width WordPress/public-site screenshots
+- Small version/slide-number footer
+
+Review findings carried into v1.3:
+- Slide 5 described Edit without showing a visible Edit action.
+- Slide 13 described Clear Cache without showing a visible Clear Cache action.
+- Slide 14 showed the previous public count of 25 rather than the current 26.
+
+All other slide layouts, instructional order, and approved v1.2 narration remain unchanged.

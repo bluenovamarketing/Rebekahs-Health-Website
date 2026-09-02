@@ -1,0 +1,7 @@
+Source notes - Cache Safety v1.1
+
+- CLIENT-NOTES.md, August 31, 2026 cache-verification and standard closing requirements.
+- Existing approved Rebekah training deck is the visual and instructional reference.
+- Project cache stack named in the approved plan: record/page cache, browser refresh, Breeze, and Cloudways/Varnish escalation.
+- No live site login, cache purge, content, plugin, server, or website setting was changed.
+

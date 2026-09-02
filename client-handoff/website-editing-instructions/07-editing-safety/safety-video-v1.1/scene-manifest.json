@@ -1,0 +1,106 @@
+﻿[
+    {
+        "scene":  1,
+        "title":  "Website editing safety and recovery",
+        "audio":  "scene-01.wav",
+        "narration":  "This lesson explains the safety rules that apply to every website edit. Make only the approved change, protect the live website, save one time, clear only the applicable cache, verify the exact public result, and stop before a small uncertainty becomes a larger problem.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  2,
+        "title":  "Required WordPress access",
+        "audio":  "scene-02.wav",
+        "narration":  "Use the minimum role assigned to you. Editor is sufficient for routine approved content. Administrator controls, users, plugins, themes, settings, servers, payments, and store integrations require separate authorization. Never borrow another person\u0027s login simply to reach a menu.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  3,
+        "title":  "Confirm the task before touching the editor",
+        "audio":  "scene-03.wav",
+        "narration":  "Before editing, confirm the live domain, the exact page or record, and the approved replacement information. If the request is missing a name, date, image, category, link, or final wording, stop before opening the editor and ask for the missing information.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  4,
+        "title":  "Confirm the live domain and your own login",
+        "audio":  "scene-04.wav",
+        "narration":  "Use rebekahspureliving.com forward slash W P dash admin. Confirm the address begins with the live domain. Sign in with your own named account. Do not use an old staging address, a shared account, or another person\u0027s saved login.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  5,
+        "title":  "Open the exact item named in the request",
+        "audio":  "scene-05.wav",
+        "narration":  "Choose the correct section, such as Practitioners, Events, Posts, or Pages. Match the exact title, name, store, and date before selecting Edit. If two records look similar or the identifying information does not match, stop and confirm the correct item.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  6,
+        "title":  "Change only the approved fields",
+        "audio":  "scene-06.wav",
+        "narration":  "Leave unrelated copy, images, categories, links, dates, and settings unchanged. Do not redesign a page while making a content correction. Compare the old value with the approved replacement before typing, and reread the complete changed area when finished.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  7,
+        "title":  "Keep new or uncertain work in Draft",
+        "audio":  "scene-07.wav",
+        "narration":  "Use Draft for new content until every required detail is complete and approved. Use Preview to inspect it privately. Do not use Publish merely to see how it might look. For an existing item, use the approved save action only after the change is reviewed.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  8,
+        "title":  "Do not change design, plugins, or server controls",
+        "audio":  "scene-08.wav",
+        "narration":  "Routine editors should not change Appearance, Plugins, Settings, Cloudways, payment, store, integration, or optimization controls. Do not install, update, disable, reconnect, configure, or restart anything. Take a screenshot of the problem and contact Blue Nova.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  9,
+        "title":  "Review images, links, dates, and public claims",
+        "audio":  "scene-09.wav",
+        "narration":  "Confirm images are approved and correctly cropped. Open every changed link. Recheck dates, times, prices, health wording, addresses, phone numbers, names, and store information. These details can cause customer confusion when a small typo is published.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  10,
+        "title":  "Save once and wait for confirmation",
+        "audio":  "scene-10.wav",
+        "narration":  "Choose Save, Update, or Publish according to the approved task. Select the correct button one time and wait for WordPress confirmation. Do not click repeatedly, close the page while it is saving, or create a duplicate item to work around a delay.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  11,
+        "title":  "Clear only the applicable cache",
+        "audio":  "scene-11.wav",
+        "narration":  "Start with the exact record or page cache when available. Use broader Breeze or Varnish purges only when approved. Do not clear unrelated caches and do not change plugin, cache, server, database, or optimization settings.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  12,
+        "title":  "Verify publicly and stop if the result is wrong",
+        "audio":  "scene-12.wav",
+        "narration":  "Open the exact canonical public address with no extra text. Confirm the visible change and test affected controls at desktop and phone sizes. If the result is wrong, missing, or broken, stop. Do not keep saving or purging. Record what you see and contact Blue Nova.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    },
+    {
+        "scene":  13,
+        "title":  "Know when to stop and ask for help",
+        "audio":  "scene-13.wav",
+        "narration":  "Safe editing means opening the correct item, making only the approved change, saving once, clearing only the applicable cache, and verifying publicly. Stop whenever the task, screen, permission, save result, or public page does not match what these instructions describe.",
+        "voice":  "Microsoft Mark",
+        "rate":  0
+    }
+]

@@ -1,0 +1,5 @@
+Deviation log - Staff User Management v1.1
+
+- Replaced live-screen imagery with large written screen maps inside the inherited screen frame, per Todd's instruction not to access WordPress or the website for this production pass.
+- Kept the approved 1920x1080 format, large screen area, written steps, role statement, and closing safety reminder.
+

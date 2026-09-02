@@ -1,0 +1,65 @@
+/*
+ * Phase Two ecommerce scaffold v1.1.
+ * Scoped to .rhn-commerce or explicit rhn-* component classes so dormant
+ * files cannot restyle the approved Phase One site.
+ */
+
+.rhn-store-utility,.rhn-store-utility *,.rhn-commerce,.rhn-commerce *{box-sizing:border-box}
+.rhn-store-utility{width:100%;border-bottom:1px solid rgba(23,76,60,.12);background:#f8f4e9;color:#173f35;font-family:var(--sans,"DM Sans",sans-serif)}
+.rhn-store-utility__inner{width:min(100%,1440px);min-height:64px;margin:0 auto;padding:8px clamp(24px,3vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.rhn-store-utility a{color:#173f35;text-decoration:none}
+.rhn-store-utility__home{min-height:46px;padding:0 24px;display:inline-flex;align-items:center;border-radius:999px;background:#174c3c!important;color:#fff!important;font-weight:700}
+.rhn-store-utility__actions{display:flex;align-items:center;gap:10px}
+.rhn-store-utility__actions>a{min-height:46px;padding:0 18px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid rgba(23,76,60,.16);border-radius:999px;background:#fff;font-weight:700}
+.rhn-store-utility__actions svg{width:20px;height:20px;flex:0 0 auto}
+.rhn-store-utility__actions>a:hover,.rhn-store-utility__actions>a:focus-visible{border-color:#3f7d50;box-shadow:0 8px 20px rgba(23,76,60,.1)}
+.rhn-store-utility__actions .rhn-store-utility__cart{background:#174c3c;color:#fff}
+.rhn-store-cart-count{min-width:24px;height:24px;padding:0 6px;display:inline-grid;place-items:center;border-radius:999px;background:#dfa92f;color:#173f35;font-size:12px;font-weight:800}
+
+.rhn-commerce main{background:#fbf8ef;color:#173f35}
+.rhn-commerce .woocommerce{width:min(1180px,calc(100% - 48px));margin:0 auto;padding:clamp(48px,7vw,92px) 0}
+.rhn-commerce .woocommerce-breadcrumb{margin:0 0 24px;color:#667a70;font-size:14px}
+.rhn-commerce .woocommerce-products-header{margin-bottom:32px}
+.rhn-commerce .woocommerce-products-header__title,.rhn-commerce div.product .product_title{font-family:var(--serif,"Fraunces",serif);font-weight:600;color:#173f35;line-height:1.05}
+.rhn-commerce ul.products{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:0!important;padding:0!important;list-style:none!important}
+.rhn-commerce ul.products::before,.rhn-commerce ul.products::after{display:none!important}
+.rhn-commerce ul.products li.product{width:auto!important;margin:0!important;padding:14px;border:1px solid rgba(23,76,60,.12);border-radius:24px;background:#fff;box-shadow:0 18px 45px rgba(23,76,60,.08);list-style:none!important}
+.rhn-commerce ul.products li.product a{color:inherit;text-decoration:none}
+.rhn-commerce ul.products li.product img{width:100%;aspect-ratio:1/1;object-fit:contain;border-radius:18px;background:#f5f0e3}
+.rhn-commerce ul.products li.product .woocommerce-loop-product__title{padding:18px 4px 8px;font-family:var(--serif,"Fraunces",serif);font-size:22px;line-height:1.2}
+.rhn-commerce ul.products li.product .price{padding:0 4px;color:#9b4d65;font-size:17px;font-weight:700}
+.rhn-commerce ul.products li.product .button{min-height:44px;margin:14px 4px 4px;padding:0 18px;display:inline-flex;align-items:center;border-radius:999px;background:#174c3c;color:#fff;font-weight:700}
+
+.rhn-product-image-fallback{width:100%;aspect-ratio:1/1;padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;border-radius:18px;background:radial-gradient(circle at 50% 42%,rgba(223,169,47,.2),transparent 38%),#f5f0e3;color:#3f7d50;text-align:center}
+.rhn-product-image-fallback img{width:88px!important;height:88px!important;margin:0!important;object-fit:contain!important;background:transparent!important}
+.rhn-product-image-fallback span{font-weight:700}
+.rhn-product-help{margin:16px 0 0;color:#536c61}
+.rhn-product-help a{color:#174c3c;font-weight:800;text-underline-offset:3px}
+.rhn-product-disclosure{margin:28px 0;padding:0;border-top:1px solid rgba(23,76,60,.16);border-bottom:1px solid rgba(23,76,60,.16)}
+.rhn-product-disclosure summary{min-height:58px;display:flex;align-items:center;justify-content:space-between;color:#173f35;font-weight:800;cursor:pointer;list-style:none}
+.rhn-product-disclosure summary::-webkit-details-marker{display:none}
+.rhn-product-disclosure summary::after{content:"+";font-size:22px;color:#3f7d50}
+.rhn-product-disclosure[open] summary::after{content:"−"}
+.rhn-product-disclosure>div{padding:0 0 22px;color:#536c61;line-height:1.65}
+
+.rhn-filter-open{min-height:46px;padding:0 18px;border:0;border-radius:999px;background:#174c3c;color:#fff;font:700 15px var(--sans,"DM Sans",sans-serif);cursor:pointer}
+.rhn-filter-drawer[hidden]{display:none!important}
+.rhn-filter-drawer__backdrop{position:fixed;inset:0;z-index:80;background:rgba(9,35,28,.45)}
+.rhn-filter-drawer__panel{position:fixed;inset:0 0 0 auto;z-index:81;width:min(390px,92vw);padding:24px;overflow:auto;background:#fffdf8;box-shadow:-20px 0 50px rgba(9,35,28,.18)}
+.rhn-filter-drawer__close{min-width:44px;min-height:44px;display:grid;place-items:center;margin:0 0 20px auto;border:1px solid rgba(23,76,60,.16);border-radius:50%;background:#fff;color:#173f35;font-size:22px;cursor:pointer}
+
+@media(max-width:900px){
+  .rhn-store-utility__inner{padding-inline:20px}
+  .rhn-store-utility__actions>a{width:48px;padding:0}
+  .rhn-store-utility__actions>a>span:not(.rhn-store-cart-count){position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .rhn-commerce ul.products{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  .rhn-store-utility__inner{min-height:60px;gap:12px}
+  .rhn-store-utility__home{min-height:44px;padding:0 17px;font-size:14px}
+  .rhn-store-utility__actions{gap:6px}
+  .rhn-store-utility__actions>a{width:43px;min-height:43px}
+  .rhn-commerce .woocommerce{width:min(100% - 32px,1180px);padding:42px 0 64px}
+  .rhn-commerce ul.products{grid-template-columns:1fr;gap:18px}
+}
+@media(prefers-reduced-motion:reduce){.rhn-store-utility *,.rhn-commerce *{scroll-behavior:auto!important;transition:none!important}}

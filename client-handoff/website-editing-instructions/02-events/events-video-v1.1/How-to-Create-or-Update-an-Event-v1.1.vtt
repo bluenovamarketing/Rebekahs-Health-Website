@@ -1,0 +1,169 @@
+WEBVTT
+
+1
+00:00:00.150 --> 00:00:05.939
+This lesson shows you how to create a new event or update an existing event on the live website.
+
+2
+00:00:05.939 --> 00:00:16.611
+We will work as a draft, enter every required detail, preview the result, save it safely, clear the applicable cache, and verify what visitors can see on the public Events page.
+
+3
+00:00:16.961 --> 00:00:23.677
+You need a WordPress account with the Editor or Administrator role. Editor access is enough for this task.
+
+4
+00:00:23.677 --> 00:00:29.316
+If Events is missing from the left menu, stop and ask the website administrator for help.
+
+5
+00:00:29.316 --> 00:00:33.688
+This lesson does not create users, change roles, or manage passwords.
+
+6
+00:00:34.038 --> 00:00:39.572
+Open a web browser and go to rebekahspureliving.com forward slash W P dash admin.
+
+7
+00:00:39.572 --> 00:00:43.466
+Enter your own username and password, then select Log In.
+
+8
+00:00:43.466 --> 00:00:50.434
+Confirm that the address is the live rebekahspureliving.com domain. Do not use an old staging address.
+
+9
+00:00:50.784 --> 00:00:56.703
+In the black menu on the left, select Events. To create a new event, select Add New Event.
+
+10
+00:00:56.703 --> 00:01:02.293
+To update an event, stay on the Events list, find the correct title, and select Edit.
+
+11
+00:01:02.293 --> 00:01:07.160
+Always confirm that you opened the correct event before changing anything.
+
+12
+00:01:07.510 --> 00:01:10.547
+For a new event, enter the exact approved title.
+
+13
+00:01:10.547 --> 00:01:19.721
+In the main Visual editor, enter the complete public description, including what the event is, who it is for, and any instructions visitors need.
+
+14
+00:01:19.721 --> 00:01:25.731
+Select Save Draft while you work. Do not publish an event that is missing required information.
+
+15
+00:01:26.081 --> 00:01:33.653
+In Event Categories, check the store location connected to the event: Clarkston, Grand Blanc, Lake Orion, or Lapeer.
+
+16
+00:01:33.653 --> 00:01:38.352
+Choose only the correct location. Do not create a new category or guess.
+
+17
+00:01:38.352 --> 00:01:43.117
+The category helps visitors find events for the store they plan to visit.
+
+18
+00:01:43.467 --> 00:01:50.502
+Enter the start date, start time, end date, and end time. Use All Day only when it is truly an all-day event.
+
+19
+00:01:50.502 --> 00:01:56.827
+Confirm the America slash Detroit time zone. Choose an existing venue and organizer when possible.
+
+20
+00:01:56.827 --> 00:02:03.668
+Add the cost, external event website if needed, and a sixteen-by-nine featured image with useful alt text.
+
+21
+00:02:04.018 --> 00:02:07.752
+Select Preview and inspect the event before publishing.
+
+22
+00:02:07.752 --> 00:02:13.928
+Confirm the title, description, store, date, time, venue, organizer, cost, link, and image.
+
+23
+00:02:13.928 --> 00:02:16.915
+Check the preview at desktop and phone size.
+
+24
+00:02:16.915 --> 00:02:23.635
+If anything is wrong or uncertain, return to the editor, correct it, and keep the event as a draft.
+
+25
+00:02:23.985 --> 00:02:29.717
+When a new event is complete and approved, select Publish one time and wait for confirmation.
+
+26
+00:02:29.717 --> 00:02:32.553
+For an existing event, select Update one time.
+
+27
+00:02:32.553 --> 00:02:40.566
+If an announced event is canceled, set Events Status to Canceled, add a clear cancellation note to the description, and update it.
+
+28
+00:02:40.566 --> 00:02:43.340
+Do not immediately delete an announced event.
+
+29
+00:02:43.690 --> 00:02:48.104
+After saving, return to the Events list. Find the event you changed.
+
+30
+00:02:48.104 --> 00:02:52.647
+Clear the applicable page or record cache if that option is available.
+
+31
+00:02:52.647 --> 00:02:58.877
+If the site provides an approved Breeze or Varnish purge control, use only the applicable purge.
+
+32
+00:02:58.877 --> 00:03:03.031
+Do not change unrelated cache, server, or optimization settings.
+
+33
+00:03:03.381 --> 00:03:09.937
+Open rebekahspureliving.com forward slash events forward slash without adding anything to the address.
+
+34
+00:03:09.937 --> 00:03:13.729
+Find the event using the location filter or the event list.
+
+35
+00:03:13.729 --> 00:03:19.063
+Confirm that the title, date, time, store, image, and link are visible and correct.
+
+36
+00:03:19.063 --> 00:03:22.212
+Open the event itself and test every public link.
+
+37
+00:03:22.562 --> 00:03:25.375
+Repeat the public check at a phone-size screen.
+
+38
+00:03:25.375 --> 00:03:32.795
+Make sure the location filter opens, the event card fits the screen, the text is readable, and no content runs off the side.
+
+39
+00:03:32.795 --> 00:03:38.959
+A successful WordPress save does not prove that a visitor can see or use the event on the live website.
+
+40
+00:03:39.309 --> 00:03:45.339
+Every event change ends with the same three checks. First, save or update the correct event.
+
+41
+00:03:45.339 --> 00:03:52.877
+Second, clear only the applicable cache. Third, verify the exact public event and Events page on desktop and phone.
+
+42
+00:03:52.877 --> 00:03:59.104
+If the live result is wrong or missing, stop and ask for help instead of making random changes.

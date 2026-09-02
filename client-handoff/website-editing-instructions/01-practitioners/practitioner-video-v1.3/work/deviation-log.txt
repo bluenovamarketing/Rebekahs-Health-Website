@@ -1,0 +1,7 @@
+Approved deviations from v1.2:
+1. Slide 5 receives a large, explicit two-line action cue so the learner can see exactly that Edit is the link to select.
+2. Slide 13 receives a large, explicit two-line action cue so the learner can see exactly that Clear Cache is the link to select.
+3. Slide 14 replaces the old public-directory screenshot with a live first-party capture showing “Showing 1 of 26 practitioners & practices.”
+4. Every footer advances from v1.2 to v1.3.
+
+No other layout, copy, slide order, or narration changes are authorized in this revision.

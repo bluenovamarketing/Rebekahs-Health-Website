@@ -1,0 +1,281 @@
+{"kind":"deck","id":"pr/zf9v6t","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"Create or update a blog post safely","textShapes":5}
+{"kind":"shape","id":"sh/utg3698n","slide":1,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"title","text":"Create or update a blog post safely","textPreview":"Create or update a blog post safely","textChars":35,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/k3yl0zql","slide":1,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/7qp4be9c","slide":1,"name":"step-text","text":"START","textPreview":"START","textChars":5,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"page","text":"Blog editing v1.1  |  1/13","textPreview":"Blog editing v1.1  |  1/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"name":"start-copy","text":"Build an approved post as a draft, complete its category, image, links, and SEO, then preview and verify it publicly.","textPreview":"Build an approved post as a draft, complete its category, image, links, and SEO, then preview and verify it publicly.","textChars":117,"textLines":1,"bbox":[930,290,770,260]}
+{"kind":"textbox","id":"sh/fu94fe98","slide":1,"name":"start-note","text":"Beginner lesson  |  Editor is sufficient  |  No test post created","textPreview":"Beginner lesson  |  Editor is sufficient  |  No test post created","textChars":65,"textLines":1,"bbox":[935,600,750,42]}
+{"kind":"image","id":"im/jqxw72dk","slide":1,"name":"","bbox":[155,323.23,650,193.54]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"Required WordPress access","textShapes":7}
+{"kind":"shape","id":"sh/9wnqhczy","slide":2,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/9072xkry","slide":2,"name":"title","text":"Required WordPress access","textPreview":"Required WordPress access","textChars":25,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"name":"step-text","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"page","text":"Blog editing v1.1  |  2/13","textPreview":"Blog editing v1.1  |  2/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/x4r21kru","slide":2,"name":"role-label","text":"WORDPRESS ROLE REQUIRED","textPreview":"WORDPRESS ROLE REQUIRED","textChars":23,"textLines":1,"bbox":[260,255,1400,46]}
+{"kind":"textbox","id":"sh/w3i1sfa9","slide":2,"name":"role-value","text":"Editor or Administrator","textPreview":"Editor or Administrator","textChars":23,"textLines":1,"bbox":[160,345,1600,95]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"enough-box","bbox":[520,515,880,130]}
+{"kind":"textbox","id":"sh/q5wjelsz","slide":2,"name":"enough","text":"Editor access is enough for blog posts.","textPreview":"Editor access is enough for blog posts.","textChars":39,"textLines":1,"bbox":[570,550,780,60]}
+{"kind":"textbox","id":"sh/ove9o7yd","slide":2,"name":"role-stop","text":"Do not use Administrator for routine writing. If Posts is missing, stop and ask the website administrator.","textPreview":"Do not use Administrator for routine writing. If Posts is missing, stop and ask the website administrator.","textChars":106,"textLines":1,"bbox":[365,730,1190,55]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"Prepare the approved article materials first","textShapes":6}
+{"kind":"shape","id":"sh/n2l4fq98","slide":3,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/cza94vmx","slide":3,"name":"title","text":"Prepare the approved article materials first","textPreview":"Prepare the approved article materials first","textChars":44,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"step-text","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"page","text":"Blog editing v1.1  |  3/13","textPreview":"Blog editing v1.1  |  3/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/obq90bml","slide":3,"name":"login-label","text":"BEFORE OPENING POSTS","textPreview":"BEFORE OPENING POSTS","textChars":20,"textLines":1,"bbox":[250,285,1420,44]}
+{"kind":"shape","id":"sh/pcjqtg36","slide":3,"name":"url-box","bbox":[190,365,1540,180]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"login-url","text":"final copy  |  approved category  |  featured image  |  links","textPreview":"final copy  |  approved category  |  featured image  |  links","textChars":61,"textLines":1,"bbox":[260,420,1400,72]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"login-note","text":"Do not invent health claims, prices, dates, author details, or image rights.","textPreview":"Do not invent health claims, prices, dates, author details, or image rights.","textChars":76,"textLines":1,"bbox":[300,650,1320,55]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"Open Posts and choose the correct action","textShapes":10}
+{"kind":"shape","id":"sh/5cva1cfq","slide":4,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/1cj2d8b6","slide":4,"name":"title","text":"Open Posts and choose the correct action","textPreview":"Open Posts and choose the correct action","textChars":40,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/0ba143al","slide":4,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":4,"name":"step-text","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":4,"name":"page","text":"Blog editing v1.1  |  4/13","textPreview":"Blog editing v1.1  |  4/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/doj29oba","slide":4,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/3ihk3et8","slide":4,"name":"look-here-highlight","bbox":[189.97,338.84,140.08,156.56]}
+{"kind":"shape","id":"sh/ih8ju9sn","slide":4,"name":"look-here-label","bbox":[189.97,290.84,170,50]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":4,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,303.84,150,24]}
+{"kind":"shape","id":"sh/jadsz2xk","slide":4,"name":"written-steps-s04-box","bbox":[1460,275,350,330]}
+{"kind":"textbox","id":"sh/w72947yt","slide":4,"name":"written-steps-s04-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1482,293,306,32]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"written-steps-s04-body","text":"1. Click Medical Practicioners.\n2. Click All Medical Practicioners.\n3. Search by name if needed.","textPreview":"1. Click Medical Practicioners. | 2. Click All Medical Practicioners. | 3. Search by name if needed.","textChars":96,"textLines":3,"bbox":[1484,341,302,244]}
+{"kind":"shape","id":"sh/v6tsv2xo","slide":4,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/g36tgryd","slide":4,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/p0batw72","slide":4,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/3ytsrmpw","slide":4,"name":"written-body","text":"1. Choose new or existing.\n2. Match the exact title.\n3. Keep new work in Draft.","textPreview":"1. Choose new or existing. | 2. Match the exact title. | 3. Keep new work in Draft.","textChars":79,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/gv29g7q5","slide":4,"name":"lesson-cover-0","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/et0reh8f","slide":4,"name":"route-box-0","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/tsrqlc7u","slide":4,"name":"route-0","text":"Posts > Add New Post or Posts > All Posts > Edit","textPreview":"Posts > Add New Post or Posts > All Posts > Edit","textChars":48,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/sri9s7q9","slide":4,"name":"safe-0","text":"1. Use Add New Post only for an approved new article.\n2. For an update, match the exact title and author before selecting Edit.\n3. Never overwrite another article because its title looks similar.","textPreview":"1. Use Add New Post only for an approved new article. | 2. For an update, match the exact title and author before selecting Edit. | 3. Ne...","textChars":195,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/94jq9oju","slide":4,"name":"","bbox":[189.97,104,1540.06,927]}
+{"kind":"image","id":"im/a5sritkf","slide":4,"name":"","bbox":[58,382.93,1254,294.14]}
+{"kind":"image","id":"im/w7u9kj25","slide":4,"name":"","alt":"First-party WordPress capture for Open Posts and choose the correct action","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"Enter the title and article in the main editor","textShapes":10}
+{"kind":"shape","id":"sh/x4vedgvm","slide":5,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/dgbulwnm","slide":5,"name":"title","text":"Enter the title and article in the main editor","textPreview":"Enter the title and article in the main editor","textChars":46,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"step-text","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"page","text":"Blog editing v1.1  |  5/13","textPreview":"Blog editing v1.1  |  5/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/l4bupwny","slide":5,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"look-here-highlight","bbox":[189.97,458.32,972.32,535.6]}
+{"kind":"shape","id":"sh/m5kbi1oj","slide":5,"name":"look-here-label","bbox":[189.97,410.32,170,50]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,423.32,150,24]}
+{"kind":"shape","id":"sh/v2twb6dw","slide":5,"name":"written-steps-s07-box","bbox":[1460,260,350,345]}
+{"kind":"textbox","id":"sh/k7mxovud","slide":5,"name":"written-steps-s07-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1482,278,306,32]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"name":"written-steps-s07-body","text":"1. Find Medical Service.\n2. Check the approved category.\n3. Uncheck incorrect categories.","textPreview":"1. Find Medical Service. | 2. Check the approved category. | 3. Uncheck incorrect categories.","textChars":89,"textLines":3,"bbox":[1484,326,302,259]}
+{"kind":"shape","id":"sh/j6dwfqds","slide":5,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/sb6xsvu9","slide":5,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/hgrmpwj2","slide":5,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/gfi5grih","slide":5,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/fe94nm1w","slide":5,"name":"written-body","text":"1. Use the approved title.\n2. Format for easy reading.\n3. Save Draft while working.","textPreview":"1. Use the approved title. | 2. Format for easy reading. | 3. Save Draft while working.","textChars":83,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/4ji5kbid","slide":5,"name":"lesson-cover-1","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/2h0ni107","slide":5,"name":"route-box-1","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/5o7mhcju","slide":5,"name":"route-1","text":"Post editor > title and Visual content area","textPreview":"Post editor > title and Visual content area","textChars":43,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/kny587i9","slide":5,"name":"safe-1","text":"1. Paste the approved title exactly.\n2. Add the article in the main Visual editor using headings and short paragraphs.\n3. Select Save Draft while working; do not publish incomplete copy.","textPreview":"1. Paste the approved title exactly. | 2. Add the article in the main Visual editor using headings and short paragraphs. | 3. Select Save...","textChars":186,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/lgbydg7i","slide":5,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"image","id":"im/mhkf61o3","slide":5,"name":"","bbox":[58,176.88,1254,706.24]}
+{"kind":"image","id":"im/8j2x8b6t","slide":5,"name":"","alt":"First-party WordPress capture for Enter the title and article in the main editor","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"Choose the correct existing category","textShapes":10}
+{"kind":"shape","id":"sh/w32twb6l","slide":6,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/yhg7epsj","slide":6,"name":"title","text":"Choose the correct existing category","textPreview":"Choose the correct existing category","textChars":36,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"step-text","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"page","text":"Blog editing v1.1  |  6/13","textPreview":"Blog editing v1.1  |  6/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/ml07i9sv","slide":6,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"name":"look-here-highlight","bbox":[189.97,470.68,1248.36,494.4]}
+{"kind":"shape","id":"sh/pc76hkr2","slide":6,"name":"look-here-label","bbox":[189.97,422.68,170,50]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,435.68,150,24]}
+{"kind":"shape","id":"sh/u1kbu1ov","slide":6,"name":"written-steps-s09-box","bbox":[1460,260,350,345]}
+{"kind":"textbox","id":"sh/5svutgni","slide":6,"name":"written-steps-s09-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1482,278,306,32]}
+{"kind":"textbox","id":"sh/47mt0b6x","slide":6,"name":"written-steps-s09-body","text":"1. Select Visual.\n2. Replace the approved description.\n3. Keep the paragraph breaks.","textPreview":"1. Select Visual. | 2. Replace the approved description. | 3. Keep the paragraph breaks.","textChars":84,"textLines":3,"bbox":[1484,326,302,259]}
+{"kind":"shape","id":"sh/i54bylor","slide":6,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/twfux0ne","slide":6,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/cbe5g3ih","slide":6,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/dcnm98zm","slide":6,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/qpwnet0b","slide":6,"name":"written-body","text":"1. Choose an existing category.\n2. Do not create categories.\n3. Avoid unnecessary tags.","textPreview":"1. Choose an existing category. | 2. Do not create categories. | 3. Avoid unnecessary tags.","textChars":87,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/lg76d8zy","slide":6,"name":"lesson-cover-2","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/zep4byhs","slide":6,"name":"route-box-2","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/gju58ji9","slide":6,"name":"route-2","text":"Post settings > Categories","textPreview":"Post settings > Categories","textChars":26,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/1k3mhozu","slide":6,"name":"safe-2","text":"1. Select the one approved category that best fits the article.\n2. Do not create a new category or guess between categories.\n3. Use tags only when the approved process specifically calls for them.","textPreview":"1. Select the one approved category that best fits the article. | 2. Do not create a new category or guess between categories. | 3. Use t...","textChars":196,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/0b69svap","slide":6,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"image","id":"im/neh8na9g","slide":6,"name":"","bbox":[58,176.88,1254,706.24]}
+{"kind":"image","id":"im/90zqp0r6","slide":6,"name":"","alt":"First-party WordPress capture for Choose the correct existing category","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"Add the featured image and accurate alt text","textShapes":10}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/cb2tkvap","slide":7,"name":"title","text":"Add the featured image and accurate alt text","textPreview":"Add the featured image and accurate alt text","textChars":44,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"step-text","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"page","text":"Blog editing v1.1  |  7/13","textPreview":"Blog editing v1.1  |  7/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/kzmdova1","slide":7,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/eh0ba1sr","slide":7,"name":"look-here-highlight","bbox":[189.97,450.08,1248.36,543.84]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"look-here-label","bbox":[189.97,402.08,170,50]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,415.08,150,24]}
+{"kind":"shape","id":"sh/cbq1sv25","slide":7,"name":"written-steps-s10-box","bbox":[1460,260,350,345]}
+{"kind":"textbox","id":"sh/n6x0fqlo","slide":7,"name":"written-steps-s10-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1482,278,306,32]}
+{"kind":"textbox","id":"sh/25ojml43","slide":7,"name":"written-steps-s10-body","text":"1. Add only approved public details.\n2. Test every link.\n3. Remove outdated contact information.","textPreview":"1. Add only approved public details. | 2. Test every link. | 3. Remove outdated contact information.","textChars":96,"textLines":3,"bbox":[1484,326,302,259]}
+{"kind":"shape","id":"sh/o761ov2t","slide":7,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/f2d0b6lc","slide":7,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/id4ju1oz","slide":7,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/jedkn654","slide":7,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/4fm1wb6p","slide":7,"name":"written-body","text":"1. Use the approved image.\n2. Write useful alt text.\n3. Check the crop.","textPreview":"1. Use the approved image. | 2. Write useful alt text. | 3. Check the crop.","textChars":71,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/r2dkrq5g","slide":7,"name":"lesson-cover-3","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/d4f2t0nm","slide":7,"name":"route-box-3","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/e5o32lor","slide":7,"name":"route-3","text":"Post settings > Featured image","textPreview":"Post settings > Featured image","textChars":30,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/f6xkvq5c","slide":7,"name":"safe-3","text":"1. Choose an approved landscape image that belongs to this article.\n2. Use a clear filename and descriptive alt text for the image's purpose.\n3. Do not use copyrighted, private, blurry, stretched, or unrelated imagery.","textPreview":"1. Choose an approved landscape image that belongs to this article. | 2. Use a clear filename and descriptive alt text for the image's pu...","textChars":218,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/u9knu9o3","slide":7,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"image","id":"im/50v6tonq","slide":7,"name":"","bbox":[58,176.88,1254,706.24]}
+{"kind":"image","id":"im/3ydory5k","slide":7,"name":"","alt":"First-party WordPress capture for Add the featured image and accurate alt text","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"Add links without breaking the reading flow","textShapes":10}
+{"kind":"shape","id":"sh/98rehwve","slide":8,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/18byd4zy","slide":8,"name":"title","text":"Add links without breaking the reading flow","textPreview":"Add links without breaking the reading flow","textChars":43,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"step-text","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"name":"page","text":"Blog editing v1.1  |  8/13","textPreview":"Blog editing v1.1  |  8/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/tkby9kzm","slide":8,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/je9g3ahk","slide":8,"name":"look-here-highlight","bbox":[189.97,536.6,1248.36,247.2]}
+{"kind":"shape","id":"sh/id0fu50z","slide":8,"name":"look-here-label","bbox":[189.97,488.6,170,50]}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,501.6,150,24]}
+{"kind":"shape","id":"sh/n6pwfmd8","slide":8,"name":"written-steps-s11-box","bbox":[1460,260,350,345]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"name":"written-steps-s11-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1482,278,306,32]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"name":"written-steps-s11-body","text":"1. Re-read every changed field.\n2. Compare with the approved information.\n3. Fix errors before saving.","textPreview":"1. Re-read every changed field. | 2. Compare with the approved information. | 3. Fix errors before saving.","textChars":102,"textLines":3,"bbox":[1484,326,302,259]}
+{"kind":"shape","id":"sh/zipwbmdc","slide":8,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/kfixwbe1","slide":8,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/tw7e9gnq","slide":8,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/svydgb65","slide":8,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/7u5w765k","slide":8,"name":"written-body","text":"1. Select descriptive text.\n2. Paste the correct URL.\n3. Test every link.","textPreview":"1. Select descriptive text. | 2. Paste the correct URL. | 3. Test every link.","textChars":73,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/kredcr6t","slide":8,"name":"lesson-cover-4","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/i5wva1o3","slide":8,"name":"route-box-4","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/x4ne1wni","slide":8,"name":"route-4","text":"Visual editor > select text > Link","textPreview":"Visual editor > select text > Link","textChars":34,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/w3ed8r6x","slide":8,"name":"safe-4","text":"1. Link descriptive words instead of pasting a long web address into the paragraph.\n2. Use relevant internal links to Rebekah's pages or related articles.\n3. Open an external link in a new tab only when appropriate, then test it.","textPreview":"1. Link descriptive words instead of pasting a long web address into the paragraph. | 2. Use relevant internal links to Rebekah's pages o...","textChars":229,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/lszads3i","slide":8,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"image","id":"im/alored4v","slide":8,"name":"","bbox":[58,176.88,1254,706.24]}
+{"kind":"image","id":"im/wnq9gnm1","slide":8,"name":"","alt":"First-party WordPress capture for Add links without breaking the reading flow","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"Complete the search title and description","textShapes":10}
+{"kind":"shape","id":"sh/p0ji9kf2","slide":9,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/1cfmhgne","slide":9,"name":"title","text":"Complete the search title and description","textPreview":"Complete the search title and description","textChars":41,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/0b65obm9","slide":9,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"name":"step-text","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"page","text":"Blog editing v1.1  |  9/13","textPreview":"Blog editing v1.1  |  9/13","textChars":26,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/9gzml0nq","slide":9,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/bih4na5w","slide":9,"name":"look-here-highlight","bbox":[1244.69,104,201.88,103]}
+{"kind":"shape","id":"sh/ah8nu54b","slide":9,"name":"look-here-label","bbox":[1244.69,106,170,50]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[1254.69,119,150,24]}
+{"kind":"shape","id":"sh/3y107axw","slide":9,"name":"written-steps-s12-box","bbox":[1460,260,350,345]}
+{"kind":"textbox","id":"sh/cnu1kzyd","slide":9,"name":"written-steps-s12-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1482,278,306,32]}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"name":"written-steps-s12-body","text":"1. Click Save once.\n2. Wait for confirmation.\n3. Do not click repeatedly.","textPreview":"1. Click Save once. | 2. Wait for confirmation. | 3. Do not click repeatedly.","textChars":73,"textLines":3,"bbox":[1484,326,302,259]}
+{"kind":"shape","id":"sh/bml0buxs","slide":9,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/0ru1ozyp","slide":9,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/98ji147e","slide":9,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/87a18zqt","slide":9,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/76h0zup8","slide":9,"name":"written-body","text":"1. Use accurate wording.\n2. Stay within the preview length.\n3. Do not keyword-stuff.","textPreview":"1. Use accurate wording. | 2. Stay within the preview length. | 3. Do not keyword-stuff.","textChars":84,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/wba1cjqp","slide":9,"name":"lesson-cover-5","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/u9sja98z","slide":9,"name":"route-box-5","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/xgzitk76","slide":9,"name":"route-5","text":"SEOPress section > title and meta description","textPreview":"SEOPress section > title and meta description","textChars":45,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/cf6h0fql","slide":9,"name":"safe-5","text":"1. Use the approved search title and keep it natural.\n2. Write a clear description that accurately summarizes the article.\n3. Do not stuff locations, services, or repeated keywords into either field.","textPreview":"1. Use the approved search title and keep it natural. | 2. Write a clear description that accurately summarizes the article. | 3. Do not ...","textChars":199,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/9gvq9gfq","slide":9,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"image","id":"im/aho72lwb","slide":9,"name":"","bbox":[58,176.88,1254,706.24]}
+{"kind":"image","id":"im/wj6p4ve1","slide":9,"name":"","alt":"First-party WordPress capture for Complete the search title and description","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"Preview the full article before publishing","textShapes":10}
+{"kind":"shape","id":"sh/d87uxg3m","slide":10,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/xc3mho32","slide":10,"name":"title","text":"Preview the full article before publishing","textPreview":"Preview the full article before publishing","textChars":42,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"step-text","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"page","text":"Blog editing v1.1  |  10/13","textPreview":"Blog editing v1.1  |  10/13","textChars":27,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/l036l83y","slide":10,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/725onyl4","slide":10,"name":"look-here-highlight","bbox":[334.17,244.08,642.72,127.72]}
+{"kind":"shape","id":"sh/m1cnetkj","slide":10,"name":"look-here-label","bbox":[334.17,196.08,170,50]}
+{"kind":"textbox","id":"sh/s7yt4b21","slide":10,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[344.17,209.08,150,24]}
+{"kind":"shape","id":"sh/r6pcv6lw","slide":10,"name":"cache-cue-box","bbox":[1210,215,585,170]}
+{"kind":"textbox","id":"sh/0bit8b2d","slide":10,"name":"cache-cue-instruction","text":"1. Return to the practitioner list.\n2. Hover over the same row.","textPreview":"1. Return to the practitioner list. | 2. Hover over the same row.","textChars":63,"textLines":2,"bbox":[1240,232,525,64]}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"cache-cue-action","text":"3. Click Clear Cache.","textPreview":"3. Click Clear Cache.","textChars":21,"textLines":1,"bbox":[1240,308,525,42]}
+{"kind":"shape","id":"sh/fapcz6ls","slide":10,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/ozitcv29","slide":10,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/xwnupgvy","slide":10,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/wvetgbud","slide":10,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/bu5cnqd8","slide":10,"name":"written-body","text":"1. Preview before publishing.\n2. Check desktop and phone.\n3. Fix problems in Draft.","textPreview":"1. Preview before publishing. | 2. Check desktop and phone. | 3. Fix problems in Draft.","textChars":83,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/kjytkvup","slide":10,"name":"lesson-cover-6","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/yxgbilcj","slide":10,"name":"route-box-6","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/1o3ahwvq","slide":10,"name":"route-6","text":"Post settings > Preview","textPreview":"Post settings > Preview","textChars":23,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/0nut8rul","slide":10,"name":"safe-6","text":"1. Check the title, headings, spacing, image, category, links, and author.\n2. Preview at desktop and phone size.\n3. Return to the editor and correct anything uncertain while the post remains a draft.","textPreview":"1. Check the title, headings, spacing, image, category, links, and author. | 2. Preview at desktop and phone size. | 3. Return to the edi...","textChars":199,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/94fuxg7u","slide":10,"name":"","bbox":[189.97,104,1540.06,927]}
+{"kind":"image","id":"im/u5obql8f","slide":10,"name":"","bbox":[58,382.93,1254,294.14]}
+{"kind":"image","id":"im/w76tsvq5","slide":10,"name":"","alt":"First-party WordPress capture for Preview the full article before publishing","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"Publish or update once, then wait","textShapes":10}
+{"kind":"shape","id":"sh/9gza9sze","slide":11,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/xcryxg7y","slide":11,"name":"title","text":"Publish or update once, then wait","textPreview":"Publish or update once, then wait","textChars":33,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/wbih4b6d","slide":11,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"name":"step-text","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"name":"page","text":"Blog editing v1.1  |  11/13","textPreview":"Blog editing v1.1  |  11/13","textChars":27,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/98rytw72","slide":11,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/72t03qp0","slide":11,"name":"look-here-highlight","bbox":[268.25,375.92,1186.56,535.6]}
+{"kind":"shape","id":"sh/61kzalof","slide":11,"name":"look-here-label","bbox":[268.25,327.92,170,50]}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[278.25,340.92,150,24]}
+{"kind":"shape","id":"sh/nehs7iho","slide":11,"name":"written-steps-s14-box","bbox":[1440,900,360,105]}
+{"kind":"textbox","id":"sh/0b6tc3yx","slide":11,"name":"written-steps-s14-heading","text":"WRITTEN CHECK","textPreview":"WRITTEN CHECK","textChars":13,"textLines":1,"bbox":[1454,908,332,22]}
+{"kind":"textbox","id":"sh/1cfa58zi","slide":11,"name":"written-steps-s14-body","text":"1. Search the name.\n2. Confirm the public details.\n3. Check the links.","textPreview":"1. Search the name. | 2. Confirm the public details. | 3. Check the links.","textChars":70,"textLines":3,"bbox":[1453,934,334,66]}
+{"kind":"shape","id":"sh/zaxs3yhc","slide":11,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/cn6t83y1","slide":11,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/tsnip0ny","slide":11,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/87ehgv6d","slide":11,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/7650nq5s","slide":11,"name":"written-body","text":"1. Confirm approval.\n2. Click once and wait.\n3. Do not create a duplicate.","textPreview":"1. Confirm approval. | 2. Click once and wait. | 3. Do not create a duplicate.","textChars":74,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/k3uhcb6h","slide":11,"name":"lesson-cover-7","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/y1czalob","slide":11,"name":"route-box-7","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/p07ixkn6","slide":11,"name":"route-7","text":"Post settings > Publish or Update","textPreview":"Post settings > Publish or Update","textChars":33,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/4zyhofml","slide":11,"name":"safe-7","text":"1. Use Publish only when the new article is complete and approved.\n2. Use Update for an approved change to an existing post.\n3. Select the button one time and wait for WordPress confirmation.","textPreview":"1. Use Publish only when the new article is complete and approved. | 2. Use Update for an approved change to an existing post. | 3. Selec...","textChars":191,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/5gbaxk3i","slide":11,"name":"","bbox":[145.06,146.84,1629.87,841.32]}
+{"kind":"image","id":"im/6hkrqp43","slide":11,"name":"","bbox":[63.82,138,1242.36,784]}
+{"kind":"image","id":"im/sj29szm9","slide":11,"name":"","alt":"First-party WordPress capture for Publish or update once, then wait","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"Clear the applicable cache and verify publicly","textShapes":10}
+{"kind":"shape","id":"sh/xw3q94ne","slide":12,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/1gbm9s3a","slide":12,"name":"title","text":"Clear the applicable cache and verify publicly","textPreview":"Clear the applicable cache and verify publicly","textChars":46,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/0f2lgnmp","slide":12,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"name":"step-text","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"name":"page","text":"Blog editing v1.1  |  12/13","textPreview":"Blog editing v1.1  |  12/13","textChars":27,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/b6d4f2lc","slide":12,"name":"look-here-highlight","bbox":[276.49,104,469.68,758.08]}
+{"kind":"shape","id":"sh/a543mx4r","slide":12,"name":"look-here-label","bbox":[276.49,106,170,50]}
+{"kind":"textbox","id":"sh/wvupgz6t","slide":12,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[286.49,119,150,24]}
+{"kind":"shape","id":"sh/bulo7u58","slide":12,"name":"written-steps-s15-box","bbox":[1040,270,650,350]}
+{"kind":"textbox","id":"sh/orapcf6h","slide":12,"name":"written-steps-s15-heading","text":"WRITTEN STEPS","textPreview":"WRITTEN STEPS","textChars":13,"textLines":1,"bbox":[1062,288,606,32]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"name":"written-steps-s15-body","text":"1. Click View full listing.\n2. Check the full details and links.\n3. Repeat the check on a phone.","textPreview":"1. Click View full listing. | 2. Check the full details and links. | 3. Repeat the check on a phone.","textChars":96,"textLines":3,"bbox":[1064,336,602,264]}
+{"kind":"shape","id":"sh/nq1o3a5w","slide":12,"name":"body-cover","bbox":[28,95,1864,925]}
+{"kind":"shape","id":"sh/0nap8f6l","slide":12,"name":"event-screen-frame","bbox":[45,125,1280,810]}
+{"kind":"shape","id":"sh/hkbm5wzu","slide":12,"name":"written-panel","bbox":[1360,235,475,500]}
+{"kind":"textbox","id":"sh/gj25cry9","slide":12,"name":"written-heading","text":"DO THIS","textPreview":"DO THIS","textChars":7,"textLines":1,"bbox":[1392,272,411,36]}
+{"kind":"textbox","id":"sh/fit436ho","slide":12,"name":"written-body","text":"1. Clear applicable cache.\n2. Open the exact URL.\n3. Verify desktop and phone.","textPreview":"1. Clear applicable cache. | 2. Open the exact URL. | 3. Verify desktop and phone.","textChars":78,"textLines":3,"bbox":[1400,340,395,330]}
+{"kind":"shape","id":"sh/sfi58ryd","slide":12,"name":"lesson-cover-8","bbox":[58,138,1254,784]}
+{"kind":"shape","id":"sh/6t0n6hg7","slide":12,"name":"route-box-8","bbox":[85,705,1200,110]}
+{"kind":"textbox","id":"sh/dcv6dgz2","slide":12,"name":"route-8","text":"Changed post > Clear Cache > exact public article URL","textPreview":"Changed post > Clear Cache > exact public article URL","textChars":53,"textLines":1,"bbox":[120,735,1130,52]}
+{"kind":"textbox","id":"sh/cbm5kbyh","slide":12,"name":"safe-8","text":"1. Clear only the applicable post or approved page cache.\n2. Open the exact public article URL with no extra address text.\n3. Verify the visible article and Blog archive on desktop and phone.","textPreview":"1. Clear only the applicable post or approved page cache. | 2. Open the exact public article URL with no extra address text. | 3. Verify ...","textChars":191,"textLines":3,"bbox":[115,835,1140,100]}
+{"kind":"image","id":"im/lgja9ony","slide":12,"name":"","bbox":[145.06,104,1629.87,927]}
+{"kind":"image","id":"im/ap8rupob","slide":12,"name":"","bbox":[510.84,138,348.31,784]}
+{"kind":"image","id":"im/crq9wz6h","slide":12,"name":"","alt":"First-party WordPress capture for Clear the applicable cache and verify publicly","bbox":[85,175,1200,500]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"Always finish with the final verification","textShapes":6}
+{"kind":"shape","id":"sh/hcfy9k3u","slide":13,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/q50nydsj","slide":13,"name":"title","text":"Always finish with the final verification","textPreview":"Always finish with the final verification","textChars":41,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/bq9orito","slide":13,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"name":"step-text","text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"name":"page","text":"Blog editing v1.1  |  13/13","textPreview":"Blog editing v1.1  |  13/13","textChars":27,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/21gnuts7","slide":13,"name":"closing","bbox":[150,265,1620,390]}
+{"kind":"textbox","id":"sh/32ponyts","slide":13,"name":"closing-main","text":"DRAFT  >  PREVIEW  >  PUBLISH ONCE  >  VERIFY LIVE","textPreview":"DRAFT  >  PREVIEW  >  PUBLISH ONCE  >  VERIFY LIVE","textChars":50,"textLines":1,"bbox":[255,370,1410,120]}
+{"kind":"textbox","id":"sh/gzy5s3a1","slide":13,"name":"closing-sub","text":"Check the exact public article and Blog archive on desktop and phone.","textPreview":"Check the exact public article and Blog archive on desktop and phone.","textChars":69,"textLines":1,"bbox":[390,545,1140,52]}
+{"kind":"textbox","id":"sh/1076lobm","slide":13,"name":"closing-help","text":"If the article, category, image, link, or live result is uncertain, stop and contact Blue Nova.","textPreview":"If the article, category, image, link, or live result is uncertain, stop and contact Blue Nova.","textChars":95,"textLines":1,"bbox":[320,750,1280,60]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"[Sources]\n- Rebekah project training standard and client records in CLIENT-NOTES.md.\n- Existing first-party WordPress captures and approved workflow records.\n- No test blog post, live content change, cache purge, media upload, or setting change was used to create this lesson."}

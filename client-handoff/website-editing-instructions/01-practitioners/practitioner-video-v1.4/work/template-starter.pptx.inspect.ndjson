@@ -1,0 +1,197 @@
+{"kind":"deck","id":"pr/ahtado","name":"Deck"}
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/bunc79","slide":1,"title":"Update an existing practitioner listing","textShapes":5}
+{"kind":"shape","id":"sh/wza9wnud","slide":1,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/z6x8vydk","slide":1,"name":"title","text":"Update an existing practitioner listing","textPreview":"Update an existing practitioner listing","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/e5ormtcz","slide":1,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/d4fqtove","slide":1,"name":"step-text","text":"START","textPreview":"START","textChars":5,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/cj69kjut","slide":1,"name":"page","text":"Practitioner editing v1.3  •  1/16","textPreview":"Practitioner editing v1.3  •  1/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/qhoritc3","slide":1,"name":"start-copy","text":"Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.","textPreview":"Update approved practitioner information, save it safely, clear the applicable cache, and verify the live result.","textChars":113,"textLines":1,"bbox":[930,290,770,260]}
+{"kind":"textbox","id":"sh/x0ja5sby","slide":1,"name":"start-note","text":"Beginner lesson  •  Live website  •  Full-screen version","textPreview":"Beginner lesson  •  Live website  •  Full-screen version","textChars":56,"textLines":1,"bbox":[935,600,750,42]}
+{"kind":"image","id":"im/t8zit4rm","slide":1,"name":"","bbox":[155,323.23,650,193.54]}
+{"kind":"notes","id":"nt/bunc79","slide":1,"text":""}
+{"kind":"slide","id":"sl/aim0s3","slide":2,"title":"Required role: Editor or Administrator","textShapes":7}
+{"kind":"shape","id":"sh/8ju9o36x","slide":2,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/ypk3ah4v","slide":2,"name":"title","text":"Required role: Editor or Administrator","textPreview":"Required role: Editor or Administrator","textChars":38,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/zqt4jmlg","slide":2,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/cn2l87m5","slide":2,"name":"step-text","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/xobmhcna","slide":2,"name":"page","text":"Practitioner editing v1.3  •  2/16","textPreview":"Practitioner editing v1.3  •  2/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/alk36h4z","slide":2,"name":"role-label","text":"WORDPRESS ROLE REQUIRED","textPreview":"WORDPRESS ROLE REQUIRED","textChars":23,"textLines":1,"bbox":[260,255,1400,46]}
+{"kind":"textbox","id":"sh/bmt4fm5k","slide":2,"name":"role-value","text":"EDITOR OR ADMINISTRATOR","textPreview":"EDITOR OR ADMINISTRATOR","textChars":23,"textLines":1,"bbox":[160,345,1600,95]}
+{"kind":"shape","id":"sh/oz2l47mt","slide":2,"name":"enough-box","bbox":[520,515,880,130]}
+{"kind":"textbox","id":"sh/pkbmdcne","slide":2,"name":"enough","text":"Editor is enough for this task.","textPreview":"Editor is enough for this task.","textChars":31,"textLines":1,"bbox":[570,550,780,60]}
+{"kind":"textbox","id":"sh/tk3qx8n2","slide":2,"name":"role-stop","text":"If you do not know your role, stop and ask Blue Nova before editing.","textPreview":"If you do not know your role, stop and ask Blue Nova before editing.","textChars":68,"textLines":1,"bbox":[365,730,1190,55]}
+{"kind":"notes","id":"nt/aim0s3","slide":2,"text":""}
+{"kind":"slide","id":"sl/b3hmrs","slide":3,"title":"Confirm the live login address","textShapes":6}
+{"kind":"shape","id":"sh/z2lovalo","slide":3,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/wzulgfe9","slide":3,"name":"title","text":"Confirm the live login address","textPreview":"Confirm the live login address","textChars":30,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/hk3mp0ve","slide":3,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ilc3i5wz","slide":3,"name":"step-text","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/jml4radk","slide":3,"name":"page","text":"Practitioner editing v1.3  •  3/16","textPreview":"Practitioner editing v1.3  •  3/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"textbox","id":"sh/4nelkfe5","slide":3,"name":"login-label","text":"LIVE WORDPRESS LOGIN","textPreview":"LIVE WORDPRESS LOGIN","textChars":20,"textLines":1,"bbox":[250,285,1420,44]}
+{"kind":"shape","id":"sh/5onmtkvq","slide":3,"name":"url-box","bbox":[190,365,1540,180]}
+{"kind":"textbox","id":"sh/6pw3mpwb","slide":3,"name":"login-url","text":"rebekahspureliving.com/wp-admin","textPreview":"rebekahspureliving.com/wp-admin","textChars":31,"textLines":1,"bbox":[260,420,1400,72]}
+{"kind":"textbox","id":"sh/rq54vudw","slide":3,"name":"login-note","text":"Confirm this live address before making a change.","textPreview":"Confirm this live address before making a change.","textChars":49,"textLines":1,"bbox":[300,650,1320,55]}
+{"kind":"notes","id":"nt/b3hmrs","slide":3,"text":""}
+{"kind":"slide","id":"sl/ezx6zo","slide":4,"title":"Open All Medical Practicioners","textShapes":4}
+{"kind":"shape","id":"sh/ru98r290","slide":4,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/ba5wz2pc","slide":4,"name":"title","text":"Open All Medical Practicioners","textPreview":"Open All Medical Practicioners","textChars":30,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/a9cfqho7","slide":4,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/p83exc7m","slide":4,"name":"step-text","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/o7uxo761","slide":4,"name":"page","text":"Practitioner editing v1.3  •  4/16","textPreview":"Practitioner editing v1.3  •  4/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/n6lwv2pg","slide":4,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/947ytw7q","slide":4,"name":"look-here-highlight","bbox":[189.97,338.84,140.08,156.56]}
+{"kind":"shape","id":"sh/83yx0r65","slide":4,"name":"look-here-label","bbox":[189.97,290.84,170,50]}
+{"kind":"textbox","id":"sh/qtg7yxsf","slide":4,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,303.84,150,24]}
+{"kind":"image","id":"im/bm1gvql0","slide":4,"name":"","bbox":[189.97,104,1540.06,927]}
+{"kind":"notes","id":"nt/ezx6zo","slide":4,"text":""}
+{"kind":"slide","id":"sl/ezqrh3","slide":5,"title":"Find the correct record and choose Edit","textShapes":6}
+{"kind":"shape","id":"sh/k3mpczu1","slide":5,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/q1g7i5cb","slide":5,"name":"title","text":"Find the correct record and choose Edit","textPreview":"Find the correct record and choose Edit","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/b2poratw","slide":5,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ofe5gvul","slide":5,"name":"step-text","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/pgn6p0b6","slide":5,"name":"page","text":"Practitioner editing v1.3  •  5/16","textPreview":"Practitioner editing v1.3  •  5/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/2dwnelcf","slide":5,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/8bipszup","slide":5,"name":"look-here-highlight","bbox":[334.17,244.08,642.72,127.72]}
+{"kind":"shape","id":"sh/9cr61kba","slide":5,"name":"look-here-label","bbox":[334.17,196.08,170,50]}
+{"kind":"textbox","id":"sh/l4v654vm","slide":5,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[344.17,209.08,150,24]}
+{"kind":"shape","id":"sh/y1k7apcb","slide":5,"name":"edit-cue-box","bbox":[1210,215,585,170]}
+{"kind":"textbox","id":"sh/d0b614vq","slide":5,"name":"edit-cue-instruction","text":"HOVER OVER THE CORRECT ROW","textPreview":"HOVER OVER THE CORRECT ROW","textChars":26,"textLines":1,"bbox":[1240,245,525,38]}
+{"kind":"textbox","id":"sh/cf2p8zu5","slide":5,"name":"edit-cue-action","text":"Then click Edit","textPreview":"Then click Edit","textChars":15,"textLines":1,"bbox":[1240,303,525,55]}
+{"kind":"image","id":"im/sfa5onmt","slide":5,"name":"","bbox":[189.97,104,1540.06,927]}
+{"kind":"notes","id":"nt/ezqrh3","slide":5,"text":"[Sources]\n- Live WordPress practitioner-list interface captured August 31, 2026."}
+{"kind":"slide","id":"sl/ul0pg6","slide":6,"title":"Open Medical Practicioner Fields","textShapes":4}
+{"kind":"shape","id":"sh/h4fexgri","slide":6,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/10bm1gry","slide":6,"name":"title","text":"Open Medical Practicioner Fields","textPreview":"Open Medical Practicioner Fields","textChars":32,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/0z2lsbad","slide":6,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ru94vm9w","slide":6,"name":"step-text","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/qt03m1sb","slide":6,"name":"page","text":"Practitioner editing v1.3  •  6/16","textPreview":"Practitioner editing v1.3  •  6/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/dwrmxwr2","slide":6,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/3qpkrm9k","slide":6,"name":"look-here-highlight","bbox":[189.97,503.64,1248.36,502.64]}
+{"kind":"shape","id":"sh/i5g3ihsf","slide":6,"name":"look-here-label","bbox":[189.97,455.64,170,50]}
+{"kind":"textbox","id":"sh/g36d4bax","slide":6,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,468.64,150,24]}
+{"kind":"image","id":"im/d4rydczy","slide":6,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/ul0pg6","slide":6,"text":""}
+{"kind":"slide","id":"sl/pkfb2f","slide":7,"title":"Choose only approved service categories","textShapes":4}
+{"kind":"shape","id":"sh/kf210ja9","slide":7,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/2xof6loj","slide":7,"name":"title","text":"Choose only approved service categories","textPreview":"Choose only approved service categories","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/nyxwzq54","slide":7,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/0vmx4b6t","slide":7,"name":"step-text","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/1wfexgne","slide":7,"name":"page","text":"Practitioner editing v1.3  •  7/16","textPreview":"Practitioner editing v1.3  •  7/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/et4f2lon","slide":7,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/s7md0b6h","slide":7,"name":"look-here-highlight","bbox":[189.97,458.32,972.32,535.6]}
+{"kind":"shape","id":"sh/dsvetgn2","slide":7,"name":"look-here-label","bbox":[189.97,410.32,170,50]}
+{"kind":"textbox","id":"sh/5gbitobu","slide":7,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,423.32,150,24]}
+{"kind":"image","id":"im/grutsn21","slide":7,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/pkfb2f","slide":7,"text":""}
+{"kind":"slide","id":"sl/r83u4e","slide":8,"title":"Update the practice and public name","textShapes":4}
+{"kind":"shape","id":"sh/ofi1wrip","slide":8,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/21cf2dsj","slide":8,"name":"title","text":"Update the practice and public name","textPreview":"Update the practice and public name","textChars":35,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/n2lgbit4","slide":8,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/c7ex87al","slide":8,"name":"step-text","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/x8nyhsr6","slide":8,"name":"page","text":"Practitioner editing v1.3  •  8/16","textPreview":"Practitioner editing v1.3  •  8/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/a5wf6xsf","slide":8,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/kvexc7ah","slide":8,"name":"look-here-highlight","bbox":[189.97,536.6,1248.36,247.2]}
+{"kind":"shape","id":"sh/lwnylcr2","slide":8,"name":"look-here-label","bbox":[189.97,488.6,170,50]}
+{"kind":"textbox","id":"sh/p0r2pwja","slide":8,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,501.6,150,24]}
+{"kind":"image","id":"im/sne54vux","slide":8,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/r83u4e","slide":8,"text":""}
+{"kind":"slide","id":"sl/g2lpry","slide":9,"title":"Edit the description in Visual mode","textShapes":4}
+{"kind":"shape","id":"sh/dozqpg7y","slide":9,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/xwzq9wji","slide":9,"name":"title","text":"Edit the description in Visual mode","textPreview":"Edit the description in Visual mode","textChars":35,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/wbqpgr2x","slide":9,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/jy18b61o","slide":9,"name":"step-text","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/yxs7i1k3","slide":9,"name":"page","text":"Practitioner editing v1.3  •  9/16","textPreview":"Practitioner editing v1.3  •  9/16","textChars":34,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/l0jqdwju","slide":9,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/z2x8z2l4","slide":9,"name":"look-here-highlight","bbox":[189.97,470.68,1248.36,494.4]}
+{"kind":"shape","id":"sh/e1o76xkz","slide":9,"name":"look-here-label","bbox":[189.97,422.68,170,50]}
+{"kind":"textbox","id":"sh/snq9wbqd","slide":9,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,435.68,150,24]}
+{"kind":"image","id":"im/94nql8rm","slide":9,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/g2lpry","slide":9,"text":""}
+{"kind":"slide","id":"sl/pd3deo","slide":10,"title":"Add only approved public contact details","textShapes":4}
+{"kind":"shape","id":"sh/uh4nqt8f","slide":10,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/ob6h8z6l","slide":10,"name":"title","text":"Add only approved public contact details","textPreview":"Add only approved public contact details","textChars":40,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/pczi14n6","slide":10,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ad8za9or","slide":10,"name":"step-text","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/beh03e5w","slide":10,"name":"page","text":"Practitioner editing v1.3  •  10/16","textPreview":"Practitioner editing v1.3  •  10/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/cfqhcj6h","slide":10,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/yh8zeton","slide":10,"name":"look-here-highlight","bbox":[189.97,450.08,1248.36,543.84]}
+{"kind":"shape","id":"sh/zih07e58","slide":10,"name":"look-here-label","bbox":[189.97,402.08,170,50]}
+{"kind":"textbox","id":"sh/vid4zy9k","slide":10,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,415.08,150,24]}
+{"kind":"image","id":"im/itsza10b","slide":10,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/pd3deo","slide":10,"text":""}
+{"kind":"slide","id":"sl/czrwrb","slide":11,"title":"Review every field you changed","textShapes":4}
+{"kind":"shape","id":"sh/7atsnuhs","slide":11,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/b2tcn2lk","slide":11,"name":"title","text":"Review every field you changed","textPreview":"Review every field you changed","textChars":30,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/a1kbexkz","slide":11,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/lsvutc3m","slide":11,"name":"step-text","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/krmtk721","slide":11,"name":"page","text":"Practitioner editing v1.3  •  11/16","textPreview":"Practitioner editing v1.3  •  11/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/zqdcr2lg","slide":11,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/9wfuxw3i","slide":11,"name":"look-here-highlight","bbox":[189.97,536.6,1248.36,247.2]}
+{"kind":"shape","id":"sh/8v6dor2x","slide":11,"name":"look-here-label","bbox":[189.97,488.6,170,50]}
+{"kind":"textbox","id":"sh/69kre9g7","slide":11,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[199.97,501.6,150,24]}
+{"kind":"image","id":"im/j2xsj61c","slide":11,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/czrwrb","slide":11,"text":""}
+{"kind":"slide","id":"sl/ru7gk8","slide":12,"title":"Select Save once—and wait","textShapes":4}
+{"kind":"shape","id":"sh/hcni18j2","slide":12,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/18zytsjq","slide":12,"name":"title","text":"Select Save once—and wait","textPreview":"Select Save once—and wait","textChars":25,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/g7qhknil","slide":12,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/rixgni1o","slide":12,"name":"step-text","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/6hozed03","slide":12,"name":"page","text":"Practitioner editing v1.3  •  12/16","textPreview":"Practitioner editing v1.3  •  12/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/t4fypsju","slide":12,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/jedgjy1s","slide":12,"name":"look-here-highlight","bbox":[1244.69,104,201.88,103]}
+{"kind":"shape","id":"sh/id4zat07","slide":12,"name":"look-here-label","bbox":[1244.69,106,170,50]}
+{"kind":"textbox","id":"sh/wbehs3ih","slide":12,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[1254.69,119,150,24]}
+{"kind":"image","id":"im/lcrmp03q","slide":12,"name":"","bbox":[180.08,104,1559.83,927]}
+{"kind":"notes","id":"nt/ru7gk8","slide":12,"text":""}
+{"kind":"slide","id":"sl/yj4ss9","slide":13,"title":"Clear only the record’s applicable cache","textShapes":6}
+{"kind":"shape","id":"sh/fit8v6hs","slide":13,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/z690jyhw","slide":13,"name":"title","text":"Clear only the record’s applicable cache","textPreview":"Clear only the record’s applicable cache","textChars":40,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/e5gzat0b","slide":13,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/9crip8zy","slide":13,"name":"step-text","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/obihgnid","slide":13,"name":"page","text":"Practitioner editing v1.3  •  13/16","textPreview":"Practitioner editing v1.3  •  13/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/na90nihs","slide":13,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/pg7ydoju","slide":13,"name":"look-here-highlight","bbox":[334.17,244.08,642.72,127.72]}
+{"kind":"shape","id":"sh/4fyh4ji9","slide":13,"name":"look-here-label","bbox":[334.17,196.08,170,50]}
+{"kind":"textbox","id":"sh/uhk721g7","slide":13,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[344.17,209.08,150,24]}
+{"kind":"shape","id":"sh/hkvqxgzy","slide":13,"name":"cache-cue-box","bbox":[1210,215,585,170]}
+{"kind":"textbox","id":"sh/2l4r6lgj","slide":13,"name":"cache-cue-instruction","text":"HOVER OVER THE CORRECT ROW","textPreview":"HOVER OVER THE CORRECT ROW","textChars":26,"textLines":1,"bbox":[1240,245,525,38]}
+{"kind":"textbox","id":"sh/3md8zqho","slide":13,"name":"cache-cue-action","text":"Then click Clear Cache","textPreview":"Then click Clear Cache","textChars":22,"textLines":1,"bbox":[1240,303,525,55]}
+{"kind":"image","id":"im/jmx0nep0","slide":13,"name":"","bbox":[189.97,104,1540.06,927]}
+{"kind":"notes","id":"nt/yj4ss9","slide":13,"text":"[Sources]\n- Live WordPress practitioner-list interface captured August 31, 2026."}
+{"kind":"slide","id":"sl/nafh0d","slide":14,"title":"Verify the exact public directory","textShapes":4}
+{"kind":"shape","id":"sh/69wjy1gj","slide":14,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/0vehg3yp","slide":14,"name":"title","text":"Verify the exact public directory","textPreview":"Verify the exact public directory","textChars":33,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/lwnip8za","slide":14,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/q5czat0n","slide":14,"name":"step-text","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/b6lgjyhs","slide":14,"name":"page","text":"Practitioner editing v1.3  •  14/16","textPreview":"Practitioner editing v1.3  •  14/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/c7uhc3id","slide":14,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/a1wzmdgr","slide":14,"name":"look-here-highlight","bbox":[268.25,375.92,1186.56,535.6]}
+{"kind":"shape","id":"sh/v2p0vihc","slide":14,"name":"look-here-label","bbox":[268.25,327.92,170,50]}
+{"kind":"textbox","id":"sh/7a5k76h4","slide":14,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[278.25,340.92,150,24]}
+{"kind":"image","id":"im/y1cbypwz","slide":14,"name":"","bbox":[145.06,146.84,1629.87,841.32]}
+{"kind":"notes","id":"nt/nafh0d","slide":14,"text":"[Sources]\n- https://rebekahspureliving.com/practitioners/ (captured September 1, 2026)."}
+{"kind":"slide","id":"sl/c09n0h","slide":15,"title":"Open the full listing and check a phone","textShapes":4}
+{"kind":"shape","id":"sh/h8rm903e","slide":15,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/5gj6pofm","slide":15,"name":"title","text":"Open the full listing and check a phone","textPreview":"Open the full listing and check a phone","textChars":39,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/4vq5gjeh","slide":15,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/ri1orexs","slide":15,"name":"step-text","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/qhsnitw7","slide":15,"name":"page","text":"Practitioner editing v1.3  •  15/16","textPreview":"Practitioner editing v1.3  •  15/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/dkj6dovy","slide":15,"name":"screen-frame","bbox":[30,100,1860,935]}
+{"kind":"shape","id":"sh/fm1ofyd4","slide":15,"name":"look-here-highlight","bbox":[276.49,104,469.68,758.08]}
+{"kind":"shape","id":"sh/elsnmtwj","slide":15,"name":"look-here-label","bbox":[276.49,106,170,50]}
+{"kind":"textbox","id":"sh/w7i5gv29","slide":15,"name":"look-here-text","text":"LOOK HERE","textPreview":"LOOK HERE","textChars":9,"textLines":1,"bbox":[286.49,119,150,24]}
+{"kind":"image","id":"im/tcv6lgfu","slide":15,"name":"","bbox":[145.06,104,1629.87,927]}
+{"kind":"notes","id":"nt/c09n0h","slide":15,"text":""}
+{"kind":"slide","id":"sl/7tbdtw","slide":16,"title":"Finish every edit with the same three checks","textShapes":6}
+{"kind":"shape","id":"sh/gnih8z29","slide":16,"name":"header-band","bbox":[0,0,1920,100]}
+{"kind":"textbox","id":"sh/l4ryxcfa","slide":16,"name":"title","text":"Finish every edit with the same three checks","textPreview":"Finish every edit with the same three checks","textChars":44,"textLines":1,"bbox":[48,23,1550,58]}
+{"kind":"shape","id":"sh/k3ix47yp","slide":16,"name":"step","bbox":[1700,20,170,58]}
+{"kind":"textbox","id":"sh/by9wr2x8","slide":16,"name":"step-text","text":"DONE","textPreview":"DONE","textChars":4,"textLines":1,"bbox":[1712,34,146,30]}
+{"kind":"textbox","id":"sh/axgfyxgn","slide":16,"name":"page","text":"Practitioner editing v1.3  •  16/16","textPreview":"Practitioner editing v1.3  •  16/16","textChars":35,"textLines":1,"bbox":[1545,1048,325,18]}
+{"kind":"shape","id":"sh/x0rytcfy","slide":16,"name":"closing","bbox":[150,265,1620,390]}
+{"kind":"textbox","id":"sh/czix07yt","slide":16,"name":"closing-main","text":"SAVE  →  CLEAR THE APPLICABLE CACHE  →  VERIFY THE EXACT PUBLIC PAGE","textPreview":"SAVE  →  CLEAR THE APPLICABLE CACHE  →  VERIFY THE EXACT PUBLIC PAGE","textChars":68,"textLines":1,"bbox":[255,370,1410,120]}
+{"kind":"textbox","id":"sh/vutg3mxc","slide":16,"name":"closing-sub","text":"Check the result on desktop and phone.","textPreview":"Check the result on desktop and phone.","textChars":38,"textLines":1,"bbox":[390,545,1140,52]}
+{"kind":"textbox","id":"sh/utkfahgr","slide":16,"name":"closing-help","text":"If any check fails, take a screenshot and contact Blue Nova before changing anything again.","textPreview":"If any check fails, take a screenshot and contact Blue Nova before changing anything again.","textChars":91,"textLines":1,"bbox":[320,750,1280,60]}
+{"kind":"notes","id":"nt/7tbdtw","slide":16,"text":""}

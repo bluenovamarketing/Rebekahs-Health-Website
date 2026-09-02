@@ -1,0 +1,63 @@
+WEBSITE EDITING INSTRUCTIONS
+Rebekah's Health & Nutrition
+Last updated: September 1, 2026
+
+CURRENT VIDEO LIBRARY
+
+01 - PRACTITIONERS
+- Update an Existing Practitioner Listing v1.4
+  https://drive.google.com/file/d/1mk0kK_uUm7K4l9si4KA0tb9bNJfVTYnE/view
+- Add a New Practitioner or Practice Listing v1.1
+  https://drive.google.com/file/d/1jXSeUPqQurLPmN1ZMWjlaS_H5hAznbPl/view?usp=drivesdk
+
+02 - EVENTS
+- Create or Update an Event v1.1
+  https://drive.google.com/file/d/1wBpm2CRDaP6KId7k7LWtk_9FZqH91xJL/view?usp=drivesdk
+
+03 - BLOG POSTS
+- Create or Update a Blog Post v1.1
+  https://drive.google.com/file/d/1j9_wBGxmIo20SJ8JiUfSRcj2jcMGTThJ/view?usp=drivesdk
+
+04 - MEDIA LIBRARY
+- Upload and Use Images in the Media Library v1.1
+  https://drive.google.com/file/d/1WJMcT6TmVgEjwNKcI9COiYcV3RU-uEoR/view?usp=drivesdk
+
+05 - STAFF ACCESS
+- Add, Change, or Remove a Staff WordPress User v1.1
+  https://drive.google.com/file/d/14nJVaoMloFFn9lqbgkupz74FufpObPxO/view?usp=drivesdk
+
+06 - CACHE AND VERIFICATION
+- Clear the Website Cache Safely v1.1
+  https://drive.google.com/file/d/1EWICtYjlYkNeWlzN0rzyoYFlTM_wvNAu/view?usp=drivesdk
+
+07 - WEBSITE EDITING SAFETY
+- Website Editing Safety and Recovery v1.1
+  https://drive.google.com/file/d/1upxIqP1CaWPWBzx-QyQPP_GPXL6iS9xm/view?usp=drivesdk
+
+FUTURE LESSON
+
+The online-store editing lesson will be added after the Phase Two store interface and editing workflow are final.
+
+WATCH A VIDEO IN GOOGLE DRIVE
+
+1. Open the Website Editing Instructions folder.
+2. Open the numbered folder for the task you want to complete, or use a direct link above.
+3. Double-click the MP4 video file.
+4. Select the Play button.
+5. Use the full-screen button if the WordPress screen is difficult to read.
+6. Keep the matching PDF checklist open or print it before making the change.
+
+DOWNLOAD A COPY TO YOUR COMPUTER
+
+1. Find the video and matching PDF in Google Drive.
+2. Right-click each file, or select the three-dot More Actions menu.
+3. Select Download.
+4. If Google displays a download warning for a large video, confirm that you want to download the file.
+5. Save both files in a folder on your computer that you will remember.
+6. Open the downloaded MP4 and PDF to confirm that both files work before relying on the saved copies.
+
+You may download and keep copies of these training videos and checklists for your business records, including if Blue Nova Marketing no longer manages the website.
+
+SAFETY REMINDER
+
+Follow the exact video and matching checklist for the task you are completing. Use your own WordPress login. Make one approved change at a time. Always save once, clear only the applicable cache, open the exact public URL, and verify the visible result on desktop and phone. If your WordPress screen does not match the video, stop before saving and contact Blue Nova Marketing.
