@@ -28,6 +28,9 @@ This is the authoritative responsibility checklist for the client email, proposa
 - [x] Kosmos pricing was disclosed before signup: $49 month-to-month, or $39 per month billed annually ($468/year).
 - [ ] Use the official Kosmos plans/signup page: <https://kosmoscentral.com/esync-cloud-pricing-monthly>.
 - [x] Rebekah supplied Kosmos sign-in information. Blue Nova successfully signed in on 2026-09-02 and reached the Kosmos dashboard; no synchronization Actions have been created. This is Rebekah's client-owned account shared with Blue Nova, not a separate Blue Nova user. The credential is stored only in the private `Cody WP Logins` Google Sheet on its own Rebekah/Kosmos row and is not copied into project files.
+- [x] Kosmos support confirmed in ticket **#461373** that the eSync dashboard supports only one login email. Freshdesk support profiles may have multiple users, but those do not create separate eSync dashboard access. Keep Rebekah's email as the client-owned eSync login and use the securely stored shared credential; do not transfer the dashboard email to Blue Nova unless Rebekah explicitly requests an ownership change.
+- [x] Activated a separate Blue Nova **Kosmos Freshdesk support profile** for `bluenovamarketing@gmail.com` on 2026-09-03, selected a unique support-only password, verified the login, stored it on its own row in the private `Cody WP Logins` register, and emailed the login details to Todd. This account is only for submitting and tracking support tickets; it does not grant a second eSync dashboard login or affect synchronization.
+- [ ] Ask Kosmos to associate the Blue Nova Freshdesk profile with Rebekah's company/ticket history if shared visibility is desired. The newly activated profile currently shows no tickets.
 - [x] Added a separate, fully populated Rebekah/Revel row to the private `Cody WP Logins` Google Sheet for the Blue Nova invited username and Clarkston console URL; access was last verified on 2026-09-02.
 - [ ] After the Fiserv/Clover merchant account is active, provide Blue Nova the integration access needed to connect and test it. For Clover Payments for WooCommerce, this normally means the merchant ID plus sandbox/production public and private tokens supplied through a secure method. Do not email the owner's primary password or API secrets.
 - [ ] Payment rates, monthly fees, merchant contracts, deposit terms, and chargeback pricing are decisions between Rebekah and Fiserv. Blue Nova only needs the final gateway name, an active account, the supported WooCommerce integration, and secure integration access.
@@ -129,8 +132,8 @@ Blue Nova can complete the adaptable store foundation and generic non-payment ch
 Using the current custom Rebekah theme—not Bricks—Blue Nova must build/refine:
 
 - [x] Prepare and internally approve the complete seven-system responsive ecommerce design set before full implementation: global commerce-navigation changes; main-homepage ecommerce integration; one reusable shop/category/archive template; simple and variation product-page examples; purchase-path wireframes/prototypes; the account system; and important product/error states with responsive/accessibility review.
-- [ ] Obtain Rebekah's client approval for the exact seven current mockup versions before WordPress implementation. A later design change requires the next version and a new approval for that system.
-- [x] Internally approve the exact Customer Account System v1.6: guest checkout, automatic optional accounts, sign-in, password reset, dashboard, addresses, orders, no customer 2FA, and separately managed staff/admin backend security. Rebekah's client approval remains pending.
+- [ ] Complete exact-version approval tracking before WordPress implementation. Rebekah approved systems 01, 02, and 04–07 on September 2, 2026; Todd approved the client-requested Shop Homepage + Product Catalog v1.9 filter revision on September 3, 2026. Only Rebekah's exact v1.9 confirmation remains. A later design change requires the next version and a new approval for that system.
+- [x] Internally approve the exact Customer Account System v1.6: guest checkout, automatic optional accounts, sign-in, password reset, dashboard, addresses, orders, no customer 2FA, and separately managed staff/admin backend security. Rebekah approved this exact version on September 2, 2026.
 - [ ] Preserve the approved Phase One header, footer, typography, color, and spacing system. Only add the Online Shop, cart/count, account access, and required store/policy links; do not redesign the full global chrome.
 
 - [ ] Shop/catalog page.
@@ -204,13 +207,13 @@ No separate Blue Nova “pilot fee” has been defined or approved in the curren
 
 ## 13. Local readiness package completed September 2, 2026
 
-- [x] Freeze all seven exact internally approved ecommerce mockup versions pending Rebekah's review.
+- [x] Preserve all reviewed ecommerce mockup versions as immutable history. Six exact current systems are client-approved; Shop/Catalog v1.8 is preserved as client-reviewed history and v1.9 contains Rebekah's requested filter revision.
 - [x] Create `PHASE-TWO-PRE-STAGING-EXECUTION-RUNBOOK-v1.1.md` with staging safeguards, evidence gates, selective-deployment rule, and four rollback levels.
 - [x] Create `PHASE-TWO-ONE-PRODUCT-ACCEPTANCE-TEST-v1.1.md` with preflight, field-observation, overwrite, order, inventory, and pass/fail records. Actual mapping remains an observed output of the authorized first pull.
 - [x] Create `PHASE-TWO-LEGACY-CATALOG-CLEAN-START-PLAN-v1.1.md` to quarantine rather than delete the old WooCommerce catalog and prevent identifier collisions.
 - [x] Create `PHASE-TWO-ECOMMERCE-POLICY-DECISION-DRAFT-v1.1.md` separating confirmed operating rules from focused client decisions and legal-review items.
 - [x] Create a dormant local Phase Two WooCommerce scaffold with guarded PHP, scoped responsive CSS, an accessible filter drawer, store utility/footer renderers, the approved missing-photo treatment, and verified-content-only Directions & Warnings disclosure.
-- [x] Add a `Pre-Staging Packet` tab to the Phase Two planning workbook and update the Implementation Plan so all seven designs accurately show as internally approved and awaiting client approval.
+- [x] Add a `Pre-Staging Packet` tab to the Phase Two planning workbook and update the Implementation Plan and approval tracking to distinguish six client-approved systems from the internally approved Shop/Catalog v1.9 awaiting exact client confirmation.
 - [x] Verify the dormant local scaffold at desktop, tablet, and phone widths with no horizontal overflow; verify filter-drawer focus/close behavior and the product disclosure interaction.
 - [ ] Re-run PHP lint in the staging/runtime environment before activation; PHP CLI is not installed in the current local shell. JavaScript syntax passed locally.
 

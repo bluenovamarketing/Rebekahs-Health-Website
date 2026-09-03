@@ -1,5 +1,14 @@
 # Client Notes
 
+## 2026-09-03 - GSC 800-click milestone reviewed
+
+- Reviewed the authentic Google Search Console milestone email for `https://rebekahspureliving.com/`; Google reported that the URL-prefix property reached 800 Google Search clicks in the 28 days ending August 31, 2026.
+- Confirmed the exact hostname is present in the Active client registry and matched it to Rebekah's Health & Nutrition project record.
+- Ran fresh GSC evidence: date-level results for `sc-domain:rebekahspureliving.com` total 1,129 clicks and 10,876 impressions for August 4-31, confirming the site passed the milestone. No specific URL, access change, indexing failure, security issue, or manual action was reported.
+- Generated a fresh cloud report at `2026-09-03T04:02:19.260Z`. Its indexing queue flags `/shop/` as noindexed, but the project record confirms this is intentional while the Phase Two store remains dormant and not launched; leave it unchanged until production launch QA.
+- Data-quality note: the cloud report's 668-click summary materially undercounts the direct date-level GSC total of 1,129, so the report's overall-click aggregation should not be treated as the property-wide total until the pipeline is reviewed.
+- Recommendation: no client or website action is needed for this positive milestone; continue routine monitoring. A private Slack self-DM was sent with the conclusion.
+
 ## 2026-08-30 - Per-page mockup version convention added to reusable workflow
 
 - Added a permanent rule to the reusable `traditional-website-builder` skill: every page/template starts at `v1.1` and increments independently to `v1.2`, `v1.3`, and onward for each completed revision.
@@ -3733,3 +3742,44 @@
 - Kosmos acknowledged the secondary-user request as support ticket **#461373**, subject `Secondary administrator or agency user for existing eSync account`.
 - Activated an hourly thread heartbeat named `Monitor Kosmos ticket 461373`. It remains quiet while nothing changes and alerts Todd only when Kosmos sends a meaningful reply, a decision/action is required, or monitoring fails.
 - When a reply arrives, the monitor will read the full ticket thread, summarize the supported access model, cost, creation responsibility, and permissions, update this client record, and prepare a Gmail reply draft when needed. It is explicitly prohibited from sending email automatically or changing the Kosmos account, subscription, integrations, Revel, Cloudways, staging, WordPress, or any paid service.
+
+## 2026-09-02 — Kosmos ticket #461373 answered
+
+- James at Kosmos confirmed that Freshdesk support profiles can have multiple users assigned to Rebekah's company, but the Kosmos eSync dashboard permits only one login email for managing eSync preferences.
+- Kosmos can change the customer account's single eSync login email, but that would transfer the login rather than create a secondary Blue Nova administrator. The recommended ownership model is therefore to keep Rebekah's email as the client-owned login and use the securely stored shared credential for configuration work.
+- No additional cost, role, or invitation workflow applies because separate eSync dashboard users are not supported. No reply draft was created because the support response completely answered the question and requires no follow-up.
+- The one-product Revel-to-WooCommerce connection test remains the next Kosmos action after client approval, infrastructure authorization, and protected staging preparation. No account, subscription, integration, staging, Cloudways, WordPress, or paid-service change was made.
+
+## 2026-09-03 — Kosmos inbox messages reconciled
+
+- Reviewed the three current Kosmos messages in full: the ticket-received acknowledgment for **#461373**, a `Kosmos Central Support user activation` message, and James's substantive support reply.
+- The ticket acknowledgment only confirms receipt and supplies the ticket-status path; it requires no response.
+- The activation message creates a separate Blue Nova account in Kosmos's **Freshdesk support portal** so Blue Nova can submit and track support requests under its own password. It does not create a second Kosmos eSync dashboard user and does not grant access to synchronization preferences or Actions.
+- James confirmed that the eSync dashboard permits only one login email. Kosmos can replace that email, but cannot add a second dashboard user. Keep Rebekah's email as the client-owned eSync login and use the securely stored shared credential rather than transferring account ownership to Blue Nova.
+- Recommended optional next step: activate the Blue Nova Freshdesk support profile and ask Kosmos to associate it with Rebekah's company/ticket history. This is helpful for support continuity but does not block staging, store construction, or the one-product integration test.
+- No reply to Kosmos is needed because the question was fully answered. No email draft was created, and no account, integration, subscription, staging, Cloudways, WordPress, or paid-service change was made.
+
+## 2026-09-03 — Blue Nova Kosmos Freshdesk support profile activated
+
+- Created and activated a separate Kosmos Central Freshdesk support profile named **Blue Nova Marketing** using the agency's generic Gmail address; verified that the account reaches the support home, knowledge base, new-ticket form, and ticket-status area.
+- The new profile currently shows no tickets. Kosmos must associate it with Rebekah's company if Blue Nova should see shared or historical company tickets.
+- Stored the credential on its own `Rebekah's Health and Nutrition — Kosmos Freshdesk Support` row in the private `Cody WP Logins` Google Sheet and verified the saved login URL, username, password presence, dates, and support-only scope note. No secret was copied into this project record.
+- Sent Todd the login information in a separate email as explicitly requested.
+- This profile is only for support tickets and knowledge-base access. Rebekah's existing Kosmos eSync dashboard login, synchronization settings, account ownership, billing, and subscription were not changed. No Cloudways, staging, live website, WordPress, Revel/Kosmos connection, or paid-service action occurred.
+
+## 2026-09-03 — Rebekah approved the Phase Two set and requested Shop filters
+
+- Reviewed Rebekah's September 2 email in full. She wrote that Phase Two “looks SO GOOD” and approved every page, while separately requesting a refinement to the Shop-page filter organization.
+- Recorded Header + Footer v1.5, Main Homepage Ecommerce Integration v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States v1.5 as client-approved exact versions. Her repeated instruction that Shop Online go directly to the Shop page is already satisfied by Homepage v1.9; no unnecessary homepage revision was created.
+- Preserved `shop-catalog-template-v1.8.html` as client-reviewed history and created page-body-only `shop-catalog-template-v1.9.html`. The new version replaces the former product-form and price filters with two compact expandable groups—Brands and Wellness Categories—using all nine brand labels and 21 wellness-category labels supplied in her email on both desktop and mobile.
+- Added synchronized desktop/mobile filter choices, combined search/filter behavior, counts, clear/reset recovery, and representative local filtering without changing the approved catalog content outside the requested filter refinement.
+- Shop/Catalog v1.9 now requires Todd's internal review and Rebekah's exact-version confirmation. Actual filter availability for the first 25 products and each product's taxonomy mapping will be validated from connected product data later; the visual revision does not require guessing those mappings now.
+- Updated the local review hub, version register, ecommerce mockup inventory, master checklist, and Phase Two planning workbook together. No reply email was sent.
+- Local work only was maintained: no Cloudways, staging, live website, WordPress, Revel/Kosmos connection, purchase, subscription, or paid service was accessed or changed.
+
+## 2026-09-03 — Shop Homepage + Product Catalog v1.9 internally approved
+
+- Todd approved exact `shop-catalog-template-v1.9.html`, including Rebekah's requested two-section filter system with nine brands and 21 wellness categories on desktop and mobile.
+- Recorded v1.9 as internally approved across the local review hub, Markdown version register, ecommerce mockup inventory, master checklist, and Phase Two workbook. The prior v1.8 remains preserved as superseded client-reviewed history.
+- Rebekah's confirmation of exact v1.9 is the only remaining design-approval gate. The other six exact current systems retain their September 2 client approval.
+- Local work only was maintained: no Cloudways, staging, live website, WordPress, Revel/Kosmos connection, purchase, subscription, or paid service was accessed or changed.
