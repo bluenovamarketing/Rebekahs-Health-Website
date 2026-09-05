@@ -3767,6 +3767,14 @@
 - Sent Todd the login information in a separate email as explicitly requested.
 - This profile is only for support tickets and knowledge-base access. Rebekah's existing Kosmos eSync dashboard login, synchronization settings, account ownership, billing, and subscription were not changed. No Cloudways, staging, live website, WordPress, Revel/Kosmos connection, or paid-service action occurred.
 
+## 2026-09-03 — Phase Two start sequence and current gates confirmed
+
+- Todd confirmed that Phase Two will begin after Rebekah's remaining exact Shop/Catalog v1.9 approval. Revel Clarkston console access and the client-owned Kosmos dashboard login are operational.
+- Locked the execution order: upgrade hosting to 4 GB RAM / 2 vCPU; take a fresh restore point; create and secure the Cloudways staging clone; prepare a clean staging catalog while preserving legacy products; connect Revel → Kosmos → WooCommerce; test and document one representative product; then synchronize and reconcile the remaining 24 only if the proof passes.
+- Confirmed the local pre-staging packet, rollback plan, one-product acceptance test, mockups, and dormant implementation scaffold are prepared.
+- Clover/Fiserv payment access and USPS developer access remain outstanding, but they block only their respective payment and live-shipping tests—not staging, storefront construction, or the initial one-product synchronization proof.
+- No hosting upgrade, restore point, staging application, WordPress activation, synchronization Action, product transfer, purchase, or paid-service change was made during this status update.
+
 ## 2026-09-03 — Rebekah approved the Phase Two set and requested Shop filters
 
 - Reviewed Rebekah's September 2 email in full. She wrote that Phase Two “looks SO GOOD” and approved every page, while separately requesting a refinement to the Shop-page filter organization.
@@ -3783,3 +3791,33 @@
 - Recorded v1.9 as internally approved across the local review hub, Markdown version register, ecommerce mockup inventory, master checklist, and Phase Two workbook. The prior v1.8 remains preserved as superseded client-reviewed history.
 - Rebekah's confirmation of exact v1.9 is the only remaining design-approval gate. The other six exact current systems retain their September 2 client approval.
 - Local work only was maintained: no Cloudways, staging, live website, WordPress, Revel/Kosmos connection, purchase, subscription, or paid service was accessed or changed.
+
+## 2026-09-03 — Shop/Catalog v1.9 review link sent to Rebekah
+
+- Published exact `shop-catalog-template-v1.9.html` to the existing GitHub Pages client-review site and verified that the public URL returns successfully.
+- Replied in Rebekah's existing Phase Two mockup email thread with the direct v1.9 review link and requested her exact-version approval.
+- Gmail confirmed the message was sent to `rebekahspureliving@gmail.com` in the existing Phase Two thread.
+- Pending client-facing step: record Rebekah's response as approval or revision feedback for exact v1.9 before staging implementation begins.
+- This publication is limited to the existing design-review site. No Cloudways, staging, live website, WordPress implementation, Revel/Kosmos connection, purchase, subscription, or paid service was accessed or changed.
+
+## 2026-09-03 — Hosting-upgrade and staging-cutoff notice drafted
+
+- Created an unsent Gmail draft to Rebekah titled `Website hosting update today — quick heads-up`.
+- The draft explains that the website may be briefly unavailable during the planned 4 GB RAM hosting upgrade and that Blue Nova will create a fresh restore point for the Phase Two staging baseline.
+- Clarified that blog posts or events not already published or scheduled when the restore point is created will not appear in the initial Phase Two staging copy, and that no action is needed unless Rebekah has an unpublished or unscheduled item that must be included.
+- The message remains in Todd's Gmail Drafts for review and sending. No hosting upgrade, restore point, staging clone, Revel/Kosmos connection, live-site change, or paid-service action was performed while preparing the notice.
+
+## 2026-09-03 — 60-day inbox follow-up review
+
+- Reconciled the recent Rebekah email threads during the agency-wide 60-day follow-up review. The practitioner-page question was answered, Kosmos ticket #461373 is resolved, and no separate follow-up is needed on those threads.
+- The latest Phase Two message is Todd's September 3 request for Rebekah to approve exact Shop/Catalog `v1.9`; no reply is present yet. Because the request was sent today, the correct status is **waiting on client**, not overdue.
+- Client-facing next step: wait for Rebekah's exact-version approval or revision feedback; follow up after the holiday weekend only if no response arrives. No email was drafted or sent during this review.
+
+## 2026-09-04 — Final Shop/Catalog v1.9 client approval confirmed
+
+- Read Rebekah's September 3, 2026, 5:04 p.m. Eastern reply and the surrounding Phase Two email thread. Her reply directly answers Todd's exact Shop/Catalog v1.9 approval request and confirms acceptance without further change requests.
+- She also praised the new Phase Two photo. The wellness slogan that follows is part of her standard email signature, not a new copy request.
+- Source: https://mail.google.com/mail/#all/1a069170a83b3a6e (reply to the exact v1.9 request). Sender authentication passed SPF, DKIM, and DMARC.
+- All seven exact current ecommerce systems are now client-approved. Updated the local review hub, version register, mockup inventory, master checklist, and planning workbook. No mockup design changed, so v1.9 remains the approved version and no new revision was created.
+- The earlier waiting-on-client note is superseded. Next step is Todd's infrastructure authorization and safe working window, followed by the documented hosting/restore/staging sequence and controlled one-product Revel/Kosmos/WooCommerce test. Payment and USPS access remain later test gates.
+- Inbox review and local tracking only: no email or Slack message was sent, no public review-site update was published, and no hosting, staging, live website, integration, or paid-service change was made.

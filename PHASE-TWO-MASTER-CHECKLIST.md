@@ -81,10 +81,10 @@ New photography, extensive image editing, original copywriting, full-catalog cle
 
 ## 5. Blue Nova setup responsibilities
 
-- [x] The client started the Kosmos 14-day trial before technical testing began. Record the trial-expiration date after first login and prioritize connection/access verification so the remaining trial time is not wasted.
-- [ ] Use August 31–September 9, 2026 only if the prerequisites are ready; otherwise begin September 21 or later. Do not leave an active test/handoff across Todd's blackout dates or weekends.
-- [ ] Do not create an idle Phase Two staging application or upgrade the server before the prerequisites and a usable working window are ready. Local ecommerce mockups can be prepared without a hosting change.
-- [ ] Once Revel integration access, Kosmos access, and one prepared online-enabled product are ready, increase CPU/RAM to 4 GB/2 vCPU, take a fresh production restore point, and create a protected same-server Cloudways staging clone. The former staging application was promoted to production and is no longer independent.
+- [x] The client started the Kosmos 14-day trial before technical testing began. Blue Nova verified the client-owned Kosmos dashboard login on 2026-09-02; confirm the remaining trial window immediately before creating the first synchronization Action.
+- [ ] Rebekah approved exact Shop/Catalog v1.9 on September 3, 2026. Begin the infrastructure and connection sequence only after Todd authorizes the infrastructure work and confirms the safe working window. Do not leave an active test/handoff across Todd's blackout dates or weekends.
+- [x] Complete the local pre-staging packet, rollback plan, one-product acceptance test, mockups, and dormant implementation scaffold without changing Cloudways, WordPress, Revel, or Kosmos.
+- [ ] After the exact client approval and Todd's start authorization, perform the locked infrastructure order: increase CPU/RAM to 4 GB/2 vCPU, take a fresh production restore point, and create a protected same-server Cloudways staging clone. The former staging application was promoted to production and is no longer independent.
 - [ ] Prevent staging indexing, customer emails, and accidental live payment/order side effects.
 - [ ] Complete the deferred homepage asset/PHP cleanup needed for a stable Phase Two baseline.
 - [ ] Reconcile the 35 visible/36 recorded legacy WooCommerce products and prevent duplicate pilot products.
@@ -132,7 +132,7 @@ Blue Nova can complete the adaptable store foundation and generic non-payment ch
 Using the current custom Rebekah theme—not Bricks—Blue Nova must build/refine:
 
 - [x] Prepare and internally approve the complete seven-system responsive ecommerce design set before full implementation: global commerce-navigation changes; main-homepage ecommerce integration; one reusable shop/category/archive template; simple and variation product-page examples; purchase-path wireframes/prototypes; the account system; and important product/error states with responsive/accessibility review.
-- [ ] Complete exact-version approval tracking before WordPress implementation. Rebekah approved systems 01, 02, and 04–07 on September 2, 2026; Todd approved the client-requested Shop Homepage + Product Catalog v1.9 filter revision on September 3, 2026. Only Rebekah's exact v1.9 confirmation remains. A later design change requires the next version and a new approval for that system.
+- [x] Complete exact-version approval tracking before WordPress implementation. Rebekah approved systems 01, 02, and 04–07 on September 2, 2026; Todd approved the client-requested Shop Homepage + Product Catalog v1.9 filter revision on September 3, 2026. Rebekah confirmed exact v1.9 by direct email reply on September 3, 2026. All seven exact systems are client-approved. A later design change requires the next version and a new approval for that system.
 - [x] Internally approve the exact Customer Account System v1.6: guest checkout, automatic optional accounts, sign-in, password reset, dashboard, addresses, orders, no customer 2FA, and separately managed staff/admin backend security. Rebekah approved this exact version on September 2, 2026.
 - [ ] Preserve the approved Phase One header, footer, typography, color, and spacing system. Only add the Online Shop, cart/count, account access, and required store/policy links; do not redesign the full global chrome.
 
@@ -207,13 +207,13 @@ No separate Blue Nova “pilot fee” has been defined or approved in the curren
 
 ## 13. Local readiness package completed September 2, 2026
 
-- [x] Preserve all reviewed ecommerce mockup versions as immutable history. Six exact current systems are client-approved; Shop/Catalog v1.8 is preserved as client-reviewed history and v1.9 contains Rebekah's requested filter revision.
+- [x] Preserve all reviewed ecommerce mockup versions as immutable history. All seven exact current systems are client-approved; Shop/Catalog v1.8 is preserved as client-reviewed history and v1.9 contains Rebekah's requested filter revision.
 - [x] Create `PHASE-TWO-PRE-STAGING-EXECUTION-RUNBOOK-v1.1.md` with staging safeguards, evidence gates, selective-deployment rule, and four rollback levels.
 - [x] Create `PHASE-TWO-ONE-PRODUCT-ACCEPTANCE-TEST-v1.1.md` with preflight, field-observation, overwrite, order, inventory, and pass/fail records. Actual mapping remains an observed output of the authorized first pull.
 - [x] Create `PHASE-TWO-LEGACY-CATALOG-CLEAN-START-PLAN-v1.1.md` to quarantine rather than delete the old WooCommerce catalog and prevent identifier collisions.
 - [x] Create `PHASE-TWO-ECOMMERCE-POLICY-DECISION-DRAFT-v1.1.md` separating confirmed operating rules from focused client decisions and legal-review items.
 - [x] Create a dormant local Phase Two WooCommerce scaffold with guarded PHP, scoped responsive CSS, an accessible filter drawer, store utility/footer renderers, the approved missing-photo treatment, and verified-content-only Directions & Warnings disclosure.
-- [x] Add a `Pre-Staging Packet` tab to the Phase Two planning workbook and update the Implementation Plan and approval tracking to distinguish six client-approved systems from the internally approved Shop/Catalog v1.9 awaiting exact client confirmation.
+- [x] Add a `Pre-Staging Packet` tab to the Phase Two planning workbook and update the Implementation Plan and approval tracking to show all seven exact systems as client-approved, including Shop/Catalog v1.9 confirmed September 3, 2026.
 - [x] Verify the dormant local scaffold at desktop, tablet, and phone widths with no horizontal overflow; verify filter-drawer focus/close behavior and the product disclosure interaction.
 - [ ] Re-run PHP lint in the staging/runtime environment before activation; PHP CLI is not installed in the current local shell. JavaScript syntax passed locally.
 
