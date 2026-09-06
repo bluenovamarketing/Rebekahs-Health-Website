@@ -1,0 +1,82 @@
+<?php
+/** Approved System 04 real product layout. */
+
+defined( 'ABSPATH' ) || exit;
+global $product;
+
+if ( post_password_required() ) {
+	echo get_the_password_form(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	return;
+}
+
+$image_ids = array_values( array_filter( array_merge( array( $product->get_image_id() ), $product->get_gallery_image_ids() ) ) );
+$image_ids = array_slice( $image_ids, 0, 3 );
+$shop_url  = rhn_phase_two_shop_url();
+$related   = wc_get_related_products( $product->get_id(), 3 );
+?>
+<nav class="rhn-store-crumbs" aria-label="Breadcrumb"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a><span>/</span><a href="<?php echo esc_url( $shop_url ); ?>">Online Store</a><span>/</span><span><?php the_title(); ?></span></nav>
+<article id="product-<?php the_ID(); ?>" <?php wc_product_class( 'rhn-product-layout', $product ); ?>>
+	<section class="rhn-product-gallery" aria-label="Product images">
+		<?php if ( $image_ids ) : ?>
+			<div class="rhn-product-thumbs" aria-label="Choose product image">
+				<?php foreach ( $image_ids as $index => $image_id ) :
+					$full  = wp_get_attachment_image_url( $image_id, 'large' );
+					$label = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+					$label = $label ? $label : sprintf( 'Product image %d', $index + 1 );
+					?>
+					<button type="button" class="rhn-product-thumb" data-rhn-product-image="<?php echo esc_url( $full ); ?>" data-rhn-product-alt="<?php echo esc_attr( $label ); ?>" aria-current="<?php echo 0 === $index ? 'true' : 'false'; ?>"><?php echo wp_kses_post( wp_get_attachment_image( $image_id, 'thumbnail', false, array( 'alt' => $label ) ) ); ?></button>
+				<?php endforeach; ?>
+			</div>
+			<div class="rhn-product-main-image"><?php echo wp_kses_post( wp_get_attachment_image( $image_ids[0], 'large', false, array( 'data-rhn-product-main-image' => '', 'alt' => get_the_title() ) ) ); ?></div>
+		<?php else : ?>
+			<div class="rhn-product-main-image rhn-product-main-image--fallback"><?php rhn_phase_two_product_image_fallback(); ?></div>
+		<?php endif; ?>
+	</section>
+
+	<section class="rhn-product-summary">
+		<?php echo wp_kses_post( wc_get_product_category_list( $product->get_id(), ' &middot; ', '<p class="rhn-product-meta">', '</p>' ) ); ?>
+		<h1><?php the_title(); ?></h1>
+		<div class="rhn-product-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></div>
+		<?php if ( $product->get_short_description() ) : ?><div class="rhn-product-description"><?php echo wp_kses_post( wpautop( $product->get_short_description() ) ); ?></div><?php endif; ?>
+		<div class="rhn-product-stock <?php echo $product->is_in_stock() ? '' : 'is-unavailable'; ?>"><?php echo wp_kses_post( wc_get_stock_html( $product ) ); ?></div>
+		<?php if ( $product->is_purchasable() && $product->is_in_stock() ) : ?>
+			<div class="rhn-product-purchase"><?php woocommerce_template_single_add_to_cart(); ?></div>
+		<?php else : ?>
+			<div class="rhn-product-unavailable"><strong>This product is currently unavailable online.</strong><a class="rhn-button rhn-button--secondary" href="<?php echo esc_url( $shop_url ); ?>">Browse Similar Products</a></div>
+		<?php endif; ?>
+		<?php rhn_phase_two_product_help_line(); ?>
+	</section>
+</article>
+
+<section class="rhn-product-facts">
+	<article>
+		<h2>Product Details</h2>
+		<?php if ( $product->get_description() ) : echo wp_kses_post( wpautop( $product->get_description() ) ); else : ?><p>Brand, form, count, ingredients, and other approved product information will appear here when available.</p><?php endif; ?>
+		<?php if ( $product->has_attributes() ) : wc_display_product_attributes( $product ); endif; ?>
+	</article>
+	<?php rhn_phase_two_product_directions_warnings(); ?>
+</section>
+
+<?php if ( $related ) : ?>
+	<section class="rhn-related-products">
+		<h2>Related products</h2>
+		<ul class="products columns-3">
+			<?php
+			$original_post = $GLOBALS['post'];
+			foreach ( $related as $related_id ) :
+				$post_object = get_post( $related_id );
+				if ( ! $post_object ) {
+					continue;
+				}
+				$GLOBALS['post'] = $post_object; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+				setup_postdata( $post_object );
+				wc_setup_product_data( $post_object );
+				wc_get_template_part( 'content', 'product' );
+			endforeach;
+			$GLOBALS['post'] = $original_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			wp_reset_postdata();
+			wc_setup_product_data( $original_post );
+			?>
+		</ul>
+	</section>
+<?php endif; ?>
