@@ -2,21 +2,23 @@
 
 Version: v1.1  
 Prepared: 2026-09-02  
-Status: Ready for internal use while exact mockups await Rebekah’s approval
+Status: Client-approved design set implemented and QA-verified on staging; Revel/Kosmos connection not started
 
 ## Fixed boundary
 
-Local work only. This package does not authorize or perform Cloudways changes, staging creation, live website changes, WordPress deployment, Revel or Kosmos connections, purchases, subscriptions, or paid-service activation.
+This index began as a local-only planning package. Todd later authorized the same-server staging application, WooCommerce core activation, approved storefront implementation, and safe staging preparation. It does not authorize live-site changes, Revel/Kosmos connections, payment-gateway activation, purchases, subscriptions, paid-service activation, Cloudways password-protection changes, or a staging-to-live push.
 
 ## Current position
 
-- All seven current ecommerce mockup systems are approved internally by Todd.
-- All seven exact versions are awaiting Rebekah’s approval.
-- The design set is frozen until client feedback arrives.
+- All seven current ecommerce mockup systems are approved internally by Todd and approved by Rebekah.
+- The exact approved versions are frozen in the review hub and version register.
+- All seven approved ecommerce systems are implemented on staging through versioned backup-and-rollback installers. Installer v1.6 remains the active rollback installer; in-place staging correction pass v1.9 restores the complete approved Product Page v1.7 three-view no-image gallery and retains the corrected account layout, proportional catalog artwork, and explicit quarantine of every pre-connection product record without changing any approved mockup version. The build still maps to Header/Footer v1.5, Homepage v1.9, Shop/Catalog v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States v1.5.
+- WordPress search visibility and the Blue Nova staging guard are active; Cloudways password protection remains solely under Todd's control.
+- WooCommerce core is active, but every payment-gateway provider remains inactive and blocked by the staging guard.
 - Clarkston is the sole pilot fulfillment location.
 - The pilot contains 25 selected Revel products.
 - The first integration proof uses one representative product; the remaining 24 follow only after that proof passes.
-- Legacy WooCommerce products will not be treated as the new catalog. They will be quarantined and reconciled on protected staging before pilot synchronization.
+- The 61 legacy WooCommerce products are preserved as Draft, with zero published products and no deletions. They will not be treated as the new catalog.
 
 ## Local execution package
 
@@ -28,28 +30,27 @@ Local work only. This package does not authorize or perform Cloudways changes, s
 6. [Master checklist](PHASE-TWO-MASTER-CHECKLIST.md)
 7. [Readiness record](PHASE-TWO-ECOMMERCE-READINESS.md)
 8. [Mockup review hub](phase-two-ecommerce-mockup-sheet.html)
+9. [September 6 staging implementation and QA record](PHASE-TWO-STAGING-QA-2026-09-06.md)
 
 ## Work order
 
 | Order | Work | Can happen now? | Completion evidence |
 | --- | --- | --- | --- |
-| 1 | Freeze internally approved mockups and wait for exact client approval | Yes; frozen | Review hub and version register show exact versions |
-| 2 | Prepare runbook, acceptance test, clean-start plan, policy decisions, and local scaffold | Yes; local only | This package and local theme files |
-| 3 | Verify Revel permissions, Kosmos access/trial timing, one prepared product, and safe work window | No; requires authorized external access | Access/gate record marked verified |
-| 4 | Scale server, create restore point, and create protected staging | No; requires Todd’s explicit authorization | Cloudways restore point and protected staging URL |
-| 5 | Quarantine legacy catalog and activate only the required commerce stack | No; staging only | Catalog audit and plugin baseline |
+| 1 | Freeze the exact client-approved mockups | Complete | Review hub and version register show exact versions |
+| 2 | Prepare runbook, acceptance test, clean-start plan, policy decisions, and local scaffold | Complete | This package and local theme files |
+| 3 | Verify Revel permissions, Kosmos access/trial timing, one prepared product, and safe work window | Partly complete; reconfirm trial timing and representative product immediately before connection | Access/gate record marked verified |
+| 4 | Create restore point and same-server staging; establish measured capacity decision | Complete; retain 2 GB for the controlled activation and one-product proof, then scale only if measured thresholds are reached | Cloudways restore point, staging, and capacity record |
+| 5 | Quarantine legacy catalog, activate WooCommerce core only, and implement all approved storefront systems | Complete on staging | 61 explicitly quarantined Draft legacy products, zero published products, inactive gateways, staging installer v1.6 plus correction pass v1.9, and QA record |
 | 6 | Run one-product Revel → Kosmos → WooCommerce proof | No; connection required | Completed one-product acceptance test |
 | 7 | Synchronize and reconcile the remaining 24 pilot products | No; proof must pass first | Final 25-product reconciliation list |
-| 8 | Apply approved storefront to real products and configure operations | No; staging and product data required | Staging acceptance evidence |
+| 8 | Refine the approved storefront against real products and configure operations | After the one-product proof | Staging acceptance evidence |
 | 9 | Complete client approval, staff training, launch, and stabilization | No; all gates required | Signed launch record and post-launch checks |
 
 ## Next gate
 
-Do not create staging merely because these local materials are ready. The staging gate opens only when:
+The staging build gate has been completed. The next controlled gate is the one-product Revel → Kosmos → WooCommerce proof on the current 2 GB server. It opens only when:
 
-- Rebekah approves the seven exact mockup versions.
-- Revel access can be verified for the Clarkston establishment and required integration functions.
-- Kosmos access and the usable trial/subscription window are confirmed.
+- Revel access is reconfirmed for the Clarkston establishment and required integration functions.
+- Kosmos access and the usable trial/subscription window are reconfirmed.
 - At least one representative product is Active and enabled for online/third-party display in Revel.
-- Todd approves a working window and the Cloudways/server actions.
-
+- Todd starts the connection work window. A paid 4 GB scale-up is not a prerequisite and requires separate approval only if measured load proves it is needed.

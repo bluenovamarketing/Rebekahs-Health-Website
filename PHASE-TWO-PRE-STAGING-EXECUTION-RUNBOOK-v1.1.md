@@ -2,7 +2,7 @@
 
 Version: v1.1  
 Prepared: 2026-09-02  
-Status: Local preparation complete; execution not authorized
+Status: Staging build complete; WooCommerce core active; approved Phase Two systems QA-verified; connection pending
 
 ## Purpose
 
@@ -10,18 +10,18 @@ This runbook defines the order of operations for creating and using a protected 
 
 ## Non-negotiable boundary
 
-This document is a plan only. No Cloudways, staging, live website, WordPress, Revel, Kosmos, USPS, payment-gateway, purchase, or paid-service action occurs until Todd explicitly authorizes that phase.
+Todd authorized the same-server staging application, WooCommerce core activation, legacy-catalog isolation, approved storefront implementation, and staging QA. The live website, Revel/Kosmos connection, USPS/payment configuration, purchases, subscriptions, paid-service changes, Cloudways password-protection changes, and staging-to-live deployment remain outside the completed staging-build scope.
 
 ## Gate 0 — client design approval
 
-- [ ] Rebekah approves Header + Footer Ecommerce Add-On v1.5.
-- [ ] Rebekah approves Main Homepage Ecommerce Integration v1.9.
-- [ ] Rebekah approves Shop Homepage + Product Catalog v1.8.
-- [ ] Rebekah approves Product Page Templates v1.7.
-- [ ] Rebekah approves Purchase Path v1.6.
-- [ ] Rebekah approves Customer Account System v1.6.
-- [ ] Rebekah approves Store States + Components v1.5.
-- [ ] Any requested revision is saved as the next independent version and reapproved before implementation.
+- [x] Rebekah approves Header + Footer Ecommerce Add-On v1.5.
+- [x] Rebekah approves Main Homepage Ecommerce Integration v1.9.
+- [x] Rebekah approves Shop Homepage + Product Catalog v1.9.
+- [x] Rebekah approves Product Page Templates v1.7.
+- [x] Rebekah approves Purchase Path v1.6.
+- [x] Rebekah approves Customer Account System v1.6.
+- [x] Rebekah approves Store States + Components v1.5.
+- [x] Any requested revision is saved as the next independent version and reapproved before implementation.
 
 ## Gate 1 — prerequisites and working window
 
@@ -33,7 +33,7 @@ This document is a plan only. No Cloudways, staging, live website, WordPress, Re
 - [ ] Record known non-mailable or special-handling products; “none known” is an acceptable explicit answer.
 - [ ] Confirm USPS Developer/API access when live-rate testing is scheduled. It is not required for the first product-creation proof.
 - [ ] Confirm the actual Clover/Fiserv gateway when payment testing is scheduled. It is not required for product synchronization or non-payment storefront work.
-- [ ] Todd explicitly authorizes the Cloudways/server and staging actions.
+- [x] Todd explicitly authorized the Cloudways/server and staging-build actions completed September 6, 2026.
 
 Stop if any prerequisite needed for the planned session is missing. Do not consume a short trial window while access, client availability, or the representative product is unresolved.
 
@@ -42,7 +42,7 @@ Stop if any prerequisite needed for the planned session is missing. Do not consu
 1. Record the production application, server plan, PHP version, database version, active theme, and active plugin list.
 2. Record current public checks for the homepage, shop-related routes, forms, events, blog, and four store-location pages.
 3. Schedule the work outside known blackout periods and avoid leaving a live integration handoff unattended over a weekend.
-4. Increase the server to 4 GB RAM / 2 vCPU immediately before clone and commerce work if that remains the approved capacity plan.
+4. Retain the current 2 GB RAM / 1-vCPU plan for the controlled WooCommerce activation and one-product connection proof. Scale to 4 GB / 2 vCPU only if the measured workload proves it is needed or Todd separately approves it.
 5. Create a fresh production restore point and record its exact timestamp.
 6. Confirm the restore point is visible and eligible for restore before continuing.
 
@@ -51,7 +51,7 @@ Rollback trigger: stop and restore or reverse the last controlled step if produc
 ## Gate 3 — protected staging creation
 
 1. Create a new same-server staging clone from the fresh production state.
-2. Require authentication before public access.
+2. Leave Cloudways password protection under Todd's control. Do not enable or disable it without his explicit instruction.
 3. Set WordPress search-engine visibility to discourage indexing.
 4. Add an application-level `noindex, nofollow` response/meta safeguard.
 5. Block outgoing customer and administrator transactional email; route test mail only to approved Blue Nova test recipients when email testing begins.
@@ -63,16 +63,16 @@ Rollback trigger: stop and restore or reverse the last controlled step if produc
 
 Required evidence:
 
-- [ ] Protected staging URL recorded privately.
-- [ ] Authentication verified in a logged-out session.
-- [ ] `noindex` verified in the anonymous response.
-- [ ] Outgoing email capture/block verified.
-- [ ] Payment and fulfillment side effects disabled.
-- [ ] Staging banner/environment marker visible to administrators.
+- [x] Staging URL recorded privately.
+- [ ] Cloudways password protection is intentionally outside this checklist; Todd controls the switch.
+- [x] WordPress search visibility is set to discourage indexing and the active staging guard adds an application-level noindex safeguard.
+- [x] Outgoing email is blocked by the active Blue Nova Staging Guard v1.1.
+- [x] Payment, webhook, scheduled-action, and fulfillment side effects are blocked while the staging guard is active; WooCommerce core is active, but every payment-gateway provider remains inactive.
+- [x] The administrator toolbar shows the staging noindex status.
 
 ## Gate 4 — baseline cleanup and catalog isolation
 
-1. Complete the deferred homepage asset/PHP cleanup on staging and run the existing Phase One regression checks.
+1. Preserve the separate deferred Phase One homepage performance/asset cleanup for prelaunch QA. It is not part of the approved ecommerce mockup parity decision and does not block the one-product synchronization proof.
 2. Export the legacy WooCommerce product records for reference.
 3. Follow the clean-start plan; quarantine legacy products without deleting them.
 4. Confirm Shop, Cart, Checkout, and My Account system pages exist once and point to the intended routes.
@@ -80,13 +80,24 @@ Required evidence:
 6. Activate WooCommerce and only the extensions required for the immediate test.
 7. Keep WooPayments, NMI, coupons, loyalty, reviews, pickup, and unrelated commerce add-ons disabled unless a later approved requirement specifically needs them.
 
+Completed evidence on September 6, 2026:
+
+- [x] Exported and preserved the legacy catalog inventory; 61 product records are Draft, zero are published, and none were deleted.
+- [x] Confirmed the canonical Shop, Cart, Checkout, and My Account routes.
+- [x] Activated WooCommerce core only and kept WooPayments, NMI, and unnecessary commerce extensions inactive.
+- [x] Implemented approved Systems 01–07 through staging installer v1.6 and verified desktop, tablet, and phone behavior.
+- [x] Seeded 21 approved wellness categories and 9 brand terms for the one-product proof.
+- [x] Recorded the detailed verification in `PHASE-TWO-STAGING-QA-2026-09-06.md`.
+
 ## Gate 5 — connection and one-product proof
 
-1. Create the dedicated WooCommerce REST/API user and key only when Kosmos setup requires it.
+**Standing Revel rule (added 2026-09-06):** Revel is Rebekah's live production POS and inventory system and is read-only by default. No Revel-side product, inventory, price, category, online flag, user, permission, credential, integration, order, customer, refund, or setting change is authorized until Todd and Codex discuss that exact action and Todd explicitly approves it at action time. General permission to begin the staging integration is not permission to write to Revel.
+
+1. Create the dedicated WooCommerce REST/API user and key only when Kosmos setup requires it. Do not create or change a Revel user, API credential, integration, or authorization without the separate Revel approval above.
 2. Store credentials only in the approved secret-management location; never in this repository, screenshots, notes, chat, or email.
-3. Connect the client-owned Revel and WooCommerce endpoints inside Kosmos.
-4. Keep automated/bulk schedules off.
-5. Run one action and one representative product.
+3. Inspect existing Kosmos/Revel connection state read-only. Connect the client-owned Revel and WooCommerce endpoints inside Kosmos only after verifying that this step itself does not change Revel; otherwise stop for Todd's approval.
+4. Keep automated/bulk schedules and every WooCommerce-to-Revel writeback action off.
+5. Run one representative-product Revel-to-staging-WooCommerce read/import only after its direction and Revel-side effects are proven read-only.
 6. Complete `PHASE-TWO-ONE-PRODUCT-ACCEPTANCE-TEST-v1.1.md` using observed values.
 7. If the proof fails, pause. Correct one cause at a time and rerun only the failed portion or the single product.
 8. Do not synchronize the remaining 24 products until the acceptance result is Pass.
@@ -134,4 +145,3 @@ Do not overwrite the entire production database with the staging database. Prese
 ## Completion record
 
 The runbook is complete only when each applicable gate is signed with date, operator, evidence location, result, and unresolved exception. A passed design review does not substitute for a passed integration or launch gate.
-

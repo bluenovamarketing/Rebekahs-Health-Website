@@ -2,7 +2,7 @@
 
 Version: v1.1  
 Prepared: 2026-09-02  
-Status: Local plan complete; staging execution not authorized
+Status: Staging execution in progress; legacy products isolated; inherited-settings audit not yet complete
 
 ## Decision
 
@@ -67,3 +67,14 @@ If the connection attaches to, overwrites, or duplicates an unexpected legacy re
 5. Correct the collision rule using the observed identifier behavior.
 6. Repeat only the single-product test.
 
+## Staging execution record — September 6, 2026
+
+- The approved clean-start rule was applied to the inherited product catalog: all 61 pre-connection WooCommerce product records are recoverable Draft records, excluded from the storefront, and forced non-purchasable. No legacy product was deleted.
+- A later systematic settings audit found additional inherited ecommerce configuration outside the product catalog. The old Lapeer store origin and an old notification recipient were corrected to the approved Clarkston values; coupons were disabled globally.
+- The inherited Free Shipping / `FREESHIP100` method and inherited Priority Flat Rate method were both disabled. They remain preserved but inactive until the approved USPS configuration is implemented and tested.
+- Every displayed payment provider is disabled or not installed. WooPayments, the old NMI gateway, PayPal, Stripe, Square, bank transfer, checks, and cash on delivery are not active. Blue Nova Staging Guard separately blocks every payment gateway and webhook delivery.
+- The interrupted inherited-settings pass was completed after the authorized PHP-FPM restart and stability check. Staging tax calculation and coupons are globally disabled; the inherited 6% Michigan rate remains dormant and recoverable. All four administrator-facing WooCommerce email types use only the two approved Rebekah addresses, while Staging Guard blocks delivery.
+- WooCommerce contains zero webhooks. The only REST API key is the expected staging-only Kosmos WooCommerce key; Kosmos still has zero Actions. Action Scheduler contains routine site-maintenance jobs and one inert WooPayments setup-sync row while WooPayments is inactive; targeted searches found zero Kosmos, Revel, Clover, NMI, or PayPal jobs.
+- The clone contains 85 historical orders (73 completed, 3 cancelled, 9 failed), zero registered Customer-role users, coupons disabled at the platform level, 61 Draft products, and zero published products. Historical orders and dormant settings were preserved rather than destructively deleted.
+- Anonymous checks returned HTTP 200 for Shop, Cart, and My Account; Checkout redirected safely to the empty Cart and returned HTTP 200. Shop reports zero products, the cart is empty, every payment provider is disabled or uninstalled, and both inherited shipping methods show `Enabled: No`.
+- The clean-start gate is complete. No Revel connection, Kosmos Action, synchronization, live-site change, payment activation, paid service, or staging-to-live deployment occurred. The next gate is Kosmos's written response plus Todd's separate action-time authorization for the exact Revel-side connection and one-way pilot test.

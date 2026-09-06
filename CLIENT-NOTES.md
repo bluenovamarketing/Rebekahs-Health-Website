@@ -3821,3 +3821,249 @@
 - All seven exact current ecommerce systems are now client-approved. Updated the local review hub, version register, mockup inventory, master checklist, and planning workbook. No mockup design changed, so v1.9 remains the approved version and no new revision was created.
 - The earlier waiting-on-client note is superseded. Next step is Todd's infrastructure authorization and safe working window, followed by the documented hosting/restore/staging sequence and controlled one-product Revel/Kosmos/WooCommerce test. Payment and USPS access remain later test gates.
 - Inbox review and local tracking only: no email or Slack message was sent, no public review-site update was published, and no hosting, staging, live website, integration, or paid-service change was made.
+
+## 2026-09-06 — Local mockup preview startup window investigated
+
+- Investigated the Windows Terminal window titled `Rebekahs Phase Two Mockup Preview` that remained open after the computer resumed.
+- Confirmed it was launched by the existing Windows Startup shortcut created on August 31. The shortcut runs the local watchdog, which checks the loopback-only Phase Two review hub every 15 seconds and restarts its PowerShell preview server when needed.
+- Windows reports the current boot session began September 5 at 8:42 a.m.; the watchdog and terminal began at 8:46 a.m. that day, so the window persisted through sleep or hibernation rather than being newly launched on September 6.
+- No startup entry, process, client site, public hosting, or review artifact was changed. Closing the terminal is safe when the local review hub is not needed, but the preview will stop and the Startup shortcut will launch it again at the next Windows sign-in.
+
+## 2026-09-06 — Phase Two staging capacity and restore-point check
+
+- Signed into Cloudways in the Codex in-app browser and verified the new staging application `Staging-rebekahspureliving.com` is linked to the production `rebekahspureliving.com` application. No staging-to-live push or live-to-staging pull has been run.
+- Confirmed the shared DigitalOcean Premium server remains at 2 GB RAM / 1 vCPU with 50 GB disk. The first 24-hour staging baseline showed CPU mostly around 10–25% after the initial clone/setup spike, roughly 800–1,100 MB free memory, about 33 GB free disk, zero auto-healing restarts, and negligible MySQL connections.
+- Capacity decision: keep the current 2 GB server for light staging preparation. Upgrade to 4 GB RAM / 2 vCPU immediately before WooCommerce reactivation, Revel/Kosmos synchronization/import work, or realistic checkout/load testing, then keep 4 GB through launch stabilization and reassess with actual load evidence.
+- Verified HTTPS redirection, Varnish, and application access are enabled. WordPress-level noindex, email, payment, webhook, and analytics safeguards still require dashboard verification before commerce activation.
+- During the in-app launch check, the Cloudways password-protection control briefly toggled off unintentionally. It was restored immediately and independently rechecked as enabled before leaving the Cloudways session; no staging-to-live or live-site action occurred.
+- Todd subsequently established the standing rule that he controls Cloudways staging password protection. It should remain off during active work when he turns it off, and Codex must not enable, disable, or otherwise change that switch unless Todd explicitly instructs it. A refreshed September 6 Cloudways check still showed the switch enabled, so the in-app WordPress URL remained blocked by HTTP authentication; Codex did not change the setting.
+- Confirmed daily off-site server backups at 06:50 UTC with four-week retention and a September 5 server backup. Created and verified a new application-level files-and-database restore point dated `6th September, 2026, 12:30:43 UTC` before Phase Two staging changes.
+- Live-site PageSpeed baseline: desktop Lighthouse scored 60 performance, 97 accessibility, 96 best practices, and 100 SEO, with 0.8 s LCP but 770 ms total blocking time, 0.204 CLS, and a 20.7 MB transfer. Mobile PageSpeed and CrUX were temporarily unavailable from the hub and should be retried before final performance QA.
+- No hosting upgrade, paid service, Revel/Kosmos connection, synchronization Action, product import, WooCommerce activation, staging-to-live deployment, or live-site change was performed.
+
+## 2026-09-06 — Phase Two staging safety baseline and approved presentation applied
+
+- Logged into the Cloudways staging WordPress dashboard in the Codex in-app browser using the approved private credential source. No credential was copied into project files or notes.
+- Recorded the staging baseline: WordPress 7.1; Rebekah’s Health & Nutrition 2026 theme active; WooCommerce 11.1.0 installed but inactive; related WooCommerce extensions inactive; no Kosmos/eSync WordPress plugin present; Breeze, Object Cache Pro, Wordfence, WP Mail SMTP, Forminator, and Blue Nova Staging Guard active.
+- Set WordPress search visibility to discourage indexing. Site Health then showed no critical issues; recommendations were inactive-plugin cleanup, PHP 8.2.33 age, and the expected search-engine discouragement notice. PHP was not changed because it is a shared Cloudways/server-level decision.
+- Applied versioned staging installer v1.1.0. It backed up every target before adding the client-approved ecommerce utility row, Search/My Account/Cart controls, fifth footer accordion, guarded commerce helpers, and staging-guard update. Verified the staging page renders without a PHP fatal and the routes point to the real WordPress shop/account/cart destinations.
+- Applied separate versioned staging installer v1.2.0 for Main Homepage Ecommerce Integration v1.9. It created another file-level backup before adding the direct `/shop/` hero button, approved three-card shopping-path section, optimized responsive image asset, and real-product-driven featured area. The first oversized image package was rejected before installation; the image was converted to an optimized WebP and the successful package was reduced from about 2.7 MB to about 245 KB.
+- Verified the approved homepage additions visually in the in-app browser at the available tablet-width view and checked their accessible link destinations. All original homepage sections remained present. Because WooCommerce is intentionally inactive and no new catalog has been connected, the featured area shows a transparent preparation message and will populate from real WooCommerce products later.
+- Verified the retained canonical `/shop/`, `/cart/`, `/checkout/`, and `/my-account/` staging routes in the in-app browser. Each route loads the approved global ecommerce chrome. Shop and Checkout currently present their page headings, Cart presents its empty-cart state, and My Account retains its WooCommerce shortcode; full commerce rendering remains correctly deferred until WooCommerce is deliberately activated.
+- Updated the master checklist, staging runbook, local readiness index, ecommerce readiness record, and scaffold notes to reflect client approval, current staging state, separate installer versions, and Todd’s standing control of Cloudways password protection.
+- Pending controlled gate: Todd explicitly starts the paid 4 GB/2 vCPU upgrade and connection window; then reconfirm Kosmos trial timing and the representative Revel product, activate only WooCommerce and required extensions, isolate the legacy catalog, and run the documented one-product proof. No hosting upgrade, paid service, Revel/Kosmos action, product import, live-site change, or staging-to-live deployment occurred during this work.
+
+## 2026-09-06 — Hosting upgrade and payment-gateway requirement clarified
+
+- Reassessed the proposed 4 GB / 2-vCPU Cloudways upgrade against the available 24-hour CPU graph and prior memory evidence. The 2 GB / 1-vCPU server has not yet demonstrated a current need to scale: most CPU remained below 50%, the isolated spikes were not sustained, and prior monitoring showed meaningful free-memory headroom.
+- Revised the working recommendation: keep the present 2 GB plan through controlled WooCommerce activation and the one-product Revel/Kosmos proof. Recheck CPU, free memory, PHP/MySQL responsiveness, and checkout/admin speed under that real workload; upgrade only if CPU is repeatedly above roughly 80%, free memory falls below roughly 300–500 MB, auto-healing restarts recur outside maintenance, or uncached checkout/admin performance becomes materially slow.
+- Clarified payments: WooPayments is a card-payment gateway built with Stripe, but it is not required for WooCommerce and is not planned for this project. Its prior installation/connection does not prove it was Rebekah's production processor. The preserved inactive NMI gateway plugin reflects another legacy possibility, while Fiserv/Clover remains the likely Phase Two direction pending exact written confirmation.
+- No Cloudways scaling, WooCommerce activation, payment-gateway activation, Revel/Kosmos connection, purchase, live-site change, or staging-to-live action occurred.
+
+## 2026-09-06 — Staging catalog and payment state reverified
+
+- Rechecked the current staging Plugins screen in the Codex in-app browser. WooCommerce core is inactive; WooPayments and the legacy Pledged Plugins NMI gateway are installed but inactive and cannot be activated while WooCommerce is inactive. No PayPal or separate Stripe gateway plugin is installed. Blue Nova Staging Guard v1.1 remains active and explicitly blocks payments.
+- Confirmed that no clean-slate product deletion has been performed. The staging clone still preserves the approximately 35–36 legacy WooCommerce product records for reconciliation; they are unavailable in the admin while the WooCommerce product post type is inactive. No new Revel products have been imported.
+- Payment clarification: NMI is a third-party gateway/processor platform supported by the old Pledged Plugins extension; Blue Nova has no evidence it is the intended Phase Two processor. Fiserv/Clover remains the planned-but-not-final direction. Historical gateway settings may remain stored in the cloned database even though no gateway is active, so they must be audited and neutralized before enabling payments.
+- No plugin, product, payment setting, credential, staging safeguard, live-site setting, or external service was changed during this verification.
+
+## 2026-09-06 — Plugin and approved-template implementation order clarified
+
+- Confirmed that the client-approved global Header/Footer Ecommerce Add-On v1.5 and Main Homepage Ecommerce Integration v1.9 are already implemented on staging through installers v1.1 and v1.2.
+- Confirmed that approved page-body Systems 03–07 are not yet implemented in WordPress: Shop/Catalog v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States/Components v1.5. Their structural implementation belongs before the first Revel product proof, followed by data-driven refinement against the real synchronized product.
+- Corrected the execution sequence: activate WooCommerce core with all payment gateways disabled; back up and isolate legacy products; implement approved Systems 03–07 and their taxonomy/state foundation; connect WooCommerce to Kosmos through its authorization/API flow; then test one Kosmos Action and one representative Revel product before the remaining sample.
+- Kosmos's current documentation requires WooCommerce, trusted HTTPS, permalinks, and WooCommerce authorization/API credentials. Its WordPress dashboard connector and suggested REST API log are optional operational aids; the actual synchronization is configured through Kosmos cloud Actions. USPS shipping and the final Fiserv/Clover gateway are separate later plugins/configuration gates.
+- No WordPress plugin, template, product, Kosmos/Revel Action, payment, shipping service, staging setting, live-site setting, or paid service was changed during this planning correction.
+
+## 2026-09-06 — Approved Phase Two storefront implemented and quadruple-checked on staging
+
+- Activated WooCommerce core on Cloudways staging only. WooPayments, the legacy NMI gateway, optional commerce extensions, and every other payment provider remain inactive; Blue Nova Staging Guard v1.1 remains active and blocks payment, email, webhook, indexing, fulfillment, and scheduled customer-action side effects.
+- Inventoried the actual legacy catalog and found 61 recoverable product records rather than the earlier 35/36 estimate. All 61 are preserved as Draft, zero are published, and none were permanently deleted. No Revel product has been imported.
+- Implemented all seven exact client-approved systems in the active custom theme: Header/Footer v1.5, Homepage Integration v1.9, Shop/Catalog v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States v1.5. The current deployment is staging installer v1.6; superseded installers v1.1-v1.5 are inactive.
+- The final comparison caught and corrected a real System 01 mismatch before sign-off: tablet had inherited a four-column footer rule and older responsive breakpoint. Installer v1.6 restores the approved five equal tablet tabs, compact single-open panel, two-row sticky header, full tablet utility labels, phone icon treatment, and menu offsets below both header rows.
+- Verified the homepage, Shop, a product preview, Cart, Checkout structure, My Account, no-image, out-of-stock, empty-catalog, menu, search, and footer interactions. Desktop, 768-pixel tablet, and 390-pixel phone checks showed the approved component order, no broken images, and no horizontal overflow.
+- Seeded the approved browsing foundation with 21 wellness categories and 9 brand terms. Exact identifier mapping, source-field ownership, overwrite behavior, images/descriptions, weight, variations, and inventory remain observed outputs of the controlled one-real-product Revel/Kosmos proof.
+- Added a dedicated `Rebekah's Health and Nutrition — Cloudways Staging` row to the private `Cody WP Logins` Google Sheet with the staging website and WordPress admin URLs. Per Todd's instruction, the Blue Nova username/password fields were copied from the live-site row without exposing them in project files. The row is deliberately not marked verified because a fresh scripted login did not authenticate, although the existing in-app browser session remains signed in; reverify the access before relying on it after that session expires.
+- Created `PHASE-TWO-STAGING-QA-2026-09-06.md` and reconciled the master checklist, readiness record, local readiness index, and runbook with the completed staging state.
+- Next controlled gate: reconfirm the Clarkston Revel establishment, Kosmos trial/subscription window, and one representative online-enabled product, then run one manual product/action with all bulk schedules off. USPS, tax, Fiserv/Clover, payment/refund, email-delivery, analytics/SEO, load, and production-launch tests remain separate later gates.
+- No Revel/Kosmos connection, API credential, synchronization Action, product import, payment gateway, USPS service, purchase, paid hosting upgrade, Cloudways password-protection change, live-site change, production database change, or staging-to-live push occurred.
+- Rechecked version lineage after Todd requested explicit confirmation. The version register, review hub, mockup inventory, staging QA record, installer description, and live staging DOM all agree on the exact client-approved sources: System 01 v1.5, Systems 02–03 v1.9, System 04 v1.7, Systems 05–06 v1.6, and System 07 v1.5. No later unapproved mockup file exists for any system.
+- Confirmed staging is actively loading theme build 1.0.36 with the Phase Two module enabled, the nine approved brand filters, all 21 wellness categories, the five footer tabs, direct Shop/Account/Cart links, and no horizontal overflow. Staging installer v1.6 is an implementation/deployment revision, not a newer System 01 mockup; it applies the client-approved System 01 v1.5 behavior while preserving Systems 02–07.
+
+## 2026-09-06 — Staging review set opened for Todd
+
+- Verified the public final Phase Two ecommerce mockup review hub is available at `https://bluenovamarketing.github.io/Rebekahs-Health-Website/phase-two-ecommerce-mockup-sheet.html` and returns HTTP 200.
+- Opened the implemented staging review set in the Codex in-app browser: homepage, Shop/Catalog, representative product preview, Cart, Checkout, My Account dashboard, Orders, Downloads, Addresses, Account Details, missing-image product state, and out-of-stock product state.
+- Added one preserved draft product to the in-app browser's staging cart solely to make the real Checkout layout reviewable. No order was placed, no payment was attempted, and no product was published or synchronized.
+- System 01 has no standalone staging URL because its approved header, ecommerce utility row, and footer are sitewide. System 07 is represented through the real catalog, product, cart, checkout, and account states rather than a separate staging page.
+- No external browser was opened, and no live-site, Revel/Kosmos, payment, shipping, hosting-plan, Cloudways password-protection, or staging-to-live change occurred.
+
+## 2026-09-06 — Todd’s storefront review corrections applied on staging
+
+- Corrected all five issues Todd marked in the Cloudways staging review while preserving the exact client-approved mockup versions and the approved Phase One global header/footer.
+- The missing-product-photo state now occupies the full gallery area. The isolated unpublished `TEST PRODUCT` preview no longer exposes its obsolete “Finn” sentence, legacy price, or purchase controls; it presents neutral private staging-review copy instead. The legacy record itself remains preserved as Draft.
+- Removed the customer-facing Downloads item because Rebekah’s sells physical products. A direct `/my-account/downloads/` request now redirects to the account dashboard.
+- Rebuilt the WooCommerce address override so Billing and Shipping are equal adjacent cards on wider layouts and a single clean column on phones, eliminating the staggered layout and excess empty space.
+- Corrected the Shop wellness-goal artwork from a distorted `400% 100%` background to the client-approved proportional `400% auto` treatment and restored the approved vertical and quarter positions.
+- Applied the correction directly to the active staging theme, prepared the separate local `blue-nova-phase-two-installer-v1-7` rollback/install package, and recorded it as implementation correction pass v1.7. The exact approved design versions remain System 01 v1.5, Systems 02–03 v1.9, System 04 v1.7, Systems 05–06 v1.6, and System 07 v1.5.
+- Purged Breeze static cache and Cloudways Varnish. Rechecked the canonical staging URLs in the Codex in-app browser at the active 1024-pixel tablet viewport: no-image fallback width equals gallery width, obsolete copy and purchase controls are absent, Downloads is absent and redirects correctly, both address cards are aligned and equal, all goal-card artwork uses proportional cropping, and horizontal overflow is zero.
+- No external browser, live website, Revel/Kosmos connection, product synchronization, payment gateway, shipping service, hosting-plan, Cloudways password-protection, production database, or staging-to-live action was used or changed.
+- Client-facing next step: Todd reviews the corrected staging tabs. Once accepted, the next controlled technical gate remains the one-real-product Revel/Kosmos proof with bulk schedules and all payment gateways off.
+
+## 2026-09-06 — Legacy catalog quarantine and visible staging corrections v1.8
+
+- Applied a second staging-only correction pass after Todd identified that the first pass still left the address action links right-aligned and the missing-product-photo brand mark undersized relative to the approved mockup.
+- Both address action links now begin on the exact same left edge as their Billing and Shipping headings. The two cards remain equal and adjacent on wider layouts and stack cleanly on phones.
+- Restored the approved missing-photo hierarchy with a much larger centered circular brand mark, prominent “Product photo coming soon” label, and the finishing-touch/front-image context used in the approved component.
+- Explicitly quarantined all 61 product records inherited from the previous ecommerce installation. They remain recoverable Draft records, but each is marked legacy, excluded from storefront visibility, and non-purchasable. Authenticated preview routes show neutral staging-review content instead of old titles, categories, descriptions, prices, or purchase controls.
+- Purged Breeze and Cloudways Varnish. Verified in the Codex in-app browser that Shop has zero available products, the address links align correctly, the old cart notice is gone, and the legacy product preview contains no `TEST PRODUCT`, “Finn,” price, or Add to cart content.
+- Opened Address, Product Preview, and Shop in separate in-app browser tabs for Todd's direct review. No external browser, live-site, Revel/Kosmos, payment, shipping, hosting-plan, password-protection, or staging-to-live change occurred.
+
+## 2026-09-06 — Exact Product Page v1.7 no-image gallery restored on staging v1.9
+
+- Todd compared staging directly against the client-approved `product-page-templates-v1.7.html` and correctly rejected the v1.8 gallery fallback. The staging URL was a real WordPress product-template preview, but the visual component was still an incomplete reconstruction rather than the complete approved code.
+- Replaced the no-image branch with the complete approved v1.7 component: the three Front/Facts/Ingredients thumbnail controls, full 500-pixel-minimum main stage, both illustrated background circles, both gold dots, exact plant-mark SVG, 112-pixel circular mark, Finishing Touch kicker, two-line Product photo coming soon label, and live view label.
+- Added the approved thumbnail interaction so selecting Front, Facts, or Ingredients updates the active outline, visible view name, and accessible main-image label. No sample product data was reactivated; the right-side product title and information remain neutral until the first verified Revel product supplies real content.
+- Measured the approved GitHub reference and staging implementation at proportional desktop widths. Both now have three controls, 76-pixel thumbnail width, 116-pixel rendered mark diameter including its border, and 23-pixel main label. The main stage preserves the approved 500-pixel minimum and will grow when real product information makes the adjacent summary taller.
+- Purged Breeze and Cloudways Varnish and left the corrected staging product plus the exact approved v1.7 reference open in separate in-app browser tabs for Todd. Preserved this work as local installer/rollback package v1.9; earlier v1.8 remains history and is superseded for this correction.
+- No external browser, live-site, Revel/Kosmos, payment, shipping, hosting-plan, password-protection, or staging-to-live action occurred.
+
+## 2026-09-06 — Agency website skills strengthened after parity failure
+
+- Todd identified the root workflow failure: the staging implementation had replaced part of the exact approved Product Page Templates v1.7 gallery with a newly simplified fallback instead of reusing the complete approved component. Technical checks were incorrectly treated as sufficient even though side-by-side visual parity had not been demonstrated.
+- Updated the personal `traditional-website-builder` skill with a mandatory approved-design parity gate. It now requires the exact approved source/version, source-code inspection and reuse, component mapping, matching-width desktop/tablet/phone comparison, interaction verification, an intentional-difference record, complete cache purge, and canonical client-visible staging review before completion can be reported.
+- Strengthened that skill's QA reference and starter QA checklist with the same evidence requirements.
+- Created and installed the separate automatically discoverable `ecommerce-website-builder` skill because the traditional builder intentionally excludes ecommerce. The ecommerce workflow adds catalog/source-of-truth controls, inherited-data quarantine, one-product-before-bulk synchronization, payment/shipping/tax safeguards, transaction reconciliation, staging acceptance, launch, and stabilization while enforcing the same exact-design parity gate.
+- Both installed skill packages passed the skill-creator validator. These are reusable agency workflow corrections; Rebekah-specific approved filenames and versions remain governed by this project's instructions and version register.
+
+## 2026-09-06 — Revel locked to read-only pending specific approval
+
+- Todd established a standing rule that Rebekah's Revel account is the client's live production POS/inventory system and must remain read-only for Blue Nova/Codex by default.
+- No Revel product, inventory, price, category, online flag, user, permission, API credential, integration, order, customer, refund, or setting may be changed until Todd and Codex discuss that exact action and Todd gives explicit action-time authorization.
+- General approval to begin Phase Two integration work does not authorize any Revel write. The one-product proof is limited to a verified one-way Revel-to-staging-WooCommerce read/import; WooCommerce-to-Revel order, customer, inventory, refund, and other writeback actions remain disabled.
+- At the time of this decision, only the Kosmos login page and the private credential sheet had been opened. No Revel, POS, inventory, Kosmos connection, synchronization action, product import, payment, live-site, or staging-to-live change had occurred.
+
+## 2026-09-06 — Kosmos read-only connection preflight completed
+
+- Signed into the client-owned Kosmos eSync dashboard through the Codex in-app browser using the private credential sheet, then cleared the temporary credential values and closed the sheet without exposing or storing the login locally.
+- The Kosmos account currently contains zero Actions. Kosmos reports that it has no access to either Revel or the staging WooCommerce store.
+- Inspected the connection screens and current official Kosmos guidance without clicking either `Grant Access` control. Revel authorization requires authenticating with the client's Revel credentials and creates persistent third-party access; WooCommerce authorization creates an API key and secret. Neither authorization was created.
+- The documented product path is Revel to WooCommerce and can create/update WooCommerce products, prices, and later inventory. Separate WooCommerce-order-to-Revel actions can write orders and inventory back to the live POS and remain prohibited.
+- Current blocker/approval gate: Todd must explicitly approve the two persistent connector authorizations at action time after reviewing that Kosmos may receive broader Revel API access even when Blue Nova intends to configure only one-way product reads. If approved, configure no Actions or schedules until direction and side effects are verified; never enable WooCommerce-to-Revel writeback without another separate discussion and approval.
+- Kosmos's account page did not display an active trial or subscription expiration; it showed only an upgrade link. No paid plan, subscription, connection, API credential, Revel change, WooCommerce change, synchronization action, product import, order, inventory adjustment, payment, live-site change, or staging-to-live action occurred.
+
+## 2026-09-06 — One-step integration schedule reset
+
+- Todd reiterated that Phase Two must proceed one exact step at a time and that Blue Nova/Codex must not change any product, price, inventory, online flag, timestamp, category, or other value in the client's Revel/POS account.
+- Clarified that any Revel product preparation or correction belongs to Rebekah or her authorized staff. Blue Nova/Codex may inspect and report values read-only; a missing requirement pauses the integration instead of being corrected by Blue Nova inside Revel.
+- Corrected the earlier compressed schedule. The safe remaining expectation is approximately 2–3 weeks of active work and potentially 3–4 calendar weeks when approvals, Revel preparation, Kosmos support, shipping access, or merchant onboarding create waits.
+- The schedule is now split into explicit gates: connection review/authorization, one-product proof, remaining 24-product reconciliation, operational shipping/tax/email/account QA, and payment/final launch QA. Each gate is reviewed before advancing, and no schedule pressure overrides the Revel read-only rule.
+- No Kosmos Grant Access control, connector authorization, Action, schedule, product pull, Revel/POS change, WooCommerce API credential, paid plan, shipping service, payment gateway, live-site change, or staging-to-live action occurred during this planning revision.
+
+## 2026-09-06 — Staging WooCommerce connected to Kosmos; Revel remains disconnected
+
+- With Todd's explicit action-time approval for this one step, created a dedicated read/write WooCommerce REST API key named `Kosmos eSync — Cloudways Staging` on the Cloudways staging site and connected that staging account to the client-owned Kosmos dashboard.
+- Transferred the key and secret directly from WooCommerce to Kosmos without displaying them in chat or storing them in project files. Closed the one-time WooCommerce secret view after confirming the key is listed in staging.
+- Verified Kosmos recognizes `Rebekah's WooCommerce — Cloudways Staging` and then returned to the dashboard, which still states that no Actions have been created.
+- Stopped before the second connection. No Revel authorization, correction, product/price/inventory/category/flag change, Action, schedule, product pull, order writeback, payment, paid-plan, live-site, or staging-to-live action occurred.
+- Next controlled gate: discuss and verify the exact Revel authorization scope and the one-way Revel-to-staging Action side effects before Todd gives separate action-time approval. If read-only Revel behavior cannot be proven, stop without connecting it.
+
+## 2026-09-06 — Revel API access gate inspected; support request drafted
+
+- Reopened the Kosmos Action builder in the Codex in-app browser, selected the already connected Cloudways staging WooCommerce account, and inspected Revel only far enough to display the current authorization requirements. The form requires the Revel account address, API key, and API secret; `Access Account` was not clicked.
+- Confirmed the private `Cody WP Logins` register contains verified Revel Management Console access but no dedicated Revel API key/secret. A read-only Gmail search found no previously issued Revel API key or secret.
+- Opened the existing authorized Revel Management Console session read-only and confirmed it is scoped to `Rebekah's - Clarkston`. Searched the accessible Settings screen for an existing API record, found none, cleared the temporary search, and closed the tab without clicking Save or changing any value.
+- Reconciled Kosmos documentation: the current connection form supersedes an older help article that refers to username/password authentication. Current product-sync guidance describes separate product/price and inventory Actions, requires the product already to satisfy Revel criteria, and recommends one manual Action before any bulk work.
+- Prepared `KOSMOS-REVEL-API-ACCESS-SUPPORT-TICKET-DRAFT-2026-09-06.md` asking Kosmos to supply the approved API-credential process and confirm a one-way, manual, no-writeback test. The draft is not submitted and contains no credentials.
+- Returned Kosmos to its dashboard and independently confirmed it still displays zero Actions. No Revel connection, API credential, correction, product/price/inventory/category/flag/timestamp change, Action, schedule, sync, paid support, subscription, payment, live-site, or staging-to-live action occurred.
+- Client-facing next step: Todd explicitly approves submission of the prepared Kosmos support ticket. After support answers, review the exact response and request separate action-time authorization before entering API credentials or clicking `Access Account`.
+
+## 2026-09-06 — Kosmos Revel API request submitted as ticket #461376
+
+- Todd rejected the initial long support draft as unnecessarily detailed. Replaced it with the exact short wording he reviewed and approved before submission.
+- Submitted one Kosmos support request through the separate Blue Nova Marketing Freshdesk profile with subject `Revel API credentials needed for Rebekah’s Clarkston integration`.
+- The message asks Kosmos to coordinate Revel-issued API credentials and confirm a manual, one-way Revel-to-staging WooCommerce test with all WooCommerce-to-Revel writeback and automatic schedules disabled. It expressly states that no Revel changes or paid support are authorized.
+- Kosmos confirmed ticket **#461376** was created and shows status `Being Processed`. The exact submitted wording and ticket URL are recorded in `KOSMOS-REVEL-API-ACCESS-SUPPORT-TICKET-DRAFT-2026-09-06.md`.
+- No attachment, password, API credential, product data, Revel change, Kosmos Action, schedule, synchronization, paid purchase, live-site change, or staging-to-live action was included or performed.
+- Next step: wait for Kosmos's response, review it against the Revel read-only safeguard, and obtain separate action-time approval before entering any API key/secret or authorizing the Revel connection.
+## 2026-09-06 — Official online integration documentation rechecked
+
+- Reviewed the current official Kosmos and Revel developer documentation, not only the connector account screens.
+- Kosmos documents a one-Action-at-a-time test sequence, with categories before products; eligible Revel products need the required active/online, identifier, timestamp, price, inventory, name, and category data. Inventory synchronization is a separate Action.
+- Revel documents both legacy API-key/secret authentication and its newer partner authentication model. This supports having Kosmos coordinate the correct credentials and merchant authorization rather than attempting to generate or change credentials inside Rebekah's production Revel account.
+- Only the Revel authorization and first controlled product pull are waiting on Kosmos. Safe staging work can continue on WooCommerce basic settings, shipping/exclusion rules and PO-box validation, offline review of the 25-product export, and non-transactional cart/account/checkout QA.
+- No Revel changes, connector Actions, synchronization runs, payment activation, or other production-system writes were performed during this review.
+
+## 2026-09-06 — Systematic inherited ecommerce cleanup reopened on staging
+
+- Todd reiterated that the staging clone must not retain active or misleading configuration from the previous ecommerce installation. Reopened the clean-start audit instead of treating product quarantine alone as completion.
+- Confirmed all 61 inherited WooCommerce products remain recoverable Draft records, excluded from storefront visibility, and non-purchasable; none were deleted.
+- Corrected the inherited store origin from Lapeer to the approved Clarkston location, disabled coupons globally, and replaced the inherited inventory-notification recipient with Rebekah's approved recipients while keeping the approved low-stock threshold of two and backorders off.
+- Disabled the inherited Free Shipping / `FREESHIP100` and Priority Flat Rate methods. No shipping method is currently active.
+- Verified all displayed payment options are disabled or not installed, including WooPayments, PayPal, Stripe, Square, bank transfer, checks, and cash on delivery. The legacy NMI plugin and the other unnecessary commerce extensions remain inactive; Blue Nova Staging Guard continues to block payment and webhook delivery.
+- Staging then stopped responding and WordPress displayed `Connection lost. Saving has been disabled until you are reconnected.` Stopped changing settings rather than working blindly. Remaining audit items are tax options/tables, WooCommerce email configuration, webhook records, scheduled actions, and final orders/customers/coupons inventory.
+- Independent checks showed the live website still returned HTTP 200 and staging static assets remained available, but staging WordPress/PHP pages—including login and admin—timed out. This isolates the interruption to the staging dynamic application/runtime. No PHP/MySQL service restart or hosting upgrade was attempted because either could affect the shared server and requires a separate infrastructure decision.
+- Client-facing next step: none required for this cleanup. Blue Nova must finish and document the staging audit after the host is stable. No Revel, Kosmos Action, synchronization, live-site, hosting-plan, password-protection, paid-service, or staging-to-live change occurred.
+
+## 2026-09-06 — Safe staging configuration advanced while Kosmos ticket is pending
+
+- Continued Phase Two work only on the Cloudways staging clone. Rebekah's live Revel account remained read-only, Kosmos still has zero Actions, and ticket `#461376` remains `Being Processed` with no support reply.
+- Corrected the inherited WooCommerce origin to the approved Clarkston address, retained USD, changed catalog units to ounces/inches, enabled stock management, kept backorders off, retained the low-stock threshold of two, disabled backorder notices, coupons, and product reviews, and preserved guest checkout plus optional customer accounts.
+- Replaced the inherited inventory-alert recipient with both client-approved operational addresses and enabled the password-setup-link workflow for customer accounts.
+- Renamed the staging shipping zone to `Continental United States`, limited it to the 48 contiguous states plus the District of Columbia, excluded Alaska/Hawaii/territories/international destinations, and disabled the inherited free-shipping and flat-rate methods. No USPS rate, carrier account, PO-box rule, or payment gateway was activated.
+- Audited the supplied 25-product workbook without modifying it. All 25 rows have names, prices, unique barcodes, categories, active/online flags, and `Updated` status. All 25 SKUs and descriptions are blank, and the export does not include inventory quantity, product timestamp, weight, dimensions, images, or variation detail. Chose `REBEKAH'S Energy 90 Caps` as the one-product proof candidate; this does not authorize a sync.
+- Updated the WooCommerce New Order administrator recipient to both approved addresses. Staging then returned `Connection lost` and gateway timeouts before the Cancelled Order, Failed Order, and Payment Gateway Enabled recipients or inherited tax tables could be safely completed and verified.
+- Independently rechecked both hostnames after stopping: the live website returned HTTP 200, while the staging hostname timed out without returning response bytes. This confirms the client-facing website remained available during the staging interruption.
+- Stopped remote changes instead of working through an unstable runtime. Did not restart shared server services, resize hosting, change Cloudways password protection, install a paid service, touch the live website, connect Revel, create a Kosmos Action, or run any synchronization.
+- Next step: restore stable staging WordPress/PHP service, finish the remaining email-recipient and inherited tax/webhook/scheduled-action audit, then wait for Kosmos's written answer before discussing any Revel authorization.
+
+## 2026-09-06 — Cloudways capacity check confirms staging resource contention
+
+- Logged into the existing Blue Nova Cloudways session using only the Codex in-app browser and inspected the shared server before authorizing any service restart or paid resize.
+- Cloudways reported the server as `Problematic` on repeated refreshes: CPU remained at 100%, RAM rose from approximately 1.55 GB to 1.59 GB of 1.92 GB, and disk usage remained healthy at 14.57 GB of 49.01 GB.
+- The one-hour CPU graph showed utilization climbing to 100% and remaining pinned there through the latest readings. Application-wise details attributed approximately 57% CPU and 1 GB RAM to `Staging-rebekahspureliving.com`, while the live site used approximately 3% CPU and 99 MB RAM at the latest refresh.
+- Verified Apache, Nginx, MySQL, Memcached, PHP-FPM, Redis, and Varnish were running. New Relic alone was stopped because no license is configured; this is not the staging outage cause.
+- Assessment: a PHP-FPM restart may temporarily recover staging but will not add capacity. The active staging workload is exposing a real limit on the current 2 GB server, so a 4 GB / 2-vCPU resize should be considered before sustained Phase Two staging work continues.
+- No service was restarted, no hosting plan was changed, no paid action was confirmed, and no Revel, Kosmos, live-site, or staging configuration was modified during this read-only infrastructure check.
+- Next decision: Todd gives explicit action-time approval for either a temporary PHP-FPM restart or the paid server resize. After either action, Blue Nova must recheck live and staging availability and repeat the Cloudways CPU/RAM measurement before resuming WooCommerce cleanup.
+
+## 2026-09-06 — Authorized PHP-FPM restart restored staging responsiveness
+
+- With Todd's explicit action-time approval, restarted only PHP-FPM on the shared Cloudways server through the Codex in-app browser. Cloudways confirmed `PHP FPM has been restarted` and the service returned to `Running`.
+- Verified the exact live homepage and the Cloudways staging `/shop/` URL both loaded successfully after the restart. The live site continued to render its Phase One homepage, and the staging storefront returned with its approved ecommerce chrome and zero active products.
+- Immediate resource improvement was substantial: RAM fell from 1.59 GB to approximately 726–761 MB, staging fell from approximately 57% CPU / 1 GB RAM to 2.5–4.2% CPU / approximately 112–114 MB RAM, and the live app remained around 1–4% CPU / approximately 114–122 MB RAM.
+- Cloudways's overall server-health indicator and one-hour total CPU chart still displayed `Problematic` / 100% during the short post-restart observation window. Because the application-level readings and RAM normalized, this may be delayed sampling or a separate server-level process and requires another timed recheck before a paid resize decision.
+- No server resize, package change, password-protection change, Revel/Kosmos action, live-site edit, payment activation, product import, or other configuration change occurred.
+- Next step: recheck Cloudways CPU/RAM after the monitoring interval. Upgrade to 4 GB / 2 vCPU only if total CPU remains genuinely elevated or rises again under normal staging work; do not purchase solely from the stale immediate post-restart indicator.
+- Scheduled a one-time thread follow-up for approximately 5:25 PM Eastern (about 45 minutes after the restart review) to repeat the Cloudways measurements and verify both URLs. The check is read-only and must pause itself after reporting once.
+
+## 2026-09-06 — 45-minute Cloudways follow-up shows server stabilized
+
+- Completed the scheduled read-only follow-up through the Codex in-app browser approximately 45 minutes after the authorized PHP-FPM restart.
+- Cloudways's refreshed 21:00 UTC reading showed total CPU at 13% and RAM at 1.02 GB of 1.92 GB (53%). Disk remained healthy at 14.57 GB of 49.01 GB.
+- Application-wise usage was low: `rebekahspureliving.com` used 2.52% CPU and 138 MB RAM; `Staging-rebekahspureliving.com` used 0.07% CPU and 49 MB RAM.
+- Verified the exact public live homepage and staging `/shop/` both rendered. The initial staging navigation exceeded the browser's short navigation wait but the same in-app tab completed loading and displayed the full storefront, so the application was responsive rather than down.
+- Assessment: the server stabilized after PHP-FPM restart. A paid 4 GB / 2-vCPU resize is not currently justified by the settled measurements. Continue on the existing server, monitor during heavier staging/import work, and reconsider only if CPU sustains above 80%, RAM pressure returns, or timeouts recur.
+- No service restart, hosting resize, purchase, site edit, payment action, Revel/Kosmos access, or other external change occurred during this follow-up.
+
+## 2026-09-06 — Staging clean-start audit completed
+
+- Finished the previously interrupted WooCommerce inherited-settings audit after staging stabilized. Work remained confined to the Cloudways staging clone; no live-site, Revel, Kosmos Action, payment, paid-service, hosting-size, password-protection, or staging-to-live change occurred.
+- Disabled WooCommerce tax calculation globally for the client-supplied Michigan tax-exempt pilot rule. Preserved the inherited 6% Michigan row in a dormant, recoverable state instead of deleting it. Coupons remain globally disabled.
+- Verified the New Order, Cancelled Order, Failed Order, and Payment Gateway Enabled administrator emails now use only Rebekah's two approved operational addresses. Staging Guard continues to block all outbound delivery.
+- Verified zero WooCommerce webhooks. Left the expected staging-only Kosmos WooCommerce REST API key intact; Kosmos still has zero Actions and no Revel connection or synchronization was attempted.
+- Audited 5,236 historical Action Scheduler records: 4,901 complete, 307 failed, 23 pending, and 5 cancelled. Pending work is routine site maintenance plus one inert WooPayments setup-sync row while WooPayments is inactive. Targeted searches found zero Kosmos, Revel, Clover, NMI, or PayPal actions. No row was run, cancelled, or deleted.
+- Inventoried 85 historical cloned orders (73 completed, 3 cancelled, 9 failed) and zero registered Customer-role users. Preserved historical orders; no client data was deleted. Coupon records are structurally unavailable while coupons are disabled, and coupon entry is not available to shoppers.
+- Reconfirmed all 61 inherited products remain Draft, zero are published, Shop reports zero products, every online/offline payment option is disabled or uninstalled, WooPayments and NMI remain inactive, and both inherited shipping methods show `Enabled: No`.
+- Anonymous checks returned HTTP 200 for Shop, Cart, and My Account; Checkout redirected to the empty Cart and returned HTTP 200. The exact browser views showed the approved empty catalog/cart behavior with no payment or shipping workflow exposed.
+- Client-facing next step: none until Kosmos replies to ticket `#461376`. After that reply, review the exact connection behavior with Todd and obtain separate action-time authorization before entering Revel credentials, creating a Kosmos Action, or running the one-product import.
+
+## 2026-09-06 — PO-box checkout safeguard and ecommerce policy packet prepared
+
+- With Todd's approval, installed `Blue Nova Phase Two Staging Installer v1.10` through the Codex in-app browser. The versioned staging-only patch backed up the existing ecommerce theme file and added server-side PO-box delivery-address validation to both the current WooCommerce checkout and the Store API/Checkout Blocks path.
+- The matcher passed common `PO Box`, `P.O. Box`, `P O Box`, and `Post Office Box` cases while allowing ordinary street, Boxwood Lane, Post Office Road, and apartment examples. WordPress activated the patch without a PHP fatal error.
+- Because the clean staging catalog correctly has zero purchasable products, the full customer-facing checkout error will be retested after the first authorized product import. No sample or legacy product was published merely to force the test.
+- Prepared `PHASE-TWO-ECOMMERCE-POLICY-DECISION-DRAFT-v1.2.md` locally. It includes review-ready shipping, returns, cancellation, package-issue, terms, privacy, and disclaimer language while clearly retaining unresolved client decisions and legal review as launch gates. No policy was published.
+- Corrected tracker housekeeping: USPS is the selected shipping approach, the tax-exempt pilot configuration is recorded as implemented pending real-product total testing, and policy approval items remain open.
+- No Revel connection or write, Kosmos Action, product synchronization, USPS rate activation, payment activation, paid service, live-site change, Cloudways resize, password-protection change, or staging-to-live deployment occurred.
+- Client-facing next step: Rebekah must answer the focused policy decisions before publication. Integration work remains paused until Kosmos ticket `#461376` is reviewed and Todd gives exact action-time authorization for the next Revel-side step.

@@ -17,13 +17,15 @@ The working rule for staff is: **Revel controls whether the business sells it; W
 
 ## Current verified baseline
 
-- Phase One intentionally excluded onsite ecommerce. The canonical planning sheet still states that ecommerce is deferred.
-- The current custom theme declares WooCommerce support, but Phase Two store templates still need to be designed and built. Older July recommendations to build the store with Bricks are obsolete; the production site now uses the custom Rebekah's theme with Elementor Free.
-- The WooCommerce Shop, Cart, Checkout, and My Account pages were retained for Phase Two. They are currently noindexed and excluded from the sitemap.
-- The pre-redesign inventory recorded 36 WooCommerce product records. Earlier ChatGPT research saw 35 products visible in the old shop. Those records must be reconciled before the pilot so they do not create duplicates.
-- The complete commerce stack is preserved but inactive: WooCommerce, Google for WooCommerce, PDF Invoices & Packing Slips, Pledged Plugins NMI Gateway, Smart Coupons, WooCommerce Tax, WooCommerce.com Update Manager, and WooPayments.
+- Phase One intentionally excluded onsite ecommerce. All seven exact Phase Two ecommerce mockup systems are now approved by Todd and Rebekah; the canonical Phase One planning-sheet prompt still contains older “ecommerce deferred” wording and is superseded for this authorized Phase Two staging work.
+- The current custom theme declares WooCommerce support. All seven exact client-approved Phase Two systems are implemented on staging: Header/Footer v1.5, Homepage Integration v1.9, Shop/Catalog v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States v1.5. Staging installer v1.6 remains active, with in-place staging correction pass v1.7 applied for the reviewed gallery fallback, account navigation/address layout, and proportional catalog artwork; data-driven refinement waits for the controlled one-product proof. Older July recommendations to build the store with Bricks are obsolete.
+- The WooCommerce Shop, Cart, Checkout, and My Account pages were retained for Phase Two, render the approved page bodies, and remain noindexed while the staging guard is active.
+- The staging database actually contained 61 legacy WooCommerce product records. All 61 are preserved as Draft, none are published, and none were deleted. This supersedes the earlier 35-visible/36-recorded estimate and gives the pilot a zero-published-product starting point.
+- WooCommerce 11.1.0 is active on staging. Google for WooCommerce, PDF Invoices & Packing Slips, Pledged Plugins NMI Gateway, Smart Coupons, WooCommerce Tax, WooCommerce.com Update Manager, WooPayments, and other unnecessary commerce extensions remain inactive. No payment gateway is active.
 - The July audit found no Revel/Kosmos REST API key or other evidence of an active Revel-to-WooCommerce synchronization. Reverify this at kickoff before creating any new key or connection.
-- Current Cloudways capacity is 2 GB RAM / 1 vCPU. It is adequate for development and controlled testing. Budget the 4 GB / 2-vCPU plan for public ecommerce launch unless realistic load and checkout testing proves the smaller plan has adequate headroom.
+- The September 6 staging baseline confirmed current Cloudways capacity is 2 GB RAM / 1 vCPU with adequate headroom. Retain it through controlled WooCommerce activation and the one-product Revel/Kosmos proof. Recheck CPU, free memory, restarts, PHP/MySQL responsiveness, and uncached checkout/admin speed under that real workload; scale to 4 GB / 2 vCPU only if the measurements prove it is needed and Todd explicitly approves the paid change.
+- The same-server staging clone and a fresh application restore point are complete. WordPress search visibility is set to discourage indexing, and Blue Nova Staging Guard v1.1 is active. Cloudways password protection remains under Todd's control and must not be changed by Codex without his explicit instruction.
+- The approved catalog foundation is seeded with 21 wellness categories and 9 brand terms. Exact field ownership, identifier matching, overwrite behavior, and product content gaps must be observed from the first real Revel/Kosmos product instead of guessed in advance.
 - Cloudways daily backups and a recent on-demand backup are in place. Before live orders are accepted, approve an ecommerce-appropriate database backup frequency and recovery plan that limits loss of orders, customers, and inventory changes.
 
 ## Client kickoff gate: what Rebekah must have ready
@@ -108,6 +110,8 @@ Rebekah should choose a representative sample rather than the 25 easiest product
 
 For every pilot product, Rebekah or her Revel staff must:
 
+> **Ownership rule:** These are instructions for Rebekah or her authorized Revel staff. Blue Nova/Codex may inspect and report the current values read-only but will not make any of these Revel changes. If a product does not already meet the criteria, the synchronization step pauses until the client corrects and confirms it.
+
 - [ ] Open the product in Revel and confirm it belongs to the one designated online fulfillment location.
 - [ ] Set the product to **Active**.
 - [ ] Enable **Display on online and 3rd party** so Kosmos is permitted to send it to WooCommerce.
@@ -179,16 +183,18 @@ Do not improve product images or descriptions in WooCommerce until testing confi
 
 ## Recommended build and test sequence
 
-1. Clone the current production site to staging, protect it from indexing/email/payment side effects, and create a fresh restore point.
-2. Complete the deferred homepage asset/PHP refactor so Phase Two is built on the cleaned baseline.
-3. Reconcile the 35/36 legacy WooCommerce product records and decide which, if any, belong in the pilot.
-4. Reactivate WooCommerce and only the extensions actually required for the chosen workflow, one controlled group at a time.
-5. Build the store structure: categories, subcategories, brand structure, attributes, navigation, filters, and health-goal/seasonal collections.
-6. Establish the Revel and WooCommerce connections in Kosmos. Follow Kosmos's documented recommendation to test **one action and one product first**.
-7. Confirm field mapping and overwrite behavior, then synchronize the full 25-product sample.
-8. Build and refine the Shop, category, search, product-card, product-detail, cart, checkout, account, and order-confirmation experiences using those real products.
-9. Configure the selected payment gateway, tax method, shipping zones/rates, labels/packages, order emails, inventory rules, and customer accounts.
-10. Complete end-to-end staging tests, obtain client approval, train staff, and only then plan a controlled production launch.
+1. Clone the current production site to staging, protect it from indexing/email/payment side effects, and create a fresh restore point. **Complete.**
+2. Track the separate deferred Phase One homepage performance/asset cleanup for prelaunch QA; it is not a prerequisite for the controlled product synchronization proof.
+3. Reactivate WooCommerce core on staging while keeping WooPayments, NMI, PayPal, Stripe, and every other payment gateway disabled; verify the staging guard still blocks payments and outbound side effects. **Complete.**
+4. Inventory and back up the legacy WooCommerce product records, then isolate them from the active/public catalog so the Revel proof begins with zero published legacy products. **Complete: 61 records preserved as Draft; none published or deleted.**
+5. Implement the approved page-body structure from Systems 03–07 in the custom theme: Shop/Catalog v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States/Components v1.5. **Complete on staging through installer v1.6.**
+6. Build the store taxonomy and controls needed by those mockups: brand and wellness-category structures, attributes, navigation, filters, missing-image treatment, account/cart/checkout states, and responsive behavior. **Structural work complete; real-product data validation remains in step 9.**
+7. Connect WooCommerce to Kosmos using the required WooCommerce authorization/API credentials and valid HTTPS/permalinks. Install the optional Kosmos dashboard-link or REST API logging plugin only if it materially assists setup or troubleshooting; it is not a substitute for the Kosmos cloud Actions.
+8. Establish the Revel connection and follow Kosmos's recommendation to test **one action and one fully prepared product first**.
+9. Use that real product to validate field ownership, mappings, overwrite behavior, filters, product cards/details, images, variations, inventory, price, weight, cart, and checkout presentation; refine the approved templates without changing their approved direction.
+10. Synchronize and reconcile the remaining approved 25-product sample only after the proof passes.
+11. Configure the approved USPS shipping method and tax settings. Connect the selected payment gateway later, only after the exact Fiserv/Clover product is confirmed; payment is not required for the initial product synchronization proof.
+12. Complete end-to-end staging tests, obtain implementation approval, train staff, and only then plan a controlled production launch.
 
 Do not import or expose the full catalog until the pilot passes.
 
@@ -258,14 +264,14 @@ Verified on 2026-08-17:
 
 | Item | Pilot cost | Notes |
 |---|---:|---|
-| WooCommerce core | **$0** | Already retained in the project; reactivate on staging only when ready. |
+| WooCommerce core | **$0** | Active on staging with all payment gateways disabled. |
 | Likely Clover Payments for WooCommerce gateway | **$0 plugin** | Connect only after Rebekah's Fiserv/Clover merchant account is active. Merchant rates and contract terms are outside Blue Nova's scope. |
 | Built-in WooCommerce shipping and manual tax settings | **$0** | Adequate for a defined shipping-only pilot; no paid label plugin is required. |
 | Kosmos eSync Warmup | **$49 month-to-month** or **$39/month billed annually** | Includes 7 actions, up to 450 monthly orders, unlimited SKUs, one location, and one online store. This appears sufficient for the lean pilot, pending confirmation of the final action count. A 14-day trial is advertised. |
 | Official live-rate carrier extension, only if checkout rates must depend on the customer's address | **Currently $109/year per carrier** | USPS, UPS, and FedEx official WooCommerce extensions are each currently listed at this price. Select one carrier before purchase. This is not needed for flat-rate or free shipping. |
 | Custom data mapping | **Not expected or budgeted** | Standard Revel fields should work without it. Mention only as an unlikely exception; if testing proves it is necessary, Kosmos says setup starts at $150 and Blue Nova will bring the exact quote to Rebekah for approval. |
 
-For the test, prefer the Kosmos free trial if the entire working window is ready, or one $49 monthly period rather than an annual commitment. Rebekah creates and purchases the Kosmos account and the $109/year USPS extension when Blue Nova confirms the test window is ready. Do not purchase an extra tax, product-import, payment, or checkout plugin unless testing identifies a specific need. Clover's official gateway can be connected later when the merchant account is active.
+For the test, prefer the Kosmos free trial if the entire working window is ready, or one $49 monthly period rather than an annual commitment. Do not purchase a USPS extension, tax tool, product-import tool, payment plugin, or checkout plugin unless representative staging tests identify a specific need and Todd approves it. Clover's official gateway can be connected later when the exact Fiserv/Clover merchant product is confirmed and active.
 
 ## Sources reconciled
 

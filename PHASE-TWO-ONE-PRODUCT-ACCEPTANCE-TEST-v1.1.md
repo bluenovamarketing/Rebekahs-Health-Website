@@ -2,7 +2,7 @@
 
 Version: v1.1  
 Prepared: 2026-09-02  
-Status: Local test definition complete; connection not authorized
+Status: Read-only integration preflight authorized; all Revel writes require separate action-time approval
 
 ## Purpose
 
@@ -11,6 +11,8 @@ Prove one representative Revel product through Revel → Kosmos eSync → WooCom
 ## Test rule
 
 Record actual source and destination values after the connection. Do not pre-fill speculative field mappings. A difference is not automatically a failure if the result is intentional, documented, and owned by the correct system.
+
+**Standing Revel safeguard (added 2026-09-06):** Revel is the client's live production POS and inventory system. Blue Nova/Codex must not change any Revel product, price, inventory, category, online flag, user, permission, API credential, integration, order, customer, refund, or setting unless Todd and Codex first discuss that exact action and Todd explicitly approves it at action time. The initial proof is limited to a verified read-only Revel-to-staging-WooCommerce product import. If Kosmos cannot guarantee that direction, stop before running it.
 
 ## Test product selection
 
@@ -61,19 +63,19 @@ Prefer one ordinary, shippable product with a unique barcode/SKU, normal invento
 
 ## C. Update and overwrite proof
 
-Use a safe, reversible staging test value. Do not change production or customer-facing data.
+Use a safe, reversible staging-only value. Do not change Revel or any production/customer-facing data. A Revel-owned field update may be observed only after separate discussion and explicit action-time approval, or when Rebekah's staff makes the change themselves.
 
 | # | Action | Expected result | Actual/evidence | Result |
 | --- | --- | --- | --- | --- |
-| C1 | Change one Revel-owned field and resync | WooCommerce updates once, without duplicate creation |  | Not run |
+| C1 | Observe one separately approved/client-performed Revel-owned field update and resync | WooCommerce updates once, without duplicate creation; Blue Nova/Codex does not edit Revel without separate approval |  | Deferred pending separate approval |
 | C2 | Change a WordPress presentation field and resync | Outcome proves whether Kosmos preserves or overwrites it |  | Not run |
-| C3 | Disable online/third-party eligibility and resync | Product visibility/eligibility changes as intended without data loss |  | Not run |
-| C4 | Re-enable eligibility and resync | Product returns to the intended staging state |  | Not run |
+| C3 | Observe separately approved/client-performed online/third-party disabling and resync | Product visibility/eligibility changes as intended without data loss; Blue Nova/Codex does not edit Revel without separate approval |  | Deferred pending separate approval |
+| C4 | Observe separately approved/client-performed re-enabling and resync | Product returns to the intended staging state |  | Deferred pending separate approval |
 | C5 | Review Kosmos logs | Action, timing, warnings, and errors are visible |  | Not run |
 
 ## D. Inventory and order proof
 
-Run only after product creation/update behavior passes and the staging safeguards are reconfirmed.
+Deferred until Todd separately discusses and explicitly authorizes the exact WooCommerce-to-Revel order and inventory-write test. Do not enable or run order/customer/inventory writeback during the read-only product-import proof.
 
 | # | Check | Expected result | Actual/evidence | Result |
 | --- | --- | --- | --- | --- |
@@ -118,4 +120,3 @@ Approved to synchronize remaining 24: Yes / No
 Reviewer:  
 Date:  
 Exceptions:
-

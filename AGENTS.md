@@ -49,3 +49,11 @@ For every current or future page, template, component system, or ecommerce mocku
 - Systems 02–07 are page-body-only approval mockups. Do not include or simulate the global header, menu bar, ecommerce utility row, or footer in those files.
 - Page-body mockups inherit the separately approved global chrome conceptually; they must not duplicate it inside each page review file.
 - When revising a page-body mockup, preserve its page content and interactions while keeping all global chrome absent at desktop, tablet, and phone widths.
+
+## Revel production-system safeguard
+
+- Treat Rebekah's Revel account as the client's live production POS and inventory system. Revel is read-only by default for Codex and Blue Nova.
+- Never create, edit, delete, import, disable, or reclassify Revel products, categories, prices, inventory, locations, online/third-party flags, users, permissions, API credentials, integrations, orders, customers, refunds, or settings unless Todd and Codex first discuss the exact Revel-side action and Todd gives explicit action-time authorization for that specific change.
+- General authorization to work on Phase Two, use staging, access the accounts, configure WooCommerce, or begin an integration does not authorize a Revel write.
+- Before enabling any Kosmos action, prove its direction and side effects. A Revel-to-staging-WooCommerce read/import may proceed only when it is verified not to change Revel. Keep every WooCommerce-to-Revel order, customer, inventory, refund, and other writeback action disabled until separately discussed and explicitly authorized.
+- If the connector cannot guarantee read-only Revel behavior for the planned step, stop before connecting or running it and report the exact risk to Todd.
