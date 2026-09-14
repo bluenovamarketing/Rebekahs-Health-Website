@@ -25,15 +25,15 @@ This packet prepares the existing website policies for Phase Two ecommerce. It i
 
 ## Release-blocking client decisions
 
-- [ ] Identify any product that cannot be mailed or needs temperature, safety, size, manufacturer, or destination handling.
-- [ ] Confirm the online-order return destination.
-- [ ] Confirm whether a customer must contact Rebekah’s before mailing a return.
-- [ ] Confirm the cancellation cutoff before packing begins.
-- [ ] Set the reporting deadline and required evidence for damaged, missing, or incorrect items.
-- [ ] Decide how to handle a shipment marked delivered when the customer reports nonreceipt.
-- [ ] Confirm who pays return postage for customer-remorse returns and for Rebekah’s fulfillment errors.
-- [ ] Confirm whether any product category is final sale or has stricter opening/safety restrictions.
-- [ ] Confirm the customer-facing ecommerce support email.
+- [x] Mark confirmed that none of the 25 selected pilot products has a shipping restriction or known temperature, safety, size, manufacturer, or destination-handling limitation.
+- [x] Online-order returns go to the Clarkston store.
+- [x] Customers must contact Rebekah’s before mailing an online-order return.
+- [x] Cancellation requests are accepted until the order enters packing.
+- [x] Damaged, missing, or incorrect items must be reported within seven days with the order number and photographs of the product and packaging when applicable.
+- [x] A shipment marked delivered but reported missing is reviewed individually using tracking and the USPS case before a replacement or refund is approved.
+- [x] The customer pays return postage for customer-remorse returns; Rebekah’s covers the return when its fulfillment error caused a wrong or damaged shipment.
+- [x] Opened supplements and personal-care products are nonreturnable unless they arrived damaged, defective, or incorrect. No additional final-sale category has been identified.
+- [x] Customer-facing ecommerce support and online-order communications use `clarkstonpurchaser@rebekahspureliving.com`.
 - [ ] Confirm the final payment processor and the privacy/terms language it requires.
 
 ## Draft Shipping Policy copy
@@ -64,23 +64,23 @@ Keep the existing approved 30-day window, unopened/same-condition requirement, o
 
 ### Before mailing an online-order return
 
-Contact Rebekah’s [CLIENT DECISION: before mailing / only when help is needed] so the team can confirm eligibility and provide the correct return address and instructions. Include the online order number and proof of purchase. Returned products must meet the conditions and time limits in this Refund & Returns Policy.
+Contact Rebekah’s before mailing an online-order return so the team can confirm eligibility and provide the Clarkston return address and instructions. Include the online order number and proof of purchase. Returned products must meet the conditions and time limits in this Refund & Returns Policy.
 
 ### Return shipping and original shipping charges
 
-Original shipping charges are nonrefundable unless required by law or the return results from Rebekah’s error. [CLIENT DECISION: customer / Rebekah’s] pays return postage for an eligible customer-remorse return. Rebekah’s will provide instructions when an incorrect or damaged item resulted from its fulfillment.
+Original shipping charges are nonrefundable unless required by law or the return results from Rebekah’s error. The customer pays return postage for an eligible customer-remorse return. Rebekah’s covers the return and provides instructions when its fulfillment error caused an incorrect or damaged shipment.
 
 ### Damaged or incorrect orders
 
-If an order arrives damaged or contains the wrong item, contact Rebekah’s within [CLIENT DECISION] days of delivery. Keep the product and packaging until the team confirms whether photographs, carrier documentation, or a return shipment is needed.
+If an order arrives damaged, is missing an item, or contains the wrong item, contact Rebekah’s within seven days of delivery. Include the order number and photographs of the product and packaging when applicable. Keep the product and packaging until the team confirms whether carrier documentation or a return shipment is needed.
 
 ### Delayed, missing, or delivered-but-not-received packages
 
-Carrier delays and missing-package claims are reviewed using shipment tracking and the carrier’s process. If tracking shows delivered but the package cannot be located, contact Rebekah’s within [CLIENT DECISION] days so the team can review the shipment and available carrier options.
+Carrier delays and missing-package claims are reviewed using shipment tracking and the carrier’s process. If tracking shows delivered but the package cannot be located, contact Rebekah’s within seven days so the team can review the tracking and USPS case individually before approving a replacement or refund.
 
 ### Cancellations
 
-Contact Rebekah’s as soon as possible to request cancellation. A cancellation is not guaranteed after an order enters packing, is transferred for fulfillment, or is accepted by the carrier. Approved refunds are returned through the original payment method according to the payment provider’s processing time.
+Contact Rebekah’s as soon as possible to request cancellation. Cancellation requests are accepted until the order enters packing and are not guaranteed after packing begins, the order is transferred for fulfillment, or USPS accepts the package. Approved refunds are returned through the original payment method according to the payment provider’s processing time.
 
 ## Draft replacement for Terms & Conditions section 6
 
@@ -126,9 +126,9 @@ The responsibility and terms for a product purchased from an external partner re
 
 | Policy area | Draft prepared | Client decision complete | Legal review complete | Approved to publish |
 |---|---:|---:|---:|---:|
-| Shipping | Yes | No | No | No |
-| Refunds and returns | Yes | No | No | No |
-| Terms and Conditions | Yes | No | No | No |
+| Shipping | Yes | Yes | No | No |
+| Refunds and returns | Yes | Yes | No | No |
+| Terms and Conditions | Yes | Yes | No | No |
 | Privacy Policy | Yes | No | No | No |
 | Disclaimer | Yes | No | No | No |
 

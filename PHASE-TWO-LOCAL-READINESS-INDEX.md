@@ -2,7 +2,7 @@
 
 Version: v1.1  
 Prepared: 2026-09-02  
-Status: Client-approved design set implemented and QA-verified on staging; Revel/Kosmos connection not started
+Status: Client-approved design set implemented and QA-verified on staging; WooCommerce and Revel connections are present in Kosmos, but no Action has been created and usable Kosmos dashboard access must be restored
 
 ## Fixed boundary
 
@@ -38,7 +38,7 @@ This index began as a local-only planning package. Todd later authorized the sam
 | --- | --- | --- | --- |
 | 1 | Freeze the exact client-approved mockups | Complete | Review hub and version register show exact versions |
 | 2 | Prepare runbook, acceptance test, clean-start plan, policy decisions, and local scaffold | Complete | This package and local theme files |
-| 3 | Verify Revel permissions, Kosmos access/trial timing, one prepared product, and safe work window | Partly complete; reconfirm trial timing and representative product immediately before connection | Access/gate record marked verified |
+| 3 | Verify Revel permissions, Kosmos access/trial timing, one prepared product, and safe work window | Partly complete; Revel access and the NAC test product are confirmed, but usable Kosmos dashboard access, current billing status, Clarkston-only connection scope, and safe Action behavior still require verification | Access/gate record marked verified |
 | 4 | Create restore point and same-server staging; establish measured capacity decision | Complete; retain 2 GB for the controlled activation and one-product proof, then scale only if measured thresholds are reached | Cloudways restore point, staging, and capacity record |
 | 5 | Quarantine legacy catalog, activate WooCommerce core only, and implement all approved storefront systems | Complete on staging | 61 explicitly quarantined Draft legacy products, zero published products, inactive gateways, staging installer v1.6 plus correction pass v1.9, and QA record |
 | 6 | Run one-product Revel → Kosmos → WooCommerce proof | No; connection required | Completed one-product acceptance test |
@@ -50,7 +50,8 @@ This index began as a local-only planning package. Todd later authorized the sam
 
 The staging build gate has been completed. The next controlled gate is the one-product Revel → Kosmos → WooCommerce proof on the current 2 GB server. It opens only when:
 
-- Revel access is reconfirmed for the Clarkston establishment and required integration functions.
-- Kosmos access and the usable trial/subscription window are reconfirmed.
+- Usable access to the client-owned Kosmos dashboard is restored.
+- The Revel connection already visible in Kosmos is verified as Clarkston-only, with a manual Revel-to-staging direction and no WooCommerce-to-Revel writeback or automatic schedule.
+- Kosmos billing/subscription status is reconfirmed.
 - At least one representative product is Active and enabled for online/third-party display in Revel.
 - Todd starts the connection work window. A paid 4 GB scale-up is not a prerequisite and requires separate approval only if measured load proves it is needed.

@@ -110,7 +110,7 @@ Systems 02–07 remain page-body-only approval sources. On WordPress staging the
 - Configured the shipping zone as the 48 contiguous states plus the District of Columbia, excluding Alaska, Hawaii, territories, and international destinations. USPS rates and PO-box blocking remain separate open gates.
 - Audited `client-inputs/phase-two/Product_Export_Establishment_3 (70)_results.xlsx` read-only. It contains exactly 25 rows; all 25 have a product name, nonnegative price, unique barcode, category, `Active = Yes`, `Display on online and 3rd party = Yes`, and `Status = Updated`.
 - Every SKU and product-description cell is blank. The file does not supply inventory quantity, product timestamp, weight, dimensions, images, or variation detail. Those fields cannot be assumed or corrected in Revel by Blue Nova; the controlled one-product proof must show what Kosmos actually reads.
-- Selected `REBEKAH'S Energy 90 Caps` as the safest first-product candidate because it matches the approved simple-product template and is the only item in its Energy & Vitality category. Selection does not authorize a sync or any Revel change.
+- Selected `REBEKAH'S Energy 90 Caps` as the initial September 6 candidate. **Superseded on September 8:** Mark selected the freshly restocked `REBEKAH'S NAC 1000mg` and said Energy may be discontinued. NAC is the current candidate; selection does not authorize a sync or any Revel change.
 - Updated the New Order administrator recipient to both approved addresses. The remaining Cancelled Order, Failed Order, and Payment Gateway Enabled recipient cleanup could not be completed or verified after the staging WordPress runtime returned `Connection lost` and repeated gateway timeouts.
 - An independent hostname check immediately afterward returned HTTP 200 from the live website while staging timed out without response bytes. The client-facing website remained available.
 - Standard tax-rate contents, USPS, PO-box validation, outbound email delivery, and transactional tests remain unverified and must not be marked complete.
@@ -141,3 +141,21 @@ Systems 02–07 remain page-body-only approval sources. On WordPress staging the
 - No Revel connection or write, Kosmos Action, product import, payment or shipping-rate activation, paid service, live-site change, Cloudways resize, password-protection change, or staging-to-live deployment occurred.
 
 The staging clean-start audit and PO-box implementation are complete. Wait for Kosmos ticket `#461376`, review its written answer, then discuss the exact Revel authorization and one-way test configuration with Todd. Do not connect Revel, create an Action, schedule a sync, or pull the pilot product until Todd gives separate action-time approval.
+
+## September 9 email-gate update
+
+- Mark confirmed that none of the 25 products has a shipping restriction.
+- Revel case #03058403 requires Partner Connect Unlimited at $25/month per location, signed documents/order form, and client authorization for Revel to give Kosmos production Management Console credentials. Credentials would be released directly to Kosmos.
+
+## September 14 connection-readiness update
+
+- Revel stated that Partner Connect case #03058403 would be processed within one to two days and that the client would not be billed until October 1, 2026. Mark reported on September 9 that Revel released the API information to Kosmos.
+- Mark's September 11 screenshot was superseded by live September 14 verification. The saved Kosmos standard-product Action explicitly selected establishment `3 Rebekah's - Clarkston`; the completed source log also carries `establishment=3` on every Revel product request.
+- Kosmos still exposes no exact product selector. Todd approved a reversible staging-only timestamp test. The September 1 cutoff found 245 qualifying Clarkston products and excluded the intended `REBEKAH'S NAC 1000mg` product.
+- Mark reported that Rebekah asked him to take over coordination of the WooCommerce/Revel connection. He does not need to add Blue Nova as a WooCommerce.com collaborator for the staging proof: Blue Nova already has staging WordPress/Cloudways access, and the dedicated staging WooCommerce REST connection is already present in Kosmos.
+- Read-only public checks on September 14 returned HTTP 200 for the Phase Two staging homepage and `/shop/`. A separate anonymous request to the WordPress REST root timed out and remains a preflight watch item before relying on connector calls; no service restart or hosting change was made.
+- Created one one-way Revel-to-staging-WooCommerce product Action and one manual Task. No WooCommerce-to-Revel Action exists, no automatic schedule is selected, and no Revel record or setting was changed.
+- Rebekah's replacement Kosmos credential was saved in the private register and the dashboard login succeeds. The separate exact staging WordPress administrator row was rejected on one attempt after the import; Blue Nova stopped without retrying or resetting it.
+- The fee, order form, location count, production-credential scope, and cancellation terms remain unapproved. Revel's email does not confirm that the first Action can be manual and one-way from Revel to staging WooCommerce with every schedule and WooCommerce-to-Revel writeback disabled.
+- The manual Task completed with status `Done`: 245 category lookups returned GET 200 and 245 WooCommerce product creations returned POST 201, with no error-like transaction-log entries. The public WooCommerce Store API now returns 245 published products; NAC barcode `733739401854` returns no match. Staging Guard still blocks payment, email, webhook, and indexing side effects, but the Cloudways hostname is not HTTP-password protected.
+- Do not run a broader timestamp import or enable any WooCommerce-to-Revel writeback. First restore staging WordPress administrator access and change the 245 imported products to Draft/quarantine without deleting them, then complete the NAC-specific mapping and inventory proof.

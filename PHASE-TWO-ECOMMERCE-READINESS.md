@@ -22,7 +22,7 @@ The working rule for staff is: **Revel controls whether the business sells it; W
 - The WooCommerce Shop, Cart, Checkout, and My Account pages were retained for Phase Two, render the approved page bodies, and remain noindexed while the staging guard is active.
 - The staging database actually contained 61 legacy WooCommerce product records. All 61 are preserved as Draft, none are published, and none were deleted. This supersedes the earlier 35-visible/36-recorded estimate and gives the pilot a zero-published-product starting point.
 - WooCommerce 11.1.0 is active on staging. Google for WooCommerce, PDF Invoices & Packing Slips, Pledged Plugins NMI Gateway, Smart Coupons, WooCommerce Tax, WooCommerce.com Update Manager, WooPayments, and other unnecessary commerce extensions remain inactive. No payment gateway is active.
-- The July audit found no Revel/Kosmos REST API key or other evidence of an active Revel-to-WooCommerce synchronization. Reverify this at kickoff before creating any new key or connection.
+- The staging WooCommerce account is connected inside Kosmos through a dedicated REST API key. Revel released its API credentials directly to Kosmos under case #03058403 after the client completed Partner Connect. On September 14, Kosmos exposed and selected establishment `3 Rebekah's - Clarkston`; the transaction log independently confirmed `establishment=3`. The first one-way product Action and manual unscheduled Task completed, creating 245 staging products with no logged transport errors. Revel stated that the $25/month/location Partner Connect billing begins October 1, 2026.
 - The September 6 staging baseline confirmed current Cloudways capacity is 2 GB RAM / 1 vCPU with adequate headroom. Retain it through controlled WooCommerce activation and the one-product Revel/Kosmos proof. Recheck CPU, free memory, restarts, PHP/MySQL responsiveness, and uncached checkout/admin speed under that real workload; scale to 4 GB / 2 vCPU only if the measurements prove it is needed and Todd explicitly approves the paid change.
 - The same-server staging clone and a fresh application restore point are complete. WordPress search visibility is set to discourage indexing, and Blue Nova Staging Guard v1.1 is active. Cloudways password protection remains under Todd's control and must not be changed by Codex without his explicit instruction.
 - The approved catalog foundation is seeded with 21 wellness categories and 9 brand terms. Exact field ownership, identifier matching, overwrite behavior, and product content gaps must be observed from the first real Revel/Kosmos product instead of guessed in advance.
@@ -43,14 +43,14 @@ Do not begin the integration build until the following items are complete or exp
 
 ### 2. Required account access
 
-- [ ] Revel administrator or integration-level access is available to the authorized setup team.
-- [ ] Rebekah can identify the selected fulfillment establishment inside Revel.
-- [ ] Blue Nova verifies whether a Kosmos eSync account already exists and presents the required plan/cost to Rebekah for approval. Kosmos is the middleware that transfers product, inventory, and order information between Revel and WooCommerce; Rebekah does not need to configure it herself.
-- [ ] A dedicated Revel/WooCommerce integration user can be created if Kosmos requires one.
+- [x] Blue Nova's separate Revel Management Console user reaches Products, Inventory, and Settings. This access remains read-only by project rule unless Todd separately approves a specific Revel-side action.
+- [x] The selected fulfillment establishment is **Rebekah's - Clarkston**.
+- [x] Rebekah created and owns the Kosmos eSync account. The advertised 14-day trial began, but its present billing/conversion status is not confirmed. Kosmos list pricing is $49 month-to-month or $39/month billed annually.
+- [x] Revel released its API credentials directly to Kosmos under case #03058403 after Partner Connect was processed. The live September 14 Action configuration and completed source log prove the integration uses only establishment `3 Rebekah's - Clarkston`. Revel stated that the $25/month/location billing begins October 1, 2026. Cancellation terms remain a separate account/contract question.
 - [ ] Keep **Fiserv/Clover** as the likely later payment integration. WooCommerce core cannot process cards by itself; WooPayments could process cards through its Stripe partnership, but it is not planned because Rebekah will not use PayPal and will probably use Fiserv/Clover. Payment activation does not block the non-payment build or Revel/Kosmos test.
-- [ ] Rebekah confirms the shipping carrier/method, fulfillment origin address, package types, and handling expectations. The customer supplies the destination address at checkout. If checkout must calculate a live address-dependent rate, configure the chosen carrier integration; a carrier account is needed only if its rates or credentials will be used.
-- [ ] Rebekah confirms the tax settings Blue Nova should implement. Blue Nova communicates only with Rebekah and does not contact her accountant or other advisers.
-- [ ] An operational email address is approved for new-order, failed-payment, cancellation, refund, low-stock, and customer-service notifications.
+- [x] Rebekah confirmed USPS Ground Advantage and Priority Mail, Clarkston origin, two-business-day handling, live address-dependent rates, contiguous-U.S.-only delivery, and no PO boxes. Mark confirmed none of the 25 products has a shipping restriction. USPS Developer credentials and live-rate testing remain open technical gates.
+- [x] Rebekah instructed Blue Nova to treat the pilot supplements as Michigan tax-exempt. Verify real-product order totals before launch; this remains a client instruction rather than Blue Nova tax advice.
+- [x] Production customer-facing online-order communications use `clarkstonpurchaser@rebekahspureliving.com`; controlled staging email tests use `lapeerpurchaser@rebekahspureliving.com` so live staff are not confused.
 
 Do not email or place API keys, gateway credentials, secrets, or payment information in project files. Create connection credentials only when the selected vendor's setup flow requires them.
 
@@ -58,9 +58,9 @@ Do not email or place API keys, gateway credentials, secrets, or payment informa
 
 Only the following access should be requested for the pilot:
 
-- [x] Blue Nova already has WordPress/Cloudways staging access. Do not ask Rebekah for it again.
-- One Revel administrator/integration access grant that includes the designated fulfillment establishment. This is not a separate location login unless Revel has intentionally limited that user's establishment permissions.
-- Rebekah has previously been told about Kosmos. Before signup, remind her that the pilot plan is currently $49 month-to-month and that Kosmos advertises a 14-day trial. She creates and owns the account with her business and billing information, then gives Blue Nova configuration access. Kosmos automatically moves approved products, prices, inventory, and orders between Revel and WooCommerce so staff do not have to maintain online inventory manually and the website is less likely to sell stock the store no longer has.
+- [ ] Restore Blue Nova's WordPress administrator login to the current Cloudways staging clone. The exact stored row in the private credential register was rejected on one September 14 attempt; no retry or password reset was performed. Cloudways/application access remains the preferred recovery path rather than asking Rebekah for her primary password.
+- Blue Nova's separate Revel Management Console user is active for Clarkston review. The separate Partner Connect subscription/order form and production-credential authorization remain pending and require explicit action-time approval.
+- Rebekah owns the Kosmos account and began its 14-day trial. Before any paid conversion, confirm the current plan and billing state. Kosmos is separate from Revel's $25/month-per-location Partner Connect charge.
 - After the final merchant product is selected, request delegated merchant/developer access that allows Blue Nova to configure the official WooCommerce integration, use sandbox/test mode, view transactions, run void/refund tests, review disputes, and contact gateway support. Do not request or share the primary owner's password or place API secrets in project files.
 - A dedicated WooCommerce REST API user/key created by Blue Nova only when Kosmos setup requires it. This key belongs to WooCommerce/Kosmos and is separate from whichever payment gateway is selected.
 
@@ -123,7 +123,7 @@ For every pilot product, Rebekah or her Revel staff must:
 - [ ] Enter the brand/manufacturer where Revel supports it.
 - [ ] Enter an accurate product weight because the confirmed live USPS rate uses cart weight. Flag unusually large, long, or bulky products. Do not require the client to define multi-item box rules; Blue Nova configures and tests automatic packing and requests dimensions only for identified exceptions.
 - [ ] For variations or matrix items, confirm the parent name, option names, SKUs/barcodes, prices, and inventory for every variation. The matrix parent name must be consistent.
-- [ ] Only flag known shipping exceptions, such as an item the store already knows requires special handling or cannot be mailed. Routine products are assumed shippable; no product-by-product legal review is requested.
+- [x] Mark confirmed that none of the 25 selected products has a shipping restriction or known special-handling requirement.
 - [ ] Mark exactly the intended pilot products with `Display on online and 3rd party`. Blue Nova will pull the marked products from Revel/Kosmos, create the final 25-product SKU/name list, and send it to Rebekah for confirmation. She does not need to prepare a separate spreadsheet or list.
 
 Blue Nova will first test one prepared product. After its Revel fields, mapping, overwrite behavior, and online result pass, Blue Nova will synchronize the remaining 24.
@@ -189,9 +189,9 @@ Do not improve product images or descriptions in WooCommerce until testing confi
 4. Inventory and back up the legacy WooCommerce product records, then isolate them from the active/public catalog so the Revel proof begins with zero published legacy products. **Complete: 61 records preserved as Draft; none published or deleted.**
 5. Implement the approved page-body structure from Systems 03–07 in the custom theme: Shop/Catalog v1.9, Product Pages v1.7, Purchase Path v1.6, Customer Account v1.6, and Store States/Components v1.5. **Complete on staging through installer v1.6.**
 6. Build the store taxonomy and controls needed by those mockups: brand and wellness-category structures, attributes, navigation, filters, missing-image treatment, account/cart/checkout states, and responsive behavior. **Structural work complete; real-product data validation remains in step 9.**
-7. Connect WooCommerce to Kosmos using the required WooCommerce authorization/API credentials and valid HTTPS/permalinks. Install the optional Kosmos dashboard-link or REST API logging plugin only if it materially assists setup or troubleshooting; it is not a substitute for the Kosmos cloud Actions.
-8. Establish the Revel connection and follow Kosmos's recommendation to test **one action and one fully prepared product first**.
-9. Use that real product to validate field ownership, mappings, overwrite behavior, filters, product cards/details, images, variations, inventory, price, weight, cart, and checkout presentation; refine the approved templates without changing their approved direction.
+7. Connect WooCommerce to Kosmos using the required WooCommerce authorization/API credentials and valid HTTPS/permalinks. **Complete for staging. The one-way Clarkston product Action and manual unscheduled Task now exist; no WooCommerce-to-Revel Action exists.**
+8. Review and prove the Revel Partner Connect location and connector direction. **Clarkston establishment `3` and Revel-to-staging-WooCommerce direction are proven. The completed run made no Revel write.** The $25/month/location billing begins October 1, 2026; cancellation terms remain separately unverified.
+9. Use NAC to validate field ownership, mappings, overwrite behavior, filters, product cards/details, images, variations, inventory, price, weight, cart, and checkout presentation. **Not complete:** the September 1 cutoff created 245 other published Clarkston products but did not include NAC. Restore staging admin access and quarantine those records before another broader run.
 10. Synchronize and reconcile the remaining approved 25-product sample only after the proof passes.
 11. Configure the approved USPS shipping method and tax settings. Connect the selected payment gateway later, only after the exact Fiserv/Clover product is confirmed; payment is not required for the initial product synchronization proof.
 12. Complete end-to-end staging tests, obtain implementation approval, train staff, and only then plan a controlled production launch.
@@ -243,13 +243,14 @@ Do not start a live trial, active synchronization run, payment test, or pilot ha
 - September 17–20: unavailable.
 - Weekends: unavailable.
 
-The first practical pilot window is **Monday, August 31 through Wednesday, September 9, 2026**, provided access, decisions, and all 25 products are ready beforehand. Finish or place the store back into a known safe staging state by September 9. If prerequisites or vendor support make that window uncertain, start on or after **Monday, September 21**. Do not activate Kosmos's 14-day trial until the chosen working window is confirmed so trial time is not lost during a blackout.
+As of September 14, the client-owned Kosmos dashboard is accessible and the first manual Action has run. Establishment `3 Rebekah's - Clarkston`, one-way Revel-to-staging direction, barcode-to-SKU matching, automatic schedules off, and the absence of WooCommerce-to-Revel Actions are proven. The September 1 cutoff created 245 published staging products without errors but excluded `REBEKAH'S NAC 1000mg`, so the selected one-product acceptance test did not pass. Restore staging WordPress administrator access, quarantine those imports, and then choose the smallest verified method that includes NAC before another run. Kosmos trial/paid-plan status remains unverified; do not accept an upgrade or charge prompt without separate approval. The controlled work window is September 14–16; September 17–20 remains unavailable.
 
 The 25-product pilot should be time-tracked by workstream. After completion, use the actual average cleanup/sync/QA time per product and the catalog's exception rate to estimate the full rollout. Do not extrapolate by multiplying 25 blindly: reusable templates and connection setup are one-time costs, while missing images, duplicate SKUs, descriptions, variations, and mapping exceptions scale with the catalog.
 
 ## Costs that require separate client approval
 
 - Kosmos eSync subscription and any extra action or mapping fees.
+- Revel Partner Connect Unlimited at $25/month per connected location, including the exact order-form and cancellation terms.
 - Merchant-processing rates and contract costs are handled directly between Rebekah and Fiserv and are not a Blue Nova project requirement.
 - Postage, labels, and packaging used to fulfill actual orders.
 - Hosting increase if approved for launch.
@@ -268,10 +269,11 @@ Verified on 2026-08-17:
 | Likely Clover Payments for WooCommerce gateway | **$0 plugin** | Connect only after Rebekah's Fiserv/Clover merchant account is active. Merchant rates and contract terms are outside Blue Nova's scope. |
 | Built-in WooCommerce shipping and manual tax settings | **$0** | Adequate for a defined shipping-only pilot; no paid label plugin is required. |
 | Kosmos eSync Warmup | **$49 month-to-month** or **$39/month billed annually** | Includes 7 actions, up to 450 monthly orders, unlimited SKUs, one location, and one online store. This appears sufficient for the lean pilot, pending confirmation of the final action count. A 14-day trial is advertised. |
-| Official live-rate carrier extension, only if checkout rates must depend on the customer's address | **Currently $109/year per carrier** | USPS, UPS, and FedEx official WooCommerce extensions are each currently listed at this price. Select one carrier before purchase. This is not needed for flat-rate or free shipping. |
+| Revel Partner Connect Unlimited | **$25/month per location** | Required by Revel case #03058403 before Revel will release API credentials directly to Kosmos. The one-location Clarkston scope and order terms must be confirmed before approval. |
+| USPS live-rate pilot plugin | **$0** | Test Octolize's free USPS live-rate plugin first. Approve a paid packing upgrade only if representative carts prove it is necessary. USPS Developer credentials are still required. |
 | Custom data mapping | **Not expected or budgeted** | Standard Revel fields should work without it. Mention only as an unlikely exception; if testing proves it is necessary, Kosmos says setup starts at $150 and Blue Nova will bring the exact quote to Rebekah for approval. |
 
-For the test, prefer the Kosmos free trial if the entire working window is ready, or one $49 monthly period rather than an annual commitment. Do not purchase a USPS extension, tax tool, product-import tool, payment plugin, or checkout plugin unless representative staging tests identify a specific need and Todd approves it. Clover's official gateway can be connected later when the exact Fiserv/Clover merchant product is confirmed and active.
+The current Kosmos trial/conversion status must be verified before stating that Rebekah has paid. Known recurring connector cost would be $74/month with Kosmos month-to-month plus one Revel location, or a $64/month equivalent with Kosmos billed annually plus one Revel location. These are planning totals only; taxes, plan choice, location count, and cancellation terms remain unverified. Do not purchase a USPS extension, tax tool, product-import tool, payment plugin, or checkout plugin unless representative staging tests identify a specific need and Todd approves it. Clover's official gateway can be connected later when the exact Fiserv/Clover merchant product is confirmed and active.
 
 ## Sources reconciled
 
