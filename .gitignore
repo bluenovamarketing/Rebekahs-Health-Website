@@ -33,3 +33,6 @@ node_modules/
 
 # Raw staging catalog snapshots remain local; reviewed findings are in project notes.
 /client-inputs/phase-two/woocommerce-staging-export-*.csv
+
+# Reproducible local review renders and validation caches
+/scripts/__pycache__/
