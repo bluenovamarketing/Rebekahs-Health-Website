@@ -1,5 +1,7 @@
 # Staging catalog presentation rule — implementation candidate
 
+September15: `tests/access-test.php` adds eight isolated access/write-boundary checks: non-admin, non-staging, invalid-nonce apply/restore, read-only preview, forbidden stock fields, malformed JSON and unavailable rollback. All pass with zero mocked option writes. This closes local branch coverage only, not live authentication penetration testing. Run the five local commerce suites together with `scripts/Test-StagingCommerce.ps1 -PhpExecutable <verified-php-path>`.
+
 Status: installed and active on staging only (version 0.2.1). PHP syntax, 22 isolated policy checks and 12 intake checks PASS. Controlled internal WooCommerce wc/v1 update: eight assertions PASS and original product fields/metadata restored with readback. Bulk-intake UI rejection, valid preview, persistence and registry rollback also verified. No real approved-copy registry populated; automated content sourcing is not implemented.
 
 ## September 14 combined staging proof
