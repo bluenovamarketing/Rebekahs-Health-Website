@@ -36,3 +36,8 @@ node_modules/
 
 # Reproducible local review renders and validation caches
 /scripts/__pycache__/
+
+# Recreated Team Members source extraction and video render intermediates
+/.tmp-team-profiles/
+/client-handoff/team-members-video/audio/
+/client-handoff/team-members-video/preview-frames/
