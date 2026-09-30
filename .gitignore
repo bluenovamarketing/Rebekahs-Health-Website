@@ -41,3 +41,10 @@ node_modules/
 /.tmp-team-profiles/
 /client-handoff/team-members-video/audio/
 /client-handoff/team-members-video/preview-frames/
+
+# Local Codex finalization and private working state.
+/.codex-finalizer/
+/.codex-private/
+/client-handoff/**/.codex-finalizer/
+/client-handoff/**/work/.deck-build/
+/client-handoff/**/work/python-packages/
