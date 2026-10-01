@@ -5,7 +5,7 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy"><span class="eyebrow">Rebekah's online Fullscript dispensary</span><h1>More trusted brands, <em>one simple place.</em></h1><p>Browse professional-quality supplements online through Rebekah's Fullscript dispensary, with convenient product details, account-based ordering and delivery through Fullscript.</p><div class="hero-actions"><a class="button primary" href="https://us.fullscript.com/welcome/rebekahs" target="_blank" rel="noopener noreferrer sponsored">Visit Rebekah's Fullscript <span aria-hidden="true">↗</span></a><a class="button outline" href="#how-it-works">See how it works</a></div><p class="external-note"><b aria-hidden="true">↗</b><span>This button opens Fullscript, an external partner website. Your account, order, payment, shipping and returns are handled there under Fullscript's terms and policies.</span></p></div>
-        <div class="hero-art"><img src="<?php echo esc_url( rhn_theme_asset( 'output/shop-fullscript/fullscript-hero-supplements-v1.png' ) ); ?>" alt="Amber supplement bottles and capsules arranged with natural botanical accents"><div class="hero-card"><span>Online access</span><strong>Broad</strong><small>external supplement catalog</small></div></div>
+        <div class="hero-art"><img src="<?php echo esc_url( rhn_theme_asset( 'output/shop-fullscript/fullscript-hero-supplements-branded-v2.png' ) ); ?>" alt="Amber supplement bottles and capsules arranged with natural botanical accents"><div class="hero-card"><span>Online access</span><strong>Broad</strong><small>external supplement catalog</small></div></div>
       </div>
     </section>
 

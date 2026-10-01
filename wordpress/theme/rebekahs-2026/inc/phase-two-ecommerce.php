@@ -184,12 +184,14 @@ function rhn_phase_two_catalog_filters() {
 	<?php
 }
 
-/** Load the Phase Two styles and interaction helpers only where needed. */
+/**
+ * Load the Phase Two chrome styles and interaction helpers sitewide.
+ *
+ * The approved store utility row and fifth footer group render on every page
+ * while Phase Two ecommerce is enabled, so their scoped assets must be present
+ * outside WooCommerce and the homepage as well.
+ */
 function rhn_phase_two_enqueue_commerce_assets() {
-	if ( ! rhn_phase_two_is_commerce_context() && ! is_front_page() ) {
-		return;
-	}
-
 	$css_path = get_template_directory() . '/assets/css/components/phase-two-commerce.css';
 	$js_path  = get_template_directory() . '/assets/js/components/phase-two-commerce.js';
 
