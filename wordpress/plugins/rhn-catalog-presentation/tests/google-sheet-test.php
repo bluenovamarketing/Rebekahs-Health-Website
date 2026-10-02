@@ -81,11 +81,8 @@ try {
 
 $unapproved = $approved;
 $unapproved[0] = 'Hold';
-try {
-    rhn_catalog_sheet_rows_to_registry( array( $headers, $unapproved ) );
-    throw new RuntimeException( 'Sheet with no approved rows was accepted.' );
-} catch ( InvalidArgumentException $error ) {
-    sheet_check( str_contains( $error->getMessage(), 'No Approved' ), 'Sheet with no approved rows rejected.' );
-}
+$no_action = rhn_catalog_sheet_rows_to_registry( array( $headers, $unapproved ) );
+sheet_check( array() === $no_action['registry'] && array() === $no_action['withdrawals'], 'Sheet with no actionable rows is a safe no-op.' );
+sheet_check( 1 === count( $no_action['skipped'] ), 'No-op Sheet still reports its skipped row.' );
 
 echo "PASS: $checks isolated Google Sheet parsing and approval checks.\n";

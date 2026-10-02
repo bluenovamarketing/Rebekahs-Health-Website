@@ -61,5 +61,8 @@ $second = rhn_catalog_photo_folder_fingerprint( array_reverse( $files ) );
 photo_check( $first === $second, 'Folder fingerprint is independent of API result order.' );
 $files[0]['modifiedTime'] = '2026-10-02T13:00:00Z';
 photo_check( $first !== rhn_catalog_photo_folder_fingerprint( $files ), 'A changed file produces a new one-time intake fingerprint.' );
+photo_check( ! rhn_catalog_photo_should_process( array( 'status' => 'matched', 'folder_fingerprint' => $first ), 'different-folder-fingerprint' ), 'A completed match stays one-time when unrelated folder files change.' );
+photo_check( ! rhn_catalog_photo_should_process( array( 'status' => 'needs-review', 'folder_fingerprint' => $first ), $first ), 'An unchanged no-match is not repeated every four hours.' );
+photo_check( rhn_catalog_photo_should_process( array( 'status' => 'needs-review', 'folder_fingerprint' => $first ), 'different-folder-fingerprint' ), 'A prior no-match retries after new media arrives.' );
 
 echo "PASS: $checks isolated photo-intake checks.\n";

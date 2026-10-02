@@ -163,6 +163,22 @@ function rhn_catalog_photo_folder_fingerprint( $files ) {
     return hash( 'sha256', implode( "\n", $parts ) );
 }
 
+function rhn_catalog_photo_should_process( $previous, $folder_fingerprint ) {
+    if ( ! is_array( $previous ) || empty( $previous ) ) {
+        return true;
+    }
+    // A successful match is a one-time intake. Later scheduled runs must not
+    // revisit it merely because an unrelated file was added elsewhere in the
+    // shared media folder. An administrator can deliberately clear this SKU's
+    // saved state when a controlled requeue is required.
+    if ( 'matched' === ( $previous['status'] ?? '' ) ) {
+        return false;
+    }
+    // A prior no-match may be retried only when the folder contents actually
+    // change, allowing a newly uploaded correctly named image to be detected.
+    return ! hash_equals( (string) ( $previous['folder_fingerprint'] ?? '' ), (string) $folder_fingerprint );
+}
+
 function rhn_catalog_photo_intake( $result, $write_state = true ) {
     if ( ! rhn_catalog_google_private_credentials_configured() ) {
         $result['photo_intake'] = array( 'status' => 'disabled', 'message' => 'Private Google access is required.' );
@@ -197,7 +213,7 @@ function rhn_catalog_photo_intake( $result, $write_state = true ) {
     $state = is_array( $state ) ? $state : array();
     $changed = array();
     foreach ( $requests as $sku => $request ) {
-        if ( isset( $state[ $sku ] ) && hash_equals( (string) ( $state[ $sku ]['folder_fingerprint'] ?? '' ), $fingerprint ) ) {
+        if ( ! rhn_catalog_photo_should_process( $state[ $sku ] ?? array(), $fingerprint ) ) {
             continue;
         }
         $matches = rhn_catalog_photo_match_files( $request, $files );

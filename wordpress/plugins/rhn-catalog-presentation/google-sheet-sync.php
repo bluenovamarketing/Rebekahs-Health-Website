@@ -107,9 +107,6 @@ function rhn_catalog_sheet_rows_to_registry( $rows ) {
         }
         $records[] = $record;
     }
-    if ( ! $records && ! $withdrawals ) {
-        throw new InvalidArgumentException( 'No Approved, Approved for Test, or Remove from Website rows were found.' );
-    }
     $registry = $records ? rhn_catalog_parse_registry( wp_json_encode( $records ) ) : array();
     return array( 'registry' => $registry, 'withdrawals' => $withdrawals, 'skipped' => $skipped );
 }

@@ -1,6 +1,6 @@
 # RHN Catalog Presentation (Staging)
 
-Current local candidate: **0.6.0**. The installed staging version must be verified after upload; do not infer deployment from this repository.
+Current local candidate: **0.6.1**. The installed staging version must be verified after upload; do not infer deployment from this repository.
 
 This plugin keeps Kosmos responsible for POS-owned commerce data and gives Blue Nova a controlled source for website-owned catalog data.
 
@@ -31,7 +31,7 @@ The plugin never writes to Revel. It does not create terms or change SKU, price,
 
 The permanent client-owned source is Rebekah's `Inventory sheet` (spreadsheet ID `18wuB-kfgMfKbWGV6qgHClXDjagtPPJP7XdkHlxQhF-s`). Rebekah's client-owned `Ecom media` folder is Drive folder ID `1AxIgYQFeo5ZUyFjU-CMpl8nAQ8NVpnxc`. Do not replace the authenticated setup with a public-link CSV fallback; the client-owned Sheet and media folder are intended to remain restricted.
 
-`Photos Uploaded?` is a one-time intake trigger. The plugin records the exact Drive folder fingerprint and matched file IDs for each SKU, so an unchanged four-hour run does not repeat the work. Exact SKU/barcode filenames and unmistakable full product-name filenames may be attached to approved staging products; ambiguous files remain unassigned and appear in the intake digest. Existing Sheet image URLs and later client edits are never overwritten. Email delivery is disabled by default on staging; the digest remains visible to administrators until authenticated customer-facing mail is intentionally enabled.
+`Photos Uploaded?` is a one-time intake trigger. The plugin records the exact Drive folder fingerprint and matched file IDs for each SKU. A successful match is not revisited on later four-hour runs simply because unrelated files were added elsewhere in the shared folder. A prior no-match is retried only after the folder changes, allowing a newly uploaded correctly named image to be detected. Exact SKU/barcode filenames and unmistakable full product-name filenames may be attached to approved staging products; ambiguous files remain unassigned and appear in the intake digest. Existing Sheet image URLs and later client edits are never overwritten. Email delivery is disabled by default on staging; the digest remains visible to administrators until authenticated customer-facing mail is intentionally enabled.
 
 Credentials are not part of this plugin, repository, WordPress content, or Sheet. Staging may use either protected constants or the encrypted connector settings already installed. The constant-based alternative is:
 
