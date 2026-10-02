@@ -25,6 +25,13 @@ node_modules/
 /tools/yt-dlp.exe
 /tmp/ffmpeg-extract/
 
+# Reproducible local language and media runtimes
+/.tools/catalog-video-runtime/
+/.tools/video-runtime/
+/.tools/php-8.5.11/
+/.tools/php-8.5.11-nts-Win32-vs17-x64.zip
+/.tools/**/__pycache__/
+
 # Generated WordPress release archives
 /wordpress/dist/
 
