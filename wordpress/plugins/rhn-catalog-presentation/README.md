@@ -1,6 +1,6 @@
 # RHN Catalog Presentation (Staging)
 
-Current local candidate: **0.5.2**. The installed staging version must be verified after upload; do not infer deployment from this repository.
+Current local candidate: **0.6.0**. The installed staging version must be verified after upload; do not infer deployment from this repository.
 
 This plugin keeps Kosmos responsible for POS-owned commerce data and gives Blue Nova a controlled source for website-owned catalog data.
 
