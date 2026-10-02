@@ -45,8 +45,11 @@ $approved = array(
 $working = $approved;
 $working[0] = 'Working';
 $working[1] = 'SKIPPED-ROW';
+$withdrawn = $approved;
+$withdrawn[0] = 'Remove from Website';
+$withdrawn[1] = '788332054013';
 
-$parsed = rhn_catalog_sheet_rows_to_registry( array( $headers, $approved, $working ) );
+$parsed = rhn_catalog_sheet_rows_to_registry( array( $headers, $approved, $working, $withdrawn ) );
 sheet_check( 1 === count( $parsed['registry'] ), 'Only approved rows are accepted.' );
 sheet_check( isset( $parsed['registry']['733739401854'] ), 'Barcode remains exact text.' );
 sheet_check( array( 'Immune Support', 'Vitamins & Supplements' ) === $parsed['registry']['733739401854']['categories'], 'Category list parsed.' );
@@ -54,6 +57,8 @@ sheet_check( 2 === count( $parsed['registry']['733739401854']['gallery_image_url
 sheet_check( '0.73' === $parsed['registry']['733739401854']['weight'], 'Weight remains numeric text.' );
 sheet_check( '60 capsules' === $parsed['registry']['733739401854']['package_size'], 'Package size / net contents parsed separately from shipping weight.' );
 sheet_check( 1 === count( $parsed['skipped'] ) && 3 === $parsed['skipped'][0]['row'], 'Working row skipped with correct sheet row.' );
+sheet_check( isset( $parsed['withdrawals']['788332054013'] ), 'Exact Remove from Website row is accepted separately.' );
+sheet_check( 4 === $parsed['withdrawals']['788332054013']['row'], 'Withdrawal keeps its exact source row.' );
 
 $csv_stream = fopen( 'php://temp', 'w+' );
 foreach ( array( $headers, $approved, $working ) as $row ) {

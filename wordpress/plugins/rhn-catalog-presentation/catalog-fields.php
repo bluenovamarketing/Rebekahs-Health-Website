@@ -166,7 +166,9 @@ function rhn_catalog_google_drive_file_id( $url ) {
 function rhn_catalog_download_image_file( $url ) {
     $host = strtolower( (string) wp_parse_url( $url, PHP_URL_HOST ) );
     $file_id = 'drive.google.com' === $host ? rhn_catalog_google_drive_file_id( $url ) : '';
-    if ( $file_id && function_exists( 'rhn_catalog_google_access_token' ) && defined( 'RHN_CATALOG_GOOGLE_CREDENTIALS_PATH' ) ) {
+    $private_google_access = function_exists( 'rhn_catalog_google_private_credentials_configured' )
+        && rhn_catalog_google_private_credentials_configured();
+    if ( $file_id && function_exists( 'rhn_catalog_google_access_token' ) && $private_google_access ) {
         $token = rhn_catalog_google_access_token();
         if ( ! is_wp_error( $token ) ) {
             $temporary = wp_tempnam( $url );

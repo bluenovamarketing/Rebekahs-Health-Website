@@ -1,9 +1,15 @@
 <?php
-/** Two persistent, reversible staging examples for visual client review. */
+/** Four persistent, reversible staging examples for visual client review. */
 defined( 'ABSPATH' ) || exit;
 
 function rhn_catalog_preview_skus() {
-    return array( '733739401854', '733739430700' );
+    return array( '733739401854', '788332048517', '733739433268', '788332227806' );
+}
+
+function rhn_catalog_preview_restore_skus() {
+    // Quercetin was used by the earlier two-product proof. Retain its baseline
+    // recovery path even though it is no longer one of the four video samples.
+    return array_values( array_unique( array_merge( rhn_catalog_preview_skus(), array( '733739430700' ) ) ) );
 }
 
 function rhn_catalog_apply_preview_sample( $sku ) {
@@ -13,7 +19,7 @@ function rhn_catalog_apply_preview_sample( $sku ) {
     $product = rhn_catalog_batch_find_product( $sku );
     $entry = rhn_catalog_entry_for_product( $product );
     if ( ! $entry ) {
-        throw new RuntimeException( 'Apply the two approved Sheet rows to the staging registry first.' );
+        throw new RuntimeException( 'Apply the four approved Sheet rows to the staging registry first.' );
     }
     $baselines = (array) get_option( 'rhn_catalog_preview_baselines', array() );
     if ( ! isset( $baselines[ $sku ] ) ) {
@@ -23,6 +29,12 @@ function rhn_catalog_apply_preview_sample( $sku ) {
     $baseline = $baselines[ $sku ];
     $product->set_status( 'draft' );
     $product->set_catalog_visibility( 'hidden' );
+    if ( empty( $entry['featured_image_url'] ) && empty( $entry['gallery_image_urls'] ) ) {
+        // The Energy sample intentionally demonstrates the template's
+        // graceful no-image state. Its original media remains in the baseline.
+        $product->set_image_id( 0 );
+        $product->set_gallery_image_ids( array() );
+    }
     $product->save();
     $request = new WP_REST_Request( 'PUT', '/wc/v1/products/' . $product->get_id() );
     $request->set_body_params(
@@ -36,6 +48,17 @@ function rhn_catalog_apply_preview_sample( $sku ) {
     if ( 200 !== $response->get_status() ) {
         throw new RuntimeException( 'WooCommerce preview update did not return HTTP 200.' );
     }
+    // The synthetic REST values prove that approved Sheet content wins over a
+    // connector update. When an optional client field is still blank, do not
+    // leave the synthetic probe visible on the review page.
+    $display_product = wc_get_product( $product->get_id() );
+    if ( empty( $entry['description'] ) ) {
+        $display_product->set_description( '' );
+    }
+    if ( empty( $entry['short_description'] ) ) {
+        $display_product->set_short_description( '' );
+    }
+    $display_product->save();
     clean_post_cache( $product->get_id() );
     $actual = wc_get_product( $product->get_id() );
     $checks = rhn_catalog_batch_verify_entry( $actual, $entry, $baseline );
@@ -58,7 +81,7 @@ function rhn_catalog_apply_preview_sample( $sku ) {
 function rhn_catalog_restore_preview_samples() {
     $baselines = (array) get_option( 'rhn_catalog_preview_baselines', array() );
     $restored = array();
-    foreach ( rhn_catalog_preview_skus() as $sku ) {
+    foreach ( rhn_catalog_preview_restore_skus() as $sku ) {
         if ( isset( $baselines[ $sku ] ) ) {
             $restored[ $sku ] = rhn_catalog_batch_restore( $baselines[ $sku ] );
         }
@@ -79,29 +102,27 @@ function rhn_catalog_preview_information_panel() {
     $allergens = (string) $product->get_meta( '_rhn_allergens', true, 'edit' );
     $facts = (string) $product->get_meta( '_rhn_supplement_facts', true, 'edit' );
     $package_size = (string) $product->get_meta( '_rhn_package_size', true, 'edit' );
-    if ( '' === trim( $ingredients . $allergens . $facts ) ) {
-        return;
-    }
     $brands = taxonomy_exists( 'product_brand' ) ? wp_get_object_terms( $product->get_id(), 'product_brand', array( 'fields' => 'names' ) ) : array();
     $categories = wp_get_object_terms( $product->get_id(), 'product_cat', array( 'fields' => 'names' ) );
     $categories = is_wp_error( $categories ) ? array() : $categories;
     $weight = trim( (string) $product->get_weight( 'edit' ) );
-    $weight_label = '' === $weight ? 'Not supplied' : $weight . ' ' . get_option( 'woocommerce_weight_unit', 'oz' );
+    $brand_label = is_wp_error( $brands ) ? '' : trim( implode( ', ', $brands ) );
+    $sku = trim( (string) $product->get_sku( 'edit' ) );
     ?>
     <section class="rhn-test-product-information" aria-labelledby="rhn-test-product-information-title">
         <div class="rhn-test-product-information__notice"><strong>Staging example — test information only.</strong> This content demonstrates the approved catalog workflow and is not real product guidance.</div>
         <h2 id="rhn-test-product-information-title">Product information</h2>
         <dl class="rhn-test-product-information__summary">
-            <div><dt>Brand</dt><dd><?php echo esc_html( is_wp_error( $brands ) ? '' : implode( ', ', $brands ) ); ?></dd></div>
-            <div><dt>Package size / net contents</dt><dd><?php echo esc_html( '' === trim( $package_size ) ? 'Not supplied' : $package_size ); ?></dd></div>
-            <div><dt>Packaged shipping weight</dt><dd><?php echo esc_html( $weight_label ); ?></dd></div>
-            <div class="rhn-test-product-information__wide"><dt>Website categories</dt><dd class="rhn-test-product-information__categories"><?php if ( $categories ) : foreach ( $categories as $category ) : ?><span><?php echo esc_html( $category ); ?></span><?php endforeach; else : ?>Not assigned<?php endif; ?></dd></div>
-            <div class="rhn-test-product-information__wide"><dt>SKU / barcode</dt><dd class="rhn-test-product-information__identifier"><?php echo esc_html( $product->get_sku( 'edit' ) ); ?></dd></div>
+            <?php if ( '' !== $brand_label ) : ?><div><dt>Brand</dt><dd><?php echo esc_html( $brand_label ); ?></dd></div><?php endif; ?>
+            <?php if ( '' !== trim( $package_size ) ) : ?><div><dt>Package size / net contents</dt><dd><?php echo esc_html( $package_size ); ?></dd></div><?php endif; ?>
+            <?php if ( '' !== $weight ) : ?><div><dt>Packaged shipping weight</dt><dd><?php echo esc_html( $weight . ' ' . get_option( 'woocommerce_weight_unit', 'oz' ) ); ?></dd></div><?php endif; ?>
+            <?php if ( $categories ) : ?><div class="rhn-test-product-information__wide"><dt>Website categories</dt><dd class="rhn-test-product-information__categories"><?php foreach ( $categories as $category ) : ?><span><?php echo esc_html( $category ); ?></span><?php endforeach; ?></dd></div><?php endif; ?>
+            <?php if ( '' !== $sku ) : ?><div class="rhn-test-product-information__wide"><dt>SKU / barcode</dt><dd class="rhn-test-product-information__identifier"><?php echo esc_html( $sku ); ?></dd></div><?php endif; ?>
         </dl>
         <div class="rhn-test-product-information__grid">
-            <article><h3>Ingredients</h3><?php echo wp_kses_post( wpautop( $ingredients ) ); ?></article>
-            <article><h3>Allergen information</h3><?php echo wp_kses_post( wpautop( $allergens ) ); ?></article>
-            <article class="rhn-test-product-information__facts"><h3>Supplement Facts</h3><?php echo wp_kses_post( wpautop( $facts ) ); ?></article>
+            <?php if ( '' !== trim( $ingredients ) ) : ?><article><h3>Ingredients</h3><?php echo wp_kses_post( wpautop( $ingredients ) ); ?></article><?php endif; ?>
+            <?php if ( '' !== trim( $allergens ) ) : ?><article><h3>Allergen information</h3><?php echo wp_kses_post( wpautop( $allergens ) ); ?></article><?php endif; ?>
+            <?php if ( '' !== trim( $facts ) ) : ?><article class="rhn-test-product-information__facts"><h3>Supplement Facts</h3><?php echo wp_kses_post( wpautop( $facts ) ); ?></article><?php endif; ?>
         </div>
     </section>
     <?php
@@ -157,24 +178,24 @@ function rhn_catalog_preview_page() {
         try {
             if ( 'restore' === ( $_POST['preview_action'] ?? '' ) ) {
                 $results = rhn_catalog_restore_preview_samples();
-                $notice = 'Both staging examples restored.';
+                $notice = 'Saved staging-example baselines restored.';
             } else {
                 foreach ( rhn_catalog_preview_skus() as $sku ) {
                     $results[ $sku ] = rhn_catalog_apply_preview_sample( $sku );
                 }
-                $notice = 'Both Draft/hidden staging examples applied and verified.';
+                $notice = 'Four Draft/hidden staging examples applied and verified.';
             }
         } catch ( Throwable $error ) {
             $notice = 'Preview action stopped: ' . $error->getMessage();
         }
     }
-    echo '<div class="wrap"><h1>Two visual catalog examples</h1><p>Applies or restores NAC and Quercetin as persistent Draft/hidden staging examples. No Revel or Kosmos calls occur.</p>';
+    echo '<div class="wrap"><h1>Four visual catalog examples</h1><p>Applies or restores NAC, Parasite, Energy and Brain Mushroom Support as persistent Draft/hidden staging examples. The set covers featured image, gallery/group image, liquid content and no-image states. No Revel or Kosmos calls occur.</p>';
     if ( $notice ) {
         echo '<p role="status">' . esc_html( $notice ) . '</p>';
     }
     echo '<pre>' . esc_html( wp_json_encode( $results ? $results : get_option( 'rhn_catalog_preview_applied', array() ), JSON_PRETTY_PRINT ) ) . '</pre><form method="post">';
     wp_nonce_field( 'rhn_catalog_preview_samples' );
-    echo '<button class="button button-primary" name="preview_action" value="apply">Apply both staging examples</button> <button class="button" name="preview_action" value="restore">Restore both baselines</button></form></div>';
+    echo '<button class="button button-primary" name="preview_action" value="apply">Apply four staging examples</button> <button class="button" name="preview_action" value="restore">Restore saved baselines</button></form></div>';
 }
 
 if ( function_exists( 'add_action' ) ) {
@@ -184,7 +205,7 @@ if ( function_exists( 'add_action' ) ) {
         'admin_menu',
         function () {
             if ( rhn_catalog_presentation_enabled() ) {
-                add_management_page( 'Two visual catalog examples', 'Two visual catalog examples', 'manage_options', 'rhn-catalog-preview-samples', 'rhn_catalog_preview_page' );
+                add_management_page( 'Four visual catalog examples', 'Four visual catalog examples', 'manage_options', 'rhn-catalog-preview-samples', 'rhn_catalog_preview_page' );
             }
         }
     );
