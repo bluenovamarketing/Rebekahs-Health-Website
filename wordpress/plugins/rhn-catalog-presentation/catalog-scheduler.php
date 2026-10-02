@@ -102,8 +102,8 @@ function rhn_catalog_apply_registry_entry_to_staging( $sku ) {
     rhn_catalog_store_sheet_baseline( $product );
     $baseline = rhn_catalog_sheet_snapshot( $product );
     rhn_catalog_apply_entry_to_product( $product, null );
-    // The client-facing Online Decision is an explicit staging visibility
-    // instruction once the independent approval gate has passed. Keep this
+    // The client-facing Website Action is an explicit staging visibility
+    // instruction once Information Status is Complete. Keep this
     // here, rather than in the REST/Kosmos hook, so ordinary POS updates can
     // never publish a product by themselves.
     $product->set_status( 'publish' );

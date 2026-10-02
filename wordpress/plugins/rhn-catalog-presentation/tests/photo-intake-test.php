@@ -21,8 +21,8 @@ function photo_check( $condition, $message ) {
 }
 
 $headers = array(
-    'Review Status *',
-    'Online Decision *',
+    'Information Status *',
+    'Website Action *',
     'SKU / Barcode — READ ONLY',
     'Revel Product Name — READ ONLY',
     'Website Product Title (Optional)',

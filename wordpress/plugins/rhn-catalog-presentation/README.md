@@ -23,11 +23,11 @@ The approved catalog registry may apply:
 - ingredients, allergens, Supplement Facts, directions, and warnings;
 - SEOPress title and description.
 
-The plugin never writes to Revel. It does not create terms or change SKU, price, stock, orders, customers, payments or refunds. On the exact guarded staging installation only, a row that passes both approval gates as `Approved for Test` or `Approved` changes the matching product to Published/visible. The explicit Sheet status `Remove from Website` changes it to Draft/hidden; it never deletes a product. Re-approval restores Published/visible.
+The plugin never writes to Revel. It does not create terms or change SKU, price, stock, orders, customers, payments or refunds. On the exact guarded staging installation only, the hidden export maps the client's `Information Status = Complete` plus `Website Action = Publish` choice to `Approved`, which changes the matching product to Published/visible. No separate Blue Nova approval is required. The client's explicit `Remove from Website` action changes it to Draft/hidden; it never deletes a product. A later completed Publish choice restores Published/visible.
 
 ## Google Sheet intake
 
-`google-sheet-sync.php` reads the `Catalog!A:W` range through a Google service identity with read-only Sheets and Drive scopes. Rows whose Status is `Approved for Test` or `Approved` update website-owned fields and become Published/visible on guarded staging. The exact status `Remove from Website` is the only withdrawal instruction; ordinary working, review, or unapproved states do not alter an existing product. Preview validates without writing. Apply updates the private registry and the matching guarded staging products.
+`google-sheet-sync.php` reads the `Catalog!A:W` range through a Google service identity with read-only Sheets and Drive scopes. The client-facing Sheet calculates the hidden export status: `Complete + Publish` becomes `Approved`; `Remove from Website` remains the explicit withdrawal instruction; all other combinations remain `Not Approved`. Approved rows update website-owned fields and become Published/visible on guarded staging. Ordinary Working or undecided rows do not alter an existing product. Preview validates without writing. Apply updates the private registry and the matching guarded staging products.
 
 The permanent client-owned source is Rebekah's `Inventory sheet` (spreadsheet ID `18wuB-kfgMfKbWGV6qgHClXDjagtPPJP7XdkHlxQhF-s`). Rebekah's client-owned `Ecom media` folder is Drive folder ID `1AxIgYQFeo5ZUyFjU-CMpl8nAQ8NVpnxc`. Do not replace the authenticated setup with a public-link CSV fallback; the client-owned Sheet and media folder are intended to remain restricted.
 
