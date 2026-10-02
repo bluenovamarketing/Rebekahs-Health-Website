@@ -31,6 +31,9 @@ node_modules/
 /.tools/php-8.5.11/
 /.tools/php-8.5.11-nts-Win32-vs17-x64.zip
 /.tools/**/__pycache__/
+/.tools/package-rhn-*/
+/.tools/package-v*/
+*.inspect.ndjson
 
 # Generated WordPress release archives
 /wordpress/dist/
