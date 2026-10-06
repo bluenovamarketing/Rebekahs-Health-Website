@@ -20,10 +20,27 @@ node_modules/
 /client-handoff/website-editing-instructions/**/*-narrated.pptx
 /client-handoff/website-editing-instructions/**/*-Narration-*.wav
 
+# Training audio is generated from the retained scripts/decks and delivered through Drive.
+/client-handoff/**/audio/
+/client-handoff/**/*.wav
+/client-handoff/**/work/__pycache__/
+
 # Recreated local media/tooling dependencies
 /tools/pydeps/
 /tools/yt-dlp.exe
 /tmp/ffmpeg-extract/
+
+# Recreated local PHP/vendor test runtimes and generated deployment archives.
+/tmp/php-8.5.11-rhn-20261004/
+/tmp/flexible-shipping-usps-3.5.4-source/
+/tmp/flexible-shipping-usps.3.5.4.zip
+/tmp/rhn-catalog-presentation-*.zip
+
+# Local checkout-rate captures can contain session cookies and are reproducible.
+/tmp/usps-*-cookies.txt
+/tmp/usps-*-cart*.html
+/tmp/usps-*-pre.html
+/tmp/usps-fresh-cart*.html
 
 # Reproducible local language and media runtimes
 /.tools/catalog-video-runtime/
