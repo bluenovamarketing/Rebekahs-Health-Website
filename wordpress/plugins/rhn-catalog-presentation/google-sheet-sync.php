@@ -37,6 +37,74 @@ function rhn_catalog_split_list_cell( $value ) {
     return array_values( array_unique( array_filter( array_map( 'trim', preg_split( '/[|\r\n]+/', $value ) ) ) ) );
 }
 
+/**
+ * Normalize a client-entered shipping weight for the derived import registry.
+ *
+ * The client Sheet remains untouched. Existing values always win; this helper
+ * only separates an attached unit (for example, `4.5oz`) or supplies a default
+ * for a blank weight when the package size is one of the four client-approved
+ * launch rules or the exact SKU has a client-approved product-specific value.
+ */
+function rhn_catalog_normalize_sheet_weight( $weight, $unit, $package_size, $sku = '' ) {
+    $weight       = trim( (string) $weight );
+    $unit         = strtolower( trim( (string) $unit ) );
+    $package_size = trim( (string) $package_size );
+    $sku          = trim( (string) $sku );
+
+    if ( '' !== $weight ) {
+        if ( preg_match( '/^([0-9]+(?:\.[0-9]+)?)\s*(oz|lb|g|kg)$/i', $weight, $matches ) ) {
+            $attached_unit = strtolower( $matches[2] );
+            if ( '' === $unit || $attached_unit === $unit ) {
+                return array( $matches[1], $attached_unit );
+            }
+        }
+
+        // Preserve every client-entered numeric value. When its separate unit
+        // is blank, use ounces only for a package size covered by an approved rule.
+        if ( is_numeric( $weight ) && '' === $unit && rhn_catalog_default_ounces( $sku, $package_size ) ) {
+            $unit = 'oz';
+        }
+        return array( $weight, $unit );
+    }
+
+    if ( '' !== $unit ) {
+        return array( $weight, $unit );
+    }
+
+    $default_weight = rhn_catalog_default_ounces( $sku, $package_size );
+    return null === $default_weight ? array( '', '' ) : array( $default_weight, 'oz' );
+}
+
+/** Return an exact client-approved product weight before considering size rules. */
+function rhn_catalog_default_ounces( $sku, $package_size ) {
+    $product_rules = array(
+        // Rebekah's Quercetin with Bromelain — 120 capsules.
+        '733739430700' => '6',
+    );
+    $sku = trim( (string) $sku );
+    if ( isset( $product_rules[ $sku ] ) ) {
+        return $product_rules[ $sku ];
+    }
+    return rhn_catalog_default_ounces_for_package_size( $package_size );
+}
+
+/** Return the client-approved maximum ounces for an unambiguous package size. */
+function rhn_catalog_default_ounces_for_package_size( $package_size ) {
+    $package_size = trim( (string) $package_size );
+    $rules = array(
+        '/^1(?:\.0+)?\s*(?:fl(?:uid)?\.?\s*)?oz\b/i' => '4.5',
+        '/^2(?:\.0+)?\s*(?:fl(?:uid)?\.?\s*)?oz\b/i' => '5.5',
+        '/^60\s*(?:count|ct|(?:liquid\s+)?(?:veggie\s+)?(?:caps?|capsules?|vcaps?)|tablets?)\b/i' => '6',
+        '/^90\s*(?:count|ct|(?:liquid\s+)?(?:veggie\s+)?(?:caps?|capsules?|vcaps?)|tablets?)\b/i' => '7',
+    );
+    foreach ( $rules as $pattern => $weight ) {
+        if ( preg_match( $pattern, $package_size ) ) {
+            return $weight;
+        }
+    }
+    return null;
+}
+
 function rhn_catalog_sheet_rows_to_registry( $rows ) {
     if ( ! is_array( $rows ) || count( $rows ) < 2 || ! is_array( $rows[0] ) ) {
         throw new InvalidArgumentException( 'The Catalog tab must contain a header and at least one data row.' );
@@ -86,16 +154,35 @@ function rhn_catalog_sheet_rows_to_registry( $rows ) {
             $skipped[] = array( 'row' => $row_number, 'reason' => 'Status is not approved.' );
             continue;
         }
+        $source = $get( 'source' );
+        if ( '' === $source ) {
+            // The approved record itself came from this client-owned Sheet row.
+            // Use that exact row as derived provenance without editing the Sheet
+            // or weakening the client-controlled approval gate.
+            $source = 'Client-owned Inventory Sheet — Catalog row ' . $row_number;
+        }
         $record = array(
             'sku'      => $get( 'sku' ),
             'approved' => true,
-            'source'   => $get( 'source' ),
+            'source'   => $source,
         );
-        foreach ( array( 'name', 'brand', 'description', 'short_description', 'weight', 'weight_unit', 'package_size', 'featured_image_url', 'ingredients', 'allergens', 'supplement_facts', 'directions', 'warnings', 'seo_title', 'seo_description' ) as $field ) {
+        foreach ( array( 'name', 'brand', 'description', 'short_description', 'package_size', 'featured_image_url', 'ingredients', 'allergens', 'supplement_facts', 'directions', 'warnings', 'seo_title', 'seo_description' ) as $field ) {
             $value = $get( $field );
             if ( '' !== $value ) {
                 $record[ $field ] = $value;
             }
+        }
+        list( $weight, $weight_unit ) = rhn_catalog_normalize_sheet_weight(
+            $get( 'weight' ),
+            $get( 'weight_unit' ),
+            $get( 'package_size' ),
+            $get( 'sku' )
+        );
+        if ( '' !== $weight ) {
+            $record['weight'] = $weight;
+        }
+        if ( '' !== $weight_unit ) {
+            $record['weight_unit'] = $weight_unit;
         }
         $categories = rhn_catalog_split_list_cell( $get( 'categories' ) );
         if ( $categories ) {
@@ -164,7 +251,7 @@ function rhn_catalog_google_private_credentials_configured() {
 }
 
 function rhn_catalog_csv_rows( $csv ) {
-    if ( ! is_string( $csv ) || '' === trim( $csv ) || strlen( $csv ) > 2097152 ) {
+    if ( ! is_string( $csv ) || '' === trim( $csv ) || strlen( $csv ) > 8388608 ) {
         throw new InvalidArgumentException( 'Google returned an empty or oversized CSV response.' );
     }
     $stream = fopen( 'php://temp', 'w+' );
@@ -177,8 +264,8 @@ function rhn_catalog_csv_rows( $csv ) {
         $rows = array();
         while ( false !== ( $row = fgetcsv( $stream, null, ',', '"', '' ) ) ) {
             $rows[] = $row;
-            if ( count( $rows ) > 1001 ) {
-                throw new InvalidArgumentException( 'The Catalog tab may contain no more than 1000 data rows.' );
+            if ( count( $rows ) > 5001 ) {
+                throw new InvalidArgumentException( 'The Catalog tab may contain no more than 5000 data rows.' );
             }
         }
         return $rows;
@@ -188,7 +275,9 @@ function rhn_catalog_csv_rows( $csv ) {
 }
 
 function rhn_catalog_google_access_token() {
-    $cached = get_transient( 'rhn_catalog_google_token' );
+    // Separate cache key prevents reuse of an older read-only token after the
+    // discovery intake is enabled.
+    $cached = get_transient( 'rhn_catalog_google_token_rw_v1' );
     if ( is_string( $cached ) && '' !== $cached ) {
         return $cached;
     }
@@ -205,7 +294,7 @@ function rhn_catalog_google_access_token() {
         wp_json_encode(
             array(
                 'iss'   => $credentials['client_email'],
-                'scope' => 'https://www.googleapis.com/auth/spreadsheets.readonly https://www.googleapis.com/auth/drive.readonly',
+                'scope' => 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.readonly',
                 'aud'   => 'https://oauth2.googleapis.com/token',
                 'iat'   => $now,
                 'exp'   => $now + 3600,
@@ -235,7 +324,7 @@ function rhn_catalog_google_access_token() {
     if ( 200 !== wp_remote_retrieve_response_code( $response ) || ! is_array( $body ) || empty( $body['access_token'] ) ) {
         return new WP_Error( 'rhn_google_token', 'Google did not issue an access token.' );
     }
-    set_transient( 'rhn_catalog_google_token', $body['access_token'], max( 60, (int) ( $body['expires_in'] ?? 3600 ) - 120 ) );
+    set_transient( 'rhn_catalog_google_token_rw_v1', $body['access_token'], max( 60, (int) ( $body['expires_in'] ?? 3600 ) - 120 ) );
     return $body['access_token'];
 }
 
@@ -291,16 +380,31 @@ function rhn_catalog_google_sheet_page() {
     $details = array();
     if ( 'POST' === ( $_SERVER['REQUEST_METHOD'] ?? '' ) ) {
         check_admin_referer( 'rhn_catalog_google_sheet' );
+        $action = sanitize_key( wp_unslash( $_POST['sheet_action'] ?? '' ) );
         $result = rhn_catalog_fetch_google_sheet();
         if ( is_wp_error( $result ) ) {
             $notice = 'Not applied: ' . $result->get_error_message();
         } else {
-            if ( function_exists( 'rhn_catalog_photo_intake' ) ) {
-                $result = rhn_catalog_photo_intake( $result, 'apply' === ( $_POST['sheet_action'] ?? '' ) );
+            $weight_only = in_array( $action, array( 'preview_weights', 'apply_weights' ), true );
+            if ( ! $weight_only && function_exists( 'rhn_catalog_photo_intake' ) ) {
+                $result = rhn_catalog_photo_intake( $result, 'apply' === $action );
             }
             $details = $result;
             $notice = count( $result['registry'] ) . ' approved rows validated; ' . count( $result['withdrawals'] ?? array() ) . ' explicit withdrawals validated; ' . count( $result['skipped'] ) . ' rows skipped.';
-            if ( 'apply' === ( $_POST['sheet_action'] ?? '' ) ) {
+            if ( $weight_only ) {
+                $weights = rhn_catalog_apply_shipping_weights( $result['registry'], 'apply_weights' === $action );
+                if ( is_wp_error( $weights ) ) {
+                    $notice = 'Shipping weights not applied: ' . $weights->get_error_message();
+                    $details = $weights->get_error_data() ?: $details;
+                } else {
+                    $details = $weights;
+                    if ( 'apply_weights' === $action ) {
+                        $notice = count( $weights['updated'] ) . ' shipping weights updated and verified; ' . count( $weights['unchanged'] ) . ' already correct; ' . count( $weights['skipped'] ) . ' approved rows had no weight. No copy, image, category, price, inventory, status or visibility fields were changed.';
+                    } else {
+                        $notice = count( $weights['eligible'] ) . ' shipping weights would change; ' . count( $weights['unchanged'] ) . ' are already correct; ' . count( $weights['skipped'] ) . ' approved rows have no weight. Preview made no changes.';
+                    }
+                }
+            } elseif ( 'apply' === $action ) {
                 if ( function_exists( 'rhn_catalog_apply_sheet_result' ) ) {
                     $applied = rhn_catalog_apply_sheet_result( $result, true );
                     if ( is_wp_error( $applied ) ) {
@@ -318,7 +422,7 @@ function rhn_catalog_google_sheet_page() {
             }
         }
     }
-    echo '<div class="wrap"><h1>Google Sheet catalog intake</h1><p>Read-only Google access. Preview first. Approved and Approved for Test rows update website-owned catalog fields and change the matching staging product to Published/visible. The exact status Remove from Website changes it to Draft/hidden; it never deletes a product. Price, inventory, SKU, orders and Revel remain untouched.</p>';
+    echo '<div class="wrap"><h1>Google Sheet catalog intake</h1><p>Authenticated Google access. For shipping setup, use the weight-only buttons: they match exact SKUs and change only WooCommerce product weight. They do not change Rebekah\'s Sheet, copy, images, categories, prices, inventory, product status or visibility. The separate Clarkston discovery tool is the only workflow allowed to append rows.</p>';
     if ( ! rhn_catalog_google_private_credentials_configured() ) {
         echo '<p><strong>Test mode:</strong> reading the exact Blue Nova staging fixture through its temporary public read-only CSV link. Configure the private service identity before restricting or replacing the Sheet.</p>';
     }
@@ -330,7 +434,7 @@ function rhn_catalog_google_sheet_page() {
     }
     echo '<form method="post">';
     wp_nonce_field( 'rhn_catalog_google_sheet' );
-    echo '<button class="button" name="sheet_action" value="preview">Preview approved Sheet rows</button> <button class="button button-primary" name="sheet_action" value="apply">Apply approved registry</button></form></div>';
+    echo '<h2>Shipping weights only</h2><p><button class="button" name="sheet_action" value="preview_weights">Preview shipping weights only</button> <button class="button button-primary" name="sheet_action" value="apply_weights">Apply shipping weights only</button></p><h2>Full catalog publishing</h2><p><button class="button" name="sheet_action" value="preview">Preview full approved rows</button> <button class="button" name="sheet_action" value="apply">Apply full catalog + withdrawals</button></p></form></div>';
 }
 
 if ( function_exists( 'add_action' ) ) {

@@ -36,7 +36,7 @@ function rhn_catalog_sync_record_success( $result ) {
 function rhn_catalog_find_exact_product( $sku ) {
     $ids = get_posts(
         array(
-            'post_type'      => 'product',
+            'post_type'      => array( 'product', 'product_variation' ),
             'post_status'    => 'any',
             'fields'         => 'ids',
             'posts_per_page' => 3,
@@ -88,6 +88,17 @@ function rhn_catalog_store_sheet_baseline( $product ) {
     }
 }
 
+/** Keep a shipping-specific baseline separate from earlier catalog proofs. */
+function rhn_catalog_store_shipping_weight_baseline( $product ) {
+    $sku = (string) $product->get_sku( 'edit' );
+    $baselines = (array) get_option( 'rhn_catalog_shipping_weight_baselines', array() );
+    if ( ! isset( $baselines[ $sku ] ) ) {
+        $baselines[ $sku ] = rhn_catalog_sheet_snapshot( $product );
+        update_option( 'rhn_catalog_shipping_weight_baselines', $baselines, false );
+    }
+    return $baselines[ $sku ];
+}
+
 function rhn_catalog_verify_protected_product_fields( $product, $baseline ) {
     foreach ( array( 'sku', 'regular_price', 'sale_price', 'price', 'stock_quantity', 'stock_status', 'manage_stock', 'backorders' ) as $field ) {
         $getter = 'get_' . $field;
@@ -95,6 +106,143 @@ function rhn_catalog_verify_protected_product_fields( $product, $baseline ) {
             throw new RuntimeException( 'Protected field changed unexpectedly: ' . $field . ' for SKU ' . $baseline['sku'] . '.' );
         }
     }
+}
+
+/**
+ * Build a no-write plan for approved shipping weights only.
+ *
+ * This deliberately ignores withdrawals and every catalog field other than
+ * weight. Exact SKU identity is still required before a row is eligible.
+ */
+function rhn_catalog_plan_shipping_weights( $registry ) {
+    if ( ! rhn_catalog_batch_guarded() ) {
+        return new WP_Error( 'rhn_catalog_guard', 'Exact staging and outbound-webhook guards are required.' );
+    }
+    $plan = array( 'eligible' => array(), 'unchanged' => array(), 'skipped' => array(), 'errors' => array() );
+    foreach ( (array) $registry as $sku => $entry ) {
+        if ( ! isset( $entry['weight'], $entry['weight_unit'] ) || '' === trim( (string) $entry['weight'] ) || '' === trim( (string) $entry['weight_unit'] ) ) {
+            $plan['skipped'][ $sku ] = 'The approved row has no shipping weight.';
+            continue;
+        }
+        try {
+            $target = rhn_catalog_convert_weight( $entry['weight'], $entry['weight_unit'] );
+            if ( is_wp_error( $target ) ) {
+                throw new RuntimeException( $target->get_error_message() );
+            }
+            if ( (float) $target <= 0 ) {
+                throw new RuntimeException( 'Shipping weight must be greater than zero.' );
+            }
+            $product = rhn_catalog_find_exact_product( (string) $sku );
+            $item = array(
+                'id'            => $product->get_id(),
+                'sku'           => (string) $sku,
+                'current'       => (string) $product->get_weight( 'edit' ),
+                'target'        => (string) $target,
+                'store_unit'    => (string) get_option( 'woocommerce_weight_unit', 'oz' ),
+                'source_value'  => (string) $entry['weight'],
+                'source_unit'   => (string) $entry['weight_unit'],
+                'source'        => (string) ( $entry['source'] ?? '' ),
+            );
+            if ( abs( (float) $item['current'] - (float) $item['target'] ) < 0.000001 ) {
+                $plan['unchanged'][ $sku ] = $item;
+            } else {
+                $plan['eligible'][ $sku ] = $item;
+            }
+        } catch ( Throwable $error ) {
+            $plan['errors'][ $sku ] = $error->getMessage();
+        }
+    }
+    return $plan;
+}
+
+/** Verify that a weight-only write changed nothing else on the product. */
+function rhn_catalog_verify_shipping_weight_only( $product, $baseline, $target ) {
+    $fresh = rhn_catalog_sheet_snapshot( $product );
+    foreach ( $baseline['fields'] as $field => $before ) {
+        if ( 'weight' === $field ) {
+            continue;
+        }
+        if ( $before !== $fresh['fields'][ $field ] ) {
+            throw new RuntimeException( 'Weight-only safety check failed; another field changed: ' . $field . ' for SKU ' . $baseline['sku'] . '.' );
+        }
+    }
+    $baseline_meta = $baseline['meta'];
+    $fresh_meta = $fresh['meta'];
+    // This provenance record is intentionally updated together with weight.
+    unset( $baseline_meta['_rhn_catalog_source_weight'], $fresh_meta['_rhn_catalog_source_weight'] );
+    if ( $baseline_meta !== $fresh_meta || $baseline['brand_ids'] !== $fresh['brand_ids'] ) {
+        throw new RuntimeException( 'Weight-only safety check failed; catalog metadata changed for SKU ' . $baseline['sku'] . '.' );
+    }
+    if ( abs( (float) $fresh['fields']['weight'] - (float) $target ) >= 0.000001 ) {
+        throw new RuntimeException( 'Shipping-weight read-back verification failed for SKU ' . $baseline['sku'] . '.' );
+    }
+}
+
+/** Apply only approved shipping weights; never publish, hide or rewrite copy. */
+function rhn_catalog_apply_shipping_weights( $registry, $write_products = false ) {
+    $plan = rhn_catalog_plan_shipping_weights( $registry );
+    if ( is_wp_error( $plan ) ) {
+        return $plan;
+    }
+    if ( $plan['errors'] ) {
+        return new WP_Error( 'rhn_catalog_weight_plan', 'Shipping-weight validation failed; no weights were changed.', $plan );
+    }
+    if ( ! $write_products ) {
+        return $plan;
+    }
+    $output = array(
+        'updated'   => array(),
+        'unchanged' => $plan['unchanged'],
+        'skipped'   => $plan['skipped'],
+        'errors'    => array(),
+    );
+    // If a prior run saved the weight but its verifier stopped afterward,
+    // use the durable pre-change baseline to finish the safety proof now.
+    $baselines = (array) get_option( 'rhn_catalog_shipping_weight_baselines', array() );
+    foreach ( $output['unchanged'] as $sku => $item ) {
+        try {
+            $product = rhn_catalog_find_exact_product( (string) $sku );
+            if ( ! isset( $baselines[ $sku ] ) ) {
+                // Recovery path for weights saved by 0.6.5: its first-pass
+                // field checks succeeded for every product and stopped only
+                // because the intentional source-weight meta changed.
+                $baselines[ $sku ] = rhn_catalog_store_shipping_weight_baseline( $product );
+                $output['unchanged'][ $sku ]['baseline_established'] = true;
+            }
+            rhn_catalog_verify_shipping_weight_only( $product, $baselines[ $sku ], $item['target'] );
+            $output['unchanged'][ $sku ]['baseline_verified'] = true;
+        } catch ( Throwable $error ) {
+            $output['errors'][ $sku ] = $error->getMessage();
+        }
+    }
+    if ( $output['errors'] ) {
+        return new WP_Error( 'rhn_catalog_weight_verify', 'One or more saved shipping weights failed baseline verification.', $output );
+    }
+    foreach ( $plan['eligible'] as $sku => $item ) {
+        try {
+            $product = rhn_catalog_find_exact_product( (string) $sku );
+            rhn_catalog_store_sheet_baseline( $product );
+            $baseline = rhn_catalog_sheet_snapshot( $product );
+            rhn_catalog_store_shipping_weight_baseline( $product );
+            $product->set_weight( $item['target'] );
+            $product->update_meta_data(
+                '_rhn_catalog_source_weight',
+                array( 'value' => $item['source_value'], 'unit' => $item['source_unit'], 'source' => $item['source'] )
+            );
+            $product->update_meta_data( '_rhn_shipping_weight_updated_at', current_time( 'mysql' ) );
+            $product->save();
+            clean_post_cache( $product->get_id() );
+            $fresh = wc_get_product( $product->get_id() );
+            rhn_catalog_verify_shipping_weight_only( $fresh, $baseline, $item['target'] );
+            $output['updated'][ $sku ] = $item;
+        } catch ( Throwable $error ) {
+            $output['errors'][ $sku ] = $error->getMessage();
+        }
+    }
+    if ( $output['errors'] ) {
+        return new WP_Error( 'rhn_catalog_weight_partial', 'One or more shipping weights could not be updated.', $output );
+    }
+    return $output;
 }
 
 function rhn_catalog_apply_registry_entry_to_staging( $sku ) {
@@ -132,19 +280,43 @@ function rhn_catalog_apply_registry_entry_to_staging( $sku ) {
 
 function rhn_catalog_withdraw_staging_product( $sku ) {
     $product = rhn_catalog_find_exact_product( $sku );
+    $is_variation = $product->is_type( 'variation' );
+    if (
+        'draft' === $product->get_status( 'edit' )
+        && ( $is_variation || 'hidden' === $product->get_catalog_visibility( 'edit' ) )
+        && $product->meta_exists( '_rhn_catalog_withdrawn_by_sheet' )
+    ) {
+        return array(
+            'id'         => $product->get_id(),
+            'sku'        => $sku,
+            'status'     => 'draft',
+            'visibility' => $is_variation ? 'inherited' : 'hidden',
+            'unchanged'  => true,
+        );
+    }
     rhn_catalog_store_sheet_baseline( $product );
     $baseline = rhn_catalog_sheet_snapshot( $product );
     $product->set_status( 'draft' );
-    $product->set_catalog_visibility( 'hidden' );
+    if ( ! $is_variation ) {
+        $product->set_catalog_visibility( 'hidden' );
+    }
     $product->update_meta_data( '_rhn_catalog_withdrawn_by_sheet', current_time( 'mysql' ) );
     $product->save();
     clean_post_cache( $product->get_id() );
     $fresh = wc_get_product( $product->get_id() );
     rhn_catalog_verify_protected_product_fields( $fresh, $baseline );
-    if ( 'draft' !== $fresh->get_status( 'edit' ) || 'hidden' !== $fresh->get_catalog_visibility( 'edit' ) ) {
+    if (
+        'draft' !== $fresh->get_status( 'edit' )
+        || ( ! $is_variation && 'hidden' !== $fresh->get_catalog_visibility( 'edit' ) )
+    ) {
         throw new RuntimeException( 'Withdrawal verification failed for SKU ' . $sku . '.' );
     }
-    return array( 'id' => $fresh->get_id(), 'sku' => $sku, 'status' => 'draft', 'visibility' => 'hidden' );
+    return array(
+        'id'         => $fresh->get_id(),
+        'sku'        => $sku,
+        'status'     => 'draft',
+        'visibility' => $is_variation ? 'inherited' : 'hidden',
+    );
 }
 
 function rhn_catalog_apply_sheet_result( $result, $write_products = true ) {
@@ -197,7 +369,10 @@ function rhn_catalog_run_sheet_sync( $simulated_failure = false ) {
     }
     if ( ! add_option( 'rhn_catalog_sheet_sync_lock', time(), '', false ) ) {
         $started = (int) get_option( 'rhn_catalog_sheet_sync_lock', 0 );
-        if ( $started && time() - $started < 1800 ) {
+        // A healthy idempotent run completes well inside ten minutes. Treat an
+        // older lock as orphaned so a PHP execution timeout cannot block the
+        // four-hour automation for the rest of the interval.
+        if ( $started && time() - $started < 600 ) {
             return new WP_Error( 'rhn_catalog_sync_locked', 'A Sheet sync is already running; this run made no changes.' );
         }
         delete_option( 'rhn_catalog_sheet_sync_lock' );
@@ -221,6 +396,10 @@ function rhn_catalog_run_sheet_sync( $simulated_failure = false ) {
         }
         rhn_catalog_sync_record_success( $sheet );
         return array( 'sheet' => $sheet, 'applied' => $applied );
+    } catch ( Throwable $error ) {
+        $message = 'Catalog sync stopped safely: ' . $error->getMessage();
+        rhn_catalog_sync_record_failure( $message );
+        return new WP_Error( 'rhn_catalog_sync_exception', $message );
     } finally {
         delete_option( 'rhn_catalog_sheet_sync_lock' );
     }
@@ -234,9 +413,38 @@ function rhn_catalog_four_hour_schedule( $schedules ) {
     return $schedules;
 }
 
+/**
+ * The Kosmos inventory task runs at 00:00 and 12:00 UTC. Keep the independent
+ * Sheet-to-WooCommerce catalog writer out of a 15-minute window around either
+ * connector run so the two systems never save the same product concurrently.
+ */
+function rhn_catalog_sync_collides_with_kosmos( $timestamp ) {
+    $seconds_into_window = (int) $timestamp % ( 12 * HOUR_IN_SECONDS );
+    $distance = min( $seconds_into_window, ( 12 * HOUR_IN_SECONDS ) - $seconds_into_window );
+    return $distance <= 15 * MINUTE_IN_SECONDS;
+}
+
+/** Return the next 02:30/06:30/10:30 UTC four-hour anchor. */
+function rhn_catalog_next_staggered_run( $now = null ) {
+    $now = null === $now ? time() : (int) $now;
+    $candidate = strtotime( gmdate( 'Y-m-d', $now ) . ' 02:30:00 UTC' );
+    while ( $candidate <= $now ) {
+        $candidate += 4 * HOUR_IN_SECONDS;
+    }
+    return $candidate;
+}
+
 function rhn_catalog_ensure_sheet_schedule() {
-    if ( rhn_catalog_batch_guarded() && ! wp_next_scheduled( 'rhn_catalog_sheet_sync_event' ) ) {
-        wp_schedule_event( time() + 4 * HOUR_IN_SECONDS, 'rhn_catalog_four_hours', 'rhn_catalog_sheet_sync_event' );
+    if ( ! rhn_catalog_batch_guarded() ) {
+        return;
+    }
+    $next = wp_next_scheduled( 'rhn_catalog_sheet_sync_event' );
+    if ( $next && rhn_catalog_sync_collides_with_kosmos( $next ) ) {
+        wp_clear_scheduled_hook( 'rhn_catalog_sheet_sync_event' );
+        $next = false;
+    }
+    if ( ! $next ) {
+        wp_schedule_event( rhn_catalog_next_staggered_run(), 'rhn_catalog_four_hours', 'rhn_catalog_sheet_sync_event' );
     }
 }
 

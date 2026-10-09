@@ -1,6 +1,14 @@
 # RHN Catalog Presentation (Staging)
 
-Current local candidate: **0.6.1**. The installed staging version must be verified after upload; do not infer deployment from this repository.
+Current local candidate: **0.8.4**. The installed staging version must be verified after upload; do not infer deployment from this repository.
+
+Version 0.8.1 makes repeated Sheet withdrawals idempotent: products already marked by the Sheet as Draft/Hidden are verified and skipped instead of being saved again. This keeps the expanded Clarkston catalog within the staging sync window while preserving the same final website state.
+
+Version 0.8.2 treats WooCommerce variations correctly during withdrawal verification. A variation is held offline by its Draft status and inherits catalog visibility from its parent; the verifier no longer expects the unsupported standalone `hidden` visibility value from variation rows.
+
+Version 0.8.3 extends the exact-SKU identity lookup to both WooCommerce product and product-variation records. The exact-one-match safeguard remains in place, so a duplicate SKU still fails closed.
+
+Version 0.8.4 keeps the independent four-hour Sheet catalog writer away from Kosmos's 00:00/12:00 UTC inventory windows. A legacy catalog event inside the 15-minute collision window is cleared and re-anchored to the next 02:30/06:30/10:30 UTC slot; safe existing schedules are preserved.
 
 This plugin keeps Kosmos responsible for POS-owned commerce data and gives Blue Nova a controlled source for website-owned catalog data.
 
@@ -27,9 +35,17 @@ The plugin never writes to Revel. It does not create terms or change SKU, price,
 
 ## Google Sheet intake
 
-`google-sheet-sync.php` reads the `Catalog!A:W` range through a Google service identity with read-only Sheets and Drive scopes. The client-facing Sheet calculates the hidden export status: `Complete + Publish` becomes `Approved`; `Remove from Website` remains the explicit withdrawal instruction; all other combinations remain `Not Approved`. Approved rows update website-owned fields and become Published/visible on guarded staging. Ordinary Working or undecided rows do not alter an existing product. Preview validates without writing. Apply updates the private registry and the matching guarded staging products.
+`google-sheet-sync.php` reads the `Catalog!A:W` range through a Google service identity. The identity requests Sheets edit scope only because `google-sheet-discovery.php` must append newly discovered Clarkston Revel products; Drive remains read-only. The client-facing Sheet calculates the hidden export status: `Complete + Publish` becomes `Approved`; `Remove from Website` remains the explicit withdrawal instruction; all other combinations remain `Not Approved`. Approved rows update website-owned fields and become Published/visible on guarded staging. Ordinary Working or undecided rows do not alter an existing product. Preview validates without writing. Apply updates the private registry and the matching guarded staging products. When an approved row has no separate `Source / Evidence` entry, the derived registry records the exact client-owned `Catalog` row as its provenance; this does not edit the Sheet or approve an unfinished row.
+
+`google-sheet-discovery.php` does not rebuild or replace the client Sheet. It preserves all existing rows and cells, accepts only exact SKU/barcode and source-name identities observed on the guarded staging WooCommerce product API, and appends missing products at the bottom of `Product Review`. Newly discovered products begin as `Working + Keep Off Website`, so they remain unavailable until the client explicitly changes them to `Publish`. A separate one-time legacy source map contains 343 current staging WooCommerce product IDs/SKUs that were independently matched by exact barcode to a direct Clarkston Revel export. Those existing products append as `Working + Remove from Website`, matching the agreed treatment for products that already exist on the website. Before use, the plugin rechecks every mapped WooCommerce ID and SKU, then performs the same atomic append and read-back verification. It extends the hidden `Catalog` formulas one-for-one and may refresh only column D (`Revel Product Name — READ ONLY`) for an existing exact barcode. Duplicate identities fail closed. The write path is disabled until the Google service identity has edit access and `rhn_catalog_discovery_write_enabled` is explicitly set to `yes`.
+
+Every new product received from the Kosmos/Revel product route is forced to Draft/hidden until the Sheet approves it. Existing products keep their current status during ordinary price or inventory updates. The plugin never sends a request to Revel.
+
+The derived import layer preserves every client-entered Sheet cell. It accepts combined client values such as `4.5oz` by separating the numeric weight and unit only in memory. When both weight fields are blank, it may supply the four client-approved future defaults from an unambiguous package-size value: 60-count `6 oz`, 90-count `7 oz`, 1-fl-oz liquid `4.5 oz`, and 2-fl-oz liquid `5.5 oz`. Rebekah's exact Quercetin with Bromelain SKU `733739430700` has its separately confirmed `6 oz` fallback. Existing values always win, and every other unmatched size, including other 120-count products, remains blank rather than being guessed.
 
 The permanent client-owned source is Rebekah's `Inventory sheet` (spreadsheet ID `18wuB-kfgMfKbWGV6qgHClXDjagtPPJP7XdkHlxQhF-s`). Rebekah's client-owned `Ecom media` folder is Drive folder ID `1AxIgYQFeo5ZUyFjU-CMpl8nAQ8NVpnxc`. Do not replace the authenticated setup with a public-link CSV fallback; the client-owned Sheet and media folder are intended to remain restricted.
+
+The authenticated CSV reader accepts up to 5,000 product rows and an 8 MiB response. This accommodates the full Clarkston review catalog while retaining a fail-closed size boundary.
 
 `Photos Uploaded?` is a one-time intake trigger. The plugin records the exact Drive folder fingerprint and matched file IDs for each SKU. A successful match is not revisited on later four-hour runs simply because unrelated files were added elsewhere in the shared folder. A prior no-match is retried only after the folder changes, allowing a newly uploaded correctly named image to be detected. Exact SKU/barcode filenames and unmistakable full product-name filenames may be attached to approved staging products; ambiguous files remain unassigned and appear in the intake digest. Existing Sheet image URLs and later client edits are never overwritten. Email delivery is disabled by default on staging; the digest remains visible to administrators until authenticated customer-facing mail is intentionally enabled.
 
@@ -45,7 +61,7 @@ The authenticated Drive path supports restricted source images. Public Google Dr
 
 ## Admin workflow
 
-1. `Tools → Google Sheet catalog intake`: preview, then apply approved rows to the registry.
+1. `Tools → Google Sheet catalog intake`: the separate shipping-weight preview/apply changes only the exact-SKU WooCommerce weight for approved rows, records a rollback baseline, reads the value back, and verifies that copy, images, categories, price, inventory, status and visibility stayed unchanged. The full catalog preview/apply remains a separate publishing workflow.
 2. `Tools → NAC catalog workflow proof`: fixed staging product 1479647 / SKU 733739401854 only. The test runs through WooCommerce `wc/v1`, verifies mapped fields and protected commerce fields, and restores the full product baseline.
 3. `Tools → 25-product staging proof`: fixed 25-product pilot only. It processes one product per AJAX request, forces Draft/hidden during the proof, verifies every mapped field and protected commerce field, and restores that product before moving to the next one.
 4. Imported test attachments are retained and detached for review. They are not permanently deleted automatically.
@@ -80,7 +96,8 @@ Current checks:
 - 17 strict registry checks pass;
 - 8 registry permission/nonce/no-write checks pass;
 - 33 field-ownership, route-policy, SEOPress, wc/v1 after-hook, and fixed-batch checks pass;
-- Google Sheet parsing tests cover approval, skipping and explicit withdrawal handling.
+- Google Sheet parsing tests cover approval, skipping, explicit withdrawal handling, non-destructive combined-weight normalization, safe future defaults and unmatched 120-count no-guess behavior.
+- 23 isolated discovery checks cover exact barcode identity, leading zeroes, append-only row construction, hidden formula extension, read-only source-name reconciliation, the verified 343-record legacy map, legacy withdrawal defaults and duplicate fail-closed behavior.
 
 These isolated checks do not replace WordPress/WooCommerce staging verification. Version 0.5.2 must be visually verified on the four exact Draft/hidden staging product previews before it is treated as the customer-facing product-information pattern.
 

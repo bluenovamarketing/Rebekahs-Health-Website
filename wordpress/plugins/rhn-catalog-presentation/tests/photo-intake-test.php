@@ -1,7 +1,27 @@
 <?php
 /** Isolated photo-intake parsing/matching tests; no Google, email or WordPress writes. */
 define( 'ABSPATH', __DIR__ );
-function get_option( $key, $default = false ) { return $default; }
+$photo_test_options = array();
+$photo_test_rows = array();
+$photo_test_files = array();
+function get_option( $key, $default = false ) {
+    global $photo_test_options;
+    return $photo_test_options[ $key ] ?? $default;
+}
+function current_time( $type ) { return '2026-10-07 12:00:00'; }
+function rhn_catalog_google_private_credentials_configured() { return true; }
+function rhn_catalog_google_sheet_id() { return 'test-sheet'; }
+function wp_safe_remote_get( $url, $args ) {
+    global $photo_test_rows, $photo_test_files;
+    $body = str_contains( $url, 'sheets.googleapis.com' )
+        ? array( 'values' => $photo_test_rows )
+        : array( 'files' => $photo_test_files );
+    return array( 'response' => array( 'code' => 200 ), 'body' => json_encode( $body ) );
+}
+function wp_remote_retrieve_body( $response ) { return $response['body']; }
+function wp_remote_retrieve_response_code( $response ) { return $response['response']['code']; }
+function add_query_arg( $parameters, $url ) { return $url; }
+function rhn_catalog_google_access_token() { return 'test-token'; }
 function remove_accents( $value ) { return $value; }
 class WP_Error {
     private $message;
@@ -64,5 +84,21 @@ photo_check( $first !== rhn_catalog_photo_folder_fingerprint( $files ), 'A chang
 photo_check( ! rhn_catalog_photo_should_process( array( 'status' => 'matched', 'folder_fingerprint' => $first ), 'different-folder-fingerprint' ), 'A completed match stays one-time when unrelated folder files change.' );
 photo_check( ! rhn_catalog_photo_should_process( array( 'status' => 'needs-review', 'folder_fingerprint' => $first ), $first ), 'An unchanged no-match is not repeated every four hours.' );
 photo_check( rhn_catalog_photo_should_process( array( 'status' => 'needs-review', 'folder_fingerprint' => $first ), 'different-folder-fingerprint' ), 'A prior no-match retries after new media arrives.' );
+
+$photo_test_rows = array( $headers, $checked );
+$photo_test_files = array(
+    array( 'id' => 'front-file', 'name' => '733739401854-front.jpg', 'mimeType' => 'image/jpeg', 'modifiedTime' => '2026-10-07T12:00:00Z' ),
+    array( 'id' => 'gallery-file', 'name' => '733739401854-ingredients.jpg', 'mimeType' => 'image/jpeg', 'modifiedTime' => '2026-10-07T12:01:00Z' ),
+);
+$intake = rhn_catalog_photo_intake(
+    array(
+        'registry' => array(
+            '733739401854' => array( 'featured_image_url' => '', 'gallery_image_urls' => array() ),
+        ),
+    ),
+    false
+);
+photo_check( ! empty( $intake['registry']['733739401854']['featured_image_url'] ), 'Matched featured-image URL persists in the returned registry.' );
+photo_check( 1 === count( $intake['registry']['733739401854']['gallery_image_urls'] ), 'Matched gallery URL persists in the returned registry.' );
 
 echo "PASS: $checks isolated photo-intake checks.\n";

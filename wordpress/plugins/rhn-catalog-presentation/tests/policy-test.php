@@ -39,8 +39,9 @@ class WP_REST_Request {
     function get_param( $key ) { return $this->params[$key] ?? null; }
 }
 class WC_Product {
-    public $values = array('name'=>'POS name','description'=>'POS description','short_description'=>'POS short','price'=>'19.00','stock'=>2,'sku'=>'00123','weight'=>'','category_ids'=>array());
+    public $values = array('name'=>'POS name','description'=>'POS description','short_description'=>'POS short','price'=>'19.00','stock'=>2,'sku'=>'00123','weight'=>'','category_ids'=>array(),'status'=>'publish','catalog_visibility'=>'visible');
     public $meta = array();
+    public $id = 12;
     public $save_calls = 0;
     function get_sku( $context ) { return $this->values['sku']; }
     function get_meta( $key, $single, $context ) { return $this->meta[$key] ?? ''; }
@@ -51,7 +52,9 @@ class WC_Product {
     function set_short_description($value) { $this->values['short_description']=$value; }
     function set_weight($value) { $this->values['weight']=$value; }
     function set_category_ids($value) { $this->values['category_ids']=$value; }
-    function get_id() { return 12; }
+    function set_status($value) { $this->values['status']=$value; }
+    function set_catalog_visibility($value) { $this->values['catalog_visibility']=$value; }
+    function get_id() { return $this->id; }
     function save() { $this->save_calls++; return 12; }
 }
 require dirname(__DIR__) . '/rhn-catalog-presentation.php';
@@ -81,10 +84,16 @@ check($p->values['description']==='','approved intentional blank');
 check($p->values['name']==='POS name','empty title cannot erase name');
 $options['rhn_catalog_presentation_overrides']['00123']['approved']=false;
 $p=rhn_catalog_presentation_before_save(new WC_Product(),$request);
-check($p->values['description']==='POS description' && $p->meta===array(),'unapproved passthrough');
+check($p->values['description']==='POS description' && $p->values['status']==='publish','unapproved existing product fields and status pass through');
+check($p->meta['_rhn_revel_product_name']==='POS name' && $p->meta['_rhn_catalog_revel_mirror']==='yes','Revel identity is retained before website approval');
 $options['rhn_catalog_presentation_overrides']=array('123'=>$approved);
 $p=rhn_catalog_presentation_before_save(new WC_Product(),$request);
 check($p->values['name']==='POS name','different barcode is not a match');
+$new_product=new WC_Product();
+$new_product->id=0;
+$p=rhn_catalog_presentation_before_save($new_product,$request,true);
+check($p->values['status']==='draft' && $p->values['catalog_visibility']==='hidden','new unapproved Revel product is quarantined pending Sheet review');
+check($p->values['price']==='19.00' && $p->values['stock']===2,'new-product quarantine preserves price and inventory');
 $options['rhn_catalog_presentation_overrides']=array('00123'=>$approved);
 $options['home']='https://rebekahspureliving.com';
 $p=rhn_catalog_presentation_before_save(new WC_Product(),$request);

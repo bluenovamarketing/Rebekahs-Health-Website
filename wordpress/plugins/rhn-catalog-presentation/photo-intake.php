@@ -233,7 +233,8 @@ function rhn_catalog_photo_intake( $result, $write_state = true ) {
         update_option( 'rhn_catalog_photo_intake_state', $state, false );
     }
 
-    foreach ( (array) ( $result['registry'] ?? array() ) as $sku => &$entry ) {
+    $registry = (array) ( $result['registry'] ?? array() );
+    foreach ( $registry as $sku => &$entry ) {
         $matched = (array) ( $state[ $sku ]['matched_files'] ?? array() );
         if ( ! $matched ) {
             continue;
@@ -247,6 +248,7 @@ function rhn_catalog_photo_intake( $result, $write_state = true ) {
         }
     }
     unset( $entry );
+    $result['registry'] = $registry;
 
     if ( $write_state && $changed ) {
         $digest = array(
