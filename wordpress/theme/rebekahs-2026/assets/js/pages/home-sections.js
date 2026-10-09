@@ -157,15 +157,6 @@
 				}
 			}
 		} );
-		const box = section?.querySelector( '.partner-box' );
-		if ( box && ! box.querySelector( '[data-injections]' ) ) {
-			const link = document.createElement( 'a' );
-			link.className = 'partner';
-			link.href = '/peptides-injectables/';
-			link.dataset.injections = 'true';
-			link.innerHTML = '<span>Shop Injections</span><span aria-hidden="true">→</span>';
-			box.appendChild( link );
-		}
 	}
 
 	mounts.forEach( ( mount ) => {

@@ -428,8 +428,19 @@ add_action( 'admin_init', 'rhn_phase_two_quarantine_existing_legacy_products', 5
 
 /** Return whether a product belongs to the pre-connection legacy quarantine. */
 function rhn_phase_two_is_quarantined_legacy_product( $product_id ) {
-	return rhn_phase_two_is_staging_host()
-		&& 'yes' === get_post_meta( (int) $product_id, '_rhn_phase_two_legacy_quarantined', true );
+	$product_id = (int) $product_id;
+	if ( ! rhn_phase_two_is_staging_host()
+		|| 'yes' !== get_post_meta( $product_id, '_rhn_phase_two_legacy_quarantined', true ) ) {
+		return false;
+	}
+
+	// A current client-owned Sheet approval deliberately publishes a matching
+	// legacy record. Preserve the historical quarantine marker for audit and
+	// rollback, but stop it from overriding that explicit approval. A later
+	// Sheet withdrawal immediately restores the quarantine behavior.
+	$published_by_sheet = '' !== (string) get_post_meta( $product_id, '_rhn_catalog_published_by_sheet', true );
+	$withdrawn_by_sheet = '' !== (string) get_post_meta( $product_id, '_rhn_catalog_withdrawn_by_sheet', true );
+	return ! $published_by_sheet || $withdrawn_by_sheet;
 }
 
 /** Quarantined records stay recoverable but never appear in the store or become purchasable. */
