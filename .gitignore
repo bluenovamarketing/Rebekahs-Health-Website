@@ -75,3 +75,28 @@ node_modules/
 /client-handoff/**/.codex-finalizer/
 /client-handoff/**/work/.deck-build/
 /client-handoff/**/work/python-packages/
+
+# Local/generated catalog exports and analysis evidence. Keep these on the
+# workstation; do not expose private catalog snapshots or generated copies in Git.
+/tmp/
+/outputs/
+/artifacts/
+/evidence/catalog/
+/client-inputs/**/*.csv
+/client-inputs/**/*.xlsx
+
+# Reproducible review renders. Retain editable scripts, decks, captions, and
+# written QA records while excluding generated frame sequences and previews.
+/output/*.png
+/client-handoff/**/qa-frames/
+/client-handoff/**/final-preview/
+/client-handoff/**/slides/
+/client-handoff/**/work/**/*.png
+/client-handoff/**/work/tmp/
+
+# Reproducible audit output and packaged WordPress release archives. Source
+# scripts and unpacked plugin directories remain eligible for version control.
+/.tools/*-result.json
+/.tools/*-preview.png
+/.tools/*.zip
+/wordpress/plugins/*.zip
