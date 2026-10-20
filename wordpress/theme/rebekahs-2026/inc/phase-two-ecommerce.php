@@ -434,6 +434,16 @@ function rhn_phase_two_is_quarantined_legacy_product( $product_id ) {
 		return false;
 	}
 
+	// The current approved catalog registry is the source of truth. Some
+	// reconciled legacy records retain their historical quarantine metadata for
+	// audit and rollback, so a stale marker must not replace approved product
+	// content with the neutral pre-catalog preview.
+	$product = function_exists( 'wc_get_product' ) ? wc_get_product( $product_id ) : null;
+	if ( $product && function_exists( 'rhn_catalog_entry_for_product' )
+		&& rhn_catalog_entry_for_product( $product ) ) {
+		return false;
+	}
+
 	// A current client-owned Sheet approval deliberately publishes a matching
 	// legacy record. Preserve the historical quarantine marker for audit and
 	// rollback, but stop it from overriding that explicit approval. A later
@@ -462,6 +472,41 @@ function rhn_phase_two_staging_preview_document_title( $title ) {
 	return $title;
 }
 add_filter( 'pre_get_document_title', 'rhn_phase_two_staging_preview_document_title', 20 );
+
+/**
+ * Prevent an obsolete catalog test title from leaking into an approved product.
+ *
+ * The approved registry remains authoritative for product content. This narrow
+ * fallback changes only a title that still contains the retired QA phrase and
+ * leaves every intentional product SEO title untouched.
+ */
+function rhn_phase_two_approved_product_document_title( $title ) {
+	if ( false === stripos( (string) $title, 'Test Example' )
+		|| ! is_singular( 'product' )
+		|| ! function_exists( 'wc_get_product' )
+		|| ! function_exists( 'rhn_catalog_entry_for_product' ) ) {
+		return $title;
+	}
+
+	$post = get_queried_object();
+	if ( ! $post instanceof WP_Post ) {
+		return $title;
+	}
+
+	$product = wc_get_product( $post->ID );
+	if ( ! $product || ! rhn_catalog_entry_for_product( $product ) ) {
+		return $title;
+	}
+
+	return sprintf(
+		/* translators: 1: product name, 2: site name. */
+		__( '%1$s - %2$s', 'rebekahs-2026' ),
+		$product->get_name(),
+		get_bloginfo( 'name' )
+	);
+}
+add_filter( 'pre_get_document_title', 'rhn_phase_two_approved_product_document_title', 999 );
+add_filter( 'seopress_titles_title', 'rhn_phase_two_approved_product_document_title', 999 );
 
 /** Keep account, cart, checkout, and internal search surfaces out of search indexes. */
 function rhn_phase_two_private_store_robots( $robots ) {

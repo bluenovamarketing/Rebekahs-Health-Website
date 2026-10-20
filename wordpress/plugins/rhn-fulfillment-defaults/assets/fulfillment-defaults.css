@@ -1,0 +1,32 @@
+.rhn-fulfillment-defaults {
+	margin: 12px 0 16px;
+	padding: 12px;
+	border: 1px solid #c3c4c7;
+	border-left: 4px solid #2271b1;
+	background: #f6f7f7;
+}
+
+.rhn-fulfillment-defaults__buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.rhn-fulfillment-defaults__status,
+.rhn-residential-note {
+	display: block;
+	margin: 8px 0 0;
+	color: #50575e;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.rhn-residential-note {
+	margin-top: 4px;
+	box-sizing: border-box;
+	flex: 0 0 100%;
+	width: 100%;
+	padding-left: 28px;
+}
+

@@ -6,7 +6,7 @@ define( 'MINUTE_IN_SECONDS', 60 );
 $options = array();
 function get_option( $key, $default = false ) { global $options; return $options[ $key ] ?? $default; }
 function update_option( $key, $value, $autoload = null ) { global $options; $options[ $key ] = $value; return true; }
-function current_time( $type ) { return '2026-10-02 12:00:00'; }
+function current_time( $type, $gmt = false ) { return 'timestamp' === $type ? strtotime( '2026-10-02 12:00:00 UTC' ) : '2026-10-02 12:00:00'; }
 function get_posts( $args ) { $GLOBALS['scheduler_get_posts_args'] = $args; return array( 55 ); }
 function wc_get_product( $id ) { return $GLOBALS['scheduler_product']; }
 function clean_post_cache( $id ) {}
@@ -27,7 +27,11 @@ class Scheduler_Product {
         'stock_status' => 'instock', 'manage_stock' => true, 'backorders' => 'no',
         'sku' => '733739401854', 'status' => 'draft', 'catalog_visibility' => 'hidden',
     );
-    private $meta = array();
+    private $meta = array(
+        '_rhn_kosmos_source_stock' => 8,
+        '_rhn_kosmos_buffered_stock' => 7,
+        '_rhn_kosmos_last_inventory_success_gmt' => '2026-10-02T11:00:00+00:00',
+    );
     private $save_count = 0;
     private $type = 'simple';
     function __construct( $type = 'simple' ) {
@@ -44,6 +48,8 @@ class Scheduler_Product {
     function get_meta( $key, $single = true, $context = 'view' ) { return $this->meta[ $key ] ?? ''; }
     function update_meta_data( $key, $value ) { $this->meta[ $key ] = $value; }
     function delete_meta_data( $key ) { unset( $this->meta[ $key ] ); }
+    function set_test_meta( $key, $value ) { $this->meta[ $key ] = $value; }
+    function set_test_value( $key, $value ) { $this->values[ $key ] = $value; }
     function set_name( $value ) { $this->values['name'] = $value; }
     function set_status( $value ) { $this->values['status'] = $value; }
     function set_catalog_visibility( $value ) { $this->values['catalog_visibility'] = $value; }
@@ -90,6 +96,26 @@ scheduler_check( 'visible' === $scheduler_product->get_catalog_visibility( 'edit
 $republished = rhn_catalog_apply_registry_entry_to_staging( '733739401854' );
 scheduler_check( 'publish' === $republished['status'] && 'visible' === $republished['visibility'], 'Re-approval restores Published/visible.' );
 scheduler_check( '' === $scheduler_product->get_meta( '_rhn_catalog_withdrawn_by_sheet', true, 'edit' ), 'Re-approval clears the withdrawal marker.' );
+
+$scheduler_product = new Scheduler_Product();
+$scheduler_product->set_test_meta( '_rhn_kosmos_last_inventory_success_gmt', '2026-10-01T23:00:00+00:00' );
+try {
+    rhn_catalog_apply_registry_entry_to_staging( '733739401854' );
+    scheduler_check( false, 'A stale protected inventory receipt must hold publication.' );
+} catch ( RuntimeException $error ) {
+    scheduler_check( false !== strpos( $error->getMessage(), 'older than six hours' ), 'A stale protected inventory receipt holds publication with a specific reason.' );
+    scheduler_check( 'draft' === $scheduler_product->get_status( 'edit' ) && 'hidden' === $scheduler_product->get_catalog_visibility( 'edit' ), 'A stale inventory receipt leaves the product draft and hidden.' );
+}
+
+$scheduler_product = new Scheduler_Product();
+$scheduler_product->set_test_value( 'stock_quantity', 8 );
+try {
+    rhn_catalog_apply_registry_entry_to_staging( '733739401854' );
+    scheduler_check( false, 'An unbuffered inventory value must hold publication.' );
+} catch ( RuntimeException $error ) {
+    scheduler_check( false !== strpos( $error->getMessage(), 'does not match the protected one-unit buffer' ), 'An unbuffered value holds publication with a specific reason.' );
+    scheduler_check( 'draft' === $scheduler_product->get_status( 'edit' ) && 'hidden' === $scheduler_product->get_catalog_visibility( 'edit' ), 'An unbuffered value leaves the product draft and hidden.' );
+}
 
 $scheduler_product = new Scheduler_Product();
 $registry = array(

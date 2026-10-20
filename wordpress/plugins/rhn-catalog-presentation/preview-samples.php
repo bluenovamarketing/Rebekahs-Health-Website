@@ -110,7 +110,6 @@ function rhn_catalog_preview_information_panel() {
     $sku = trim( (string) $product->get_sku( 'edit' ) );
     ?>
     <section class="rhn-test-product-information" aria-labelledby="rhn-test-product-information-title">
-        <div class="rhn-test-product-information__notice"><strong>Staging example — test information only.</strong> This content demonstrates the approved catalog workflow and is not real product guidance.</div>
         <h2 id="rhn-test-product-information-title">Product information</h2>
         <dl class="rhn-test-product-information__summary">
             <?php if ( '' !== $brand_label ) : ?><div><dt>Brand</dt><dd><?php echo esc_html( $brand_label ); ?></dd></div><?php endif; ?>
@@ -147,7 +146,6 @@ function rhn_catalog_preview_styles() {
     ?>
     <style>
     .rhn-test-product-information{max-width:1180px;margin:2.25rem auto;padding:clamp(1rem,3vw,2rem);background:#f8f5ec;border:1px solid #ded4bd;border-radius:18px;color:#173f34}
-    .rhn-test-product-information__notice{margin:-.25rem 0 1.5rem;padding:.8rem 1rem;background:#fff4cc;border-left:4px solid #c18c18;border-radius:6px;color:#5d4510}
     .rhn-test-product-description{margin-top:1.1rem}.rhn-test-product-description h3{margin:0 0 .7rem;color:#174c3c;font-size:1.15rem}.rhn-test-product-description>p:first-of-type{margin-top:0}
     .rhn-test-product-information h2{margin:0 0 1.25rem;font-size:clamp(1.7rem,3vw,2.35rem)}
     .rhn-test-product-information__summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:0 0 1.5rem}

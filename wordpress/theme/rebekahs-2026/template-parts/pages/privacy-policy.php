@@ -7,7 +7,7 @@
         <span class="eyebrow">Privacy at Rebekah’s</span>
         <h1>Clear information. <em>Respectful choices.</em></h1>
         <p class="lead">This policy explains what information may be collected through rebekahspureliving.com, why it is used and the choices available to you.</p>
-        <div class="hero-meta"><span>Draft updated: August 4, 2026</span><span>Qualified legal review required</span></div>
+        <div class="hero-meta"><span>Updated: October 19, 2026</span><span>Ecommerce practices included</span></div>
         <div class="hero-actions"><a class="button primary" href="#policy">Read the policy</a><a class="button outline" href="#contact">Privacy questions</a></div>
       </div>
     </header>
@@ -50,6 +50,15 @@
             <h3>Media uploads</h3>
             <p>If visitors are permitted to upload images, they should avoid uploading images with embedded location data (EXIF GPS). Other visitors may be able to download and extract location data from publicly available images.</p>
 
+            <h3>Orders and optional customer accounts</h3>
+            <p>When you place an order or create an optional account, the Website may collect your contact details, billing and shipping addresses, order contents, account credentials, transaction status, customer notes, IP address, device or browser information, and related fraud-prevention or security data. Rebekah’s uses this information to process and fulfill orders, provide account and customer service, prevent misuse, keep required business records, and comply with legal obligations.</p>
+
+            <h3>Payments</h3>
+            <p>Onsite payments are processed through WooPayments and its payment partner, Stripe. Rebekah’s Website may receive transaction identifiers, authorization or failure status, card type, and limited card details such as the last four digits. Full card details are handled through secure tokenization and are not stored as ordinary order fields on Rebekah’s Website.</p>
+
+            <h3>Shipping and fulfillment</h3>
+            <p>Rebekah’s may share the information needed to quote, purchase, track and support a shipment with USPS and the approved WooCommerce shipping-rate technology. This may include the delivery address, package dimensions and weight, selected service, tracking information, and order reference.</p>
+
           </section>
 
           <section id="cookies">
@@ -71,13 +80,15 @@
           <section id="sharing">
             <h2>Who we share information with</h2>
             <p>Visitor comments may be checked through an automated spam-detection service. Information submitted through website forms may also be handled by the service providers that deliver, secure or store those submissions on Rebekah’s behalf.</p>
-            <p>Rebekah’s should identify each active provider and the purpose for which information is shared before this draft is published.</p>
+            <p>WooCommerce operates the onsite storefront and stores order and optional-account records on Rebekah’s Website. WooPayments and Stripe process onsite payments. USPS and the approved shipping-rate technology receive the limited information needed to quote and support shipping.</p>
+            <p>Kosmos may transfer approved product, price and inventory information from Rebekah’s Revel system to WooCommerce. At launch, customer, order, refund and other WooCommerce data are not written back to Revel through this connection.</p>
           </section>
 
           <section id="retention">
             <h2>How long we retain information</h2>
             <p>If you leave a comment, the comment and its metadata are retained indefinitely so the site can recognize and approve follow-up comments automatically instead of holding them in a moderation queue.</p>
             <p>For users who register on the website, if any, the site stores the personal information provided in their user profile. Users can see, edit or delete their personal information at any time, except they cannot change their username. Website administrators can also see and edit that information.</p>
+            <p>Order and account information is retained for the time reasonably needed for fulfillment, customer service, accounting, tax, fraud prevention, warranty or return handling, dispute resolution, and legal obligations.</p>
           </section>
 
           <section id="rights">
@@ -88,8 +99,7 @@
 
           <section id="security">
             <h2>How we protect information</h2>
-            <p>Rebekah’s should describe the administrative, technical and organizational safeguards that are actually used to protect website information. No method of transmission or storage can be guaranteed to be completely secure.</p>
-            <p>The final policy should also document verified procedures for handling a data incident and whether automated decision-making or profiling is used.</p>
+            <p>Rebekah’s and its service providers use administrative, technical and organizational safeguards appropriate to the information handled, including access controls, encrypted transport, software maintenance, backups, monitoring and payment tokenization. No method of transmission or storage can be guaranteed to be completely secure.</p>
           </section>
 
           <section id="contact">

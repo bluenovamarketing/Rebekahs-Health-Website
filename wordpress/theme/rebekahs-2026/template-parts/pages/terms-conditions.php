@@ -7,7 +7,7 @@
         <span class="eyebrow">Website terms</span>
         <h1>Use this website with <em>clarity.</em></h1>
         <p class="lead">These terms explain the rules for using rebekahspureliving.com, its wellness education, store information, external shopping links and referral resources.</p>
-        <div class="hero-meta"><span>Draft updated: August 4, 2026</span><span>Qualified legal review required</span></div>
+        <div class="hero-meta"><span>Updated: October 19, 2026</span><span>Ecommerce terms approved for implementation</span></div>
         <div class="hero-actions"><a class="button primary" href="#terms">Read the terms</a><a class="button outline" href="#contact">Questions about these terms</a></div>
       </div>
     </header>
@@ -22,7 +22,7 @@
             <li><a href="#wellness">Wellness disclaimer</a></li>
             <li><a href="#practitioners">Practitioner listings</a></li>
             <li><a href="#external">External links &amp; referrals</a></li>
-            <li><a href="#purchases">Purchases &amp; returns</a></li>
+            <li><a href="#purchases">Purchases, payment &amp; returns</a></li>
             <li><a href="#acceptable-use">Acceptable use</a></li>
             <li><a href="#intellectual-property">Intellectual property</a></li>
             <li><a href="#submissions">Messages &amp; submissions</a></li>
@@ -69,9 +69,12 @@
           </section>
 
           <section id="purchases">
-            <h2>6. Purchases, shipping and returns</h2>
-            <p>This redesign does not currently include an onsite cart or checkout. Purchases initiated through an external provider are agreements between you and that provider and are governed by its checkout terms and policies.</p>
-            <p>Products purchased directly from a Rebekah’s store or through a Rebekah’s-managed ordering channel are subject to the purchase, shipping and return terms provided at the time of sale. Review the separate <a href="<?php echo esc_url( home_url( '/refund_returns/' ) ); ?>">Refund &amp; Returns Policy</a> and contact the applicable store with questions.</p>
+            <h2>6. Purchases, payment, shipping and returns</h2>
+            <p>Rebekah’s may sell eligible products directly through the Website. By submitting an order, you offer to purchase the products shown in the order review at the displayed prices, taxes and shipping charges. An automated acknowledgement does not guarantee acceptance.</p>
+            <p>Rebekah’s may decline or cancel an order because of availability, pricing or description errors, suspected fraud, shipping restrictions, payment issues or other lawful reasons. If payment was collected for a canceled order, the applicable amount will be returned through the original payment method.</p>
+            <p>Product availability, prices, promotions and descriptions may change. Rebekah’s may correct an error before accepting or fulfilling an order. Backorders are not accepted unless Rebekah’s later states otherwise.</p>
+            <p>Online orders are limited to the shipping locations and delivery methods stated in the <a href="<?php echo esc_url( home_url( '/refund_returns/' ) ); ?>#shipping">Shipping</a> and <a href="<?php echo esc_url( home_url( '/refund_returns/' ) ); ?>">Refund &amp; Returns Policy</a>. Customers must provide accurate billing, contact and delivery information. Returns, cancellations, damaged items and refunds are governed by that policy and any additional terms displayed during checkout.</p>
+            <p>The Website also links to external shopping or referral providers, including Fullscript, Designs for Health and other services. Purchases completed on an external provider’s website remain agreements with that provider and are governed by its prices, checkout, shipping, returns, privacy practices and terms.</p>
           </section>
 
           <section id="acceptable-use">
@@ -103,6 +106,7 @@
 
           <section id="disclaimers">
             <h2>10. Disclaimers and limitation of liability</h2>
+            <p>Product descriptions, label images, ingredients, directions, warnings, availability, packaging and manufacturer statements may change. Before using a product, review the current label and packaging supplied with it. Website information is not a substitute for those materials or for advice from an appropriate healthcare professional.</p>
             <p>To the fullest extent permitted by law, the Website and its content are provided “as is” and “as available,” without warranties of any kind, express or implied. We do not warrant that the Website will always be available, error-free, secure or complete.</p>
             <p>To the fullest extent permitted by law, Rebekah’s and its owners, team members and representatives will not be liable for indirect, incidental, special, consequential, exemplary or punitive damages, or for loss arising from use of or inability to use the Website, reliance on its content, or interaction with a third-party resource.</p>
             <p>Some jurisdictions do not allow certain warranty exclusions or liability limitations, so some provisions may not apply to you. Nothing in these terms excludes rights or liability that cannot legally be excluded.</p>

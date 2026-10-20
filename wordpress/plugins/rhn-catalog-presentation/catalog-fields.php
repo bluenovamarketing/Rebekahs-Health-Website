@@ -235,6 +235,9 @@ function rhn_catalog_import_image( $url, $product_id ) {
 
 function rhn_catalog_after_save( $product, $request = null, $creating = false ) {
     static $running = false;
+    if ( $request instanceof WP_REST_Request && function_exists( 'rhn_kosmos_firewall_get_attribute' ) && rhn_kosmos_firewall_get_attribute( $request, 'rhn_kosmos_mode' ) ) {
+        return;
+    }
     if ( ! $product instanceof WC_Product && is_object( $product ) && isset( $product->ID ) ) {
         $product = wc_get_product( (int) $product->ID );
     }

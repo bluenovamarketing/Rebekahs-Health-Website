@@ -33,10 +33,13 @@ function clean_post_cache( $id ) { $GLOBALS['cleaned_post_ids'][]=$id; }
 class WP_REST_Request {
     public $params;
     public $route;
+	public $attributes = array();
     function __construct( $params, $route = '/wc/v1/products/12' ) { $this->params=$params; $this->route=$route; }
     function get_route() { return $this->route; }
     function has_param( $key ) { return array_key_exists($key,$this->params); }
     function get_param( $key ) { return $this->params[$key] ?? null; }
+	function get_attributes() { return $this->attributes; }
+	function set_attributes( $attributes ) { $this->attributes = $attributes; }
 }
 class WC_Product {
     public $values = array('name'=>'POS name','description'=>'POS description','short_description'=>'POS short','price'=>'19.00','stock'=>2,'sku'=>'00123','weight'=>'','category_ids'=>array(),'status'=>'publish','catalog_visibility'=>'visible');

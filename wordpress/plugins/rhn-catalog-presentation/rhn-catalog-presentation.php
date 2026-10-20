@@ -2,7 +2,7 @@
 /**
  * Plugin Name: RHN Catalog Presentation (Staging)
  * Description: Applies approved barcode-keyed website copy without blocking retail price or stock updates.
- * Version: 0.8.4
+ * Version: 0.8.6
  */
 defined( 'ABSPATH' ) || exit;
 
@@ -14,6 +14,12 @@ function rhn_catalog_presentation_enabled() {
 /** Unknown or unapproved products pass through without invented content. */
 function rhn_catalog_presentation_before_save( $product, $request, $creating = false ) {
     if ( ! rhn_catalog_presentation_enabled() || ! ( $product instanceof WC_Product ) || ! ( $request instanceof WP_REST_Request ) ) {
+        return $product;
+    }
+
+    // The staging Kosmos firewall has already reduced this request to approved
+    // operational fields. Do not reapply any website presentation fields.
+    if ( function_exists( 'rhn_kosmos_firewall_get_attribute' ) && rhn_kosmos_firewall_get_attribute( $request, 'rhn_kosmos_mode' ) ) {
         return $product;
     }
     if ( ! preg_match( '#^/wc/v[123]/products(?:/\d+)?$#', $request->get_route() ) ) {
@@ -47,6 +53,11 @@ require_once __DIR__ . '/nac-proof.php';
 require_once __DIR__ . '/batch-proof.php';
 require_once __DIR__ . '/catalog-scheduler.php';
 require_once __DIR__ . '/preview-samples.php';
+$rhn_kosmos_firewall_path = __DIR__ . '/kosmos-operational-firewall.php';
+if ( ! is_readable( $rhn_kosmos_firewall_path ) ) {
+    $rhn_kosmos_firewall_path = dirname( __DIR__ ) . '/rhn-kosmos-operational-firewall/rhn-kosmos-operational-firewall.php';
+}
+require_once $rhn_kosmos_firewall_path;
 
 // Kosmos was observed using wc/v1, which has a different hook from v2/v3.
 add_filter( 'woocommerce_rest_pre_insert_product', 'rhn_catalog_presentation_before_save', 100, 2 );

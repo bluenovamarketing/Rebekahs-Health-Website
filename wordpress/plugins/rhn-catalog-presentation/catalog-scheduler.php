@@ -245,11 +245,58 @@ function rhn_catalog_apply_shipping_weights( $registry, $write_products = false 
     return $output;
 }
 
+/**
+ * Prevent a draft/hidden product from becoming public with legacy or stale
+ * inventory. Existing public products continue to receive catalog-only updates;
+ * the gate applies only to a publish transition.
+ */
+function rhn_catalog_require_current_buffered_inventory_for_publish( $product, $sku ) {
+    if ( 'publish' === $product->get_status( 'edit' ) && 'visible' === $product->get_catalog_visibility( 'edit' ) ) {
+        return;
+    }
+
+    $source_key   = '_rhn_kosmos_source_stock';
+    $buffered_key = '_rhn_kosmos_buffered_stock';
+    $success_key  = '_rhn_kosmos_last_inventory_success_gmt';
+    foreach ( array( $source_key, $buffered_key, $success_key ) as $key ) {
+        if ( ! $product->meta_exists( $key ) || '' === (string) $product->get_meta( $key, true, 'edit' ) ) {
+            throw new RuntimeException( 'Publish held for SKU ' . $sku . ': a protected Kosmos inventory receipt is required first.' );
+        }
+    }
+
+    $source   = $product->get_meta( $source_key, true, 'edit' );
+    $buffered = $product->get_meta( $buffered_key, true, 'edit' );
+    if ( ! is_numeric( $source ) || ! is_numeric( $buffered ) ) {
+        throw new RuntimeException( 'Publish held for SKU ' . $sku . ': protected inventory provenance is invalid.' );
+    }
+    $source   = max( 0, (float) $source );
+    $buffered = max( 0, (float) $buffered );
+    $expected = max( 0, $source - 1 );
+    $actual   = max( 0, (float) $product->get_stock_quantity( 'edit' ) );
+    $status   = (string) $product->get_stock_status( 'edit' );
+    if (
+        abs( $buffered - $expected ) > 0.00001
+        || abs( $actual - $expected ) > 0.00001
+        || ! $product->get_manage_stock( 'edit' )
+        || 'no' !== (string) $product->get_backorders( 'edit' )
+        || ( $expected > 0 ? 'instock' !== $status : 'outofstock' !== $status )
+    ) {
+        throw new RuntimeException( 'Publish held for SKU ' . $sku . ': staging inventory does not match the protected one-unit buffer.' );
+    }
+
+    $success_at = strtotime( (string) $product->get_meta( $success_key, true, 'edit' ) );
+    $now        = (int) current_time( 'timestamp', true );
+    if ( ! $success_at || ! $now || $success_at > $now + 300 || $success_at < $now - ( 6 * HOUR_IN_SECONDS ) ) {
+        throw new RuntimeException( 'Publish held for SKU ' . $sku . ': the protected inventory receipt is older than six hours.' );
+    }
+}
+
 function rhn_catalog_apply_registry_entry_to_staging( $sku ) {
     $product = rhn_catalog_find_exact_product( $sku );
     rhn_catalog_store_sheet_baseline( $product );
     $baseline = rhn_catalog_sheet_snapshot( $product );
     rhn_catalog_apply_entry_to_product( $product, null );
+    rhn_catalog_require_current_buffered_inventory_for_publish( $product, $sku );
     // The client-facing Website Action is an explicit staging visibility
     // instruction once Information Status is Complete. Keep this
     // here, rather than in the REST/Kosmos hook, so ordinary POS updates can

@@ -10,6 +10,21 @@ function rhn_catalog_discovery_write_enabled() {
     return 'yes' === (string) get_option( 'rhn_catalog_discovery_write_enabled', 'no' );
 }
 
+function rhn_catalog_pending_discovery_ids() {
+    return array_values(
+        array_unique(
+            array_filter(
+                array_map( 'absint', (array) get_option( 'rhn_catalog_pending_discovery_ids', array() ) )
+            )
+        )
+    );
+}
+
+function rhn_catalog_set_pending_discovery_ids( $ids ) {
+    $ids = array_values( array_unique( array_filter( array_map( 'absint', (array) $ids ) ) ) );
+    update_option( 'rhn_catalog_pending_discovery_ids', $ids, false );
+}
+
 /** Validate current Sheet rows and build an idempotent no-write discovery plan. */
 function rhn_catalog_discovery_plan( $products, $rows ) {
     $plan = array(
@@ -144,6 +159,24 @@ function rhn_catalog_collect_revel_products() {
             continue;
         }
         $sku = trim( (string) $product->get_sku( 'edit' ) );
+        $name = trim( (string) $product->get_meta( '_rhn_revel_product_name', true, 'edit' ) );
+        if ( '' === $sku || '' === $name ) {
+            continue;
+        }
+        $products[] = array( 'id' => (int) $id, 'sku' => $sku, 'name' => $name );
+    }
+    return $products;
+}
+
+/** Collect only newly quarantined product IDs awaiting Sheet discovery. */
+function rhn_catalog_collect_pending_revel_products() {
+    $products = array();
+    foreach ( rhn_catalog_pending_discovery_ids() as $id ) {
+        $product = wc_get_product( $id );
+        if ( ! $product || 'yes' !== (string) $product->get_meta( '_rhn_catalog_revel_mirror', true, 'edit' ) ) {
+            continue;
+        }
+        $sku  = trim( (string) $product->get_sku( 'edit' ) );
         $name = trim( (string) $product->get_meta( '_rhn_revel_product_name', true, 'edit' ) );
         if ( '' === $sku || '' === $name ) {
             continue;
@@ -354,6 +387,54 @@ function rhn_catalog_discovery_apply_requests( $requests ) {
     return $body;
 }
 
+/** Prove the configured service identity has edit scope without changing cells. */
+function rhn_catalog_discovery_check_edit_access() {
+    $token = rhn_catalog_google_access_token();
+    if ( is_wp_error( $token ) ) {
+        return $token;
+    }
+	$spreadsheet_url = 'https://sheets.googleapis.com/v4/spreadsheets/' . rawurlencode( rhn_catalog_google_sheet_id() ) . '?fields=properties.title';
+	$spreadsheet_response = wp_safe_remote_get( $spreadsheet_url, array( 'timeout' => 20, 'headers' => array( 'Authorization' => 'Bearer ' . $token ) ) );
+	if ( is_wp_error( $spreadsheet_response ) ) {
+		return $spreadsheet_response;
+	}
+	$spreadsheet_body = json_decode( wp_remote_retrieve_body( $spreadsheet_response ), true );
+	$title = is_array( $spreadsheet_body ) ? (string) ( $spreadsheet_body['properties']['title'] ?? '' ) : '';
+	if ( 200 !== (int) wp_remote_retrieve_response_code( $spreadsheet_response ) || '' === $title ) {
+		return new WP_Error( 'rhn_discovery_edit_access', 'Google Sheet identity could not be read before the edit-scope check. No Sheet cells were changed.' );
+	}
+
+	$url = 'https://sheets.googleapis.com/v4/spreadsheets/' . rawurlencode( rhn_catalog_google_sheet_id() ) . ':batchUpdate';
+    $response = wp_safe_remote_post(
+        $url,
+        array(
+            'timeout' => 30,
+            'headers' => array( 'Authorization' => 'Bearer ' . $token, 'Content-Type' => 'application/json' ),
+			'body'    => wp_json_encode(
+				array(
+					'requests' => array(
+						array(
+							'updateSpreadsheetProperties' => array(
+								'properties' => array( 'title' => $title ),
+								'fields'     => 'title',
+							),
+						),
+					),
+					'includeSpreadsheetInResponse' => false,
+				)
+			),
+        )
+    );
+    if ( is_wp_error( $response ) ) {
+        return $response;
+    }
+    $code = (int) wp_remote_retrieve_response_code( $response );
+    if ( 200 !== $code ) {
+        return new WP_Error( 'rhn_discovery_edit_access', 'Google Sheet edit-scope check failed (HTTP ' . $code . '). No Sheet cells were changed.' );
+    }
+    return true;
+}
+
 /** Preview or apply the Clarkston Revel mirror reconciliation. */
 function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
     if ( ! rhn_catalog_batch_guarded() || ! rhn_catalog_google_private_credentials_configured() ) {
@@ -380,6 +461,9 @@ function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
         if ( 'legacy' === $source ) {
             $products = rhn_catalog_collect_legacy_revel_products();
             $new_action = 'Remove from Website';
+        } elseif ( 'queue' === $source ) {
+            $products = rhn_catalog_collect_pending_revel_products();
+            $new_action = 'Keep Off Website';
         } else {
             $products = rhn_catalog_collect_revel_products();
             $new_action = 'Keep Off Website';
@@ -392,9 +476,16 @@ function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
             return new WP_Error( 'rhn_discovery_plan', 'Product discovery found duplicate or invalid identities; the Sheet was not changed.', $plan );
         }
         $result = array( 'write' => false, 'plan' => $plan );
-        if ( ! $write || ( ! $plan['new'] && ! $plan['name_updates'] ) ) {
+        if ( ! $write ) {
             return $result;
         }
+		if ( ! $plan['new'] && ! $plan['name_updates'] ) {
+			if ( 'queue' === $source ) {
+				$processed_ids = array_map( static function ( $product ) { return (int) ( $product['id'] ?? 0 ); }, $products );
+				rhn_catalog_set_pending_discovery_ids( array_diff( rhn_catalog_pending_discovery_ids(), $processed_ids ) );
+			}
+			return $result;
+		}
 
         $catalog_rows = rhn_catalog_google_sheet_values( 'Catalog!A:W' );
         $metadata = rhn_catalog_discovery_sheet_metadata();
@@ -422,6 +513,10 @@ function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
         $result['write'] = true;
         $result['verified'] = true;
         $result['request_count'] = count( $requests );
+		if ( 'queue' === $source ) {
+			$processed_ids = array_map( static function ( $product ) { return (int) ( $product['id'] ?? 0 ); }, $products );
+			rhn_catalog_set_pending_discovery_ids( array_diff( rhn_catalog_pending_discovery_ids(), $processed_ids ) );
+		}
         update_option(
             'rhn_catalog_discovery_health',
             array(
@@ -441,7 +536,17 @@ function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
 
 /** Queue one consolidated Sheet intake after a Kosmos product batch. */
 function rhn_catalog_queue_discovery_after_rest_save( $product, $request = null, $creating = false ) {
-    if ( ! rhn_catalog_discovery_write_enabled() || ! $request instanceof WP_REST_Request || ! preg_match( '#^/wc/v[123]/products(?:/\d+)?$#', $request->get_route() ) || ! $request->has_param( 'name' ) ) {
+    if ( ! $product instanceof WC_Product || ! $request instanceof WP_REST_Request || ! preg_match( '#^/wc/v[123]/products(?:/\d+)?$#', $request->get_route() ) || ! $request->has_param( 'name' ) ) {
+        return;
+    }
+    $mode = function_exists( 'rhn_kosmos_firewall_get_attribute' ) ? (string) rhn_kosmos_firewall_get_attribute( $request, 'rhn_kosmos_mode' ) : '';
+    if ( 'quarantine-create' !== $mode || 'yes' !== (string) $product->get_meta( '_rhn_catalog_pending_sheet_review', true, 'edit' ) ) {
+        return;
+    }
+    $pending   = rhn_catalog_pending_discovery_ids();
+    $pending[] = (int) $product->get_id();
+    rhn_catalog_set_pending_discovery_ids( $pending );
+    if ( ! rhn_catalog_discovery_write_enabled() ) {
         return;
     }
     if ( ! wp_next_scheduled( 'rhn_catalog_sheet_discovery_event' ) ) {
@@ -451,7 +556,20 @@ function rhn_catalog_queue_discovery_after_rest_save( $product, $request = null,
 
 function rhn_catalog_run_scheduled_discovery() {
     if ( rhn_catalog_discovery_write_enabled() ) {
-        rhn_catalog_run_discovery( true );
+		$result = rhn_catalog_run_discovery( true, 'queue' );
+		if ( is_wp_error( $result ) ) {
+			update_option(
+				'rhn_catalog_discovery_health',
+				array(
+					'last_failure' => current_time( 'mysql' ),
+					'error_code'   => $result->get_error_code(),
+					'error'        => $result->get_error_message(),
+					'pending_ids'  => rhn_catalog_pending_discovery_ids(),
+				),
+				false
+			);
+			error_log( 'RHN catalog discovery failed: ' . $result->get_error_code() . ' - ' . $result->get_error_message() );
+		}
     }
 }
 
