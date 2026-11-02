@@ -49,8 +49,13 @@ function rhn_theme_asset( $path ) {
 	return trailingslashit( get_template_directory_uri() ) . 'assets/' . ltrim( $path, '/' );
 }
 
-// Load the dormant Phase Two ecommerce module. The module exits immediately
-// unless RHN_PHASE_TWO_ECOMMERCE_ENABLED is explicitly set to true on staging.
+// Phase Two ecommerce is the approved production storefront as of launch.
+// Define the flag here when the environment has not provided an explicit value.
+if ( ! defined( 'RHN_PHASE_TWO_ECOMMERCE_ENABLED' ) ) {
+	define( 'RHN_PHASE_TWO_ECOMMERCE_ENABLED', true );
+}
+
+// Load the Phase Two ecommerce module.
 $rhn_phase_two_ecommerce_module = get_template_directory() . '/inc/phase-two-ecommerce.php';
 if ( file_exists( $rhn_phase_two_ecommerce_module ) ) {
 	require_once $rhn_phase_two_ecommerce_module;
@@ -342,6 +347,28 @@ add_filter( 'seopress_titles_desc', 'rhn_events_archive_seo_description', 99 );
 add_filter( 'seopress_social_fb_desc', 'rhn_events_archive_seo_description', 99 );
 add_filter( 'seopress_social_twitter_desc', 'rhn_events_archive_seo_description', 99 );
 
+/** Keep the WooCommerce shop archive search preview complete and consistent. */
+function rhn_shop_archive_seo_title( $title ) {
+	if ( function_exists( 'is_shop' ) && is_shop() ) {
+		return "Shop Supplements Online | Rebekah's Health & Nutrition";
+	}
+	return $title;
+}
+add_filter( 'pre_get_document_title', 'rhn_shop_archive_seo_title', 999 );
+add_filter( 'seopress_titles_title', 'rhn_shop_archive_seo_title', 999 );
+add_filter( 'seopress_social_fb_title', 'rhn_shop_archive_seo_title', 999 );
+add_filter( 'seopress_social_twitter_title', 'rhn_shop_archive_seo_title', 999 );
+
+function rhn_shop_archive_seo_description( $description ) {
+	if ( function_exists( 'is_shop' ) && is_shop() ) {
+		return "Shop Rebekah's approved supplements online, with current availability from four Michigan health and nutrition stores.";
+	}
+	return $description;
+}
+add_filter( 'seopress_titles_desc', 'rhn_shop_archive_seo_description', 999 );
+add_filter( 'seopress_social_fb_desc', 'rhn_shop_archive_seo_description', 999 );
+add_filter( 'seopress_social_twitter_desc', 'rhn_shop_archive_seo_description', 999 );
+
 /** Approved page-level SEO copy for the assembled Phase One pages. */
 function rhn_page_seo_copy() {
 	return array(
@@ -632,7 +659,8 @@ function rhn_seed_required_pages() {
 			$locations = get_page_by_path( 'locations' );
 			$parent_id = $locations ? $locations->ID : 0;
 		}
-		$existing = get_page_by_path( $slug );
+		$lookup_path = $parent_id ? 'locations/' . $slug : $slug;
+		$existing    = get_page_by_path( $lookup_path, OBJECT, 'page' );
 		if ( $existing ) {
 			if ( 'publish' !== $existing->post_status || (int) $existing->post_parent !== (int) $parent_id ) {
 				wp_update_post( array(
@@ -691,6 +719,30 @@ function rhn_run_schema_migrations() {
 	update_option( 'rhn_theme_schema_version', $schema_version, false );
 }
 add_action( 'init', 'rhn_run_schema_migrations', 20 );
+
+/**
+ * Permanently consolidate legacy numbered store-page URLs into the four
+ * canonical location pages. The expression is deliberately narrow so other
+ * nested pages and ordinary numeric slugs are unaffected.
+ */
+function rhn_redirect_legacy_numbered_location_pages() {
+	if ( is_admin() || wp_doing_ajax() ) {
+		return;
+	}
+
+	$request_path = isset( $_SERVER['REQUEST_URI'] )
+		? (string) wp_parse_url( wp_unslash( $_SERVER['REQUEST_URI'] ), PHP_URL_PATH )
+		: '';
+	$request_path = trim( $request_path, '/' );
+
+	if ( ! preg_match( '#^locations/(lapeer|grand-blanc|clarkston|lake-orion)-[0-9]+$#', $request_path, $matches ) ) {
+		return;
+	}
+
+	wp_safe_redirect( home_url( '/locations/' . $matches[1] . '/' ), 301, 'Rebekahs-Legacy-Location' );
+	exit;
+}
+add_action( 'template_redirect', 'rhn_redirect_legacy_numbered_location_pages', 1 );
 
 function rhn_disable_commerce_during_phase_one( $items, $args ) {
 	return $items;

@@ -36,7 +36,7 @@
             <h2>Our Return Policy</h2>
             <h3 id="before-returning-a-product">Before Returning&nbsp; a Product</h3>
             <p>Please help a small business avoid loss by researching a product thoroughly before your purchase. This will help to ensure you don’t waste money on a product you may not need and it helps to keep our costs (and prices!!) affordable.</p>
-            <p>Before mailing an online-order return, contact Rebekah’s at <a href="tel:+12488432011">(248) 843-2011</a> or <a href="mailto:clarkstonpurchaser@rebekahspureliving.com">clarkstonpurchaser@rebekahspureliving.com</a> so the team can confirm eligibility and provide the Clarkston return address and instructions. Include the online order number and proof of purchase.</p>
+            <p>Before mailing an online-order return, contact Rebekah’s at <a href="tel:+12488432011">(248) 843-2011</a> so the team can confirm eligibility and provide the Clarkston return address and instructions. Include the online order number and proof of purchase.</p>
 
             <h3 id="returns">Returns</h3>
             <p>You have 30 days to return an item from the date you received it.</p>
@@ -57,7 +57,7 @@
             <h3 id="shipping">Shipping</h3>
             <p>Online orders are prepared at Rebekah’s Clarkston location. Please allow up to two business days for packing before shipment. Carrier transit time begins after USPS accepts the package and is separate from Rebekah’s handling time.</p>
             <p>At launch, online shipping is available only to eligible street addresses in the 48 contiguous United States and the District of Columbia. Rebekah’s does not ship online orders to PO boxes, Alaska, Hawaii, U.S. territories or international destinations.</p>
-            <p>At launch, eligible orders are offered USPS Ground Advantage during checkout. Available charges are calculated using the delivery address, eligible products, cart weight and configured packing method. Rates and transit estimates come from USPS, may change and are not guaranteed delivery dates.</p>
+            <p>At launch, eligible orders are offered USPS Priority Mail during checkout. Available charges are calculated using the delivery address, eligible products, cart weight and configured packing method. Rates and transit estimates come from USPS, may change and are not guaranteed delivery dates.</p>
             <p>Customers are responsible for entering a complete deliverable street address. Rebekah’s is not responsible for delays or additional carrier charges caused by an incorrect or incomplete address, except where applicable law requires otherwise.</p>
           </section>
         </article>

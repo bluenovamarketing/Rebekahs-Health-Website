@@ -54,6 +54,91 @@
     if (results) results.classList.add('processing');
   }));
 
+  // WooCommerce Blocks can select Pickup when it is the only rate available
+  // before a new shopper enters an address. Default a new checkout tab to Ship,
+  // then preserve any delivery choice the shopper deliberately makes.
+  const deliveryChoiceKey = 'rhnCheckoutDeliveryChoice';
+  let applyingShipDefault = false;
+  let deliveryRefreshTimer = 0;
+
+  const refreshCheckoutForDeliveryRules = () => {
+    if (deliveryRefreshTimer) return;
+    deliveryRefreshTimer = window.setTimeout(() => window.location.reload(), 1400);
+  };
+
+  const deliveryControlFor = (target) => {
+    if (!(target instanceof Element)) return null;
+    const control = target.closest('input[type="radio"],[role="radio"]');
+    return control instanceof HTMLElement ? control : null;
+  };
+
+  const deliveryChoiceFor = (target) => {
+    const input = deliveryControlFor(target);
+    if (!input) return '';
+    const id = input.id || '';
+    const label = id ? document.querySelector(`label[for="${CSS.escape(id)}"]`) : null;
+    const text = (input.getAttribute('aria-label') || label?.textContent || input.textContent || input.parentElement?.textContent || '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (/^Ship(?:\s|$)/i.test(text)) return 'ship';
+    if (/^Pickup(?:\s|$)/i.test(text)) return 'pickup';
+    return '';
+  };
+
+  const savedDeliveryChoice = () => {
+    try {
+      return window.sessionStorage.getItem(deliveryChoiceKey) || '';
+    } catch (error) {
+      return '';
+    }
+  };
+
+  const saveDeliveryChoice = (choice) => {
+    try {
+      window.sessionStorage.setItem(deliveryChoiceKey, choice);
+    } catch (error) {
+      // Checkout still works when browser storage is unavailable.
+    }
+  };
+
+  const deliveryRadios = () => Array.from(document.querySelectorAll('input[type="radio"],[role="radio"]'))
+    .map((input) => ({ input, choice: deliveryChoiceFor(input) }))
+    .filter(({ choice }) => choice);
+
+  const deliveryRadioIsChecked = (input) => input instanceof HTMLInputElement
+    ? input.checked
+    : input.getAttribute('aria-checked') === 'true';
+
+  const applyShipDefault = () => {
+    if (savedDeliveryChoice()) return;
+    const radios = deliveryRadios();
+    const ship = radios.find(({ choice }) => choice === 'ship')?.input;
+    const pickup = radios.find(({ choice }) => choice === 'pickup')?.input;
+    if (!ship || !pickup || deliveryRadioIsChecked(ship) || !deliveryRadioIsChecked(pickup)) return;
+
+    applyingShipDefault = true;
+    ship.click();
+    refreshCheckoutForDeliveryRules();
+    window.requestAnimationFrame(() => { applyingShipDefault = false; });
+  };
+
+  if (document.body.classList.contains('woocommerce-checkout')) {
+    const rememberDeliveryChoice = (event) => {
+      if (applyingShipDefault || !event.isTrusted) return;
+      const choice = deliveryChoiceFor(event.target);
+      if (choice) {
+        saveDeliveryChoice(choice);
+        refreshCheckoutForDeliveryRules();
+      }
+    };
+    document.addEventListener('click', rememberDeliveryChoice, true);
+    document.addEventListener('change', rememberDeliveryChoice, true);
+
+    const checkoutObserver = new MutationObserver(applyShipDefault);
+    checkoutObserver.observe(document.body, { childList: true, subtree: true });
+    [0, 250, 1000, 2500].forEach((delay) => window.setTimeout(applyShipDefault, delay));
+  }
+
   const drawer = document.querySelector('[data-rhn-filter-drawer]');
   const openers = Array.from(document.querySelectorAll('[data-rhn-filter-open]'));
   if (!drawer || openers.length === 0) return;

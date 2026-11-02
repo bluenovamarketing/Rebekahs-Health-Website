@@ -21,27 +21,6 @@ $rhn_home_posts      = get_posts(
 		'ignore_sticky_posts' => true,
 	)
 );
-$rhn_home_featured_products = array();
-if ( function_exists( 'wc_get_products' ) ) {
-	$rhn_home_featured_products = wc_get_products(
-		array(
-			'limit'    => 4,
-			'status'   => 'publish',
-			'featured' => true,
-		)
-	);
-
-	if ( count( $rhn_home_featured_products ) < 4 ) {
-		$rhn_home_featured_products = wc_get_products(
-			array(
-				'limit'   => 4,
-				'status'  => 'publish',
-				'orderby' => 'date',
-				'order'   => 'DESC',
-			)
-		);
-	}
-}
 ?>
 <main id="main">
     <section class="hero" data-mock-section="2">
@@ -52,41 +31,6 @@ if ( function_exists( 'wc_get_products' ) ) {
     </section>
 
     <div class="original-section-mount mount-pathway" id="pathway" data-source-section="pathway" data-mock-section="3" aria-label="Expert guidance pathways"></div>
-
-    <section class="phase-two-shop rhn-home-commerce section" id="online-store" data-mock-section="3b" aria-labelledby="online-store-title">
-      <div class="phase-shop-wrap">
-        <div class="phase-shop-heading">
-          <div><span class="kicker">Rebekah's Online Store</span><h2 id="online-store-title">Shop wellness essentials with the guidance you already trust.</h2></div>
-          <div class="phase-shop-cta"><div class="phase-shop-actions"><a class="pill phase-shop-primary" href="<?php echo esc_url( home_url( '/shop/' ) ); ?>">Shop All Products</a><a class="text-link" href="<?php echo esc_url( home_url( '/shop/' ) ); ?>">Browse by category →</a></div></div>
-        </div>
-        <div class="phase-shop-paths" aria-label="Online shopping paths">
-          <a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>"><span class="phase-path-image" aria-hidden="true"></span><span class="phase-path-copy"><strong>Shop All Products</strong><small>Explore supplements, natural products and everyday wellness essentials.</small></span></a>
-          <a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>"><span class="phase-path-image" aria-hidden="true"></span><span class="phase-path-copy"><strong>Shop by Category</strong><small>Browse vitamins, herbs, healthy foods, body care and more.</small></span></a>
-          <a href="tel:12488432011"><span class="phase-path-image" aria-hidden="true"></span><span class="phase-path-copy"><strong>Ask Rebekah's Team</strong><small>Call (248) 843-2011 for friendly product guidance.</small></span></a>
-        </div>
-        <div class="phase-featured-head"><div><span class="kicker">Featured Products</span><h3>Wellness favorites thoughtfully selected.</h3></div></div>
-        <?php if ( $rhn_home_featured_products ) : ?>
-          <div class="phase-product-grid">
-            <?php foreach ( $rhn_home_featured_products as $rhn_home_product ) : ?>
-              <?php
-				$rhn_product_categories = wc_get_product_category_list( $rhn_home_product->get_id(), ', ' );
-				$rhn_product_action_url = $rhn_home_product->is_type( 'simple' ) && $rhn_home_product->is_purchasable() ? $rhn_home_product->add_to_cart_url() : $rhn_home_product->get_permalink();
-				$rhn_product_action     = $rhn_home_product->is_type( 'simple' ) && $rhn_home_product->is_purchasable() ? $rhn_home_product->add_to_cart_text() : __( 'View product', 'rebekahs-2026' );
-				?>
-              <article class="phase-product">
-                <a class="phase-product-image" href="<?php echo esc_url( $rhn_home_product->get_permalink() ); ?>"><?php echo wp_kses_post( $rhn_home_product->get_image( 'woocommerce_thumbnail' ) ); ?></a>
-                <?php if ( $rhn_product_categories ) : ?><p><?php echo wp_kses_post( $rhn_product_categories ); ?></p><?php endif; ?>
-                <h4><a href="<?php echo esc_url( $rhn_home_product->get_permalink() ); ?>"><?php echo esc_html( $rhn_home_product->get_name() ); ?></a></h4>
-                <b><?php echo wp_kses_post( $rhn_home_product->get_price_html() ); ?></b>
-                <a class="phase-product-action" href="<?php echo esc_url( $rhn_product_action_url ); ?>"><?php echo esc_html( $rhn_product_action ); ?></a>
-              </article>
-            <?php endforeach; ?>
-          </div>
-        <?php else : ?>
-          <div class="phase-product-pending" role="status"><strong>Featured products are being prepared.</strong><span>The approved layout is ready, and products will populate here after the catalog connection is completed.</span></div>
-        <?php endif; ?>
-      </div>
-    </section>
 
     <section class="intro section" data-mock-section="4">
       <div class="intro-media"><div class="intro-photo-frame"><img src="<?php echo esc_url( rhn_theme_asset( 'output/homepage/private-label-bottles-leveled-v1.png' ) ); ?>" alt="Level rows of Rebekah's private-label supplements in amber glass bottles"></div><span>Purity · Potency · Price</span></div>

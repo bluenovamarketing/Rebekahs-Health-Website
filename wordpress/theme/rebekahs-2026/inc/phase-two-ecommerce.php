@@ -100,6 +100,24 @@ function rhn_phase_two_selected_store_filters( $key ) {
 	return array_values( array_unique( array_filter( array_map( 'sanitize_title', $raw ) ) ) );
 }
 
+/** Return brand terms that are actually assigned to published products. */
+function rhn_phase_two_published_brand_terms() {
+	if ( ! taxonomy_exists( 'product_brand' ) ) {
+		return array();
+	}
+
+	$terms = get_terms(
+		array(
+			'taxonomy'   => 'product_brand',
+			'hide_empty' => true,
+			'orderby'    => 'name',
+			'order'      => 'ASC',
+		)
+	);
+
+	return is_wp_error( $terms ) ? array() : $terms;
+}
+
 /** Apply the approved brand and wellness filters to the real WooCommerce catalog. */
 function rhn_phase_two_filter_catalog_query( $query ) {
 	if ( is_admin() || ! $query->is_main_query() || ! class_exists( 'WooCommerce' ) ) {
@@ -151,6 +169,7 @@ function rhn_phase_two_shop_url( $args = array() ) {
 /** Render one copy of the approved catalog filters. */
 function rhn_phase_two_catalog_filters() {
 	$terms     = rhn_phase_two_store_terms();
+	$brand_terms = rhn_phase_two_published_brand_terms();
 	$brands    = rhn_phase_two_selected_store_filters( 'filter_brand' );
 	$wellness  = rhn_phase_two_selected_store_filters( 'filter_wellness' );
 	$search    = isset( $_GET['s'] ) ? sanitize_text_field( wp_unslash( $_GET['s'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
@@ -161,22 +180,24 @@ function rhn_phase_two_catalog_filters() {
 			<h2><?php esc_html_e( 'Filter Products', 'rebekahs-2026' ); ?></h2>
 			<a href="<?php echo esc_url( rhn_phase_two_shop_url() ); ?>"><?php esc_html_e( 'Clear', 'rebekahs-2026' ); ?></a>
 		</div>
-		<details class="rhn-filter-group" open>
-			<summary><span><?php esc_html_e( 'Brands', 'rebekahs-2026' ); ?></span><span><?php echo esc_html( count( $terms['brands'] ) ); ?></span></summary>
-			<div class="rhn-filter-options">
-				<?php foreach ( $terms['brands'] as $name ) : $slug = sanitize_title( $name ); ?>
-					<label><input type="checkbox" name="filter_brand[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $brands, true ) ); ?>><?php echo esc_html( $name ); ?></label>
-				<?php endforeach; ?>
-			</div>
-		</details>
 		<details class="rhn-filter-group">
-			<summary><span><?php esc_html_e( 'Wellness Categories', 'rebekahs-2026' ); ?></span><span><?php echo esc_html( count( $terms['wellness'] ) ); ?></span></summary>
+			<summary><span><?php esc_html_e( 'Wellness Categories', 'rebekahs-2026' ); ?></span><span class="rhn-filter-summary-meta"><span><?php echo esc_html( count( $terms['wellness'] ) ); ?></span><span class="rhn-filter-toggle-indicator" aria-hidden="true"></span></span></summary>
 			<div class="rhn-filter-options">
 				<?php foreach ( $terms['wellness'] as $name ) : $slug = sanitize_title( $name ); ?>
 					<label><input type="checkbox" name="filter_wellness[]" value="<?php echo esc_attr( $slug ); ?>" <?php checked( in_array( $slug, $wellness, true ) ); ?>><?php echo esc_html( $name ); ?></label>
 				<?php endforeach; ?>
 			</div>
 		</details>
+		<?php if ( $brand_terms ) : ?>
+			<details class="rhn-filter-group">
+				<summary><span><?php esc_html_e( 'Brands', 'rebekahs-2026' ); ?></span><span class="rhn-filter-summary-meta"><span><?php echo esc_html( count( $brand_terms ) ); ?></span><span class="rhn-filter-toggle-indicator" aria-hidden="true"></span></span></summary>
+				<div class="rhn-filter-options">
+					<?php foreach ( $brand_terms as $brand_term ) : ?>
+						<label><input type="checkbox" name="filter_brand[]" value="<?php echo esc_attr( $brand_term->slug ); ?>" <?php checked( in_array( $brand_term->slug, $brands, true ) ); ?>><?php echo esc_html( $brand_term->name ); ?></label>
+					<?php endforeach; ?>
+				</div>
+			</details>
+		<?php endif; ?>
 		<?php if ( $search ) : ?><input type="hidden" name="s" value="<?php echo esc_attr( $search ); ?>"><input type="hidden" name="post_type" value="product"><?php endif; ?>
 		<?php if ( $orderby ) : ?><input type="hidden" name="orderby" value="<?php echo esc_attr( $orderby ); ?>"><?php endif; ?>
 		<button class="rhn-button" type="submit"><?php esc_html_e( 'Apply Filters', 'rebekahs-2026' ); ?></button>
@@ -212,6 +233,33 @@ function rhn_phase_two_enqueue_commerce_assets() {
 			filemtime( $js_path ),
 			true
 		);
+	}
+
+	if ( function_exists( 'is_checkout' ) && is_checkout() && wp_script_is( 'wc-settings', 'registered' ) ) {
+		$checkout_field_rules = <<<'JS'
+if (window.wcSettings && window.wcSettings.defaultFields) {
+	const shipOnly = {
+		type: 'object',
+		properties: {
+			cart: {
+				properties: {
+					prefers_collection: { const: false }
+				}
+			}
+		}
+	};
+	['country', 'address_1', 'city', 'state', 'postcode'].forEach((key) => {
+		if (window.wcSettings.defaultFields[key]) {
+			window.wcSettings.defaultFields[key].required = shipOnly;
+		}
+	});
+	if (window.wcSettings.defaultFields.phone) {
+		window.wcSettings.defaultFields.phone.required = true;
+		window.wcSettings.defaultFields.phone.hidden = false;
+	}
+}
+JS;
+		wp_add_inline_script( 'wc-settings', $checkout_field_rules, 'after' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rhn_phase_two_enqueue_commerce_assets', 30 );
@@ -527,6 +575,58 @@ add_filter( 'woocommerce_product_variation_get_backorders', function() { return 
 add_filter( 'woocommerce_product_reviews_enabled', '__return_false' );
 add_filter( 'woocommerce_return_to_shop_text', function() { return __( 'Return to Online Store', 'rebekahs-2026' ); } );
 
+/** Return whether the current WooCommerce session has selected a pickup rate. */
+function rhn_phase_two_cart_prefers_pickup() {
+	if ( ! function_exists( 'WC' ) || ! WC()->session ) {
+		return false;
+	}
+
+	foreach ( (array) WC()->session->get( 'chosen_shipping_methods', array() ) as $method_id ) {
+		if ( 0 === strpos( (string) $method_id, 'pickup_location:' ) || 0 === strpos( (string) $method_id, 'local_pickup:' ) ) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/** Make the server-side locale rules follow the selected delivery branch. */
+function rhn_phase_two_require_checkout_phone_by_locale( $locales ) {
+	$is_pickup = rhn_phase_two_cart_prefers_pickup();
+	foreach ( $locales as $country_code => $fields ) {
+		foreach ( array( 'country', 'address_1', 'city', 'state', 'postcode' ) as $field_key ) {
+			$locales[ $country_code ][ $field_key ] = wp_parse_args(
+				array( 'required' => ! $is_pickup ),
+				isset( $fields[ $field_key ] ) && is_array( $fields[ $field_key ] ) ? $fields[ $field_key ] : array()
+			);
+		}
+
+		$locales[ $country_code ]['phone'] = wp_parse_args(
+			array(
+				'hidden'   => false,
+				'required' => true,
+			),
+			isset( $fields['phone'] ) && is_array( $fields['phone'] ) ? $fields['phone'] : array()
+		);
+	}
+
+	return $locales;
+}
+add_filter( 'woocommerce_get_country_locale', 'rhn_phase_two_require_checkout_phone_by_locale', 30 );
+
+/** Keep the classic checkout field schema aligned with the Blocks locale rule. */
+function rhn_phase_two_require_checkout_phone_field( $fields ) {
+	foreach ( array( 'billing_phone', 'shipping_phone' ) as $key ) {
+		if ( isset( $fields[ $key ] ) ) {
+			$fields[ $key ]['required'] = true;
+		}
+	}
+
+	return $fields;
+}
+add_filter( 'woocommerce_billing_fields', 'rhn_phase_two_require_checkout_phone_field', 30 );
+add_filter( 'woocommerce_shipping_fields', 'rhn_phase_two_require_checkout_phone_field', 30 );
+
 /** Return whether a delivery address identifies a post-office box. */
 function rhn_phase_two_address_is_po_box( $address ) {
 	$address = html_entity_decode( wp_strip_all_tags( (string) $address ), ENT_QUOTES, get_bloginfo( 'charset' ) );
@@ -569,6 +669,66 @@ function rhn_phase_two_validate_store_api_delivery_address( $order ) {
 	}
 }
 add_action( 'woocommerce_store_api_checkout_update_order_meta', 'rhn_phase_two_validate_store_api_delivery_address', 20 );
+
+/** Return whether an order is using either WooCommerce local-pickup implementation. */
+function rhn_phase_two_order_uses_pickup( $order ) {
+	foreach ( $order->get_shipping_methods() as $shipping_item ) {
+		if ( in_array( $shipping_item->get_method_id(), array( 'pickup_location', 'local_pickup' ), true ) ) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/** Enforce the approved Ship and Pickup contact requirements at the Store API boundary. */
+function rhn_phase_two_validate_store_api_contact_fields( $order ) {
+	if ( ! is_a( $order, 'WC_Order' ) ) {
+		return;
+	}
+
+	$missing = array();
+	if ( rhn_phase_two_order_uses_pickup( $order ) ) {
+		$required = array(
+			'First name'  => $order->get_billing_first_name(),
+			'Last name'   => $order->get_billing_last_name(),
+			'Email'       => $order->get_billing_email(),
+			'Phone number'=> $order->get_billing_phone(),
+		);
+	} else {
+		$phone = method_exists( $order, 'get_shipping_phone' ) ? $order->get_shipping_phone() : '';
+		$required = array(
+			'First name'    => $order->get_shipping_first_name(),
+			'Last name'     => $order->get_shipping_last_name(),
+			'Email'         => $order->get_billing_email(),
+			'Phone number'  => $phone ?: $order->get_billing_phone(),
+			'Country'       => $order->get_shipping_country(),
+			'Street address'=> $order->get_shipping_address_1(),
+			'City'          => $order->get_shipping_city(),
+			'State'         => $order->get_shipping_state(),
+			'ZIP code'      => $order->get_shipping_postcode(),
+		);
+	}
+
+	foreach ( $required as $label => $value ) {
+		if ( '' === trim( (string) $value ) ) {
+			$missing[] = $label;
+		}
+	}
+
+	if ( $missing ) {
+		throw new Exception(
+			esc_html(
+				sprintf(
+					/* translators: %s is a comma-separated list of missing checkout fields. */
+					__( 'Please complete the required checkout fields: %s.', 'rebekahs-2026' ),
+					implode( ', ', $missing )
+				)
+			)
+		);
+	}
+}
+add_action( 'woocommerce_store_api_checkout_update_order_meta', 'rhn_phase_two_validate_store_api_contact_fields', 30 );
 
 /** Keep the approved cart → checkout → confirmation orientation on real purchase pages. */
 function rhn_phase_two_purchase_stepper() {
