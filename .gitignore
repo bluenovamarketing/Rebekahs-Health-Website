@@ -100,3 +100,13 @@ node_modules/
 /.tools/*-preview.png
 /.tools/*.zip
 /wordpress/plugins/*.zip
+
+# Local rollback copies and reinstallable media/QA runtimes. These are not public-release source.
+/.tools/backups/
+/.tools/audio-loopback-runtime/
+/client-handoff/**/work/qa-pydeps/
+/client-handoff/**/work/pydeps/
+/client-handoff/**/work/whisper-models/
+**/__pycache__/
+*.pyc
+/.tmp/
