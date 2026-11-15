@@ -47,6 +47,7 @@ node_modules/
 /.tools/video-runtime/
 /.tools/php-8.5.11/
 /.tools/php-8.5.11-nts-Win32-vs17-x64.zip
+/.tools/php-8.5.12/
 /.tools/**/__pycache__/
 /.tools/package-rhn-*/
 /.tools/package-v*/
@@ -75,6 +76,14 @@ node_modules/
 /client-handoff/**/.codex-finalizer/
 /client-handoff/**/work/.deck-build/
 /client-handoff/**/work/python-packages/
+
+# Recreated local agent state and one-off scratch helpers.
+/.codex/
+/_tmp_*.py
+
+# Recreated media-tool logs and operating-system CA bundles.
+/client-handoff/**/work/ffmpeg.log
+/client-handoff/**/work/windows-ca-bundle.pem
 
 # Local/generated catalog exports and analysis evidence. Keep these on the
 # workstation; do not expose private catalog snapshots or generated copies in Git.
