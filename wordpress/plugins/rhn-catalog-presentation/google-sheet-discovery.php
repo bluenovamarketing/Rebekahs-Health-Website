@@ -443,15 +443,9 @@ function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
     if ( $write && ! rhn_catalog_discovery_write_enabled() ) {
         return new WP_Error( 'rhn_discovery_disabled', 'Automatic Sheet writes are disabled until edit access is explicitly enabled.' );
     }
-    if ( ! add_option( 'rhn_catalog_discovery_lock', time(), '', false ) ) {
-        $started = (int) get_option( 'rhn_catalog_discovery_lock', 0 );
-        if ( $started && time() - $started < 1800 ) {
-            return new WP_Error( 'rhn_discovery_locked', 'A product discovery run is already active.' );
-        }
-        delete_option( 'rhn_catalog_discovery_lock' );
-        if ( ! add_option( 'rhn_catalog_discovery_lock', time(), '', false ) ) {
-            return new WP_Error( 'rhn_discovery_locked', 'Could not acquire the product-discovery lock.' );
-        }
+    $writer_token = rhn_catalog_writer_lock_acquire( 'product_discovery', 1800 );
+    if ( is_wp_error( $writer_token ) ) {
+        return $writer_token;
     }
     try {
         $product_rows = rhn_catalog_google_sheet_values( "'Product Review'!A5:X" );
@@ -530,7 +524,7 @@ function rhn_catalog_run_discovery( $write = false, $source = 'mirror' ) {
         );
         return $result;
     } finally {
-        delete_option( 'rhn_catalog_discovery_lock' );
+        rhn_catalog_writer_lock_release( $writer_token );
     }
 }
 

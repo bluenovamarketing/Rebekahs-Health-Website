@@ -414,18 +414,9 @@ function rhn_catalog_run_sheet_sync( $simulated_failure = false ) {
         rhn_catalog_sync_record_failure( $message, true );
         return new WP_Error( 'rhn_catalog_simulated_failure', $message );
     }
-    if ( ! add_option( 'rhn_catalog_sheet_sync_lock', time(), '', false ) ) {
-        $started = (int) get_option( 'rhn_catalog_sheet_sync_lock', 0 );
-        // A healthy idempotent run completes well inside ten minutes. Treat an
-        // older lock as orphaned so a PHP execution timeout cannot block the
-        // four-hour automation for the rest of the interval.
-        if ( $started && time() - $started < 600 ) {
-            return new WP_Error( 'rhn_catalog_sync_locked', 'A Sheet sync is already running; this run made no changes.' );
-        }
-        delete_option( 'rhn_catalog_sheet_sync_lock' );
-        if ( ! add_option( 'rhn_catalog_sheet_sync_lock', time(), '', false ) ) {
-            return new WP_Error( 'rhn_catalog_sync_locked', 'Could not acquire the Sheet sync lock.' );
-        }
+    $writer_token = rhn_catalog_writer_lock_acquire( 'catalog_sheet_sync', 1800 );
+    if ( is_wp_error( $writer_token ) ) {
+        return $writer_token;
     }
     try {
         $sheet = rhn_catalog_fetch_google_sheet();
@@ -448,7 +439,7 @@ function rhn_catalog_run_sheet_sync( $simulated_failure = false ) {
         rhn_catalog_sync_record_failure( $message );
         return new WP_Error( 'rhn_catalog_sync_exception', $message );
     } finally {
-        delete_option( 'rhn_catalog_sheet_sync_lock' );
+        rhn_catalog_writer_lock_release( $writer_token );
     }
 }
 

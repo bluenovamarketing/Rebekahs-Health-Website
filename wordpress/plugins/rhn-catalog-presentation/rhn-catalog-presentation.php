@@ -2,7 +2,7 @@
 /**
  * Plugin Name: RHN Catalog Presentation (Staging)
  * Description: Applies approved barcode-keyed website copy without blocking retail price or stock updates.
- * Version: 0.8.6
+ * Version: 0.8.7
  */
 defined( 'ABSPATH' ) || exit;
 
@@ -47,7 +47,9 @@ function rhn_catalog_presentation_before_save( $product, $request, $creating = f
 require_once __DIR__ . '/registry-import.php';
 require_once __DIR__ . '/catalog-fields.php';
 require_once __DIR__ . '/google-sheet-sync.php';
+require_once __DIR__ . '/single-writer-lock.php';
 require_once __DIR__ . '/google-sheet-discovery.php';
+require_once __DIR__ . '/daily-candidate-consumer.php';
 require_once __DIR__ . '/photo-intake.php';
 require_once __DIR__ . '/nac-proof.php';
 require_once __DIR__ . '/batch-proof.php';
