@@ -1,8 +1,8 @@
 # RHN Catalog Presentation (Staging)
 
-Current local candidate: **0.8.6**. The installed staging version must be verified after upload; do not infer deployment from this repository.
+Current local candidate: **0.8.8**. The installed staging version must be verified after upload; do not infer deployment from this repository.
 
-Version 0.8.6 adds the controlled new-product quarantine path. A previously unseen unique Revel barcode may create only a Draft/hidden, zero-stock staging shell containing its exact SKU, source name and valid regular price. All descriptions, images, categories, brands, SEO/meta, weight, attributes and approval fields are discarded. The exact product ID is queued for targeted Sheet discovery; automatic discovery processes only queued quarantine IDs rather than scanning every historical Revel mirror.
+Version 0.8.8 allows an approved product to create a genuinely missing WooCommerce brand term. Existing names and normalized slugs are reused, a one-character near-match fails closed for review, and product categories remain strict and are never auto-created. The change does not bypass Sheet approval or alter SKU, price, inventory, status, or visibility.\n\nVersion 0.8.6 adds the controlled new-product quarantine path. A previously unseen unique Revel barcode may create only a Draft/hidden, zero-stock staging shell containing its exact SKU, source name and valid regular price. All descriptions, images, categories, brands, SEO/meta, weight, attributes and approval fields are discarded. The exact product ID is queued for targeted Sheet discovery; automatic discovery processes only queued quarantine IDs rather than scanning every historical Revel mirror.
 
 Version 0.8.1 makes repeated Sheet withdrawals idempotent: products already marked by the Sheet as Draft/Hidden are verified and skipped instead of being saved again. This keeps the expanded Clarkston catalog within the staging sync window while preserving the same final website state.
 
@@ -27,13 +27,13 @@ The approved catalog registry may apply:
 
 - customer-facing product name;
 - long and short descriptions;
-- existing website brand and category terms;
+- approved website brand terms and existing website category terms;
 - packaged shipping weight with unit conversion;
 - featured and gallery images from approved Google Drive or Dropbox sources;
 - ingredients, allergens, Supplement Facts, directions, and warnings;
 - SEOPress title and description.
 
-The plugin never writes to Revel. It does not create terms or change SKU, price, stock, orders, customers, payments or refunds. On the exact guarded staging installation only, the hidden export maps the client's `Information Status = Complete` plus `Website Action = Publish` choice to `Approved`, which changes the matching product to Published/visible. No separate Blue Nova approval is required. The client's explicit `Remove from Website` action changes it to Draft/hidden; it never deletes a product. A later completed Publish choice restores Published/visible.
+The plugin never writes to Revel. It may create a missing brand term only while applying an approved product; it never auto-creates categories or changes SKU, price, stock, orders, customers, payments or refunds. On the exact guarded staging installation only, the hidden export maps the client's `Information Status = Complete` plus `Website Action = Publish` choice to `Approved`, which changes the matching product to Published/visible. No separate Blue Nova approval is required. The client's explicit `Remove from Website` action changes it to Draft/hidden; it never deletes a product. A later completed Publish choice restores Published/visible.
 
 ## Google Sheet intake
 
@@ -82,7 +82,7 @@ The JSON intake at `Tools → Staging catalog copy intake` remains as a controll
 - Exact staging hostname guard: `wordpress-1651482-6655800.cloudwaysapps.com`.
 - Approved rows require exact string SKU, boolean approval, and nonempty provenance.
 - Unknown fields and duplicate SKUs fail closed.
-- Categories and brands must already exist; the plugin does not invent them.
+- Categories must already exist. A genuinely missing brand may be created only for an approved product; normalized duplicates are reused and a one-character near-match fails closed for review.
 - Image hosts, types, and size are restricted.
 - The NAC proof requires staging webhook blocking, a fixed product ID/SKU, administrator permissions, a nonce, a durable baseline, and a single-run lock.
 - The 25-product proof uses an immutable SKU allowlist, exact-one-product identity checks, administrator permissions, AJAX nonces, a single-product lock, and a durable latest-product baseline.
