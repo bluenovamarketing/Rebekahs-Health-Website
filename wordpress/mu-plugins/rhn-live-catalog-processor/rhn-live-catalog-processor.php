@@ -2,7 +2,7 @@
 /**
  * Plugin Name: RHN Live Catalog Sheet Processor
  * Description: Approval-gated production synchronization of website-owned WooCommerce catalog fields from Rebekah's canonical Inventory Sheet.
- * Version: 2.1.1
+ * Version: 2.1.2
  */
 defined( 'ABSPATH' ) || exit;
 
