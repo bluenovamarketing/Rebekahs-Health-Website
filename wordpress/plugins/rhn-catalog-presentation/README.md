@@ -4,6 +4,8 @@ Current local candidate: **0.8.8**. The installed staging version must be verifi
 
 Version 0.8.8 allows an approved product to create a genuinely missing WooCommerce brand term. Existing names and normalized slugs are reused, a one-character near-match fails closed for review, and product categories remain strict and are never auto-created. The change does not bypass Sheet approval or alter SKU, price, inventory, status, or visibility.\n\nVersion 0.8.6 adds the controlled new-product quarantine path. A previously unseen unique Revel barcode may create only a Draft/hidden, zero-stock staging shell containing its exact SKU, source name and valid regular price. All descriptions, images, categories, brands, SEO/meta, weight, attributes and approval fields are discarded. The exact product ID is queued for targeted Sheet discovery; automatic discovery processes only queued quarantine IDs rather than scanning every historical Revel mirror.
 
+The one-character near-match rule belongs only to this staging candidate. It is not loaded by the production processor, and the isolated staging test must not be cited as proof of production behavior.
+
 Version 0.8.1 makes repeated Sheet withdrawals idempotent: products already marked by the Sheet as Draft/Hidden are verified and skipped instead of being saved again. This keeps the expanded Clarkston catalog within the staging sync window while preserving the same final website state.
 
 Version 0.8.2 treats WooCommerce variations correctly during withdrawal verification. A variation is held offline by its Draft status and inherits catalog visibility from its parent; the verifier no longer expects the unsupported standalone `hidden` visibility value from variation rows.

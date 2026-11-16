@@ -1,4 +1,11 @@
 <?php
+/**
+ * Staging-candidate behavior only.
+ *
+ * This test loads isolated-plugin/catalog-fields.php. It does not load the
+ * verified production source and is not evidence that production implements
+ * the staging candidate's one-character near-match rule.
+ */
 define( 'ABSPATH', __DIR__ . DIRECTORY_SEPARATOR );
 
 class WP_Error {
@@ -84,4 +91,4 @@ $missing_category = rhn_catalog_resolve_term_ids( array( 'Invented Category' ), 
 brand_check( is_wp_error( $missing_category ) && 'rhn_missing_term' === $missing_category->get_error_code(), 'categories remain strict and are never auto-created' );
 brand_check( 1 === count( $GLOBALS['brand_test_insertions'] ), 'category failure created no term' );
 
-echo 'PASS brand term resolution: ' . $checks . " assertions.\n";
+echo 'PASS staging-candidate brand term resolution: ' . $checks . " assertions.\n";
