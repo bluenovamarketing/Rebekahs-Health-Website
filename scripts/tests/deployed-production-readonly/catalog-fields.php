@@ -20,13 +20,82 @@ function rhn_catalog_entry_for_product( $product ) {
     return $entry;
 }
 
+function rhn_catalog_brand_match_key( $name ) {
+    $slug = sanitize_title( sanitize_text_field( (string) $name ) );
+    return preg_replace( '/[^a-z0-9]+/', '', strtolower( (string) $slug ) );
+}
+
+function rhn_catalog_find_near_brand_term( $name ) {
+    $needle = rhn_catalog_brand_match_key( $name );
+    if ( strlen( $needle ) < 5 ) {
+        return null;
+    }
+    $terms = get_terms(
+        array(
+            'taxonomy'   => 'product_brand',
+            'hide_empty' => false,
+        )
+    );
+    if ( is_wp_error( $terms ) ) {
+        return $terms;
+    }
+    foreach ( $terms as $term ) {
+        if ( ! is_object( $term ) || ! isset( $term->name ) ) {
+            continue;
+        }
+        $candidate = rhn_catalog_brand_match_key( $term->name );
+        if ( '' !== $candidate && $candidate !== $needle && levenshtein( $candidate, $needle ) <= 1 ) {
+            return $term;
+        }
+    }
+    return null;
+}
+
 function rhn_catalog_resolve_term_ids( $names, $taxonomy ) {
     if ( ! taxonomy_exists( $taxonomy ) ) {
         return new WP_Error( 'rhn_missing_taxonomy', 'Required taxonomy is unavailable: ' . $taxonomy );
     }
     $ids = array();
     foreach ( $names as $name ) {
+        $name = trim( sanitize_text_field( (string) $name ) );
+        if ( '' === $name ) {
+            return new WP_Error( 'rhn_empty_term', 'Approved term is blank.' );
+        }
+
         $term = get_term_by( 'name', $name, $taxonomy );
+        if ( ( ! $term || is_wp_error( $term ) ) && 'product_brand' === $taxonomy ) {
+            $term = get_term_by( 'slug', sanitize_title( $name ), $taxonomy );
+        }
+
+        if ( ( ! $term || is_wp_error( $term ) ) && 'product_brand' === $taxonomy ) {
+            $near_match = rhn_catalog_find_near_brand_term( $name );
+            if ( is_wp_error( $near_match ) ) {
+                return new WP_Error( 'rhn_brand_lookup_failed', 'Existing brands could not be checked before creating: ' . $name );
+            }
+            if ( $near_match ) {
+                return new WP_Error( 'rhn_ambiguous_brand', 'Brand is too close to an existing website brand and needs review: ' . $name );
+            }
+
+            $created = wp_insert_term(
+                $name,
+                $taxonomy,
+                array( 'slug' => sanitize_title( $name ) )
+            );
+            if ( is_wp_error( $created ) ) {
+                $existing_id = (int) $created->get_error_data( 'term_exists' );
+                if ( $existing_id > 0 ) {
+                    $ids[] = $existing_id;
+                    continue;
+                }
+                return new WP_Error( 'rhn_brand_create_failed', 'Approved brand could not be installed: ' . $name );
+            }
+            if ( ! is_array( $created ) || empty( $created['term_id'] ) ) {
+                return new WP_Error( 'rhn_brand_create_failed', 'Approved brand creation returned no term ID: ' . $name );
+            }
+            $ids[] = (int) $created['term_id'];
+            continue;
+        }
+
         if ( ! $term || is_wp_error( $term ) ) {
             return new WP_Error( 'rhn_missing_term', 'Approved term is not installed: ' . $name );
         }
