@@ -133,11 +133,16 @@ function rhn_live_catalog_content_changes( $product, $entry ) {
 	}
 	if ( isset( $entry['brand'] ) ) {
 		$target = rhn_catalog_resolve_term_ids( array( $entry['brand'] ), 'product_brand' );
-		if ( is_wp_error( $target ) ) { throw new RuntimeException( $target->get_error_message() ); }
+		if ( is_wp_error( $target ) ) {
+			$approved_brand = true === ( $entry['approved'] ?? false ) && is_string( $entry['source'] ?? null ) && '' !== trim( (string) $entry['source'] );
+			if ( 'rhn_missing_term' === $target->get_error_code() && $approved_brand ) { $changes[] = 'brand'; }
+			else { throw new RuntimeException( $target->get_error_message() ); }
+		} else {
 		$current = wp_get_object_terms( $product->get_id(), 'product_brand', array( 'fields' => 'ids' ) );
 		if ( is_wp_error( $current ) ) { throw new RuntimeException( $current->get_error_message() ); }
 		$current = array_map( 'intval', $current ); sort( $current ); sort( $target );
 		if ( $current !== $target ) { $changes[] = 'brand'; }
+		}
 	}
 	$meta_map = array(
 		'package_size'=>'_rhn_package_size','ingredients'=>'_rhn_ingredients','allergens'=>'_rhn_allergens',
@@ -147,7 +152,17 @@ function rhn_live_catalog_content_changes( $product, $entry ) {
 	foreach ( $meta_map as $field => $key ) {
 		if ( array_key_exists( $field, $entry ) ) {
 			$target = in_array( $field, array( 'seo_title','seo_description' ), true ) ? sanitize_text_field( $entry[ $field ] ) : wp_kses_post( $entry[ $field ] );
-			if ( $target !== (string) $product->get_meta( $key, true, 'edit' ) ) { $changes[] = $field; }
+			$requires_absence = in_array( $field, array( 'directions','warnings' ), true ) && '' === trim( $target );
+			if ( ( $requires_absence && $product->meta_exists( $key ) ) || $target !== (string) $product->get_meta( $key, true, 'edit' ) ) { $changes[] = $field; }
+		}
+	}
+	if ( array_key_exists( 'directions', $entry ) || array_key_exists( 'warnings', $entry ) ) {
+		$expected_combined = trim( (string) ( $entry['directions'] ?? $product->get_meta( '_rhn_directions', true, 'edit' ) ) . "\n\n" . (string) ( $entry['warnings'] ?? $product->get_meta( '_rhn_warnings', true, 'edit' ) ) );
+		$current_combined = trim( (string) $product->get_meta( '_rhn_directions_warnings', true, 'edit' ) );
+		if ( rhn_live_catalog_semantic_text( $expected_combined ) !== rhn_live_catalog_semantic_text( $current_combined ) || ( '' === $expected_combined && $product->meta_exists( '_rhn_directions_warnings' ) ) ) {
+			foreach ( array( 'directions', 'warnings' ) as $field ) {
+				if ( array_key_exists( $field, $entry ) ) { $changes[] = $field; }
+			}
 		}
 	}
 	if ( isset( $entry['featured_image_url'] ) ) {
@@ -158,6 +173,34 @@ function rhn_live_catalog_content_changes( $product, $entry ) {
 		if ( rhn_live_catalog_image_identities( $current ) !== rhn_live_catalog_image_identities( $entry['gallery_image_urls'] ) || count( $product->get_gallery_image_ids( 'edit' ) ) !== count( $entry['gallery_image_urls'] ) ) { $changes[] = 'gallery_images'; }
 	}
 	return array_values( array_unique( $changes ) );
+}
+
+/** Return only approved field-specific blank removals. */
+function rhn_live_catalog_explicit_clear_fields( $entry ) {
+	$fields = array();
+	foreach ( array( 'directions', 'warnings' ) as $field ) {
+		if ( array_key_exists( $field, (array) $entry ) && is_string( $entry[ $field ] ) && '' === trim( $entry[ $field ] ) ) {
+			$fields[] = $field;
+		}
+	}
+	return $fields;
+}
+
+/** Verify exact post-save absence for the narrow Directions/Warnings clear contract. */
+function rhn_live_catalog_verify_explicit_clears( $product, $entry, $fields ) {
+	$meta = array( 'directions' => '_rhn_directions', 'warnings' => '_rhn_warnings' );
+	foreach ( (array) $fields as $field ) {
+		if ( ! isset( $meta[ $field ] ) || $product->meta_exists( $meta[ $field ] ) || '' !== trim( (string) $product->get_meta( $meta[ $field ], true, 'edit' ) ) ) {
+			throw new RuntimeException( 'Explicit ' . $field . ' clear failed read-back.' );
+		}
+	}
+	if ( $fields ) {
+		$expected = trim( (string) ( $entry['directions'] ?? $product->get_meta( '_rhn_directions', true, 'edit' ) ) . "\n\n" . (string) ( $entry['warnings'] ?? $product->get_meta( '_rhn_warnings', true, 'edit' ) ) );
+		$current = trim( (string) $product->get_meta( '_rhn_directions_warnings', true, 'edit' ) );
+		if ( rhn_live_catalog_semantic_text( $expected ) !== rhn_live_catalog_semantic_text( $current ) || ( '' === $expected && $product->meta_exists( '_rhn_directions_warnings' ) ) ) {
+			throw new RuntimeException( 'Combined Directions/Warnings clear failed read-back.' );
+		}
+	}
 }
 
 function rhn_live_catalog_actions_from_sheet( $sheet ) {
@@ -273,6 +316,64 @@ function rhn_live_catalog_create_quarantine( $sku, $item, $run_id ) {
 	return array( 'sku'=>$sku,'id'=>$id,'action'=>'Create Draft/hidden quarantine','status'=>'draft','visibility'=>'hidden','row'=>$item['row'] );
 }
 
+/** Capture non-secret status/visibility evidence before an inner restore. */
+function rhn_live_catalog_status_visibility_diagnostic( $product_id, $fresh, $item ) {
+	global $wpdb;
+	$raw_status = (string) $wpdb->get_var( $wpdb->prepare( "SELECT post_status FROM {$wpdb->posts} WHERE ID = %d LIMIT 1", (int) $product_id ) );
+	$raw_terms = (array) $wpdb->get_col( $wpdb->prepare(
+		"SELECT t.slug FROM {$wpdb->terms} t INNER JOIN {$wpdb->term_taxonomy} tt ON tt.term_id = t.term_id INNER JOIN {$wpdb->term_relationships} tr ON tr.term_taxonomy_id = tt.term_taxonomy_id WHERE tr.object_id = %d AND tt.taxonomy = 'product_visibility' ORDER BY t.slug ASC",
+		(int) $product_id
+	) );
+	return array(
+		'expected_status' => (string) ( $item['to_status'] ?? '' ),
+		'expected_visibility' => (string) ( $item['to_visibility'] ?? '' ),
+		'observed_status' => $fresh ? (string) $fresh->get_status( 'edit' ) : '',
+		'observed_visibility' => $fresh ? (string) $fresh->get_catalog_visibility( 'edit' ) : '',
+		'raw_post_status' => $raw_status,
+		'raw_product_visibility_terms' => array_values( array_map( 'strval', $raw_terms ) ),
+	);
+}
+
+/**
+ * Reconcile only WooCommerce's catalog-exclusion terms after the normal
+ * product save has failed to persist the requested visibility. Existing
+ * featured, stock and rating visibility terms are preserved exactly.
+ */
+function rhn_live_catalog_reconcile_visibility_terms( $product_id, $visibility ) {
+	$visibility = (string) $visibility;
+	if ( ! in_array( $visibility, array( 'visible', 'catalog', 'search', 'hidden' ), true ) ) {
+		throw new RuntimeException( 'Unsupported catalog visibility fallback: ' . $visibility . '.' );
+	}
+	$current = wp_get_post_terms( (int) $product_id, 'product_visibility', array( 'fields' => 'slugs' ) );
+	if ( is_wp_error( $current ) ) {
+		throw new RuntimeException( 'Unable to read product visibility terms: ' . $current->get_error_message() );
+	}
+	$exclusions = array( 'exclude-from-catalog', 'exclude-from-search' );
+	$desired = array_values( array_diff( array_map( 'strval', (array) $current ), $exclusions ) );
+	if ( in_array( $visibility, array( 'search', 'hidden' ), true ) ) { $desired[] = 'exclude-from-catalog'; }
+	if ( in_array( $visibility, array( 'catalog', 'hidden' ), true ) ) { $desired[] = 'exclude-from-search'; }
+	$desired = array_values( array_unique( $desired ) );
+	sort( $desired, SORT_STRING );
+	foreach ( array_intersect( $desired, $exclusions ) as $required_slug ) {
+		if ( ! term_exists( $required_slug, 'product_visibility' ) ) {
+			throw new RuntimeException( 'Required WooCommerce visibility term is missing: ' . $required_slug . '.' );
+		}
+	}
+	$written = wp_set_post_terms( (int) $product_id, $desired, 'product_visibility', false );
+	if ( is_wp_error( $written ) ) {
+		throw new RuntimeException( 'Unable to write product visibility terms: ' . $written->get_error_message() );
+	}
+	$after = wp_get_post_terms( (int) $product_id, 'product_visibility', array( 'fields' => 'slugs' ) );
+	if ( is_wp_error( $after ) ) {
+		throw new RuntimeException( 'Unable to verify product visibility terms: ' . $after->get_error_message() );
+	}
+	$after = array_values( array_unique( array_map( 'strval', (array) $after ) ) );
+	sort( $after, SORT_STRING );
+	if ( $desired !== $after ) {
+		throw new RuntimeException( 'WooCommerce visibility-term fallback failed read-back.' );
+	}
+}
+
 function rhn_live_catalog_apply_update( $sku, $item, $run_id ) {
 	$product = wc_get_product( (int) $item['id'] );
 	if ( ! $product || (string) $sku !== (string) $product->get_sku( 'edit' ) ) { throw new RuntimeException( 'Product identity changed before apply for SKU ' . $sku . '.' ); }
@@ -283,6 +384,7 @@ function rhn_live_catalog_apply_update( $sku, $item, $run_id ) {
 	try {
 		if ( 'Publish' === $item['action'] ) {
 			$entry = (array) $item['entry'];
+			$explicit_clears = rhn_live_catalog_explicit_clear_fields( $entry );
 			$product = rhn_catalog_apply_entry_to_product( $product, null, $entry );
 			rhn_live_catalog_require_publish_inventory( $product, $sku );
 			$product->set_status( 'publish' ); $product->set_catalog_visibility( 'visible' );
@@ -293,16 +395,30 @@ function rhn_live_catalog_apply_update( $sku, $item, $run_id ) {
 			$product->update_meta_data( '_rhn_catalog_withdrawn_by_sheet', current_time( 'mysql' ) );
 		}
 		$product->update_meta_data( '_rhn_live_catalog_managed', 'yes' );
-		$product->update_meta_data( '_rhn_catalog_sheet_receipt', array( 'run_id'=>$run_id,'action'=>$item['action'],'sheet_row'=>$item['row'],'source'=>$item['source'],'processed_at_utc'=>gmdate( 'c' ),'processor'=>'2.1.1','content_changes'=>$item['content_changes'] ) );
+		$product->update_meta_data( '_rhn_catalog_sheet_receipt', array( 'run_id'=>$run_id,'action'=>$item['action'],'sheet_row'=>$item['row'],'source'=>$item['source'],'processed_at_utc'=>gmdate( 'c' ),'processor'=>'2.1.1','content_changes'=>$item['content_changes'],'verified_explicit_clears'=>$explicit_clears ?? array() ) );
 		$product->save();
 		if ( 'Publish' === $item['action'] ) { rhn_catalog_after_save( $product, null, false, $entry ); }
 		clean_post_cache( $product->get_id() ); wc_delete_product_transients( $product->get_id() );
+		// Product status/visibility can remain stale in the request-local object
+		// cache even after the persistent keys are invalidated. Clear only this
+		// request's runtime layer before the mandatory post-save verification.
+		if ( function_exists( 'wp_cache_flush_runtime' ) ) { wp_cache_flush_runtime(); }
 		$fresh = wc_get_product( $product->get_id() );
+		if ( $fresh && $item['to_status'] === $fresh->get_status( 'edit' ) && $item['to_visibility'] !== $fresh->get_catalog_visibility( 'edit' ) ) {
+			rhn_live_catalog_reconcile_visibility_terms( $product->get_id(), $item['to_visibility'] );
+			clean_post_cache( $product->get_id() ); wc_delete_product_transients( $product->get_id() );
+			if ( function_exists( 'wp_cache_flush_runtime' ) ) { wp_cache_flush_runtime(); }
+			$fresh = wc_get_product( $product->get_id() );
+		}
 		if ( $protected !== rhn_live_catalog_protected_snapshot( $fresh ) ) { throw new RuntimeException( 'Protected POS-owned field changed for SKU ' . $sku . '.' ); }
 		$errors = array_values( array_filter( (array) $fresh->get_meta( '_rhn_catalog_sync_errors', true, 'edit' ) ) );
 		if ( $errors ) { throw new RuntimeException( implode( '; ', $errors ) ); }
-		if ( $item['to_status'] !== $fresh->get_status( 'edit' ) || $item['to_visibility'] !== $fresh->get_catalog_visibility( 'edit' ) ) { throw new RuntimeException( 'Status/visibility read-back failed for SKU ' . $sku . '.' ); }
-		return array( 'sku'=>$sku,'id'=>$fresh->get_id(),'action'=>$item['action'],'status'=>$fresh->get_status( 'edit' ),'visibility'=>$fresh->get_catalog_visibility( 'edit' ),'row'=>$item['row'],'content_changes'=>$item['content_changes'] );
+		if ( ! empty( $explicit_clears ) ) { rhn_live_catalog_verify_explicit_clears( $fresh, $entry, $explicit_clears ); }
+		if ( $item['to_status'] !== $fresh->get_status( 'edit' ) || $item['to_visibility'] !== $fresh->get_catalog_visibility( 'edit' ) ) {
+			$diagnostic = rhn_live_catalog_status_visibility_diagnostic( $product->get_id(), $fresh, $item );
+			throw new RuntimeException( 'Status/visibility read-back failed for SKU ' . $sku . '. Diagnostic: ' . wp_json_encode( $diagnostic, JSON_UNESCAPED_SLASHES ) );
+		}
+		return array( 'sku'=>$sku,'id'=>$fresh->get_id(),'action'=>$item['action'],'status'=>$fresh->get_status( 'edit' ),'visibility'=>$fresh->get_catalog_visibility( 'edit' ),'row'=>$item['row'],'content_changes'=>$item['content_changes'],'verified_explicit_clears'=>$explicit_clears ?? array() );
 	} catch ( Throwable $error ) {
 		rhn_live_catalog_restore_snapshot( $rollback );
 		throw $error;

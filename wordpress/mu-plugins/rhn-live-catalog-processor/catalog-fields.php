@@ -26,82 +26,39 @@ function rhn_catalog_entry_for_product( $product ) {
     return $entry;
 }
 
-function rhn_catalog_brand_match_key( $name ) {
-    $slug = sanitize_title( sanitize_text_field( (string) $name ) );
-    return preg_replace( '/[^a-z0-9]+/', '', strtolower( (string) $slug ) );
-}
-
-function rhn_catalog_find_near_brand_term( $name ) {
-    $needle = rhn_catalog_brand_match_key( $name );
-    if ( strlen( $needle ) < 5 ) {
-        return null;
-    }
-    $terms = get_terms(
-        array(
-            'taxonomy'   => 'product_brand',
-            'hide_empty' => false,
-        )
-    );
-    if ( is_wp_error( $terms ) ) {
-        return $terms;
-    }
-    foreach ( $terms as $term ) {
-        if ( ! is_object( $term ) || ! isset( $term->name ) ) {
-            continue;
-        }
-        $candidate = rhn_catalog_brand_match_key( $term->name );
-        if ( '' !== $candidate && $candidate !== $needle && levenshtein( $candidate, $needle ) <= 1 ) {
-            return $term;
-        }
-    }
-    return null;
-}
-
-function rhn_catalog_resolve_term_ids( $names, $taxonomy ) {
+function rhn_catalog_resolve_term_ids( $names, $taxonomy, $allow_create_approved_brand = false ) {
     if ( ! taxonomy_exists( $taxonomy ) ) {
         return new WP_Error( 'rhn_missing_taxonomy', 'Required taxonomy is unavailable: ' . $taxonomy );
     }
     $ids = array();
     foreach ( $names as $name ) {
-        $name = trim( sanitize_text_field( (string) $name ) );
-        if ( '' === $name ) {
-            return new WP_Error( 'rhn_empty_term', 'Approved term is blank.' );
-        }
-
         $term = get_term_by( 'name', $name, $taxonomy );
-        if ( ( ! $term || is_wp_error( $term ) ) && 'product_brand' === $taxonomy ) {
-            $term = get_term_by( 'slug', sanitize_title( $name ), $taxonomy );
-        }
-
-        if ( ( ! $term || is_wp_error( $term ) ) && 'product_brand' === $taxonomy ) {
-            $near_match = rhn_catalog_find_near_brand_term( $name );
-            if ( is_wp_error( $near_match ) ) {
-                return new WP_Error( 'rhn_brand_lookup_failed', 'Existing brands could not be checked before creating: ' . $name );
+        if ( ! $term && $allow_create_approved_brand && 'product_brand' === $taxonomy ) {
+            $original_name = trim( (string) $name );
+            $clean_name = trim( sanitize_text_field( $original_name ) );
+            $slug = sanitize_title( $clean_name );
+            if ( '' === $clean_name || $clean_name !== $original_name || '' === $slug ) {
+                return new WP_Error( 'rhn_invalid_brand_term', 'Approved brand name is not safe to install: ' . $original_name );
             }
-            if ( $near_match ) {
-                return new WP_Error( 'rhn_ambiguous_brand', 'Brand is too close to an existing website brand and needs review: ' . $name );
+            $slug_term = get_term_by( 'slug', $slug, $taxonomy );
+            if ( $slug_term && 0 !== strcasecmp( (string) $slug_term->name, $clean_name ) ) {
+                return new WP_Error( 'rhn_brand_slug_conflict', 'Approved brand slug is already assigned to another brand: ' . $clean_name );
             }
-
-            $created = wp_insert_term(
-                $name,
-                $taxonomy,
-                array( 'slug' => sanitize_title( $name ) )
-            );
-            if ( is_wp_error( $created ) ) {
-                $existing_id = (int) $created->get_error_data( 'term_exists' );
-                if ( $existing_id > 0 ) {
-                    $ids[] = $existing_id;
-                    continue;
+            if ( $slug_term ) {
+                $term = $slug_term;
+            } else {
+                $inserted = wp_insert_term( $clean_name, $taxonomy, array( 'slug' => $slug ) );
+                if ( is_wp_error( $inserted ) ) {
+                    if ( 'term_exists' !== $inserted->get_error_code() ) { return $inserted; }
+                    $term = get_term( (int) $inserted->get_error_data(), $taxonomy );
+                } else {
+                    $term = get_term( (int) $inserted['term_id'], $taxonomy );
                 }
-                return new WP_Error( 'rhn_brand_create_failed', 'Approved brand could not be installed: ' . $name );
             }
-            if ( ! is_array( $created ) || empty( $created['term_id'] ) ) {
-                return new WP_Error( 'rhn_brand_create_failed', 'Approved brand creation returned no term ID: ' . $name );
+            if ( ! $term || is_wp_error( $term ) || (string) $term->name !== $clean_name || (string) $term->slug !== $slug || (string) $term->taxonomy !== $taxonomy ) {
+                return new WP_Error( 'rhn_brand_term_readback', 'Installed brand term did not match the approved brand: ' . $clean_name );
             }
-            $ids[] = (int) $created['term_id'];
-            continue;
         }
-
         if ( ! $term || is_wp_error( $term ) ) {
             return new WP_Error( 'rhn_missing_term', 'Approved term is not installed: ' . $name );
         }
@@ -182,7 +139,11 @@ function rhn_catalog_apply_entry_to_product( $product, $request = null, $explici
     foreach ( $meta_fields as $field => $meta_key ) {
         if ( array_key_exists( $field, $entry ) && is_string( $entry[ $field ] ) ) {
             $value = in_array( $field, array( 'seo_title', 'seo_description' ), true ) ? sanitize_text_field( $entry[ $field ] ) : wp_kses_post( $entry[ $field ] );
-            $product->update_meta_data( $meta_key, $value );
+            if ( in_array( $field, array( 'directions', 'warnings' ), true ) && '' === trim( $value ) ) {
+                $product->delete_meta_data( $meta_key );
+            } else {
+                $product->update_meta_data( $meta_key, $value );
+            }
             if ( 'seo_title' === $field ) {
                 $product->update_meta_data( '_seopress_titles_title', $value );
             } elseif ( 'seo_description' === $field ) {
@@ -191,8 +152,14 @@ function rhn_catalog_apply_entry_to_product( $product, $request = null, $explici
         }
     }
     if ( array_key_exists( 'directions', $entry ) || array_key_exists( 'warnings', $entry ) ) {
-        $combined = trim( (string) ( $entry['directions'] ?? '' ) . "\n\n" . (string) ( $entry['warnings'] ?? '' ) );
-        $product->update_meta_data( '_rhn_directions_warnings', wp_kses_post( $combined ) );
+        $directions = array_key_exists( 'directions', $entry ) ? (string) $entry['directions'] : (string) $product->get_meta( '_rhn_directions', true, 'edit' );
+        $warnings = array_key_exists( 'warnings', $entry ) ? (string) $entry['warnings'] : (string) $product->get_meta( '_rhn_warnings', true, 'edit' );
+        $combined = trim( $directions . "\n\n" . $warnings );
+        if ( '' === $combined ) {
+            $product->delete_meta_data( '_rhn_directions_warnings' );
+        } else {
+            $product->update_meta_data( '_rhn_directions_warnings', wp_kses_post( $combined ) );
+        }
     }
 
     $product->update_meta_data( '_rhn_source_presentation', $source );
@@ -304,7 +271,8 @@ function rhn_catalog_after_save( $product, $request = null, $creating = false, $
     $errors = (array) get_post_meta( $product_id, '_rhn_catalog_sync_errors', true );
     try {
         if ( isset( $entry['brand'] ) ) {
-            $brand_ids = rhn_catalog_resolve_term_ids( array( $entry['brand'] ), 'product_brand' );
+            $approved_brand = true === ( $entry['approved'] ?? false ) && is_string( $entry['source'] ?? null ) && '' !== trim( (string) $entry['source'] );
+            $brand_ids = rhn_catalog_resolve_term_ids( array( $entry['brand'] ), 'product_brand', $approved_brand );
             if ( is_wp_error( $brand_ids ) ) {
                 $errors[] = $brand_ids->get_error_message();
             } else {

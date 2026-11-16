@@ -1,30 +1,11 @@
-# Brand Sync Project Notes
+# Brand Sync Source Status
 
-Status: In progress  
+Status: Superseded by the verified release source
 Last updated: 2026-11-16
 
-## Verified behavior
+The earlier draft implementation is retained in repository history. The current
+source of record is the catalog processor code under
+`wordpress/mu-plugins/rhn-live-catalog-processor/`.
 
-- The client-facing Brand field is free text, not a dropdown.
-- Website category fields remain controlled dropdowns.
-- The current missing brand example was entered in its existing product row without changing the row's approval or website-action status.
-
-## Approved-product brand behavior
-
-The catalog processor source now:
-
-1. reuses an exact existing brand;
-2. reuses a normalized slug match so capitalization or punctuation does not create a duplicate;
-3. rejects a one-character near-match for review instead of silently creating a likely typo;
-4. creates a genuinely missing brand only while applying an approved product; and
-5. never auto-creates product categories.
-
-This does not change the existing approval gate or any SKU, price, stock, product status, or visibility field.
-
-## Verification remaining
-
-- Run the isolated brand-term test.
-- Deploy the updated live processor source.
-- Read back the installed version.
-- Confirm the new brand exists only once in the live brand taxonomy.
-- Confirm a normal approved-product cycle still respects all approval rules.
+This repository change synchronizes those two source files only. It does not
+deploy code or change any runtime configuration.
