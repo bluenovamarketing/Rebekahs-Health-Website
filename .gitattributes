@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve verified release bytes for the deployed processor source.
+/wordpress/mu-plugins/rhn-live-catalog-processor/catalog-fields.php -text
+/wordpress/mu-plugins/rhn-live-catalog-processor/production-scheduler.php -text
