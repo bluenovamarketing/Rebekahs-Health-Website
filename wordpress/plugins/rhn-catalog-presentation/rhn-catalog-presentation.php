@@ -2,7 +2,7 @@
 /**
  * Plugin Name: RHN Catalog Presentation (Staging)
  * Description: Applies approved barcode-keyed website copy without blocking retail price or stock updates.
- * Version: 0.8.7
+ * Version: 0.8.8
  */
 defined( 'ABSPATH' ) || exit;
 
